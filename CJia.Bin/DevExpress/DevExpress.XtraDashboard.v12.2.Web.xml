@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.XtraDashboard.v12.2.Web</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.XtraDashboard.Web.ASPxDashboardViewer">
+
+            <summary>
+                <para>The Dashboard Viewer.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraDashboard.Web.ASPxDashboardViewer.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ASPxDashboardViewer class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.ASPxDashboardViewer.DashboardXmlFile">
+            <summary>
+                <para>Gets or sets the path to an XML file that contains a dashboard.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> that specifies the path to an XML file that contains the dashboard.
+</value>
+
+
+        </member>
+        <member name="E:DevExpress.XtraDashboard.Web.ASPxDashboardViewer.DataLoading">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraDashboard.Web.ASPxDashboardViewer.Dispose">
+            <summary>
+                <para>Enables a server control to perform final clean up before it is released from memory. 
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.ASPxDashboardViewer.FullscreenMode">
+            <summary>
+                <para>Gets or sets whether the ASPxDashboardViewer is in the full-screen mode.
+</para>
+            </summary>
+            <value><b>true</b>, if the ASPxDashboardViewer is in the full-screen mode; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.ASPxDashboardViewer.Images">
+            <summary>
+                <para>Provides access to the settings that define images displayed within dashboard elements.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraDashboard.Web.DashboardViewerImages"/> object that contains image settings.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraDashboard.Web.DashboardViewerImages">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraDashboard.Web.DashboardViewerImages.#ctor(DevExpress.Web.ASPxClasses.Internal.ISkinOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.DashboardViewerImages.ClearMasterFilter">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.DashboardViewerImages.DrillUp">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.DashboardViewerImages.OtherElements">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventHandler">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventHandler.Invoke(System.Object,DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="sender">
+		 [To be supplied] 
+            </param>
+            <param name="e">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventArgs">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventArgs.#ctor(System.String,System.Boolean,System.DateTime)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="dataSourceName">
+		 [To be supplied] 
+            </param>
+            <param name="isLoaded">
+		 [To be supplied] 
+            </param>
+            <param name="lastLoadedTime">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventArgs.Data">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventArgs.DataSourceName">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventArgs.IsLoaded">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDashboard.Web.ASPxDashboardViewerDataLoadingEventArgs.LastLoadedTime">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+    </members>
+</doc>

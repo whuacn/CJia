@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="30816999-1f1a-4385-896c-7e3bce2a0842" Publisher="CN=huyang" Version="1.0.0.7" />
+  <Properties>
+    <DisplayName>CJia.MobileMedicalDoctor.App</DisplayName>
+    <PublisherDisplayName>huyang</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="CJia.MobileMedicalDoctor.App.App">
+      <VisualElements DisplayName="CJia.MobileMedicalDoctor.App" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="CJia.MobileMedicalDoctor.App" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" WideLogo="Images\HD310X150.png" ShortName="智能移动医疗平台" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

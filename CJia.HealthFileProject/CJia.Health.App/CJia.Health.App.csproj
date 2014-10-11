@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E1E538D-DF08-4A16-9494-E476717A4320}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.Health.App</RootNamespace>
+    <AssemblyName>CJia.Health.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Animator, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\Animator.dll</HintPath>
+    </Reference>
+    <Reference Include="ChnCharInfo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=18f031bd02e5e291, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="ChnCharInfoResource">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\ChnCharInfoResource.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Controls">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Editors, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Charts.v12.1.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Data.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Printing.v12.1.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1.UI, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Utils.v12.1.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraBars.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraCharts.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.1.Extensions, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraCharts.v12.1.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraPrinting.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraReports.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\My_Git\Fridays\Fridays\Fridays\Bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\My_Git\Fridays\Fridays\Fridays\Bin\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\My_Git\Fridays\Fridays\Fridays\Bin\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrom.Designer.cs">
+      <DependentUpon>LoginFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMainForm.Designer.cs">
+      <DependentUpon>NewMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scan\GdiPlusLib.cs" />
+    <Compile Include="Scan\TwainDefs.cs" />
+    <Compile Include="Scan\TwainLib.cs" />
+    <Compile Include="Service References\CJ\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\JJCJ\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ApprovalBorrowView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ApprovalBorrowView.Designer.cs">
+      <DependentUpon>ApprovalBorrowView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BorrowTimeLenthView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BorrowTimeLenthView.Designer.cs">
+      <DependentUpon>BorrowTimeLenthView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CheckReasonView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CheckReasonView.Designer.cs">
+      <DependentUpon>CheckReasonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataCheckView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataCheckView.Designer.cs">
+      <DependentUpon>DataCheckView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeptManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DeptManageView.Designer.cs">
+      <DependentUpon>DeptManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DoctorManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DoctorManageView.Designer.cs">
+      <DependentUpon>DoctorManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChangePwdView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ChangePwdView.Designer.cs">
+      <DependentUpon>ChangePwdView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HealthFilterView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HealthFilterView.Designer.cs">
+      <DependentUpon>HealthFilterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImageCheckView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ImageCheckView.Designer.cs">
+      <DependentUpon>ImageCheckView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImageInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ImageInfoView.Designer.cs">
+      <DependentUpon>ImageInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImagesInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ImagesInputView.Designer.cs">
+      <DependentUpon>ImagesInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Loading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\LoginView.designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginWaitFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoginWaitFrm.Designer.cs">
+      <DependentUpon>LoginWaitFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyPatientHandelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MyPatientHandelView.Designer.cs">
+      <DependentUpon>MyPatientHandelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyPatientInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MyPatientInputView.Designer.cs">
+      <DependentUpon>MyPatientInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyUndoPatientView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MyUndoPatientView.Designer.cs">
+      <DependentUpon>MyUndoPatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewPatientInfoInPutView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewPatientInfoInPutView.Designer.cs">
+      <DependentUpon>NewPatientInfoInPutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PatientInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PatientInfoView.Designer.cs">
+      <DependentUpon>PatientInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PatientInfoInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PatientInfoInputView.Designer.cs">
+      <DependentUpon>PatientInfoInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PictureInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PictureInputView.Designer.cs">
+      <DependentUpon>PictureInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PictureProjectSetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PictureProjectSetView.Designer.cs">
+      <DependentUpon>PictureProjectSetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrintApplyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PrintApplyView.Designer.cs">
+      <DependentUpon>PrintApplyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProjectManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ProjectManageView.Designer.cs">
+      <DependentUpon>ProjectManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ReName.Designer.cs">
+      <DependentUpon>ReName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RoleFounctionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RoleFounctionView.Designer.cs">
+      <DependentUpon>RoleFounctionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RoleManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RoleManageView.Designer.cs">
+      <DependentUpon>RoleManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ScanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ScanForm.Designer.cs">
+      <DependentUpon>ScanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserManageView.Designer.cs">
+      <DependentUpon>UserManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataQueryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataQueryView.Designer.cs">
+      <DependentUpon>DataQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewImageCheckView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewImageCheckView.Designer.cs">
+      <DependentUpon>NewImageCheckView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewPictureInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewPictureInputView.Designer.cs">
+      <DependentUpon>NewPictureInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PhotoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PhotoView.Designer.cs">
+      <DependentUpon>PhotoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ScanView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ScanView.Designer.cs">
+      <DependentUpon>ScanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MergeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MergeView.Designer.cs">
+      <DependentUpon>MergeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewImageCheckView1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewImageCheckView1.Designer.cs">
+      <DependentUpon>NewImageCheckView1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SelectPatientView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SelectPatientView.Designer.cs">
+      <DependentUpon>SelectPatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserWorkStat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserWorkStat.Designer.cs">
+      <DependentUpon>UserWorkStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\JJCJScanView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\JJCJScanView.Designer.cs">
+      <DependentUpon>JJCJScanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CompleteQuery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CompleteQuery.Designer.cs">
+      <DependentUpon>CompleteQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PhotoNewView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PhotoNewView.Designer.cs">
+      <DependentUpon>PhotoNewView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginFrom.resx">
+      <DependentUpon>LoginFrom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMainForm.ky-KG.resx">
+      <DependentUpon>NewMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMainForm.resx">
+      <DependentUpon>NewMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ApprovalBorrowView.resx">
+      <DependentUpon>ApprovalBorrowView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BorrowTimeLenthView.resx">
+      <DependentUpon>BorrowTimeLenthView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CheckReasonView.resx">
+      <DependentUpon>CheckReasonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataCheckView.resx">
+      <DependentUpon>DataCheckView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeptManageView.resx">
+      <DependentUpon>DeptManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DoctorManageView.resx">
+      <DependentUpon>DoctorManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChangePwdView.resx">
+      <DependentUpon>ChangePwdView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HealthFilterView.resx">
+      <DependentUpon>HealthFilterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImageCheckView.resx">
+      <DependentUpon>ImageCheckView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImageInfoView.resx">
+      <DependentUpon>ImageInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImagesInputView.resx">
+      <DependentUpon>ImagesInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginWaitFrm.resx">
+      <DependentUpon>LoginWaitFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MyPatientHandelView.resx">
+      <DependentUpon>MyPatientHandelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MyPatientInputView.resx">
+      <DependentUpon>MyPatientInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MyUndoPatientView.resx">
+      <DependentUpon>MyUndoPatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewPatientInfoInPutView.resx">
+      <DependentUpon>NewPatientInfoInPutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PatientInfoInputView.resx">
+      <DependentUpon>PatientInfoInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PatientInfoView.resx">
+      <DependentUpon>PatientInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PictureInputView.resx">
+      <DependentUpon>PictureInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PictureProjectSetView.resx">
+      <DependentUpon>PictureProjectSetView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PrintApplyView.resx">
+      <DependentUpon>PrintApplyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProjectManageView.resx">
+      <DependentUpon>ProjectManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReName.resx">
+      <DependentUpon>ReName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RoleFounctionView.resx">
+      <DependentUpon>RoleFounctionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RoleManageView.resx">
+      <DependentUpon>RoleManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScanForm.resx">
+      <DependentUpon>ScanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserManageView.resx">
+      <DependentUpon>UserManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataQueryView.resx">
+      <DependentUpon>DataQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewImageCheckView.resx">
+      <DependentUpon>NewImageCheckView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewPictureInputView.resx">
+      <DependentUpon>NewPictureInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PhotoView.resx">
+      <DependentUpon>PhotoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScanView.resx">
+      <DependentUpon>ScanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MergeView.resx">
+      <DependentUpon>MergeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewImageCheckView1.resx">
+      <DependentUpon>NewImageCheckView1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SelectPatientView.resx">
+      <DependentUpon>SelectPatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserWorkStat.resx">
+      <DependentUpon>UserWorkStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\JJCJScanView.resx">
+      <DependentUpon>JJCJScanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CompleteQuery.resx">
+      <DependentUpon>CompleteQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PhotoNewView.resx">
+      <DependentUpon>PhotoNewView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\CJ\HealthService.wsdl" />
+    <None Include="Service References\JJCJ\HealthService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20096.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200961.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200962.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1213.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ图片20130626103705.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CJia.Health\CJia.Health.csproj">
+      <Project>{433db958-88fb-449b-8c3f-cca519f44df0}</Project>
+      <Name>CJia.Health</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxCmCaptureOcxLib">
+      <Guid>{2E0A2275-9E84-4627-AD5C-5CC0A1F70472}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxVideoDllLib">
+      <Guid>{9513E140-C76D-4561-83A1-879C17B510F5}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CmCaptureOcxLib">
+      <Guid>{2E0A2275-9E84-4627-AD5C-5CC0A1F70472}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VideoDllLib">
+      <Guid>{9513E140-C76D-4561-83A1-879C17B510F5}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="favicon1.ico" />
+    <None Include="Service References\JJCJ\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\JJCJ\configuration.svcinfo" />
+    <None Include="Service References\JJCJ\configuration91.svcinfo" />
+    <None Include="Service References\JJCJ\HealthService.disco" />
+    <None Include="Service References\CJ\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CJ\configuration.svcinfo" />
+    <None Include="Service References\CJ\configuration91.svcinfo" />
+    <None Include="Service References\CJ\HealthService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CJ\" />
+    <WCFMetadataStorage Include="Service References\JJCJ\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

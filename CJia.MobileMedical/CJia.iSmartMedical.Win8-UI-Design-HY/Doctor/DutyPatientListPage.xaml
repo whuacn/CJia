@@ -1,0 +1,94 @@
+﻿<local:BasePage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CJia.iSmartMedical.Win8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="CJia.iSmartMedical.Win8.Doctor.DutyPatientListPage"
+    mc:Ignorable="d">
+
+
+    <Page.BottomAppBar>
+        <AppBar IsSticky="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel x:Name="spPatient" Orientation="Horizontal" >
+                    <Button x:Name="btnAddPatient" AutomationProperties.Name="添加病人" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnAddPatient_Click"></Button>
+                    
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
+                   <Button x:Name="btnLogin" AutomationProperties.Name="系统注销" Style="{StaticResource ViewAllAppBarButtonStyle}"  Click="btnLogin_Click" Grid.Row="1"/>
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <!--Padding 116,137,40,46 -->
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Height="768" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="613*"/>
+        </Grid.RowDefinitions>
+        <!--第一行显示标题 和 医生信息-->
+        <Button x:Name="btnBack" Grid.Row="0"  Style="{StaticResource BackButtonStyle}" HorizontalAlignment="Left" Margin="39,28,0,0" VerticalAlignment="Top" Click="btnBack_Click" Height="54" Width="77"/>
+        <TextBlock x:Name="labDoctorName" Grid.Row="0" HorizontalAlignment="Left" Margin="1115,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="151" TextAlignment="Right" FontFamily="Times New Roman" FontSize="30"/>
+        <TextBlock x:Name="labOfficeName" Grid.Row="0" HorizontalAlignment="Left" Margin="1023,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="243" TextAlignment="Right" FontFamily="Times New Roman" FontSize="20"/>
+        <TextBlock x:Name="labTitle" Grid.Row="0" HorizontalAlignment="Left" Margin="116,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="45" FontWeight="Light" LineHeight="40" FontFamily="YouYuan" Width="479" Height="50" />
+        <Image x:Name="imgDoctor" Grid.Row="0" Source="ms-appx:///Images/Doctor.jpg" HorizontalAlignment="Left" Height="75" Margin="1284,10,0,0" VerticalAlignment="Top" Width="72"/>
+        <!--第二行病人所在病区-->
+        <GridView x:Name="gridIllfields" HorizontalAlignment="Left" Margin="39,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1317" Height="55" Tapped="gridIllfields_Tapped">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding IllfieldName}" Foreground="Chocolate" FontSize="25" Margin="1"></TextBlock>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid ItemWidth="210" ItemHeight="80" MaximumRowsOrColumns="1" VerticalChildrenAlignment="Center" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Margin" Value="1" />
+                    <Setter Property="Padding" Value="1,5,1,1" />
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Top" />
+                </Style>
+            </GridView.ItemContainerStyle>
+        </GridView>
+        <!--值班病人导入-->
+        <TextBlock x:Name="labDutyTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Text=" 床位号    姓名            性别   年龄    类别            住院号    床位医生    护理等级        病情          诊断                 科室              入院时间" VerticalAlignment="Top" Height="23" Width="1346" FontFamily="Global User Interface" Foreground="#FFD8AF21"  FontSize="20" Margin="10,5,0,0" Grid.Row="2"/>
+        <ListView x:Name="listDutyPatient" HorizontalAlignment="Left" Height="513" Margin="10,28,0,0" VerticalAlignment="Top" Width="1346" SelectionMode="Multiple" Grid.Row="2" Tapped="listDutyPatient_Tapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
+                        <TextBlock Text="{Binding BedName}" Width="90" FontSize="18"/>
+                        <TextBlock Text="{Binding PatientName}" Width="120" FontSize="18"/>
+                        <TextBlock Text="{Binding Gender}" Width="60" FontSize="18"/>
+                        <TextBlock Text="{Binding Age}" Width="60" FontSize="18"/>
+                        <TextBlock Text="{Binding PatientType}" Width="125" FontSize="18"/>
+                        <TextBlock Text="{Binding IllcaseNo}" Width="85" FontSize="18"/>
+                        <TextBlock Text="{Binding BedDoctorName}" Width="100" FontSize="18"/>
+                        <TextBlock Text="{Binding GradeName}" Width="120" FontSize="18"/>
+                        <TextBlock Text="{Binding IllnessState}" Width="100" FontSize="18"/>
+                        <TextBlock Text="{Binding DiagnoseName}" Width="160" FontSize="18"/>
+                        <TextBlock Text="{Binding OfficeName}" Width="135" FontSize="18"/>
+                        <TextBlock Text="{Binding InhosDate}" Width="140" FontSize="18"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Canvas x:Name="cvSync" HorizontalAlignment="Left" Height="44" Margin="23,546,0,0" Grid.Row="2" VerticalAlignment="Top" Width="1321" Visibility="Collapsed">
+            <TextBlock x:Name="txtSyncHint" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="10" FontSize="15"/>
+            <ProgressBar x:Name="barSync" HorizontalAlignment="Left" Height="5" Grid.Row="1" VerticalAlignment="Top" Width="1321" Canvas.Top="45" Canvas.Left="2"/>
+        </Canvas>
+    </Grid>
+</local:BasePage>

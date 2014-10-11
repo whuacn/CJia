@@ -1,0 +1,112 @@
+﻿<local:BasePage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CJia.iSmartMedical.Win8"
+    xmlns:controls="using:WinRTXamlToolkit.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="CJia.iSmartMedical.Win8.Doctor.PatientCheckPage"
+    mc:Ignorable="d">
+
+    <local:BasePage.TopAppBar>
+        <AppBar Height="100">
+            <GridView x:Name="gridPatientList" Height="100" Grid.Row="1" Margin="0,0,0,0" Tapped="gridPatientList_Tapped">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="0,8,0,0" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding PatientName}" Margin="1" FontSize="22"/>
+                                <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="25,0,0,0" >
+                                    <TextBlock Text="{Binding Age}" />
+                                    <TextBlock Text="" Width="15"/>
+                                    <TextBlock Text="{Binding Gender}"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding BedName}" Margin="1" FontSize="22"/>
+                                <TextBlock Text="" Width="15"/>
+                                <TextBlock Text="{Binding GradeName}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="1"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapGrid ItemWidth="200" ItemHeight="90" MaximumRowsOrColumns="1" VerticalChildrenAlignment="Center" />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemContainerStyle>
+                    <Style TargetType="GridViewItem">
+                        <Setter Property="Margin" Value="1" />
+                        <Setter Property="Padding" Value="1,1,1,1" />
+                        <Setter Property="BorderBrush" Value="Gray" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalContentAlignment" Value="Top" />
+                    </Style>
+                </GridView.ItemContainerStyle>
+            </GridView>
+        </AppBar>
+    </local:BasePage.TopAppBar>
+
+    <Grid x:Name="gridMain"  Height="768" Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" ></RowDefinition>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--第一行标题内容-->
+        <TextBlock x:Name="labPatientName" Grid.Row="0" HorizontalAlignment="Left" Margin="195,18,0,0" VerticalAlignment="Top" Height="32" Width="151" FontFamily="Times New Roman" FontSize="30" Text="张三"/>
+        <TextBlock x:Name="labInhosInfo" Grid.Row="0" HorizontalAlignment="Left" Margin="197,64,0,0" VerticalAlignment="Top" Height="28" Width="213" FontFamily="Times New Roman" FontSize="20" Text="男 21岁"/>
+        <Image x:Name="imgDoctor" Grid.Row="0" Source="ms-appx:///Images/Patient.png" HorizontalAlignment="Left" Height="75" Margin="121,15,0,0" VerticalAlignment="Top" Width="72"/>
+        <Button x:Name="btnBack" Grid.Row="0"  Style="{StaticResource BackButtonStyle}" HorizontalAlignment="Left" Margin="39,28,0,0" VerticalAlignment="Top" Click="btnBack_Click" Height="54" Width="77"/>
+        <TextBlock x:Name="labDoctorName" Grid.Row="0" HorizontalAlignment="Left" Margin="1115,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="151" TextAlignment="Right" FontFamily="Times New Roman" FontSize="30"/>
+        <TextBlock x:Name="labOfficeName" Grid.Row="0" HorizontalAlignment="Left" Margin="1023,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="243" TextAlignment="Right" FontFamily="Times New Roman" FontSize="20"/>
+        <Image x:Name="imgDoctor_Copy" Grid.Row="0" Source="ms-appx:///Images/Doctor.jpg" HorizontalAlignment="Left" Height="75" Margin="1284,10,0,0" VerticalAlignment="Top" Width="72"/>
+        <Grid HorizontalAlignment="Left" Height="76" Margin="430,16,0,0" VerticalAlignment="Top" Width="616">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="住院医嘱" Width="88" Height="58" TextAlignment="Center" Padding="0,20,0,0" FontFamily="YouYuan" FontSize="18" Tapped="Function_Changed"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="病历文书" VerticalAlignment="Top" Width="88" Height="58" TextAlignment="Center" Padding="0,20,0,0" FontFamily="YouYuan" FontSize="18" Tapped="Function_Changed"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="检查报告" VerticalAlignment="Top" Width="88" Height="58" TextAlignment="Center" Padding="0,20,0,0" FontFamily="YouYuan" FontSize="18" Tapped="Function_Changed"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="化验报告" VerticalAlignment="Top" Width="88" Height="58" TextAlignment="Center" Padding="0,20,0,0" FontFamily="YouYuan" FontSize="18" Tapped="Function_Changed"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="查房日志" VerticalAlignment="Top" Width="88" Height="58" TextAlignment="Center" Padding="0,20,0,0" FontFamily="YouYuan" FontSize="18" Tapped="Function_Changed"/>
+            <TextBlock Grid.Column="5" HorizontalAlignment="Left" TextWrapping="Wrap" Text="诊疗相册" VerticalAlignment="Top" Width="88" Height="58" TextAlignment="Center" Padding="0,20,0,0" FontFamily="YouYuan" FontSize="18" Tapped="Function_Changed"/>
+            <TextBlock Grid.Column="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="新建医嘱" VerticalAlignment="Top" Width="88" Height="58" TextAlignment="Center" Padding="0,20,0,0" FontFamily="YouYuan" FontSize="18" Tapped="Function_Changed"/>
+            <StackPanel HorizontalAlignment="Left" Height="4" Grid.Row="1" VerticalAlignment="Top" Width="80" Background="#FF2C5CA8" Margin="4,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="4" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Width="80" Background="#FF954393" Margin="4,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="4" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" Width="80" Background="#FF00C996" Margin="4,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="4" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" Width="80" Background="#FF00B6C3" Margin="4,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="4" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top" Width="80" Background="#FFE2AA10" Margin="4,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="4" Grid.Row="1" Grid.Column="5" VerticalAlignment="Top" Width="80" Background="#FFC95D65" Margin="4,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="4" Grid.Row="1" Grid.Column="6" VerticalAlignment="Top" Width="80" Background="#FF00ABB7" Margin="4,0,0,0"/>
+            <TextBlock x:Name="labHint"  Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="▲" VerticalAlignment="Top" Width="88" Margin="0,5,0,0" TextAlignment="Center" FontFamily="YouYuan" Foreground="#FFE80D0D"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="668" Grid.Row="1" VerticalAlignment="Top" Width="1366">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="45"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imgPrev" Grid.Column="0" HorizontalAlignment="Left" Height="125" Margin="0,233,-2,0" VerticalAlignment="Top" Width="47" Source="ms-appx:///Images/Doctor/Left.png" Stretch="None" Tapped="imgPrev_Tapped"/>
+            <Image x:Name="imgNext" Grid.Column="2" HorizontalAlignment="Left" Height="125" Margin="0,233,-2,0" VerticalAlignment="Top" Width="47" Source="ms-appx:///Images/Doctor/Right.png" Stretch="None" Tapped="imgNext_Tapped"/>
+            <Frame x:Name="FrmMain0" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Height="668" Width="1274" Navigated="FrmMain_Navigated"/>
+            <Frame x:Name="FrmMain1" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Height="668" Width="1274" Navigated="FrmMain_Navigated"/>
+            <Frame x:Name="FrmMain2" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Height="668" Width="1274" Navigated="FrmMain_Navigated"/>
+            <Frame x:Name="FrmMain3" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Height="668" Width="1274" Navigated="FrmMain_Navigated"/>
+            <Frame x:Name="FrmMain4" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Height="668" Width="1274" Navigated="FrmMain_Navigated"/>
+            <Frame x:Name="FrmMain5" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Height="668" Width="1274" Navigated="FrmMain_Navigated"/>
+            <Frame x:Name="FrmMain6" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Height="668" Width="1274" Navigated="FrmMain_Navigated"/>
+        </Grid>
+    </Grid>
+</local:BasePage>

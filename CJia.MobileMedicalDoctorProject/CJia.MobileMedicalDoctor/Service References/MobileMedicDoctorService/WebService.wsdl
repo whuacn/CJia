@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryLoaclDataCount">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryLoaclDataCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryLoaclDataCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMyPatientCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoctorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InhosStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMyPatientCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryMyPatientCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDeptPatientCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeptId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InhosStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDeptPatientCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryDeptPatientCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDoctorPatientCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoctorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DPType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDoctorPatientCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryDoctorPatientCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NoPharmAdviceCount">
+        <s:complexType />
+      </s:element>
+      <s:element name="NoPharmAdviceCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NoPharmAdviceCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PharmAdviceCount">
+        <s:complexType />
+      </s:element>
+      <s:element name="PharmAdviceCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PharmAdviceCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMyPatientList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoctorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InhosStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMyPatientListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryMyPatientListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDeptPatientsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeptId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InhosStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDeptPatientsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryDeptPatientsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDutyResentPatientList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoctorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DPTypes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDutyResentPatientListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryDutyResentPatientListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryResentPatientList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoctorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DPTypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryResentPatientListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryResentPatientListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryResentPatientCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DPType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryResentPatientCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryResentPatientCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDoctorPatients">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoctorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DPType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDoctorPatientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertDoctorPatientsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAdviceCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StandingFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAdviceCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAdviceCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAdvice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAdviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAdviceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryEmrDocHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryEmrDocHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryEmrDocHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryPatientEmrDocDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SectionNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryPatientEmrDocDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryPatientEmrDocDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCheckApply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCheckApplyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCheckApplyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCheckResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCheckResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCheckResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCodeListByGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCodeListByGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCodeListByGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryLisResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IllcaseNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryLisResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryLisResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryUsage">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryUsageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryUsageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryFrequence">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryFrequenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryFrequenceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAdviceByLike">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdviceFilter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StandingType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAdviceByLikeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAdviceByLikeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCheckLogDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InhosID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCheckLogDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCheckLogDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryLoaclDataCountSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryLoaclDataCount" />
+  </wsdl:message>
+  <wsdl:message name="QueryLoaclDataCountSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryLoaclDataCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMyPatientCountSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMyPatientCount" />
+  </wsdl:message>
+  <wsdl:message name="QueryMyPatientCountSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMyPatientCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryDeptPatientCountSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryDeptPatientCount" />
+  </wsdl:message>
+  <wsdl:message name="QueryDeptPatientCountSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryDeptPatientCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoctorPatientCountSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryDoctorPatientCount" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoctorPatientCountSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryDoctorPatientCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="NoPharmAdviceCountSoapIn">
+    <wsdl:part name="parameters" element="tns:NoPharmAdviceCount" />
+  </wsdl:message>
+  <wsdl:message name="NoPharmAdviceCountSoapOut">
+    <wsdl:part name="parameters" element="tns:NoPharmAdviceCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PharmAdviceCountSoapIn">
+    <wsdl:part name="parameters" element="tns:PharmAdviceCount" />
+  </wsdl:message>
+  <wsdl:message name="PharmAdviceCountSoapOut">
+    <wsdl:part name="parameters" element="tns:PharmAdviceCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMyPatientListSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMyPatientList" />
+  </wsdl:message>
+  <wsdl:message name="QueryMyPatientListSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMyPatientListResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryDeptPatientsListSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryDeptPatientsList" />
+  </wsdl:message>
+  <wsdl:message name="QueryDeptPatientsListSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryDeptPatientsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryDutyResentPatientListSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryDutyResentPatientList" />
+  </wsdl:message>
+  <wsdl:message name="QueryDutyResentPatientListSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryDutyResentPatientListResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryResentPatientListSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryResentPatientList" />
+  </wsdl:message>
+  <wsdl:message name="QueryResentPatientListSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryResentPatientListResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryResentPatientCountSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryResentPatientCount" />
+  </wsdl:message>
+  <wsdl:message name="QueryResentPatientCountSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryResentPatientCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDoctorPatientsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDoctorPatients" />
+  </wsdl:message>
+  <wsdl:message name="InsertDoctorPatientsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDoctorPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAdviceCountSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAdviceCount" />
+  </wsdl:message>
+  <wsdl:message name="QueryAdviceCountSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAdviceCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAdviceSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAdvice" />
+  </wsdl:message>
+  <wsdl:message name="QueryAdviceSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAdviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryEmrDocHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryEmrDocHeader" />
+  </wsdl:message>
+  <wsdl:message name="QueryEmrDocHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryEmrDocHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryPatientEmrDocDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryPatientEmrDocDetail" />
+  </wsdl:message>
+  <wsdl:message name="QueryPatientEmrDocDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryPatientEmrDocDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCheckApplySoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCheckApply" />
+  </wsdl:message>
+  <wsdl:message name="QueryCheckApplySoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCheckApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCheckResultSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryCheckResultSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCheckResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCodeListByGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCodeListByGroup" />
+  </wsdl:message>
+  <wsdl:message name="QueryCodeListByGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCodeListByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryLisResultSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryLisResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryLisResultSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryLisResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryUsageSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryUsage" />
+  </wsdl:message>
+  <wsdl:message name="QueryUsageSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryFrequenceSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryFrequence" />
+  </wsdl:message>
+  <wsdl:message name="QueryFrequenceSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryFrequenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAdviceByLikeSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAdviceByLike" />
+  </wsdl:message>
+  <wsdl:message name="QueryAdviceByLikeSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAdviceByLikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCheckLogDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCheckLogDetail" />
+  </wsdl:message>
+  <wsdl:message name="QueryCheckLogDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCheckLogDetailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登录</wsdl:documentation>
+      <wsdl:input message="tns:GetUserSoapIn" />
+      <wsdl:output message="tns:GetUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryLoaclDataCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询病人个数</wsdl:documentation>
+      <wsdl:input message="tns:QueryLoaclDataCountSoapIn" />
+      <wsdl:output message="tns:QueryLoaclDataCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMyPatientCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询某医生下(正住院/出院)的病人个数</wsdl:documentation>
+      <wsdl:input message="tns:QueryMyPatientCountSoapIn" />
+      <wsdl:output message="tns:QueryMyPatientCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDeptPatientCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询某科室下(正住院，出院)的病人个数</wsdl:documentation>
+      <wsdl:input message="tns:QueryDeptPatientCountSoapIn" />
+      <wsdl:output message="tns:QueryDeptPatientCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoctorPatientCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询某医生下(值班。近期)病人个数</wsdl:documentation>
+      <wsdl:input message="tns:QueryDoctorPatientCountSoapIn" />
+      <wsdl:output message="tns:QueryDoctorPatientCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NoPharmAdviceCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询医嘱类型不是中药、草药、中成药的医嘱的个数</wsdl:documentation>
+      <wsdl:input message="tns:NoPharmAdviceCountSoapIn" />
+      <wsdl:output message="tns:NoPharmAdviceCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PharmAdviceCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询医嘱类型是中药、草药、中成药的医嘱的个数</wsdl:documentation>
+      <wsdl:input message="tns:PharmAdviceCountSoapIn" />
+      <wsdl:output message="tns:PharmAdviceCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMyPatientList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取医生正在住院/出院的病人列表（在DoctorPatients表中）</wsdl:documentation>
+      <wsdl:input message="tns:QueryMyPatientListSoapIn" />
+      <wsdl:output message="tns:QueryMyPatientListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDeptPatientsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询科室病人</wsdl:documentation>
+      <wsdl:input message="tns:QueryDeptPatientsListSoapIn" />
+      <wsdl:output message="tns:QueryDeptPatientsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDutyResentPatientList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询某医生下值班/近期病人信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryDutyResentPatientListSoapIn" />
+      <wsdl:output message="tns:QueryDutyResentPatientListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryResentPatientList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询医生近期病人信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryResentPatientListSoapIn" />
+      <wsdl:output message="tns:QueryResentPatientListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryResentPatientCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询近期病人个数</wsdl:documentation>
+      <wsdl:input message="tns:QueryResentPatientCountSoapIn" />
+      <wsdl:output message="tns:QueryResentPatientCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDoctorPatients">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入一条近期病人/值班病人数据</wsdl:documentation>
+      <wsdl:input message="tns:InsertDoctorPatientsSoapIn" />
+      <wsdl:output message="tns:InsertDoctorPatientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdviceCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询病人医嘱类型下的医嘱个数</wsdl:documentation>
+      <wsdl:input message="tns:QueryAdviceCountSoapIn" />
+      <wsdl:output message="tns:QueryAdviceCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdvice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询病人信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryAdviceSoapIn" />
+      <wsdl:output message="tns:QueryAdviceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryEmrDocHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询病历文书标题</wsdl:documentation>
+      <wsdl:input message="tns:QueryEmrDocHeaderSoapIn" />
+      <wsdl:output message="tns:QueryEmrDocHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryPatientEmrDocDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询病历文书详细信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryPatientEmrDocDetailSoapIn" />
+      <wsdl:output message="tns:QueryPatientEmrDocDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckApply">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询检查申请</wsdl:documentation>
+      <wsdl:input message="tns:QueryCheckApplySoapIn" />
+      <wsdl:output message="tns:QueryCheckApplySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询检查结果</wsdl:documentation>
+      <wsdl:input message="tns:QueryCheckResultSoapIn" />
+      <wsdl:output message="tns:QueryCheckResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCodeListByGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询代码信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryCodeListByGroupSoapIn" />
+      <wsdl:output message="tns:QueryCodeListByGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryLisResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询病人LIS结果</wsdl:documentation>
+      <wsdl:input message="tns:QueryLisResultSoapIn" />
+      <wsdl:output message="tns:QueryLisResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryUsage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询用法</wsdl:documentation>
+      <wsdl:input message="tns:QueryUsageSoapIn" />
+      <wsdl:output message="tns:QueryUsageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryFrequence">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询频率</wsdl:documentation>
+      <wsdl:input message="tns:QueryFrequenceSoapIn" />
+      <wsdl:output message="tns:QueryFrequenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdviceByLike">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询医嘱</wsdl:documentation>
+      <wsdl:input message="tns:QueryAdviceByLikeSoapIn" />
+      <wsdl:output message="tns:QueryAdviceByLikeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckLogDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询查房日志</wsdl:documentation>
+      <wsdl:input message="tns:QueryCheckLogDetailSoapIn" />
+      <wsdl:output message="tns:QueryCheckLogDetailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryLoaclDataCount">
+      <soap:operation soapAction="http://tempuri.org/QueryLoaclDataCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMyPatientCount">
+      <soap:operation soapAction="http://tempuri.org/QueryMyPatientCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDeptPatientCount">
+      <soap:operation soapAction="http://tempuri.org/QueryDeptPatientCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoctorPatientCount">
+      <soap:operation soapAction="http://tempuri.org/QueryDoctorPatientCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoPharmAdviceCount">
+      <soap:operation soapAction="http://tempuri.org/NoPharmAdviceCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PharmAdviceCount">
+      <soap:operation soapAction="http://tempuri.org/PharmAdviceCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMyPatientList">
+      <soap:operation soapAction="http://tempuri.org/QueryMyPatientList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDeptPatientsList">
+      <soap:operation soapAction="http://tempuri.org/QueryDeptPatientsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDutyResentPatientList">
+      <soap:operation soapAction="http://tempuri.org/QueryDutyResentPatientList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryResentPatientList">
+      <soap:operation soapAction="http://tempuri.org/QueryResentPatientList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryResentPatientCount">
+      <soap:operation soapAction="http://tempuri.org/QueryResentPatientCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDoctorPatients">
+      <soap:operation soapAction="http://tempuri.org/InsertDoctorPatients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdviceCount">
+      <soap:operation soapAction="http://tempuri.org/QueryAdviceCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdvice">
+      <soap:operation soapAction="http://tempuri.org/QueryAdvice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEmrDocHeader">
+      <soap:operation soapAction="http://tempuri.org/QueryEmrDocHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryPatientEmrDocDetail">
+      <soap:operation soapAction="http://tempuri.org/QueryPatientEmrDocDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckApply">
+      <soap:operation soapAction="http://tempuri.org/QueryCheckApply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckResult">
+      <soap:operation soapAction="http://tempuri.org/QueryCheckResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCodeListByGroup">
+      <soap:operation soapAction="http://tempuri.org/QueryCodeListByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryLisResult">
+      <soap:operation soapAction="http://tempuri.org/QueryLisResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryUsage">
+      <soap:operation soapAction="http://tempuri.org/QueryUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFrequence">
+      <soap:operation soapAction="http://tempuri.org/QueryFrequence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdviceByLike">
+      <soap:operation soapAction="http://tempuri.org/QueryAdviceByLike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckLogDetail">
+      <soap:operation soapAction="http://tempuri.org/QueryCheckLogDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap12:operation soapAction="http://tempuri.org/GetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryLoaclDataCount">
+      <soap12:operation soapAction="http://tempuri.org/QueryLoaclDataCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMyPatientCount">
+      <soap12:operation soapAction="http://tempuri.org/QueryMyPatientCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDeptPatientCount">
+      <soap12:operation soapAction="http://tempuri.org/QueryDeptPatientCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoctorPatientCount">
+      <soap12:operation soapAction="http://tempuri.org/QueryDoctorPatientCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoPharmAdviceCount">
+      <soap12:operation soapAction="http://tempuri.org/NoPharmAdviceCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PharmAdviceCount">
+      <soap12:operation soapAction="http://tempuri.org/PharmAdviceCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMyPatientList">
+      <soap12:operation soapAction="http://tempuri.org/QueryMyPatientList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDeptPatientsList">
+      <soap12:operation soapAction="http://tempuri.org/QueryDeptPatientsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDutyResentPatientList">
+      <soap12:operation soapAction="http://tempuri.org/QueryDutyResentPatientList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryResentPatientList">
+      <soap12:operation soapAction="http://tempuri.org/QueryResentPatientList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryResentPatientCount">
+      <soap12:operation soapAction="http://tempuri.org/QueryResentPatientCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDoctorPatients">
+      <soap12:operation soapAction="http://tempuri.org/InsertDoctorPatients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdviceCount">
+      <soap12:operation soapAction="http://tempuri.org/QueryAdviceCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdvice">
+      <soap12:operation soapAction="http://tempuri.org/QueryAdvice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEmrDocHeader">
+      <soap12:operation soapAction="http://tempuri.org/QueryEmrDocHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryPatientEmrDocDetail">
+      <soap12:operation soapAction="http://tempuri.org/QueryPatientEmrDocDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckApply">
+      <soap12:operation soapAction="http://tempuri.org/QueryCheckApply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckResult">
+      <soap12:operation soapAction="http://tempuri.org/QueryCheckResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCodeListByGroup">
+      <soap12:operation soapAction="http://tempuri.org/QueryCodeListByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryLisResult">
+      <soap12:operation soapAction="http://tempuri.org/QueryLisResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryUsage">
+      <soap12:operation soapAction="http://tempuri.org/QueryUsage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFrequence">
+      <soap12:operation soapAction="http://tempuri.org/QueryFrequence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdviceByLike">
+      <soap12:operation soapAction="http://tempuri.org/QueryAdviceByLike" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCheckLogDetail">
+      <soap12:operation soapAction="http://tempuri.org/QueryCheckLogDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://192.168.1.12:81/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://192.168.1.12:81/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

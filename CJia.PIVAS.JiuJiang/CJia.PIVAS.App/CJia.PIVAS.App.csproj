@@ -1,0 +1,1075 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98D05593-C83B-4E6D-B0F0-B413FA9438AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.PIVAS.App</RootNamespace>
+    <AssemblyName>CJia.PIVAS.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ds.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7730B2C01BFE8EA0DC8AA6E7429A7CD1AB912B32</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CJia.PIVAS.App_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Controls">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Editors">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Net">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Data.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Printing.v12.1.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Utils.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1.UI, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Utils.v12.1.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraBars.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraEditors.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraGrid.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraLayout.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraPrinting.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraReports.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraTreeList.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraVerticalGrid.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.SpeechLib">
+      <HintPath>..\..\..\百度云同步盘\临时\Interop.SpeechLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelperTools\LogHelper.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperTools\GridViewLocationcs.cs" />
+    <Compile Include="UI\AddPharmView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AddPharmView.Designer.cs">
+      <DependentUpon>AddPharmView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\AddDeptUsageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\AddDeptUsageView.Designer.cs">
+      <DependentUpon>AddDeptUsageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\AddUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\AddUserView.designer.cs">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\EditAreaaUsageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\EditAreaaUsageView.Designer.cs">
+      <DependentUpon>EditAreaaUsageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\EditUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\EditUserView.designer.cs">
+      <DependentUpon>EditUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\UserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\UserView.designer.cs">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\NewAddUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\NewAddUserView.designer.cs">
+      <DependentUpon>NewAddUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ErrorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ErrorView.Designer.cs">
+      <DependentUpon>ErrorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExceptionLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExceptionLabel.Designer.cs">
+      <DependentUpon>ExceptionLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginScanningView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\LoginScanningView.Designer.cs">
+      <DependentUpon>LoginScanningView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OneScanningMonitoringView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\OneScanningMonitoringView.Designer.cs">
+      <DependentUpon>OneScanningMonitoringView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmFilterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmFilterView.Designer.cs">
+      <DependentUpon>PharmFilterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\LabelAgainPrintView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\LabelAgainPrintView.Designer.cs">
+      <DependentUpon>LabelAgainPrintView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\MessageBoxView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\MessageBoxView.Designer.cs">
+      <DependentUpon>MessageBoxView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\QueryPrintLabellView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\QueryPrintLabellView.Designer.cs">
+      <DependentUpon>QueryPrintLabellView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\NewPharmCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\NewPharmCollectReport.Designer.cs">
+      <DependentUpon>NewPharmCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\FilterPatientView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\FilterPatientView.Designer.cs">
+      <DependentUpon>FilterPatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\FilterPharmView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\FilterPharmView.Designer.cs">
+      <DependentUpon>FilterPharmView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\NewFilterPatientView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\NewFilterPatientView.Designer.cs">
+      <DependentUpon>NewFilterPatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\LabelDetailReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\LabelDetailReport.designer.cs">
+      <DependentUpon>LabelDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\SmallPrintLabelReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\SmallPrintLabelReport.designer.cs">
+      <DependentUpon>SmallPrintLabelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\FilterIllfieldView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\FilterIllfieldView.Designer.cs">
+      <DependentUpon>FilterIllfieldView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\FilterBatchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\FilterBatchView.Designer.cs">
+      <DependentUpon>FilterBatchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewCancelApplyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewCancelApplyView.Designer.cs">
+      <DependentUpon>NewCancelApplyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewCancelRCPView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewCancelRCPView.Designer.cs">
+      <DependentUpon>NewCancelRCPView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewSendPharmCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\NewSendPharmCollectReport.Designer.cs">
+      <DependentUpon>NewSendPharmCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmEconomizeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmEconomizeView.Designer.cs">
+      <DependentUpon>PharmEconomizeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendReport.designer.cs">
+      <DependentUpon>PharmSendReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ScanningMonitoringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ScanningMonitoringForm.Designer.cs">
+      <DependentUpon>ScanningMonitoringForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ScanningMonitoringView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ScanningMonitoringView.Designer.cs">
+      <DependentUpon>ScanningMonitoringView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SendPharmMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SendPharmMessage.Designer.cs">
+      <DependentUpon>SendPharmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StorageReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\StorageReport.designer.cs">
+      <DependentUpon>StorageReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\FilterLabelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\FilterLabelView.Designer.cs">
+      <DependentUpon>FilterLabelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\GenLabelResultView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\GenLabelResultView.Designer.cs">
+      <DependentUpon>GenLabelResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\LabelReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\LabelReport.designer.cs">
+      <DependentUpon>LabelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\LabelScanning.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\LabelScanning.Designer.cs">
+      <DependentUpon>LabelScanning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\PrintLabelReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\PrintLabelReport.designer.cs">
+      <DependentUpon>PrintLabelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendForm.Designer.cs">
+      <DependentUpon>PharmSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\CancelApplyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CancelApplyView.Designer.cs">
+      <DependentUpon>CancelApplyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancelRCPView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CancelRCPView.Designer.cs">
+      <DependentUpon>CancelRCPView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CheckAdviceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CheckAdviceView.Designer.cs">
+      <DependentUpon>CheckAdviceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\AddFrequenceToBeachView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\AddFrequenceToBeachView.Designer.cs">
+      <DependentUpon>AddFrequenceToBeachView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\BatchToRedDrugView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\BatchToRedDrugView.Designer.cs">
+      <DependentUpon>BatchToRedDrugView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\DeptUsageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\DeptUsageView.Designer.cs">
+      <DependentUpon>DeptUsageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\EditBatchToRedDrugView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\EditBatchToRedDrugView.Designer.cs">
+      <DependentUpon>EditBatchToRedDrugView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\EditFrequencyToBatchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\EditFrequencyToBatchView.Designer.cs">
+      <DependentUpon>EditFrequencyToBatchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\EditTimeSetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\EditTimeSetView.Designer.cs">
+      <DependentUpon>EditTimeSetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\FrequencyToBatchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\FrequencyToBatchView.Designer.cs">
+      <DependentUpon>FrequencyToBatchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\RedDrugView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\RedDrugView.Designer.cs">
+      <DependentUpon>RedDrugView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataManage\UpdateBatchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DataManage\UpdateBatchView.Designer.cs">
+      <DependentUpon>UpdateBatchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\GenLabelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\GenLabelView.Designer.cs">
+      <DependentUpon>GenLabelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\LabelCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\LabelCollectReport.designer.cs">
+      <DependentUpon>LabelCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\PharmCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\PharmCollectReport.Designer.cs">
+      <DependentUpon>PharmCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\PrintLabelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\PrintLabelView.Designer.cs">
+      <DependentUpon>PrintLabelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Label\ProgressView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\QueryLabelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Label\QueryLabelView.Designer.cs">
+      <DependentUpon>QueryLabelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\LoginView.designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PatientHistoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PatientHistoryView.Designer.cs">
+      <DependentUpon>PatientHistoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PatientView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PatientView.Designer.cs">
+      <DependentUpon>PatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendDetailView.Designer.cs">
+      <DependentUpon>PharmSendDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendSelectView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendSelectView.Designer.cs">
+      <DependentUpon>PharmSendSelectView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendStatReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendStatReport.designer.cs">
+      <DependentUpon>PharmSendStatReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendStatSelectView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendStatSelectView.Designer.cs">
+      <DependentUpon>PharmSendStatSelectView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendView.Designer.cs">
+      <DependentUpon>PharmSendView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmStoreMessageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmStoreMessageView.designer.cs">
+      <DependentUpon>PharmStoreMessageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RCPReportView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\RCPReportView.Designer.cs">
+      <DependentUpon>RCPReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RefuseDosageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RefuseDosageView.Designer.cs">
+      <DependentUpon>RefuseDosageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendDetailReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendDetailReport.designer.cs">
+      <DependentUpon>PharmSendDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmSendCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PharmSendCollectReport.designer.cs">
+      <DependentUpon>PharmSendCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SendPharm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SendPharm.Designer.cs">
+      <DependentUpon>SendPharm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StorageQueryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\StorageQueryView.designer.cs">
+      <DependentUpon>StorageQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SendPharmSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SendPharmSelect.Designer.cs">
+      <DependentUpon>SendPharmSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SendPharmCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SendPharmCollectReport.designer.cs">
+      <DependentUpon>SendPharmCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SendPharmDetailReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SendPharmDetailReport.designer.cs">
+      <DependentUpon>SendPharmDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancelLabelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CancelLabelView.Designer.cs">
+      <DependentUpon>CancelLabelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancelPharmReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\CancelPharmReport.designer.cs">
+      <DependentUpon>CancelPharmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PWJJInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PWJJInfoView.designer.cs">
+      <DependentUpon>PWJJInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancelPharmDetailReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\CancelPharmDetailReport.designer.cs">
+      <DependentUpon>CancelPharmDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StorageLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\StorageLabel.Designer.cs">
+      <DependentUpon>StorageLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PharmEconomizeReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PharmEconomizeReport.designer.cs">
+      <DependentUpon>PharmEconomizeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BatchSendPharmCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BatchSendPharmCollectReport.designer.cs">
+      <DependentUpon>BatchSendPharmCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BatchIllfieldLabelCollectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BatchIllfieldLabelCollectReport.designer.cs">
+      <DependentUpon>BatchIllfieldLabelCollectReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddPharmView.resx">
+      <DependentUpon>AddPharmView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\AddDeptUsageView.resx">
+      <DependentUpon>AddDeptUsageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\AddUserView.resx">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\EditAreaaUsageView.resx">
+      <DependentUpon>EditAreaaUsageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\EditUserView.resx">
+      <DependentUpon>EditUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\UserView.resx">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\NewAddUserView.resx">
+      <DependentUpon>NewAddUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ErrorView.resx">
+      <DependentUpon>ErrorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExceptionLabel.resx">
+      <DependentUpon>ExceptionLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginScanningView.resx">
+      <DependentUpon>LoginScanningView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OneScanningMonitoringView.resx">
+      <DependentUpon>OneScanningMonitoringView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmFilterView.resx">
+      <DependentUpon>PharmFilterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\FilterPatientView.resx">
+      <DependentUpon>FilterPatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\LabelAgainPrintView.resx">
+      <DependentUpon>LabelAgainPrintView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\MessageBoxView.resx">
+      <DependentUpon>MessageBoxView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\QueryPrintLabellView.resx">
+      <DependentUpon>QueryPrintLabellView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\NewPharmCollectReport.resx">
+      <DependentUpon>NewPharmCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\FilterPharmView.resx">
+      <DependentUpon>FilterPharmView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\NewFilterPatientView.resx">
+      <DependentUpon>NewFilterPatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\LabelDetailReport.resx">
+      <DependentUpon>LabelDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\SmallPrintLabelReport.resx">
+      <DependentUpon>SmallPrintLabelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\FilterIllfieldView.resx">
+      <DependentUpon>FilterIllfieldView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\FilterBatchView.resx">
+      <DependentUpon>FilterBatchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewCancelApplyView.resx">
+      <DependentUpon>NewCancelApplyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewCancelRCPView.resx">
+      <DependentUpon>NewCancelRCPView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewSendPharmCollectReport.resx">
+      <DependentUpon>NewSendPharmCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmEconomizeView.resx">
+      <DependentUpon>PharmEconomizeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendReport.resx">
+      <DependentUpon>PharmSendReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScanningMonitoringForm.resx">
+      <DependentUpon>ScanningMonitoringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScanningMonitoringView.resx">
+      <DependentUpon>ScanningMonitoringView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SendPharmMessage.resx">
+      <DependentUpon>SendPharmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StorageReport.resx">
+      <DependentUpon>StorageReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\FilterLabelView.resx">
+      <DependentUpon>FilterLabelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\GenLabelResultView.resx">
+      <DependentUpon>GenLabelResultView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\LabelCollectReport.resx">
+      <DependentUpon>LabelCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\LabelReport.resx">
+      <DependentUpon>LabelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\LabelScanning.resx">
+      <DependentUpon>LabelScanning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\PrintLabelReport.resx">
+      <DependentUpon>PrintLabelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendForm.resx">
+      <DependentUpon>PharmSendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\CancelApplyView.resx">
+      <DependentUpon>CancelApplyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CancelRCPView.resx">
+      <DependentUpon>CancelRCPView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CheckAdviceView.resx">
+      <DependentUpon>CheckAdviceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\AddFrequenceToBeachView.resx">
+      <DependentUpon>AddFrequenceToBeachView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\BatchToRedDrugView.resx">
+      <DependentUpon>BatchToRedDrugView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\DeptUsageView.resx">
+      <DependentUpon>DeptUsageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\EditBatchToRedDrugView.resx">
+      <DependentUpon>EditBatchToRedDrugView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\EditFrequencyToBatchView.resx">
+      <DependentUpon>EditFrequencyToBatchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\EditTimeSetView.resx">
+      <DependentUpon>EditTimeSetView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\FrequencyToBatchView.resx">
+      <DependentUpon>FrequencyToBatchView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\RedDrugView.resx">
+      <DependentUpon>RedDrugView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataManage\UpdateBatchView.resx">
+      <DependentUpon>UpdateBatchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\GenLabelView.resx">
+      <DependentUpon>GenLabelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\PharmCollectReport.resx">
+      <DependentUpon>PharmCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\PrintLabelView.resx">
+      <DependentUpon>PrintLabelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\ProgressView.resx">
+      <DependentUpon>ProgressView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\QueryLabelView.resx">
+      <DependentUpon>QueryLabelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PatientHistoryView.resx">
+      <DependentUpon>PatientHistoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PatientView.resx">
+      <DependentUpon>PatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendDetailView.resx">
+      <DependentUpon>PharmSendDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendSelectView.resx">
+      <DependentUpon>PharmSendSelectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendStatReport.resx">
+      <DependentUpon>PharmSendStatReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendStatSelectView.resx">
+      <DependentUpon>PharmSendStatSelectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendView.resx">
+      <DependentUpon>PharmSendView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmStoreMessageView.resx">
+      <DependentUpon>PharmStoreMessageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RCPReportView.resx">
+      <DependentUpon>RCPReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RefuseDosageView.resx">
+      <DependentUpon>RefuseDosageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendDetailReport.resx">
+      <DependentUpon>PharmSendDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmSendCollectReport.resx">
+      <DependentUpon>PharmSendCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SendPharm.resx">
+      <DependentUpon>SendPharm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StorageQueryView.resx">
+      <DependentUpon>StorageQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SendPharmSelect.resx">
+      <DependentUpon>SendPharmSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SendPharmCollectReport.resx">
+      <DependentUpon>SendPharmCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SendPharmDetailReport.resx">
+      <DependentUpon>SendPharmDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CancelLabelView.resx">
+      <DependentUpon>CancelLabelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CancelPharmReport.resx">
+      <DependentUpon>CancelPharmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PWJJInfoView.resx">
+      <DependentUpon>PWJJInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CancelPharmDetailReport.resx">
+      <DependentUpon>CancelPharmDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StorageLabel.resx">
+      <DependentUpon>StorageLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmEconomizeReport.resx">
+      <DependentUpon>PharmEconomizeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BatchSendPharmCollectReport.resx">
+      <DependentUpon>BatchSendPharmCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BatchIllfieldLabelCollectReport.resx">
+      <DependentUpon>BatchIllfieldLabelCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CJia.PIVAS.App_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112_RightArrowLong_Blue_32x32_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112_RightArrowLong_Green_32x32_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112_Plus_Orange_32x32_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\000098_编辑.png" />
+    <None Include="Resources\000999_编辑.png" />
+    <None Include="Resources\000001.png" />
+    <None Include="Resources\00002.png" />
+    <None Include="Resources\00003.png" />
+    <None Include="Resources\00004.png" />
+    <None Include="Resources\00005.png" />
+    <None Include="Resources\00006.png" />
+    <None Include="Resources\00007.png" />
+    <None Include="Resources\00008.png" />
+    <None Include="Resources\00009.png" />
+    <None Include="Resources\00010.png" />
+    <Content Include="ds.ico" />
+    <Content Include="Resources\112_RefreshArrow_Green_16x16_72.png" />
+    <Content Include="Resources\112_RefreshArrow_Green_24x24_72.png" />
+    <None Include="Resources\112_RightArrowLong_Orange_32x32_72.png" />
+    <None Include="Resources\1344586_224721097755_2_副本.png" />
+    <None Include="Resources\1344586_224721097755_2_副本7_编辑.png" />
+    <Content Include="Resources\305_Close_16x16_72.png" />
+    <Content Include="Resources\arrow_refresh.png" />
+    <Content Include="Resources\delete.bmp" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\DeleteFolder.bmp" />
+    <Content Include="Resources\EditInformation.bmp" />
+    <Content Include="Resources\Information.bmp" />
+    <Content Include="Resources\OK.bmp" />
+    <Content Include="Resources\Overlay_Share_16.png" />
+    <Content Include="Resources\Overlay_Share_256_副本.png" />
+    <Content Include="Resources\Overlay_Share_256_副本1.png" />
+    <Content Include="Resources\Overlay_Share_32.png" />
+    <Content Include="Resources\PageWidth.bmp" />
+    <Content Include="Resources\page_add.png" />
+    <Content Include="Resources\page_white_magnify.png" />
+    <Content Include="Resources\page_white_stack.png" />
+    <Content Include="Resources\page_white_text.png" />
+    <Content Include="Resources\SaveAllHS.png" />
+    <Content Include="Resources\tick.png" />
+    <Content Include="Resources\VSObject_Operator_Protected.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CJia.PIVAS\CJia.PIVAS.csproj">
+      <Project>{2d494556-7db6-46c7-a20d-c419ea1c1246}</Project>
+      <Name>CJia.PIVAS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

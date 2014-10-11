@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.JKDA.App", "CJia.JKDA.App\CJia.JKDA.App.csproj", "{F4EAF9FE-D256-45EE-A3EC-82C5178D6462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.JKDA", "CJia.JKDA\CJia.JKDA.csproj", "{885CEDBC-E8BC-4001-8041-2149634D69BD}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.207:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.JKDA.App\\CJia.JKDA.App.csproj
+		SccProjectName1 = CJia.JKDA.App
+		SccLocalPath1 = CJia.JKDA.App
+		SccProjectUniqueName2 = CJia.JKDA\\CJia.JKDA.csproj
+		SccProjectName2 = CJia.JKDA
+		SccLocalPath2 = CJia.JKDA
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4EAF9FE-D256-45EE-A3EC-82C5178D6462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EAF9FE-D256-45EE-A3EC-82C5178D6462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EAF9FE-D256-45EE-A3EC-82C5178D6462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EAF9FE-D256-45EE-A3EC-82C5178D6462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{885CEDBC-E8BC-4001-8041-2149634D69BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885CEDBC-E8BC-4001-8041-2149634D69BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885CEDBC-E8BC-4001-8041-2149634D69BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885CEDBC-E8BC-4001-8041-2149634D69BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

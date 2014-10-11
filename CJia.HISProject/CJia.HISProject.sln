@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HIS", "CJia.HIS\CJia.HIS.csproj", "{52187650-E43E-4B61-9C6C-4D7F3EEA2CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HIS.App", "CJia.HIS.App\CJia.HIS.App.csproj", "{FA552684-5351-4DAB-BA26-031E638866BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HIS.Clinic", "CJia.HIS.Clinic\CJia.HIS.Clinic.csproj", "{E1E3AD25-372C-440B-834D-888A356822E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HIS.Clinic.Charge", "CJia.HIS.Clinic.Charge\CJia.HIS.Clinic.Charge.csproj", "{8D6E7D22-DB7F-434C-99B4-D5FFB260600E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HIS.Clinic.Doctor", "CJia.HIS.Clinic.Doctor\CJia.HIS.Clinic.Doctor.csproj", "{3073EC26-136A-4847-8F52-DE9F4FB3D0DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HIS.Clinic.Pharm", "CJia.HIS.Clinic.Pharm\CJia.HIS.Clinic.Pharm.csproj", "{AC30E5B5-3013-45E1-BAA3-355B10E49C24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HIS.Clinic.Register", "CJia.HIS.Clinic.Register\CJia.HIS.Clinic.Register.csproj", "{ED8D456E-354B-438B-A049-ECFF084B36F0}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.204:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.HIS.App\\CJia.HIS.App.csproj
+		SccProjectName1 = CJia.HIS.App
+		SccLocalPath1 = CJia.HIS.App
+		SccProjectUniqueName2 = CJia.HIS.Clinic.Charge\\CJia.HIS.Clinic.Charge.csproj
+		SccProjectName2 = CJia.HIS.Clinic.Charge
+		SccLocalPath2 = CJia.HIS.Clinic.Charge
+		SccProjectUniqueName3 = CJia.HIS.Clinic.Doctor\\CJia.HIS.Clinic.Doctor.csproj
+		SccProjectName3 = CJia.HIS.Clinic.Doctor
+		SccLocalPath3 = CJia.HIS.Clinic.Doctor
+		SccProjectUniqueName4 = CJia.HIS.Clinic.Pharm\\CJia.HIS.Clinic.Pharm.csproj
+		SccProjectName4 = CJia.HIS.Clinic.Pharm
+		SccLocalPath4 = CJia.HIS.Clinic.Pharm
+		SccProjectUniqueName5 = CJia.HIS.Clinic.Register\\CJia.HIS.Clinic.Register.csproj
+		SccProjectName5 = CJia.HIS.Clinic.Register
+		SccLocalPath5 = CJia.HIS.Clinic.Register
+		SccProjectUniqueName6 = CJia.HIS.Clinic\\CJia.HIS.Clinic.csproj
+		SccProjectName6 = CJia.HIS.Clinic
+		SccLocalPath6 = CJia.HIS.Clinic
+		SccProjectUniqueName7 = CJia.HIS\\CJia.HIS.csproj
+		SccProjectName7 = CJia.HIS
+		SccLocalPath7 = CJia.HIS
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52187650-E43E-4B61-9C6C-4D7F3EEA2CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52187650-E43E-4B61-9C6C-4D7F3EEA2CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52187650-E43E-4B61-9C6C-4D7F3EEA2CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52187650-E43E-4B61-9C6C-4D7F3EEA2CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA552684-5351-4DAB-BA26-031E638866BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA552684-5351-4DAB-BA26-031E638866BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA552684-5351-4DAB-BA26-031E638866BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA552684-5351-4DAB-BA26-031E638866BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1E3AD25-372C-440B-834D-888A356822E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E3AD25-372C-440B-834D-888A356822E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E3AD25-372C-440B-834D-888A356822E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E3AD25-372C-440B-834D-888A356822E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D6E7D22-DB7F-434C-99B4-D5FFB260600E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D6E7D22-DB7F-434C-99B4-D5FFB260600E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D6E7D22-DB7F-434C-99B4-D5FFB260600E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D6E7D22-DB7F-434C-99B4-D5FFB260600E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3073EC26-136A-4847-8F52-DE9F4FB3D0DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3073EC26-136A-4847-8F52-DE9F4FB3D0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3073EC26-136A-4847-8F52-DE9F4FB3D0DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3073EC26-136A-4847-8F52-DE9F4FB3D0DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC30E5B5-3013-45E1-BAA3-355B10E49C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC30E5B5-3013-45E1-BAA3-355B10E49C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC30E5B5-3013-45E1-BAA3-355B10E49C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC30E5B5-3013-45E1-BAA3-355B10E49C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8D456E-354B-438B-A049-ECFF084B36F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8D456E-354B-438B-A049-ECFF084B36F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8D456E-354B-438B-A049-ECFF084B36F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8D456E-354B-438B-A049-ECFF084B36F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

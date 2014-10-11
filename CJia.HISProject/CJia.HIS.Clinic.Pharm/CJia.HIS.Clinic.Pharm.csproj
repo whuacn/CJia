@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC30E5B5-3013-45E1-BAA3-355B10E49C24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.HIS.Clinic.Pharm</RootNamespace>
+    <AssemblyName>CJia.HIS.Clinic.Pharm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJia">
+      <HintPath>..\..\CJia.Framework\CJia\bin\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Editors">
+      <HintPath>..\..\CJia.Framework\CJia.Editors\bin\Debug\CJia.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Net">
+      <HintPath>..\..\CJia.Framework\CJia.Net\bin\Debug\CJia.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Models\MatchPharmModel.cs" />
+    <Compile Include="Models\PatientDispensingModel.cs" />
+    <Compile Include="Models\PrintRxModel.cs" />
+    <Compile Include="Presenters\MatchPharmPresenter.cs" />
+    <Compile Include="Presenters\PatientDispensingPresenter.cs" />
+    <Compile Include="Presenters\PrintRxPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\MatchPharmView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MatchPharmView.Designer.cs">
+      <DependentUpon>MatchPharmView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PatientDispensingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PatientDispensingView.Designer.cs">
+      <DependentUpon>PatientDispensingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrintRxView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PrintRxView.Designer.cs">
+      <DependentUpon>PrintRxView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IMatchPharmView.cs" />
+    <Compile Include="Views\IPatientDispensingView.cs" />
+    <Compile Include="Views\IPrintRxView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CJia.HIS.Clinic\CJia.HIS.Clinic.csproj">
+      <Project>{e1e3ad25-372c-440b-834d-888a356822e9}</Project>
+      <Name>CJia.HIS.Clinic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CJia.HIS\CJia.HIS.csproj">
+      <Project>{52187650-e43e-4b61-9c6c-4d7f3eea2cfe}</Project>
+      <Name>CJia.HIS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="UI\PatientDispensingView.resx">
+      <DependentUpon>PatientDispensingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PrintRxView.resx">
+      <DependentUpon>PrintRxView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

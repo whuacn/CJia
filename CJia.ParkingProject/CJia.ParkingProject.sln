@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.Parking", "CJia.Parking\CJia.Parking.csproj", "{D817AE05-445E-4860-8B58-4EFFDA8ECA20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.Parking.App", "CJia.Parking.App\CJia.Parking.App.csproj", "{87A61CC2-8137-40DD-878A-A9FC9B881726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.Navigate.App", "CJia.Navigate.App\CJia.Navigate.App.csproj", "{DECB4467-61A4-4C9A-BFE4-2368EB26520F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D817AE05-445E-4860-8B58-4EFFDA8ECA20} = {D817AE05-445E-4860-8B58-4EFFDA8ECA20}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.207:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.Parking\\CJia.Parking.csproj
+		SccProjectName1 = CJia.Parking
+		SccLocalPath1 = CJia.Parking
+		SccProjectUniqueName2 = CJia.Parking.App\\CJia.Parking.App.csproj
+		SccProjectName2 = CJia.Parking.App
+		SccLocalPath2 = CJia.Parking.App
+		SccProjectUniqueName3 = CJia.Navigate.App\\CJia.Navigate.App.csproj
+		SccProjectName3 = CJia.Navigate.App
+		SccLocalPath3 = CJia.Navigate.App
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D817AE05-445E-4860-8B58-4EFFDA8ECA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D817AE05-445E-4860-8B58-4EFFDA8ECA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D817AE05-445E-4860-8B58-4EFFDA8ECA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D817AE05-445E-4860-8B58-4EFFDA8ECA20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A61CC2-8137-40DD-878A-A9FC9B881726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A61CC2-8137-40DD-878A-A9FC9B881726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A61CC2-8137-40DD-878A-A9FC9B881726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A61CC2-8137-40DD-878A-A9FC9B881726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECB4467-61A4-4C9A-BFE4-2368EB26520F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECB4467-61A4-4C9A-BFE4-2368EB26520F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECB4467-61A4-4C9A-BFE4-2368EB26520F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECB4467-61A4-4C9A-BFE4-2368EB26520F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

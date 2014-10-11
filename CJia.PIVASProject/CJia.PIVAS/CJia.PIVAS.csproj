@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D494556-7DB6-46C7-A20D-C419EA1C1246}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.PIVAS</RootNamespace>
+    <AssemblyName>CJia.PIVAS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\CJia.Bin\PIVAS\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\CJia.Bin\PIVAS\Debug\CJia.PIVAS.XML</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Editors">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Data.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Printing.v12.1.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Utils.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraEditors.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4217.28504, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\PIVAS\Debug\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Models\CancelApplyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CancelRCPModel.cs" />
+    <Compile Include="Models\CheckAdviceModel.cs" />
+    <Compile Include="Models\DataManage\AddDeptUsageModel.cs" />
+    <Compile Include="Models\DataManage\AddFrequencyToBatchModel.cs" />
+    <Compile Include="Models\DataManage\AddUserModel.cs" />
+    <Compile Include="Models\DataManage\BatchToRedDrugModel.cs" />
+    <Compile Include="Models\DataManage\DeptUsageModel.cs" />
+    <Compile Include="Models\DataManage\EditBatchToRedDrugModel.cs" />
+    <Compile Include="Models\DataManage\EditFrequencyToBatchModel.cs" />
+    <Compile Include="Models\DataManage\EditTimeSetModel.cs" />
+    <Compile Include="Models\DataManage\EditUserModel.cs" />
+    <Compile Include="Models\DataManage\FrequencyToBatchModel.cs" />
+    <Compile Include="Models\DataManage\RedDrugModel.cs" />
+    <Compile Include="Models\DataManage\SqlTools.cs" />
+    <Compile Include="Models\DataManage\UserModel.cs" />
+    <Compile Include="Models\Label\FilterLabelModel.cs" />
+    <Compile Include="Models\Label\GenLabelModel.cs" />
+    <Compile Include="Models\Label\LabelScenningModel.cs" />
+    <Compile Include="Models\Label\QueryLabelModel.cs" />
+    <Compile Include="Models\Label\SqlTools.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\PharmSendModel.cs" />
+    <Compile Include="Models\PharmSendSelectModel.cs" />
+    <Compile Include="Models\PharmSendStatSelectModel.cs" />
+    <Compile Include="Models\PharmStoreMessageModel.cs" />
+    <Compile Include="Models\PIVASModel.cs" />
+    <Compile Include="Models\SqlTools.cs" />
+    <Compile Include="Presenters\CancelApplyPresenter.cs" />
+    <Compile Include="Presenters\CancelRCPPresenter.cs" />
+    <Compile Include="Presenters\CheckAdvicePresenter.cs" />
+    <Compile Include="Presenters\DataManage\AddDeptUsagePresenter.cs" />
+    <Compile Include="Presenters\DataManage\AddFrequencyToBatchPresenter.cs" />
+    <Compile Include="Presenters\DataManage\AddUserPresenter.cs" />
+    <Compile Include="Presenters\DataManage\BatchToRedDrugPresenter.cs" />
+    <Compile Include="Presenters\DataManage\DeptUsagePresenter.cs" />
+    <Compile Include="Presenters\DataManage\EditBatchToRedDrugPresenter.cs" />
+    <Compile Include="Presenters\DataManage\EditFrequencyToBatchPresenter.cs" />
+    <Compile Include="Presenters\DataManage\EditTimeSetPresenter.cs" />
+    <Compile Include="Presenters\DataManage\EditUserPresenter.cs" />
+    <Compile Include="Presenters\DataManage\FrequencyToBatchPresenter.cs" />
+    <Compile Include="Presenters\DataManage\RedDrugViewPresenter.cs" />
+    <Compile Include="Presenters\DataManage\UserPresenter.cs" />
+    <Compile Include="Presenters\Label\FilterLabelPresenter.cs" />
+    <Compile Include="Presenters\Label\GenLabelPresenter.cs" />
+    <Compile Include="Presenters\Label\LabelScenningPresenter.cs" />
+    <Compile Include="Presenters\Label\QueryLabelPresenter.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\PharmSendPresenter.cs" />
+    <Compile Include="Presenters\PharmSendSelectPresenter.cs" />
+    <Compile Include="Presenters\PharmSendStatSelectPresenter.cs" />
+    <Compile Include="Presenters\PharmStoreMessagePresenter.cs" />
+    <Compile Include="Tools\BarCode.cs" />
+    <Compile Include="Tools\ConfigHelper.cs" />
+    <Compile Include="Tools\Delegate.cs" />
+    <Compile Include="Tools\Helper.cs" />
+    <Compile Include="Tools\IView.cs" />
+    <Compile Include="Tools\LabelFilter.cs" />
+    <Compile Include="Tools\Message.cs" />
+    <Compile Include="Tools\Model.cs" />
+    <Compile Include="Tools\Presenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\QRCode.cs" />
+    <Compile Include="Tools\View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="Views\DataManage\IAddDeptUsageView.cs" />
+    <Compile Include="Views\DataManage\IAddFrequencyToBatchView.cs" />
+    <Compile Include="Views\DataManage\IAddUserView.cs" />
+    <Compile Include="Views\DataManage\IBatchToRedDrugView.cs" />
+    <Compile Include="Views\DataManage\IDeptUsageView.cs" />
+    <Compile Include="Views\DataManage\IEditBatchToRedDrugView.cs" />
+    <Compile Include="Views\DataManage\IEditFrequencyToBatchView.cs" />
+    <Compile Include="Views\DataManage\IEditTimeSetView.cs" />
+    <Compile Include="Views\DataManage\IEditUserView.cs" />
+    <Compile Include="Views\DataManage\IFrequencyToBatchView.cs" />
+    <Compile Include="Views\DataManage\IRedDrugView.cs" />
+    <Compile Include="Views\DataManage\IRedDrugViewView.cs" />
+    <Compile Include="Views\DataManage\IUserView.cs" />
+    <Compile Include="Views\ICancelApplyView.cs" />
+    <Compile Include="Views\ICancelRCPView.cs" />
+    <Compile Include="Views\ICheckAdviceView.cs" />
+    <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\IPharmSendSelectView.cs" />
+    <Compile Include="Views\IPharmSendStatSelectView.cs" />
+    <Compile Include="Views\IPharmSendView.cs" />
+    <Compile Include="Views\IPharmStoreMessageView.cs" />
+    <Compile Include="Views\Label\IFilterLabelView.cs" />
+    <Compile Include="Views\Label\IGenLabelView.cs" />
+    <Compile Include="Views\Label\IQueryLabelView.cs" />
+    <Compile Include="Views\Label\ILabelScanningView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\CJia.PIVAS.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CJia.PIVAS.dll" />
+    <Content Include="obj\Debug\CJia.PIVAS.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

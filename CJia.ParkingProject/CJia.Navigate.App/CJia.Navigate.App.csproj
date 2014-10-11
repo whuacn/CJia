@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DECB4467-61A4-4C9A-BFE4-2368EB26520F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.Navigate.App</RootNamespace>
+    <AssemblyName>CJia.Navigate.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Controls">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Parking">
+      <HintPath>..\CJia.Parking\bin\Debug\CJia.Parking.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PicShow">
+      <HintPath>..\..\..\Test\PicShow\PicShow\bin\Debug\PicShow.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Edge.cs" />
+    <Compile Include="Common\Graph.cs" />
+    <Compile Include="Common\Node.cs" />
+    <Compile Include="Common\PassedPath.cs" />
+    <Compile Include="Common\PlanCourse.cs" />
+    <Compile Include="Common\RoutePlanner.cs" />
+    <Compile Include="Common\RoutePlanResult.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageForm.Designer.cs">
+      <DependentUpon>ManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CarPhotosView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CarPhotosView.Designer.cs">
+      <DependentUpon>CarPhotosView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FastQueryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FastQueryView.Designer.cs">
+      <DependentUpon>FastQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PicShowView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PicShowView.Designer.cs">
+      <DependentUpon>PicShowView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PointToPointView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PointToPointView.Designer.cs">
+      <DependentUpon>PointToPointView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QueryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\QueryView.Designer.cs">
+      <DependentUpon>QueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ParkingQueryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ParkingQueryView.Designer.cs">
+      <DependentUpon>ParkingQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LicenceQueryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\LicenceQueryView.Designer.cs">
+      <DependentUpon>LicenceQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ShowWayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ShowWayView.Designer.cs">
+      <DependentUpon>ShowWayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TimeQueryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TimeQueryView.Designer.cs">
+      <DependentUpon>TimeQueryView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageForm.resx">
+      <DependentUpon>ManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CarPhotosView.resx">
+      <DependentUpon>CarPhotosView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FastQueryView.resx">
+      <DependentUpon>FastQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PicShowView.resx">
+      <DependentUpon>PicShowView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PointToPointView.resx">
+      <DependentUpon>PointToPointView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QueryView.resx">
+      <DependentUpon>QueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ParkingQueryView.resx">
+      <DependentUpon>ParkingQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LicenceQueryView.resx">
+      <DependentUpon>LicenceQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ShowWayView.resx">
+      <DependentUpon>ShowWayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TimeQueryView.resx">
+      <DependentUpon>TimeQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\停车场2.jpg" />
+    <Content Include="Images\电梯.jpg" />
+    <Content Include="Images\终点.png" />
+    <Content Include="Images\起点.png" />
+    <Content Include="Images\车位.jpg" />
+    <None Include="Resources\b.png" />
+    <None Include="Resources\a.png" />
+    <None Include="Resources\首页2.png" />
+    <None Include="Resources\首页.png" />
+    <None Include="Resources\head.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\B2-B1.jpg" />
+    <None Include="Resources\B1-B2.jpg" />
+    <None Include="Resources\停车场2.jpg" />
+    <None Include="Resources\起点.png" />
+    <None Include="Resources\终点.png" />
+    <None Include="Resources\车位.jpg" />
+    <None Include="Resources\电梯.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

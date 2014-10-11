@@ -1,0 +1,116 @@
+﻿<local:BasePage
+    x:Class="CJia.MobileMedicalDoctor.App.Doctor.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CJia.MobileMedicalDoctor.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <local:BasePage.Resources>
+        <CollectionViewSource x:Name="cvsGroupData" IsSourceGrouped="true" />
+    </local:BasePage.Resources>
+    <local:BasePage.Background>
+        <ImageBrush/>
+    </local:BasePage.Background>
+
+    <local:BasePage.BottomAppBar>
+        <AppBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--<StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnDataSync" AutomationProperties.Name="数据同步" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnDataSync_Click_1"></Button>
+                </StackPanel>-->
+
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
+                    <Button x:Name="btnLogin" AutomationProperties.Name="系统注销" Style="{StaticResource ViewAllAppBarButtonStyle}"  Click="btnLogin_Click" Grid.Row="1"/>
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </local:BasePage.BottomAppBar>
+
+    <Grid  Height="768" VerticalAlignment="Bottom">
+        <Grid.Background>
+            <!--<ImageBrush ImageSource="ms-appx:/Images/Main_BG.jpg"/> #FF215F01-->
+            <SolidColorBrush Color="#014051"> </SolidColorBrush>
+        </Grid.Background>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="172"></RowDefinition>
+            <RowDefinition/>
+        </Grid.RowDefinitions>-->
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="119,80,0,0" TextWrapping="Wrap" Text="XX医院移动查房系统" VerticalAlignment="Top" FontSize="32" FontWeight="Light" LineHeight="40" FontFamily="Microsoft YaHei" Width="479" Foreground="White" Height="42" />
+
+        <Button x:Name="btnExit" AutomationProperties.Name="" Style="{StaticResource NoAppBarButtonStyle}" HorizontalAlignment="Left" Margin="14,19,0,0" VerticalAlignment="Top" Height="76" Width="79" FontSize="16" Click="btnExit_Click" Visibility="Collapsed"/>
+
+        <TextBlock x:Name="labDoctorName" HorizontalAlignment="Left" Margin="1054,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="151" TextAlignment="Right" FontFamily="Microsoft YaHei" FontSize="26" Foreground="White"/>
+        <TextBlock x:Name="labOfficeName" HorizontalAlignment="Left" Margin="986,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="219" TextAlignment="Right" FontFamily="Microsoft YaHei" FontSize="22" Foreground="White"/>
+        <Image x:Name="imgDoctor" Grid.Row="0" Source="ms-appx:///Images/Doctor.jpg" HorizontalAlignment="Left" Height="77" Margin="1234,65,0,0" VerticalAlignment="Top" Width="77"/>
+        <GridView x:Name="gridMain" ItemsSource="{Binding Source={StaticResource cvsGroupData}}" ScrollViewer.IsHorizontalScrollChainingEnabled="False" Margin="10,0,0,86" Padding="116,0,40,46" Grid.Row="1" Height="490" VerticalAlignment="Bottom" Tapped="gridMain_Tapped">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="{Binding BgImage}"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" ></RowDefinition>
+                            <RowDefinition Height="52" ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="106"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--<Image Grid.Row="0" Grid.Column="0" Margin="5" Source="{Binding Image}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="48"/>-->
+                        <StackPanel Width="200" Height="100" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <!--<TextBlock Text="{Binding Description1}" Foreground="White" FontSize="15" Margin="5"></TextBlock>-->
+                            <TextBlock Text="{Binding Description2}" Foreground="White" FontSize="15" Margin="5"></TextBlock>
+                            <TextBlock Text="{Binding Description3}" Foreground="White" FontSize="15" Margin="5"></TextBlock>
+                            <TextBlock Text="{Binding Description4}" Foreground="White" FontSize="15" Margin="5"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Text="{Binding Title}" Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="22" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Description1}" Foreground="White"  Grid.Row="1" Grid.Column="1" FontSize="15" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid VerticalChildrenAlignment="Center" Height="439" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <!--<GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Margin" Value="4" />
+                    <Setter Property="Padding" Value="1" />
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                </Style>
+            </GridView.ItemContainerStyle>-->
+            <GridView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Key}" Foreground="White" FontSize="22" Margin="5" FontFamily="Microsoft YaHei"></TextBlock>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                    <!--Item在Group中的排列方式-->
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <VariableSizedWrapGrid/>
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                </GroupStyle>
+            </GridView.GroupStyle>
+        </GridView>
+        
+        <Canvas x:Name="cvSync" HorizontalAlignment="Left" Height="58" Margin="23,587,0,-59" Grid.Row="1" VerticalAlignment="Top" Width="1321">
+            <TextBlock x:Name="txtSyncHint" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="10" FontSize="15"/>
+            <ProgressBar x:Name="barSync" HorizontalAlignment="Left" Height="5" Grid.Row="1" VerticalAlignment="Top" Width="1321" Canvas.Top="45" Canvas.Left="2"/>
+        </Canvas>
+
+
+    </Grid>
+</local:BasePage>

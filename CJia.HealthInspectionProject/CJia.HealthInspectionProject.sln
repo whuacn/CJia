@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HealthInspection", "CJia.HealthInspection\CJia.HealthInspection.csproj", "{4CDFEBB3-DE99-4119-8553-6F9D14C01770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HealthInspection.Web", "CJia.HealthInspection.Web\CJia.HealthInspection.Web.csproj", "{284B5935-8E87-4B83-AFA6-AFBCC067D01B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.207:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.HealthInspection\\CJia.HealthInspection.csproj
+		SccProjectName1 = CJia.HealthInspection
+		SccLocalPath1 = CJia.HealthInspection
+		SccProjectUniqueName2 = CJia.HealthInspection.Web\\CJia.HealthInspection.Web.csproj
+		SccProjectName2 = CJia.HealthInspection.Web
+		SccLocalPath2 = CJia.HealthInspection.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CDFEBB3-DE99-4119-8553-6F9D14C01770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDFEBB3-DE99-4119-8553-6F9D14C01770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDFEBB3-DE99-4119-8553-6F9D14C01770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDFEBB3-DE99-4119-8553-6F9D14C01770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284B5935-8E87-4B83-AFA6-AFBCC067D01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284B5935-8E87-4B83-AFA6-AFBCC067D01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284B5935-8E87-4B83-AFA6-AFBCC067D01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284B5935-8E87-4B83-AFA6-AFBCC067D01B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

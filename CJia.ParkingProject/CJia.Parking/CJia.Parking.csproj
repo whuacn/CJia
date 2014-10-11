@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D817AE05-445E-4860-8B58-4EFFDA8ECA20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.Parking</RootNamespace>
+    <AssemblyName>CJia.Parking</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Editors">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Data.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Printing.v12.1.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Utils.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraEditors.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraGrid.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Models\AreaManageModel.cs" />
+    <Compile Include="Models\ChangePwdModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MainFormModel.cs" />
+    <Compile Include="Models\MemberModel.cs" />
+    <Compile Include="Models\MemberSetModel.cs" />
+    <Compile Include="Models\Navigate\CarPhotosModel.cs" />
+    <Compile Include="Models\Navigate\FastQueryModel.cs" />
+    <Compile Include="Models\Navigate\LicenceQueryModel.cs" />
+    <Compile Include="Models\Navigate\ParkingQueryModel.cs" />
+    <Compile Include="Models\Navigate\PicShowModel.cs" />
+    <Compile Include="Models\Navigate\TimeQueryModel.cs" />
+    <Compile Include="Models\PaymentModel.cs" />
+    <Compile Include="Models\PaymentRecordModel.cs" />
+    <Compile Include="Models\SqlTools.cs" />
+    <Compile Include="Models\TemporaryFeeSetModel.cs" />
+    <Compile Include="Models\UserManageModel.cs" />
+    <Compile Include="Presenters\AreaManagePresenter.cs" />
+    <Compile Include="Presenters\ChangePwdPresenter.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\MainFormPresenter.cs" />
+    <Compile Include="Presenters\MemberPresenter.cs" />
+    <Compile Include="Presenters\MemberSetPresenter.cs" />
+    <Compile Include="Presenters\Navigate\CarphotosPresenter.cs" />
+    <Compile Include="Presenters\Navigate\DateTable.cs" />
+    <Compile Include="Presenters\Navigate\FastQueryPresenter.cs" />
+    <Compile Include="Presenters\Navigate\LicenceQueryPresenter.cs" />
+    <Compile Include="Presenters\Navigate\ParkingQueryPresenter.cs" />
+    <Compile Include="Presenters\PaymentPresenter.cs" />
+    <Compile Include="Presenters\PaymentRecordPresenter.cs" />
+    <Compile Include="Presenters\TemporaryFeeSetPresenter.cs" />
+    <Compile Include="Presenters\UserManagePresenter.cs" />
+    <Compile Include="Presenters\Navigate\PicShowPresenter.cs" />
+    <Compile Include="Presenters\Navigate\TimeQueryPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\ConfigHelper.cs" />
+    <Compile Include="Tools\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Help.cs" />
+    <Compile Include="Tools\IView.cs" />
+    <Compile Include="Tools\Message.cs" />
+    <Compile Include="Tools\Model.cs" />
+    <Compile Include="Tools\Presenter.cs" />
+    <Compile Include="Tools\View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="Views\IAreaManageView.cs" />
+    <Compile Include="Views\IChangePwdView.cs" />
+    <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\IMemberSetView.cs" />
+    <Compile Include="Views\IMemberView.cs" />
+    <Compile Include="Views\IPaymentRecordView.cs" />
+    <Compile Include="Views\IPaymentView.cs" />
+    <Compile Include="Views\ITemporaryFeeSetView.cs" />
+    <Compile Include="Views\Navigate\ICarPhotosView.cs" />
+    <Compile Include="Views\IUserManageView.cs" />
+    <Compile Include="Views\Navigate\IFastQueryView.cs" />
+    <Compile Include="Views\Navigate\ILicenceQueryView.cs" />
+    <Compile Include="Views\Navigate\IParkingQueryView.cs" />
+    <Compile Include="Views\IMainFormView.cs" />
+    <Compile Include="Views\Navigate\IPicShowView.cs" />
+    <Compile Include="Views\Navigate\ITimeQueryView.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

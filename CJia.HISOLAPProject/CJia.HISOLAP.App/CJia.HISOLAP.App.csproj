@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{399970C7-6CA1-4B3E-A4B9-89870DC94B4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.HISOLAP.App</RootNamespace>
+    <AssemblyName>CJia.HISOLAP.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJia">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Controls">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Editors">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Net">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="DevExpress.XtraPrinting.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraPrinting.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraReports.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\KeyOperationReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\KeyOperationReport.designer.cs">
+      <DependentUpon>KeyOperationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\OutoReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\OutoReport.designer.cs">
+      <DependentUpon>OutoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\VerticalReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\VerticalReport.designer.cs">
+      <DependentUpon>VerticalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ConfigHelper.cs" />
+    <Compile Include="Tools\DataTableHelper.cs" />
+    <Compile Include="Tools\DBHelper.cs" />
+    <Compile Include="Tools\Help.cs" />
+    <Compile Include="Tools\StringLengthHelper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\StringLengthHelper.Designer.cs">
+      <DependentUpon>StringLengthHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Antibacterials\BQKJYWSYL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Antibacterials\BQKJYWSYQD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Antibacterials\KJYWSYJE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Antibacterials\KJYWSYL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HQMS\CheckReportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HQMS\CheckReportView.Designer.cs">
+      <DependentUpon>CheckReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HQMS\CheckScript.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HQMS\CheckScript.Designer.cs">
+      <DependentUpon>CheckScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HQMS\EditCheckScriptView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HQMS\EditCheckScriptView.Designer.cs">
+      <DependentUpon>EditCheckScriptView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FilterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FilterView.Designer.cs">
+      <DependentUpon>FilterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HLYYQK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HLYYQK.Designer.cs">
+      <DependentUpon>HLYYQK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InfactView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\InfactView.designer.cs">
+      <DependentUpon>InfactView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KeyOperationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\KeyOperationView.Designer.cs">
+      <DependentUpon>KeyOperationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewHLYYQK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewInfactView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewKeyOperationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewOperationBP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewOperationYF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewRunningManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewSingleDiseaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewSSBFZQK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewSurgicalView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewSurguryComplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewYCQK1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewZYZDJBQK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewZZJHQK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SingleDiseaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SingleDiseaseView.Designer.cs">
+      <DependentUpon>SingleDiseaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SurgicalView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SurgicalView.Designer.cs">
+      <DependentUpon>SurgicalView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RunningManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RunningManager.Designer.cs">
+      <DependentUpon>RunningManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OperationBP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\OperationBP.Designer.cs">
+      <DependentUpon>OperationBP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OperationYF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\OperationYF.Designer.cs">
+      <DependentUpon>OperationYF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\YCQK1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\YCQK1.Designer.cs">
+      <DependentUpon>YCQK1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ZYZDJBQK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ZYZDJBQK.Designer.cs">
+      <DependentUpon>ZYZDJBQK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ZZJHQK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ZZJHQK.Designer.cs">
+      <DependentUpon>ZZJHQK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SurguryComplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SurguryComplication.Designer.cs">
+      <DependentUpon>SurguryComplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BZUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BZUserControl.Designer.cs">
+      <DependentUpon>BZUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report\KeyOperationReport.resx">
+      <DependentUpon>KeyOperationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\OutoReport.resx">
+      <DependentUpon>OutoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\VerticalReport.resx">
+      <DependentUpon>VerticalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\StringLengthHelper.resx">
+      <DependentUpon>StringLengthHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FilterView.resx">
+      <DependentUpon>FilterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HLYYQK.resx">
+      <DependentUpon>HLYYQK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HQMS\CheckReportView.resx">
+      <DependentUpon>CheckReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HQMS\CheckScript.resx">
+      <DependentUpon>CheckScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HQMS\EditCheckScriptView.resx">
+      <DependentUpon>EditCheckScriptView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InfactView.resx">
+      <DependentUpon>InfactView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\KeyOperationView.resx">
+      <DependentUpon>KeyOperationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SingleDiseaseView.resx">
+      <DependentUpon>SingleDiseaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SurgicalView.resx">
+      <DependentUpon>SurgicalView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RunningManager.resx">
+      <DependentUpon>RunningManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OperationBP.resx">
+      <DependentUpon>OperationBP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OperationYF.resx">
+      <DependentUpon>OperationYF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\YCQK1.resx">
+      <DependentUpon>YCQK1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ZYZDJBQK.resx">
+      <DependentUpon>ZYZDJBQK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ZZJHQK.resx">
+      <DependentUpon>ZZJHQK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SurguryComplication.resx">
+      <DependentUpon>SurguryComplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BZUserControl.resx">
+      <DependentUpon>BZUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="hqms_tmpl_part1.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="hqms_tmpl_part2.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AcceptCalibration.png" />
+    <Content Include="Resources\AcceptQualityControl.png" />
+    <Content Include="Resources\Archive.png" />
+    <Content Include="Resources\Band-Aid .png" />
+    <Content Include="Resources\BandAid.png" />
+    <Content Include="Resources\Calendar.png" />
+    <Content Include="Resources\Capsule.png" />
+    <Content Include="Resources\DefinedParameters.png" />
+    <Content Include="Resources\Delete.png" />
+    <Content Include="Resources\DoctorFemale.png" />
+    <Content Include="Resources\DoctorMale.png" />
+    <Content Include="Resources\DutyRoster.png" />
+    <Content Include="Resources\Edit.png" />
+    <Content Include="Resources\Export.png" />
+    <Content Include="Resources\FirstAidKit.png" />
+    <Content Include="Resources\History.png" />
+    <Content Include="Resources\Hospital.png" />
+    <Content Include="Resources\KidneyDish.png" />
+    <Content Include="Resources\LastThreeMonths.png" />
+    <Content Include="Resources\New.png" />
+    <Content Include="Resources\PatientData.png" />
+    <Content Include="Resources\PatientFemale.png" />
+    <Content Include="Resources\PatientFile.png" />
+    <Content Include="Resources\PatientMale.png" />
+    <Content Include="Resources\Pills.png" />
+    <Content Include="Resources\Prescription.png" />
+    <Content Include="Resources\PrinterSettings.png" />
+    <Content Include="Resources\Radioactive.png" />
+    <Content Include="Resources\RejectCalibration.png" />
+    <Content Include="Resources\RejectQualityControl.png" />
+    <Content Include="Resources\RerunCalibration.png" />
+    <Content Include="Resources\RerunQualityControl.png" />
+    <Content Include="Resources\RunCalibration.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\Scalpels.png" />
+    <Content Include="Resources\Scissors.png" />
+    <Content Include="Resources\Search.png" />
+    <Content Include="Resources\Select.png" />
+    <Content Include="Resources\Skalpell.png" />
+    <Content Include="Resources\Spray.png" />
+    <Content Include="Resources\Stethoscope %282%29.png" />
+    <Content Include="Resources\Stethoscope.png" />
+    <Content Include="Resources\Syringe %282%29.png" />
+    <Content Include="Resources\Syringe.png" />
+    <Content Include="Resources\Syrup.png" />
+    <Content Include="Resources\Task.png" />
+    <Content Include="Resources\TestTubes.png" />
+    <Content Include="Resources\Thermometer.png" />
+    <Content Include="Resources\Tooth.png" />
+    <Content Include="Resources\UserSetup.png" />
+    <Content Include="Resources\Vial-O.png" />
+    <Content Include="Resources\Vial-Pills.png" />
+    <Content Include="Resources\Vial-X.png" />
+    <Content Include="Resources\XRay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CJia.HISOLAP\CJia.HISOLAP.csproj">
+      <Project>{b2b63a7b-0d55-4f0d-9280-74e2044bfdb5}</Project>
+      <Name>CJia.HISOLAP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

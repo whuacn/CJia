@@ -1,0 +1,74 @@
+﻿<local:BasePage
+    x:Class="CJia.iSmartMedical.Win8.Doctor.LisResultPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CJia.iSmartMedical.Win8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <local:BasePage.Resources>
+        <CollectionViewSource x:Name="cvsLisResult" IsSourceGrouped="true" />
+    </local:BasePage.Resources>
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="项目名称                                        检验结果        单位           参考范围            异常提示           危机值" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="1220" FontFamily="Global User Interface" Foreground="#FFD8AF21"  FontSize="20" Margin="18,9,0,0"></TextBlock>
+        <SemanticZoom x:Name="mmSZoom" Margin="14,37,10,10">
+            <SemanticZoom.ZoomedOutView>
+                <GridView x:Name="gridAdvice" Width="1224">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Group.Key}" Foreground="Orange" FontSize="25" Margin="5"></TextBlock>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid ItemWidth="900" ItemHeight="70" Width="1200" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                    <GridView.ItemContainerStyle>
+                        <Style TargetType="GridViewItem">
+                            <Setter Property="Margin" Value="4" />
+                            <Setter Property="Padding" Value="5" />
+                            <Setter Property="BorderBrush" Value="Gray" />
+                            <Setter Property="BorderThickness" Value="1" />
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                    </GridView.ItemContainerStyle>
+                </GridView>
+            </SemanticZoom.ZoomedOutView>
+            <SemanticZoom.ZoomedInView>
+                <ListView x:Name="listResult" ScrollViewer.HorizontalScrollMode="Disabled" ScrollViewer.IsHorizontalScrollChainingEnabled="False" ItemsSource="{Binding Source={StaticResource cvsLisResult}}" HorizontalAlignment="Left" Height="625" VerticalAlignment="Top" Width="1320" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                                <TextBlock Text="{Binding ItemName}" FontSize="18" Width="308"/>
+                                <TextBlock Text="{Binding TestResult}" TextAlignment="Center" FontSize="18" Width="127"/>
+                                <TextBlock Text="{Binding TestUnit}" TextAlignment="Center" FontSize="18" Width="106"/>
+                                <TextBlock Text="{Binding NormalRange}" TextAlignment="Center" FontSize="18" Width="153"/>
+                                <TextBlock Text="{Binding TestNote}" TextAlignment="Center" FontSize="18" Width="135"/>
+                                <TextBlock Text="{Binding CRISISValue}" TextAlignment="Center" FontSize="18" Width="370"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Key}" Foreground="Orange" FontSize="25" Margin="5"></TextBlock>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                            <!--Item在Group中的排列方式-->
+                            <GroupStyle.Panel>
+                                <ItemsPanelTemplate>
+                                    <VariableSizedWrapGrid/>
+                                </ItemsPanelTemplate>
+                            </GroupStyle.Panel>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                </ListView>
+            </SemanticZoom.ZoomedInView>
+        </SemanticZoom>
+    </Grid>
+</local:BasePage>

@@ -1,0 +1,165 @@
+﻿<local:BasePage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CJia.iSmartMedical.Win8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="CJia.iSmartMedical.Win8.Doctor.PatientsPage"
+    mc:Ignorable="d">
+
+    <local:BasePage.Resources>
+        <CollectionViewSource x:Name="cvsPatient" IsSourceGrouped="true" />
+        <SolidColorBrush x:Name="PatientItemBackground"></SolidColorBrush>
+    </local:BasePage.Resources>
+
+    <Page.BottomAppBar>
+        <AppBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel x:Name="spPatientLeft" Orientation="Horizontal" >
+                    <!--<Button x:Name="btnViewAdvice" AutomationProperties.Name="查看医嘱" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnViewAdvice_Click"></Button>
+                    <Button x:Name="btnViewMedicalRecord" AutomationProperties.Name="查看病历" Style="{StaticResource ViewAllAppBarButtonStyle}"  Click="btnViewMedicalRecord_Click"/>
+                    <Button x:Name="btnCheckLog" AutomationProperties.Name="查房日志" Style="{StaticResource ViewAllAppBarButtonStyle}" Tapped="btnCheckLog_Tapped"/>
+                    <Button x:Name="btnViewReport" AutomationProperties.Name="检查报告" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnViewReport_Click"/>
+                    <Button x:Name="btnViewLisReport" AutomationProperties.Name="化验报告" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnViewLisReport_Click"/>
+                    <Button x:Name="btnViewPhotos" AutomationProperties.Name="诊疗相册" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnViewPhotos_Click"/>
+                    <Button x:Name="btnViewFee" AutomationProperties.Name="查看费用" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnViewFee_Click"/>-->
+                </StackPanel>
+
+                <StackPanel x:Name="spPatientRight" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
+                    <!--<Button x:Name="btnDoctorCheck" AutomationProperties.Name="医生查房" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnDoctorCheck_Click"/>
+                    <Button x:Name="btnNewAdvice" AutomationProperties.Name="新建医嘱" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnNewAdvice_Click"/>-->
+                    <Button x:Name="btnImportPatient" AutomationProperties.Name="导入病人" Style="{StaticResource ViewAllAppBarButtonStyle}" Click="btnImportPatient_Click"></Button>
+                    <Button x:Name="btnLogin" AutomationProperties.Name="系统注销" Style="{StaticResource ViewAllAppBarButtonStyle}"  Click="btnLogin_Click" Grid.Row="1"/>
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <!--Padding 116,137,40,46 -->
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Height="768" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="613*"/>
+        </Grid.RowDefinitions>
+        <!--第一行显示标题 和 医生信息-->
+        <Button x:Name="btnBack" Grid.Row="0"  Style="{StaticResource BackButtonStyle}" HorizontalAlignment="Left" Margin="39,28,0,0" VerticalAlignment="Top" Click="btnBack_Click" Height="54" Width="77"/>
+        <TextBlock x:Name="labDoctorName" Grid.Row="0" HorizontalAlignment="Left" Margin="1115,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="151" TextAlignment="Right" FontFamily="Times New Roman" FontSize="30"/>
+        <TextBlock x:Name="labOfficeName" Grid.Row="0" HorizontalAlignment="Left" Margin="1023,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="243" TextAlignment="Right" FontFamily="Times New Roman" FontSize="20"/>
+        <TextBlock x:Name="labTitle" Grid.Row="0" HorizontalAlignment="Left" Margin="116,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="45" FontWeight="Light" LineHeight="40" FontFamily="YouYuan" Width="479" Height="50" />
+        <Image x:Name="imgDoctor" Grid.Row="0" Source="ms-appx:///Images/Doctor.jpg" HorizontalAlignment="Left" Height="75" Margin="1284,10,0,0" VerticalAlignment="Top" Width="72"/>
+        <!--第二行病人所在病区-->
+        <GridView x:Name="gridIllfields" HorizontalAlignment="Left" Margin="116,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1240" Height="55" Tapped="gridIllfields_Tapped">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Foreground="Chocolate" FontSize="25" Margin="1"></TextBlock>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid ItemWidth="200" ItemHeight="80" MaximumRowsOrColumns="1" VerticalChildrenAlignment="Center" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Margin" Value="1" />
+                    <Setter Property="Padding" Value="1,5,1,1" />
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Top" />
+                </Style>
+            </GridView.ItemContainerStyle>
+        </GridView>
+        <!--第三行病人列表-->
+        <SemanticZoom x:Name="patientSZoom" Grid.Row="2" Margin="0,6,0,90">
+            <SemanticZoom.ZoomedOutView>
+                <GridView x:Name="gridRoom" ScrollViewer.IsHorizontalScrollChainingEnabled="False" Margin="10,10,0,4" Padding="116,0,40,46" Grid.Row="1">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Group.Key}" Foreground="Orange" FontSize="25" Margin="5"></TextBlock>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid ItemWidth="150" ItemHeight="100" MaximumRowsOrColumns="1" VerticalChildrenAlignment="Center" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                    <GridView.ItemContainerStyle>
+                        <Style TargetType="GridViewItem">
+                            <Setter Property="Margin" Value="4" />
+                            <Setter Property="Padding" Value="10" />
+                            <Setter Property="BorderBrush" Value="Gray" />
+                            <Setter Property="BorderThickness" Value="1" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                    </GridView.ItemContainerStyle>
+                </GridView>
+            </SemanticZoom.ZoomedOutView>
+            <SemanticZoom.ZoomedInView>
+                <GridView x:Name="gridPatientList" ItemsSource="{Binding Source={StaticResource cvsPatient}}" HorizontalAlignment="Left" Padding="116,25,40,46" Grid.Row="1" VerticalAlignment="Top" Width="1356" Height="513" Tapped="gridPatientList_Tapped" ScrollViewer.IsHorizontalScrollChainingEnabled="False">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="gdPatientItem" Background="{Binding Source={StaticResource PatientItemBackground}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="90"></ColumnDefinition>
+                                    <ColumnDefinition Width="210"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Margin="10">
+                                    <Image Source="ms-appx:///Images/Patient.png" Height="75" Width="72"/>
+                                    <TextBlock Text="{Binding PatientName}" FontWeight="Bold" FontSize="22" HorizontalAlignment="Center" FontFamily="YouYuan" />
+                                    <TextBlock Text="{Binding BedName}" Padding="5" TextAlignment="Center" FontSize="20" FontFamily="YouYuan"/>
+                                </StackPanel>
+
+                                <Grid Grid.Column="1" Margin="10" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Padding="10,0,0,0" Text="{Binding Gender}"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Age}"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="护理："/>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding GradeName}" />
+                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="膳食："/>
+                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding FoodName}" />
+                                    <TextBlock Grid.Row="3" Grid.Column="0" Text="类别："/>
+                                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding PatientType}" />
+                                    <TextBlock Grid.Row="4" Grid.Column="0" Text="科室："/>
+                                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding OfficeName}" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                    <GridView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Key}" Foreground="Orange" FontSize="25" Margin="5"></TextBlock>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                            <!--Item在Group中的排列方式-->
+                            <GroupStyle.Panel>
+                                <ItemsPanelTemplate>
+                                    <VariableSizedWrapGrid/>
+                                </ItemsPanelTemplate>
+                            </GroupStyle.Panel>
+                        </GroupStyle>
+                    </GridView.GroupStyle>
+                </GridView>
+            </SemanticZoom.ZoomedInView>
+        </SemanticZoom>
+    </Grid>
+</local:BasePage>

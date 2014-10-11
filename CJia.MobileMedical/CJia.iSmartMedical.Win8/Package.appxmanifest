@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="5B1B2105-C654-4B84-94AC-9DB387C088E7" Publisher="CN=HChao" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>CJia.iSmartMedical.Win8</DisplayName>
+    <PublisherDisplayName>HChao</PublisherDisplayName>
+    <Logo>Assets\CJLogo5.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="CJia.iSmartMedical.Win8.App">
+      <VisualElements DisplayName="." Logo="Assets\Logo.png" SmallLogo="Assets\CJLogo4.png" Description="上海创佳移动医疗平台之移动查房" ForegroundText="light" BackgroundColor="#30D9FF">
+        <DefaultTile ShowName="allLogos" WideLogo="Images\HD310X150.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#FF6A00" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    <Capability Name="picturesLibrary" />
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
+  </Capabilities>
+</Package>

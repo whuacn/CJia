@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.PIVAS", "CJia.PIVAS\CJia.PIVAS.csproj", "{2D494556-7DB6-46C7-A20D-C419EA1C1246}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.PIVAS.App", "CJia.PIVAS.App\CJia.PIVAS.App.csproj", "{98D05593-C83B-4E6D-B0F0-B413FA9438AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.PIVAS", "UnitTest.PIVAS\UnitTest.PIVAS.csproj", "{11C62DDE-0E16-4CB6-A0D2-47AC6F4DFA4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InspectVersions.App", "InspectVersions.App\InspectVersions.App.csproj", "{E43C74D7-A666-4E41-8E2C-A97DB1258F00}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://shcjia.xicp.net:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.PIVAS.App\\CJia.PIVAS.App.csproj
+		SccProjectName1 = CJia.PIVAS.App
+		SccLocalPath1 = CJia.PIVAS.App
+		SccProjectUniqueName2 = CJia.PIVAS\\CJia.PIVAS.csproj
+		SccProjectName2 = CJia.PIVAS
+		SccLocalPath2 = CJia.PIVAS
+		SccProjectUniqueName3 = UnitTest.PIVAS\\UnitTest.PIVAS.csproj
+		SccProjectName3 = UnitTest.PIVAS
+		SccLocalPath3 = UnitTest.PIVAS
+		SccProjectUniqueName4 = InspectVersions.App\\InspectVersions.App.csproj
+		SccProjectName4 = InspectVersions.App
+		SccLocalPath4 = InspectVersions.App
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D494556-7DB6-46C7-A20D-C419EA1C1246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D494556-7DB6-46C7-A20D-C419EA1C1246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D494556-7DB6-46C7-A20D-C419EA1C1246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D494556-7DB6-46C7-A20D-C419EA1C1246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D05593-C83B-4E6D-B0F0-B413FA9438AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D05593-C83B-4E6D-B0F0-B413FA9438AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D05593-C83B-4E6D-B0F0-B413FA9438AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D05593-C83B-4E6D-B0F0-B413FA9438AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C62DDE-0E16-4CB6-A0D2-47AC6F4DFA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C62DDE-0E16-4CB6-A0D2-47AC6F4DFA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C62DDE-0E16-4CB6-A0D2-47AC6F4DFA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C62DDE-0E16-4CB6-A0D2-47AC6F4DFA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E43C74D7-A666-4E41-8E2C-A97DB1258F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43C74D7-A666-4E41-8E2C-A97DB1258F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43C74D7-A666-4E41-8E2C-A97DB1258F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43C74D7-A666-4E41-8E2C-A97DB1258F00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

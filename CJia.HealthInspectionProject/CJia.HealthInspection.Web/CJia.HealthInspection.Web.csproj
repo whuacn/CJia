@@ -1,0 +1,2375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{284B5935-8E87-4B83-AFA6-AFBCC067D01B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.HealthInspection.Web</RootNamespace>
+    <AssemblyName>CJia.HealthInspection.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET, Version=3.6.1.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder, Version=2.0.2.1326, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="Coolite.Ext.Web, Version=0.8.1.2802, Culture=neutral, PublicKeyToken=f58c952e9aa5b80a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\Coolite.Ext.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL" />
+    <Reference Include="ExtAspNet, Version=3.1.6.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\ExtAspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.0.3001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckCode.aspx" />
+    <Content Include="Css\base.css" />
+    <Content Include="Css\main.css" />
+    <Content Include="Css\register.css" />
+    <Content Include="Css\uploadify.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Icons\accept.png" />
+    <Content Include="Icons\add.png" />
+    <Content Include="Icons\anchor.png" />
+    <Content Include="Icons\application.png" />
+    <Content Include="Icons\application_add.png" />
+    <Content Include="Icons\application_cascade.png" />
+    <Content Include="Icons\application_delete.png" />
+    <Content Include="Icons\application_double.png" />
+    <Content Include="Icons\application_edit.png" />
+    <Content Include="Icons\application_error.png" />
+    <Content Include="Icons\application_form.png" />
+    <Content Include="Icons\application_form_add.png" />
+    <Content Include="Icons\application_form_delete.png" />
+    <Content Include="Icons\application_form_edit.png" />
+    <Content Include="Icons\application_form_magnify.png" />
+    <Content Include="Icons\application_get.png" />
+    <Content Include="Icons\application_go.png" />
+    <Content Include="Icons\application_home.png" />
+    <Content Include="Icons\application_key.png" />
+    <Content Include="Icons\application_lightning.png" />
+    <Content Include="Icons\application_link.png" />
+    <Content Include="Icons\application_osx.png" />
+    <Content Include="Icons\application_osx_add.png" />
+    <Content Include="Icons\application_osx_cascade.png" />
+    <Content Include="Icons\application_osx_delete.png" />
+    <Content Include="Icons\application_osx_double.png" />
+    <Content Include="Icons\application_osx_error.png" />
+    <Content Include="Icons\application_osx_get.png" />
+    <Content Include="Icons\application_osx_go.png" />
+    <Content Include="Icons\application_osx_home.png" />
+    <Content Include="Icons\application_osx_key.png" />
+    <Content Include="Icons\application_osx_lightning.png" />
+    <Content Include="Icons\application_osx_link.png" />
+    <Content Include="Icons\application_osx_split.png" />
+    <Content Include="Icons\application_osx_start.png" />
+    <Content Include="Icons\application_osx_stop.png" />
+    <Content Include="Icons\application_osx_terminal.png" />
+    <Content Include="Icons\application_put.png" />
+    <Content Include="Icons\application_side_boxes.png" />
+    <Content Include="Icons\application_side_contract.png" />
+    <Content Include="Icons\application_side_expand.png" />
+    <Content Include="Icons\application_side_list.png" />
+    <Content Include="Icons\application_side_tree.png" />
+    <Content Include="Icons\application_split.png" />
+    <Content Include="Icons\application_start.png" />
+    <Content Include="Icons\application_stop.png" />
+    <Content Include="Icons\application_tile_horizontal.png" />
+    <Content Include="Icons\application_tile_vertical.png" />
+    <Content Include="Icons\application_view_columns.png" />
+    <Content Include="Icons\application_view_detail.png" />
+    <Content Include="Icons\application_view_gallery.png" />
+    <Content Include="Icons\application_view_icons.png" />
+    <Content Include="Icons\application_view_list.png" />
+    <Content Include="Icons\application_view_tile.png" />
+    <Content Include="Icons\application_xp.png" />
+    <Content Include="Icons\application_xp_terminal.png" />
+    <Content Include="Icons\arrow_branch.png" />
+    <Content Include="Icons\arrow_divide.png" />
+    <Content Include="Icons\arrow_down.png" />
+    <Content Include="Icons\arrow_ew.png" />
+    <Content Include="Icons\arrow_in.png" />
+    <Content Include="Icons\arrow_inout.png" />
+    <Content Include="Icons\arrow_in_longer.png" />
+    <Content Include="Icons\arrow_join.png" />
+    <Content Include="Icons\arrow_left.png" />
+    <Content Include="Icons\arrow_merge.png" />
+    <Content Include="Icons\arrow_ne.png" />
+    <Content Include="Icons\arrow_ns.png" />
+    <Content Include="Icons\arrow_nsew.png" />
+    <Content Include="Icons\arrow_nw.png" />
+    <Content Include="Icons\arrow_nw_ne_sw_se.png" />
+    <Content Include="Icons\arrow_nw_se.png" />
+    <Content Include="Icons\arrow_out.png" />
+    <Content Include="Icons\arrow_out_longer.png" />
+    <Content Include="Icons\arrow_redo.png" />
+    <Content Include="Icons\arrow_refresh.png" />
+    <Content Include="Icons\arrow_refresh_small.png" />
+    <Content Include="Icons\arrow_right.png" />
+    <Content Include="Icons\arrow_rotate_anticlockwise.png" />
+    <Content Include="Icons\arrow_rotate_clockwise.png" />
+    <Content Include="Icons\arrow_se.png" />
+    <Content Include="Icons\arrow_sw.png" />
+    <Content Include="Icons\arrow_switch.png" />
+    <Content Include="Icons\arrow_switch_bluegreen.png" />
+    <Content Include="Icons\arrow_sw_ne.png" />
+    <Content Include="Icons\arrow_turn_left.png" />
+    <Content Include="Icons\arrow_turn_right.png" />
+    <Content Include="Icons\arrow_undo.png" />
+    <Content Include="Icons\arrow_up.png" />
+    <Content Include="Icons\asterisk_orange.png" />
+    <Content Include="Icons\asterisk_red.png" />
+    <Content Include="Icons\asterisk_yellow.png" />
+    <Content Include="Icons\attach.png" />
+    <Content Include="Icons\award_star_add.png" />
+    <Content Include="Icons\award_star_bronze_1.png" />
+    <Content Include="Icons\award_star_bronze_2.png" />
+    <Content Include="Icons\award_star_bronze_3.png" />
+    <Content Include="Icons\award_star_delete.png" />
+    <Content Include="Icons\award_star_gold_1.png" />
+    <Content Include="Icons\award_star_gold_2.png" />
+    <Content Include="Icons\award_star_gold_3.png" />
+    <Content Include="Icons\award_star_silver_1.png" />
+    <Content Include="Icons\award_star_silver_2.png" />
+    <Content Include="Icons\award_star_silver_3.png" />
+    <Content Include="Icons\basket.png" />
+    <Content Include="Icons\basket_add.png" />
+    <Content Include="Icons\basket_delete.png" />
+    <Content Include="Icons\basket_edit.png" />
+    <Content Include="Icons\basket_error.png" />
+    <Content Include="Icons\basket_go.png" />
+    <Content Include="Icons\basket_put.png" />
+    <Content Include="Icons\basket_remove.png" />
+    <Content Include="Icons\bell.png" />
+    <Content Include="Icons\bell_add.png" />
+    <Content Include="Icons\bell_delete.png" />
+    <Content Include="Icons\bell_error.png" />
+    <Content Include="Icons\bell_go.png" />
+    <Content Include="Icons\bell_link.png" />
+    <Content Include="Icons\bell_silver.png" />
+    <Content Include="Icons\bell_silver_start.png" />
+    <Content Include="Icons\bell_silver_stop.png" />
+    <Content Include="Icons\bell_start.png" />
+    <Content Include="Icons\bell_stop.png" />
+    <Content Include="Icons\bin.png" />
+    <Content Include="Icons\bin_closed.png" />
+    <Content Include="Icons\bin_empty.png" />
+    <Content Include="Icons\blank.png" />
+    <Content Include="Icons\bomb.png" />
+    <Content Include="Icons\book.png" />
+    <Content Include="Icons\bookmark.png" />
+    <Content Include="Icons\bookmark_add.png" />
+    <Content Include="Icons\bookmark_delete.png" />
+    <Content Include="Icons\bookmark_edit.png" />
+    <Content Include="Icons\bookmark_error.png" />
+    <Content Include="Icons\bookmark_go.png" />
+    <Content Include="Icons\book_add.png" />
+    <Content Include="Icons\book_addresses.png" />
+    <Content Include="Icons\book_addresses_add.png" />
+    <Content Include="Icons\book_addresses_delete.png" />
+    <Content Include="Icons\book_addresses_edit.png" />
+    <Content Include="Icons\book_addresses_error.png" />
+    <Content Include="Icons\book_addresses_key.png" />
+    <Content Include="Icons\book_delete.png" />
+    <Content Include="Icons\book_edit.png" />
+    <Content Include="Icons\book_error.png" />
+    <Content Include="Icons\book_go.png" />
+    <Content Include="Icons\book_key.png" />
+    <Content Include="Icons\book_link.png" />
+    <Content Include="Icons\book_magnify.png" />
+    <Content Include="Icons\book_next.png" />
+    <Content Include="Icons\book_open.png" />
+    <Content Include="Icons\book_open_mark.png" />
+    <Content Include="Icons\book_previous.png" />
+    <Content Include="Icons\book_red.png" />
+    <Content Include="Icons\book_tabs.png" />
+    <Content Include="Icons\border_all.png" />
+    <Content Include="Icons\border_bottom.png" />
+    <Content Include="Icons\border_draw.png" />
+    <Content Include="Icons\border_inner.png" />
+    <Content Include="Icons\border_inner_horizontal.png" />
+    <Content Include="Icons\border_inner_vertical.png" />
+    <Content Include="Icons\border_left.png" />
+    <Content Include="Icons\border_none.png" />
+    <Content Include="Icons\border_outer.png" />
+    <Content Include="Icons\border_right.png" />
+    <Content Include="Icons\border_top.png" />
+    <Content Include="Icons\box.png" />
+    <Content Include="Icons\box_error.png" />
+    <Content Include="Icons\box_picture.png" />
+    <Content Include="Icons\box_world.png" />
+    <Content Include="Icons\brick.png" />
+    <Content Include="Icons\bricks.png" />
+    <Content Include="Icons\brick_add.png" />
+    <Content Include="Icons\brick_delete.png" />
+    <Content Include="Icons\brick_edit.png" />
+    <Content Include="Icons\brick_error.png" />
+    <Content Include="Icons\brick_go.png" />
+    <Content Include="Icons\brick_link.png" />
+    <Content Include="Icons\brick_magnify.png" />
+    <Content Include="Icons\briefcase.png" />
+    <Content Include="Icons\bug.png" />
+    <Content Include="Icons\bug_add.png" />
+    <Content Include="Icons\bug_delete.png" />
+    <Content Include="Icons\bug_edit.png" />
+    <Content Include="Icons\bug_error.png" />
+    <Content Include="Icons\bug_fix.png" />
+    <Content Include="Icons\bug_go.png" />
+    <Content Include="Icons\bug_link.png" />
+    <Content Include="Icons\bug_magnify.png" />
+    <Content Include="Icons\build.png" />
+    <Content Include="Icons\building.png" />
+    <Content Include="Icons\building_add.png" />
+    <Content Include="Icons\building_delete.png" />
+    <Content Include="Icons\building_edit.png" />
+    <Content Include="Icons\building_error.png" />
+    <Content Include="Icons\building_go.png" />
+    <Content Include="Icons\building_key.png" />
+    <Content Include="Icons\building_link.png" />
+    <Content Include="Icons\build_cancel.png" />
+    <Content Include="Icons\bullet_add.png" />
+    <Content Include="Icons\bullet_arrow_bottom.png" />
+    <Content Include="Icons\bullet_arrow_down.png" />
+    <Content Include="Icons\bullet_arrow_top.png" />
+    <Content Include="Icons\bullet_arrow_up.png" />
+    <Content Include="Icons\bullet_black.png" />
+    <Content Include="Icons\bullet_blue.png" />
+    <Content Include="Icons\bullet_connect.png" />
+    <Content Include="Icons\bullet_cross.png" />
+    <Content Include="Icons\bullet_database.png" />
+    <Content Include="Icons\bullet_database_yellow.png" />
+    <Content Include="Icons\bullet_delete.png" />
+    <Content Include="Icons\bullet_disk.png" />
+    <Content Include="Icons\bullet_earth.png" />
+    <Content Include="Icons\bullet_edit.png" />
+    <Content Include="Icons\bullet_eject.png" />
+    <Content Include="Icons\bullet_error.png" />
+    <Content Include="Icons\bullet_feed.png" />
+    <Content Include="Icons\bullet_get.png" />
+    <Content Include="Icons\bullet_go.png" />
+    <Content Include="Icons\bullet_green.png" />
+    <Content Include="Icons\bullet_home.png" />
+    <Content Include="Icons\bullet_key.png" />
+    <Content Include="Icons\bullet_left.png" />
+    <Content Include="Icons\bullet_lightning.png" />
+    <Content Include="Icons\bullet_magnify.png" />
+    <Content Include="Icons\bullet_minus.png" />
+    <Content Include="Icons\bullet_orange.png" />
+    <Content Include="Icons\bullet_page_white.png" />
+    <Content Include="Icons\bullet_picture.png" />
+    <Content Include="Icons\bullet_pink.png" />
+    <Content Include="Icons\bullet_plus.png" />
+    <Content Include="Icons\bullet_purple.png" />
+    <Content Include="Icons\bullet_red.png" />
+    <Content Include="Icons\bullet_right.png" />
+    <Content Include="Icons\bullet_shape.png" />
+    <Content Include="Icons\bullet_sparkle.png" />
+    <Content Include="Icons\bullet_star.png" />
+    <Content Include="Icons\bullet_start.png" />
+    <Content Include="Icons\bullet_stop.png" />
+    <Content Include="Icons\bullet_stop_alt.png" />
+    <Content Include="Icons\bullet_tick.png" />
+    <Content Include="Icons\bullet_toggle_minus.png" />
+    <Content Include="Icons\bullet_toggle_plus.png" />
+    <Content Include="Icons\bullet_white.png" />
+    <Content Include="Icons\bullet_wrench.png" />
+    <Content Include="Icons\bullet_wrench_red.png" />
+    <Content Include="Icons\bullet_yellow.png" />
+    <Content Include="Icons\button.png" />
+    <Content Include="Icons\buttons.png" />
+    <Content Include="Icons\cake.png" />
+    <Content Include="Icons\cake_out.png" />
+    <Content Include="Icons\cake_sliced.png" />
+    <Content Include="Icons\calculator.png" />
+    <Content Include="Icons\calculator_add.png" />
+    <Content Include="Icons\calculator_delete.png" />
+    <Content Include="Icons\calculator_edit.png" />
+    <Content Include="Icons\calculator_error.png" />
+    <Content Include="Icons\calculator_link.png" />
+    <Content Include="Icons\calendar.png" />
+    <Content Include="Icons\calendar_add.png" />
+    <Content Include="Icons\calendar_delete.png" />
+    <Content Include="Icons\calendar_edit.png" />
+    <Content Include="Icons\calendar_link.png" />
+    <Content Include="Icons\calendar_select_day.png" />
+    <Content Include="Icons\calendar_select_none.png" />
+    <Content Include="Icons\calendar_select_week.png" />
+    <Content Include="Icons\calendar_star.png" />
+    <Content Include="Icons\calendar_view_day.png" />
+    <Content Include="Icons\calendar_view_month.png" />
+    <Content Include="Icons\calendar_view_week.png" />
+    <Content Include="Icons\camera.png" />
+    <Content Include="Icons\camera_add.png" />
+    <Content Include="Icons\camera_connect.png" />
+    <Content Include="Icons\camera_delete.png" />
+    <Content Include="Icons\camera_edit.png" />
+    <Content Include="Icons\camera_error.png" />
+    <Content Include="Icons\camera_go.png" />
+    <Content Include="Icons\camera_link.png" />
+    <Content Include="Icons\camera_magnify.png" />
+    <Content Include="Icons\camera_picture.png" />
+    <Content Include="Icons\camera_small.png" />
+    <Content Include="Icons\camera_start.png" />
+    <Content Include="Icons\camera_stop.png" />
+    <Content Include="Icons\cancel.png" />
+    <Content Include="Icons\car.png" />
+    <Content Include="Icons\cart.png" />
+    <Content Include="Icons\cart_add.png" />
+    <Content Include="Icons\cart_delete.png" />
+    <Content Include="Icons\cart_edit.png" />
+    <Content Include="Icons\cart_error.png" />
+    <Content Include="Icons\cart_full.png" />
+    <Content Include="Icons\cart_go.png" />
+    <Content Include="Icons\cart_magnify.png" />
+    <Content Include="Icons\cart_put.png" />
+    <Content Include="Icons\cart_remove.png" />
+    <Content Include="Icons\car_add.png" />
+    <Content Include="Icons\car_delete.png" />
+    <Content Include="Icons\car_error.png" />
+    <Content Include="Icons\car_red.png" />
+    <Content Include="Icons\car_start.png" />
+    <Content Include="Icons\car_stop.png" />
+    <Content Include="Icons\cd.png" />
+    <Content Include="Icons\cdr.png" />
+    <Content Include="Icons\cdr_add.png" />
+    <Content Include="Icons\cdr_burn.png" />
+    <Content Include="Icons\cdr_cross.png" />
+    <Content Include="Icons\cdr_delete.png" />
+    <Content Include="Icons\cdr_edit.png" />
+    <Content Include="Icons\cdr_eject.png" />
+    <Content Include="Icons\cdr_error.png" />
+    <Content Include="Icons\cdr_go.png" />
+    <Content Include="Icons\cdr_magnify.png" />
+    <Content Include="Icons\cdr_play.png" />
+    <Content Include="Icons\cdr_start.png" />
+    <Content Include="Icons\cdr_stop.png" />
+    <Content Include="Icons\cdr_stop_alt.png" />
+    <Content Include="Icons\cdr_tick.png" />
+    <Content Include="Icons\cd_add.png" />
+    <Content Include="Icons\cd_burn.png" />
+    <Content Include="Icons\cd_delete.png" />
+    <Content Include="Icons\cd_edit.png" />
+    <Content Include="Icons\cd_eject.png" />
+    <Content Include="Icons\cd_go.png" />
+    <Content Include="Icons\cd_magnify.png" />
+    <Content Include="Icons\cd_play.png" />
+    <Content Include="Icons\cd_stop.png" />
+    <Content Include="Icons\cd_stop_alt.png" />
+    <Content Include="Icons\cd_tick.png" />
+    <Content Include="Icons\chart_bar.png" />
+    <Content Include="Icons\chart_bar_add.png" />
+    <Content Include="Icons\chart_bar_delete.png" />
+    <Content Include="Icons\chart_bar_edit.png" />
+    <Content Include="Icons\chart_bar_error.png" />
+    <Content Include="Icons\chart_bar_link.png" />
+    <Content Include="Icons\chart_curve.png" />
+    <Content Include="Icons\chart_curve_add.png" />
+    <Content Include="Icons\chart_curve_delete.png" />
+    <Content Include="Icons\chart_curve_edit.png" />
+    <Content Include="Icons\chart_curve_error.png" />
+    <Content Include="Icons\chart_curve_go.png" />
+    <Content Include="Icons\chart_curve_link.png" />
+    <Content Include="Icons\chart_line.png" />
+    <Content Include="Icons\chart_line_add.png" />
+    <Content Include="Icons\chart_line_delete.png" />
+    <Content Include="Icons\chart_line_edit.png" />
+    <Content Include="Icons\chart_line_error.png" />
+    <Content Include="Icons\chart_line_link.png" />
+    <Content Include="Icons\chart_organisation.png" />
+    <Content Include="Icons\chart_organisation_add.png" />
+    <Content Include="Icons\chart_organisation_delete.png" />
+    <Content Include="Icons\chart_org_inverted.png" />
+    <Content Include="Icons\chart_pie.png" />
+    <Content Include="Icons\chart_pie_add.png" />
+    <Content Include="Icons\chart_pie_delete.png" />
+    <Content Include="Icons\chart_pie_edit.png" />
+    <Content Include="Icons\chart_pie_error.png" />
+    <Content Include="Icons\chart_pie_lightning.png" />
+    <Content Include="Icons\chart_pie_link.png" />
+    <Content Include="Icons\check_error.png" />
+    <Content Include="Icons\clipboard.png" />
+    <Content Include="Icons\clock.png" />
+    <Content Include="Icons\clock_add.png" />
+    <Content Include="Icons\clock_delete.png" />
+    <Content Include="Icons\clock_edit.png" />
+    <Content Include="Icons\clock_error.png" />
+    <Content Include="Icons\clock_go.png" />
+    <Content Include="Icons\clock_link.png" />
+    <Content Include="Icons\clock_pause.png" />
+    <Content Include="Icons\clock_play.png" />
+    <Content Include="Icons\clock_red.png" />
+    <Content Include="Icons\clock_start.png" />
+    <Content Include="Icons\clock_stop.png" />
+    <Content Include="Icons\clock_stop_2.png" />
+    <Content Include="Icons\cmy.png" />
+    <Content Include="Icons\cog.png" />
+    <Content Include="Icons\cog_add.png" />
+    <Content Include="Icons\cog_delete.png" />
+    <Content Include="Icons\cog_edit.png" />
+    <Content Include="Icons\cog_error.png" />
+    <Content Include="Icons\cog_go.png" />
+    <Content Include="Icons\cog_start.png" />
+    <Content Include="Icons\cog_stop.png" />
+    <Content Include="Icons\coins.png" />
+    <Content Include="Icons\coins_add.png" />
+    <Content Include="Icons\coins_delete.png" />
+    <Content Include="Icons\color.png" />
+    <Content Include="Icons\color_swatch.png" />
+    <Content Include="Icons\color_wheel.png" />
+    <Content Include="Icons\comment.png" />
+    <Content Include="Icons\comments.png" />
+    <Content Include="Icons\comments_add.png" />
+    <Content Include="Icons\comments_delete.png" />
+    <Content Include="Icons\comment_add.png" />
+    <Content Include="Icons\comment_delete.png" />
+    <Content Include="Icons\comment_dull.png" />
+    <Content Include="Icons\comment_edit.png" />
+    <Content Include="Icons\comment_play.png" />
+    <Content Include="Icons\comment_record.png" />
+    <Content Include="Icons\compass.png" />
+    <Content Include="Icons\compress.png" />
+    <Content Include="Icons\computer.png" />
+    <Content Include="Icons\computer_add.png" />
+    <Content Include="Icons\computer_connect.png" />
+    <Content Include="Icons\computer_delete.png" />
+    <Content Include="Icons\computer_edit.png" />
+    <Content Include="Icons\computer_error.png" />
+    <Content Include="Icons\computer_go.png" />
+    <Content Include="Icons\computer_key.png" />
+    <Content Include="Icons\computer_link.png" />
+    <Content Include="Icons\computer_magnify.png" />
+    <Content Include="Icons\computer_off.png" />
+    <Content Include="Icons\computer_start.png" />
+    <Content Include="Icons\computer_stop.png" />
+    <Content Include="Icons\computer_wrench.png" />
+    <Content Include="Icons\connect.png" />
+    <Content Include="Icons\contrast.png" />
+    <Content Include="Icons\contrast_decrease.png" />
+    <Content Include="Icons\contrast_high.png" />
+    <Content Include="Icons\contrast_increase.png" />
+    <Content Include="Icons\contrast_low.png" />
+    <Content Include="Icons\controller.png" />
+    <Content Include="Icons\controller_add.png" />
+    <Content Include="Icons\controller_delete.png" />
+    <Content Include="Icons\controller_error.png" />
+    <Content Include="Icons\control_add.png" />
+    <Content Include="Icons\control_add_blue.png" />
+    <Content Include="Icons\control_blank.png" />
+    <Content Include="Icons\control_blank_blue.png" />
+    <Content Include="Icons\control_eject.png" />
+    <Content Include="Icons\control_eject_blue.png" />
+    <Content Include="Icons\control_end.png" />
+    <Content Include="Icons\control_end_blue.png" />
+    <Content Include="Icons\control_equalizer.png" />
+    <Content Include="Icons\control_equalizer_blue.png" />
+    <Content Include="Icons\control_fastforward.png" />
+    <Content Include="Icons\control_fastforward_blue.png" />
+    <Content Include="Icons\control_pause.png" />
+    <Content Include="Icons\control_pause_blue.png" />
+    <Content Include="Icons\control_play.png" />
+    <Content Include="Icons\control_play_blue.png" />
+    <Content Include="Icons\control_power.png" />
+    <Content Include="Icons\control_power_blue.png" />
+    <Content Include="Icons\control_record.png" />
+    <Content Include="Icons\control_record_blue.png" />
+    <Content Include="Icons\control_remove.png" />
+    <Content Include="Icons\control_remove_blue.png" />
+    <Content Include="Icons\control_repeat.png" />
+    <Content Include="Icons\control_repeat_blue.png" />
+    <Content Include="Icons\control_rewind.png" />
+    <Content Include="Icons\control_rewind_blue.png" />
+    <Content Include="Icons\control_start.png" />
+    <Content Include="Icons\control_start_blue.png" />
+    <Content Include="Icons\control_stop.png" />
+    <Content Include="Icons\control_stop_blue.png" />
+    <Content Include="Icons\creditcards.png" />
+    <Content Include="Icons\cross.png" />
+    <Content Include="Icons\css.png" />
+    <Content Include="Icons\css_add.png" />
+    <Content Include="Icons\css_delete.png" />
+    <Content Include="Icons\css_error.png" />
+    <Content Include="Icons\css_go.png" />
+    <Content Include="Icons\css_valid.png" />
+    <Content Include="Icons\cup.png" />
+    <Content Include="Icons\cup_add.png" />
+    <Content Include="Icons\cup_black.png" />
+    <Content Include="Icons\cup_delete.png" />
+    <Content Include="Icons\cup_edit.png" />
+    <Content Include="Icons\cup_error.png" />
+    <Content Include="Icons\cup_go.png" />
+    <Content Include="Icons\cup_green.png" />
+    <Content Include="Icons\cup_key.png" />
+    <Content Include="Icons\cup_link.png" />
+    <Content Include="Icons\cup_tea.png" />
+    <Content Include="Icons\cursor.png" />
+    <Content Include="Icons\cursor_small.png" />
+    <Content Include="Icons\cut.png" />
+    <Content Include="Icons\cut_red.png" />
+    <Content Include="Icons\database.png" />
+    <Content Include="Icons\database_add.png" />
+    <Content Include="Icons\database_connect.png" />
+    <Content Include="Icons\database_copy.png" />
+    <Content Include="Icons\database_delete.png" />
+    <Content Include="Icons\database_edit.png" />
+    <Content Include="Icons\database_error.png" />
+    <Content Include="Icons\database_gear.png" />
+    <Content Include="Icons\database_go.png" />
+    <Content Include="Icons\database_key.png" />
+    <Content Include="Icons\database_lightning.png" />
+    <Content Include="Icons\database_link.png" />
+    <Content Include="Icons\database_refresh.png" />
+    <Content Include="Icons\database_save.png" />
+    <Content Include="Icons\database_start.png" />
+    <Content Include="Icons\database_stop.png" />
+    <Content Include="Icons\database_table.png" />
+    <Content Include="Icons\database_wrench.png" />
+    <Content Include="Icons\database_yellow.png" />
+    <Content Include="Icons\database_yellow_start.png" />
+    <Content Include="Icons\database_yellow_stop.png" />
+    <Content Include="Icons\date.png" />
+    <Content Include="Icons\date_add.png" />
+    <Content Include="Icons\date_delete.png" />
+    <Content Include="Icons\date_edit.png" />
+    <Content Include="Icons\date_error.png" />
+    <Content Include="Icons\date_go.png" />
+    <Content Include="Icons\date_link.png" />
+    <Content Include="Icons\date_magnify.png" />
+    <Content Include="Icons\date_next.png" />
+    <Content Include="Icons\date_previous.png" />
+    <Content Include="Icons\decline.png" />
+    <Content Include="Icons\delete.png" />
+    <Content Include="Icons\desktop.png" />
+    <Content Include="Icons\device_stylus.png" />
+    <Content Include="Icons\disconnect.png" />
+    <Content Include="Icons\disk.png" />
+    <Content Include="Icons\disk_black.png" />
+    <Content Include="Icons\disk_black_error.png" />
+    <Content Include="Icons\disk_black_magnify.png" />
+    <Content Include="Icons\disk_download.png" />
+    <Content Include="Icons\disk_edit.png" />
+    <Content Include="Icons\disk_error.png" />
+    <Content Include="Icons\disk_magnify.png" />
+    <Content Include="Icons\disk_multiple.png" />
+    <Content Include="Icons\disk_upload.png" />
+    <Content Include="Icons\door.png" />
+    <Content Include="Icons\door_error.png" />
+    <Content Include="Icons\door_in.png" />
+    <Content Include="Icons\door_open.png" />
+    <Content Include="Icons\door_out.png" />
+    <Content Include="Icons\drink.png" />
+    <Content Include="Icons\drink_empty.png" />
+    <Content Include="Icons\drink_red.png" />
+    <Content Include="Icons\drive.png" />
+    <Content Include="Icons\drive_add.png" />
+    <Content Include="Icons\drive_burn.png" />
+    <Content Include="Icons\drive_cd.png" />
+    <Content Include="Icons\drive_cdr.png" />
+    <Content Include="Icons\drive_cd_empty.png" />
+    <Content Include="Icons\drive_delete.png" />
+    <Content Include="Icons\drive_disk.png" />
+    <Content Include="Icons\drive_edit.png" />
+    <Content Include="Icons\drive_error.png" />
+    <Content Include="Icons\drive_go.png" />
+    <Content Include="Icons\drive_key.png" />
+    <Content Include="Icons\drive_link.png" />
+    <Content Include="Icons\drive_magnify.png" />
+    <Content Include="Icons\drive_network.png" />
+    <Content Include="Icons\drive_network_error.png" />
+    <Content Include="Icons\drive_network_stop.png" />
+    <Content Include="Icons\drive_rename.png" />
+    <Content Include="Icons\drive_user.png" />
+    <Content Include="Icons\drive_web.png" />
+    <Content Include="Icons\dvd.png" />
+    <Content Include="Icons\dvd_add.png" />
+    <Content Include="Icons\dvd_delete.png" />
+    <Content Include="Icons\dvd_edit.png" />
+    <Content Include="Icons\dvd_error.png" />
+    <Content Include="Icons\dvd_go.png" />
+    <Content Include="Icons\dvd_key.png" />
+    <Content Include="Icons\dvd_link.png" />
+    <Content Include="Icons\dvd_start.png" />
+    <Content Include="Icons\dvd_stop.png" />
+    <Content Include="Icons\editor.png" />
+    <Content Include="Icons\eject_blue.png" />
+    <Content Include="Icons\eject_green.png" />
+    <Content Include="Icons\email.png" />
+    <Content Include="Icons\email_add.png" />
+    <Content Include="Icons\email_attach.png" />
+    <Content Include="Icons\email_delete.png" />
+    <Content Include="Icons\email_edit.png" />
+    <Content Include="Icons\email_error.png" />
+    <Content Include="Icons\email_go.png" />
+    <Content Include="Icons\email_link.png" />
+    <Content Include="Icons\email_magnify.png" />
+    <Content Include="Icons\email_open.png" />
+    <Content Include="Icons\email_open_image.png" />
+    <Content Include="Icons\email_star.png" />
+    <Content Include="Icons\email_start.png" />
+    <Content Include="Icons\email_stop.png" />
+    <Content Include="Icons\email_transfer.png" />
+    <Content Include="Icons\emoticon_evilgrin.png" />
+    <Content Include="Icons\emoticon_grin.png" />
+    <Content Include="Icons\emoticon_happy.png" />
+    <Content Include="Icons\emoticon_smile.png" />
+    <Content Include="Icons\emoticon_surprised.png" />
+    <Content Include="Icons\emoticon_tongue.png" />
+    <Content Include="Icons\emoticon_unhappy.png" />
+    <Content Include="Icons\emoticon_waii.png" />
+    <Content Include="Icons\emoticon_wink.png" />
+    <Content Include="Icons\erase.png" />
+    <Content Include="Icons\error.png" />
+    <Content Include="Icons\error_add.png" />
+    <Content Include="Icons\error_delete.png" />
+    <Content Include="Icons\error_go.png" />
+    <Content Include="Icons\exclamation.png" />
+    <Content Include="Icons\eye.png" />
+    <Content Include="Icons\eyes.png" />
+    <Content Include="Icons\feed.png" />
+    <Content Include="Icons\feed_add.png" />
+    <Content Include="Icons\feed_delete.png" />
+    <Content Include="Icons\feed_disk.png" />
+    <Content Include="Icons\feed_edit.png" />
+    <Content Include="Icons\feed_error.png" />
+    <Content Include="Icons\feed_go.png" />
+    <Content Include="Icons\feed_key.png" />
+    <Content Include="Icons\feed_link.png" />
+    <Content Include="Icons\feed_magnify.png" />
+    <Content Include="Icons\feed_star.png" />
+    <Content Include="Icons\female.png" />
+    <Content Include="Icons\film.png" />
+    <Content Include="Icons\film_add.png" />
+    <Content Include="Icons\film_delete.png" />
+    <Content Include="Icons\film_edit.png" />
+    <Content Include="Icons\film_eject.png" />
+    <Content Include="Icons\film_error.png" />
+    <Content Include="Icons\film_go.png" />
+    <Content Include="Icons\film_key.png" />
+    <Content Include="Icons\film_link.png" />
+    <Content Include="Icons\film_magnify.png" />
+    <Content Include="Icons\film_save.png" />
+    <Content Include="Icons\film_star.png" />
+    <Content Include="Icons\film_start.png" />
+    <Content Include="Icons\film_stop.png" />
+    <Content Include="Icons\find.png" />
+    <Content Include="Icons\finger_point.png" />
+    <Content Include="Icons\flag_ad.png" />
+    <Content Include="Icons\flag_ae.png" />
+    <Content Include="Icons\flag_af.png" />
+    <Content Include="Icons\flag_ag.png" />
+    <Content Include="Icons\flag_ai.png" />
+    <Content Include="Icons\flag_al.png" />
+    <Content Include="Icons\flag_am.png" />
+    <Content Include="Icons\flag_an.png" />
+    <Content Include="Icons\flag_ao.png" />
+    <Content Include="Icons\flag_ar.png" />
+    <Content Include="Icons\flag_as.png" />
+    <Content Include="Icons\flag_at.png" />
+    <Content Include="Icons\flag_au.png" />
+    <Content Include="Icons\flag_aw.png" />
+    <Content Include="Icons\flag_ax.png" />
+    <Content Include="Icons\flag_az.png" />
+    <Content Include="Icons\flag_ba.png" />
+    <Content Include="Icons\flag_bb.png" />
+    <Content Include="Icons\flag_bd.png" />
+    <Content Include="Icons\flag_be.png" />
+    <Content Include="Icons\flag_bf.png" />
+    <Content Include="Icons\flag_bg.png" />
+    <Content Include="Icons\flag_bh.png" />
+    <Content Include="Icons\flag_bi.png" />
+    <Content Include="Icons\flag_bj.png" />
+    <Content Include="Icons\flag_black.png" />
+    <Content Include="Icons\flag_blue.png" />
+    <Content Include="Icons\flag_bm.png" />
+    <Content Include="Icons\flag_bn.png" />
+    <Content Include="Icons\flag_bo.png" />
+    <Content Include="Icons\flag_br.png" />
+    <Content Include="Icons\flag_bs.png" />
+    <Content Include="Icons\flag_bt.png" />
+    <Content Include="Icons\flag_bv.png" />
+    <Content Include="Icons\flag_bw.png" />
+    <Content Include="Icons\flag_by.png" />
+    <Content Include="Icons\flag_bz.png" />
+    <Content Include="Icons\flag_ca.png" />
+    <Content Include="Icons\flag_catalonia.png" />
+    <Content Include="Icons\flag_cc.png" />
+    <Content Include="Icons\flag_cd.png" />
+    <Content Include="Icons\flag_cf.png" />
+    <Content Include="Icons\flag_cg.png" />
+    <Content Include="Icons\flag_ch.png" />
+    <Content Include="Icons\flag_checked.png" />
+    <Content Include="Icons\flag_ci.png" />
+    <Content Include="Icons\flag_ck.png" />
+    <Content Include="Icons\flag_cl.png" />
+    <Content Include="Icons\flag_cm.png" />
+    <Content Include="Icons\flag_cn.png" />
+    <Content Include="Icons\flag_co.png" />
+    <Content Include="Icons\flag_cr.png" />
+    <Content Include="Icons\flag_cs.png" />
+    <Content Include="Icons\flag_cu.png" />
+    <Content Include="Icons\flag_cv.png" />
+    <Content Include="Icons\flag_cx.png" />
+    <Content Include="Icons\flag_cy.png" />
+    <Content Include="Icons\flag_cz.png" />
+    <Content Include="Icons\flag_de.png" />
+    <Content Include="Icons\flag_dj.png" />
+    <Content Include="Icons\flag_dk.png" />
+    <Content Include="Icons\flag_dm.png" />
+    <Content Include="Icons\flag_do.png" />
+    <Content Include="Icons\flag_dz.png" />
+    <Content Include="Icons\flag_ec.png" />
+    <Content Include="Icons\flag_ee.png" />
+    <Content Include="Icons\flag_eg.png" />
+    <Content Include="Icons\flag_eh.png" />
+    <Content Include="Icons\flag_england.png" />
+    <Content Include="Icons\flag_er.png" />
+    <Content Include="Icons\flag_es.png" />
+    <Content Include="Icons\flag_et.png" />
+    <Content Include="Icons\flag_europeanunion.png" />
+    <Content Include="Icons\flag_fam.png" />
+    <Content Include="Icons\flag_fi.png" />
+    <Content Include="Icons\flag_fj.png" />
+    <Content Include="Icons\flag_fk.png" />
+    <Content Include="Icons\flag_fm.png" />
+    <Content Include="Icons\flag_fo.png" />
+    <Content Include="Icons\flag_fr.png" />
+    <Content Include="Icons\flag_france.png" />
+    <Content Include="Icons\flag_ga.png" />
+    <Content Include="Icons\flag_gb.png" />
+    <Content Include="Icons\flag_gd.png" />
+    <Content Include="Icons\flag_ge.png" />
+    <Content Include="Icons\flag_gf.png" />
+    <Content Include="Icons\flag_gg.png" />
+    <Content Include="Icons\flag_gh.png" />
+    <Content Include="Icons\flag_gi.png" />
+    <Content Include="Icons\flag_gl.png" />
+    <Content Include="Icons\flag_gm.png" />
+    <Content Include="Icons\flag_gn.png" />
+    <Content Include="Icons\flag_gp.png" />
+    <Content Include="Icons\flag_gq.png" />
+    <Content Include="Icons\flag_gr.png" />
+    <Content Include="Icons\flag_green.png" />
+    <Content Include="Icons\flag_grey.png" />
+    <Content Include="Icons\flag_gs.png" />
+    <Content Include="Icons\flag_gt.png" />
+    <Content Include="Icons\flag_gu.png" />
+    <Content Include="Icons\flag_gw.png" />
+    <Content Include="Icons\flag_gy.png" />
+    <Content Include="Icons\flag_hk.png" />
+    <Content Include="Icons\flag_hm.png" />
+    <Content Include="Icons\flag_hn.png" />
+    <Content Include="Icons\flag_hr.png" />
+    <Content Include="Icons\flag_ht.png" />
+    <Content Include="Icons\flag_hu.png" />
+    <Content Include="Icons\flag_id.png" />
+    <Content Include="Icons\flag_ie.png" />
+    <Content Include="Icons\flag_il.png" />
+    <Content Include="Icons\flag_in.png" />
+    <Content Include="Icons\flag_io.png" />
+    <Content Include="Icons\flag_iq.png" />
+    <Content Include="Icons\flag_ir.png" />
+    <Content Include="Icons\flag_is.png" />
+    <Content Include="Icons\flag_it.png" />
+    <Content Include="Icons\flag_jm.png" />
+    <Content Include="Icons\flag_jo.png" />
+    <Content Include="Icons\flag_jp.png" />
+    <Content Include="Icons\flag_ke.png" />
+    <Content Include="Icons\flag_kg.png" />
+    <Content Include="Icons\flag_kh.png" />
+    <Content Include="Icons\flag_ki.png" />
+    <Content Include="Icons\flag_km.png" />
+    <Content Include="Icons\flag_kn.png" />
+    <Content Include="Icons\flag_kp.png" />
+    <Content Include="Icons\flag_kr.png" />
+    <Content Include="Icons\flag_kw.png" />
+    <Content Include="Icons\flag_ky.png" />
+    <Content Include="Icons\flag_kz.png" />
+    <Content Include="Icons\flag_la.png" />
+    <Content Include="Icons\flag_lb.png" />
+    <Content Include="Icons\flag_lc.png" />
+    <Content Include="Icons\flag_li.png" />
+    <Content Include="Icons\flag_lk.png" />
+    <Content Include="Icons\flag_lr.png" />
+    <Content Include="Icons\flag_ls.png" />
+    <Content Include="Icons\flag_lt.png" />
+    <Content Include="Icons\flag_lu.png" />
+    <Content Include="Icons\flag_lv.png" />
+    <Content Include="Icons\flag_ly.png" />
+    <Content Include="Icons\flag_ma.png" />
+    <Content Include="Icons\flag_mc.png" />
+    <Content Include="Icons\flag_md.png" />
+    <Content Include="Icons\flag_me.png" />
+    <Content Include="Icons\flag_mg.png" />
+    <Content Include="Icons\flag_mh.png" />
+    <Content Include="Icons\flag_mk.png" />
+    <Content Include="Icons\flag_ml.png" />
+    <Content Include="Icons\flag_mm.png" />
+    <Content Include="Icons\flag_mn.png" />
+    <Content Include="Icons\flag_mo.png" />
+    <Content Include="Icons\flag_mp.png" />
+    <Content Include="Icons\flag_mq.png" />
+    <Content Include="Icons\flag_mr.png" />
+    <Content Include="Icons\flag_ms.png" />
+    <Content Include="Icons\flag_mt.png" />
+    <Content Include="Icons\flag_mu.png" />
+    <Content Include="Icons\flag_mv.png" />
+    <Content Include="Icons\flag_mw.png" />
+    <Content Include="Icons\flag_mx.png" />
+    <Content Include="Icons\flag_my.png" />
+    <Content Include="Icons\flag_mz.png" />
+    <Content Include="Icons\flag_na.png" />
+    <Content Include="Icons\flag_nc.png" />
+    <Content Include="Icons\flag_ne.png" />
+    <Content Include="Icons\flag_nf.png" />
+    <Content Include="Icons\flag_ng.png" />
+    <Content Include="Icons\flag_ni.png" />
+    <Content Include="Icons\flag_nl.png" />
+    <Content Include="Icons\flag_no.png" />
+    <Content Include="Icons\flag_np.png" />
+    <Content Include="Icons\flag_nr.png" />
+    <Content Include="Icons\flag_nu.png" />
+    <Content Include="Icons\flag_nz.png" />
+    <Content Include="Icons\flag_om.png" />
+    <Content Include="Icons\flag_orange.png" />
+    <Content Include="Icons\flag_pa.png" />
+    <Content Include="Icons\flag_pe.png" />
+    <Content Include="Icons\flag_pf.png" />
+    <Content Include="Icons\flag_pg.png" />
+    <Content Include="Icons\flag_ph.png" />
+    <Content Include="Icons\flag_pink.png" />
+    <Content Include="Icons\flag_pk.png" />
+    <Content Include="Icons\flag_pl.png" />
+    <Content Include="Icons\flag_pm.png" />
+    <Content Include="Icons\flag_pn.png" />
+    <Content Include="Icons\flag_pr.png" />
+    <Content Include="Icons\flag_ps.png" />
+    <Content Include="Icons\flag_pt.png" />
+    <Content Include="Icons\flag_purple.png" />
+    <Content Include="Icons\flag_pw.png" />
+    <Content Include="Icons\flag_py.png" />
+    <Content Include="Icons\flag_qa.png" />
+    <Content Include="Icons\flag_re.png" />
+    <Content Include="Icons\flag_red.png" />
+    <Content Include="Icons\flag_ro.png" />
+    <Content Include="Icons\flag_rs.png" />
+    <Content Include="Icons\flag_ru.png" />
+    <Content Include="Icons\flag_rw.png" />
+    <Content Include="Icons\flag_sa.png" />
+    <Content Include="Icons\flag_sb.png" />
+    <Content Include="Icons\flag_sc.png" />
+    <Content Include="Icons\flag_scotland.png" />
+    <Content Include="Icons\flag_sd.png" />
+    <Content Include="Icons\flag_se.png" />
+    <Content Include="Icons\flag_sg.png" />
+    <Content Include="Icons\flag_sh.png" />
+    <Content Include="Icons\flag_si.png" />
+    <Content Include="Icons\flag_sj.png" />
+    <Content Include="Icons\flag_sk.png" />
+    <Content Include="Icons\flag_sl.png" />
+    <Content Include="Icons\flag_sm.png" />
+    <Content Include="Icons\flag_sn.png" />
+    <Content Include="Icons\flag_so.png" />
+    <Content Include="Icons\flag_sr.png" />
+    <Content Include="Icons\flag_st.png" />
+    <Content Include="Icons\flag_sv.png" />
+    <Content Include="Icons\flag_sy.png" />
+    <Content Include="Icons\flag_sz.png" />
+    <Content Include="Icons\flag_tc.png" />
+    <Content Include="Icons\flag_td.png" />
+    <Content Include="Icons\flag_tf.png" />
+    <Content Include="Icons\flag_tg.png" />
+    <Content Include="Icons\flag_th.png" />
+    <Content Include="Icons\flag_tj.png" />
+    <Content Include="Icons\flag_tk.png" />
+    <Content Include="Icons\flag_tl.png" />
+    <Content Include="Icons\flag_tm.png" />
+    <Content Include="Icons\flag_tn.png" />
+    <Content Include="Icons\flag_to.png" />
+    <Content Include="Icons\flag_tr.png" />
+    <Content Include="Icons\flag_tt.png" />
+    <Content Include="Icons\flag_tv.png" />
+    <Content Include="Icons\flag_tw.png" />
+    <Content Include="Icons\flag_tz.png" />
+    <Content Include="Icons\flag_ua.png" />
+    <Content Include="Icons\flag_ug.png" />
+    <Content Include="Icons\flag_um.png" />
+    <Content Include="Icons\flag_us.png" />
+    <Content Include="Icons\flag_uy.png" />
+    <Content Include="Icons\flag_uz.png" />
+    <Content Include="Icons\flag_va.png" />
+    <Content Include="Icons\flag_vc.png" />
+    <Content Include="Icons\flag_ve.png" />
+    <Content Include="Icons\flag_vg.png" />
+    <Content Include="Icons\flag_vi.png" />
+    <Content Include="Icons\flag_vn.png" />
+    <Content Include="Icons\flag_vu.png" />
+    <Content Include="Icons\flag_wales.png" />
+    <Content Include="Icons\flag_wf.png" />
+    <Content Include="Icons\flag_white.png" />
+    <Content Include="Icons\flag_ws.png" />
+    <Content Include="Icons\flag_ye.png" />
+    <Content Include="Icons\flag_yellow.png" />
+    <Content Include="Icons\flag_yt.png" />
+    <Content Include="Icons\flag_za.png" />
+    <Content Include="Icons\flag_zm.png" />
+    <Content Include="Icons\flag_zw.png" />
+    <Content Include="Icons\flower_daisy.png" />
+    <Content Include="Icons\folder.png" />
+    <Content Include="Icons\folder_add.png" />
+    <Content Include="Icons\folder_bell.png" />
+    <Content Include="Icons\folder_bookmark.png" />
+    <Content Include="Icons\folder_brick.png" />
+    <Content Include="Icons\folder_bug.png" />
+    <Content Include="Icons\folder_camera.png" />
+    <Content Include="Icons\folder_connect.png" />
+    <Content Include="Icons\folder_database.png" />
+    <Content Include="Icons\folder_delete.png" />
+    <Content Include="Icons\folder_edit.png" />
+    <Content Include="Icons\folder_error.png" />
+    <Content Include="Icons\folder_explore.png" />
+    <Content Include="Icons\folder_feed.png" />
+    <Content Include="Icons\folder_film.png" />
+    <Content Include="Icons\folder_find.png" />
+    <Content Include="Icons\folder_font.png" />
+    <Content Include="Icons\folder_go.png" />
+    <Content Include="Icons\folder_heart.png" />
+    <Content Include="Icons\folder_home.png" />
+    <Content Include="Icons\folder_image.png" />
+    <Content Include="Icons\folder_key.png" />
+    <Content Include="Icons\folder_lightbulb.png" />
+    <Content Include="Icons\folder_link.png" />
+    <Content Include="Icons\folder_magnify.png" />
+    <Content Include="Icons\folder_page.png" />
+    <Content Include="Icons\folder_page_white.png" />
+    <Content Include="Icons\folder_palette.png" />
+    <Content Include="Icons\folder_picture.png" />
+    <Content Include="Icons\folder_star.png" />
+    <Content Include="Icons\folder_table.png" />
+    <Content Include="Icons\folder_up.png" />
+    <Content Include="Icons\folder_user.png" />
+    <Content Include="Icons\folder_wrench.png" />
+    <Content Include="Icons\font.png" />
+    <Content Include="Icons\font_add.png" />
+    <Content Include="Icons\font_color.png" />
+    <Content Include="Icons\font_delete.png" />
+    <Content Include="Icons\font_go.png" />
+    <Content Include="Icons\font_larger.png" />
+    <Content Include="Icons\font_smaller.png" />
+    <Content Include="Icons\forward_blue.png" />
+    <Content Include="Icons\forward_green.png" />
+    <Content Include="Icons\group.png" />
+    <Content Include="Icons\group_add.png" />
+    <Content Include="Icons\group_delete.png" />
+    <Content Include="Icons\group_edit.png" />
+    <Content Include="Icons\group_error.png" />
+    <Content Include="Icons\group_gear.png" />
+    <Content Include="Icons\group_go.png" />
+    <Content Include="Icons\group_key.png" />
+    <Content Include="Icons\group_link.png" />
+    <Content Include="Icons\heart.png" />
+    <Content Include="Icons\heart_add.png" />
+    <Content Include="Icons\heart_broken.png" />
+    <Content Include="Icons\heart_connect.png" />
+    <Content Include="Icons\heart_delete.png" />
+    <Content Include="Icons\help.png" />
+    <Content Include="Icons\hourglass.png" />
+    <Content Include="Icons\hourglass_add.png" />
+    <Content Include="Icons\hourglass_delete.png" />
+    <Content Include="Icons\hourglass_go.png" />
+    <Content Include="Icons\hourglass_link.png" />
+    <Content Include="Icons\house.png" />
+    <Content Include="Icons\house_connect.png" />
+    <Content Include="Icons\house_go.png" />
+    <Content Include="Icons\house_key.png" />
+    <Content Include="Icons\house_link.png" />
+    <Content Include="Icons\house_star.png" />
+    <Content Include="Icons\html.png" />
+    <Content Include="Icons\html_add.png" />
+    <Content Include="Icons\html_delete.png" />
+    <Content Include="Icons\html_error.png" />
+    <Content Include="Icons\html_go.png" />
+    <Content Include="Icons\html_valid.png" />
+    <Content Include="Icons\image.png" />
+    <Content Include="Icons\images.png" />
+    <Content Include="Icons\image_add.png" />
+    <Content Include="Icons\image_delete.png" />
+    <Content Include="Icons\image_edit.png" />
+    <Content Include="Icons\image_link.png" />
+    <Content Include="Icons\image_magnify.png" />
+    <Content Include="Icons\image_star.png" />
+    <Content Include="Icons\information.png" />
+    <Content Include="Icons\ipod.png" />
+    <Content Include="Icons\ipod_cast.png" />
+    <Content Include="Icons\ipod_cast_add.png" />
+    <Content Include="Icons\ipod_cast_delete.png" />
+    <Content Include="Icons\ipod_connect.png" />
+    <Content Include="Icons\ipod_nano.png" />
+    <Content Include="Icons\ipod_nano_connect.png" />
+    <Content Include="Icons\ipod_sound.png" />
+    <Content Include="Icons\joystick.png" />
+    <Content Include="Icons\joystick_add.png" />
+    <Content Include="Icons\joystick_connect.png" />
+    <Content Include="Icons\joystick_delete.png" />
+    <Content Include="Icons\joystick_error.png" />
+    <Content Include="Icons\key.png" />
+    <Content Include="Icons\keyboard.png" />
+    <Content Include="Icons\keyboard_add.png" />
+    <Content Include="Icons\keyboard_connect.png" />
+    <Content Include="Icons\keyboard_delete.png" />
+    <Content Include="Icons\keyboard_magnify.png" />
+    <Content Include="Icons\key_add.png" />
+    <Content Include="Icons\key_delete.png" />
+    <Content Include="Icons\key_go.png" />
+    <Content Include="Icons\key_start.png" />
+    <Content Include="Icons\key_stop.png" />
+    <Content Include="Icons\laptop.png" />
+    <Content Include="Icons\laptop_add.png" />
+    <Content Include="Icons\laptop_connect.png" />
+    <Content Include="Icons\laptop_delete.png" />
+    <Content Include="Icons\laptop_disk.png" />
+    <Content Include="Icons\laptop_edit.png" />
+    <Content Include="Icons\laptop_error.png" />
+    <Content Include="Icons\laptop_go.png" />
+    <Content Include="Icons\laptop_key.png" />
+    <Content Include="Icons\laptop_link.png" />
+    <Content Include="Icons\laptop_magnify.png" />
+    <Content Include="Icons\laptop_start.png" />
+    <Content Include="Icons\laptop_stop.png" />
+    <Content Include="Icons\laptop_wrench.png" />
+    <Content Include="Icons\layers.png" />
+    <Content Include="Icons\layout.png" />
+    <Content Include="Icons\layout_add.png" />
+    <Content Include="Icons\layout_content.png" />
+    <Content Include="Icons\layout_delete.png" />
+    <Content Include="Icons\layout_edit.png" />
+    <Content Include="Icons\layout_error.png" />
+    <Content Include="Icons\layout_header.png" />
+    <Content Include="Icons\layout_key.png" />
+    <Content Include="Icons\layout_lightning.png" />
+    <Content Include="Icons\layout_link.png" />
+    <Content Include="Icons\layout_sidebar.png" />
+    <Content Include="Icons\lightbulb.png" />
+    <Content Include="Icons\lightbulb_add.png" />
+    <Content Include="Icons\lightbulb_delete.png" />
+    <Content Include="Icons\lightbulb_off.png" />
+    <Content Include="Icons\lightning.png" />
+    <Content Include="Icons\lightning_add.png" />
+    <Content Include="Icons\lightning_delete.png" />
+    <Content Include="Icons\lightning_go.png" />
+    <Content Include="Icons\link.png" />
+    <Content Include="Icons\link_add.png" />
+    <Content Include="Icons\link_break.png" />
+    <Content Include="Icons\link_delete.png" />
+    <Content Include="Icons\link_edit.png" />
+    <Content Include="Icons\link_error.png" />
+    <Content Include="Icons\link_go.png" />
+    <Content Include="Icons\lock.png" />
+    <Content Include="Icons\lock_add.png" />
+    <Content Include="Icons\lock_break.png" />
+    <Content Include="Icons\lock_delete.png" />
+    <Content Include="Icons\lock_edit.png" />
+    <Content Include="Icons\lock_go.png" />
+    <Content Include="Icons\lock_key.png" />
+    <Content Include="Icons\lock_open.png" />
+    <Content Include="Icons\lock_start.png" />
+    <Content Include="Icons\lock_stop.png" />
+    <Content Include="Icons\lorry.png" />
+    <Content Include="Icons\lorry_add.png" />
+    <Content Include="Icons\lorry_delete.png" />
+    <Content Include="Icons\lorry_error.png" />
+    <Content Include="Icons\lorry_flatbed.png" />
+    <Content Include="Icons\lorry_go.png" />
+    <Content Include="Icons\lorry_link.png" />
+    <Content Include="Icons\lorry_start.png" />
+    <Content Include="Icons\lorry_stop.png" />
+    <Content Include="Icons\magifier_zoom_out.png" />
+    <Content Include="Icons\magnifier.png" />
+    <Content Include="Icons\magnifier_zoom_in.png" />
+    <Content Include="Icons\mail.png" />
+    <Content Include="Icons\male.png" />
+    <Content Include="Icons\map.png" />
+    <Content Include="Icons\map_add.png" />
+    <Content Include="Icons\map_clipboard.png" />
+    <Content Include="Icons\map_cursor.png" />
+    <Content Include="Icons\map_delete.png" />
+    <Content Include="Icons\map_edit.png" />
+    <Content Include="Icons\map_error.png" />
+    <Content Include="Icons\map_go.png" />
+    <Content Include="Icons\map_link.png" />
+    <Content Include="Icons\map_magnify.png" />
+    <Content Include="Icons\map_start.png" />
+    <Content Include="Icons\map_stop.png" />
+    <Content Include="Icons\medal_bronze_1.png" />
+    <Content Include="Icons\medal_bronze_2.png" />
+    <Content Include="Icons\medal_bronze_3.png" />
+    <Content Include="Icons\medal_bronze_add.png" />
+    <Content Include="Icons\medal_bronze_delete.png" />
+    <Content Include="Icons\medal_gold_1.png" />
+    <Content Include="Icons\medal_gold_2.png" />
+    <Content Include="Icons\medal_gold_3.png" />
+    <Content Include="Icons\medal_gold_add.png" />
+    <Content Include="Icons\medal_gold_delete.png" />
+    <Content Include="Icons\medal_silver_1.png" />
+    <Content Include="Icons\medal_silver_2.png" />
+    <Content Include="Icons\medal_silver_3.png" />
+    <Content Include="Icons\medal_silver_add.png" />
+    <Content Include="Icons\medal_silver_delete.png" />
+    <Content Include="Icons\money.png" />
+    <Content Include="Icons\money_add.png" />
+    <Content Include="Icons\money_delete.png" />
+    <Content Include="Icons\money_dollar.png" />
+    <Content Include="Icons\money_euro.png" />
+    <Content Include="Icons\money_pound.png" />
+    <Content Include="Icons\money_yen.png" />
+    <Content Include="Icons\monitor.png" />
+    <Content Include="Icons\monitor_add.png" />
+    <Content Include="Icons\monitor_delete.png" />
+    <Content Include="Icons\monitor_edit.png" />
+    <Content Include="Icons\monitor_error.png" />
+    <Content Include="Icons\monitor_go.png" />
+    <Content Include="Icons\monitor_key.png" />
+    <Content Include="Icons\monitor_lightning.png" />
+    <Content Include="Icons\monitor_link.png" />
+    <Content Include="Icons\moon_full.png" />
+    <Content Include="Icons\mouse.png" />
+    <Content Include="Icons\mouse_add.png" />
+    <Content Include="Icons\mouse_delete.png" />
+    <Content Include="Icons\mouse_error.png" />
+    <Content Include="Icons\music.png" />
+    <Content Include="Icons\music_note.png" />
+    <Content Include="Icons\neighbourhood.png" />
+    <Content Include="Icons\new.png" />
+    <Content Include="Icons\newspaper.png" />
+    <Content Include="Icons\newspaper_add.png" />
+    <Content Include="Icons\newspaper_delete.png" />
+    <Content Include="Icons\newspaper_go.png" />
+    <Content Include="Icons\newspaper_link.png" />
+    <Content Include="Icons\new_blue.png" />
+    <Content Include="Icons\new_red.png" />
+    <Content Include="Icons\next_blue.png" />
+    <Content Include="Icons\next_green.png" />
+    <Content Include="Icons\note.png" />
+    <Content Include="Icons\note_add.png" />
+    <Content Include="Icons\note_delete.png" />
+    <Content Include="Icons\note_edit.png" />
+    <Content Include="Icons\note_error.png" />
+    <Content Include="Icons\note_go.png" />
+    <Content Include="Icons\outline.png" />
+    <Content Include="Icons\overlays.png" />
+    <Content Include="Icons\package.png" />
+    <Content Include="Icons\package_add.png" />
+    <Content Include="Icons\package_delete.png" />
+    <Content Include="Icons\package_down.png" />
+    <Content Include="Icons\package_go.png" />
+    <Content Include="Icons\package_green.png" />
+    <Content Include="Icons\package_in.png" />
+    <Content Include="Icons\package_link.png" />
+    <Content Include="Icons\package_se.png" />
+    <Content Include="Icons\package_start.png" />
+    <Content Include="Icons\package_stop.png" />
+    <Content Include="Icons\package_white.png" />
+    <Content Include="Icons\page.png" />
+    <Content Include="Icons\page_add.png" />
+    <Content Include="Icons\page_attach.png" />
+    <Content Include="Icons\page_back.png" />
+    <Content Include="Icons\page_break.png" />
+    <Content Include="Icons\page_break_insert.png" />
+    <Content Include="Icons\page_cancel.png" />
+    <Content Include="Icons\page_code.png" />
+    <Content Include="Icons\page_copy.png" />
+    <Content Include="Icons\page_delete.png" />
+    <Content Include="Icons\page_edit.png" />
+    <Content Include="Icons\page_error.png" />
+    <Content Include="Icons\page_excel.png" />
+    <Content Include="Icons\page_find.png" />
+    <Content Include="Icons\page_forward.png" />
+    <Content Include="Icons\page_gear.png" />
+    <Content Include="Icons\page_go.png" />
+    <Content Include="Icons\page_green.png" />
+    <Content Include="Icons\page_header_footer.png" />
+    <Content Include="Icons\page_key.png" />
+    <Content Include="Icons\page_landscape.png" />
+    <Content Include="Icons\page_landscape_shot.png" />
+    <Content Include="Icons\page_lightning.png" />
+    <Content Include="Icons\page_link.png" />
+    <Content Include="Icons\page_magnify.png" />
+    <Content Include="Icons\page_paintbrush.png" />
+    <Content Include="Icons\page_paste.png" />
+    <Content Include="Icons\page_portrait.png" />
+    <Content Include="Icons\page_portrait_shot.png" />
+    <Content Include="Icons\page_red.png" />
+    <Content Include="Icons\page_refresh.png" />
+    <Content Include="Icons\page_save.png" />
+    <Content Include="Icons\page_white.png" />
+    <Content Include="Icons\page_white_acrobat.png" />
+    <Content Include="Icons\page_white_actionscript.png" />
+    <Content Include="Icons\page_white_add.png" />
+    <Content Include="Icons\page_white_break.png" />
+    <Content Include="Icons\page_white_c.png" />
+    <Content Include="Icons\page_white_camera.png" />
+    <Content Include="Icons\page_white_cd.png" />
+    <Content Include="Icons\page_white_cdr.png" />
+    <Content Include="Icons\page_white_code.png" />
+    <Content Include="Icons\page_white_code_red.png" />
+    <Content Include="Icons\page_white_coldfusion.png" />
+    <Content Include="Icons\page_white_compressed.png" />
+    <Content Include="Icons\page_white_connect.png" />
+    <Content Include="Icons\page_white_copy.png" />
+    <Content Include="Icons\page_white_cplusplus.png" />
+    <Content Include="Icons\page_white_csharp.png" />
+    <Content Include="Icons\page_white_cup.png" />
+    <Content Include="Icons\page_white_database.png" />
+    <Content Include="Icons\page_white_database_yellow.png" />
+    <Content Include="Icons\page_white_delete.png" />
+    <Content Include="Icons\page_white_dvd.png" />
+    <Content Include="Icons\page_white_edit.png" />
+    <Content Include="Icons\page_white_error.png" />
+    <Content Include="Icons\page_white_excel.png" />
+    <Content Include="Icons\page_white_find.png" />
+    <Content Include="Icons\page_white_flash.png" />
+    <Content Include="Icons\page_white_font.png" />
+    <Content Include="Icons\page_white_freehand.png" />
+    <Content Include="Icons\page_white_gear.png" />
+    <Content Include="Icons\page_white_get.png" />
+    <Content Include="Icons\page_white_go.png" />
+    <Content Include="Icons\page_white_h.png" />
+    <Content Include="Icons\page_white_horizontal.png" />
+    <Content Include="Icons\page_white_key.png" />
+    <Content Include="Icons\page_white_lightning.png" />
+    <Content Include="Icons\page_white_link.png" />
+    <Content Include="Icons\page_white_magnify.png" />
+    <Content Include="Icons\page_white_medal.png" />
+    <Content Include="Icons\page_white_office.png" />
+    <Content Include="Icons\page_white_paint.png" />
+    <Content Include="Icons\page_white_paintbrush.png" />
+    <Content Include="Icons\page_white_paint_2.png" />
+    <Content Include="Icons\page_white_paste.png" />
+    <Content Include="Icons\page_white_paste_table.png" />
+    <Content Include="Icons\page_white_php.png" />
+    <Content Include="Icons\page_white_picture.png" />
+    <Content Include="Icons\page_white_powerpoint.png" />
+    <Content Include="Icons\page_white_put.png" />
+    <Content Include="Icons\page_white_refresh.png" />
+    <Content Include="Icons\page_white_ruby.png" />
+    <Content Include="Icons\page_white_side_by_side.png" />
+    <Content Include="Icons\page_white_stack.png" />
+    <Content Include="Icons\page_white_star.png" />
+    <Content Include="Icons\page_white_swoosh.png" />
+    <Content Include="Icons\page_white_text.png" />
+    <Content Include="Icons\page_white_text_width.png" />
+    <Content Include="Icons\page_white_tux.png" />
+    <Content Include="Icons\page_white_vector.png" />
+    <Content Include="Icons\page_white_visualstudio.png" />
+    <Content Include="Icons\page_white_width.png" />
+    <Content Include="Icons\page_white_word.png" />
+    <Content Include="Icons\page_white_world.png" />
+    <Content Include="Icons\page_white_wrench.png" />
+    <Content Include="Icons\page_white_zip.png" />
+    <Content Include="Icons\page_word.png" />
+    <Content Include="Icons\page_world.png" />
+    <Content Include="Icons\paint.png" />
+    <Content Include="Icons\paintbrush.png" />
+    <Content Include="Icons\paintbrush_color.png" />
+    <Content Include="Icons\paintcan.png" />
+    <Content Include="Icons\paintcan_red.png" />
+    <Content Include="Icons\paint_can_brush.png" />
+    <Content Include="Icons\palette.png" />
+    <Content Include="Icons\paste_plain.png" />
+    <Content Include="Icons\paste_word.png" />
+    <Content Include="Icons\pause_blue.png" />
+    <Content Include="Icons\pause_green.png" />
+    <Content Include="Icons\pause_record.png" />
+    <Content Include="Icons\pencil.png" />
+    <Content Include="Icons\pencil_add.png" />
+    <Content Include="Icons\pencil_delete.png" />
+    <Content Include="Icons\pencil_go.png" />
+    <Content Include="Icons\phone.png" />
+    <Content Include="Icons\phone_add.png" />
+    <Content Include="Icons\phone_delete.png" />
+    <Content Include="Icons\phone_edit.png" />
+    <Content Include="Icons\phone_error.png" />
+    <Content Include="Icons\phone_go.png" />
+    <Content Include="Icons\phone_key.png" />
+    <Content Include="Icons\phone_link.png" />
+    <Content Include="Icons\phone_sound.png" />
+    <Content Include="Icons\phone_start.png" />
+    <Content Include="Icons\phone_stop.png" />
+    <Content Include="Icons\photo.png" />
+    <Content Include="Icons\photos.png" />
+    <Content Include="Icons\photo_add.png" />
+    <Content Include="Icons\photo_delete.png" />
+    <Content Include="Icons\photo_edit.png" />
+    <Content Include="Icons\photo_link.png" />
+    <Content Include="Icons\photo_paint.png" />
+    <Content Include="Icons\picture.png" />
+    <Content Include="Icons\pictures.png" />
+    <Content Include="Icons\pictures_thumbs.png" />
+    <Content Include="Icons\picture_add.png" />
+    <Content Include="Icons\picture_clipboard.png" />
+    <Content Include="Icons\picture_delete.png" />
+    <Content Include="Icons\picture_edit.png" />
+    <Content Include="Icons\picture_empty.png" />
+    <Content Include="Icons\picture_error.png" />
+    <Content Include="Icons\picture_go.png" />
+    <Content Include="Icons\picture_key.png" />
+    <Content Include="Icons\picture_link.png" />
+    <Content Include="Icons\picture_save.png" />
+    <Content Include="Icons\pilcrow.png" />
+    <Content Include="Icons\pill.png" />
+    <Content Include="Icons\pill_add.png" />
+    <Content Include="Icons\pill_delete.png" />
+    <Content Include="Icons\pill_error.png" />
+    <Content Include="Icons\pill_go.png" />
+    <Content Include="Icons\play_blue.png" />
+    <Content Include="Icons\play_green.png" />
+    <Content Include="Icons\plugin.png" />
+    <Content Include="Icons\plugin_add.png" />
+    <Content Include="Icons\plugin_delete.png" />
+    <Content Include="Icons\plugin_disabled.png" />
+    <Content Include="Icons\plugin_edit.png" />
+    <Content Include="Icons\plugin_error.png" />
+    <Content Include="Icons\plugin_go.png" />
+    <Content Include="Icons\plugin_key.png" />
+    <Content Include="Icons\plugin_link.png" />
+    <Content Include="Icons\previous_green.png" />
+    <Content Include="Icons\printer.png" />
+    <Content Include="Icons\printer_add.png" />
+    <Content Include="Icons\printer_cancel.png" />
+    <Content Include="Icons\printer_color.png" />
+    <Content Include="Icons\printer_connect.png" />
+    <Content Include="Icons\printer_delete.png" />
+    <Content Include="Icons\printer_empty.png" />
+    <Content Include="Icons\printer_error.png" />
+    <Content Include="Icons\printer_go.png" />
+    <Content Include="Icons\printer_key.png" />
+    <Content Include="Icons\printer_mono.png" />
+    <Content Include="Icons\printer_start.png" />
+    <Content Include="Icons\printer_stop.png" />
+    <Content Include="Icons\rainbow.png" />
+    <Content Include="Icons\rainbow_star.png" />
+    <Content Include="Icons\record_blue.png" />
+    <Content Include="Icons\record_green.png" />
+    <Content Include="Icons\record_red.png" />
+    <Content Include="Icons\reload.png" />
+    <Content Include="Icons\report.png" />
+    <Content Include="Icons\report_add.png" />
+    <Content Include="Icons\report_delete.png" />
+    <Content Include="Icons\report_disk.png" />
+    <Content Include="Icons\report_edit.png" />
+    <Content Include="Icons\report_go.png" />
+    <Content Include="Icons\report_key.png" />
+    <Content Include="Icons\report_link.png" />
+    <Content Include="Icons\report_magnify.png" />
+    <Content Include="Icons\report_picture.png" />
+    <Content Include="Icons\report_start.png" />
+    <Content Include="Icons\report_stop.png" />
+    <Content Include="Icons\report_user.png" />
+    <Content Include="Icons\report_word.png" />
+    <Content Include="Icons\resultset_first.png" />
+    <Content Include="Icons\resultset_last.png" />
+    <Content Include="Icons\resultset_next.png" />
+    <Content Include="Icons\resultset_previous.png" />
+    <Content Include="Icons\reverse_blue.png" />
+    <Content Include="Icons\reverse_green.png" />
+    <Content Include="Icons\rewind_blue.png" />
+    <Content Include="Icons\rewind_green.png" />
+    <Content Include="Icons\rgb.png" />
+    <Content Include="Icons\rosette.png" />
+    <Content Include="Icons\rosette_blue.png" />
+    <Content Include="Icons\rss.png" />
+    <Content Include="Icons\rss_add.png" />
+    <Content Include="Icons\rss_delete.png" />
+    <Content Include="Icons\rss_error.png" />
+    <Content Include="Icons\rss_go.png" />
+    <Content Include="Icons\rss_valid.png" />
+    <Content Include="Icons\ruby.png" />
+    <Content Include="Icons\ruby_add.png" />
+    <Content Include="Icons\ruby_delete.png" />
+    <Content Include="Icons\ruby_gear.png" />
+    <Content Include="Icons\ruby_get.png" />
+    <Content Include="Icons\ruby_go.png" />
+    <Content Include="Icons\ruby_key.png" />
+    <Content Include="Icons\ruby_link.png" />
+    <Content Include="Icons\ruby_put.png" />
+    <Content Include="Icons\script.png" />
+    <Content Include="Icons\script_add.png" />
+    <Content Include="Icons\script_code.png" />
+    <Content Include="Icons\script_code_original.png" />
+    <Content Include="Icons\script_code_red.png" />
+    <Content Include="Icons\script_delete.png" />
+    <Content Include="Icons\script_edit.png" />
+    <Content Include="Icons\script_error.png" />
+    <Content Include="Icons\script_gear.png" />
+    <Content Include="Icons\script_go.png" />
+    <Content Include="Icons\script_key.png" />
+    <Content Include="Icons\script_lightning.png" />
+    <Content Include="Icons\script_link.png" />
+    <Content Include="Icons\script_palette.png" />
+    <Content Include="Icons\script_save.png" />
+    <Content Include="Icons\script_start.png" />
+    <Content Include="Icons\script_stop.png" />
+    <Content Include="Icons\seasons.png" />
+    <Content Include="Icons\section_collapsed.png" />
+    <Content Include="Icons\section_expanded.png" />
+    <Content Include="Icons\server.png" />
+    <Content Include="Icons\server_add.png" />
+    <Content Include="Icons\server_chart.png" />
+    <Content Include="Icons\server_compressed.png" />
+    <Content Include="Icons\server_connect.png" />
+    <Content Include="Icons\server_database.png" />
+    <Content Include="Icons\server_delete.png" />
+    <Content Include="Icons\server_edit.png" />
+    <Content Include="Icons\server_error.png" />
+    <Content Include="Icons\server_go.png" />
+    <Content Include="Icons\server_key.png" />
+    <Content Include="Icons\server_lightning.png" />
+    <Content Include="Icons\server_link.png" />
+    <Content Include="Icons\server_start.png" />
+    <Content Include="Icons\server_stop.png" />
+    <Content Include="Icons\server_uncompressed.png" />
+    <Content Include="Icons\server_wrench.png" />
+    <Content Include="Icons\shading.png" />
+    <Content Include="Icons\shapes_many.png" />
+    <Content Include="Icons\shapes_many_select.png" />
+    <Content Include="Icons\shape_3d.png" />
+    <Content Include="Icons\shape_align_bottom.png" />
+    <Content Include="Icons\shape_align_center.png" />
+    <Content Include="Icons\shape_align_left.png" />
+    <Content Include="Icons\shape_align_middle.png" />
+    <Content Include="Icons\shape_align_right.png" />
+    <Content Include="Icons\shape_align_top.png" />
+    <Content Include="Icons\shape_flip_horizontal.png" />
+    <Content Include="Icons\shape_flip_vertical.png" />
+    <Content Include="Icons\shape_group.png" />
+    <Content Include="Icons\shape_handles.png" />
+    <Content Include="Icons\shape_move_back.png" />
+    <Content Include="Icons\shape_move_backwards.png" />
+    <Content Include="Icons\shape_move_forwards.png" />
+    <Content Include="Icons\shape_move_front.png" />
+    <Content Include="Icons\shape_rotate_anticlockwise.png" />
+    <Content Include="Icons\shape_rotate_clockwise.png" />
+    <Content Include="Icons\shape_shade_a.png" />
+    <Content Include="Icons\shape_shade_b.png" />
+    <Content Include="Icons\shape_shade_c.png" />
+    <Content Include="Icons\shape_shadow.png" />
+    <Content Include="Icons\shape_shadow_toggle.png" />
+    <Content Include="Icons\shape_square.png" />
+    <Content Include="Icons\shape_square_add.png" />
+    <Content Include="Icons\shape_square_delete.png" />
+    <Content Include="Icons\shape_square_edit.png" />
+    <Content Include="Icons\shape_square_error.png" />
+    <Content Include="Icons\shape_square_go.png" />
+    <Content Include="Icons\shape_square_key.png" />
+    <Content Include="Icons\shape_square_link.png" />
+    <Content Include="Icons\shape_square_select.png" />
+    <Content Include="Icons\shape_ungroup.png" />
+    <Content Include="Icons\share.png" />
+    <Content Include="Icons\shield.png" />
+    <Content Include="Icons\shield_add.png" />
+    <Content Include="Icons\shield_delete.png" />
+    <Content Include="Icons\shield_error.png" />
+    <Content Include="Icons\shield_go.png" />
+    <Content Include="Icons\shield_rainbow.png" />
+    <Content Include="Icons\shield_silver.png" />
+    <Content Include="Icons\shield_start.png" />
+    <Content Include="Icons\shield_stop.png" />
+    <Content Include="Icons\sitemap.png" />
+    <Content Include="Icons\sitemap_color.png" />
+    <Content Include="Icons\smartphone.png" />
+    <Content Include="Icons\smartphone_add.png" />
+    <Content Include="Icons\smartphone_connect.png" />
+    <Content Include="Icons\smartphone_delete.png" />
+    <Content Include="Icons\smartphone_disk.png" />
+    <Content Include="Icons\smartphone_edit.png" />
+    <Content Include="Icons\smartphone_error.png" />
+    <Content Include="Icons\smartphone_go.png" />
+    <Content Include="Icons\smartphone_key.png" />
+    <Content Include="Icons\smartphone_wrench.png" />
+    <Content Include="Icons\sort_ascending.png" />
+    <Content Include="Icons\sort_descending.png" />
+    <Content Include="Icons\sound.png" />
+    <Content Include="Icons\sound_add.png" />
+    <Content Include="Icons\sound_delete.png" />
+    <Content Include="Icons\sound_high.png" />
+    <Content Include="Icons\sound_in.png" />
+    <Content Include="Icons\sound_low.png" />
+    <Content Include="Icons\sound_mute.png" />
+    <Content Include="Icons\sound_none.png" />
+    <Content Include="Icons\sound_out.png" />
+    <Content Include="Icons\spellcheck.png" />
+    <Content Include="Icons\sport_8ball.png" />
+    <Content Include="Icons\sport_basketball.png" />
+    <Content Include="Icons\sport_football.png" />
+    <Content Include="Icons\sport_golf.png" />
+    <Content Include="Icons\sport_golf_practice.png" />
+    <Content Include="Icons\sport_raquet.png" />
+    <Content Include="Icons\sport_shuttlecock.png" />
+    <Content Include="Icons\sport_soccer.png" />
+    <Content Include="Icons\sport_tennis.png" />
+    <Content Include="Icons\star.png" />
+    <Content Include="Icons\star_bronze.png" />
+    <Content Include="Icons\star_bronze_half_grey.png" />
+    <Content Include="Icons\star_gold.png" />
+    <Content Include="Icons\star_gold_half_grey.png" />
+    <Content Include="Icons\star_gold_half_silver.png" />
+    <Content Include="Icons\star_grey.png" />
+    <Content Include="Icons\star_half_grey.png" />
+    <Content Include="Icons\star_silver.png" />
+    <Content Include="Icons\status_away.png" />
+    <Content Include="Icons\status_be_right_back.png" />
+    <Content Include="Icons\status_busy.png" />
+    <Content Include="Icons\status_invisible.png" />
+    <Content Include="Icons\status_offline.png" />
+    <Content Include="Icons\status_online.png" />
+    <Content Include="Icons\stop.png" />
+    <Content Include="Icons\stop_blue.png" />
+    <Content Include="Icons\stop_green.png" />
+    <Content Include="Icons\stop_red.png" />
+    <Content Include="Icons\style.png" />
+    <Content Include="Icons\style_add.png" />
+    <Content Include="Icons\style_delete.png" />
+    <Content Include="Icons\style_edit.png" />
+    <Content Include="Icons\style_go.png" />
+    <Content Include="Icons\sum.png" />
+    <Content Include="Icons\system_close.gif" />
+    <Content Include="Icons\system_new.gif" />
+    <Content Include="Icons\system_save.gif" />
+    <Content Include="Icons\system_saveclose.gif" />
+    <Content Include="Icons\system_savenew.gif" />
+    <Content Include="Icons\system_search.gif" />
+    <Content Include="Icons\tab.png" />
+    <Content Include="Icons\table.png" />
+    <Content Include="Icons\table_add.png" />
+    <Content Include="Icons\table_cell.png" />
+    <Content Include="Icons\table_column.png" />
+    <Content Include="Icons\table_column_add.png" />
+    <Content Include="Icons\table_column_delete.png" />
+    <Content Include="Icons\table_connect.png" />
+    <Content Include="Icons\table_delete.png" />
+    <Content Include="Icons\table_edit.png" />
+    <Content Include="Icons\table_error.png" />
+    <Content Include="Icons\table_gear.png" />
+    <Content Include="Icons\table_go.png" />
+    <Content Include="Icons\table_key.png" />
+    <Content Include="Icons\table_lightning.png" />
+    <Content Include="Icons\table_link.png" />
+    <Content Include="Icons\table_multiple.png" />
+    <Content Include="Icons\table_refresh.png" />
+    <Content Include="Icons\table_relationship.png" />
+    <Content Include="Icons\table_row.png" />
+    <Content Include="Icons\table_row_delete.png" />
+    <Content Include="Icons\table_row_insert.png" />
+    <Content Include="Icons\table_save.png" />
+    <Content Include="Icons\table_sort.png" />
+    <Content Include="Icons\tabpanel.png" />
+    <Content Include="Icons\tab_add.png" />
+    <Content Include="Icons\tab_blue.png" />
+    <Content Include="Icons\tab_delete.png" />
+    <Content Include="Icons\tab_edit.png" />
+    <Content Include="Icons\tab_go.png" />
+    <Content Include="Icons\tab_green.png" />
+    <Content Include="Icons\tab_red.png" />
+    <Content Include="Icons\tag.png" />
+    <Content Include="Icons\tags_grey.png" />
+    <Content Include="Icons\tags_red.png" />
+    <Content Include="Icons\tag_blue.png" />
+    <Content Include="Icons\tag_blue_add.png" />
+    <Content Include="Icons\tag_blue_delete.png" />
+    <Content Include="Icons\tag_blue_edit.png" />
+    <Content Include="Icons\tag_green.png" />
+    <Content Include="Icons\tag_orange.png" />
+    <Content Include="Icons\tag_pink.png" />
+    <Content Include="Icons\tag_purple.png" />
+    <Content Include="Icons\tag_red.png" />
+    <Content Include="Icons\tag_yellow.png" />
+    <Content Include="Icons\telephone.png" />
+    <Content Include="Icons\telephone_add.png" />
+    <Content Include="Icons\telephone_delete.png" />
+    <Content Include="Icons\telephone_edit.png" />
+    <Content Include="Icons\telephone_error.png" />
+    <Content Include="Icons\telephone_go.png" />
+    <Content Include="Icons\telephone_key.png" />
+    <Content Include="Icons\telephone_link.png" />
+    <Content Include="Icons\telephone_red.png" />
+    <Content Include="Icons\television.png" />
+    <Content Include="Icons\television_add.png" />
+    <Content Include="Icons\television_delete.png" />
+    <Content Include="Icons\television_in.png" />
+    <Content Include="Icons\television_off.png" />
+    <Content Include="Icons\television_out.png" />
+    <Content Include="Icons\television_star.png" />
+    <Content Include="Icons\textfield.png" />
+    <Content Include="Icons\textfield_add.png" />
+    <Content Include="Icons\textfield_delete.png" />
+    <Content Include="Icons\textfield_key.png" />
+    <Content Include="Icons\textfield_rename.png" />
+    <Content Include="Icons\text_ab.png" />
+    <Content Include="Icons\text_align_center.png" />
+    <Content Include="Icons\text_align_justify.png" />
+    <Content Include="Icons\text_align_left.png" />
+    <Content Include="Icons\text_align_right.png" />
+    <Content Include="Icons\text_allcaps.png" />
+    <Content Include="Icons\text_bold.png" />
+    <Content Include="Icons\text_columns.png" />
+    <Content Include="Icons\text_complete.png" />
+    <Content Include="Icons\text_direction.png" />
+    <Content Include="Icons\text_double_underline.png" />
+    <Content Include="Icons\text_dropcaps.png" />
+    <Content Include="Icons\text_fit.png" />
+    <Content Include="Icons\text_flip.png" />
+    <Content Include="Icons\text_font_default.png" />
+    <Content Include="Icons\text_heading_1.png" />
+    <Content Include="Icons\text_heading_2.png" />
+    <Content Include="Icons\text_heading_3.png" />
+    <Content Include="Icons\text_heading_4.png" />
+    <Content Include="Icons\text_heading_5.png" />
+    <Content Include="Icons\text_heading_6.png" />
+    <Content Include="Icons\text_horizontalrule.png" />
+    <Content Include="Icons\text_indent.png" />
+    <Content Include="Icons\text_indent_remove.png" />
+    <Content Include="Icons\text_inverse.png" />
+    <Content Include="Icons\text_italic.png" />
+    <Content Include="Icons\text_kerning.png" />
+    <Content Include="Icons\text_left_to_right.png" />
+    <Content Include="Icons\text_letterspacing.png" />
+    <Content Include="Icons\text_letter_omega.png" />
+    <Content Include="Icons\text_linespacing.png" />
+    <Content Include="Icons\text_list_bullets.png" />
+    <Content Include="Icons\text_list_numbers.png" />
+    <Content Include="Icons\text_lowercase.png" />
+    <Content Include="Icons\text_lowercase_a.png" />
+    <Content Include="Icons\text_mirror.png" />
+    <Content Include="Icons\text_padding_bottom.png" />
+    <Content Include="Icons\text_padding_left.png" />
+    <Content Include="Icons\text_padding_right.png" />
+    <Content Include="Icons\text_padding_top.png" />
+    <Content Include="Icons\text_replace.png" />
+    <Content Include="Icons\text_right_to_left.png" />
+    <Content Include="Icons\text_rotate_0.png" />
+    <Content Include="Icons\text_rotate_180.png" />
+    <Content Include="Icons\text_rotate_270.png" />
+    <Content Include="Icons\text_rotate_90.png" />
+    <Content Include="Icons\text_ruler.png" />
+    <Content Include="Icons\text_shading.png" />
+    <Content Include="Icons\text_signature.png" />
+    <Content Include="Icons\text_smallcaps.png" />
+    <Content Include="Icons\text_spelling.png" />
+    <Content Include="Icons\text_strikethrough.png" />
+    <Content Include="Icons\text_subscript.png" />
+    <Content Include="Icons\text_superscript.png" />
+    <Content Include="Icons\text_tab.png" />
+    <Content Include="Icons\text_underline.png" />
+    <Content Include="Icons\text_uppercase.png" />
+    <Content Include="Icons\theme.png" />
+    <Content Include="Icons\thumb_down.png" />
+    <Content Include="Icons\thumb_up.png" />
+    <Content Include="Icons\tick.png" />
+    <Content Include="Icons\time.png" />
+    <Content Include="Icons\timeline_marker.png" />
+    <Content Include="Icons\time_add.png" />
+    <Content Include="Icons\time_delete.png" />
+    <Content Include="Icons\time_go.png" />
+    <Content Include="Icons\time_green.png" />
+    <Content Include="Icons\time_red.png" />
+    <Content Include="Icons\toolbar.png" />
+    <Content Include="Icons\transmit.png" />
+    <Content Include="Icons\transmit_add.png" />
+    <Content Include="Icons\transmit_blue.png" />
+    <Content Include="Icons\transmit_delete.png" />
+    <Content Include="Icons\transmit_edit.png" />
+    <Content Include="Icons\transmit_error.png" />
+    <Content Include="Icons\transmit_go.png" />
+    <Content Include="Icons\transmit_red.png" />
+    <Content Include="Icons\tux.png" />
+    <Content Include="Icons\user.png" />
+    <Content Include="Icons\user_add.png" />
+    <Content Include="Icons\user_alert.png" />
+    <Content Include="Icons\user_b.png" />
+    <Content Include="Icons\user_brown.png" />
+    <Content Include="Icons\user_comment.png" />
+    <Content Include="Icons\user_cross.png" />
+    <Content Include="Icons\user_delete.png" />
+    <Content Include="Icons\user_earth.png" />
+    <Content Include="Icons\user_edit.png" />
+    <Content Include="Icons\user_female.png" />
+    <Content Include="Icons\user_go.png" />
+    <Content Include="Icons\user_gray.png" />
+    <Content Include="Icons\user_gray_cool.png" />
+    <Content Include="Icons\user_green.png" />
+    <Content Include="Icons\user_home.png" />
+    <Content Include="Icons\user_key.png" />
+    <Content Include="Icons\user_magnify.png" />
+    <Content Include="Icons\user_mature.png" />
+    <Content Include="Icons\user_orange.png" />
+    <Content Include="Icons\user_red.png" />
+    <Content Include="Icons\user_star.png" />
+    <Content Include="Icons\user_suit.png" />
+    <Content Include="Icons\user_suit_black.png" />
+    <Content Include="Icons\user_tick.png" />
+    <Content Include="Icons\vcard.png" />
+    <Content Include="Icons\vcard_add.png" />
+    <Content Include="Icons\vcard_delete.png" />
+    <Content Include="Icons\vcard_edit.png" />
+    <Content Include="Icons\vcard_key.png" />
+    <Content Include="Icons\vector.png" />
+    <Content Include="Icons\vector_add.png" />
+    <Content Include="Icons\vector_delete.png" />
+    <Content Include="Icons\vector_key.png" />
+    <Content Include="Icons\viewport.png" />
+    <Content Include="Icons\wand.png" />
+    <Content Include="Icons\weather_cloud.png" />
+    <Content Include="Icons\weather_clouds.png" />
+    <Content Include="Icons\weather_cloudy.png" />
+    <Content Include="Icons\weather_cloudy_rain.png" />
+    <Content Include="Icons\weather_lightning.png" />
+    <Content Include="Icons\weather_rain.png" />
+    <Content Include="Icons\weather_snow.png" />
+    <Content Include="Icons\weather_sun.png" />
+    <Content Include="Icons\webcam.png" />
+    <Content Include="Icons\webcam_add.png" />
+    <Content Include="Icons\webcam_connect.png" />
+    <Content Include="Icons\webcam_delete.png" />
+    <Content Include="Icons\webcam_error.png" />
+    <Content Include="Icons\webcam_start.png" />
+    <Content Include="Icons\webcam_stop.png" />
+    <Content Include="Icons\world.png" />
+    <Content Include="Icons\world_add.png" />
+    <Content Include="Icons\world_connect.png" />
+    <Content Include="Icons\world_dawn.png" />
+    <Content Include="Icons\world_delete.png" />
+    <Content Include="Icons\world_edit.png" />
+    <Content Include="Icons\world_go.png" />
+    <Content Include="Icons\world_key.png" />
+    <Content Include="Icons\world_link.png" />
+    <Content Include="Icons\world_night.png" />
+    <Content Include="Icons\world_orbit.png" />
+    <Content Include="Icons\wrench.png" />
+    <Content Include="Icons\wrench_orange.png" />
+    <Content Include="Icons\xhtml.png" />
+    <Content Include="Icons\xhtml_add.png" />
+    <Content Include="Icons\xhtml_delete.png" />
+    <Content Include="Icons\xhtml_error.png" />
+    <Content Include="Icons\xhtml_go.png" />
+    <Content Include="Icons\xhtml_valid.png" />
+    <Content Include="Icons\zoom.png" />
+    <Content Include="Icons\zoom_in.png" />
+    <Content Include="Icons\zoom_out.png" />
+    <Content Include="Images\404.png" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\AlignFloatingObjectTopCenter_16x16.png" />
+    <Content Include="Images\ask.png" />
+    <Content Include="Images\bg.gif" />
+    <Content Include="Images\big.png" />
+    <Content Include="Images\book.png" />
+    <Content Include="Images\book1.png" />
+    <Content Include="Images\Bookmark_16x16.png" />
+    <Content Include="Images\btn.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\cloud.jpg" />
+    <Content Include="Images\cloud.png" />
+    <Content Include="Images\collapse-all.gif" />
+    <Content Include="Images\ColumnsOne_16x16.png" />
+    <Content Include="Images\commentlogo.png" />
+    <Content Include="Images\config.png" />
+    <Content Include="Images\coolite.png" />
+    <Content Include="Images\CustomerReports.Icon.png" />
+    <Content Include="Images\d.png" />
+    <Content Include="Images\Edit.png" />
+    <Content Include="Images\Exit.png" />
+    <Content Include="Images\expand-all.gif" />
+    <Content Include="Images\ext.gif" />
+    <Content Include="Images\Find_16x16.png" />
+    <Content Include="Images\GoToPreviousHeaderFooter_16x16.png" />
+    <Content Include="Images\group-expand-sprite.gif" />
+    <Content Include="Images\heart.png" />
+    <Content Include="Images\i1.png" />
+    <Content Include="Images\i2.png" />
+    <Content Include="Images\i3.png" />
+    <Content Include="Images\load.gif" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading32.gif" />
+    <Content Include="Images\login_btn.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\look.png" />
+    <Content Include="Images\mail.png" />
+    <Content Include="Images\messages.png" />
+    <Content Include="Images\min.png" />
+    <Content Include="Images\mini_arrow.png" />
+    <Content Include="Images\mini_heart.png" />
+    <Content Include="Images\mini_mail.png" />
+    <Content Include="Images\min_big.png" />
+    <Content Include="Images\notification.png" />
+    <Content Include="Images\page_white_add.png" />
+    <Content Include="Images\people.png" />
+    <Content Include="Images\Preview_16x16.png" />
+    <Content Include="Images\print.png" />
+    <Content Include="Images\reload.png" />
+    <Content Include="Images\remember.png" />
+    <Content Include="Images\remove.png" />
+    <Content Include="Images\reset.png" />
+    <Content Include="Images\richeditcontrol.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\shadow2.png" />
+    <Content Include="Images\tip.png" />
+    <Content Include="Images\to_bb.png" />
+    <Content Include="Images\to_bottom.png" />
+    <Content Include="Images\to_hide.png" />
+    <Content Include="Images\to_left.png" />
+    <Content Include="Images\to_left_hide.png" />
+    <Content Include="Images\to_ll.png" />
+    <Content Include="Images\to_right.png" />
+    <Content Include="Images\to_rr.png" />
+    <Content Include="Images\to_top.png" />
+    <Content Include="Images\to_tt.png" />
+    <Content Include="Images\unfold.png" />
+    <Content Include="Js\jquery-1.8.0.min.js" />
+    <Content Include="Js\Jquery.js" />
+    <Content Include="Js\main.js" />
+    <Content Include="Js\swfobject.js" />
+    <Content Include="Js\Uploadify.js" />
+    <Content Include="LoginView.aspx" />
+    <Content Include="UI\CheckTitle\AddCheckTitle.aspx" />
+    <Content Include="UI\ChangePassword.aspx" />
+    <Content Include="UI\CheckTitle\CheckTitleSelect.aspx" />
+    <Content Include="UI\CheckTitle\CheckTitleEdit.aspx" />
+    <Content Include="UI\Dept\AddDept.aspx" />
+    <Content Include="UI\Dept\EditDept.aspx" />
+    <Content Include="UI\Dept\QueryDept.aspx" />
+    <Content Include="UI\Dept\SelectOrgan.aspx" />
+    <Content Include="UI\ExeTask\ExeTask.aspx" />
+    <Content Include="UI\ExeTask\SelectTask.aspx" />
+    <Content Include="UI\Low\BasicLow.aspx" />
+    <Content Include="UI\Low\Low.aspx" />
+    <Content Include="UI\Low\test.aspx" />
+    <Content Include="UI\Low\UpLoadLowFile.aspx" />
+    <Content Include="UI\Organ\AddOrgan.aspx" />
+    <Content Include="UI\Organ\EditOrgan.aspx" />
+    <Content Include="UI\Organ\QueryOrgan.aspx" />
+    <Content Include="UI\QueryCheckTask\QueryCheck.aspx" />
+    <Content Include="UI\QueryCheckTask\QueryExeTask.aspx" />
+    <Content Include="UI\QueryCheckTask\ReadCheck.aspx" />
+    <Content Include="UI\QueryCheckTask\ReadExeTask.aspx" />
+    <Content Include="UI\Role\AddRole.aspx" />
+    <Content Include="UI\Role\EditRole.aspx" />
+    <Content Include="UI\Role\QueryRole.aspx" />
+    <Content Include="UI\Supervise\Answer.aspx" />
+    <Content Include="UI\Supervise\CheckResultAdvice.aspx" />
+    <Content Include="UI\Supervise\EditCheckTitle.aspx" />
+    <Content Include="UI\Supervise\ExeCheck.aspx" />
+    <Content Include="UI\Supervise\SelectUnit.aspx" />
+    <Content Include="UI\Task\DownloadFile.aspx" />
+    <Content Include="UI\Task\EditTask.aspx" />
+    <Content Include="UI\Task\PublishTask.aspx" />
+    <Content Include="UI\Task\QueryTask.aspx" />
+    <Content Include="UI\Task\SelectTemplate.aspx" />
+    <Content Include="UI\Template\AddTemplate.aspx" />
+    <Content Include="UI\Template\EditTemplate.aspx" />
+    <Content Include="UI\Template\TemplateManage.aspx" />
+    <Content Include="UI\Unit\EditUnit.aspx" />
+    <Content Include="UI\Unit\UnitSelect.aspx" />
+    <Content Include="UI\Unit\AddUnit.aspx" />
+    <Content Include="UI\User\AddSupervise.aspx" />
+    <Content Include="UI\User\AddUser.aspx" />
+    <Content Include="UI\User\EditSupervise.aspx" />
+    <Content Include="UI\User\EditUser.aspx" />
+    <Content Include="UI\User\QuerySupervise.aspx" />
+    <Content Include="UI\User\QueryUser.aspx" />
+    <Content Include="UI\User\SelectDept.aspx" />
+    <Content Include="UI\User\WorkLoad.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckCode.aspx.designer.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoginView.aspx.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginView.aspx.designer.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\CheckTitle\AddCheckTitle.aspx.cs">
+      <DependentUpon>AddCheckTitle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CheckTitle\AddCheckTitle.aspx.designer.cs">
+      <DependentUpon>AddCheckTitle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CheckTitle\CheckTitleSelect.aspx.cs">
+      <DependentUpon>CheckTitleSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CheckTitle\CheckTitleSelect.aspx.designer.cs">
+      <DependentUpon>CheckTitleSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CheckTitle\CheckTitleEdit.aspx.cs">
+      <DependentUpon>CheckTitleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CheckTitle\CheckTitleEdit.aspx.designer.cs">
+      <DependentUpon>CheckTitleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dept\AddDept.aspx.cs">
+      <DependentUpon>AddDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Dept\AddDept.aspx.designer.cs">
+      <DependentUpon>AddDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dept\EditDept.aspx.cs">
+      <DependentUpon>EditDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Dept\EditDept.aspx.designer.cs">
+      <DependentUpon>EditDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dept\QueryDept.aspx.cs">
+      <DependentUpon>QueryDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Dept\QueryDept.aspx.designer.cs">
+      <DependentUpon>QueryDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dept\SelectOrgan.aspx.cs">
+      <DependentUpon>SelectOrgan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Dept\SelectOrgan.aspx.designer.cs">
+      <DependentUpon>SelectOrgan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExeTask\ExeTask.aspx.cs">
+      <DependentUpon>ExeTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ExeTask\ExeTask.aspx.designer.cs">
+      <DependentUpon>ExeTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExeTask\SelectTask.aspx.cs">
+      <DependentUpon>SelectTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ExeTask\SelectTask.aspx.designer.cs">
+      <DependentUpon>SelectTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Low\BasicLow.aspx.cs">
+      <DependentUpon>BasicLow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Low\BasicLow.aspx.designer.cs">
+      <DependentUpon>BasicLow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Low\Low.aspx.cs">
+      <DependentUpon>Low.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Low\Low.aspx.designer.cs">
+      <DependentUpon>Low.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Low\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Low\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Low\UpLoadLowFile.aspx.cs">
+      <DependentUpon>UpLoadLowFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Low\UpLoadLowFile.aspx.designer.cs">
+      <DependentUpon>UpLoadLowFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Organ\AddOrgan.aspx.cs">
+      <DependentUpon>AddOrgan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Organ\AddOrgan.aspx.designer.cs">
+      <DependentUpon>AddOrgan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Organ\EditOrgan.aspx.cs">
+      <DependentUpon>EditOrgan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Organ\EditOrgan.aspx.designer.cs">
+      <DependentUpon>EditOrgan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Organ\QueryOrgan.aspx.cs">
+      <DependentUpon>QueryOrgan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Organ\QueryOrgan.aspx.designer.cs">
+      <DependentUpon>QueryOrgan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\QueryCheck.aspx.cs">
+      <DependentUpon>QueryCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\QueryCheck.aspx.designer.cs">
+      <DependentUpon>QueryCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\QueryExeTask.aspx.cs">
+      <DependentUpon>QueryExeTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\QueryExeTask.aspx.designer.cs">
+      <DependentUpon>QueryExeTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\ReadCheck.aspx.cs">
+      <DependentUpon>ReadCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\ReadCheck.aspx.designer.cs">
+      <DependentUpon>ReadCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\ReadExeTask.aspx.cs">
+      <DependentUpon>ReadExeTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\QueryCheckTask\ReadExeTask.aspx.designer.cs">
+      <DependentUpon>ReadExeTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Role\AddRole.aspx.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Role\AddRole.aspx.designer.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Role\EditRole.aspx.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Role\EditRole.aspx.designer.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Role\QueryRole.aspx.cs">
+      <DependentUpon>QueryRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Role\QueryRole.aspx.designer.cs">
+      <DependentUpon>QueryRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Supervise\Answer.aspx.cs">
+      <DependentUpon>Answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Supervise\Answer.aspx.designer.cs">
+      <DependentUpon>Answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Supervise\CheckResultAdvice.aspx.cs">
+      <DependentUpon>CheckResultAdvice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Supervise\CheckResultAdvice.aspx.designer.cs">
+      <DependentUpon>CheckResultAdvice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Supervise\EditCheckTitle.aspx.cs">
+      <DependentUpon>EditCheckTitle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Supervise\EditCheckTitle.aspx.designer.cs">
+      <DependentUpon>EditCheckTitle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Supervise\ExeCheck.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ExeCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Supervise\ExeCheck.aspx.designer.cs" />
+    <Compile Include="UI\Supervise\SelectUnit.aspx.cs">
+      <DependentUpon>SelectUnit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Supervise\SelectUnit.aspx.designer.cs">
+      <DependentUpon>SelectUnit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Task\DownloadFile.aspx.cs">
+      <DependentUpon>DownloadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Task\DownloadFile.aspx.designer.cs">
+      <DependentUpon>DownloadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Task\EditTask.aspx.cs">
+      <DependentUpon>EditTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Task\EditTask.aspx.designer.cs">
+      <DependentUpon>EditTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Task\PublishTask.aspx.cs">
+      <DependentUpon>PublishTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Task\PublishTask.aspx.designer.cs">
+      <DependentUpon>PublishTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Task\QueryTask.aspx.cs">
+      <DependentUpon>QueryTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Task\QueryTask.aspx.designer.cs">
+      <DependentUpon>QueryTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Task\SelectTemplate.aspx.cs">
+      <DependentUpon>SelectTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Task\SelectTemplate.aspx.designer.cs">
+      <DependentUpon>SelectTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Template\AddTemplate.aspx.cs">
+      <DependentUpon>AddTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Template\AddTemplate.aspx.designer.cs">
+      <DependentUpon>AddTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Template\EditTemplate.aspx.cs">
+      <DependentUpon>EditTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Template\EditTemplate.aspx.designer.cs">
+      <DependentUpon>EditTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Template\TemplateManage.aspx.cs">
+      <DependentUpon>TemplateManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Template\TemplateManage.aspx.designer.cs">
+      <DependentUpon>TemplateManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Unit\EditUnit.aspx.cs">
+      <DependentUpon>EditUnit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Unit\EditUnit.aspx.designer.cs">
+      <DependentUpon>EditUnit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Unit\UnitSelect.aspx.cs">
+      <DependentUpon>UnitSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Unit\UnitSelect.aspx.designer.cs">
+      <DependentUpon>UnitSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Unit\AddUnit.aspx.cs">
+      <DependentUpon>AddUnit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Unit\AddUnit.aspx.designer.cs">
+      <DependentUpon>AddUnit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\AddSupervise.aspx.cs">
+      <DependentUpon>AddSupervise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\AddSupervise.aspx.designer.cs">
+      <DependentUpon>AddSupervise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\EditSupervise.aspx.cs">
+      <DependentUpon>EditSupervise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\EditSupervise.aspx.designer.cs">
+      <DependentUpon>EditSupervise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\QuerySupervise.aspx.cs">
+      <DependentUpon>QuerySupervise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\QuerySupervise.aspx.designer.cs">
+      <DependentUpon>QuerySupervise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\QueryUser.aspx.cs">
+      <DependentUpon>QueryUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\QueryUser.aspx.designer.cs">
+      <DependentUpon>QueryUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\SelectDept.aspx.cs">
+      <DependentUpon>SelectDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\SelectDept.aspx.designer.cs">
+      <DependentUpon>SelectDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\WorkLoad.aspx.cs">
+      <DependentUpon>WorkLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User\WorkLoad.aspx.designer.cs">
+      <DependentUpon>WorkLoad.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CJia.HealthInspection\CJia.HealthInspection.csproj">
+      <Project>{4cdfebb3-de99-4119-8553-6f9d14c01770}</Project>
+      <Name>CJia.HealthInspection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tools\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>43523</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9216/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

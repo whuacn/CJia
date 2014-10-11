@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.Uremia", "Cjia.Uremia\CJia.Uremia.csproj", "{9B547770-723A-4A3D-8F8B-9253EDF57ED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.Uremia.Web", "Cjia.Uremia.Web\CJia.Uremia.Web.csproj", "{C54CDE97-CC93-4E67-B4E6-3DFC1AE57B99}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.207:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Cjia.Uremia\\Cjia.Uremia.csproj
+		SccProjectName1 = Cjia.Uremia
+		SccLocalPath1 = Cjia.Uremia
+		SccProjectUniqueName2 = Cjia.Uremia.Web\\Cjia.Uremia.Web.csproj
+		SccProjectName2 = Cjia.Uremia.Web
+		SccLocalPath2 = Cjia.Uremia.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B547770-723A-4A3D-8F8B-9253EDF57ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B547770-723A-4A3D-8F8B-9253EDF57ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B547770-723A-4A3D-8F8B-9253EDF57ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B547770-723A-4A3D-8F8B-9253EDF57ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54CDE97-CC93-4E67-B4E6-3DFC1AE57B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54CDE97-CC93-4E67-B4E6-3DFC1AE57B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54CDE97-CC93-4E67-B4E6-3DFC1AE57B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54CDE97-CC93-4E67-B4E6-3DFC1AE57B99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,192 @@
+﻿<local:BasePage
+    x:Class="CJia.iSmartMedical.Win8.Doctor.AdviceInputPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CJia.iSmartMedical.Win8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="gridMain"  Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Height="768" VerticalAlignment="Bottom" Tapped="gridMain_Tapped">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="listNewAdvice" HorizontalAlignment="Left" Height="272" Margin="274,328,0,0"  VerticalAlignment="Top" Width="667" BorderBrush="#FFE4BFBF" BorderThickness="1" Background="#FF30916F" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
+                        <TextBlock Text="{Binding StandingTypeName}" FontSize="16" Width="80"/>
+                        <TextBlock Text="{Binding AdviceTypeName}" FontSize="16" Width="100"/>
+                        <TextBlock Text="{Binding AdviceShowName}" FontSize="16" Width="500"/>
+                        <TextBlock Text="{Binding Notes}" FontSize="16" Width="170"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Grid HorizontalAlignment="Left" Height="348" Margin="968,300,0,0" VerticalAlignment="Top" Width="280" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnA" Content="A" Grid.Column="0" Grid.Row="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan" FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="B" Grid.Row="0" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan" FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="C" Grid.Row="0" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="D" Grid.Row="0" Grid.Column="3" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="E" Grid.Row="1" Grid.Column="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="F" Grid.Row="1" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="G" Grid.Row="1" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="H" Grid.Row="1" Grid.Column="3" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="I" Grid.Row="2" Grid.Column="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="J" Grid.Row="2" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="K" Grid.Row="2" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="L" Grid.Row="2" Grid.Column="3" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="M" Grid.Row="3" Grid.Column="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="N" Grid.Row="3" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="O" Grid.Row="3" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="P" Grid.Row="3" Grid.Column="3" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="Q" Grid.Row="4" Grid.Column="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="R" Grid.Row="4" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="S" Grid.Row="4" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="T" Grid.Row="4" Grid.Column="3" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="U" Grid.Row="5" Grid.Column="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="V" Grid.Row="5" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="W" Grid.Row="5" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="X" Grid.Row="5" Grid.Column="3" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="Y" Grid.Row="6" Grid.Column="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="Z" Grid.Row="6" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="30" Click="ButtonChar_Click"/>
+            <Button Content="退格" Grid.Row="6" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="20" Click="ButtonChar_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFD42162" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="清空" Grid.Row="6" Grid.Column="3" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  FontSize="20" Click="ButtonChar_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Green" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Button x:Name="btnSaveAdvice" Content="保存医嘱" HorizontalAlignment="Left" Margin="819,605,0,0"  VerticalAlignment="Top" Width="126" Tapped="btnSaveAdvice_Tapped" Grid.Row="1" Height="49" FontFamily="YouYuan" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="493,7,0,0"  TextWrapping="Wrap" Text="医嘱名称：" VerticalAlignment="Top" Height="28" Width="119" FontSize="20" Grid.Row="1"/>
+        <TextBox x:Name="txtAdviceName" HorizontalAlignment="Left" Margin="493,40,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="463" Background="#FFF9F9F3" Grid.Row="1" IsReadOnly="True" TextChanged="txtAdviceName_TextChanged" TabIndex="2" GotFocus="TextInput_GotFocus"/>
+        <TextBlock HorizontalAlignment="Left" Margin="982,8,0,0"  TextWrapping="Wrap" Text="规格：" VerticalAlignment="Top" Height="28" Width="119" FontSize="20" Grid.Row="1"/>
+        <TextBox x:Name="txtSpec" HorizontalAlignment="Left" Margin="980,40,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="268" Background="#FFF0EDBB" Grid.Row="1" IsReadOnly="True"/>
+        <TextBox x:Name="txtUnit" HorizontalAlignment="Left" Margin="145,132,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Background="#FFF0EDBB" Grid.Row="1" IsReadOnly="True"/>
+        <Button x:Name="btnAddAdvice" Content="新增医嘱" HorizontalAlignment="Left" Margin="1132,124,0,0"  VerticalAlignment="Top" Width="116" Click="btnAddAdvice_Click" Grid.Row="1" FontFamily="YouYuan" FontSize="20" Padding="0" Height="51"/>
+        <ToggleSwitch x:Name="tsGroup" Header="" HorizontalAlignment="Left" Margin="962,121,0,0"  VerticalAlignment="Top" Width="190" OffContent="非组医嘱" OnContent="成组医嘱" FontSize="20" Toggled="tsGroup_Toggled" Grid.Row="1" FontWeight="Normal" FontFamily="YouYuan"/>
+        <Button x:Name="btnDeleteAdvice" Content="删除医嘱" HorizontalAlignment="Left" Margin="270,605,0,0"  VerticalAlignment="Top" Width="124" Click="btnDeleteAdvice_Click" Grid.Row="1" Height="49" RenderTransformOrigin="1.218,0.51" FontFamily="YouYuan" FontSize="20"/>
+
+        <Grid HorizontalAlignment="Left" Height="350" Margin="18,300,0,0" VerticalAlignment="Top" Width="234" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="27*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="7" Grid.Row="0" Grid.Column="0" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan" Click="ButtonChar_Click" FontSize="30" Tag="7"/>
+            <Button Content="8" Grid.Row="0" Grid.Column="1" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan" Click="ButtonChar_Click" FontSize="30" Tag="8"/>
+            <Button Content="9" Grid.Row="0" Grid.Column="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan" Click="ButtonChar_Click" FontSize="30" Tag="9"/>
+            <Button Content="4" Grid.Row="1" Height="50" Margin="0,3"  Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  Click="ButtonChar_Click" FontSize="30" Tag="4"/>
+            <Button Content="5" Grid.Row="1" Grid.Column="1" Height="50" Margin="0,3"  Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  Click="ButtonChar_Click" FontSize="30" Tag="5"/>
+            <Button Content="6" Grid.Row="1" Grid.Column="2" Height="50" Margin="0,3"  Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  Click="ButtonChar_Click" FontSize="30" Tag="6"/>
+            <Button Content="1" Grid.Row="2" Height="50" Margin="0,3" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  Click="ButtonChar_Click" FontSize="30" Tag="1"/>
+            <Button Content="2" Grid.Row="2" Grid.Column="1" Height="50" Margin="0,3"  Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  Click="ButtonChar_Click" FontSize="30" Tag="2"/>
+            <Button Content="3" Grid.Row="2" Grid.Column="2" Height="50" Margin="0,3"  Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  Click="ButtonChar_Click" FontSize="30" Tag="3"/>
+            <Button Content="0" Grid.Row="3" Height="50" Margin="0,3"  Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan"  Click="ButtonChar_Click" FontSize="30" Tag="0" />
+            <Button Content="." Grid.Row="3" Grid.Column="2" Height="50" Margin="0,3"  Width="68" Padding="7,2,2,13" HorizontalAlignment="Center" FontFamily="Tahoma"  Click="ButtonChar_Click" FontWeight="Bold" FontSize="20" Foreground="#FFF70808" Tag="." />
+            <Button x:Name="btnUp" Content="↑" Grid.Row="4" Grid.Column="1" Height="50" Width="68" HorizontalAlignment="Center" Padding="2" FontFamily="YouYuan" FontSize="30" Click="btnUp_Click"/>
+            <Button x:Name="btnPrevInput" Content="上一项" Grid.Row="5" Height="50" Width="68" Padding="2" HorizontalAlignment="Center" Click="btnPrevInput_Click"/>
+            <Button x:Name="btnOK" Content="确定" Grid.Row="5" Grid.Column="1" Height="50" Width="68" Padding="2" HorizontalAlignment="Center" FontFamily="YouYuan" FontSize="20" Click="btnOK_Click"/>
+            <Button x:Name="btnNextInput" Content="下一项" Grid.Row="5" Grid.Column="2" Height="50" Width="68" Padding="2" HorizontalAlignment="Center" Click="btnNextInput_Click"/>
+            <Button x:Name="btnDown" Content="↓" Grid.Row="6" Grid.Column="1" Height="50" Width="68" Click="btnDown_Click" HorizontalAlignment="Center" Padding="2" FontFamily="YouYuan" FontSize="30"/>
+        </Grid>
+        <TextBox x:Name="txtDosage" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Margin="28,132,0,0" Grid.Row="1" IsReadOnly="True" TabIndex="3" GotFocus="TextInput_GotFocus"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="剂量：" VerticalAlignment="Top" Height="25" Width="84" FontSize="20" Margin="28,102,0,0" Grid.Row="1"/>
+        <TextBox x:Name="txtUsage" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Margin="270,132,0,0" Grid.Row="1" IsReadOnly="True" TextChanged="txtUsage_TextChanged" TabIndex="4" GotFocus="TextInput_GotFocus"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="用法：" VerticalAlignment="Top" Height="25" Width="84" FontSize="20" Margin="270,102,0,0" Grid.Row="1"/>
+        <TextBox x:Name="txtFrequence" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Margin="493,132,0,0" Grid.Row="1" IsReadOnly="True" TextChanged="txtFrequence_TextChanged" TabIndex="5" GotFocus="TextInput_GotFocus"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="频率：" VerticalAlignment="Top" Height="25" Width="84" FontSize="20" Margin="493,102,0,0" Grid.Row="1"/>
+        <TextBox x:Name="txtNotes" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Margin="720,132,0,0" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="备注：" VerticalAlignment="Top" Height="25" Width="114" FontSize="20" Margin="720,102,0,0" Grid.Row="1"/>
+        <TextBox x:Name="txtStandingFlag" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Margin="28,40,0,0" Grid.Row="1" IsReadOnly="True" GotFocus="TextInput_GotFocus" TabIndex="0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="持续时间：" VerticalAlignment="Top" Height="25" Width="114" FontSize="20" Margin="28,10,0,0" Grid.Row="1"/>
+        <TextBox x:Name="txtAdviceType" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Margin="270,40,0,0" Grid.Row="1" IsReadOnly="True" TextChanged="txtAdviceType_TextChanged" TabIndex="1" GotFocus="TextInput_GotFocus"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="医嘱类别：" VerticalAlignment="Top" Height="25" Width="146" FontSize="20" Margin="270,10,0,0" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="长|临       类别             医嘱名称                                         备注" VerticalAlignment="Top" Height="23" Width="650" FontFamily="Global User Interface" Foreground="#FFD8AF21"  FontSize="20" Margin="280,300,0,0" Grid.Row="1"/>
+        <ListView x:Name="listStandingFlag" HorizontalAlignment="Left" Height="130" Margin="26,76,0,0" Grid.Row="1" VerticalAlignment="Top" Width="226" Background="#FF1A1D1D" BorderBrush="#FF1350D3" BorderThickness="1" Visibility="Collapsed" Tapped="ListView_Tapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="5,10,0,0">
+                        <TextBlock Text="{Binding Name}" Width="80"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="listUsage" HorizontalAlignment="Left" Height="435" Margin="269,169,0,0" Grid.Row="1" VerticalAlignment="Top" Width="203" Background="#FF1A1D1D" BorderBrush="#FF1350D3" BorderThickness="1" Visibility="Collapsed" Tapped="ListView_Tapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical"  Margin="5,10,0,0">
+                        <TextBlock Text="{Binding UsageName}" Width="190"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="listFrequancy" HorizontalAlignment="Left" Height="435" Margin="487,169,0,0" Grid.Row="1" VerticalAlignment="Top" Width="210" Background="#FF1A1D1D" BorderBrush="#FF1350D3" BorderThickness="1" Visibility="Collapsed" Tapped="ListView_Tapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical"  Margin="5,10,0,0">
+                        <TextBlock Text="{Binding FrequencyName}" Width="200"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="listAdviceType" HorizontalAlignment="Left" Height="527" Margin="269,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="203" Background="#FF1A1D1D" BorderBrush="#FF1350D3" BorderThickness="1" Visibility="Collapsed" Tapped="ListView_Tapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="5,10,0,0">
+                        <TextBlock Text="{Binding Name}" Width="190"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="listAdvice" HorizontalAlignment="Left" Height="527" Margin="485,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="477" Background="#FF1A1D1D" BorderBrush="#FF1350D3" BorderThickness="1" Visibility="Collapsed" Tapped="ListView_Tapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
+                        <TextBlock Text="{Binding AdviceName}"  Width="300" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Spec}" Width="100"/>
+                        <TextBlock Text="{Binding Unit}" Width="80"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</local:BasePage>

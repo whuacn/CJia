@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{433DB958-88FB-449B-8C3F-CCA519F44DF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.Health</RootNamespace>
+    <AssemblyName>CJia.Health</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJia">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Controls">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Data.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Printing.v12.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Utils.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraBars.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraEditors.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Models\ApprovalBorrowModel.cs" />
+    <Compile Include="Models\BorrowTimeLenthModel.cs" />
+    <Compile Include="Models\ChangePwdModel.cs" />
+    <Compile Include="Models\DataCheckModel.cs" />
+    <Compile Include="Models\DeptManageModel.cs" />
+    <Compile Include="Models\DoctorManageModel.cs" />
+    <Compile Include="Models\ImagesInputModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\MainFormModel.cs" />
+    <Compile Include="Models\MyPatientInputModel.cs" />
+    <Compile Include="Models\MyUndoPatientModel.cs" />
+    <Compile Include="Models\PatientInfoInputModel.cs" />
+    <Compile Include="Models\PrintApplyModel.cs" />
+    <Compile Include="Models\ProjectManageModel.cs" />
+    <Compile Include="Models\RoleFunctionModel.cs" />
+    <Compile Include="Models\RoleManageModel.cs" />
+    <Compile Include="Models\SqlTools.cs" />
+    <Compile Include="Models\UserManageModel.cs" />
+    <Compile Include="Models\UserWorkStatModel.cs" />
+    <Compile Include="Models\Web\ApplyModel.cs" />
+    <Compile Include="Models\Web\EditPasswordModel.cs" />
+    <Compile Include="Models\Web\LoginModel.cs" />
+    <Compile Include="Models\Web\MyApplyModel.cs" />
+    <Compile Include="Models\Web\MyBorrowModel.cs" />
+    <Compile Include="Models\Web\MyPictureModel.cs" />
+    <Compile Include="Models\Web\PatientApplyModel.cs" />
+    <Compile Include="Models\Web\ReadBorrowModel.cs" />
+    <Compile Include="Models\DataQueryModel.cs" />
+    <Compile Include="Models\ImageCheckModel.cs" />
+    <Compile Include="Models\NewImageCheckModel.cs" />
+    <Compile Include="Models\CompleteQueryModel.cs" />
+    <Compile Include="MyPatient.cs" />
+    <Compile Include="Models\Web\QueryPatientModel.cs" />
+    <Compile Include="Presenters\ApprovalBorrowPresenter.cs" />
+    <Compile Include="Presenters\BorrowTimeLenthPresenter.cs" />
+    <Compile Include="Presenters\ChangePwdPresenter.cs" />
+    <Compile Include="Presenters\DataCheckPresenter.cs" />
+    <Compile Include="Presenters\DeptManagePresenter.cs" />
+    <Compile Include="Presenters\DoctorManagePresenter.cs" />
+    <Compile Include="Presenters\ImagesInputPresenter.cs" />
+    <Compile Include="Presenters\LoginViewPresenter.cs" />
+    <Compile Include="Presenters\MainFormPresenter.cs" />
+    <Compile Include="Presenters\MyPatientInputPresenter.cs" />
+    <Compile Include="Presenters\MyUndoPatientPresenter.cs" />
+    <Compile Include="Presenters\NewPatientInfoInputPresenter.cs" />
+    <Compile Include="Presenters\PatientInfoInputPresenter.cs" />
+    <Compile Include="Presenters\PrintApplyPresenter.cs" />
+    <Compile Include="Presenters\ProjectManagePresenter.cs" />
+    <Compile Include="Presenters\RoleFunctionPresenter.cs" />
+    <Compile Include="Presenters\RoleManagePresenter.cs" />
+    <Compile Include="Presenters\UserWorkStatPresenter.cs" />
+    <Compile Include="Presenters\Web\ApplyPresenter.cs" />
+    <Compile Include="Presenters\Web\EditPasswordPresenter.cs" />
+    <Compile Include="Presenters\Web\LoginPresenter.cs" />
+    <Compile Include="Presenters\Web\MyApplyPresenter.cs" />
+    <Compile Include="Presenters\Web\MyBorrowPresenter.cs" />
+    <Compile Include="Presenters\Web\MyPicturePresenter.cs" />
+    <Compile Include="Presenters\Web\PatientApplyPresenter.cs" />
+    <Compile Include="Presenters\Web\QueryPatientPresenter.cs" />
+    <Compile Include="Presenters\Web\ReadBorrowPresenter.cs" />
+    <Compile Include="Presenters\UserManagePresenter.cs" />
+    <Compile Include="Presenters\DataQueryPresenter.cs" />
+    <Compile Include="Presenters\ImageCheckPresenter.cs" />
+    <Compile Include="Presenters\NewImageCheckPresenter.cs" />
+    <Compile Include="Presenters\CompleteQueryPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\ConfigHelper.cs" />
+    <Compile Include="Tools\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FtpHelp.cs" />
+    <Compile Include="Tools\Help.cs" />
+    <Compile Include="Tools\ImageCache.cs" />
+    <Compile Include="Tools\IPage.cs" />
+    <Compile Include="Tools\IView.cs" />
+    <Compile Include="Tools\Message.cs" />
+    <Compile Include="Tools\Model.cs" />
+    <Compile Include="Tools\Page.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Presenter.cs" />
+    <Compile Include="Tools\PresenterPage.cs" />
+    <Compile Include="Tools\Utils.cs" />
+    <Compile Include="Tools\View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\OnPreLoadPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\WinFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\WinFrom.Designer.cs">
+      <DependentUpon>WinFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="Views\IApprovalBorrowView.cs" />
+    <Compile Include="Views\IBorrowTimeLenthView.cs" />
+    <Compile Include="Views\IChangePwdView.cs" />
+    <Compile Include="Views\IDataCheckView.cs" />
+    <Compile Include="Views\IDeptManageView.cs" />
+    <Compile Include="Views\IDoctorManageView.cs" />
+    <Compile Include="Views\IImagesInputView.cs" />
+    <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\IMainFormView.cs" />
+    <Compile Include="Views\IMyPatientInputView.cs" />
+    <Compile Include="Views\IMyUndoPatientView.cs" />
+    <Compile Include="Views\INewPatientInfoInputView.cs" />
+    <Compile Include="Views\IPrintApplyView.cs" />
+    <Compile Include="Views\IUserWorkStat.cs" />
+    <Compile Include="Views\Web\IEditPasswordView.cs" />
+    <Compile Include="Views\Web\IMyBorrowView.cs" />
+    <Compile Include="Views\IPatientInfoInputView.cs" />
+    <Compile Include="Views\IRoleFunctionView.cs" />
+    <Compile Include="Views\IRoleManageView.cs" />
+    <Compile Include="Views\IProjectManageView.cs" />
+    <Compile Include="Views\Web\IApplyView.cs" />
+    <Compile Include="Views\Web\ILoginView.cs" />
+    <Compile Include="Views\Web\IMyApplyView.cs" />
+    <Compile Include="Views\Web\IMyPictureView.cs" />
+    <Compile Include="Views\Web\IPatientApplyView.cs" />
+    <Compile Include="Views\Web\IQueryPatientView.cs" />
+    <Compile Include="Views\Web\IReadBorrowView.cs" />
+    <Compile Include="Views\IUserManageView.cs" />
+    <Compile Include="Views\IDataQueryView.cs" />
+    <Compile Include="Views\IImageCheckView.cs" />
+    <Compile Include="Views\INewImageCheckView.cs" />
+    <Compile Include="Views\ICompleteQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tools\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\WinFrom.resx">
+      <DependentUpon>WinFrom.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

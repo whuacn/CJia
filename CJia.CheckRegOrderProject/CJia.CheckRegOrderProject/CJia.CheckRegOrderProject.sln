@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.CheckRegOrder.App", "CJia.CheckRegOrder.App\CJia.CheckRegOrder.App.csproj", "{A29B353E-2740-4F29-84E6-9DB490E48A83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.CheckRegOrder", "CJia.CheckRegOrder\CJia.CheckRegOrder.csproj", "{88C2E955-FDBA-40DF-B65D-9325BDC63BD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.CheckRegOrder", "UnitTest.CheckRegOrder\UnitTest.CheckRegOrder.csproj", "{449D5E8B-B3B8-4F68-85D6-7F8DD4EE6FEC}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.204:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.CheckRegOrder.App\\CJia.CheckRegOrder.App.csproj
+		SccProjectName1 = CJia.CheckRegOrder.App
+		SccLocalPath1 = CJia.CheckRegOrder.App
+		SccProjectUniqueName2 = CJia.CheckRegOrder\\CJia.CheckRegOrder.csproj
+		SccProjectName2 = CJia.CheckRegOrder
+		SccLocalPath2 = CJia.CheckRegOrder
+		SccProjectUniqueName3 = UnitTest.CheckRegOrder\\UnitTest.CheckRegOrder.csproj
+		SccProjectName3 = UnitTest.CheckRegOrder
+		SccLocalPath3 = UnitTest.CheckRegOrder
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A29B353E-2740-4F29-84E6-9DB490E48A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29B353E-2740-4F29-84E6-9DB490E48A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29B353E-2740-4F29-84E6-9DB490E48A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29B353E-2740-4F29-84E6-9DB490E48A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C2E955-FDBA-40DF-B65D-9325BDC63BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C2E955-FDBA-40DF-B65D-9325BDC63BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C2E955-FDBA-40DF-B65D-9325BDC63BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C2E955-FDBA-40DF-B65D-9325BDC63BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449D5E8B-B3B8-4F68-85D6-7F8DD4EE6FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449D5E8B-B3B8-4F68-85D6-7F8DD4EE6FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449D5E8B-B3B8-4F68-85D6-7F8DD4EE6FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449D5E8B-B3B8-4F68-85D6-7F8DD4EE6FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

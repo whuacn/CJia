@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA27AA46-81CC-4735-9E8D-D338FE444086}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.Controls</RootNamespace>
+    <AssemblyName>CJia.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\CJia.Bin\Framework\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>..\..\CJia.Bin\Framework\Debug\CJia.Controls.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Animator">
+      <HintPath>..\..\..\Winform动画\Animator\Animator\Animator\bin\Debug\Animator.dll</HintPath>
+    </Reference>
+    <Reference Include="ChnCharInfo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=18f031bd02e5e291, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CJia自定义控件\ESoSi.Editors\bin\Debug\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="ChnCharInfoResource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b262dc6f7c3c1f3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CJia自定义控件\ESoSi.Editors\bin\Debug\ChnCharInfoResource.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+    </Reference>
+    <Reference Include="CJia.Editors, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Data.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.Utils.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraBars.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraEditors.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraGrid.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraNavBar.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraTreeList.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BtnAdd.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnCancel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnClose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnDelete.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnExit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnExport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnImport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnRefresh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnRegister.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnRemove.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnSave.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnSearch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaCheck.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaCheckedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaComboBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaDateTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaDropDownBtn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaGridLookUp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaLineTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CJiaLineTextBox.Designer.cs">
+      <DependentUpon>CJiaLineTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CJiaLoading.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaLoadingBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaMCCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaNavBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaNumberInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaOpenFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaPagingPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaPicture.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaRadioBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaReportPrintUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CJiaRTLookUp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaGridSearch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaSpellEditor.cs" />
+    <Compile Include="CJiaTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaTextSearch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaToolStripPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaUnitTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaWin8Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TxtMultiLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TxtNumber.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TxtPassword.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UCForWaitingForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CJiaOpenFolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CJiaRTLookUpMoreCol.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CJiaGrid.resx">
+      <DependentUpon>CJiaGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CJiaGridLookUp.resx">
+      <DependentUpon>CJiaGridLookUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CJiaLineTextBox.resx">
+      <DependentUpon>CJiaLineTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CJiaPagingPanel.resx">
+      <DependentUpon>CJiaPagingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CJiaReportPrintUC.resx">
+      <DependentUpon>CJiaReportPrintUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCForWaitingForm.resx">
+      <DependentUpon>UCForWaitingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002_编辑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002_编辑_副本.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002_编辑_副本2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112_Tick_Green_32x32_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveAllItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未标题-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未标题-7_副本.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未标题-7_副本2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dxerrorprovider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112_Minus_Orange_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112_Plus_Orange_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1_编辑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register_编辑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Action_Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112_Minus_Blue_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\110_编辑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\111_编辑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowFirstPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowLastPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowNextPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowPrevPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1_编辑_编辑_编辑.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.PEIS", "CJia.PEIS\CJia.PEIS.csproj", "{CF10E44C-9417-470F-855A-CA9973A11EE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.PEIS.App", "CJia.PEIS.App\CJia.PEIS.App.csproj", "{09D154C0-4804-485D-B97B-90E630CE2DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.PEIS", "UnitTest.PEIS\UnitTest.PEIS.csproj", "{CE19DF1B-463E-4DB5-98C1-BED7676BD0AD}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.207:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.PEIS.App\\CJia.PEIS.App.csproj
+		SccProjectName1 = CJia.PEIS.App
+		SccLocalPath1 = CJia.PEIS.App
+		SccProjectUniqueName2 = CJia.PEIS\\CJia.PEIS.csproj
+		SccProjectName2 = CJia.PEIS
+		SccLocalPath2 = CJia.PEIS
+		SccProjectUniqueName3 = UnitTest.PEIS\\UnitTest.PEIS.csproj
+		SccProjectName3 = UnitTest.PEIS
+		SccLocalPath3 = UnitTest.PEIS
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF10E44C-9417-470F-855A-CA9973A11EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF10E44C-9417-470F-855A-CA9973A11EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF10E44C-9417-470F-855A-CA9973A11EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF10E44C-9417-470F-855A-CA9973A11EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D154C0-4804-485D-B97B-90E630CE2DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D154C0-4804-485D-B97B-90E630CE2DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D154C0-4804-485D-B97B-90E630CE2DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D154C0-4804-485D-B97B-90E630CE2DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE19DF1B-463E-4DB5-98C1-BED7676BD0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE19DF1B-463E-4DB5-98C1-BED7676BD0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE19DF1B-463E-4DB5-98C1-BED7676BD0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE19DF1B-463E-4DB5-98C1-BED7676BD0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

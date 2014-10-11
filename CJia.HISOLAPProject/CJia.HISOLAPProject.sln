@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HISOLAP.App", "CJia.HISOLAP.App\CJia.HISOLAP.App.csproj", "{399970C7-6CA1-4B3E-A4B9-89870DC94B4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HISOLAP", "CJia.HISOLAP\CJia.HISOLAP.csproj", "{B2B63A7B-0D55-4F0D-9280-74E2044BFDB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HISOLAP.UnitTestProject", "CJia.HISOLAP.UnitTestProject\CJia.HISOLAP.UnitTestProject.csproj", "{12660616-CE89-4817-81AE-FA12B454389D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.HISOLAP.Web", "CJia.HISOLAP.Web\CJia.HISOLAP.Web.csproj", "{CF866003-F60E-4CDD-9FB2-0089793527ED}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.207:8080/tfs/cjia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CJia.HISOLAP.App\\CJia.HISOLAP.App.csproj
+		SccProjectName1 = CJia.HISOLAP.App
+		SccLocalPath1 = CJia.HISOLAP.App
+		SccProjectUniqueName2 = CJia.HISOLAP\\CJia.HISOLAP.csproj
+		SccProjectName2 = CJia.HISOLAP
+		SccLocalPath2 = CJia.HISOLAP
+		SccProjectUniqueName3 = CJia.HISOLAP.UnitTestProject\\CJia.HISOLAP.UnitTestProject.csproj
+		SccProjectName3 = CJia.HISOLAP.UnitTestProject
+		SccLocalPath3 = CJia.HISOLAP.UnitTestProject
+		SccProjectUniqueName4 = CJia.HISOLAP.Web\\CJia.HISOLAP.Web.csproj
+		SccProjectName4 = CJia.HISOLAP.Web
+		SccLocalPath4 = CJia.HISOLAP.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{399970C7-6CA1-4B3E-A4B9-89870DC94B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399970C7-6CA1-4B3E-A4B9-89870DC94B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399970C7-6CA1-4B3E-A4B9-89870DC94B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399970C7-6CA1-4B3E-A4B9-89870DC94B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B63A7B-0D55-4F0D-9280-74E2044BFDB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B63A7B-0D55-4F0D-9280-74E2044BFDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B63A7B-0D55-4F0D-9280-74E2044BFDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B63A7B-0D55-4F0D-9280-74E2044BFDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12660616-CE89-4817-81AE-FA12B454389D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12660616-CE89-4817-81AE-FA12B454389D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12660616-CE89-4817-81AE-FA12B454389D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12660616-CE89-4817-81AE-FA12B454389D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF866003-F60E-4CDD-9FB2-0089793527ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF866003-F60E-4CDD-9FB2-0089793527ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF866003-F60E-4CDD-9FB2-0089793527ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF866003-F60E-4CDD-9FB2-0089793527ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

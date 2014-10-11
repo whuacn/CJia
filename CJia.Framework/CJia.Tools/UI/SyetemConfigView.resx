@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtModel.EditValue" xml:space="preserve">
+    <value>-- 创建系统表
+create table TM_SYSTEM
+(
+  system_id          NUMBER(10) not null,
+  system_name        VARCHAR2(100) not null,
+  page_container_asm VARCHAR2(100) not null,
+  page_container     VARCHAR2(100) not null,
+  default_module_id  NUMBER(10),
+  default_name       VARCHAR2(100),
+  system_help        VARCHAR2(1000),
+  system_about       VARCHAR2(1000),
+  status             CHAR(1) default '1' not null,
+  create_by          NUMBER(10),
+  create_date        DATE default SYSDATE,
+  update_by          NUMBER(10),
+  update_date        DATE
+);
+-- 增加系统表的表注释
+comment on table TM_SYSTEM
+  is '系统表';
+-- 增加系统表的字段注释
+comment on column TM_SYSTEM.system_id
+  is '系统流水号id';
+comment on column TM_SYSTEM.system_name
+  is '系统名称';
+comment on column TM_SYSTEM.page_container_asm
+  is '页面容器dll';
+comment on column TM_SYSTEM.page_container
+  is '页面容器类';
+comment on column TM_SYSTEM.default_module_id
+  is '默认打开的模块流水号id';
+comment on column TM_SYSTEM.default_name
+  is '默认打开的模块名称';
+comment on column TM_SYSTEM.system_help
+  is '系统帮助信息';
+comment on column TM_SYSTEM.system_about
+  is '系统说明 版本号等信息';
+comment on column TM_SYSTEM.status
+  is '状态（1 有效，0无效）';
+comment on column TM_SYSTEM.create_by
+  is '创建者';
+comment on column TM_SYSTEM.create_date
+  is '创建日期';
+comment on column TM_SYSTEM.update_by
+  is '修改者';
+comment on column TM_SYSTEM.update_date
+  is '修改日期';
+-- 创建系统表的各种约束
+alter table TM_SYSTEM
+  add constraint PK_SYSTEM_ID primary key (SYSTEM_ID);
+  
+  
+-- 创建角色表
+create table TM_ROLE
+(
+  role_id     NUMBER(10) not null,
+  role_name   VARCHAR2(100) not null,
+  status      CHAR(1) default '1' not null,
+  create_by   NUMBER(10),
+  create_date DATE default SYSDATE,
+  update_by   NUMBER(10),
+  update_date DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- 增加角色表注释
+comment on table TM_ROLE
+  is '系统角色表';
+-- Add comments to the columns 
+comment on column TM_ROLE.role_id
+  is '角色流水号id';
+comment on column TM_ROLE.role_name
+  is '角色名称';
+comment on column TM_ROLE.status
+  is '状态（1 有效，0无效）';
+comment on column TM_ROLE.create_by
+  is '创建者';
+comment on column TM_ROLE.create_date
+  is '创建日期';
+comment on column TM_ROLE.update_by
+  is '修改者';
+comment on column TM_ROLE.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TM_ROLE
+  add constraint PK_ROLE_ID primary key (ROLE_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+  
+-- Create table
+create table TM_MODULE
+(
+  module_id     NUMBER(10) not null,
+  module_name   VARCHAR2(100) not null,
+  assembly      VARCHAR2(100) not null,
+  classname     VARCHAR2(100) not null,
+  developerhelp VARCHAR2(50),
+  developer     VARCHAR2(50),
+  status        CHAR(1) default '1' not null,
+  create_by     NUMBER(10),
+  create_date   DATE default SYSDATE,
+  update_by     NUMBER(10),
+  update_date   DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table TM_MODULE
+  is '系统功能模块表';
+-- Add comments to the columns 
+comment on column TM_MODULE.module_id
+  is '系统模块流水号id';
+comment on column TM_MODULE.module_name
+  is '系统模块名';
+comment on column TM_MODULE.assembly
+  is '程序集名称';
+comment on column TM_MODULE.classname
+  is '类名称（类全名包括命名空间）';
+comment on column TM_MODULE.developerhelp
+  is '开发人员帮助';
+comment on column TM_MODULE.developer
+  is '开发人员名单';
+comment on column TM_MODULE.status
+  is '状态（1 有效，0无效）';
+comment on column TM_MODULE.create_by
+  is '创建者';
+comment on column TM_MODULE.create_date
+  is '创建日期';
+comment on column TM_MODULE.update_by
+  is '修改者';
+comment on column TM_MODULE.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TM_MODULE
+  add constraint PK_MODULE_ID primary key (MODULE_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create table
+create table TM_MENU
+(
+  menu_id           NUMBER(10) not null,
+  menu_name         VARCHAR2(100) not null,
+  menu_sort         NUMBER not null,
+  menu_shortcut_key VARCHAR2(100) not null,
+  sup_menu_id       NUMBER(10),
+  sup_menu_name     VARCHAR2(100),
+  status            CHAR(1) default '1' not null,
+  create_by         NUMBER(10),
+  create_date       DATE default SYSDATE,
+  update_by         NUMBER(10),
+  update_date       DATE,
+  module_id         NUMBER(10),
+  module_name       VARCHAR2(100)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table TM_MENU
+  is '菜单栏表';
+-- Add comments to the columns 
+comment on column TM_MENU.menu_id
+  is '菜单栏流水号id';
+comment on column TM_MENU.menu_name
+  is '菜单栏名称';
+comment on column TM_MENU.menu_sort
+  is '菜单栏循序编号（从1开始）';
+comment on column TM_MENU.menu_shortcut_key
+  is '菜单栏快捷键';
+comment on column TM_MENU.sup_menu_id
+  is '上级菜单栏流水号id';
+comment on column TM_MENU.sup_menu_name
+  is '上级菜单栏名称';
+comment on column TM_MENU.status
+  is '状态（1 有效，0无效）';
+comment on column TM_MENU.create_by
+  is '创建者';
+comment on column TM_MENU.create_date
+  is '创建日期';
+comment on column TM_MENU.update_by
+  is '修改者';
+comment on column TM_MENU.update_date
+  is '修改日期';
+comment on column TM_MENU.module_id
+  is '模块流水号id';
+comment on column TM_MENU.module_name
+  is '模块名称';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TM_MENU
+  add constraint PK_MENU_ID primary key (MENU_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create table
+create table TM_FUNCTION
+(
+  function_id   NUMBER(10) not null,
+  function_name VARCHAR2(100) not null,
+  module_id     NUMBER(10) not null,
+  module_name   VARCHAR2(100) not null,
+  userhelp      VARCHAR2(500),
+  developerhelp VARCHAR2(200),
+  developer     VARCHAR2(50),
+  quickey_id    NUMBER(10),
+  status        CHAR(1) default '1' not null,
+  create_by     NUMBER(10),
+  create_date   DATE default SYSDATE,
+  update_by     NUMBER(10),
+  update_date   DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Add comments to the table 
+comment on table TM_FUNCTION
+  is '系统功能表功能';
+-- Add comments to the columns 
+comment on column TM_FUNCTION.function_id
+  is '系统功能流水号id';
+comment on column TM_FUNCTION.function_name
+  is '系统功能名';
+comment on column TM_FUNCTION.module_id
+  is '所属模块流水号id';
+comment on column TM_FUNCTION.module_name
+  is '所属模块名';
+comment on column TM_FUNCTION.userhelp
+  is '系统功能用户帮助信息';
+comment on column TM_FUNCTION.developerhelp
+  is '开发维护帮助(Alt+右键)数据表+存储过程+基本逻辑';
+comment on column TM_FUNCTION.developer
+  is '开发人员名单';
+comment on column TM_FUNCTION.quickey_id
+  is '快捷键F1～F12(F1 填  ‘’1‘ 就行)';
+comment on column TM_FUNCTION.status
+  is '状态（1 有效，0无效）';
+comment on column TM_FUNCTION.create_by
+  is '创建者';
+comment on column TM_FUNCTION.create_date
+  is '创建日期';
+comment on column TM_FUNCTION.update_by
+  is '修改者';
+comment on column TM_FUNCTION.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TM_FUNCTION
+  add constraint PK_FUNCTION_ID primary key (FUNCTION_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255;
+-- Create table
+create table TR_ROLE_BAN_FUNCTION
+(
+  role_ban_function_id NUMBER(10) not null,
+  role_id              NUMBER(10) not null,
+  role_name            VARCHAR2(100) not null,
+  function_id          NUMBER(10),
+  function_name        VARCHAR2(100) not null,
+  status               CHAR(1) default '1' not null,
+  create_by            NUMBER(10),
+  create_date          DATE default SYSDATE,
+  update_by            NUMBER(10),
+  update_date          DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Add comments to the table 
+comment on table TR_ROLE_BAN_FUNCTION
+  is '角色功能权限禁用表（表示该角色该功能不能用）';
+-- Add comments to the columns 
+comment on column TR_ROLE_BAN_FUNCTION.role_ban_function_id
+  is '角色功能禁用表流水号id';
+comment on column TR_ROLE_BAN_FUNCTION.role_id
+  is '角色流水号id';
+comment on column TR_ROLE_BAN_FUNCTION.role_name
+  is '角色名称';
+comment on column TR_ROLE_BAN_FUNCTION.function_id
+  is '功能流水号id';
+comment on column TR_ROLE_BAN_FUNCTION.function_name
+  is '功能名称';
+comment on column TR_ROLE_BAN_FUNCTION.status
+  is '状态（1 有效(即该角色该功能不能用)，0无效）';
+comment on column TR_ROLE_BAN_FUNCTION.create_by
+  is '创建者';
+comment on column TR_ROLE_BAN_FUNCTION.create_date
+  is '创建日期';
+comment on column TR_ROLE_BAN_FUNCTION.update_by
+  is '修改者';
+comment on column TR_ROLE_BAN_FUNCTION.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TR_ROLE_BAN_FUNCTION
+  add constraint PK_ROLE_BAN_FUNCTION primary key (ROLE_BAN_FUNCTION_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255;
+-- Create table
+create table TR_ROLE_BAN_MODULE
+(
+  role_ban_module_id NUMBER(10) not null,
+  role_id            NUMBER(10) not null,
+  role_name          VARCHAR2(100) not null,
+  module_id          NUMBER(10) not null,
+  module_name        VARCHAR2(100) not null,
+  status             CHAR(1) default '1' not null,
+  create_by          NUMBER(10),
+  create_date        DATE default SYSDATE,
+  update_by          NUMBER(10),
+  update_date        DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Add comments to the table 
+comment on table TR_ROLE_BAN_MODULE
+  is '角色禁用模板权限表 （用数据代表不能使用该模块）';
+-- Add comments to the columns 
+comment on column TR_ROLE_BAN_MODULE.role_ban_module_id
+  is '角色模板权限表';
+comment on column TR_ROLE_BAN_MODULE.role_id
+  is '角色流水号id';
+comment on column TR_ROLE_BAN_MODULE.role_name
+  is '角色名';
+comment on column TR_ROLE_BAN_MODULE.module_id
+  is '模块流水号id';
+comment on column TR_ROLE_BAN_MODULE.module_name
+  is '模块名';
+comment on column TR_ROLE_BAN_MODULE.status
+  is '状态（1 有效(禁止使用该模块)，0无效）';
+comment on column TR_ROLE_BAN_MODULE.create_by
+  is '创建者';
+comment on column TR_ROLE_BAN_MODULE.create_date
+  is '创建日期';
+comment on column TR_ROLE_BAN_MODULE.update_by
+  is '修改者';
+comment on column TR_ROLE_BAN_MODULE.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TR_ROLE_BAN_MODULE
+  add constraint PK_ROLE_BAN_MODULE_ID primary key (ROLE_BAN_MODULE_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255;
+-- Create table
+create table TR_ROLE_SYSTEM
+(
+  role_system_id NUMBER(10) not null,
+  role_id        NUMBER(10),
+  role_name      VARCHAR2(100),
+  system_id      NUMBER(10),
+  system_name    VARCHAR2(100),
+  status         CHAR(1) default '1' not null,
+  create_by      NUMBER(10),
+  create_date    DATE default SYSDATE,
+  update_by      NUMBER(10),
+  update_date    DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table TR_ROLE_SYSTEM
+  is '角色与系统关联表';
+-- Add comments to the columns 
+comment on column TR_ROLE_SYSTEM.role_system_id
+  is '角色系统关联表';
+comment on column TR_ROLE_SYSTEM.role_id
+  is '角色流水号id';
+comment on column TR_ROLE_SYSTEM.role_name
+  is '角色名称';
+comment on column TR_ROLE_SYSTEM.system_id
+  is '系统流水号id';
+comment on column TR_ROLE_SYSTEM.system_name
+  is '系统名称';
+comment on column TR_ROLE_SYSTEM.status
+  is '状态（1 有效，0无效）';
+comment on column TR_ROLE_SYSTEM.create_by
+  is '创建者';
+comment on column TR_ROLE_SYSTEM.create_date
+  is '创建日期';
+comment on column TR_ROLE_SYSTEM.update_by
+  is '修改者';
+comment on column TR_ROLE_SYSTEM.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TR_ROLE_SYSTEM
+  add constraint PK_ROLE_SYSTEM_ID primary key (ROLE_SYSTEM_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create table
+create table TR_SYSTEM_MENU
+(
+  system_menu_id NUMBER(10) not null,
+  system_id      NUMBER(10) not null,
+  system_name    VARCHAR2(100) not null,
+  menu_id        NUMBER(10) not null,
+  menu_name      VARCHAR2(100) not null,
+  status         CHAR(1) default '1' not null,
+  create_by      NUMBER(10),
+  create_date    DATE default SYSDATE,
+  update_by      NUMBER(10),
+  update_date    DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table TR_SYSTEM_MENU
+  is '系统与菜单关联表';
+-- Add comments to the columns 
+comment on column TR_SYSTEM_MENU.system_menu_id
+  is '系统与菜单关联表流水号id';
+comment on column TR_SYSTEM_MENU.system_id
+  is '系统流水号id';
+comment on column TR_SYSTEM_MENU.system_name
+  is '系统名称';
+comment on column TR_SYSTEM_MENU.menu_id
+  is '菜单流水号id';
+comment on column TR_SYSTEM_MENU.menu_name
+  is '菜单名称';
+comment on column TR_SYSTEM_MENU.status
+  is '状态（1 有效，0无效）';
+comment on column TR_SYSTEM_MENU.create_by
+  is '创建者';
+comment on column TR_SYSTEM_MENU.create_date
+  is '创建日期';
+comment on column TR_SYSTEM_MENU.update_by
+  is '修改者';
+comment on column TR_SYSTEM_MENU.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TR_SYSTEM_MENU
+  add constraint PK_SYSTEM_MENU_ID primary key (SYSTEM_MENU_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create table
+create table TR_SYSTEM_MODULE
+(
+  system_module_id NUMBER(10) not null,
+  system_id        NUMBER(10) not null,
+  system_name      VARCHAR2(100) not null,
+  module_id        NUMBER(10) not null,
+  module_name      VARCHAR2(100) not null,
+  status           CHAR(1) default '1' not null,
+  create_by        NUMBER(10),
+  create_date      DATE default SYSDATE,
+  update_by        NUMBER(10),
+  update_date      DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table TR_SYSTEM_MODULE
+  is '模板系统关联表';
+-- Add comments to the columns 
+comment on column TR_SYSTEM_MODULE.system_module_id
+  is '系统模块关联表流水号id';
+comment on column TR_SYSTEM_MODULE.system_id
+  is '系统流水号id';
+comment on column TR_SYSTEM_MODULE.system_name
+  is '系统名称';
+comment on column TR_SYSTEM_MODULE.module_id
+  is '模块流水号id';
+comment on column TR_SYSTEM_MODULE.module_name
+  is '模块名称';
+comment on column TR_SYSTEM_MODULE.status
+  is '状态（1 有效，0无效）';
+comment on column TR_SYSTEM_MODULE.create_by
+  is '创建者';
+comment on column TR_SYSTEM_MODULE.create_date
+  is '创建日期';
+comment on column TR_SYSTEM_MODULE.update_by
+  is '修改者';
+comment on column TR_SYSTEM_MODULE.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TR_SYSTEM_MODULE
+  add constraint PK_SYSTEM_MODULE_ID primary key (SYSTEM_MODULE_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create table
+create table TR_SYSTEM_TOOL
+(
+  system_tool_id NUMBER(10) not null,
+  system_id      NUMBER(10) not null,
+  system_name    VARCHAR2(100) not null,
+  tool_id        NUMBER(10) not null,
+  tool_name      VARCHAR2(100) not null,
+  status         CHAR(1) default '1' not null,
+  create_by      NUMBER(10),
+  create_date    DATE default SYSDATE,
+  update_by      NUMBER(10),
+  update_date    DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table TR_SYSTEM_TOOL
+  is '系统与快捷操作栏关联表';
+-- Add comments to the columns 
+comment on column TR_SYSTEM_TOOL.system_tool_id
+  is '系统快捷操作栏流水号id';
+comment on column TR_SYSTEM_TOOL.system_id
+  is '系统流水号id';
+comment on column TR_SYSTEM_TOOL.system_name
+  is '系统名称';
+comment on column TR_SYSTEM_TOOL.tool_id
+  is '快捷栏流水号id';
+comment on column TR_SYSTEM_TOOL.tool_name
+  is '快捷栏名称';
+comment on column TR_SYSTEM_TOOL.status
+  is '状态（1 有效，0无效）';
+comment on column TR_SYSTEM_TOOL.create_by
+  is '创建者';
+comment on column TR_SYSTEM_TOOL.create_date
+  is '创建日期';
+comment on column TR_SYSTEM_TOOL.update_by
+  is '修改者';
+comment on column TR_SYSTEM_TOOL.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TR_SYSTEM_TOOL
+  add constraint PK_SYSTEM_TOOL_ID primary key (SYSTEM_TOOL_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create table
+create table TR_USER_ROLE
+(
+  user_role_id NUMBER(10) not null,
+  user_id      NUMBER(10) not null,
+  user_name    VARCHAR2(100) not null,
+  role_id      NUMBER(10) not null,
+  role_name    VARCHAR2(100) not null,
+  status       CHAR(1) default '1' not null,
+  create_by    NUMBER(10),
+  create_date  DATE default SYSDATE,
+  update_by    NUMBER(10),
+  update_date  DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table TR_USER_ROLE
+  is '用户角色关联表';
+-- Add comments to the columns 
+comment on column TR_USER_ROLE.user_role_id
+  is '用户角色关联流水号id';
+comment on column TR_USER_ROLE.user_id
+  is '用户流水号id';
+comment on column TR_USER_ROLE.user_name
+  is '用户名';
+comment on column TR_USER_ROLE.role_id
+  is '角色流水号id';
+comment on column TR_USER_ROLE.role_name
+  is '角色名';
+comment on column TR_USER_ROLE.status
+  is '状态（1 有效，0无效）';
+comment on column TR_USER_ROLE.create_by
+  is '创建者';
+comment on column TR_USER_ROLE.create_date
+  is '创建日期';
+comment on column TR_USER_ROLE.update_by
+  is '修改者';
+comment on column TR_USER_ROLE.update_date
+  is '修改日期';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TR_USER_ROLE
+  add constraint PK_USER_ROLE_ID primary key (USER_ROLE_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>32</value>
+  </metadata>
+</root>

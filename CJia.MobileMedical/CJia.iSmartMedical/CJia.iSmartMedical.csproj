@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CE61696-49F4-4B4C-84E0-8EEF6A4B2DE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CJia.iSmartMedical</RootNamespace>
+    <AssemblyName>CJia.iSmartMedical</AssemblyName>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>ARM</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <SDKReference Include="Microsoft.VCLibs, version=11.0">
+      <Name>Microsoft Visual C++ Runtime Package</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT, Version=3.7.15.2">
+      <Name>SQLite for Windows Runtime</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\AdviceTypeGroup.cs" />
+    <Compile Include="Data\DataObject.cs" />
+    <Compile Include="Data\DoctorCheckLog.cs" />
+    <Compile Include="Data\DoctorIllfield.cs" />
+    <Compile Include="Data\DoctorPatients.cs" />
+    <Compile Include="Data\iAdvice.cs" />
+    <Compile Include="Data\iCode.cs" />
+    <Compile Include="Data\iFrequency.cs" />
+    <Compile Include="Data\iFunction.cs" />
+    <Compile Include="Data\iTableChange.cs" />
+    <Compile Include="Data\iType2.cs" />
+    <Compile Include="Data\iUsage.cs" />
+    <Compile Include="Data\LisAdvice.cs" />
+    <Compile Include="Data\LisResult.cs" />
+    <Compile Include="Data\PadAdvice.cs" />
+    <Compile Include="Data\Patient.cs" />
+    <Compile Include="Data\PatientAdvices.cs" />
+    <Compile Include="Data\PatientEmrDoc.cs" />
+    <Compile Include="Data\PatientFee.cs" />
+    <Compile Include="Data\PatientPrepay.cs" />
+    <Compile Include="Data\SearchResults.cs" />
+    <Compile Include="Data\SearchTypes.cs" />
+    <Compile Include="Data\SyncLog.cs" />
+    <Compile Include="Data\Tile.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Data\CheckApply.cs" />
+    <Compile Include="Data\CheckResult.cs" />
+    <Compile Include="Data\iDevice.cs" />
+    <Compile Include="Data\iDept.cs" />
+    <Compile Include="Data\iIllfieldDept.cs" />
+    <Compile Include="Data\iDeviceOffice.cs" />
+    <Compile Include="Data\iDeviceTableChange.cs" />
+    <Compile Include="iCommon.cs" />
+    <Compile Include="iDB.cs" />
+    <Compile Include="Messages\CJiaMessage.cs" />
+    <Compile Include="Messages\CJiaRawDataMessage.cs" />
+    <Compile Include="Messages\CJiaRemoteException.cs" />
+    <Compile Include="Messages\CJiaRemoteInvokeMessage.cs" />
+    <Compile Include="Messages\CJiaRemoteInvokeReturnMessage.cs" />
+    <Compile Include="Messages\CJiaTextMessage.cs" />
+    <Compile Include="Messages\ICJiaMessage.cs" />
+    <Compile Include="Messages\MessageEventArgs.cs" />
+    <Compile Include="Messages\PingMessage.cs" />
+    <Compile Include="Models\AdviceInputModel.cs" />
+    <Compile Include="Models\AdviceModel.cs" />
+    <Compile Include="Models\DoctorCheckModel.cs" />
+    <Compile Include="Models\FeeListMode.cs" />
+    <Compile Include="Models\iCodeModel.cs" />
+    <Compile Include="Models\IModel.cs" />
+    <Compile Include="Models\LisResultMode.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MedicalRecordModel.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\MyPatientsPageModel.cs" />
+    <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\SqlModel.cs" />
+    <Compile Include="Models\SyncFromServerModel.cs" />
+    <Compile Include="Models\SyncToServerModel.cs" />
+    <Compile Include="Models\MainPageModel.cs" />
+    <Compile Include="Models\CheckReportModel.cs" />
+    <Compile Include="Models\PatientCheckMode.cs" />
+    <Compile Include="Models\DeviceRegisterModel.cs" />
+    <Compile Include="Presenters\AdviceInputPagePresenter.cs" />
+    <Compile Include="Presenters\AdviceListPagePresenter.cs" />
+    <Compile Include="Presenters\CheckLogDetailPagePresenter.cs" />
+    <Compile Include="Presenters\CheckPhotoDetailPagePresenter.cs" />
+    <Compile Include="Presenters\CheckReportPagePresenter.cs" />
+    <Compile Include="Presenters\DutyPatientListPagePresenter.cs" />
+    <Compile Include="Presenters\FeeListPagePresenter.cs" />
+    <Compile Include="Presenters\LisResultPagePresenter.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\MedicalRecordDetailPagePresenter.cs" />
+    <Compile Include="Presenters\MedicalRecordPagePresenter.cs" />
+    <Compile Include="Presenters\MyPatientsPagePresenter.cs" />
+    <Compile Include="Presenters\Presenter.cs" />
+    <Compile Include="Presenters\SearchResultsPagePresenter.cs" />
+    <Compile Include="Presenters\MainPagePresenter.cs" />
+    <Compile Include="Presenters\PatientCheckPagePresenter.cs" />
+    <Compile Include="Presenters\DeviceRegisterPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\IByteCompressor.cs" />
+    <Compile Include="Serialization\IFastSerializationTypeSurrogate.cs" />
+    <Compile Include="Serialization\IOwnedDataSerializable.cs" />
+    <Compile Include="Serialization\SerializationReader.cs" />
+    <Compile Include="Serialization\SerializationWriter.cs" />
+    <Compile Include="Serialization\SerializedType.cs" />
+    <Compile Include="SocketHelper.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Views\IAdviceInputPageView.cs" />
+    <Compile Include="Views\IAdviceListPageView.cs" />
+    <Compile Include="Views\ICheckLogDetailPageView.cs" />
+    <Compile Include="Views\ICheckPhotoDetailPageView.cs" />
+    <Compile Include="Views\ICheckReportPageView.cs" />
+    <Compile Include="Views\IDutyPatientListPageView.cs" />
+    <Compile Include="Views\IFeeListPageView.cs" />
+    <Compile Include="Views\ILisResultPageView.cs" />
+    <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\IMedicalRecordDetailPageView.cs" />
+    <Compile Include="Views\IMedicalRecordPageView.cs" />
+    <Compile Include="Views\IMyPatientsPageView.cs" />
+    <Compile Include="Views\ISearchResultsPageView.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\IMainPageView.cs" />
+    <Compile Include="Views\IPatientCheckPageView.cs" />
+    <Compile Include="Views\IDeviceRegister.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
