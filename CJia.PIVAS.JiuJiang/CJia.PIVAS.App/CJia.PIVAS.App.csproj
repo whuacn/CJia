@@ -147,7 +147,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Interop.SpeechLib">
-      <HintPath>..\..\..\百度云同步盘\临时\Interop.SpeechLib.dll</HintPath>
+      <HintPath>..\..\..\..\百度云同步盘\临时\Interop.SpeechLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
@@ -203,6 +203,10 @@
     </Reference>
     <Reference Include="System.Xml">
       <Private>True</Private>
+    </Reference>
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4217.28504, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\百度云同步盘\临时\ThoughtWorks.QRCode.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
