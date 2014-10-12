@@ -1724,8 +1724,8 @@ where cav.CHECK_PIVAS_STATUS = 1000101";
  where gb.label_id = spl.label_id
    and spl.group_index = spld.group_index
    and gb.status = gc.code
-   and (/*spl.group_index not in
-       (select hav.group_index from ht_advice_view hav) or*/
+   and (spl.group_index not in
+       (select hav.group_index from ht_advice_view hav) or
        spl.group_index not in
        (select scd.group_index
            from st_check_detail scd
