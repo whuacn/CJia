@@ -27,6 +27,11 @@ namespace CJia.PIVAS.Views
         event EventHandler<SendPharmSelectEventArgs> OnSelectLabel;
 
         /// <summary>
+        /// 查询瓶贴汇总
+        /// </summary>
+        event EventHandler<SendPharmSelectEventArgs> OnSelectLabelSum;
+
+        /// <summary>
         /// 查询药品汇总
         /// </summary>
         event EventHandler<SendPharmSelectEventArgs> OnSelectPharmColloet;
@@ -53,6 +58,12 @@ namespace CJia.PIVAS.Views
         /// </summary>
         /// <param name="result"></param>
         void ExeInitLabel(DataTable result);
+
+        /// <summary>
+        /// 查询瓶贴绑定回调方法
+        /// </summary>
+        /// <param name="result"></param>
+        void ExeInitLabelSum(DataTable result);
 
         /// <summary>
         /// 查询药瓶汇总信息

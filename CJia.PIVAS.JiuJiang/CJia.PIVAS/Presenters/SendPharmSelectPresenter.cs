@@ -22,6 +22,7 @@ namespace CJia.PIVAS.Presenters
             this.View.OnInitIffield += View_OnInitIffield;
             this.View.OnInitBacth += View_OnInitBacth;
             this.View.OnSelectLabel += View_OnSelectLabel;
+            this.View.OnSelectLabelSum += View_OnSelectLabelSum;
             this.View.OnSelectPharmColloet += View_OnSelectPharmColloet;
             this.View.OnSelectPharm += View_OnSelectPharm;
         }
@@ -50,6 +51,14 @@ namespace CJia.PIVAS.Presenters
             this.View.ExeInitLabel(result);
         }
 
+        //查询瓶贴汇总
+        void View_OnSelectLabelSum(object sender, Views.SendPharmSelectEventArgs e)
+        {
+            //DataTable result = this.Model.QueryLabel(e.startDate, e.endDate, e.IffieldID,e.BacthID,"", e.Group,e.longTemporary);
+            //this.View.ExeInitLabel(result);
+            DataTable result = this.Model.QueryLabelSum(e.isPrintDate, e.startDate, e.endDate, e.isListDate, e.listDate, e.isZXDate, e.zxTime, e.IffieldDs, e.BatchIDs, "", e.Group, e.longTemporary, e.AllGrDr);
+            this.View.ExeInitLabelSum(result);
+        }
 
         //初始化批次事件绑定方法
         void View_OnInitBacth(object sender, Views.SendPharmSelectEventArgs e)
