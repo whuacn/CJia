@@ -119,6 +119,96 @@ namespace CJia.PIVAS.Models
         }
 
         /// <summary>
+        /// 查询瓶贴汇总信息
+        /// </summary>
+        /// <param name="startData"></param>
+        /// <param name="endData"></param>
+        /// <param name="illfield"></param>
+        /// <returns></returns>
+        public DataTable QueryLabelSum(bool isPrintDate, DateTime startData, DateTime endData, bool isListDate, DateTime listDate, bool isZXDate, DateTime zxDate, List<string> illfields, List<string> batchs, string pharmId, string group, string longTemporary, string allGrDr)
+        {
+            string newSql = CJia.PIVAS.Models.SqlTools.SqlSendALLQueryLableSum;
+            string sql = "";
+            List<object> parms = new List<object>();
+            if (isPrintDate)
+            {
+                sql += " and gb.gen_date between ? and ?    ";
+                parms.Add(startData);
+                parms.Add(endData);
+            }
+            if (isZXDate)
+            {
+                sql += " and  nspl.pharm_time between trunc(?) and trunc(? +1) ";
+                parms.Add(zxDate);
+                parms.Add(zxDate);
+            }
+            if (isListDate)
+            {
+                sql += " and  nspl.list_doctor_date between trunc(?) and trunc(? +1) ";
+                parms.Add(listDate);
+                parms.Add(listDate);
+            }
+            if (allGrDr == "ALL")
+            {
+                sql += " and  1 = 1 ";
+            }
+            if (allGrDr == "GR")
+            {
+                sql += " and  trunc(nspl.list_doctor_date) != trunc(nspl.pharm_time)  ";
+            }
+            if (allGrDr == "DR")
+            {
+                sql += " and  trunc(nspl.list_doctor_date) = trunc(nspl.pharm_time)  ";
+            }
+            if (!isPrintDate && !isZXDate && !isListDate)
+            {
+                sql = " and 1 = 0  ";
+            }
+
+
+
+            string illfieldStr = "";
+            if (illfields == null || illfields.Count == 0)
+            {
+                illfieldStr = " 1 = 0 ";
+            }
+            else
+            {
+                illfieldStr = " nspl.illfield_id in (";
+                foreach (string illfield in illfields)
+                {
+                    illfieldStr += "'" + illfield + "',";
+                }
+                illfieldStr = illfieldStr.Remove(illfieldStr.Length - 1, 1);
+                illfieldStr += ")";
+            }
+            string batchStr = "";
+            if (batchs == null || batchs.Count == 0)
+            {
+                batchStr = " 1 = 0 ";
+            }
+            else
+            {
+                batchStr = " nspl.batch_id in (";
+                foreach (string batch in batchs)
+                {
+                    batchStr += "'" + batch + "',";
+                }
+                batchStr = batchStr.Remove(batchStr.Length - 1, 1);
+                batchStr += ")";
+            }
+
+            if (longTemporary == "TEMPORARY")
+            {
+                batchStr = " 1 = 1 ";
+            }
+            //newSql = string.Format(newSql, groupStr, longTemporaryStr, illfieldStr, batchStr);
+            newSql = string.Format(newSql, sql, illfieldStr, batchStr);
+            DataTable result = CJia.DefaultOleDb.Query(newSql, parms);
+            return result;
+        }
+
+        /// <summary>
         /// 查询药品汇总信息
         /// </summary>
         /// <param name="startData"></param>

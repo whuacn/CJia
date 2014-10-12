@@ -411,6 +411,44 @@ group by nog.pharm_id,
         }
 
         /// <summary>
+        /// 查询已冲药瓶贴汇总
+        /// </summary>
+        public static string SqlSendALLQueryLableSum
+        {
+            get
+            {
+                return @"SELECT nvl(NSPL.ILLFIELD_NAME,'全部病区') ILLFIELD_NAME,
+       SUM(DECODE(BATCH_ID, 1000000000, 1, 0)) BATCH_LABEL_COUNT1,
+       SUM(DECODE(BATCH_ID, 1000000001, 1, 0)) BATCH_LABEL_COUNT2,
+       SUM(DECODE(BATCH_ID, 1000000002, 1, 0)) BATCH_LABEL_COUNT3,
+       SUM(DECODE(BATCH_ID, 1000000003, 1, 0)) BATCH_LABEL_COUNT4,
+       SUM(DECODE(BATCH_ID, 1000000004, 1, 0)) BATCH_LABEL_COUNT5,
+       SUM(DECODE(BATCH_ID, 1000000005, 1, 0)) BATCH_LABEL_COUNT6,
+       SUM(DECODE(BATCH_ID, 1000000006, 1, 0)) BATCH_LABEL_COUNTZ,
+       SUM(DECODE(BATCH_ID, 1000000007, 1, 0)) BATCH_LABEL_COUNTW,
+       SUM(DECODE(BATCH_ID, 2000000020, 1, 0)) BATCH_LABEL_COUNTB,
+       SUM(DECODE(BATCH_ID, 2000000021, 1, 0)) BATCH_LABEL_COUNTL,
+       COUNT(*) ALL_BATCH_LABEL_COUNT
+  FROM ST_PIVAS_LABEL NSPL,
+       (SELECT NGB.LABEL_BAR_ID,
+               NGB.LABEL_ID,
+               MAX(NGB.STATUS) STATUS,
+               NGB.GEN_NAME,
+               NGB.GEN_DATE
+          FROM GM_BARCODE NGB
+         WHERE NGB.STATUS != 1000603
+         GROUP BY NGB.LABEL_BAR_ID, NGB.LABEL_ID, NGB.GEN_NAME, NGB.GEN_DATE) GB
+ WHERE NSPL.LABEL_ID = GB.LABEL_ID
+   AND NSPL.LABEL_STATUS IN (1000301, 1000302, 1000305)
+   {0}
+                           and {1}
+                           and {2}
+ GROUP BY ROLLUP(ILLFIELD_NAME)
+ ORDER BY ILLFIELD_NAME";
+            }
+        }
+
+        /// <summary>
         /// 查询配置的医嘱
         /// </summary>
         public static string SqlSendYesQueryLabel
@@ -1724,8 +1762,8 @@ where cav.CHECK_PIVAS_STATUS = 1000101";
  where gb.label_id = spl.label_id
    and spl.group_index = spld.group_index
    and gb.status = gc.code
-   and (/*spl.group_index not in
-       (select hav.group_index from ht_advice_view hav) or*/
+   and (spl.group_index not in
+       (select hav.group_index from ht_advice_view hav) or
        spl.group_index not in
        (select scd.group_index
            from st_check_detail scd
