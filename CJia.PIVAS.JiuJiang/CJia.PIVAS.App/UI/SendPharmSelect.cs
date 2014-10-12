@@ -382,10 +382,12 @@ namespace CJia.PIVAS.App.UI
             sendPharmCollectReport.DataBindDataTable((DataTable)this.gcPharm.DataSource, illfieldStr, batchStr, isDY, dyStart, dyEnd, isZX, zxDate, isKD, kdDate, allPharmCount, allLabelCount, Sysdate.ToString(), isGroup, isAll, longTemporary, allDrGr);
         }
 
-        //打印药品明细
+        //打印瓶贴汇总
         private void btnPharmDetail_Click(object sender, EventArgs e)
         {
-            DataTable pharmData = this.GetPharmOrderIllfieldCollect((DataTable)this.gcLabel.DataSource);
+            this.GetFilter();
+            this.OnSelectLabelSum(null, this.sendPharmSelectEventArgs);
+            DataTable pharmData = (DataTable)this.gcLabelSum.DataSource;
             string isGroup = "";
             if (this.rbAll.Checked)
             {
@@ -659,6 +661,9 @@ namespace CJia.PIVAS.App.UI
         //查询瓶贴
         public event EventHandler<Views.SendPharmSelectEventArgs> OnSelectLabel;
 
+        //查询瓶贴汇总
+        public event EventHandler<Views.SendPharmSelectEventArgs> OnSelectLabelSum;
+
         //查询药品汇总
         public event EventHandler<Views.SendPharmSelectEventArgs> OnSelectPharmColloet;
 
@@ -705,6 +710,12 @@ namespace CJia.PIVAS.App.UI
             this.gcLabel.DataSource = this.SendPharmDetail;
             this.repositoryItemLookUpEdit1.DataSource = this.SendPharmDetail;
             this.gvLabel.ExpandAllGroups();
+        }
+
+        //瓶贴汇总
+        public void ExeInitLabelSum(DataTable result)
+        {
+            this.gcLabelSum.DataSource = result;
         }
 
         //初始化药品汇总信息

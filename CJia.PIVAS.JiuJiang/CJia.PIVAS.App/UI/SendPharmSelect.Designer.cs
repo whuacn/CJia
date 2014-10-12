@@ -105,6 +105,9 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.gcLabelSum = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -137,6 +140,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLabelSum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl4
@@ -617,6 +623,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.gcLabelSum);
             this.panelControl1.Controls.Add(this.btnFilterPatient);
             this.panelControl1.Controls.Add(this.panel2);
             this.panelControl1.Controls.Add(this.labelControl6);
@@ -1072,6 +1079,38 @@
             this.panelControl4.Size = new System.Drawing.Size(1421, 588);
             this.panelControl4.TabIndex = 55;
             // 
+            // gcLabelSum
+            // 
+            this.gcLabelSum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcLabelSum.Location = new System.Drawing.Point(960, 146);
+            this.gcLabelSum.MainView = this.gridView3;
+            this.gcLabelSum.Name = "gcLabelSum";
+            this.gcLabelSum.Size = new System.Drawing.Size(362, 339);
+            this.gcLabelSum.TabIndex = 55;
+            this.gcLabelSum.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3,
+            this.gridView4});
+            this.gcLabelSum.Visible = false;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Appearance.FocusedRow.BackColor = System.Drawing.Color.Snow;
+            this.gridView3.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.White;
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.GridControl = this.gcLabelSum;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridView4
+            // 
+            this.gridView4.GridControl = this.gcLabelSum;
+            this.gridView4.Name = "gridView4";
+            // 
             // SendPharmSelect
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -1121,6 +1160,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcLabelSum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1203,5 +1245,8 @@
         private System.Windows.Forms.RadioButton rbGR;
         private System.Windows.Forms.RadioButton rbDR;
         private System.Windows.Forms.RadioButton rbALLGRDR;
+        private DevExpress.XtraGrid.GridControl gcLabelSum;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
     }
 }
