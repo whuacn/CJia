@@ -2483,7 +2483,7 @@ where spl.label_id = ?";
           pv.FACTORY_NAME,
        sum((case
          when l.fee_count > 1 then
-           decode(fn_pharm_is_save(d.pharm_id),1,ceil(l.fee_count * d.pharm_dosage / pv.dose_per_unit),d.pharm_amount)
+           decode(fn_pharm_is_save(d.pharm_id),1,ceil(l.fee_count * d.pharm_dosage / pv.dose_per_unit),L.FEE_COUNT)
          when l.fee_count = 1 then
            d.pharm_amount
          else
