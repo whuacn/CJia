@@ -27,7 +27,7 @@ namespace CJia.PIVAS.App.UI.Label
         /// </summary>
         public void IimitsManagement()
         {
-            if(User.role == "0")//护士
+            if (User.role == "0")//护士
             {
 
                 this.cbScanning.Items.Clear();
@@ -72,7 +72,7 @@ namespace CJia.PIVAS.App.UI.Label
                 this.rbAllPrint.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
                 this.rbAllPrint.ForeColor = System.Drawing.Color.Blue;
             }
-            if(User.role == "2")
+            if (User.role == "2")
             {
                 this.rbLong.Checked = true;
                 this.rbLong.Enabled = false;
@@ -100,12 +100,12 @@ namespace CJia.PIVAS.App.UI.Label
                 this.groupControl1.Enabled = false;
                 this.groupControl7.Enabled = false;
             }
-            if(User.role == "1")
+            if (User.role == "1")
             {
                 this.panel4.Location = new Point(222, this.panel4.Location.Y);
                 this.rbAllPrint.Visible = true;
             }
-            if(this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
+            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
             {
                 this.btnNoGroupScanning.Enabled = true;
             }
@@ -208,7 +208,7 @@ namespace CJia.PIVAS.App.UI.Label
         //打印瓶贴明细
         public void ExePrintLabelDetail(DataTable result)
         {
-            if(result != null && result.Rows != null && result.Rows.Count > 0)
+            if (result != null && result.Rows != null && result.Rows.Count > 0)
             {
                 result.Columns.Add(new DataColumn("BATCH_LABEL_COUNT", typeof(int))
                 {
@@ -219,27 +219,27 @@ namespace CJia.PIVAS.App.UI.Label
                     DefaultValue = 0
                 });
                 List<string> labelBarIdList = new List<string>();
-                foreach(DataRow row in result.Rows)
+                foreach (DataRow row in result.Rows)
                 {
                     string labelBarId = row["LABEL_BAR_ID"].ToString();
-                    if(labelBarIdList.FindAll(t => t == labelBarId).Count == 0)
+                    if (labelBarIdList.FindAll(t => t == labelBarId).Count == 0)
                     {
                         labelBarIdList.Add(labelBarId);
                         DataRow[] batchRows = result.Select(" BATCH_ID = '" + row["BATCH_ID"].ToString() + "'");
                         DataRow[] patientRows = result.Select(" BATCH_ID = '" + row["BATCH_ID"].ToString() + "' AND INHOS_ID = '" + row["INHOS_ID"].ToString() + "'");
-                        foreach(DataRow batchRow in batchRows)
+                        foreach (DataRow batchRow in batchRows)
                         {
                             string batchLabelCount = batchRow["BATCH_LABEL_COUNT"].ToString();
-                            if(batchLabelCount == "")
+                            if (batchLabelCount == "")
                             {
                                 batchLabelCount = "0";
                             }
                             batchRow["BATCH_LABEL_COUNT"] = Convert.ToInt32(batchLabelCount) + 1;
                         }
-                        foreach(DataRow patientRow in patientRows)
+                        foreach (DataRow patientRow in patientRows)
                         {
                             string patientLabelCount = patientRow["PATIENT_LABEL_COUNT"].ToString();
-                            if(patientLabelCount == "")
+                            if (patientLabelCount == "")
                             {
                                 patientLabelCount = "0";
                             }
@@ -249,7 +249,7 @@ namespace CJia.PIVAS.App.UI.Label
                 }
                 CJia.PIVAS.App.UI.Label.LabelDetailReport labelDetailReport = new LabelDetailReport();
                 string str = "";
-                if(this.rbLong.Checked)
+                if (this.rbLong.Checked)
                 {
                     str = "长期 ";
                 }
@@ -257,15 +257,15 @@ namespace CJia.PIVAS.App.UI.Label
                 {
                     str = "临时 ";
                 }
-                if(this.rbAllPrint.Checked)
+                if (this.rbAllPrint.Checked)
                 {
                     str += "";
                 }
-                else if(this.rbYesPrint.Checked)
+                else if (this.rbYesPrint.Checked)
                 {
                     str += "配置 ";
                 }
-                else if(this.rbNoPrint.Checked)
+                else if (this.rbNoPrint.Checked)
                 {
                     str += "单组 ";
                 }
@@ -306,12 +306,12 @@ namespace CJia.PIVAS.App.UI.Label
         //根据条形码返回瓶贴回调函数
         public void ExeQueryBarCodeLabel(DataTable result)
         {
-            if(this.pbLabelPreview.Image != null)
+            if (this.pbLabelPreview.Image != null)
             {
                 this.pbLabelPreview.Image.Dispose();
             }
             this.BarCodeLabel = result;
-            if(result == null || result.Rows == null || result.Rows.Count == 0)
+            if (result == null || result.Rows == null || result.Rows.Count == 0)
             {
                 this.pbLabelPreview.Image = null;
             }
@@ -373,11 +373,11 @@ namespace CJia.PIVAS.App.UI.Label
         {
             Views.Label.LabelScanningEventArgs labelScanningEventArgs = new Views.Label.LabelScanningEventArgs();
             labelScanningEventArgs.longTemporary = this.rbLong.Checked ? "1" : "0";
-            if(this.rbYesPrint.Checked)
+            if (this.rbYesPrint.Checked)
             {
                 labelScanningEventArgs.LabelStype = "1";
             }
-            else if(this.rbNoPrint.Checked)
+            else if (this.rbNoPrint.Checked)
             {
                 labelScanningEventArgs.LabelStype = "0";
             }
@@ -385,7 +385,7 @@ namespace CJia.PIVAS.App.UI.Label
             {
                 labelScanningEventArgs.LabelStype = "10";
             }
-            if(this.rbNew.Checked)
+            if (this.rbNew.Checked)
             {
                 labelScanningEventArgs.grOrDr = "0";
             }
@@ -420,50 +420,50 @@ namespace CJia.PIVAS.App.UI.Label
         //瓶贴列表表格绑定事件
         private void gdvLabelCollect_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
-            if(e.RowHandle >= 0)
+            if (e.RowHandle >= 0)
             {
                 string stutas = this.gdvLabelCollect.GetDataRow(e.RowHandle)["STATUS"].ToString();
-                if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                 {
-                    if(stutas == "1000501")
+                    if (stutas == "1000501")
                     {
                         e.Appearance.BackColor = Color.LightGray;
                     }
-                    else if(stutas == "1000601")
+                    else if (stutas == "1000601")
                     {
                         e.Appearance.BackColor = Color.Green;
                     }
-                    else if(stutas == "1000602")
+                    else if (stutas == "1000602")
                     {
                         e.Appearance.BackColor = Color.Green;
                     }
-                    else if(stutas == "1000605")
+                    else if (stutas == "1000605")
                     {
                         e.Appearance.BackColor = Color.Green;
                     }
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
                 {
-                    if(stutas == "1000601")
+                    if (stutas == "1000601")
                     {
                         e.Appearance.BackColor = Color.LightGray;
                     }
-                    else if(stutas == "1000602")
+                    else if (stutas == "1000602")
                     {
                         e.Appearance.BackColor = Color.SlateBlue;
                     }
-                    else if(stutas == "1000605")
+                    else if (stutas == "1000605")
                     {
                         e.Appearance.BackColor = Color.SlateBlue;
                     }
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "接收扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "接收扫描")
                 {
-                    if(stutas == "1000602")
+                    if (stutas == "1000602")
                     {
                         e.Appearance.BackColor = Color.LightGray;
                     }
-                    else if(stutas == "1000605")
+                    else if (stutas == "1000605")
                     {
                         e.Appearance.BackColor = Color.SlateBlue;
                     }
@@ -483,7 +483,7 @@ namespace CJia.PIVAS.App.UI.Label
             //    };
             //    this.OnQueryBarCodeLabe(null, labelScanningEventArgs);
             //}
-            if(selectRow != null)
+            if (selectRow != null)
             {
                 this.txbBarCode.Text = selectRow["LABEL_BAR_ID"].ToString();
                 this.txtPrintDarCode.Text = selectRow["LABEL_BAR_ID"].ToString();
@@ -494,14 +494,14 @@ namespace CJia.PIVAS.App.UI.Label
         //扫面条码框键盘事件
         private void txbBarCode_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            if (e.KeyData == Keys.Enter)
             {
                 this.ScenningBarCode();
                 this.oldKeyIsEnter = true;
             }
             else
             {
-                if(this.oldKeyIsEnter)
+                if (this.oldKeyIsEnter)
                 {
                     this.txbBarCode.Text = "";
                 }
@@ -512,14 +512,14 @@ namespace CJia.PIVAS.App.UI.Label
         //查询条形码键盘事件
         private void txtPrintDarCode_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            if (e.KeyData == Keys.Enter)
             {
                 this.SelectLabel();
                 this.oldKeyIsEnter = true;
             }
             else
             {
-                if(this.oldKeyIsEnter)
+                if (this.oldKeyIsEnter)
                 {
                     this.txtPrintDarCode.Text = "";
                 }
@@ -537,9 +537,9 @@ namespace CJia.PIVAS.App.UI.Label
         //瓶贴重新打印
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if(this.pbLabelPreview.Image != null)
+            if (this.pbLabelPreview.Image != null)
             {
-                if(Message.ShowQuery("本操作将把该瓶贴作废！而且   会   从新打印一张一样的瓶贴！") == Message.Result.Ok)
+                if (Message.ShowQuery("本操作将把该瓶贴作废！而且   会   从新打印一张一样的瓶贴！") == Message.Result.Ok)
                 {
                     CJia.PIVAS.Views.Label.LabelScanningEventArgs labelScanningEventArgs = new Views.Label.LabelScanningEventArgs()
                     {
@@ -559,13 +559,13 @@ namespace CJia.PIVAS.App.UI.Label
         //拼贴作废
         private void btnDelect_Click(object sender, EventArgs e)
         {
-            if(this.pbLabelPreview.Image != null)
+            if (this.pbLabelPreview.Image != null)
             {
-                if(Message.ShowQuery("本操作将把该瓶贴作废！而且   不会   从新打印一张一样的瓶贴！") == Message.Result.Ok)
+                if (Message.ShowQuery("本操作将把该瓶贴作废！而且   不会   从新打印一张一样的瓶贴！") == Message.Result.Ok)
                 {
                     string groupIndex = this.BarCodeLabel.Rows[0]["GROUP_INDEX"].ToString();
                     string labelId = this.BarCodeLabel.Rows[0]["LABEL_ID"].ToString();
-                    if(this.CancelPharm(groupIndex, labelId, this.BarCodeLabel.Rows[0]["STATUS"].ToString()))
+                    if (this.CancelPharm(groupIndex, labelId, this.BarCodeLabel.Rows[0]["STATUS"].ToString()))
                     {
                         CJia.PIVAS.Views.Label.LabelScanningEventArgs labelScanningEventArgs = new Views.Label.LabelScanningEventArgs()
                         {
@@ -601,7 +601,7 @@ namespace CJia.PIVAS.App.UI.Label
         //直接扫描瓶贴
         private void btnNoGroupScanning_Click(object sender, EventArgs e)
         {
-            if(User.role == "2")//简单药师
+            if (User.role == "2")//简单药师
             {
                 this.Print();
                 this.cbScanning.SelectedItem = "出仓扫描";
@@ -618,21 +618,21 @@ namespace CJia.PIVAS.App.UI.Label
             this.RefreshLabelList();
             //DataTable noGroup = this.ConvertDataTable(this.LabelList.Select(" IS_GROUP = '0' "));
             DataTable noGroup = this.LabelList;
-            if(noGroup != null && noGroup.Rows != null && noGroup.Rows.Count > 0)
+            if (noGroup != null && noGroup.Rows != null && noGroup.Rows.Count > 0)
             {
                 DataTable noScanning = new DataTable();
-                if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                 {
                     noScanning = this.ConvertDataTable(noGroup.Select(" STATUS =  1000501 "));
                 }
-                if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+                if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
                 {
                     noScanning = this.ConvertDataTable(noGroup.Select(" STATUS =  1000601 "));
                 }
                 this.cbSpeak.Checked = false;
-                if(noScanning != null && noScanning.Rows != null && noScanning.Rows.Count > 0)
+                if (noScanning != null && noScanning.Rows != null && noScanning.Rows.Count > 0)
                 {
-                    foreach(DataRow row in noScanning.Rows)
+                    foreach (DataRow row in noScanning.Rows)
                     {
                         this.txbBarCode.Text = row["LABEL_BAR_ID"].ToString();
                         this.ScenningBarCode();
@@ -671,7 +671,7 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Blue;
 
-            if(this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
+            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
             {
                 this.btnNoGroupScanning.Enabled = true;
             }
@@ -695,7 +695,7 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Green;
 
-            if(this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
+            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
             {
                 this.btnNoGroupScanning.Enabled = true;
             }
@@ -713,7 +713,7 @@ namespace CJia.PIVAS.App.UI.Label
             this.rbTemporary.ForeColor = System.Drawing.Color.Black;
             ((RadioButton)sender).Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Red;
-            if(this.rbLong.Checked)
+            if (this.rbLong.Checked)
             {
                 this.cbBatch.Enabled = true;
                 this.rbOld.Checked = true;
@@ -742,7 +742,7 @@ namespace CJia.PIVAS.App.UI.Label
 
             //}
 
-            if(this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
+            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
             {
                 this.btnNoGroupScanning.Enabled = true;
             }
@@ -761,24 +761,24 @@ namespace CJia.PIVAS.App.UI.Label
         /// </summary>
         private void RefresLabelCount()
         {
-            if(this.LabelList != null && this.LabelList.Rows != null && this.LabelList.Rows.Count != 0)
+            if (this.LabelList != null && this.LabelList.Rows != null && this.LabelList.Rows.Count != 0)
             {
                 DataTable result = null;
                 this.rbAll.Text = "全部(" + this.LabelList.Rows.Count + ")";
-                if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                 {
                     result = this.ConvertDataTable(this.LabelList.Select(" STATUS in (1000601,1000602,1000605) "));
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
                 {
                     result = this.ConvertDataTable(this.LabelList.Select(" STATUS in (1000602,1000605)"));
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "接收扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "接收扫描")
                 {
                     result = this.ConvertDataTable(this.LabelList.Select(" STATUS in (1000605)"));
                 }
 
-                if(result != null)
+                if (result != null)
                 {
                     this.rbYes.Text = "已扫描(" + result.Rows.Count + ")";
                 }
@@ -787,19 +787,19 @@ namespace CJia.PIVAS.App.UI.Label
                     this.rbYes.Text = "已扫描(0)";
                 }
 
-                if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                 {
                     result = this.ConvertDataTable(this.LabelList.Select(" STATUS = 1000501 "));
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
                 {
                     result = this.ConvertDataTable(this.LabelList.Select(" STATUS = 1000601  "));
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "接收扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "接收扫描")
                 {
                     result = this.ConvertDataTable(this.LabelList.Select(" STATUS = 1000602 "));
                 }
-                if(result != null)
+                if (result != null)
                 {
                     this.rbNo.Text = "未扫描(" + result.Rows.Count + ")";
                 }
@@ -830,15 +830,15 @@ namespace CJia.PIVAS.App.UI.Label
                 IffieldID = this.cbIffield.SelectedValue.ToString(),
                 longTemporary = this.rbLong.Checked ? "1" : "0"
             };
-            if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+            if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
             {
                 labelScanningEventArgs.ScenningType = "1000601";
             }
-            else if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+            else if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
             {
                 labelScanningEventArgs.ScenningType = "1000602";
             }
-            else if(this.cbScanning.SelectedItem.ToString() == "接收扫描")
+            else if (this.cbScanning.SelectedItem.ToString() == "接收扫描")
             {
                 labelScanningEventArgs.ScenningType = "1000605";
             }
@@ -850,11 +850,11 @@ namespace CJia.PIVAS.App.UI.Label
             //{
             //    labelScanningEventArgs.LabelStype = this.rbYesPrint.Checked ? "1" : "0";
             //}
-            if(this.rbYesPrint.Checked)
+            if (this.rbYesPrint.Checked)
             {
                 labelScanningEventArgs.LabelStype = "1";
             }
-            else if(this.rbNoPrint.Checked)
+            else if (this.rbNoPrint.Checked)
             {
                 labelScanningEventArgs.LabelStype = "0";
             }
@@ -862,7 +862,7 @@ namespace CJia.PIVAS.App.UI.Label
             {
                 labelScanningEventArgs.LabelStype = "10";
             }
-            if(this.rbNew.Checked)
+            if (this.rbNew.Checked)
             {
                 labelScanningEventArgs.grOrDr = "0";
             }
@@ -884,14 +884,14 @@ namespace CJia.PIVAS.App.UI.Label
         /// <returns></returns>
         private DataTable ConvertDataTable(DataRow[] rows)
         {
-            if(rows == null || rows.Length == 0)
+            if (rows == null || rows.Length == 0)
             {
                 return null;
             }
             else
             {
                 DataTable result = rows[0].Table.Clone();
-                for(int i = 0; i < rows.Length; i++)
+                for (int i = 0; i < rows.Length; i++)
                 {
                     DataRow row = result.NewRow();
                     row.ItemArray = rows[i].ItemArray;
@@ -907,39 +907,39 @@ namespace CJia.PIVAS.App.UI.Label
         /// <returns></returns>
         private DataTable GetLableList()
         {
-            if(this.LabelList != null)
+            if (this.LabelList != null)
             {
                 DataTable result = null;
-                if(this.rbAll.Checked)
+                if (this.rbAll.Checked)
                 {
                     result = this.LabelList;
                 }
-                else if(this.rbYes.Checked)
+                else if (this.rbYes.Checked)
                 {
-                    if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                    if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                     {
                         result = this.ConvertDataTable(this.LabelList.Select(" STATUS in (1000601,1000602,1000605) "));
                     }
-                    else if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+                    else if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
                     {
                         result = this.ConvertDataTable(this.LabelList.Select(" STATUS in (1000602,1000605)"));
                     }
-                    else if(this.cbScanning.SelectedItem.ToString() == "接收扫描")
+                    else if (this.cbScanning.SelectedItem.ToString() == "接收扫描")
                     {
                         result = this.ConvertDataTable(this.LabelList.Select(" STATUS = 1000605"));
                     }
                 }
-                else if(this.rbNo.Checked)
+                else if (this.rbNo.Checked)
                 {
-                    if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                    if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                     {
                         result = this.ConvertDataTable(this.LabelList.Select(" STATUS = 1000501"));
                     }
-                    else if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+                    else if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
                     {
                         result = this.ConvertDataTable(this.LabelList.Select(" STATUS = 1000601"));
                     }
-                    else if(this.cbScanning.SelectedItem.ToString() == "接收扫描")
+                    else if (this.cbScanning.SelectedItem.ToString() == "接收扫描")
                     {
                         result = this.ConvertDataTable(this.LabelList.Select(" STATUS = 1000602"));
                     }
@@ -957,10 +957,10 @@ namespace CJia.PIVAS.App.UI.Label
         private DataTable GetDataSource(DataTable LabelDetails, int nowCount)
         {
             DataTable result = LabelDetails.Clone();
-            for(int i = (nowCount - 1) * 4; i < nowCount * 4; i++)
+            for (int i = (nowCount - 1) * 4; i < nowCount * 4; i++)
             {
                 DataRow row = result.NewRow();
-                if(i < LabelDetails.Rows.Count)
+                if (i < LabelDetails.Rows.Count)
                 {
                     row.ItemArray = LabelDetails.Rows[i].ItemArray;
                 }
@@ -976,10 +976,10 @@ namespace CJia.PIVAS.App.UI.Label
         /// <returns></returns>
         private DataTable GetDataSource(DataRow[] rows)
         {
-            if(rows != null && rows.Length != 0)
+            if (rows != null && rows.Length != 0)
             {
                 DataTable result = rows[0].Table.Clone();
-                for(int i = 0; i < rows.Length; i++)
+                for (int i = 0; i < rows.Length; i++)
                 {
                     DataRow row = result.NewRow();
                     row.ItemArray = rows[i].ItemArray;
@@ -999,8 +999,17 @@ namespace CJia.PIVAS.App.UI.Label
             this.lblMessage.BackColor = Color.Transparent;
             this.lblMessage.Refresh();
             string barCode = this.txbBarCode.Text.Trim();
+
+            //add by lp
+            //begin
+            if (!MinLabelBarID(barCode))
+            {
+                return;
+            }
+            //end
+
             this.txtPrintDarCode.Text = barCode;
-            if(barCode.Length != 10)
+            if (barCode.Length != 10)
             {
                 this.lblMessage.BackColor = Color.LightGray;
                 this.lblMessage.ForeColor = Color.Red;
@@ -1014,7 +1023,7 @@ namespace CJia.PIVAS.App.UI.Label
                 };
                 this.OnQueryBarCodeLabe(null, labelScanningEventArgs);
                 this.OnQueryLabelGroupIndex(null, labelScanningEventArgs);
-                if(this.BarCodeLabel == null || this.BarCodeLabel.Rows == null || this.BarCodeLabel.Rows.Count == 0)
+                if (this.BarCodeLabel == null || this.BarCodeLabel.Rows == null || this.BarCodeLabel.Rows.Count == 0)
                 {
                     this.lblMessage.BackColor = Color.LightGray;
                     this.lblMessage.ForeColor = Color.Red;
@@ -1022,19 +1031,19 @@ namespace CJia.PIVAS.App.UI.Label
                 }
                 else
                 {
-                    if(!this.groupIndexStatus)
+                    if (!this.groupIndexStatus)
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
                         this.lblMessage.Text = "医嘱已停用或未通过审核";
 
 
-                        if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                        if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                         {
                             this.SpeakMessage("该瓶贴对应医嘱已停用是否继续扫描该瓶贴");
                             MessageBoxView messageBoxView = new MessageBoxView("该瓶贴对应医嘱已停用是否继续扫描该瓶贴？");
                             this.ShowAsWindow("警告", messageBoxView);
-                            if(messageBoxView.SelectValue)
+                            if (messageBoxView.SelectValue)
                             {
                                 this.Scanning();
                                 return;
@@ -1072,13 +1081,13 @@ namespace CJia.PIVAS.App.UI.Label
             string bacthID = this.BarCodeLabel.Rows[0]["BATCH_ID"].ToString();
             string genDate = this.BarCodeLabel.Rows[0]["GEN_TIME"].ToString();
             string status = this.BarCodeLabel.Rows[0]["STATUS"].ToString();
-            if(this.cbIffield.SelectedValue.ToString() != "0" && this.cbIffield.SelectedValue.ToString() != illfieldID)
+            if (this.cbIffield.SelectedValue.ToString() != "0" && this.cbIffield.SelectedValue.ToString() != illfieldID)
             {
                 this.lblMessage.BackColor = Color.LightGray;
                 this.lblMessage.ForeColor = Color.Red;
                 this.lblMessage.Text = "不在选定的病区内";
             }
-            else if(this.cbBatch.SelectedValue.ToString() != "0" && this.cbBatch.SelectedValue.ToString() != bacthID)
+            else if (this.cbBatch.SelectedValue.ToString() != "0" && this.cbBatch.SelectedValue.ToString() != bacthID)
             {
                 this.lblMessage.BackColor = Color.LightGray;
                 this.lblMessage.ForeColor = Color.Red;
@@ -1086,13 +1095,13 @@ namespace CJia.PIVAS.App.UI.Label
             }
             else
             {
-                if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                 {
-                    if(status == "1000501")
+                    if (status == "1000501")
                     {
                         string groupIndex = this.BarCodeLabel.Rows[0]["GROUP_INDEX"].ToString();
                         string labelId = this.BarCodeLabel.Rows[0]["LABEL_ID"].ToString();
-                        if(this.SendPharm(groupIndex, labelId, "1000601"))
+                        if (this.SendPharm(groupIndex, labelId, "1000601"))
                         {
                             this.lblMessage.BackColor = Color.Green;
                             this.lblMessage.ForeColor = Color.White;
@@ -1102,19 +1111,19 @@ namespace CJia.PIVAS.App.UI.Label
                         }
                         this.RefreshLabelList();
                     }
-                    else if(status == "1000601")
+                    else if (status == "1000601")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
                         this.lblMessage.Text = "之前已入仓扫描";
                     }
-                    else if(status == "1000602")
+                    else if (status == "1000602")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
                         this.lblMessage.Text = "之前已出仓扫描";
                     }
-                    else if(status == "1000603")
+                    else if (status == "1000603")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
@@ -1127,19 +1136,19 @@ namespace CJia.PIVAS.App.UI.Label
                         this.lblMessage.Text = "未知的状态";
                     }
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "出仓扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "出仓扫描")
                 {
-                    if(status == "1000501")
+                    if (status == "1000501")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
                         this.lblMessage.Text = "未入仓扫描";
                     }
-                    else if(status == "1000601")
+                    else if (status == "1000601")
                     {
                         string groupIndex = this.BarCodeLabel.Rows[0]["GROUP_INDEX"].ToString();
                         string labelId = this.BarCodeLabel.Rows[0]["LABEL_ID"].ToString();
-                        if(this.SendPharm(groupIndex, labelId, "1000602"))
+                        if (this.SendPharm(groupIndex, labelId, "1000602"))
                         {
                             this.lblMessage.BackColor = Color.SlateBlue;
                             this.lblMessage.ForeColor = Color.White;
@@ -1149,13 +1158,13 @@ namespace CJia.PIVAS.App.UI.Label
                         }
                         this.RefreshLabelList();
                     }
-                    else if(status == "1000602")
+                    else if (status == "1000602")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
                         this.lblMessage.Text = "之前已成功出仓扫描";
                     }
-                    else if(status == "1000603")
+                    else if (status == "1000603")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
@@ -1168,25 +1177,25 @@ namespace CJia.PIVAS.App.UI.Label
                         this.lblMessage.Text = "未知的状态";
                     }
                 }
-                else if(this.cbScanning.SelectedItem.ToString() == "接收扫描")
+                else if (this.cbScanning.SelectedItem.ToString() == "接收扫描")
                 {
-                    if(status == "1000501")
+                    if (status == "1000501")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
                         this.lblMessage.Text = "未入仓扫描";
                     }
-                    else if(status == "1000601")
+                    else if (status == "1000601")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
                         this.lblMessage.Text = "未出仓扫描";
                     }
-                    else if(status == "1000602")
+                    else if (status == "1000602")
                     {
                         string groupIndex = this.BarCodeLabel.Rows[0]["GROUP_INDEX"].ToString();
                         string labelId = this.BarCodeLabel.Rows[0]["LABEL_ID"].ToString();
-                        if(this.SendPharm(groupIndex, labelId, "1000605"))
+                        if (this.SendPharm(groupIndex, labelId, "1000605"))
                         {
                             this.lblMessage.BackColor = Color.SlateBlue;
                             this.lblMessage.ForeColor = Color.White;
@@ -1196,7 +1205,7 @@ namespace CJia.PIVAS.App.UI.Label
                         }
                         this.RefreshLabelList();
                     }
-                    else if(status == "1000603")
+                    else if (status == "1000603")
                     {
                         this.lblMessage.BackColor = Color.LightGray;
                         this.lblMessage.ForeColor = Color.Red;
@@ -1216,9 +1225,9 @@ namespace CJia.PIVAS.App.UI.Label
             //    string labelId = this.BarCodeLabel.Rows[0]["LABEL_ID"].ToString();
             //    this.SendPharm(groupIndex, labelId);
             //}
-            if(this.cbSpeak.Checked)
+            if (this.cbSpeak.Checked)
             {
-                if(this.lblMessage.Text == "扫描成功")
+                if (this.lblMessage.Text == "扫描成功")
                 {
                     this.SpeakMessage(this.txtSpeak.Text);
                 }
@@ -1259,7 +1268,7 @@ namespace CJia.PIVAS.App.UI.Label
             this.lblMessage.Refresh();
             string barCode = this.txtPrintDarCode.Text.Trim();
             this.txbBarCode.Text = barCode;
-            if(barCode.Length != 10)
+            if (barCode.Length != 10)
             {
                 this.lblMessage.BackColor = Color.LightGray;
                 this.lblMessage.ForeColor = Color.Red;
@@ -1270,7 +1279,7 @@ namespace CJia.PIVAS.App.UI.Label
                 BarCode = barCode
             };
             this.OnQueryBarCodeLabe(null, labelScanningEventArgs);
-            if(this.BarCodeLabel == null || this.BarCodeLabel.Rows == null || this.BarCodeLabel.Rows.Count == 0)
+            if (this.BarCodeLabel == null || this.BarCodeLabel.Rows == null || this.BarCodeLabel.Rows.Count == 0)
             {
                 this.lblMessage.BackColor = Color.LightGray;
                 this.lblMessage.ForeColor = Color.Red;
@@ -1282,9 +1291,9 @@ namespace CJia.PIVAS.App.UI.Label
                 this.lblMessage.ForeColor = Color.White;
                 this.lblMessage.Text = "查询成功";
             }
-            if(this.lblMessage.BackColor == Color.Green)
+            if (this.lblMessage.BackColor == Color.Green)
             {
-                if(this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+                if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
                 {
                     this.lblMessage.BackColor = Color.Green;
                 }
@@ -1301,20 +1310,20 @@ namespace CJia.PIVAS.App.UI.Label
         /// <param name="GroupIndex"></param>
         private bool SendPharm(string GroupIndex, string labelId, string status)
         {
-            if((bool)this.OnFeeTIME(status))//查询当前是否需要扣除费用
+            if ((bool)this.OnFeeTIME(status))//查询当前是否需要扣除费用
             {
                 int times = int.Parse(this.OnLabelIsFee(labelId).ToString());
-                if(times != 0)
+                if (times != 0)
                 {
                     DateTime now = Sysdate;
                     string flag = this.OnPharmFee(GroupIndex, now, times).ToString();
-                    if(flag != "Successed")
+                    if (flag != "Successed")
                     {
                         //Message.Show("医嘱\"" + GroupIndex + "\"扣除费用时发生异常：" + flag);
                         //return false;
-                        if(CJia.PIVAS.Models.PIVASModel.GetParameters("1000000002") == "0")
+                        if (CJia.PIVAS.Models.PIVASModel.GetParameters("1000000002") == "0")
                         {
-                            if(Message.ShowQuery("医嘱\"" + GroupIndex + "\"扣除费用时发生异常：" + flag + "！是否继续扫描该瓶贴！", Message.Button.YesNo) == Message.Result.Yes)
+                            if (Message.ShowQuery("医嘱\"" + GroupIndex + "\"扣除费用时发生异常：" + flag + "！是否继续扫描该瓶贴！", Message.Button.YesNo) == Message.Result.Yes)
                             {
                                 return true;
                             }
@@ -1352,10 +1361,10 @@ namespace CJia.PIVAS.App.UI.Label
         /// <param name="status"></param>
         private bool CancelPharm(string GroupIndex, string labelId, string status)
         {
-            if((bool)this.OnCancelFeeTIME(labelId))//查询当前是否能退费用
+            if ((bool)this.OnCancelFeeTIME(labelId))//查询当前是否能退费用
             {
                 string flag = this.OnCancelPharmFee(GroupIndex, Sysdate, 1).ToString();
-                if(flag != "Successed")
+                if (flag != "Successed")
                 {
                     Message.Show("退费时发生异常：" + flag);
                     return false;
@@ -1368,6 +1377,81 @@ namespace CJia.PIVAS.App.UI.Label
             return true;
         }
 
+        /// <summary>
+        /// 返回拆分瓶贴的第一张的条形码
+        /// </summary>
+        /// <param name="Label_bar_id"></param>
+        private bool MinLabelBarID(string LabelBarID)
+        {
+            if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
+            {
+                string FirstLabelBarID;
+                string FirstLabelStatus;
+                object[] parms = new object[] { LabelBarID };
+
+                //string sql = "select status GM_BARCODE where LABEL_BAR_ID=?";
+                //                CJia.DefaultOleDb.Execute(sql, parms);
+                string status = this.BarCodeLabel.Rows[0]["STATUS"].ToString();
+                if (status == "1000601")
+                {
+                    this.lblMessage.BackColor = Color.LightGray;
+                    this.lblMessage.ForeColor = Color.Red;
+                    this.lblMessage.Text = "之前已入仓扫描";
+                    if (this.cbSpeak.Checked)
+                    {
+                        if (this.lblMessage.Text == "扫描成功")
+                        {
+                            this.SpeakMessage(this.txtSpeak.Text);
+                        }
+                        else
+                        {
+                            this.SpeakMessage(this.lblMessage.Text);
+                        }
+                    }
+                    return false;
+                }
+
+
+                //string sql = string.Format(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, format.ToString(), labelTypeStr);
+                DataTable dt = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, parms);
+                FirstLabelBarID = dt.Rows[0][0].ToString();
+                FirstLabelStatus = dt.Rows[0][1].ToString();
+                if (LabelBarID != FirstLabelBarID && FirstLabelStatus == "1000501")
+                {
+                    MessageBox.Show("该瓶贴为拆分瓶贴的第二张，请先扫描第一张，条码号为【" + FirstLabelBarID + "】", "警告");
+                    return false;
+                }//如果第一张瓶贴已扫描计费成功，则该瓶贴直接修改为成功扫描                 
+                else if (LabelBarID != FirstLabelBarID && (FirstLabelStatus == "1000601" || FirstLabelStatus == "1000602"))
+                {
+                    string sql = "update GM_BARCODE set status=1000601 where LABEL_BAR_ID=?";
+                    CJia.DefaultOleDb.Execute(sql, parms);
+                    this.lblMessage.BackColor = Color.Green;
+                    this.lblMessage.ForeColor = Color.White;
+                    this.lblMessage.Text = "扫描成功";
+                    if (this.cbSpeak.Checked)
+                    {
+                        if (this.lblMessage.Text == "扫描成功")
+                        {
+                            this.SpeakMessage(this.txtSpeak.Text);
+                        }
+                        else
+                        {
+                            this.SpeakMessage(this.lblMessage.Text);
+                        }
+                    }
+                    this.RefreshLabelList();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
         #endregion
 
 

@@ -621,6 +621,24 @@ where spl.label_id = ?";
                 return @"select * from SM_BATCH_SET SBS WHERE SBS.STATUS = '1' ORDER BY SBS.BATCH_TIME";
             }
         }
+        /// <summary>
+        /// 根据条码查找拆分条码的第一张条码号
+        /// </summary>
+        public static string SqlQueryFirstBarID
+        {
+            get
+            {
+                return @"SELECT GB.Label_Bar_Id,gb.status
+                                  FROM GM_BARCODE GB
+                                 WHERE EXISTS (SELECT *
+                                          FROM GM_BARCODE GB2
+                                         WHERE GB.LABEL_ID = GB2.LABEL_ID
+                                           AND GB2.LABEL_BAR_ID = ?
+                                           AND GB.GEN_TIME = GB2.GEN_TIME)
+                                   AND GB.LABEL_PAGE_NO = '1'";
+            }
+        }
+
 
         /// <summary>
         /// 获取打印瓶贴列表

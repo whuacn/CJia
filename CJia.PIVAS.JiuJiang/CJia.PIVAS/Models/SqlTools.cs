@@ -383,17 +383,19 @@ group by nog.pharm_id,
                                nspl.list_doctor_name,
                                nspl.list_doctor_date
                           from st_pivas_label nspl,
-                               (select ngb.label_bar_id,
+                               (select WMSYS.WM_CONCAT(NGB.LABEL_BAR_ID) label_bar_id,
                                        ngb.label_id,
                                        max(ngb.status) status,
                                        ngb.gen_name,
-                                       ngb.gen_date
+                                       max(ngb.gen_date) gen_date
                                   from gm_barcode ngb
                                  where ngb.status != 1000603
-                                 group by ngb.label_bar_id,
+                                 group by --ngb.label_bar_id,
                                           ngb.label_id,
-                                          ngb.gen_name,
-                                          ngb.gen_date) gb,
+                                          ngb.gen_name
+                                           --,
+                                          --ngb.gen_date
+                                        ) gb,
                                gm_code gc
                          where nspl.label_id = gb.label_id
                            and gb.status = gc.code
