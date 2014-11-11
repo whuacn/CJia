@@ -628,14 +628,18 @@ where spl.label_id = ?";
         {
             get
             {
-                return @"SELECT GB.Label_Bar_Id,gb.status
-                                  FROM GM_BARCODE GB
-                                 WHERE EXISTS (SELECT *
-                                          FROM GM_BARCODE GB2
-                                         WHERE GB.LABEL_ID = GB2.LABEL_ID
-                                           AND GB2.LABEL_BAR_ID = ?
-                                           AND GB.GEN_TIME = GB2.GEN_TIME)
-                                   AND GB.LABEL_PAGE_NO = '1'";
+                return @"SELECT *
+                                  FROM (SELECT MIN(GB.LABEL_BAR_ID) KEEP(DENSE_RANK FIRST ORDER BY GB.LABEL_PAGE_NO) OVER(PARTITION BY GB.LABEL_ID, GB.GEN_TIME) FIRST_LABEL_BAR_ID,
+                                               MIN(GB.STATUS) KEEP(DENSE_RANK FIRST ORDER BY GB.LABEL_PAGE_NO) OVER(PARTITION BY GB.LABEL_ID, GB.GEN_TIME) FIRST_STATUS,
+                                               GB.LABEL_BAR_ID,
+                                               GB.LABEL_PAGE_NO,
+                                               GB.LABEL_ALL_PAGE_NO,
+                                               GB.STATUS,
+                                               '【' || GB.LABEL_PAGE_NO || '/' || GB.LABEL_ALL_PAGE_NO || '】' PAGE_DETAIL
+                                          FROM GM_BARCODE GB
+                                         WHERE GB.STATUS IN (1000501, 1000601, 1000602)
+                                           AND GB.GEN_DATE > TRUNC(SYSDATE) - 1)
+                                 WHERE LABEL_BAR_ID = ?";
             }
         }
 

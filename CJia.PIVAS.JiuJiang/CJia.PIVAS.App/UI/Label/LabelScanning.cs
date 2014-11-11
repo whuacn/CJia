@@ -1387,6 +1387,8 @@ namespace CJia.PIVAS.App.UI.Label
             {
                 string FirstLabelBarID;
                 string FirstLabelStatus;
+                string CurrentPage;
+                string LabelPageSum;
                 object[] parms = new object[] { LabelBarID };
 
                 //string sql = "select status GM_BARCODE where LABEL_BAR_ID=?";
@@ -1414,15 +1416,18 @@ namespace CJia.PIVAS.App.UI.Label
 
                 //string sql = string.Format(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, format.ToString(), labelTypeStr);
                 DataTable dt = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, parms);
-                FirstLabelBarID = dt.Rows[0][0].ToString();
-                FirstLabelStatus = dt.Rows[0][1].ToString();
+                FirstLabelBarID = dt.Rows[0]["FIRST_LABEL_BAR_ID"].ToString();
+                FirstLabelStatus = dt.Rows[0]["FIRST_STATUS"].ToString();
+                CurrentPage = dt.Rows[0]["PAGE_DETAIL"].ToString();
+                LabelPageSum = dt.Rows[0]["LABEL_ALL_PAGE_NO"].ToString();
                 if (LabelBarID != FirstLabelBarID && FirstLabelStatus == "1000501")
                 {
-                    MessageBox.Show("该瓶贴为拆分瓶贴的第二张，请先扫描第一张，条码号为【" + FirstLabelBarID + "】", "警告");
+                    MessageBox.Show("该瓶贴为拆分瓶贴的子页" + CurrentPage + "，请先扫描第一页，条码号为【" + FirstLabelBarID + "】", "警告");
                     return false;
                 }//如果第一张瓶贴已扫描计费成功，则该瓶贴直接修改为成功扫描                 
                 else if (LabelBarID != FirstLabelBarID && (FirstLabelStatus == "1000601" || FirstLabelStatus == "1000602"))
                 {
+                    MessageBox.Show("该瓶贴为拆分瓶贴的子页，第一页瓶贴已扫描，条码号为【" + FirstLabelBarID + "】", "提示信息");
                     string sql = "update GM_BARCODE set status=1000601 where LABEL_BAR_ID=?";
                     CJia.DefaultOleDb.Execute(sql, parms);
                     this.lblMessage.BackColor = Color.Green;
@@ -1441,6 +1446,11 @@ namespace CJia.PIVAS.App.UI.Label
                     }
                     this.RefreshLabelList();
                     return false;
+                }
+                else if (LabelBarID == FirstLabelBarID && int.Parse(LabelPageSum) > 1)
+                {
+                    MessageBox.Show("该瓶贴为拆分瓶贴的首页，共有拆分瓶贴【" + LabelPageSum + "】张", "提示信息");
+                    return true;
                 }
                 else
                 {
