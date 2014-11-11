@@ -621,6 +621,28 @@ where spl.label_id = ?";
                 return @"select * from SM_BATCH_SET SBS WHERE SBS.STATUS = '1' ORDER BY SBS.BATCH_TIME";
             }
         }
+        /// <summary>
+        /// 根据条码查找拆分条码的第一张条码号
+        /// </summary>
+        public static string SqlQueryFirstBarID
+        {
+            get
+            {
+                return @"SELECT *
+                                  FROM (SELECT MIN(GB.LABEL_BAR_ID) KEEP(DENSE_RANK FIRST ORDER BY GB.LABEL_PAGE_NO) OVER(PARTITION BY GB.LABEL_ID, GB.GEN_TIME) FIRST_LABEL_BAR_ID,
+                                               MIN(GB.STATUS) KEEP(DENSE_RANK FIRST ORDER BY GB.LABEL_PAGE_NO) OVER(PARTITION BY GB.LABEL_ID, GB.GEN_TIME) FIRST_STATUS,
+                                               GB.LABEL_BAR_ID,
+                                               GB.LABEL_PAGE_NO,
+                                               GB.LABEL_ALL_PAGE_NO,
+                                               GB.STATUS,
+                                               '【' || GB.LABEL_PAGE_NO || '/' || GB.LABEL_ALL_PAGE_NO || '】' PAGE_DETAIL
+                                          FROM GM_BARCODE GB
+                                         WHERE GB.STATUS IN (1000501, 1000601, 1000602)
+                                           AND GB.GEN_DATE > TRUNC(SYSDATE) - 1)
+                                 WHERE LABEL_BAR_ID = ?";
+            }
+        }
+
 
         /// <summary>
         /// 获取打印瓶贴列表

@@ -383,17 +383,19 @@ group by nog.pharm_id,
                                nspl.list_doctor_name,
                                nspl.list_doctor_date
                           from st_pivas_label nspl,
-                               (select ngb.label_bar_id,
+                               (select WMSYS.WM_CONCAT(NGB.LABEL_BAR_ID) label_bar_id,
                                        ngb.label_id,
                                        max(ngb.status) status,
                                        ngb.gen_name,
-                                       ngb.gen_date
+                                       max(ngb.gen_date) gen_date
                                   from gm_barcode ngb
                                  where ngb.status != 1000603
-                                 group by ngb.label_bar_id,
+                                 group by --ngb.label_bar_id,
                                           ngb.label_id,
-                                          ngb.gen_name,
-                                          ngb.gen_date) gb,
+                                          ngb.gen_name
+                                           --,
+                                          --ngb.gen_date
+                                        ) gb,
                                gm_code gc
                          where nspl.label_id = gb.label_id
                            and gb.status = gc.code
@@ -1742,33 +1744,34 @@ where cav.CHECK_PIVAS_STATUS = 1000101";
         {
             get
             {
-                return @"select gb.*,
-       spl.*,
-       spld.*,
-       gc.name label_status_name,
-       gc.code label_status_code,
-       spl.bed_id || spl.patient_name name
-  from (select *
-          from GM_BARCODE ngb
-         where ((sysdate > (trunc(sysdate) + 13 / 24) and
-               ngb.gen_date between (trunc(sysdate) + 13 / 24) and sysdate) or
-               (sysdate < (trunc(sysdate) + 13 / 24) and
-               ngb.gen_date between (trunc(sysdate - 1) + 13 / 24) and
-               sysdate))
-           and ngb.status not in (1000603, 1000602, 1000602)) gb,
-       st_pivas_label spl,
-       st_pivas_label_detail spld,
-       gm_code gc
- where gb.label_id = spl.label_id
-   and spl.group_index = spld.group_index
-   and gb.status = gc.code
-   and (spl.group_index not in
-       (select hav.group_index from ht_advice_view hav) or
-       spl.group_index not in
-       (select scd.group_index
-           from st_check_detail scd
-          where scd.check_pivas_status = 1000102
-            and scd.detail_status = '1'))";
+                return @"SELECT GB.*,
+       SPL.*,
+       SPLD.*,
+       GC.NAME LABEL_STATUS_NAME,
+       GC.CODE LABEL_STATUS_CODE,
+       SPL.BED_ID || SPL.PATIENT_NAME NAME
+  FROM (SELECT *
+          FROM GM_BARCODE NGB
+         WHERE ((SYSDATE > (TRUNC(SYSDATE) + 13 / 24) AND
+               NGB.GEN_DATE BETWEEN (TRUNC(SYSDATE) + 13 / 24) AND SYSDATE) OR
+               (SYSDATE < (TRUNC(SYSDATE) + 13 / 24) AND
+               NGB.GEN_DATE BETWEEN (TRUNC(SYSDATE - 1) + 13 / 24) AND
+               SYSDATE))
+           AND NGB.STATUS NOT IN (1000603, 1000602, 1000602)) GB,
+       ST_PIVAS_LABEL SPL,
+       ST_PIVAS_LABEL_DETAIL SPLD,
+       GM_CODE GC
+ WHERE GB.LABEL_ID = SPL.LABEL_ID
+   AND SPL.GROUP_INDEX = SPLD.GROUP_INDEX
+   AND GB.STATUS = GC.CODE
+   AND (SPL.GROUP_INDEX NOT IN
+       (SELECT HAV.GROUP_INDEX FROM HT_ADVICE_VIEW HAV) OR
+       SPL.GROUP_INDEX NOT IN
+       (SELECT SCD.GROUP_INDEX
+           FROM ST_CHECK_DETAIL SCD
+          WHERE SCD.CHECK_PIVAS_STATUS = 1000102
+            AND SCD.DETAIL_STATUS = '1') OR
+       FN_CHECK_ERROR_LABEL(SPL.LABEL_ID, SPL.PHARM_TIME) = 0)";
             }
         }
 
@@ -2483,7 +2486,7 @@ where spl.label_id = ?";
           pv.FACTORY_NAME,
        sum((case
          when l.fee_count > 1 then
-           decode(fn_pharm_is_save(d.pharm_id),1,ceil(l.fee_count * d.pharm_dosage / pv.dose_per_unit),d.pharm_amount)
+           decode(fn_pharm_is_save(d.pharm_id),1,ceil(l.fee_count * d.pharm_dosage / pv.dose_per_unit),L.FEE_COUNT)
          when l.fee_count = 1 then
            d.pharm_amount
          else
