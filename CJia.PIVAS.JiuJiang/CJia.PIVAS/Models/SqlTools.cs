@@ -2818,7 +2818,7 @@ where spl.label_id = ?";
                t.pharm_name,
                t.pharm_spec,
                t.pharm_unit,
-               t.pharm_factory,illfield_id,
+               t.pharm_factory,
                sum(t.reality_pharm_amount) all_reality_pharm_amount,
                sum(t.fee_pharm_amount) all_fee_pharm_amount
           from (select DRUG_CODE,
@@ -2832,7 +2832,7 @@ where spl.label_id = ?";
                        sum(fee_pharm_amount) fee_pharm_amount,
                        pharm_unit,
                        create_date,
-                       CHECK_BATCH_ID,illfield_id
+                       CHECK_BATCH_ID
                   from pt_pharm_send_view_new 
                   where  pharm_time between ? and ? {0} {1}
                  group by DRUG_CODE,
@@ -2844,7 +2844,7 @@ where spl.label_id = ?";
                           pharm_unit,
                           pharm_factory,
                           create_date,
-                          CHECK_BATCH_ID,illfield_id) t
+                          CHECK_BATCH_ID) t
          group by t.DRUG_CODE,
                   t.INHOS_PRICE,
                   t.flag,
@@ -2852,7 +2852,7 @@ where spl.label_id = ?";
                   t.pharm_name,
                   t.pharm_spec,
                   t.pharm_unit,
-                  t.pharm_factory,illfield_id) tt
+                  t.pharm_factory) tt
 ";
             }
         }
