@@ -1,0 +1,703 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0780c9a7-524b-4aff-869b-df18620a1547" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>JJFB</ID>
+  <Name>JJFB</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="26" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4541" scrolltop="4159" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="22966" y="11351" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="018600009001905f010004cbcecce5" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="VISIT_DATA" left="139" top="7400" logicalid="10" controlid="1" masterid="0" hint1="0" hint2="0" width="4260" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000a410000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_VISIT_DATA" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="VISIT_TYPE" left="6799" top="8960" logicalid="11" controlid="2" masterid="0" hint1="0" hint2="0" width="3784" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000c80e000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_VISIT_TYPE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="DEPT_DIM" left="470" top="14800" logicalid="12" controlid="3" masterid="0" hint1="0" hint2="0" width="3598" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800000e0e0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_DEPT_DIM" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="DATE_DIM" left="20" top="0" logicalid="13" controlid="4" masterid="0" hint1="0" hint2="0" width="4498" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800009211000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_DATE_DIM" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1870" top="4501" logicalid="14" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[VISIT_DATA-DATE_DIM]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2269" y="5000" />
+              <point x="2269" y="7400" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1870" top="12100" logicalid="15" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[VISIT_DATA-DEPT_DIM]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2269" y="14800" />
+              <point x="2269" y="12400" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="4099" top="9500" logicalid="16" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[VISIT_DATA-VISIT_TYPE]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="16" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6799" y="9899" />
+              <point x="5599" y="9899" />
+              <point x="5599" y="9900" />
+              <point x="4399" y="9900" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="REALITY_OPEN_BED_TABLE" left="-4304" top="10018" logicalid="17" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="2787" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000e30a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_REALITY_OPEN_BED_TABLE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-2004" top="12505" logicalid="18" controlid="9" masterid="0" hint1="0" hint2="0" width="3023" height="2795" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[REALITY_OPEN_BED_TABLE-DEPT_DIM]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="8" sourceattachpoint="0" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="619" y="14800" />
+              <point x="619" y="13803" />
+              <point x="-1704" y="13803" />
+              <point x="-1704" y="12805" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="FEE_TYPE_DIM" left="8959" top="10949" logicalid="20" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="1940" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000094070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_FEE_TYPE_DIM" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="CLINIC_FEE_FACT" left="0" top="0" logicalid="21" controlid="12" masterid="0" hint1="0" hint2="0" width="3528" height="2364" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000c80d00003c090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_CLINIC_FEE_FACT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-280" top="332" logicalid="22" controlid="13" masterid="0" hint1="0" hint2="0" width="4108" height="918" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[CLINIC_FEE_FACT-DATE_DIM]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="12" sourceattachpoint="16" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="20" y="850" />
+              <point x="1774" y="850" />
+              <point x="1774" y="632" />
+              <point x="3528" y="632" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3114" top="2064" logicalid="23" controlid="14" masterid="0" hint1="0" hint2="0" width="6645" height="9385" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[CLINIC_FEE_FACT-FEE_TYPE_DIM]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="11" destid="12" sourceattachpoint="0" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9359" y="10949" />
+              <point x="9359" y="6657" />
+              <point x="3414" y="6657" />
+              <point x="3414" y="2364" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="PRESCRIPTION_FACT" left="0" top="0" logicalid="24" controlid="15" masterid="0" hint1="0" hint2="0" width="3704" height="3211" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000780e00008b0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="JKDA_PRESCRIPTION_FACT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3404" top="-700" logicalid="25" controlid="16" masterid="0" hint1="0" hint2="0" width="1000" height="1505" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[PRESCRIPTION_FACT-DATE_DIM]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="15" sourceattachpoint="12" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3919" y="0" />
+              <point x="3919" y="-400" />
+              <point x="4104" y="-400" />
+              <point x="4104" y="505" />
+              <point x="3704" y="505" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4541</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>4159</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-4304</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>75</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="8e9f3d90-4557-493a-b481-6a995d901a85">
+      <ID>DATE DIM</ID>
+      <Name>DATE DIM</Name>
+      <DimensionID>DATE DIM</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8e6be018-f9f4-404b-bbfa-25b8a3a37b44">
+          <AttributeID>DATE TIME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="20044ef1-b325-4ffc-b427-7d2e1331850c">
+          <AttributeID>DATE ALL</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f0e23524-58f9-431c-a2aa-3e351f459e8e">
+          <AttributeID>DATE YEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fce6d5c8-bc25-4d24-bc14-f7709ea1a2e1">
+          <AttributeID>DATE YEAR NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c1f32afa-78ab-413a-9258-160f48de2807">
+          <AttributeID>DATE QUARTER</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fbbd71ab-4a6c-4333-bf63-125960b9450b">
+          <AttributeID>DATE QUARTER NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ff213539-f408-4635-bd42-672b4b413651">
+          <AttributeID>DATE MONTH</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4b54c0b2-778f-4722-8777-d04826d45275">
+          <AttributeID>DATE MONTH NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="857e0c6e-5b0e-4cc8-a398-141a0403a693">
+          <AttributeID>DATE WEEK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3b31081c-d699-4bc8-9f54-e3d1ddd3d62b">
+          <AttributeID>DATE WEEK NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f119a463-8f1f-4671-9ab3-d69718c82ed2">
+          <AttributeID>DATE DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="de30d2ac-2083-4355-92e1-8573c016accd">
+          <AttributeID>DATE DAY NAME</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="df22ccf1-64ba-4a0f-9622-7187ba44f937">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="adfbc390-2139-43d4-896c-e1a21c4a77fe">
+          <HierarchyID>层次结构 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="715211c5-7e87-498e-8f70-3ae1eb1be3ee">
+      <ID>DEPT DIM</ID>
+      <Name>DEPT DIM</Name>
+      <DimensionID>DEPT DIM</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="50be19dc-1cc6-4e0d-b2f6-d45778b11ece">
+          <AttributeID>DEPT ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="36217d93-da65-4d64-9b59-650a3accddd3">
+          <AttributeID>DEPT NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="14c10650-150e-438e-814e-5522febc3aae">
+          <AttributeID>DEPT ALL NAME</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="ed934387-a579-4693-99a5-fff37730a5c4">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="d63e3cec-565f-477a-8e03-494103c4ac6f">
+      <ID>VISIT TYPE</ID>
+      <Name>VISIT TYPE</Name>
+      <DimensionID>VISIT TYPE</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="3157b0d4-53d5-40e2-b81d-742251f73967">
+          <AttributeID>VISIT TYPE CODE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e81a694f-4ef5-404e-a753-a852d771ff67">
+          <AttributeID>VISIT TYPE NAME</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="4f2c3295-4a20-4730-af53-e772889e197a">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="6403ff30-9c29-4f94-9d26-b2890cc2f8d2">
+      <ID>FEE TYPE DIM</ID>
+      <Name>FEE TYPE DIM</Name>
+      <DimensionID>FEE TYPE DIM</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0e98008e-dfa8-4190-8bde-3619bbda39a6">
+          <AttributeID>CLASS CODE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="96c3142c-a0a6-4f1f-956e-fbdff24adfb9">
+          <AttributeID>CLASS NAME</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="97b8eb6f-d34f-4182-8c2c-bc4dc0b8b729">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <CubePermissions>
+    <CubePermission dwd:design-time-name="4196c0a4-4b3e-44e0-a7de-d3c6310b820e">
+      <ID>CubePermission</ID>
+      <Name>CubePermission</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Role 1</RoleID>
+      <ReadDefinition>Basic</ReadDefinition>
+      <Read>Allowed</Read>
+      <ReadSourceData>Allowed</ReadSourceData>
+    </CubePermission>
+  </CubePermissions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="654a075e-720f-4a13-9a50-b2e710930270">
+      <ID>VISIT DATA</ID>
+      <Name>VISIT DATA</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="c615b2e3-53fd-4363-b333-56cc4f229ed2">
+          <ID>PATIENT AGE</ID>
+          <Name>PATIENT AGE</Name>
+          <Source dwd:design-time-name="ef30a0c1-7e37-42b5-af4d-89ef70deb048">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4225b56f-0650-4a23-a1e1-e177501496ae">
+              <TableID>JKDA_VISIT_DATA</TableID>
+              <ColumnID>PATIENT_AGE</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f8ee7fc9-683b-4a2d-9ee7-84aca46e5576">
+          <ID>VISIT DATA 计数</ID>
+          <Name>VISIT DATA 计数</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="41633187-0bb4-4179-a1b7-dab83129e1f8">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="ab447c5a-30ee-4075-8805-f1b0c9e838b0">
+              <TableID>JKDA_VISIT_DATA</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1403610d-9639-4d2b-9fae-6acf255edefb">
+          <CubeDimensionID>DATE DIM</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ae9e1c7a-3325-498a-8130-5f1b23034b60">
+              <AttributeID>DATE TIME</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3864604d-70cd-4256-b8ed-897f225b57b1">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1d3eb230-e6a3-4bcc-a4eb-5dff16c9fd50">
+                    <TableID>JKDA_VISIT_DATA</TableID>
+                    <ColumnID>VISIT_DATE</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4d81c906-c418-4dc2-a65a-211a31e66e7f">
+          <CubeDimensionID>DEPT DIM</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1f0ca100-8a88-4b34-928a-3941b395cb29">
+              <AttributeID>DEPT ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="22d63ba0-bd68-4ecc-956b-66ca3cb36f51">
+                  <DataType>WChar</DataType>
+                  <DataSize>20</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="06372c1f-461a-42de-adb4-cdadb6400afe">
+                    <TableID>JKDA_VISIT_DATA</TableID>
+                    <ColumnID>VISIT_DEPT_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4a28f0ff-c188-42a0-903d-1ca3c82aedd3">
+          <CubeDimensionID>VISIT TYPE</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="478839af-3208-4f69-80d7-8b4b19fe932f">
+              <AttributeID>VISIT TYPE CODE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="378ef8d9-1e62-42ac-ad4f-32dd888421f5">
+                  <DataType>WChar</DataType>
+                  <DataSize>1</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="88a73320-b2a4-411b-8430-ed779f3c49e6">
+                    <TableID>JKDA_VISIT_DATA</TableID>
+                    <ColumnID>VISIT_TYPE_NO</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="13688ca3-2e07-40c3-94ae-50b943da3d61">
+      <ID>CLINIC FEE FACT</ID>
+      <Name>CLINIC FEE FACT</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="f5aab963-0ccd-466e-b898-c48a3fbb31bc">
+          <ID>FEE AMOUNT</ID>
+          <Name>门诊费用</Name>
+          <Source dwd:design-time-name="cbfdcdfe-0203-4c83-9dd8-6e4490db244b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e0e752d8-24a6-49dd-a5cd-a9e66fba8342">
+              <TableID>JKDA_CLINIC_FEE_FACT</TableID>
+              <ColumnID>FEE_AMOUNT</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c72b4822-070a-47d5-95d6-5f23952c7093">
+          <CubeDimensionID>DATE DIM</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3866aa0f-3f0d-4f69-80df-9fac1cbf4265">
+              <AttributeID>DATE TIME</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b371ec00-bf00-43f1-b0c2-94f7127712e6">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2e63f866-22de-4a17-8e19-396f2367061b">
+                    <TableID>JKDA_CLINIC_FEE_FACT</TableID>
+                    <ColumnID>INVOICE_DATE</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6fb7df2e-58a9-4697-a777-06a6e77b07fb">
+          <CubeDimensionID>FEE TYPE DIM</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d959bae5-de7f-46fa-9e47-39cfb67b02b1">
+              <AttributeID>CLASS CODE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="813b15a0-2b68-4901-b5e3-0c139fd1910f">
+                  <DataType>WChar</DataType>
+                  <DataSize>1</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="113b4fd5-c529-4714-8deb-a710cb80cf87">
+                    <TableID>JKDA_CLINIC_FEE_FACT</TableID>
+                    <ColumnID>FEE_TYPE_CODE</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="fef82b50-d9f4-4377-980f-34e289af350a">
+      <ID>PRESCRIPTION FACT</ID>
+      <Name>PRESCRIPTION FACT</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="17e6851e-7e57-4e18-a4d6-86ca73bae708">
+          <ID>ANT AMOUNT</ID>
+          <Name>抗菌药物处方金额</Name>
+          <Source dwd:design-time-name="715fb277-6a93-45e7-b3f1-033bb1c107ac">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="275d9d27-c1c1-4e5a-9ee2-78c81afa2551">
+              <TableID>JKDA_PRESCRIPTION_FACT</TableID>
+              <ColumnID>ANT_AMOUNT</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="eec716af-3d09-467b-b325-b0cd33fb81e8">
+          <ID>ANTIBACTERIALS</ID>
+          <Name>抗菌药物处方数</Name>
+          <Source dwd:design-time-name="13cfabbc-dcf7-475d-9deb-b4b1f6f603d3">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5cb6fe44-d18c-4359-bdd5-9e2b995f3e04">
+              <TableID>JKDA_PRESCRIPTION_FACT</TableID>
+              <ColumnID>ANTIBACTERIALS</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="50f3c6a9-950f-4efd-9728-3f259e391cba">
+          <ID>INJECTION</ID>
+          <Name>注射剂处方数</Name>
+          <Source dwd:design-time-name="e7c7b9d1-47b5-4134-887c-a2139247e5ab">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bf047b7d-9279-46e3-93ef-c7e7d9df7e69">
+              <TableID>JKDA_PRESCRIPTION_FACT</TableID>
+              <ColumnID>INJECTION</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a2143dc2-1051-4b54-8bb8-2e624f300a97">
+          <ID>INJ AMOUNT</ID>
+          <Name>注射剂处方金额</Name>
+          <Source dwd:design-time-name="013eceac-78e6-42a7-945c-a37be64eb937">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4c8bd463-7af6-414c-bb27-1a154fc92d34">
+              <TableID>JKDA_PRESCRIPTION_FACT</TableID>
+              <ColumnID>INJ_AMOUNT</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3b19969f-9da6-4f3d-b770-14521e417dd0">
+          <ID>PRESCRIPTION FACT 计数</ID>
+          <Name>处方张数</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="33158ed0-463e-4089-b967-c993ce9a7282">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="85817cbe-1a9a-4e01-a43f-34a97d2ad102">
+              <TableID>JKDA_PRESCRIPTION_FACT</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4603245e-56ed-4e96-bcce-c98eb3b1cd7b">
+          <CubeDimensionID>DATE DIM</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1cc15417-23f6-4a12-9963-26f6086bd037">
+              <AttributeID>DATE TIME</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="eb7d0edd-7dd4-4fe2-b578-39ea972b9c44">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ed898520-16fe-487f-aa04-93504c2f9260">
+                    <TableID>JKDA_PRESCRIPTION_FACT</TableID>
+                    <ColumnID>PRES_DATE</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="eb7e43fc-d54d-4a20-b66f-ff8112db9557">
+    <DataSourceViewID>JJFB</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="1fca5ca2-c5f5-49c1-ad27-89ea487963c8">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+CALCULATE 命令控制该多维数据集中叶单元的聚合。
+如果删除或修改该 CALCULATE 命令，会影响该多维数据集内的数据。
+只有手动指定如何聚合该多维数据集时才编辑该命令。
+*/
+CALCULATE;    
+
+//
+/*计算特定成员的值与该成员父级的值的比率。*/
+CREATE MEMBER CURRENTCUBE.[Measures].[抗菌药物处方数/每百张门诊处方（%）]
+ AS Case
+// Test to avoid division by zero.
+When IsEmpty
+     ( 
+        [Measures].[抗菌药物处方数] / [Measures].[处方张数]
+     ) 
+Then Null
+
+// Test for current coordinate being on the (All) member.
+//When [DATE DIM].[层次结构 1].CurrentMember.Level Is
+//     [DATE DIM].[层次结构 1].[(All)]
+//Then 1
+
+Else
+ ( [DATE DIM].[层次结构 1].CurrentMember,
+       [Measures].[抗菌药物处方数] ) 
+     /
+     ( [DATE DIM].[层次结构 1].CurrentMember,
+       [Measures].[处方张数] )
+
+End, 
+FORMAT_STRING = "Percent", 
+VISIBLE = 1  ; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>
