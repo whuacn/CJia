@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "JKDA", "JKDA\JKDA.dwproj", "{0E633167-4EA5-42F1-B4C8-B08BDB78BEEB}"
 EndProject
 Global

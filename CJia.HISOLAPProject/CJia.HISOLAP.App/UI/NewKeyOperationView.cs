@@ -33,7 +33,7 @@ namespace CJia.HISOLAP.App.UI
             DataTable data = CJia.DefaultOleDb.Query(sql);
             data = DataTableHelper.MergeLevel(data, new List<int>() { 0, 1 });
             data = DataTableHelper.GetRealColName(data);
-            data = DataTableHelper.UpdateColName(data, new Dictionary<int, string>() { { 0, "项目名称" } });
+            data = DataTableHelper.UpdateColName(data, new Dictionary<int, string>() { { 0, "项目名称" }, { 1, "手术例数" }, { 2, "死亡例数" }, { 3, "住院重点手术死亡率" }, { 4, "术后非预期再手术例数" }, { 5, "术后非预期再手术率" }, { 6, "平均住院天数" }, { 7, "平均住院费用" } }, new Dictionary<int, string>() { { 0, "30%" }, { 1, "10%" }, { 2, "10%" }, { 3, "10%" }, { 4, "10%" }, { 5, "10%" }, { 6, "10%" }, { 7, "10%" } });
             Dictionary<string, string> oldToNew = new Dictionary<string, string>();
 
             if(data != null && data.Rows.Count > 0)
@@ -48,7 +48,7 @@ namespace CJia.HISOLAP.App.UI
                     data.Rows[i][7] = data.Rows[i][7] != null && data.Rows[i][7].ToString() != "" ? Math.Round(double.Parse(data.Rows[i][7].ToString()), 2) : data.Rows[i][7];
                 }
             }
-            data = DataTableHelper.UpdateDataRow(data, "项目名称", oldToNew);
+            data = DataTableHelper.UpdateDataRow(data, "项目名称$30%", oldToNew);
             return data;
         }
 
