@@ -1,0 +1,65 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="29f1246f-f921-4a76-adb2-99eac37be13d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>JJFB</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>VISIT DATA</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="13cbbd21-7d09-4434-a733-c7b0252bb9c4">
+          <ID>VISIT DATA</ID>
+          <Name>VISIT DATA</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b0f2d649-6e54-491f-b99a-f3147d38ac74">
+            <DataSourceViewID>JJFB</DataSourceViewID>
+            <TableID>JKDA_VISIT_DATA</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>CLINIC FEE FACT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="545132a1-2190-4eb5-b3e3-8302aad24cef">
+          <ID>CLINIC FEE FACT</ID>
+          <Name>CLINIC FEE FACT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c36903cb-effb-478a-8852-737e9d4a19b0">
+            <DataSourceViewID>JJFB</DataSourceViewID>
+            <TableID>JKDA_CLINIC_FEE_FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>PRESCRIPTION FACT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f90d4a03-b9c8-457d-92b2-d996e427a970">
+          <ID>PRESCRIPTION FACT</ID>
+          <Name>PRESCRIPTION FACT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="7abcd228-d653-46f0-83d2-0f8dfbb97a4d">
+            <DataSourceViewID>JJFB</DataSourceViewID>
+            <TableID>JKDA_PRESCRIPTION_FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
