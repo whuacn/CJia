@@ -149,7 +149,7 @@ namespace CJia.PIVAS.App.UI.Label
             this.pharmName.DataBindings.Add("Text", this.DataSource, "PHARM_NAME");
             this.spec.DataBindings.Add("Text", this.DataSource, "SPEC_UNIT");
             this.dosage.DataBindings.Add("Text", this.DataSource, "DOSAGE");
-            this.from.DataBindings.Add("Text", this.DataSource, "FACTORY_NAME");
+            //this.from.DataBindings.Add("Text", this.DataSource, "FACTORY_NAME");
             //this.count.DataBindings.Add("Text", this.DataSource, "AMOUNT");
             CJia.PIVAS.Tools.BarCode.Height = 55;
             this.barcode.Image = CJia.PIVAS.Tools.BarCode.GetCodeImage(BarCode, CJia.PIVAS.Tools.BarCode.Code39Model.Code39FullAscII, true);

@@ -317,7 +317,7 @@ namespace CJia.PIVAS.App.UI.Label
             }
             else
             {
-                int allLabelCount = (result.Rows.Count - 1) / 4 + 1;
+                int allLabelCount = (result.Rows.Count - 1) / Common.GetLabelCount() + 1;
                 DataTable reportDataSource = this.GetDataSource(result, int.Parse(result.Rows[0]["LABEL_PAGE_NO"].ToString()));
                 string labelBarCode = result.Rows[0]["LABEL_BAR_ID"].ToString();
                 this.nowBarCode = labelBarCode;

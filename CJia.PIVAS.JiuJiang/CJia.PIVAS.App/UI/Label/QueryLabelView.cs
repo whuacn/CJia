@@ -143,7 +143,7 @@ namespace CJia.PIVAS.App.UI.Label
                             string GroupIndex = this.LabelDetail.Rows[i - 1]["GROUP_INDEX"].ToString();
                             this.SendPharm(GroupIndex);
                         }
-                        int allLabelCount = (labelInfos.Length - 1) / 4 + 1;
+                        int allLabelCount = (labelInfos.Length - 1) / Common.GetLabelCount() + 1;
                         for(int j = 1; j <= allLabelCount; j++)
                         {
                             DataTable reportDataSource = this.GetDataSource(labelInfos, j);
@@ -199,7 +199,7 @@ namespace CJia.PIVAS.App.UI.Label
             };
             this.OnUpdateBarCode(null, queryLabelViewEventArgs);
             DataRow[] labelInfos = this.LabelDetailInfo.Select("LABEL_ID = " + labelId);
-            int allLabelCount = (labelInfos.Length - 1) / 4 + 1;
+            int allLabelCount = (labelInfos.Length - 1) / Common.GetLabelCount() + 1;
             for(int j = 1; j <= allLabelCount; j++)
             {
                 DataTable reportDataSource = this.GetDataSource(labelInfos, j);
