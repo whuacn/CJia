@@ -5,6 +5,7 @@
     using DevExpress.XtraReports.UI;
     using System;
     using System.ComponentModel;
+    using System.Configuration;
     using System.Drawing;
     using System.Drawing.Printing;
 
@@ -51,7 +52,10 @@
             this.LableBlackTag.Text = strBlackTag;
             this.LableBlackTag.ForeColor = System.Drawing.Color.White;
 
+            System.Configuration.ConfigurationManager.RefreshSection("appSettings");
+            this.PrinterName = ConfigurationSettings.AppSettings["bagPrint"];
             base.CreateDocument();
+            
             this.Print();
         }
 

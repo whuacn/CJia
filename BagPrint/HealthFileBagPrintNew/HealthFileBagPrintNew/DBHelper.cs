@@ -4,6 +4,7 @@
     using System.Configuration;
     using System.Data;
     using System.Data.OleDb;
+    using System.Windows.Forms;
 
     public class DBHelper : IDisposable
     {
@@ -12,7 +13,15 @@
 
         public DBHelper()
         {
-            this.cnn.Open();
+            try
+            {
+                this.cnn.Open();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("数据库连接失败");
+            }
+    
         }
 
         public void Dispose()

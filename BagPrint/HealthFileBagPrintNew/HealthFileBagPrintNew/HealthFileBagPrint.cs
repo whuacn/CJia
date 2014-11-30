@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Xml;
+using System.Configuration;
 namespace HealthFileBagPrintNew
 {
     public partial class HealthFileBagPrint : Form
@@ -15,34 +17,37 @@ namespace HealthFileBagPrintNew
         public HealthFileBagPrint()
         {
             InitializeComponent();
-            this.dateEdit1.EditValue = DateTime.Now;
+            this.DEBegin.EditValue = DateTime.Now.ToShortDateString() + " 00:00:00";
+            this.DEEnd.EditValue = DateTime.Now;
             LoadData();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-             using (DBHelper helper = new DBHelper())
+            using (DBHelper helper = new DBHelper())
             {
-                string sql = "SELECT V.FMRDID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ?";
-                string str2 = "SELECT V.FMRDID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? \r\n                               AND V.FUDATE between ? and ?";
+                string sql = "SELECT V.FMRDID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? AND (V.FOOFFI = ? OR ?='quanbu')";
+                string str2 = "SELECT V.FMRDID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? \r\n                               AND V.FUDATE between ? and ? AND (V.FOOFFI = ? OR ?='quanbu')";
                 string text = this.txtFmrdid.Text;
                 string str4 = this.CbUser.SelectedValue.ToString();
                 string str5 = (str4 == "quanbu") ? "%%" : str4;
                 DataTable table = new DataTable();
-                if (!this.TimeCheck.Checked)
+                //if (!this.TimeCheck.Checked)
+                //{
+                //    OleDbParameter[] opm = new OleDbParameter[] { new OleDbParameter("1", str5), new OleDbParameter("2", text + "%"), new OleDbParameter("3", this.CbDept.SelectedValue.ToString()), new OleDbParameter("4", this.CbDept.SelectedValue.ToString()) };
+                //    table = helper.Query(sql, opm);
+                //}
+                //else
+                //{
+                DateTime date = DateTime.Parse(this.DEBegin.EditValue.ToString()).Date;
+                DateTime end = DateTime.Parse(this.DEEnd.EditValue.ToString()).Date;
+                DateTime time2 = date;
+                DateTime time3 = end;//new DateTime(date.Year, date.Month, date.Day, 0x17, 0x3b, 0x3b);
+                OleDbParameter[] parameterArray2 = new OleDbParameter[] { new OleDbParameter("1", str5), new OleDbParameter("2", text + "%"), new OleDbParameter("3", time2), new OleDbParameter("4", time3), new OleDbParameter("5", this.CbDept.SelectedValue.ToString()), new OleDbParameter("6", this.CbDept.SelectedValue.ToString()) };
+                table = helper.Query(str2, parameterArray2);
+                //}
+                DataColumn column = new DataColumn("ISCHECK", typeof(bool))
                 {
-                    OleDbParameter[] opm = new OleDbParameter[] { new OleDbParameter("1", str5), new OleDbParameter("2", text + "%") };
-                    table = helper.Query(sql, opm);
-                }
-                else
-                {
-                    DateTime date = DateTime.Parse(this.dateEdit1.EditValue.ToString()).Date;
-                    DateTime time2 = date;
-                    DateTime time3 = new DateTime(date.Year, date.Month, date.Day, 0x17, 0x3b, 0x3b);
-                    OleDbParameter[] parameterArray2 = new OleDbParameter[] { new OleDbParameter("1", str5), new OleDbParameter("2", text + "%"), new OleDbParameter("3", time2), new OleDbParameter("4", time3) };
-                    table = helper.Query(str2, parameterArray2);
-                }
-                DataColumn column = new DataColumn("ISCHECK", typeof(bool)) {
                     DefaultValue = false
                 };
                 table.Columns.Add(column);
@@ -52,11 +57,12 @@ namespace HealthFileBagPrintNew
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+
             DataTable checkeDataTable = this.GetCheckeDataTable();
             if (((checkeDataTable != null) && (checkeDataTable.Rows != null)) && (checkeDataTable.Rows.Count > 0))
             {
                 PrintHealthFile file = new PrintHealthFile();
-                
+
                 for (int i = 0; i < checkeDataTable.Rows.Count; i++)
                 {
                     string str = checkeDataTable.Rows[i]["FMRDID"].ToString();
@@ -64,10 +70,7 @@ namespace HealthFileBagPrintNew
                     file.DataBind(str.Insert(str.Length - 2, "_"), checkeDataTable.Rows[i]["FNAME"].ToString(), checkeDataTable.Rows[i]["FDESC"].ToString(), checkeDataTable.Rows[i]["FICD_D"].ToString(), Convert.ToDateTime(checkeDataTable.Rows[i]["FODATE"]).ToShortDateString());
                 }
             }
-            else
-            {
-                MessageBox.Show("请选择病历.");
-            }
+
         }
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
@@ -76,7 +79,7 @@ namespace HealthFileBagPrintNew
             {
                 for (int i = 0; i < dataSource.Rows.Count; i++)
                 {
-                    dataSource.Rows[i]["ISCHECK"] = this.checkEdit1.Checked; 
+                    dataSource.Rows[i]["ISCHECK"] = this.checkEdit1.Checked;
                 }
             }
             this.gridFile.DataSource = dataSource;
@@ -92,17 +95,25 @@ namespace HealthFileBagPrintNew
 
         private DataTable GetCheckeDataTable()
         {
-            DataTable dataSource = (DataTable)this.gridFile.DataSource;
-            DataTable table2 = dataSource.Copy();
-            table2.Clear();
-            for (int i = 0; i < dataSource.Rows.Count; i++)
+            if (this.gridFile.DataSource != null)
             {
-                if ((bool)dataSource.Rows[i]["ISCHECK"])
+                DataTable dataSource = (DataTable)this.gridFile.DataSource;
+                DataTable table2 = dataSource.Copy();
+                table2.Clear();
+                for (int i = 0; i < dataSource.Rows.Count; i++)
                 {
-                    table2.ImportRow(dataSource.Rows[i]);
+                    if ((bool)dataSource.Rows[i]["ISCHECK"])
+                    {
+                        table2.ImportRow(dataSource.Rows[i]);
+                    }
                 }
+                return table2;
             }
-            return table2;
+            else
+            {
+                MessageBox.Show("没有病案需要打印！");
+                return null;
+            }
         }
         //private void InitializeComponent()
         //{
@@ -150,6 +161,17 @@ namespace HealthFileBagPrintNew
                 this.CbUser.DataSource = table;
                 this.CbUser.DisplayMember = "USERNAME";
                 this.CbUser.ValueMember = "FUSER";
+
+                string sqlDept = "select t.FOFFN,t.FDESC from VTOFFIM t where t.FTYPE='I'";
+
+                DataTable tableDept = helper.Query(sqlDept);
+                DataRow rowDept = tableDept.NewRow();
+                rowDept["FOFFN"] = "quanbu";
+                rowDept["FDESC"] = "全部";
+                tableDept.Rows.InsertAt(rowDept, 0);
+                this.CbDept.DataSource = tableDept;
+                this.CbDept.DisplayMember = "FDESC";
+                this.CbDept.ValueMember = "FOFFN";
             }
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -173,6 +195,35 @@ namespace HealthFileBagPrintNew
         private void CbUser_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPrintSetting_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog1 = new System.Windows.Forms.PrintDialog();
+            if (printDialog1.ShowDialog() == DialogResult.OK)//弹出选择印表机的窗体
+            {
+                string strBagPrint = printDialog1.PrinterSettings.PrinterName.ToString();
+
+                Configuration cfa = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                cfa.AppSettings.Settings["bagPrint"].Value = strBagPrint;
+                cfa.Save(); 
+                //UpdateConfig("bagPrint", strBagPrint);
+            }
+        }
+
+        /// <summary>
+        /// 更新配置文件信息
+        /// </summary>
+        /// <param name="name">配置文件字段名称</param>
+        /// <param name="Xvalue">值</param>
+        private void UpdateConfig(string name, string Xvalue)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(Application.ExecutablePath + ".config");
+            XmlNode node = doc.SelectSingleNode(@"//add[@key='" + name + "']");
+            XmlElement ele = (XmlElement)node;
+            ele.SetAttribute("value", Xvalue);
+            doc.Save(Application.ExecutablePath + ".config");
         }
 
     }
