@@ -93,7 +93,7 @@
             // xrTable3
             // 
             this.xrTable3.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(140.047F, 0F);
+            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(180.9382F, 0F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3});
@@ -119,6 +119,7 @@
             this.spec.StylePriority.UseFont = false;
             this.spec.Text = "规格";
             this.spec.Weight = 0.73599449882725509D;
+            this.spec.WordWrap = false;
             // 
             // dosage
             // 
@@ -137,7 +138,7 @@
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(130.2757F, 18F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(92.99483F, 18F);
             this.xrTable2.StylePriority.UseBorders = false;
             this.xrTable2.StylePriority.UseTextAlignment = false;
             this.xrTable2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -158,6 +159,7 @@
             this.pharmName.StylePriority.UseFont = false;
             this.pharmName.Text = "药名12312312312312312312313213";
             this.pharmName.Weight = 2.7658508756950884D;
+            this.pharmName.WordWrap = false;
             // 
             // xrLabel17
             // 
@@ -388,7 +390,7 @@
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(241.7373F, 18F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(282F, 17.99999F);
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
             this.xrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -410,7 +412,7 @@
             this.xrTableCell4.StylePriority.UseBorders = false;
             this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.Text = "药名";
-            this.xrTableCell4.Weight = 1.4858551800870661D;
+            this.xrTableCell4.Weight = 1.6742097298030296D;
             // 
             // xrTableCell1
             // 
@@ -420,7 +422,7 @@
             this.xrTableCell1.StylePriority.UseBorders = false;
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.Text = "规格/单位";
-            this.xrTableCell1.Weight = 0.74541511277020289D;
+            this.xrTableCell1.Weight = 0.63898719199039589D;
             // 
             // xrTableCell9
             // 
@@ -430,7 +432,7 @@
             this.xrTableCell9.StylePriority.UseBorders = false;
             this.xrTableCell9.StylePriority.UseFont = false;
             this.xrTableCell9.Text = "使用量";
-            this.xrTableCell9.Weight = 0.53070536214206809D;
+            this.xrTableCell9.Weight = 0.44877873320591161D;
             // 
             // TopMargin
             // 
@@ -627,9 +629,9 @@
             this.TopMargin,
             this.ReportHeader,
             this.ReportFooter});
-            this.Margins = new System.Drawing.Printing.Margins(0, 2, 0, 0);
+            this.Margins = new System.Drawing.Printing.Margins(0, 3, 0, 0);
             this.PageHeight = 402;
-            this.PageWidth = 258;
+            this.PageWidth = 295;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.PaperName = "新卷";
             this.Version = "12.1";
