@@ -75,8 +75,8 @@ namespace CJia.PIVAS.App.UI.Label
             if (User.role == "2")
             {
                 this.rbLong.Checked = true;
-                this.rbLong.Enabled = false;
-                this.rbTemporary.Enabled = false;
+                //this.rbLong.Enabled = false;
+                //this.rbTemporary.Enabled = false;
 
                 this.rbNew.Checked = true;
                 this.rbNew.Enabled = false;
