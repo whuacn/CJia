@@ -90,7 +90,7 @@ namespace CJia.PIVAS.App.UI
                 this.btnPatientHistory.Visible = false;
                 this.btnPatient.Visible = false;
 
-                this.panelControl5.Enabled = false;
+                //this.panelControl5.Enabled = false;
                
 
                 this.panelControl3.Enabled = false;
