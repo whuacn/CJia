@@ -150,21 +150,16 @@ group by spld.pharm_id,spld.pharm_name,spld.pharm_common_name,spld.spec,gpv.unit
        SPLD.HIS_ADVICE_ID,
        SPLD.PHARM_NAME PHARM_NAME,
        SPLD.SPEC || '/' ||  SPLD.AMOUNT_UNIT SPEC_UNIT,
-              case
-         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then
-          decode(substr(to_char(spld.pharm_dosage), 0, 1),
+           decode(substr(to_char(spld.pharm_dosage), 0, 1),
               '.',
               '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT
-         else
-          '【'|| decode(substr(to_char(spld.pharm_dosage), 0, 1),
-              '.',
-              '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT || '】'
-       end DOSAGE,
+              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT DOSAGE,
        spld.spec || '/' ||  spld.amount_unit specUnit,
        gpv.factory_name factory_name,
-       spld.pharm_amount || spld.amount_unit AMOUNT,
+       case
+         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then ''
+       else '◆' end 
+      ||spld.pharm_amount || spld.amount_unit AMOUNT,
        decode(spl.long_time_status,'0','[临]','1','[长]','')  LONG_TEMPORARY_NAME,
        spl.create_date
   from st_pivas_arrange spa,
@@ -719,21 +714,16 @@ where spl.label_id = ?";
        SPLD.HIS_ADVICE_ID,
        SPLD.PHARM_NAME PHARM_NAME,
        SPLD.SPEC || '/' ||  SPLD.AMOUNT_UNIT SPEC_UNIT,
-              case
-         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then
-          decode(substr(to_char(spld.pharm_dosage), 0, 1),
+             decode(substr(to_char(spld.pharm_dosage), 0, 1),
               '.',
               '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT
-         else
-          '【'|| decode(substr(to_char(spld.pharm_dosage), 0, 1),
-              '.',
-              '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT || '】'
-       end DOSAGE,
+              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT  DOSAGE,
        spld.spec || '/' ||  spld.amount_unit specUnit,
        gpv.factory_name factory_name,
-       spld.pharm_amount || spld.amount_unit AMOUNT,
+       case
+         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then ''
+       else '◆' end 
+      ||spld.pharm_amount || spld.amount_unit AMOUNT,
        gb.*,
        decode(spl.long_time_status,'0','[临]','1','[长]','') LONG_TEMPORARY_NAME,
        spl.create_date
@@ -1491,21 +1481,16 @@ where sts.barcode_id = ?";
        SPLD.HIS_ADVICE_ID,
        SPLD.PHARM_NAME PHARM_NAME,
        SPLD.SPEC || '/' ||  SPLD.AMOUNT_UNIT SPEC_UNIT,
-              case
-         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then
-          decode(substr(to_char(spld.pharm_dosage), 0, 1),
+       decode(substr(to_char(spld.pharm_dosage), 0, 1),
               '.',
               '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT
-         else
-          '【'|| decode(substr(to_char(spld.pharm_dosage), 0, 1),
-              '.',
-              '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT || '】'
-       end DOSAGE,
+              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT  DOSAGE,
        spld.spec || '/' ||  spld.amount_unit specUnit,
        gpv.factory_name factory_name,
-       spld.pharm_amount || spld.amount_unit AMOUNT,
+       case
+         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then ''
+       else '◆' end 
+      ||spld.pharm_amount || spld.amount_unit AMOUNT,
        spl.print_status,
        decode(spl.long_time_status,'0','[临]','1','[长]','') LONG_TEMPORARY_NAME,
        spl.create_date
@@ -1640,21 +1625,16 @@ where sts.barcode_id = ?";
        SPLD.HIS_ADVICE_ID,
        SPLD.PHARM_NAME PHARM_NAME,
        SPLD.SPEC || '/' ||  SPLD.AMOUNT_UNIT SPEC_UNIT,
-              case
-         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then
-          decode(substr(to_char(spld.pharm_dosage), 0, 1),
+              decode(substr(to_char(spld.pharm_dosage), 0, 1),
               '.',
               '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT
-         else
-          '【'|| decode(substr(to_char(spld.pharm_dosage), 0, 1),
-              '.',
-              '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT || '】'
-       end DOSAGE,
+              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT  DOSAGE,
        spld.spec || '/' ||  spld.amount_unit specUnit,
        gpv.factory_name factory_name,
-       spld.pharm_amount || spld.amount_unit AMOUNT,
+       case
+         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then ''
+       else '◆' end 
+      ||spld.pharm_amount || spld.amount_unit AMOUNT,
        spl.print_status,
        DECODE(spl.long_time_status,'0','[临]','1','[长]','') LONG_TEMPORARY_NAME,
        spl.create_date
@@ -1788,21 +1768,16 @@ where sts.barcode_id = ?";
        SPLD.HIS_ADVICE_ID,
        SPLD.PHARM_NAME PHARM_NAME,
        SPLD.SPEC || '/' ||  SPLD.AMOUNT_UNIT SPEC_UNIT,
-              case
-         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then
-          decode(substr(to_char(spld.pharm_dosage), 0, 1),
+     decode(substr(to_char(spld.pharm_dosage), 0, 1),
               '.',
               '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT
-         else
-          '【'|| decode(substr(to_char(spld.pharm_dosage), 0, 1),
-              '.',
-              '0' || to_char(spld.pharm_dosage),
-              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT || '】'
-       end DOSAGE,
+              to_char(spld.pharm_dosage)) || spld.DOSAGE_UNIT  DOSAGE,
        spld.spec || '/' ||  spld.amount_unit specUnit,
        gpv.factory_name factory_name,
-       spld.pharm_amount || spld.amount_unit AMOUNT,
+       case
+         when mod(spld.pharm_dosage, gpv.DOSE_PER_UNIT) = 0 then ''
+       else '◆' end 
+      ||spld.pharm_amount || spld.amount_unit AMOUNT,
        gb.*,
        decode(spl.long_time_status,'0','[临]','1','[长]','') LONG_TEMPORARY_NAME,
        spl.create_date

@@ -957,7 +957,7 @@ namespace CJia.PIVAS.App.UI.Label
         private DataTable GetDataSource(DataTable LabelDetails, int nowCount)
         {
             DataTable result = LabelDetails.Clone();
-            for (int i = (nowCount - 1) * 4; i < nowCount * 4; i++)
+            for (int i = (nowCount - 1) * Common.GetLabelCount(); i < nowCount * Common.GetLabelCount(); i++)
             {
                 DataRow row = result.NewRow();
                 if (i < LabelDetails.Rows.Count)

@@ -371,7 +371,7 @@ namespace CJia.PIVAS.App.UI.Label
             if(LabelDetails != null && LabelDetails.Length != 0)
             {
                 DataTable result = LabelDetails[0].Table.Clone();
-                for(int i = (nowCount - 1) * 4; i < nowCount * 4; i++)
+                for (int i = (nowCount - 1) * Common.GetLabelCount(); i < nowCount * Common.GetLabelCount(); i++)
                 {
                     DataRow row = result.NewRow();
                     if(i < LabelDetails.Length)
