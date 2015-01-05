@@ -39,8 +39,8 @@ namespace HealthFileBagPrintNew
                 //}
                 //else
                 //{
-                DateTime date = DateTime.Parse(this.DEBegin.EditValue.ToString()).Date;
-                DateTime end = DateTime.Parse(this.DEEnd.EditValue.ToString()).Date;
+                DateTime date = DateTime.Parse(this.DEBegin.EditValue.ToString());
+                DateTime end = DateTime.Parse(this.DEEnd.EditValue.ToString()) ;
                 DateTime time2 = date;
                 DateTime time3 = end;//new DateTime(date.Year, date.Month, date.Day, 0x17, 0x3b, 0x3b);
                 OleDbParameter[] parameterArray2 = new OleDbParameter[] { new OleDbParameter("1", str5), new OleDbParameter("2", text + "%"), new OleDbParameter("3", time2), new OleDbParameter("4", time3), new OleDbParameter("5", this.CbDept.SelectedValue.ToString()), new OleDbParameter("6", this.CbDept.SelectedValue.ToString()) };

@@ -33,6 +33,8 @@ namespace CJia.Health.Service
             try
             {
                 string ConnString = Utils.AESDecrypt(ConfigHelper.GetAppStrings("ConntionString"));
+                //ConnString = "Data Source=DBSERVER; User Id=mhis; Password=mrd;Provider=MSDAORA;Persist Security Info=True;";
+                //string dc = Utils.AESEncrypt(ConnString);
                 using (Adapter ada = new Adapter(ConnString))
                 {
                     return ada.Query(SqlText.SqlSelectPatient, new object[] { recordNo, inhosTimes });
