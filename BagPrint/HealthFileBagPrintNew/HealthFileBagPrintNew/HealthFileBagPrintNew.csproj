@@ -111,6 +111,9 @@
     <EmbeddedResource Include="HealthFileBagPrint.resx">
       <DependentUpon>HealthFileBagPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintHealthFile.resx">
+      <DependentUpon>PrintHealthFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

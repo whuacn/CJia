@@ -18,7 +18,7 @@ namespace HealthFileBagPrintNew
         {
             InitializeComponent();
             this.DEBegin.EditValue = DateTime.Now.ToShortDateString() + " 00:00:00";
-            this.DEEnd.EditValue = DateTime.Now;
+            this.DEEnd.EditValue = DateTime.Now.ToShortDateString()+" 23:59:59";
             LoadData();
         }
 
@@ -26,8 +26,8 @@ namespace HealthFileBagPrintNew
         {
             using (DBHelper helper = new DBHelper())
             {
-                string sql = "SELECT V.FMRDID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? AND (V.FOOFFI = ? OR ?='quanbu')";
-                string str2 = "SELECT V.FMRDID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? \r\n                               AND V.FUDATE between ? and ? AND (V.FOOFFI = ? OR ?='quanbu')";
+                string sql = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? AND (V.FOOFFI = ? OR ?='quanbu')";
+                string str2 = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? \r\n                               AND V.FUDATE between ? and ? AND (V.FOOFFI = ? OR ?='quanbu')";
                 string text = this.txtFmrdid.Text;
                 string str4 = this.CbUser.SelectedValue.ToString();
                 string str5 = (str4 == "quanbu") ? "%%" : str4;
@@ -67,7 +67,7 @@ namespace HealthFileBagPrintNew
                 {
                     string str = checkeDataTable.Rows[i]["FMRDID"].ToString();
                     file.strBlackTag = str.Substring(str.Length - 5, 1);
-                    file.DataBind(str.Insert(str.Length - 2, "_"), checkeDataTable.Rows[i]["FNAME"].ToString(), checkeDataTable.Rows[i]["FDESC"].ToString(), checkeDataTable.Rows[i]["FICD_D"].ToString(), Convert.ToDateTime(checkeDataTable.Rows[i]["FODATE"]).ToShortDateString());
+                    file.DataBind(checkeDataTable.Rows[i]["FBIHID"].ToString(), str.Insert(str.Length - 2, "_"), checkeDataTable.Rows[i]["FNAME"].ToString(), checkeDataTable.Rows[i]["FDESC"].ToString(), checkeDataTable.Rows[i]["FICD_D"].ToString(), Convert.ToDateTime(checkeDataTable.Rows[i]["FODATE"]).ToShortDateString());
                 }
             }
 

@@ -54,13 +54,14 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrintSetting = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DEEnd = new DevExpress.XtraEditors.DateEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.CbDept = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPrintSetting = new System.Windows.Forms.Button();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DEBegin.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DEBegin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFile)).BeginInit();
@@ -169,6 +170,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -188,7 +190,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
@@ -197,7 +199,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             // 
             // gridColumn4
             // 
@@ -206,7 +208,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -215,7 +217,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             // 
             // gridColumn6
             // 
@@ -224,7 +226,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             // 
             // gridColumn7
             // 
@@ -233,7 +235,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             // 
             // gridColumn8
             // 
@@ -242,7 +244,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 8;
             // 
             // 全选
             // 
@@ -326,6 +328,16 @@
             this.panel1.Size = new System.Drawing.Size(965, 119);
             this.panel1.TabIndex = 11;
             // 
+            // btnPrintSetting
+            // 
+            this.btnPrintSetting.Location = new System.Drawing.Point(477, 66);
+            this.btnPrintSetting.Name = "btnPrintSetting";
+            this.btnPrintSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnPrintSetting.TabIndex = 16;
+            this.btnPrintSetting.Text = "打印机设置";
+            this.btnPrintSetting.UseVisualStyleBackColor = true;
+            this.btnPrintSetting.Click += new System.EventHandler(this.btnPrintSetting_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -388,15 +400,14 @@
             this.panel2.Size = new System.Drawing.Size(965, 343);
             this.panel2.TabIndex = 12;
             // 
-            // btnPrintSetting
+            // gridColumn1
             // 
-            this.btnPrintSetting.Location = new System.Drawing.Point(477, 66);
-            this.btnPrintSetting.Name = "btnPrintSetting";
-            this.btnPrintSetting.Size = new System.Drawing.Size(75, 23);
-            this.btnPrintSetting.TabIndex = 16;
-            this.btnPrintSetting.Text = "打印机设置";
-            this.btnPrintSetting.UseVisualStyleBackColor = true;
-            this.btnPrintSetting.Click += new System.EventHandler(this.btnPrintSetting_Click);
+            this.gridColumn1.Caption = "住院号";
+            this.gridColumn1.FieldName = "FBIHID";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
             // 
             // HealthFileBagPrint
             // 
@@ -464,5 +475,6 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.DateEdit DEEnd;
         private System.Windows.Forms.Button btnPrintSetting;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }
