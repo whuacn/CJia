@@ -75,8 +75,8 @@ namespace CJia.PIVAS.App.UI.Label
             if (User.role == "2")
             {
                 this.rbLong.Checked = true;
-                this.rbLong.Enabled = false;
-                this.rbTemporary.Enabled = false;
+                //this.rbLong.Enabled = false;
+                //this.rbTemporary.Enabled = false;
 
                 this.rbNew.Checked = true;
                 this.rbNew.Enabled = false;
@@ -1391,9 +1391,9 @@ namespace CJia.PIVAS.App.UI.Label
                 string LabelPageSum;
                 object[] parms = new object[] { LabelBarID };
 
-                //string sql = "select status GM_BARCODE where LABEL_BAR_ID=?";
-                //                CJia.DefaultOleDb.Execute(sql, parms);
-                string status = this.BarCodeLabel.Rows[0]["STATUS"].ToString();
+                DataTable dt = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, parms);
+                string status = dt.Rows[0]["STATUS"].ToString();
+
                 if (status == "1000601")
                 {
                     this.lblMessage.BackColor = Color.LightGray;
@@ -1415,7 +1415,7 @@ namespace CJia.PIVAS.App.UI.Label
 
 
                 //string sql = string.Format(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, format.ToString(), labelTypeStr);
-                DataTable dt = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, parms);
+                
                 FirstLabelBarID = dt.Rows[0]["FIRST_LABEL_BAR_ID"].ToString();
                 FirstLabelStatus = dt.Rows[0]["FIRST_STATUS"].ToString();
                 CurrentPage = dt.Rows[0]["PAGE_DETAIL"].ToString();

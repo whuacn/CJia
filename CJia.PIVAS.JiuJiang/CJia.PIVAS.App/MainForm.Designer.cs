@@ -69,9 +69,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnGenLabel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLabelScenning = new System.Windows.Forms.ToolStripButton();
             this.btnQueryLabel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnLabelScenning = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPharmSendSelect = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -440,6 +440,15 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
             // 
+            // btnLabelScenning
+            // 
+            this.btnLabelScenning.Image = ((System.Drawing.Image)(resources.GetObject("btnLabelScenning.Image")));
+            this.btnLabelScenning.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLabelScenning.Name = "btnLabelScenning";
+            this.btnLabelScenning.Size = new System.Drawing.Size(100, 36);
+            this.btnLabelScenning.Text = "瓶贴扫描";
+            this.btnLabelScenning.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // btnQueryLabel
             // 
             this.btnQueryLabel.Image = ((System.Drawing.Image)(resources.GetObject("btnQueryLabel.Image")));
@@ -455,15 +464,6 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 39);
             this.toolStripSeparator8.Visible = false;
-            // 
-            // btnLabelScenning
-            // 
-            this.btnLabelScenning.Image = ((System.Drawing.Image)(resources.GetObject("btnLabelScenning.Image")));
-            this.btnLabelScenning.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLabelScenning.Name = "btnLabelScenning";
-            this.btnLabelScenning.Size = new System.Drawing.Size(100, 36);
-            this.btnLabelScenning.Text = "瓶贴扫描";
-            this.btnLabelScenning.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -720,7 +720,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "静脉药物配置中心";
+            this.Text = "静脉药物配置中心 v1.12.19";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

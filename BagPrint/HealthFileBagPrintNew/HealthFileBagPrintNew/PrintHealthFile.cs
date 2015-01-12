@@ -5,6 +5,7 @@
     using DevExpress.XtraReports.UI;
     using System;
     using System.ComponentModel;
+    using System.Configuration;
     using System.Drawing;
     using System.Drawing.Printing;
 
@@ -15,11 +16,12 @@
         private DetailBand detailBand1;
         private XRLabel LableDept;
         private XRLabel LableFicd;
-        private XRLabel LableHealthFileID;
+        private XRLabel LableHealthIllcaseNo;
         private XRLabel LableName;
         private XRLabel LableODate;
         private XRLabel LableBlackTag;
         private TopMarginBand topMarginBand1;
+        private XRLabel LableHealthFileID;
         public string strBlackTag;
 
         public PrintHealthFile()
@@ -27,9 +29,9 @@
             this.InitializeComponent();
         }
 
-        public void DataBind(string FMRDID, string FNAME, string FDESC, string FICD_D, string FODATE)
+        public void DataBind(string FBIHID,string FMRDID, string FNAME, string FDESC, string FICD_D, string FODATE)
         {
-
+            this.LableHealthIllcaseNo.Text = FBIHID;
             this.LableHealthFileID.Text = FMRDID;
             this.LableName.Text = FNAME;
             this.LableDept.Text = FDESC;
@@ -51,7 +53,10 @@
             this.LableBlackTag.Text = strBlackTag;
             this.LableBlackTag.ForeColor = System.Drawing.Color.White;
 
+            System.Configuration.ConfigurationManager.RefreshSection("appSettings");
+            this.PrinterName = ConfigurationSettings.AppSettings["bagPrint"];
             base.CreateDocument();
+            
             this.Print();
         }
 
@@ -65,87 +70,136 @@
         }
         private void InitializeComponent()
         {
-            this.topMarginBand1 = new TopMarginBand();
-            this.detailBand1 = new DetailBand();
-            this.LableODate = new XRLabel();
-            this.LableBlackTag = new XRLabel();
-            this.LableFicd = new XRLabel();
-            this.LableDept = new XRLabel();
-            this.LableName = new XRLabel();
-            this.LableHealthFileID = new XRLabel();
-
-            this.LableBlackTag.BackColor = System.Drawing.Color.Black;
-            this.LableBlackTag.Size = new System.Drawing.Size(100, 78);
-            this.LableBlackTag.Font = new Font("黑体", 60f, FontStyle.Bold);
-
-            this.bottomMarginBand1 = new BottomMarginBand();
-            this.BeginInit();
-            this.topMarginBand1.HeightF = 0f;
+            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.detailBand1 = new DevExpress.XtraReports.UI.DetailBand();
+            this.LableHealthFileID = new DevExpress.XtraReports.UI.XRLabel();
+            this.LableODate = new DevExpress.XtraReports.UI.XRLabel();
+            this.LableFicd = new DevExpress.XtraReports.UI.XRLabel();
+            this.LableDept = new DevExpress.XtraReports.UI.XRLabel();
+            this.LableName = new DevExpress.XtraReports.UI.XRLabel();
+            this.LableHealthIllcaseNo = new DevExpress.XtraReports.UI.XRLabel();
+            this.LableBlackTag = new DevExpress.XtraReports.UI.XRLabel();
+            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // topMarginBand1
+            // 
+            this.topMarginBand1.HeightF = 0F;
             this.topMarginBand1.Name = "topMarginBand1";
-            this.detailBand1.Controls.AddRange(new XRControl[] { this.LableODate, this.LableFicd, this.LableDept, this.LableName, this.LableHealthFileID, this.LableBlackTag });
-            this.detailBand1.HeightF = 782.2917f;
+            // 
+            // detailBand1
+            // 
+            this.detailBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.LableHealthFileID,
+            this.LableODate,
+            this.LableFicd,
+            this.LableDept,
+            this.LableName,
+            this.LableHealthIllcaseNo,
+            this.LableBlackTag});
+            this.detailBand1.HeightF = 782.2917F;
             this.detailBand1.Name = "detailBand1";
-            this.LableODate.BorderWidth = 0;
-            this.LableODate.Font = new Font("黑体", 26.25f, FontStyle.Bold, GraphicsUnit.Point, 0x86);
-            this.LableODate.LocationFloat = new PointFloat(281.25f, 677.0833f);
-            this.LableODate.Multiline = true;
-            this.LableODate.Name = "LableODate";
-            this.LableODate.Padding = new PaddingInfo(2, 2, 0, 0, 100f);
-            this.LableODate.SizeF = new SizeF(384.25f, 56.04166f);
-            this.LableODate.StylePriority.UseFont = false;
-            this.LableODate.StylePriority.UseTextAlignment = false;
-            this.LableODate.TextAlignment = TextAlignment.MiddleLeft;
-            this.LableFicd.BorderWidth = 0;
-            this.LableFicd.Font = new Font("黑体", 26.25f, FontStyle.Bold, GraphicsUnit.Point, 0x86);
-            this.LableFicd.LocationFloat = new PointFloat(281.25f, 544.7917f);
-            this.LableFicd.Multiline = true;
-            this.LableFicd.Name = "LableFicd";
-            this.LableFicd.Padding = new PaddingInfo(2, 2, 0, 0, 100f);
-            this.LableFicd.SizeF = new SizeF(384.25f, 56.04166f);
-            this.LableFicd.StylePriority.UseFont = false;
-            this.LableFicd.StylePriority.UseTextAlignment = false;
-            this.LableFicd.TextAlignment = TextAlignment.MiddleLeft;
-            this.LableDept.BorderWidth = 0;
-            this.LableDept.Font = new Font("黑体", 26.25f, FontStyle.Bold, GraphicsUnit.Point, 0x86);
-            this.LableDept.LocationFloat = new PointFloat(281.25f, 402.0834f);
-            this.LableDept.Multiline = true;
-            this.LableDept.Name = "LableDept";
-            this.LableDept.Padding = new PaddingInfo(2, 2, 0, 0, 100f);
-            this.LableDept.SizeF = new SizeF(384.25f, 56.04166f);
-            this.LableDept.StylePriority.UseFont = false;
-            this.LableDept.StylePriority.UseTextAlignment = false;
-            this.LableDept.TextAlignment = TextAlignment.MiddleLeft;
-            this.LableName.BorderWidth = 0;
-            this.LableName.Font = new Font("黑体", 26.25f, FontStyle.Bold, GraphicsUnit.Point, 0x86);
-            this.LableName.LocationFloat = new PointFloat(281.2499f, 265.625f);
-            this.LableName.Multiline = true;
-            this.LableName.Name = "LableName";
-            this.LableName.Padding = new PaddingInfo(2, 2, 0, 0, 100f);
-            this.LableName.SizeF = new SizeF(384.25f, 56.04166f);
-            this.LableName.StylePriority.UseFont = false;
-            this.LableName.StylePriority.UseTextAlignment = false;
-            this.LableName.TextAlignment = TextAlignment.MiddleLeft;
+            // 
+            // LableHealthFileID
+            // 
             this.LableHealthFileID.BorderWidth = 0;
-            this.LableHealthFileID.Font = new Font("黑体", 72f, FontStyle.Bold);
-            this.LableHealthFileID.LocationFloat = new PointFloat(281.25f, 66.25001f);
+            this.LableHealthFileID.Font = new System.Drawing.Font("黑体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LableHealthFileID.LocationFloat = new DevExpress.Utils.PointFloat(281.25F, 556.25F);
             this.LableHealthFileID.Multiline = true;
             this.LableHealthFileID.Name = "LableHealthFileID";
-            this.LableHealthFileID.Padding = new PaddingInfo(2, 2, 0, 0, 100f);
-            this.LableHealthFileID.SizeF = new SizeF(458.2083f, 116.4583f);
+            this.LableHealthFileID.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.LableHealthFileID.SizeF = new System.Drawing.SizeF(442.5833F, 71.66663F);
             this.LableHealthFileID.StylePriority.UseFont = false;
             this.LableHealthFileID.StylePriority.UseTextAlignment = false;
             this.LableHealthFileID.Text = "1212DFE";
-            this.LableHealthFileID.TextAlignment = TextAlignment.MiddleLeft;
-            this.bottomMarginBand1.HeightF = 4.166667f;
+            // 
+            // LableODate
+            // 
+            this.LableODate.BorderWidth = 0;
+            this.LableODate.Font = new System.Drawing.Font("黑体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LableODate.LocationFloat = new DevExpress.Utils.PointFloat(281.25F, 677.0833F);
+            this.LableODate.Multiline = true;
+            this.LableODate.Name = "LableODate";
+            this.LableODate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.LableODate.SizeF = new System.Drawing.SizeF(384.25F, 56.04166F);
+            this.LableODate.StylePriority.UseFont = false;
+            this.LableODate.StylePriority.UseTextAlignment = false;
+            // 
+            // LableFicd
+            // 
+            this.LableFicd.BorderWidth = 0;
+            this.LableFicd.Font = new System.Drawing.Font("黑体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LableFicd.LocationFloat = new DevExpress.Utils.PointFloat(281.25F, 441.6667F);
+            this.LableFicd.Multiline = true;
+            this.LableFicd.Name = "LableFicd";
+            this.LableFicd.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.LableFicd.SizeF = new System.Drawing.SizeF(384.25F, 56.04166F);
+            this.LableFicd.StylePriority.UseFont = false;
+            this.LableFicd.StylePriority.UseTextAlignment = false;
+            // 
+            // LableDept
+            // 
+            this.LableDept.BorderWidth = 0;
+            this.LableDept.Font = new System.Drawing.Font("黑体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LableDept.LocationFloat = new DevExpress.Utils.PointFloat(281.25F, 342.7084F);
+            this.LableDept.Multiline = true;
+            this.LableDept.Name = "LableDept";
+            this.LableDept.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.LableDept.SizeF = new System.Drawing.SizeF(384.25F, 56.04166F);
+            this.LableDept.StylePriority.UseFont = false;
+            this.LableDept.StylePriority.UseTextAlignment = false;
+            // 
+            // LableName
+            // 
+            this.LableName.BorderWidth = 0;
+            this.LableName.Font = new System.Drawing.Font("黑体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LableName.LocationFloat = new DevExpress.Utils.PointFloat(281.25F, 242.7083F);
+            this.LableName.Multiline = true;
+            this.LableName.Name = "LableName";
+            this.LableName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.LableName.SizeF = new System.Drawing.SizeF(384.25F, 56.04166F);
+            this.LableName.StylePriority.UseFont = false;
+            this.LableName.StylePriority.UseTextAlignment = false;
+            // 
+            // LableHealthIllcaseNo
+            // 
+            this.LableHealthIllcaseNo.BorderWidth = 0;
+            this.LableHealthIllcaseNo.Font = new System.Drawing.Font("黑体", 72F, System.Drawing.FontStyle.Bold);
+            this.LableHealthIllcaseNo.LocationFloat = new DevExpress.Utils.PointFloat(281.25F, 66.25001F);
+            this.LableHealthIllcaseNo.Multiline = true;
+            this.LableHealthIllcaseNo.Name = "LableHealthIllcaseNo";
+            this.LableHealthIllcaseNo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.LableHealthIllcaseNo.SizeF = new System.Drawing.SizeF(458.2083F, 116.4583F);
+            this.LableHealthIllcaseNo.StylePriority.UseFont = false;
+            this.LableHealthIllcaseNo.StylePriority.UseTextAlignment = false;
+            this.LableHealthIllcaseNo.Text = "1212DFE";
+            // 
+            // LableBlackTag
+            // 
+            this.LableBlackTag.BackColor = System.Drawing.Color.Black;
+            this.LableBlackTag.Font = new System.Drawing.Font("黑体", 60F, System.Drawing.FontStyle.Bold);
+            this.LableBlackTag.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.LableBlackTag.Name = "LableBlackTag";
+            this.LableBlackTag.SizeF = new System.Drawing.SizeF(100F, 78F);
+            // 
+            // bottomMarginBand1
+            // 
+            this.bottomMarginBand1.HeightF = 4.166667F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
-            base.Bands.AddRange(new Band[] { this.topMarginBand1, this.detailBand1, this.bottomMarginBand1 });
-            base.Landscape = true;
-            base.Margins = new Margins(0, 0, 0, 4);
-            base.PageHeight = 0x33b;
-            base.PageWidth = 0x491;
-            base.PaperKind = PaperKind.A4;
-            base.Version = "12.1";
-            this.EndInit();
+            // 
+            // PrintHealthFile
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.topMarginBand1,
+            this.detailBand1,
+            this.bottomMarginBand1});
+            this.Landscape = true;
+            this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 4);
+            this.PageHeight = 850;
+            this.PageWidth = 1100;
+            this.Version = "12.1";
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+
         }
     }
 }

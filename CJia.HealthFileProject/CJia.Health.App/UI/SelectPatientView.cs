@@ -212,9 +212,16 @@ namespace CJia.Health.App.UI
         {
             OnInit(null, null);
             DateTime now = Sysdate;
-            this.cboStartDate.EditValue = new DateTime(now.Year - 1, now.Month, now.Day, 0, 0, 0);
+            int Mon = now.Month;
+            if (Mon == 1)
+            {
+                Mon = 12;
+            }
+
+            this.cboStartDate.EditValue = new DateTime(now.Year - 1, Mon, now.Day, 0, 0, 0);
             this.cboEndDate.EditValue = new DateTime(now.Year, now.Month, now.Day, 23, 59, 59);
-            dtInputStart.EditValue = new DateTime(now.Year, now.Month - 1, now.Day, 0, 0, 0);
+
+            dtInputStart.EditValue = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
             dtInputEnd.EditValue = new DateTime(now.Year, now.Month, now.Day, 23, 59, 59);
         }
 
