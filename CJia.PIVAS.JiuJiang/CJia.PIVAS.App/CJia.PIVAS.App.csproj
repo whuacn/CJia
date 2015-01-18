@@ -709,6 +709,12 @@
     <Compile Include="UI\BatchIllfieldLabelCollectReport.designer.cs">
       <DependentUpon>BatchIllfieldLabelCollectReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\NoPrintLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NoPrintLabel.Designer.cs">
+      <DependentUpon>NoPrintLabel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -969,6 +975,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BatchIllfieldLabelCollectReport.resx">
       <DependentUpon>BatchIllfieldLabelCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NoPrintLabel.resx">
+      <DependentUpon>NoPrintLabel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>

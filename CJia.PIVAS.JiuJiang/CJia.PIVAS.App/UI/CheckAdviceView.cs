@@ -754,6 +754,9 @@ namespace CJia.PIVAS.App.UI
         public void CompleteCheck()
         {
             CheckrgAdviceState();
+            //add 0118
+            btnComplete.Enabled = false;
+            //end
             AssignFixParam();
             AssignChangeParam();
             MouseFocusParam();
@@ -874,9 +877,9 @@ namespace CJia.PIVAS.App.UI
         //审方完成按钮
         private void btnComplete_Click(object sender, EventArgs e)
         {
-            //btnComplete.Enabled = false;
+            
             CompleteCheck();
-            //btnComplete.Enabled = true;
+            btnComplete.Enabled = true;
         }
         #endregion
 
