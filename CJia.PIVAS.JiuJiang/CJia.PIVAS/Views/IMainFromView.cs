@@ -50,7 +50,7 @@ namespace CJia.PIVAS.Views
         /// 返回未打印瓶贴情况
         /// </summary>
         /// <param name="result"></param>
-        void ExeQueryNoPrintLabel(int result);
+        void ExeQueryNoPrintLabel(DataTable result);
     }
     
     /// <summary>

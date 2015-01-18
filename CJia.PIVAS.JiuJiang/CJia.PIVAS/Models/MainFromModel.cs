@@ -48,9 +48,11 @@ namespace CJia.PIVAS.Models
         /// ²éÑ¯Î´´òÓ¡Æ¿Ìù
         /// </summary>
         /// <returns></returns>
-        public int QueryNoPrintLabel()
+        public DataTable QueryNoPrintLabel()
         {
-            return int.Parse(CJia.DefaultOleDb.QueryScalar(CJia.PIVAS.Models.SqlTools.SqlQueryNoPrintLabel));
+            //return int.Parse(CJia.DefaultOleDb.QueryScalar(CJia.PIVAS.Models.SqlTools.SqlQueryNoPrintLabel));
+            DataTable result = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.SqlTools.SqlQueryNoPrintLabel);
+            return result;
         }
     }
 }

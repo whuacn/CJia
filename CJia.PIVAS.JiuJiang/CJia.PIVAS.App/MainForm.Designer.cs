@@ -112,7 +112,7 @@
             this.LblUserName});
             this.statusStrip1.Location = new System.Drawing.Point(0, 539);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1370, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1362, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -157,7 +157,7 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1370, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -407,7 +407,7 @@
             this.btnError});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 39);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -589,7 +589,7 @@
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 64);
             this.tabMain.Name = "tabMain";
-            this.tabMain.Size = new System.Drawing.Size(1370, 475);
+            this.tabMain.Size = new System.Drawing.Size(1362, 475);
             this.tabMain.TabIndex = 3;
             this.tabMain.DoubleClick += new System.EventHandler(this.tabMain_DoubleClick);
             // 
@@ -602,7 +602,7 @@
             this.btnCancelPreview.Appearance.Options.UseBackColor = true;
             this.btnCancelPreview.Appearance.Options.UseFont = true;
             this.btnCancelPreview.Appearance.Options.UseForeColor = true;
-            this.btnCancelPreview.Location = new System.Drawing.Point(754, 538);
+            this.btnCancelPreview.Location = new System.Drawing.Point(746, 538);
             this.btnCancelPreview.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnCancelPreview.Name = "btnCancelPreview";
             this.btnCancelPreview.Size = new System.Drawing.Size(146, 23);
@@ -618,7 +618,7 @@
             this.cbSpeak.BackColor = System.Drawing.Color.Transparent;
             this.cbSpeak.Checked = true;
             this.cbSpeak.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbSpeak.Location = new System.Drawing.Point(682, 542);
+            this.cbSpeak.Location = new System.Drawing.Point(674, 542);
             this.cbSpeak.Name = "cbSpeak";
             this.cbSpeak.Size = new System.Drawing.Size(72, 16);
             this.cbSpeak.TabIndex = 24;
@@ -645,7 +645,7 @@
             this.btnQueryExpition.Appearance.Options.UseBackColor = true;
             this.btnQueryExpition.Appearance.Options.UseFont = true;
             this.btnQueryExpition.Appearance.Options.UseForeColor = true;
-            this.btnQueryExpition.Location = new System.Drawing.Point(906, 538);
+            this.btnQueryExpition.Location = new System.Drawing.Point(898, 538);
             this.btnQueryExpition.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnQueryExpition.Name = "btnQueryExpition";
             this.btnQueryExpition.Size = new System.Drawing.Size(111, 23);
@@ -663,7 +663,7 @@
             this.btnQueryPharm.Appearance.Options.UseBackColor = true;
             this.btnQueryPharm.Appearance.Options.UseFont = true;
             this.btnQueryPharm.Appearance.Options.UseForeColor = true;
-            this.btnQueryPharm.Location = new System.Drawing.Point(1023, 538);
+            this.btnQueryPharm.Location = new System.Drawing.Point(1015, 538);
             this.btnQueryPharm.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnQueryPharm.Name = "btnQueryPharm";
             this.btnQueryPharm.Size = new System.Drawing.Size(143, 23);
@@ -681,7 +681,7 @@
             this.btnNoPrintLabel.Appearance.Options.UseBackColor = true;
             this.btnNoPrintLabel.Appearance.Options.UseFont = true;
             this.btnNoPrintLabel.Appearance.Options.UseForeColor = true;
-            this.btnNoPrintLabel.Location = new System.Drawing.Point(1173, 538);
+            this.btnNoPrintLabel.Location = new System.Drawing.Point(1165, 538);
             this.btnNoPrintLabel.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNoPrintLabel.Name = "btnNoPrintLabel";
             this.btnNoPrintLabel.Size = new System.Drawing.Size(185, 23);
@@ -693,7 +693,7 @@
             // btnTimer
             // 
             this.btnTimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimer.Location = new System.Drawing.Point(1338, 538);
+            this.btnTimer.Location = new System.Drawing.Point(1330, 538);
             this.btnTimer.Name = "btnTimer";
             this.btnTimer.Size = new System.Drawing.Size(20, 23);
             this.btnTimer.TabIndex = 0;
@@ -704,7 +704,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 561);
+            this.ClientSize = new System.Drawing.Size(1362, 561);
             this.Controls.Add(this.btnTimer);
             this.Controls.Add(this.btnNoPrintLabel);
             this.Controls.Add(this.btnQueryPharm);
