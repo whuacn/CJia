@@ -3009,21 +3009,66 @@ values
         {
             get
             {
-                return @"select count(*) from (select '0' isprint
-  from st_new_jin_pivas_label_view stpl
-union all
-select '0' isprint
-  from st_old_jin_pivas_label_view sotpl
-union all
-select '0' isprint
-  from st_old_ming_pivas_label_view sotpl
-union all
-select nspl.print_status isprint
-  from st_pivas_label nspl
- where nspl.create_date between trunc(sysdate) and sysdate
-   and nspl.label_status in (1000301, 1000302, 1000305)) t
-   where t.isprint = '0'
-      or t.isprint is null";
+//                return @"select count(*) from (select '0' isprint
+//  from st_new_jin_pivas_label_view stpl
+//union all
+//select '0' isprint
+//  from st_old_jin_pivas_label_view sotpl
+//union all
+//select '0' isprint
+//  from st_old_ming_pivas_label_view sotpl
+//union all
+//select nspl.print_status isprint
+//  from st_pivas_label nspl
+// where nspl.create_date between trunc(sysdate) and sysdate
+//   and nspl.label_status in (1000301, 1000302, 1000305)) t
+//   where t.isprint = '0'
+//      or t.isprint is null";
+                return @"SELECT *
+  FROM (SELECT ILLFIELD_NAME,
+               BED_NAME,
+               CHECK_BATCH_NAME BATCH_NAME,
+               PATIENT_ID,
+               '[' || BED_NAME || ']' || PATIENT_NAME PATIENT_NAME,
+               GROUP_INDEX,
+               LABEL_DETAIL,
+               '今日' SRC
+          FROM ST_NEW_JIN_PIVAS_LABEL_VIEW STPL
+        UNION ALL
+        SELECT ILLFIELD_NAME,
+               BED_NAME,
+               CHECK_BATCH_NAME BATCH_NAME,
+               PATIENT_ID,
+               '[' || BED_NAME || ']' || PATIENT_NAME PATIENT_NAME,
+               GROUP_INDEX,
+               LABEL_DETAIL,
+               '隔日-今日' SRC
+          FROM ST_OLD_JIN_PIVAS_LABEL_VIEW SOTPL
+        UNION ALL
+        SELECT ILLFIELD_NAME,
+               BED_NAME,
+               CHECK_BATCH_NAME BATCH_NAME,
+               PATIENT_ID,
+               '[' || BED_NAME || ']' || PATIENT_NAME PATIENT_NAME,
+               GROUP_INDEX,
+               LABEL_DETAIL,
+               '隔日-明日' SRC
+          FROM ST_OLD_MING_PIVAS_LABEL_VIEW SOTPL
+        UNION ALL
+        SELECT ILLFIELD_NAME,
+               BED_NAME,
+               CHECK_BATCH_NAME BATCH_NAME,
+               PATIENT_ID,
+               '[' || BED_NAME || ']' || PATIENT_NAME PATIENT_NAME,
+               GROUP_INDEX,
+               LABEL_DETAIL,
+               '今日' SRC
+          FROM ST_PIVAS_LABEL NSPL
+         WHERE NSPL.CREATE_DATE BETWEEN TRUNC(SYSDATE) AND SYSDATE
+           AND NSPL.LABEL_STATUS IN (1000301, 1000302, 1000305)
+           AND (NSPL.PRINT_STATUS = '0' OR NSPL.PRINT_STATUS IS NULL))
+ ORDER BY SRC, ILLFIELD_NAME, BED_NAME, GROUP_INDEX
+";
             }
         }
 
