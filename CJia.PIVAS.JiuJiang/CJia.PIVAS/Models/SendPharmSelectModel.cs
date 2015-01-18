@@ -130,9 +130,22 @@ namespace CJia.PIVAS.Models
             string newSql = CJia.PIVAS.Models.SqlTools.SqlSendALLQueryLableSum;
             string sql = "";
             List<object> parms = new List<object>();
+            if (group=="YES")
+            {
+                sql += " AND FN_IS_GROUP(GROUP_INDEX) = '1'   ";
+            }
+            if (group == "NO")
+            {
+                sql += " AND FN_IS_GROUP(GROUP_INDEX) = '0'   ";
+            }
+            if (group == "ALL")
+            {
+                sql += " AND 1=1  ";
+            }
+
             if (isPrintDate)
             {
-                sql += " and gb.gen_date between ? and ?    ";
+                sql += "  and gb.gen_date between ? and ?    ";
                 parms.Add(startData);
                 parms.Add(endData);
             }
