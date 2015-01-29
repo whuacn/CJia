@@ -105,14 +105,7 @@ namespace CJia.PIVAS.App.UI.Label
                 this.panel4.Location = new Point(222, this.panel4.Location.Y);
                 this.rbAllPrint.Visible = true;
             }
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
+            //ControlCheck();
         }
 
         //初始化方法
@@ -661,7 +654,7 @@ namespace CJia.PIVAS.App.UI.Label
         /// <param name="e"></param>
         private void Print_CheckedChanged(object sender, EventArgs e)
         {
-            this.btnNoGroupScanning.Enabled = this.rbNoPrint.Checked;
+            //this.btnNoGroupScanning.Enabled = this.rbNoPrint.Checked;
             this.rbYesPrint.Font = new System.Drawing.Font("Tahoma", 15F);
             this.rbYesPrint.ForeColor = System.Drawing.Color.Black;
             this.rbNoPrint.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -671,14 +664,7 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Blue;
 
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
+            //ControlCheck();
         }
 
         /// <summary>
@@ -695,14 +681,7 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Green;
 
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
+            //ControlCheck();
         }
 
         private void rbLongTemporary_CheckedChanged(object sender, EventArgs e)
@@ -741,15 +720,8 @@ namespace CJia.PIVAS.App.UI.Label
             //    this.dtpStartTime.Enabled = false;
 
             //}
-
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
+            //ControlCheck();
+           
         }
 
         #endregion
@@ -1464,7 +1436,19 @@ namespace CJia.PIVAS.App.UI.Label
         }
         #endregion
 
-
+        #region 控件控制
+        private void ControlCheck()
+        {
+            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
+            {
+                this.btnNoGroupScanning.Enabled = true;
+            }
+            else
+            {
+                this.btnNoGroupScanning.Enabled = false;
+            }
+        }
+        #endregion
 
 
     }
