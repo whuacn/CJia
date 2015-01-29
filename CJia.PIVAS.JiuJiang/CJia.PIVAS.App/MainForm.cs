@@ -418,11 +418,13 @@ namespace CJia.PIVAS.App
         {
             if(this.isTimer)
             {
+                this.timer.Stop();
                 CJia.PIVAS.Views.MainFromEventArgs mainFromEventArgs = new Views.MainFromEventArgs();
                 this.OnQueryNoCheckAdvice(null, mainFromEventArgs);
                 this.OnQueryExceptionLabel(null, mainFromEventArgs);
                 this.OnQueryStorage(null, mainFromEventArgs);
                 this.OnQueryNoPrintLabel(null, mainFromEventArgs);
+                this.timer.Start();
             }
         }
 
@@ -460,11 +462,28 @@ namespace CJia.PIVAS.App
             this.MenuShowPage(pageTitle);
         }
 
+        private DataTable NoPrintLabel;
         // 瓶贴生成按钮单击事件
         private void btnNoPrintLabel_Click(object sender, EventArgs e)
         {
-            string pageTitle = "瓶贴生成";//获得tabpage名称
-            this.MenuShowPage(pageTitle);
+            //string pageTitle = "瓶贴生成";//获得tabpage名称
+            //this.MenuShowPage(pageTitle);
+            CJia.PIVAS.App.UI.NoPrintLabel noPrintLabel = new UI.NoPrintLabel(this.NoPrintLabel);
+            frmBase.Dispose();
+            frmBase = new System.Windows.Forms.Form();
+            frmBase.Text = "未打印的瓶贴";
+            //frmBase.MaximizeBox = false;
+            //frmBase.MinimizeBox = false;
+            frmBase.Size = new System.Drawing.Size(noPrintLabel.Width + 15, noPrintLabel.Height + 30);
+            //frmBase.AutoSize = true;
+            frmBase.StartPosition = FormStartPosition.CenterScreen;
+            frmBase.KeyPreview = true;
+            //UControl.Dock = DockStyle.Fill;
+            frmBase.Controls.Add(noPrintLabel);
+            //UControl.Parent = frmBase;
+            noPrintLabel.Anchor = (System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Top);
+            //frmBase.TopMost = true;
+            frmBase.Show();
         }
 
         System.Windows.Forms.Form frmBase = new System.Windows.Forms.Form();
@@ -527,24 +546,44 @@ namespace CJia.PIVAS.App
 
 
         private bool IsNoPrintLabel = false;
-        public void ExeQueryNoPrintLabel(int result)
+        //public void ExeQueryNoPrintLabel(int result)
+        //{
+        //    if(result > 0)
+        //    {
+        //        this.btnNoPrintLabel.ForeColor = Color.Red;
+        //        this.btnNoPrintLabel.Text = "有" + result + "张未打印瓶贴";
+        //        this.IsNoPrintLabel = true;
+        //    }
+        //    else
+        //    {
+        //        this.btnNoPrintLabel.ForeColor = Color.Black;
+        //        this.btnNoPrintLabel.Text = "无未打印瓶贴";
+        //        this.IsNoPrintLabel = false;
+        //    }
+        //}
+
+        private DataTable ExceptionLabel;
+        private bool IsExceptionLabel = false;
+
+        //监测未打印瓶贴回调方法
+        public void ExeQueryNoPrintLabel(DataTable result)
         {
-            if(result > 0)
+            if (result.Rows.Count > 0)
             {
                 this.btnNoPrintLabel.ForeColor = Color.Red;
-                this.btnNoPrintLabel.Text = "有" + result + "张未打印瓶贴";
+                this.btnNoPrintLabel.Text = "有未打印瓶贴";
                 this.IsNoPrintLabel = true;
+                this.NoPrintLabel = result;
             }
             else
             {
                 this.btnNoPrintLabel.ForeColor = Color.Black;
                 this.btnNoPrintLabel.Text = "无未打印瓶贴";
                 this.IsNoPrintLabel = false;
+                this.NoPrintLabel = null;
             }
         }
 
-        private DataTable ExceptionLabel;
-        private bool IsExceptionLabel = false;
         //监测异常瓶贴回调方法
         public void ExeQueryExceptionLabel(DataTable result)
         {

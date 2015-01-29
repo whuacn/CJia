@@ -36,12 +36,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="CJia, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+      <HintPath>..\..\..\..\CJia\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
     </Reference>
-    <Reference Include="CJia.Editors">
-      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+    <Reference Include="CJia.Editors, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CJia\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -95,7 +96,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ThoughtWorks.QRCode">
-      <HintPath>..\..\..\百度云同步盘\临时\ThoughtWorks.QRCode.dll</HintPath>
+      <HintPath>..\..\Dll\ThoughtWorks.QRCode.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

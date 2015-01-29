@@ -500,7 +500,7 @@
             // 
             this.btnNoGroupScanning.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnNoGroupScanning.Appearance.Options.UseFont = true;
-            this.btnNoGroupScanning.Enabled = false;
+            this.btnNoGroupScanning.Enabled = true;
             this.btnNoGroupScanning.Image = ((System.Drawing.Image)(resources.GetObject("btnNoGroupScanning.Image")));
             this.btnNoGroupScanning.Location = new System.Drawing.Point(430, 43);
             this.btnNoGroupScanning.Name = "btnNoGroupScanning";
