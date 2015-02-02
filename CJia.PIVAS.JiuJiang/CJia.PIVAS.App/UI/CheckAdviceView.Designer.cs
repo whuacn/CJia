@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckAdviceView));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.ckceIllfield = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.deEndDate = new DevExpress.XtraEditors.DateEdit();
@@ -98,6 +99,7 @@
             this.rgAdviceState = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties.VistaTimeProperties)).BeginInit();
@@ -134,6 +136,7 @@
             // 
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.ckceIllfield);
             this.groupControl1.Controls.Add(this.pictureEdit2);
             this.groupControl1.Controls.Add(this.pictureEdit1);
             this.groupControl1.Controls.Add(this.deEndDate);
@@ -150,6 +153,16 @@
             this.groupControl1.Size = new System.Drawing.Size(1294, 59);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "选择查询条件";
+            // 
+            // ckceIllfield
+            // 
+            this.ckceIllfield.EditValue = "";
+            this.ckceIllfield.Location = new System.Drawing.Point(132, 33);
+            this.ckceIllfield.Name = "ckceIllfield";
+            this.ckceIllfield.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceIllfield.Size = new System.Drawing.Size(142, 20);
+            this.ckceIllfield.TabIndex = 14;
             // 
             // pictureEdit2
             // 
@@ -229,10 +242,11 @@
             // 
             this.cbOffice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbOffice.FormattingEnabled = true;
-            this.cbOffice.Location = new System.Drawing.Point(128, 31);
+            this.cbOffice.Location = new System.Drawing.Point(132, 0);
             this.cbOffice.Name = "cbOffice";
             this.cbOffice.Size = new System.Drawing.Size(142, 22);
             this.cbOffice.TabIndex = 8;
+            this.cbOffice.Visible = false;
             // 
             // ceInvalidAdvice
             // 
@@ -325,68 +339,68 @@
             this.mbtnComplete,
             this.mbtnPWJJ});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(143, 202);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(145, 202);
             // 
             // mbtnSingleOk
             // 
             this.mbtnSingleOk.Name = "mbtnSingleOk";
-            this.mbtnSingleOk.Size = new System.Drawing.Size(142, 22);
+            this.mbtnSingleOk.Size = new System.Drawing.Size(144, 22);
             this.mbtnSingleOk.Text = "单个通过(&S)";
             this.mbtnSingleOk.Click += new System.EventHandler(this.btnSingleOk_Click);
             // 
             // mbtnCancelCheck
             // 
             this.mbtnCancelCheck.Name = "mbtnCancelCheck";
-            this.mbtnCancelCheck.Size = new System.Drawing.Size(142, 22);
+            this.mbtnCancelCheck.Size = new System.Drawing.Size(144, 22);
             this.mbtnCancelCheck.Text = "撤销审核(&C)";
             this.mbtnCancelCheck.Click += new System.EventHandler(this.btnCancelCheck_Click);
             // 
             // mbtnRefuseAdvice
             // 
             this.mbtnRefuseAdvice.Name = "mbtnRefuseAdvice";
-            this.mbtnRefuseAdvice.Size = new System.Drawing.Size(142, 22);
+            this.mbtnRefuseAdvice.Size = new System.Drawing.Size(144, 22);
             this.mbtnRefuseAdvice.Text = "拒绝医嘱(&A)";
             this.mbtnRefuseAdvice.Click += new System.EventHandler(this.btnRefuseAdvice_Click);
             // 
             // mbtnRefuseDosage
             // 
             this.mbtnRefuseDosage.Name = "mbtnRefuseDosage";
-            this.mbtnRefuseDosage.Size = new System.Drawing.Size(142, 22);
+            this.mbtnRefuseDosage.Size = new System.Drawing.Size(144, 22);
             this.mbtnRefuseDosage.Text = "拒绝配药(&D)";
             this.mbtnRefuseDosage.Click += new System.EventHandler(this.btnRefuseDosage_Click);
             // 
             // mbtnUpdateBatch
             // 
             this.mbtnUpdateBatch.Name = "mbtnUpdateBatch";
-            this.mbtnUpdateBatch.Size = new System.Drawing.Size(142, 22);
+            this.mbtnUpdateBatch.Size = new System.Drawing.Size(144, 22);
             this.mbtnUpdateBatch.Text = "修改批次(&B)";
             this.mbtnUpdateBatch.Click += new System.EventHandler(this.btnUpdateBatch_Click);
             // 
             // mbtnPatientHistory
             // 
             this.mbtnPatientHistory.Name = "mbtnPatientHistory";
-            this.mbtnPatientHistory.Size = new System.Drawing.Size(142, 22);
+            this.mbtnPatientHistory.Size = new System.Drawing.Size(144, 22);
             this.mbtnPatientHistory.Text = "病史资料(&H)";
             this.mbtnPatientHistory.Click += new System.EventHandler(this.btnPatientHistory_Click);
             // 
             // mbtnPatient
             // 
             this.mbtnPatient.Name = "mbtnPatient";
-            this.mbtnPatient.Size = new System.Drawing.Size(142, 22);
+            this.mbtnPatient.Size = new System.Drawing.Size(144, 22);
             this.mbtnPatient.Text = "病人信息(&P)";
             this.mbtnPatient.Click += new System.EventHandler(this.btnPatient_Click);
             // 
             // mbtnComplete
             // 
             this.mbtnComplete.Name = "mbtnComplete";
-            this.mbtnComplete.Size = new System.Drawing.Size(142, 22);
+            this.mbtnComplete.Size = new System.Drawing.Size(144, 22);
             this.mbtnComplete.Text = "完成审方(&O)";
             this.mbtnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
             // mbtnPWJJ
             // 
             this.mbtnPWJJ.Name = "mbtnPWJJ";
-            this.mbtnPWJJ.Size = new System.Drawing.Size(142, 22);
+            this.mbtnPWJJ.Size = new System.Drawing.Size(144, 22);
             this.mbtnPWJJ.Text = "配伍禁忌(&W)";
             this.mbtnPWJJ.Click += new System.EventHandler(this.mbtnPWJJ_Click);
             // 
@@ -910,6 +924,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties.VistaTimeProperties)).EndInit();
@@ -1013,5 +1028,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceIllfield;
     }
 }

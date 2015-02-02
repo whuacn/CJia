@@ -47,7 +47,7 @@ namespace CJia.PIVAS.Presenters
         //初始化病区事件绑定方法
         void View_OnInitIffield(object sender, Views.SendPharmSelectEventArgs e)
         {
-            this.View.ExeInitIffield(this.Model.QueryAllIffield());
+            this.View.ExeInitIffield(Common.GetIllfield());
         }
 
         // 获取节约用药信息
