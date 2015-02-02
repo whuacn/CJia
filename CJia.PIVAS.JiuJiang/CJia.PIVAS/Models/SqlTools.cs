@@ -447,7 +447,7 @@ group by nog.pharm_id,
                            and {1}
                            and {2}
  GROUP BY ROLLUP(ILLFIELD_NAME)
- ORDER BY ILLFIELD_NAME";
+ ";
             }
         }
 
