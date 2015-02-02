@@ -46,8 +46,8 @@ namespace CJia.PIVAS.Models.Label
         {
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
             string illfieldStr = " and t.illfield_id in (" + illfieldID + ")  ";
-            string batchStr = " and  t.batch_id in (" + batchID+") ";
-           
+            string batchStr = " and  t.batch_id in (" + batchID + ") ";
+
             string checkDataStr = "";
             if (userCheckData)
             {
@@ -214,16 +214,10 @@ namespace CJia.PIVAS.Models.Label
         public DataTable QueryGenLabel(int selectDate, int grOrDr, string illfieldID, string batchID, string print, bool userCheckData, DateTime checkDataStart, DateTime checkDataEnd)
         {
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryGenLabel;
-            string illfieldStr = "";
-            if (illfieldID != "0")
-            {
-                illfieldStr = " and spl.illfield_id = '" + illfieldID + "'  ";
-            }
-            string batchStr = "";
-            if (batchID != "0")
-            {
-                batchStr = " and  spl.batch_id = " + batchID;
-            }
+            string illfieldStr = " and spl.illfield_id in (" + illfieldID + ")  ";
+
+            string batchStr = " and  spl.batch_id in (" + batchID + ") ";
+
             string checkDataStr = "";
             if (userCheckData)
             {

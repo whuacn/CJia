@@ -69,13 +69,13 @@ namespace CJia.PIVAS.Presenters
         //初始化病区事件绑定方法
         void View_OnInitIffield(object sender, Views.SendPharmEventArgs e)
         {
-            this.View.ExeInitIffield(this.Model.QueryAllIffield());
+            this.View.ExeInitIffield(Common.GetIllfield());
         }
 
         //初始化批次事件绑定方法
         void View_OnInitBacth(object sender, Views.SendPharmEventArgs e)
         {
-            this.View.ExeInitBacth(this.Model.QueryAllBatch());
+            this.View.ExeInitBacth(Common.GetBatch());
         }
 
         void View_OnSendPharm(object sender, Views.SendPharmEventArgs e)

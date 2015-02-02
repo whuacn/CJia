@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data;
 
 namespace CJia.PIVAS
 {
@@ -152,6 +153,36 @@ namespace CJia.PIVAS
             frmBase.ShowDialog();
         }
 
+        #endregion
+
+        #region【病区信息】
+        static DataTable _dtIllfield = null;
+        /// <summary>
+        /// 病区信息
+        /// </summary>
+        public static DataTable GetIllfield()
+        {
+            if (_dtIllfield == null)
+            {
+                _dtIllfield = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.SqlTools.SqlQueryAllIffield);
+            }
+            return _dtIllfield;
+        }
+        #endregion
+
+        #region【批次信息】
+        static DataTable _dtBatch = null;
+        /// <summary>
+        /// 批次信息
+        /// </summary>
+        public static DataTable GetBatch()
+        {
+            if (_dtBatch == null)
+            {
+                _dtBatch = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.SqlTools.SqlQueryAllBacthLabel);
+            }
+            return _dtBatch;
+        }
         #endregion
     }
 }
