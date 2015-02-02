@@ -42,6 +42,8 @@
             this.rbNoPrint = new System.Windows.Forms.RadioButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.ALLPanel = new System.Windows.Forms.Panel();
+            this.ckceBatch = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.ckceIllfield = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbOld = new System.Windows.Forms.RadioButton();
             this.rbNew = new System.Windows.Forms.RadioButton();
@@ -94,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             this.ALLPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceBatch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtEnd.Properties.VistaTimeProperties)).BeginInit();
@@ -121,13 +125,13 @@
             this.ctmLabelDetail.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printLabel});
             this.ctmLabelDetail.Name = "ctmLabelDetail";
-            this.ctmLabelDetail.Size = new System.Drawing.Size(99, 26);
+            this.ctmLabelDetail.Size = new System.Drawing.Size(101, 26);
             // 
             // printLabel
             // 
             this.printLabel.Enabled = false;
             this.printLabel.Name = "printLabel";
-            this.printLabel.Size = new System.Drawing.Size(98, 22);
+            this.printLabel.Size = new System.Drawing.Size(100, 22);
             this.printLabel.Text = "打印";
             this.printLabel.Click += new System.EventHandler(this.printLabel_Click);
             // 
@@ -136,10 +140,11 @@
             this.cbIffield.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIffield.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIffield.FormattingEnabled = true;
-            this.cbIffield.Location = new System.Drawing.Point(601, 9);
+            this.cbIffield.Location = new System.Drawing.Point(834, 3);
             this.cbIffield.Name = "cbIffield";
             this.cbIffield.Size = new System.Drawing.Size(152, 22);
             this.cbIffield.TabIndex = 15;
+            this.cbIffield.Visible = false;
             // 
             // labelControl2
             // 
@@ -190,10 +195,11 @@
             this.cbBatch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBatch.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBatch.FormattingEnabled = true;
-            this.cbBatch.Location = new System.Drawing.Point(814, 9);
+            this.cbBatch.Location = new System.Drawing.Point(1044, 0);
             this.cbBatch.Name = "cbBatch";
             this.cbBatch.Size = new System.Drawing.Size(150, 22);
             this.cbBatch.TabIndex = 33;
+            this.cbBatch.Visible = false;
             // 
             // labelControl3
             // 
@@ -227,6 +233,7 @@
             this.groupControl4.Controls.Add(this.ALLPanel);
             this.groupControl4.Controls.Add(this.panel3);
             this.groupControl4.Controls.Add(this.panel1);
+            this.groupControl4.Controls.Add(this.cbBatch);
             this.groupControl4.Location = new System.Drawing.Point(3, 3);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(1391, 102);
@@ -236,13 +243,13 @@
             // ALLPanel
             // 
             this.ALLPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ALLPanel.Controls.Add(this.ckceBatch);
+            this.ALLPanel.Controls.Add(this.ckceIllfield);
             this.ALLPanel.Controls.Add(this.btnRefresh);
             this.ALLPanel.Controls.Add(this.panel5);
-            this.ALLPanel.Controls.Add(this.cbIffield);
             this.ALLPanel.Controls.Add(this.panel4);
             this.ALLPanel.Controls.Add(this.labelControl2);
             this.ALLPanel.Controls.Add(this.labelControl4);
-            this.ALLPanel.Controls.Add(this.cbBatch);
             this.ALLPanel.Controls.Add(this.btnPrintLabel);
             this.ALLPanel.Controls.Add(this.cbCheckData);
             this.ALLPanel.Controls.Add(this.btnPrintCollect);
@@ -254,6 +261,24 @@
             this.ALLPanel.Name = "ALLPanel";
             this.ALLPanel.Size = new System.Drawing.Size(1150, 78);
             this.ALLPanel.TabIndex = 66;
+            // 
+            // ckceBatch
+            // 
+            this.ckceBatch.Location = new System.Drawing.Point(814, 10);
+            this.ckceBatch.Name = "ckceBatch";
+            this.ckceBatch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceBatch.Size = new System.Drawing.Size(150, 20);
+            this.ckceBatch.TabIndex = 67;
+            // 
+            // ckceIllfield
+            // 
+            this.ckceIllfield.Location = new System.Drawing.Point(601, 11);
+            this.ckceIllfield.Name = "ckceIllfield";
+            this.ckceIllfield.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceIllfield.Size = new System.Drawing.Size(152, 20);
+            this.ckceIllfield.TabIndex = 66;
             // 
             // panel5
             // 
@@ -858,6 +883,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.cbIffield);
             this.Controls.Add(this.groupControl4);
             this.Name = "QueryPrintLabellView";
             this.Size = new System.Drawing.Size(1400, 700);
@@ -866,6 +892,8 @@
             this.groupControl4.ResumeLayout(false);
             this.ALLPanel.ResumeLayout(false);
             this.ALLPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceBatch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -956,5 +984,7 @@
         private System.Windows.Forms.Panel ALLPanel;
         private System.Windows.Forms.RadioButton rbAllPrint;
         private DevExpress.XtraEditors.SimpleButton btnFilterPharm;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceIllfield;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceBatch;
     }
 }

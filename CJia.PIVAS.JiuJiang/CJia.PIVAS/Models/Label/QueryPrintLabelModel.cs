@@ -45,18 +45,11 @@ namespace CJia.PIVAS.Models.Label
         public DataTable QueryLabelDetail(int grOrDr, int selectDate, string illfieldID, string batchID, string print, string longTemporary, bool userCheckData, DateTime checkDataStart, DateTime checkDataEnd)
         {
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
-            string illfieldStr = "";
-            if(illfieldID != "0")
-            {
-                illfieldStr = " and t.illfield_id = '" + illfieldID + "'  ";
-            }
-            string batchStr = "";
-            if(batchID != "0")
-            {
-                batchStr = " and  t.batch_id = " + batchID;
-            }
+            string illfieldStr = " and t.illfield_id in (" + illfieldID + ")  ";
+            string batchStr = " and  t.batch_id in (" + batchID+") ";
+           
             string checkDataStr = "";
-            if(userCheckData)
+            if (userCheckData)
             {
                 checkDataStr = "  and scd.check_date between ? and ?  ";
             }
@@ -64,9 +57,9 @@ namespace CJia.PIVAS.Models.Label
             string str2 = "";
             string str3 = "";
             string str4 = "";
-            if(grOrDr == 0)
+            if (grOrDr == 0)
             {
-                if(selectDate == 0)
+                if (selectDate == 0)
                 {
                     str1 = "st_new_jin_pivas_label_view";
                     str2 = "sysdate";
@@ -76,7 +69,7 @@ namespace CJia.PIVAS.Models.Label
             }
             else
             {
-                if(selectDate == 0)
+                if (selectDate == 0)
                 {
                     str1 = "st_old_jin_pivas_label_view";
                     str2 = "sysdate";
@@ -92,22 +85,22 @@ namespace CJia.PIVAS.Models.Label
                 }
             }
             string printStr = " 1 = 1";
-            if(print == "1")
+            if (print == "1")
             {
                 printStr = " fn_is_print(t.group_index) = '1' ";
             }
-            if(print == "0")
+            if (print == "0")
             {
                 printStr = " fn_is_print(t.group_index) = '0' ";
             }
-            if(print == "10")
+            if (print == "10")
             {
                 printStr = " 1 =  1 ";
             }
 
-            newSql = string.Format(newSql, str1, str2, str3, str4,printStr, illfieldStr, batchStr, checkDataStr);
+            newSql = string.Format(newSql, str1, str2, str3, str4, printStr, illfieldStr, batchStr, checkDataStr);
             object[] parms;
-            if(userCheckData)
+            if (userCheckData)
             {
                 parms = new object[] { longTemporary, checkDataStart, checkDataEnd };
             }
@@ -166,16 +159,16 @@ namespace CJia.PIVAS.Models.Label
 
             string sql = CJia.PIVAS.Models.Label.SqlTools.SqlNewInsertTempLabel;
 
-            if(grOrDr == 0)
+            if (grOrDr == 0)
             {
-                if(selectDate == 0)
+                if (selectDate == 0)
                 {
                     sql = string.Format(sql, "st_new_jin_pivas_label_view");
                 }
             }
             else
             {
-                if(selectDate == 0)
+                if (selectDate == 0)
                 {
                     sql = string.Format(sql, "st_old_jin_pivas_label_view");
                 }
@@ -192,9 +185,9 @@ namespace CJia.PIVAS.Models.Label
             //{
             //    sql = string.Format(sql, "st_temp_pivas_label_view");                
             //}
-            if(groupIndexBatchId != null && groupIndexBatchId.Rows != null && groupIndexBatchId.Rows.Count > 0)
+            if (groupIndexBatchId != null && groupIndexBatchId.Rows != null && groupIndexBatchId.Rows.Count > 0)
             {
-                foreach(DataRow row in groupIndexBatchId.Rows)
+                foreach (DataRow row in groupIndexBatchId.Rows)
                 {
                     parms = new object[] { row["GROUP_INDEX"].ToString(), row["BATCH_ID"].ToString() };
                     CJia.DefaultOleDb.Execute(sql, parms);
@@ -222,17 +215,17 @@ namespace CJia.PIVAS.Models.Label
         {
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryGenLabel;
             string illfieldStr = "";
-            if(illfieldID != "0")
+            if (illfieldID != "0")
             {
                 illfieldStr = " and spl.illfield_id = '" + illfieldID + "'  ";
             }
             string batchStr = "";
-            if(batchID != "0")
+            if (batchID != "0")
             {
                 batchStr = " and  spl.batch_id = " + batchID;
             }
             string checkDataStr = "";
-            if(userCheckData)
+            if (userCheckData)
             {
                 checkDataStr = " and sc.check_date between ? and  ?  ";
             }
@@ -252,7 +245,7 @@ namespace CJia.PIVAS.Models.Label
             //}
 
             string printStr = "";
-            if(print == "10")
+            if (print == "10")
             {
                 printStr = " and 1 = 1 ";
             }
@@ -261,9 +254,9 @@ namespace CJia.PIVAS.Models.Label
                 printStr = " and fn_is_print(spl.group_index) = '" + print + "' ";
             }
 
-            if(grOrDr == 0)
+            if (grOrDr == 0)
             {
-                if(selectDate == 0)
+                if (selectDate == 0)
                 {
                     str1 = "sysdate";
                     str2 = "sysdate";
@@ -272,7 +265,7 @@ namespace CJia.PIVAS.Models.Label
             }
             else
             {
-                if(selectDate == 0)
+                if (selectDate == 0)
                 {
                     str1 = "sysdate";
                     str2 = "sysdate";
@@ -288,7 +281,7 @@ namespace CJia.PIVAS.Models.Label
 
             newSql = string.Format(newSql, str1, str2, str3, printStr, illfieldStr, batchStr, checkDataStr);
             object[] parms;
-            if(userCheckData)
+            if (userCheckData)
             {
                 parms = new object[] { checkDataStart, checkDataEnd };
             }
@@ -517,9 +510,9 @@ namespace CJia.PIVAS.Models.Label
         public StringBuilder GetArrangeIdsStr(List<object> ArrangeIds)
         {
             StringBuilder arrangeIds = new StringBuilder(" spa.arrange_id in (");
-            if(ArrangeIds != null && ArrangeIds.Count > 0)
+            if (ArrangeIds != null && ArrangeIds.Count > 0)
             {
-                foreach(string id in ArrangeIds.ToArray())
+                foreach (string id in ArrangeIds.ToArray())
                 {
                     arrangeIds.Append(id.ToString() + ",");
                 }
@@ -541,9 +534,9 @@ namespace CJia.PIVAS.Models.Label
         public StringBuilder GetPharmTypesStr(List<object> PharmTypes)
         {
             StringBuilder pharmTypes = new StringBuilder(" spl.pivas_pharm_type  in (");
-            if(PharmTypes != null && PharmTypes.Count > 0)
+            if (PharmTypes != null && PharmTypes.Count > 0)
             {
-                foreach(string id in PharmTypes)
+                foreach (string id in PharmTypes)
                 {
                     pharmTypes.Append(id + ",");
                 }
@@ -565,9 +558,9 @@ namespace CJia.PIVAS.Models.Label
         public StringBuilder GetBacthsStr(List<object> Bacths)
         {
             StringBuilder bacths = new StringBuilder(" spl.batch_id  in (");
-            if(Bacths != null && Bacths.Count > 0)
+            if (Bacths != null && Bacths.Count > 0)
             {
-                foreach(string id in Bacths)
+                foreach (string id in Bacths)
                 {
                     bacths.Append(id + ",");
                 }
@@ -589,9 +582,9 @@ namespace CJia.PIVAS.Models.Label
         public StringBuilder GetBensStr(List<object> Bens)
         {
             StringBuilder bens = new StringBuilder(" (spl.illfield_id,spl.bed_id)  in (");
-            if(Bens != null && Bens.Count > 0)
+            if (Bens != null && Bens.Count > 0)
             {
-                foreach(string id in Bens)
+                foreach (string id in Bens)
                 {
                     bens.Append("(" + id + "),");
                 }
@@ -613,9 +606,9 @@ namespace CJia.PIVAS.Models.Label
         public StringBuilder GetOrderByStr(List<object> OrderBy)
         {
             StringBuilder orderBy = new StringBuilder(" order by  ");
-            if(OrderBy != null && OrderBy.Count > 0)
+            if (OrderBy != null && OrderBy.Count > 0)
             {
-                foreach(string id in OrderBy)
+                foreach (string id in OrderBy)
                 {
                     orderBy.Append(id + ",");
                 }
@@ -722,7 +715,7 @@ namespace CJia.PIVAS.Models.Label
         {
             object[] paramers = new object[] { labelId };
             string result = CJia.DefaultOleDb.QueryScalar(CJia.PIVAS.Models.Label.SqlTools.SqlLabelTimes, paramers);
-            if(string.IsNullOrEmpty(result))
+            if (string.IsNullOrEmpty(result))
             {
                 result = "0";
             }
