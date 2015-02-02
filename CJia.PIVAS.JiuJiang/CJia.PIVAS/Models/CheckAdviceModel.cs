@@ -58,14 +58,15 @@ namespace CJia.PIVAS.Models
         {
             //定义Sql语句
             string SqlSelectAdvice = SqlTools.SqlSelectAdvice;
-            if(officeId == "0")          //全部病区
-            {
-                SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "0 = ? ");
-            }
-            else if(officeId != "0")     //某一病区
-            {
-                SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
-            }
+            //if(officeId == "0")          //全部病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "0 = ? ");
+            //}
+            //else if(officeId != "0")     //某一病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
+            //}
+            SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE in  (" + officeId+")");
             if(isAllCheck)//所有
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000101,1000102) ";
@@ -126,7 +127,8 @@ namespace CJia.PIVAS.Models
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.GROUP_PHARM_TYPE in (" + type + ")";
                 SqlSelectAdvice += checd;
                 SqlSelectAdvice = SqlSelectAdvice + " order by cav.PATIENT_ILLFILED_NAME,cav.PATIENT_ILLFILED_CODE, cav.BED_CODE ";
-                object[] sqlParams = new object[] { beginListDate, endListDate, officeId };
+                //object[] sqlParams = new object[] { beginListDate, endListDate, officeId };
+                object[] sqlParams = new object[] { beginListDate, endListDate };
                 DataTable dtResult = CJia.DefaultOleDb.Query(SqlSelectAdvice, sqlParams);
                 if(dtResult != null && dtResult.Rows.Count > 0)
                 {
