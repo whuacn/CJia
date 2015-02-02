@@ -91,7 +91,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.rbTemporary = new System.Windows.Forms.RadioButton();
             this.rbLong = new System.Windows.Forms.RadioButton();
-            this.ckceIllfield = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLabelPreview)).BeginInit();
@@ -110,7 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -822,15 +820,6 @@
             this.rbLong.UseVisualStyleBackColor = false;
             this.rbLong.CheckedChanged += new System.EventHandler(this.rbLongTemporary_CheckedChanged);
             // 
-            // ckceIllfield
-            // 
-            this.ckceIllfield.Location = new System.Drawing.Point(151, 49);
-            this.ckceIllfield.Name = "ckceIllfield";
-            this.ckceIllfield.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ckceIllfield.Size = new System.Drawing.Size(129, 20);
-            this.ckceIllfield.TabIndex = 67;
-            // 
             // LabelScanning
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -868,7 +857,6 @@
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
