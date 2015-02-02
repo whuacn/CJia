@@ -230,11 +230,12 @@ namespace CJia.PIVAS.App.UI.Label
         //初始化病区回调函数
         public void ExeInitIffield(DataTable result)
         {
-            DataRow dr = result.NewRow();
+            DataTable dt = result.Copy();
+            DataRow dr = dt.NewRow();
             dr["OFFICE_NAME"] = "< 全部 >";
             dr["OFFICE_ID"] = 0;
-            result.Rows.InsertAt(dr, 0);
-            this.cbIffield.DataSource = result;
+            dt.Rows.InsertAt(dr, 0);
+            this.cbIffield.DataSource = dt;
             this.cbIffield.DisplayMember = "OFFICE_NAME";
             this.cbIffield.ValueMember = "OFFICE_ID";
         }

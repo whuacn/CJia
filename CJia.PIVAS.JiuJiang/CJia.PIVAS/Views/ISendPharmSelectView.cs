@@ -124,7 +124,7 @@ namespace CJia.PIVAS.Views
         /// <summary>
         /// 病区id列表
         /// </summary>
-        public List<string> IffieldDs;
+        public string IffieldDs;
 
         /// <summary>
         /// 批次id
@@ -134,7 +134,7 @@ namespace CJia.PIVAS.Views
         /// <summary>
         /// 批次id列表
         /// </summary>
-        public List<string> BatchIDs;
+        public string BatchIDs;
 
         /// <summary>
         /// 当日隔日选择  ALL所有 GR隔日 DR当日

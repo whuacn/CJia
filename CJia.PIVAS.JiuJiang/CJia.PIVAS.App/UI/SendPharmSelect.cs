@@ -350,35 +350,59 @@ namespace CJia.PIVAS.App.UI
                 }
             }
             string illfieldStr = "";
-            if (filterIllfieldView.isALL)
+
+            int selectedIll = ckceIllfield.Properties.Items.GetCheckedValues().Count();
+            int selectall = ckceIllfield.Properties.Items.Count;
+            if (selectedIll == selectall)
             {
-                illfieldStr = "全部";
+                illfieldStr = "<全部>";
             }
-            else
+            else 
             {
-                if (filterIllfieldView.selectIllfieldName != null && filterIllfieldView.selectIllfieldName.Count > 0)
-                {
-                    foreach (string illfieldName in filterIllfieldView.selectIllfieldName)
-                    {
-                        illfieldStr += illfieldName.PadRight(8, '　');
-                    }
-                }
+                illfieldStr = ckceIllfield.Text;
             }
+
+         
+            //if (filterIllfieldView.isALL)
+            //{
+            //    illfieldStr = "全部";
+            //}
+            //else
+            //{
+            //    if (filterIllfieldView.selectIllfieldName != null && filterIllfieldView.selectIllfieldName.Count > 0)
+            //    {
+            //        foreach (string illfieldName in filterIllfieldView.selectIllfieldName)
+            //        {
+            //            illfieldStr += illfieldName.PadRight(8, '　');
+            //        }
+            //    }
+            //}
             string batchStr = "";
-            if (filterBatchView.isAll)
+            //if (filterBatchView.isAll)
+            //{
+            //    batchStr = "全部";
+            //}
+            //else
+            //{
+            //    if (filterBatchView.selectBatchName != null && filterBatchView.selectBatchName.Count > 0)
+            //    {
+            //        for (int i = 0; i < filterBatchView.selectBatchName.Count; i++)
+            //        {
+            //            batchStr += filterBatchView.selectBatchName[i] + "   ";
+            //        }
+            //    }
+            //}
+            int selectedBatch = ckceBatch.Properties.Items.GetCheckedValues().Count();
+            int selectAllBatch = ckceBatch.Properties.Items.Count;
+            if (selectedBatch == selectAllBatch)
             {
-                batchStr = "全部";
+                batchStr = "<全部>";
             }
             else
             {
-                if (filterBatchView.selectBatchName != null && filterBatchView.selectBatchName.Count > 0)
-                {
-                    for (int i = 0; i < filterBatchView.selectBatchName.Count; i++)
-                    {
-                        batchStr += filterBatchView.selectBatchName[i] + "   ";
-                    }
-                }
+                batchStr = ckceBatch.Text;
             }
+
             sendPharmCollectReport.DataBindDataTable((DataTable)this.gcPharm.DataSource, illfieldStr, batchStr, isDY, dyStart, dyEnd, isZX, zxDate, isKD, kdDate, allPharmCount, allLabelCount, Sysdate.ToString(), isGroup, isAll, longTemporary, allDrGr);
         }
 
@@ -736,23 +760,28 @@ namespace CJia.PIVAS.App.UI
             //this.cbIffield.DisplayMember = "OFFICE_NAME";
             //this.cbIffield.ValueMember = "OFFICE_ID";
 
-            Dictionary<string, string> IllifeldDic = new Dictionary<string, string>();
-            if (result != null && result.Rows != null && result.Rows.Count > 0)
-            {
-                foreach (DataRow row in result.Rows)
-                {
-                    IllifeldDic.Add(row["OFFICE_NAME"].ToString(), row["OFFICE_ID"].ToString());
-                }
-            }
-            if (User.Role == "0")
-            {
-                filterIllfieldView.BindOneIllfield(IllifeldDic, User.DeptId);
-            }
-            else
-            {
-                filterIllfieldView.BindData(IllifeldDic);
-            }
+            //Dictionary<string, string> IllifeldDic = new Dictionary<string, string>();
+            //if (result != null && result.Rows != null && result.Rows.Count > 0)
+            //{
+            //    foreach (DataRow row in result.Rows)
+            //    {
+            //        IllifeldDic.Add(row["OFFICE_NAME"].ToString(), row["OFFICE_ID"].ToString());
+            //    }
+            //}
+            //if (User.Role == "0")
+            //{
+            //    filterIllfieldView.BindOneIllfield(IllifeldDic, User.DeptId);
+            //}
+            //else
+            //{
+            //    filterIllfieldView.BindData(IllifeldDic);
+            //}
 
+            for (int i = 0; i < result.Rows.Count; i++)
+            {
+                ckceIllfield.Properties.Items.Add(result.Rows[i]["office_id"].ToString(), result.Rows[i]["office_name"].ToString(), CheckState.Checked, true);
+
+            }
         }
 
         //初始化批次回调函数
@@ -768,15 +797,21 @@ namespace CJia.PIVAS.App.UI
             //this.cbBatch.ValueMember = "BATCH_ID";
 
 
-            Dictionary<string, string> batchDic = new Dictionary<string, string>();
-            if (result != null && result.Rows != null && result.Rows.Count > 0)
+            //Dictionary<string, string> batchDic = new Dictionary<string, string>();
+            //if (result != null && result.Rows != null && result.Rows.Count > 0)
+            //{
+            //    foreach (DataRow row in result.Rows)
+            //    {
+            //        batchDic.Add(row["BATCH_NAME"].ToString(), row["BATCH_ID"].ToString());
+            //    }
+            //}
+            //filterBatchView.BindData(batchDic);
+
+            for (int i = 0; i < result.Rows.Count; i++)
             {
-                foreach (DataRow row in result.Rows)
-                {
-                    batchDic.Add(row["BATCH_NAME"].ToString(), row["BATCH_ID"].ToString());
-                }
+                ckceBatch.Properties.Items.Add(result.Rows[i]["BATCH_ID"].ToString(), result.Rows[i]["BATCH_NAME"].ToString(), CheckState.Checked, true);
+
             }
-            filterBatchView.BindData(batchDic);
         }
 
         // 查询药品回调函数
@@ -1034,12 +1069,42 @@ namespace CJia.PIVAS.App.UI
             this.sendPharmSelectEventArgs.endDate = this.dtpEndTime.DateTime;
             //this.sendPharmSelectEventArgs.IffieldID = this.cbIffield.SelectedValue.ToString();
             //this.sendPharmSelectEventArgs.BacthID = this.cbBatch.SelectedValue.ToString();
+            
             this.sendPharmSelectEventArgs.isZXDate = this.cdZXDate.Checked;
             this.sendPharmSelectEventArgs.zxTime = this.dtpZX.DateTime;
             this.sendPharmSelectEventArgs.isListDate = this.cdListDate.Checked;
             this.sendPharmSelectEventArgs.listDate = this.dtpListDate.DateTime;
-            this.sendPharmSelectEventArgs.IffieldDs = this.selectIllfield;
-            this.sendPharmSelectEventArgs.BatchIDs = this.selectBatch;
+            //this.sendPharmSelectEventArgs.IffieldDs = this.selectIllfield;
+            //this.sendPharmSelectEventArgs.BatchIDs = this.selectBatch;
+            //add by lp
+            string strIllfield = "";
+            foreach (string illList in ckceIllfield.Properties.Items.GetCheckedValues())
+            {
+                strIllfield += "'" + illList + "',";
+            }
+            if (strIllfield == "")
+            {
+                this.sendPharmSelectEventArgs.IffieldDs = "''";
+            }
+            else
+            {
+                this.sendPharmSelectEventArgs.IffieldDs = strIllfield.Substring(0, strIllfield.Length - 1);
+            }
+
+            string strBatch = "";
+            foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+            {
+                strBatch += illList + ",";
+            }
+            if (strBatch == "")
+            {
+                this.sendPharmSelectEventArgs.BatchIDs = "''";
+            }
+            else
+            {
+                this.sendPharmSelectEventArgs.BatchIDs = strBatch.Substring(0, strBatch.Length - 1);
+            }
+            //end
             string isGroup = "";
             if (this.rbAll.Checked)
             {
