@@ -1140,7 +1140,7 @@ where sts.barcode_id = ?";
                          where nspl.pharm_time between trunc({1}) and
                                trunc({2} + 1)
                            and  {3}
-                           --and exists (select group_index from ht_advice_view hav where nspl.group_index=hav.group_index)
+                           and exists (select group_index from ht_advice_view hav where nspl.group_index=hav.group_index)
                            and nspl.label_status in (1000301,1000302,1000305)) t) spl,
                st_pivas_label_detail spld,
                gm_pharm_view gpv

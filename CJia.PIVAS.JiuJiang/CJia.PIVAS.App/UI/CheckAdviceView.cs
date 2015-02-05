@@ -53,7 +53,7 @@ namespace CJia.PIVAS.App.UI
         /// </summary>
         public void IimitsManagement()
         {
-            if(User.role == "0")
+            if (User.role == "0")
             {
                 this.rgAdviceState.Enabled = true;
                 this.panelControl3.Enabled = false;
@@ -63,8 +63,9 @@ namespace CJia.PIVAS.App.UI
                 this.btnRefuseDosage.Visible = false;
                 this.btnComplete.Visible = false;
                 this.gcAdvice.ContextMenuStrip = null;
-                this.cbOffice.Enabled = false;
-                this.cbOffice.SelectedValue = User.DeptId;
+                //this.cbOffice.Enabled = false;
+                //this.cbOffice.SelectedValue = User.DeptId;
+                this.ckceIllfield.Enabled = false;
                 DateTime now = CJia.PIVAS.Tools.Helper.Sysdate;
                 this.deBeginDate.DateTime = new DateTime(now.Year - 1, now.Month, now.Day, 0, 0, 0);
                 this.rgAdviceState.EditValue = "所有";
@@ -75,14 +76,15 @@ namespace CJia.PIVAS.App.UI
                 //this.cbLong.Enabled = false;
                 //this.cbTemporary.Enabled = false;
             }
-            if(User.role == "2")
+            if (User.role == "2")
             {
                 DateTime now = CJia.PIVAS.Tools.Helper.Sysdate;
-                this.deBeginDate.DateTime = new DateTime(now.Year , now.Month, now.Day, 0, 0, 0);
-                this.deEndDate.DateTime = new DateTime(now.Year , now.Month, now.Day,23, 59, 59);
+                this.deBeginDate.DateTime = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
+                this.deEndDate.DateTime = new DateTime(now.Year, now.Month, now.Day, 23, 59, 59);
                 this.deBeginDate.Enabled = false;
                 this.deEndDate.Enabled = false;
-                this.cbOffice.Enabled = false;
+                //this.cbOffice.Enabled = false;
+                this.ckceIllfield.Enabled = false;
                 this.ceInvalidAdvice.Enabled = false;
                 this.rgAdviceState.Enabled = false;
                 this.rgAdviceState.EditValue = "未审";
@@ -91,7 +93,7 @@ namespace CJia.PIVAS.App.UI
                 this.btnPatient.Visible = false;
 
                 //this.panelControl5.Enabled = false;
-               
+
 
                 this.panelControl3.Enabled = false;
                 this.btnSingleOk.Visible = false;
@@ -185,15 +187,21 @@ namespace CJia.PIVAS.App.UI
         /// <param name="data"></param>
         public void ExeBindOffice(DataTable data)
         {
-            cbOffice.DataSource = data;
-            if(data == null)
-                return;
-            DataRow dr = data.NewRow();
-            dr["office_id"] = "0";
-            dr["office_name"] = "<--全部-->";
-            data.Rows.InsertAt(dr, 0);
-            cbOffice.DisplayMember = "office_name";
-            cbOffice.ValueMember = "office_id";
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                ckceIllfield.Properties.Items.Add(data.Rows[i]["office_id"].ToString(), data.Rows[i]["office_name"].ToString(),CheckState.Checked,true);
+
+            }
+
+            //cbOffice.DataSource = data;
+            //if (data == null)
+            //    return;
+            //DataRow dr = data.NewRow();
+            //dr["office_id"] = "0";
+            //dr["office_name"] = "<--全部-->";
+            //data.Rows.InsertAt(dr, 0);
+            //cbOffice.DisplayMember = "office_name";
+            //cbOffice.ValueMember = "office_id";
         }
 
         /// <summary>
@@ -213,7 +221,7 @@ namespace CJia.PIVAS.App.UI
         public void ExeGetAdvice(DataTable dtAdvice)
         {
             gcAdvice.DataSource = dtAdvice;
-            if(dtAdvice == null)
+            if (dtAdvice == null)
             {
                 btnSingleOk.Enabled = btnCancelCheck.Enabled = btnRefuseAdvice.Enabled = btnUpdateBatch.Enabled = btnRefuseDosage.Enabled = btnPatient.Enabled = btnPatientHistory.Enabled = btnComplete.Enabled = false;
                 mbtnSingleOk.Enabled = mbtnCancelCheck.Enabled = mbtnRefuseAdvice.Enabled = mbtnUpdateBatch.Enabled = mbtnRefuseDosage.Enabled = mbtnPatient.Enabled = mbtnPatientHistory.Enabled = mbtnComplete.Enabled = false;
@@ -283,11 +291,20 @@ namespace CJia.PIVAS.App.UI
         /// </summary>
         private void CheckOffice()
         {
-            if(cbOffice.SelectedIndex < 0)
-                return;
-            else
+            //if (cbOffice.SelectedIndex < 0)
+            //    return;
+            //else
+            //{
+            //    cbOffice.SelectedIndex = 0;
+            //}
+            string strIllfield = "";
+            foreach (string illList in ckceIllfield.Properties.Items.GetCheckedValues())
             {
-                cbOffice.SelectedIndex = 0;
+                strIllfield += "'" + illList + "',";
+            }
+            if (strIllfield == "")
+            {
+                return;
             }
         }
 
@@ -300,11 +317,34 @@ namespace CJia.PIVAS.App.UI
             checkAdviceArgs.BeginListDate = beginDate;  //开始时间
             DateTime endDate = DateTime.Parse(deEndDate.EditValue.ToString());
             checkAdviceArgs.EndListDate = endDate;  //结束时间
-            if(cbOffice.SelectedValue == null)
+            //if (cbOffice.SelectedValue == null)
+            //{
+            //    return;
+            //}
+            //checkAdviceArgs.OfficeID = cbOffice.SelectedValue.ToString();    //病区ID
+            string strIllfield = "";
+            //for (int i = 0; i < ckceIllfield.Properties.Items.Count; i++)
+            //{
+            //    if (ckceIllfield.Properties.Items[i].CheckState == CheckState.Checked)
+            //    {
+            //        strIllfield += "'" + ckceIllfield.Properties.Items[i].Value.ToString() + "',";
+            //    }
+            //}
+            foreach (string illList in ckceIllfield.Properties.Items.GetCheckedValues())
             {
-                return;
+                strIllfield += "'" + illList + "',";
             }
-            checkAdviceArgs.OfficeID = cbOffice.SelectedValue.ToString();    //病区ID
+            //string strIllfield = ckceIllfield.Properties.GetCheckedItems().ToString();
+            if (strIllfield == "")
+            {
+                checkAdviceArgs.OfficeID = "''";
+            }
+            else
+            {
+                checkAdviceArgs.OfficeID = strIllfield.Substring(0, strIllfield.Length - 1);
+                //checkAdviceArgs.OfficeID ="'"+ string.Join("','", strIllfield.Split(','))+"'";
+            }
+            
         }
 
         /// <summary>
@@ -313,7 +353,7 @@ namespace CJia.PIVAS.App.UI
         private void AssignChangeParam()
         {
             //成组药品类别按钮是否选中 false标识未选，true标识选中
-            if(cePTY.Checked)
+            if (cePTY.Checked)
             {
                 checkAdviceArgs.IsTypePTY = true;
             }
@@ -321,7 +361,7 @@ namespace CJia.PIVAS.App.UI
             {
                 checkAdviceArgs.IsTypePTY = false;
             }
-            if(ceJSY.Checked)
+            if (ceJSY.Checked)
             {
                 checkAdviceArgs.IsTypeJSY = true;
             }
@@ -329,7 +369,7 @@ namespace CJia.PIVAS.App.UI
             {
                 checkAdviceArgs.IsTypeJSY = false;
             }
-            if(ceDMY.Checked)
+            if (ceDMY.Checked)
             {
                 checkAdviceArgs.IsTypeDMY = true;
             }
@@ -337,7 +377,7 @@ namespace CJia.PIVAS.App.UI
             {
                 checkAdviceArgs.IsTypeDMY = false;
             }
-            if(ceGCY.Checked)
+            if (ceGCY.Checked)
             {
                 checkAdviceArgs.IsTypeGCY = true;
             }
@@ -345,7 +385,7 @@ namespace CJia.PIVAS.App.UI
             {
                 checkAdviceArgs.IsTypeGCY = false;
             }
-            if(ceKSS.Checked)
+            if (ceKSS.Checked)
             {
                 checkAdviceArgs.IsTypeKSS = true;
             }
@@ -363,7 +403,7 @@ namespace CJia.PIVAS.App.UI
         private void MouseFocusParam()
         {
             DataRow drFocus = gvAdvice.GetFocusedDataRow();
-            if(drFocus != null)
+            if (drFocus != null)
             {
                 checkAdviceArgs.GroupIndex = drFocus["GROUP_INDEX"].ToString();
                 checkAdviceArgs.OriginalPivasBatchNo = drFocus["ORIGINAL_PIVAS_BATCH_NO"].ToString();
@@ -381,7 +421,7 @@ namespace CJia.PIVAS.App.UI
         {
             DataRow drFocus = gvAdvice.GetFocusedDataRow();
             int originalCheckPivasStatus = 0;   //原始审核状态
-            if(drFocus != null)
+            if (drFocus != null)
             {
                 originalCheckPivasStatus = int.Parse(drFocus["CHECK_PIVAS_STATUS"].ToString());
             }
@@ -395,22 +435,22 @@ namespace CJia.PIVAS.App.UI
         {
             bool flag = true;
             int originalCheckPivasStatus = GetOriginalCheckStatus();
-            if(originalCheckPivasStatus == 0)
+            if (originalCheckPivasStatus == 0)
             {
                 Message.Show("请先选择一行数据");
                 flag = false;
             }
-            if(originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "已审", true))
+            if (originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "已审", true))
             {
                 Message.Show("已审核");
                 flag = false;
             }
-            if(originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "不予配药", true))
+            if (originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "不予配药", true))
             {
                 Message.Show("已拒绝配药");
                 flag = false;
             }
-            if(originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "拒绝", true))
+            if (originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "拒绝", true))
             {
                 Message.Show("已拒绝医嘱");
                 flag = false;
@@ -424,12 +464,12 @@ namespace CJia.PIVAS.App.UI
         {
             bool flag = true;
             int originalCheckPivasStatus = GetOriginalCheckStatus();
-            if(originalCheckPivasStatus == 0)
+            if (originalCheckPivasStatus == 0)
             {
                 Message.Show("请先选择一行数据！");
                 flag = false;
             }
-            if(originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "待审", true))
+            if (originalCheckPivasStatus == (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "待审", true))
             {
                 Message.Show("未审核，请先审核");
                 flag = false;
@@ -442,13 +482,13 @@ namespace CJia.PIVAS.App.UI
         /// </summary>
         private void CheckrgAdviceState()
         {
-            if(rgAdviceState.EditValue.ToString() == "所有")
+            if (rgAdviceState.EditValue.ToString() == "所有")
             {
                 checkAdviceArgs.IsValidCheck = checkAdviceArgs.IsNoCheck = checkAdviceArgs.IsYesCheck = false;
                 checkAdviceArgs.IsAllCheck = btnSingleOk.Enabled = btnCancelCheck.Enabled = btnRefuseAdvice.Enabled = btnRefuseDosage.Enabled = btnUpdateBatch.Enabled = btnComplete.Enabled = true;
                 mbtnSingleOk.Enabled = mbtnRefuseAdvice.Enabled = mbtnRefuseDosage.Enabled = mbtnUpdateBatch.Enabled = mbtnComplete.Enabled = mbtnCancelCheck.Enabled = true;
             }
-            else if(rgAdviceState.EditValue.ToString() == "未审")
+            else if (rgAdviceState.EditValue.ToString() == "未审")
             {
                 //checkAdviceArgs.IsValidCheck = checkAdviceArgs.IsAllCheck = checkAdviceArgs.IsYesCheck = btnCancelCheck.Enabled = btnUpdateBatch.Enabled = false;
                 checkAdviceArgs.IsValidCheck = checkAdviceArgs.IsAllCheck = checkAdviceArgs.IsYesCheck = btnCancelCheck.Enabled = false;
@@ -459,7 +499,7 @@ namespace CJia.PIVAS.App.UI
                 checkAdviceArgs.IsNoCheck = btnSingleOk.Enabled = btnRefuseAdvice.Enabled = btnRefuseDosage.Enabled = btnComplete.Enabled = true;
                 mbtnSingleOk.Enabled = mbtnRefuseAdvice.Enabled = mbtnRefuseDosage.Enabled = mbtnComplete.Enabled = true;
             }
-            else if(rgAdviceState.EditValue.ToString() == "已审")
+            else if (rgAdviceState.EditValue.ToString() == "已审")
             {
                 checkAdviceArgs.IsValidCheck = checkAdviceArgs.IsAllCheck = checkAdviceArgs.IsNoCheck = btnSingleOk.Enabled = btnRefuseAdvice.Enabled = btnRefuseDosage.Enabled = btnComplete.Enabled = false;
                 mbtnSingleOk.Enabled = mbtnRefuseAdvice.Enabled = mbtnRefuseDosage.Enabled = mbtnComplete.Enabled = false;
@@ -476,7 +516,7 @@ namespace CJia.PIVAS.App.UI
         {
             HelperTools.GridViewLocationcs gridViewLocationcs = new HelperTools.GridViewLocationcs(this.gvAdvice);
             gridViewLocationcs.GetLocation();
-            if(ceInvalidAdvice.Checked)//无效
+            if (ceInvalidAdvice.Checked)//无效
             {
                 //参数
                 checkAdviceArgs.IsValidCheck = true;
@@ -489,7 +529,7 @@ namespace CJia.PIVAS.App.UI
                 //执行方法
                 AssignFixParam();
                 AssignChangeParam();
-                if(OnRefresh != null)
+                if (OnRefresh != null)
                 {
                     OnRefresh(null, checkAdviceArgs);
                 }
@@ -499,7 +539,7 @@ namespace CJia.PIVAS.App.UI
                 rgAdviceState.Enabled = cePTY.Enabled = ceJSY.Enabled = ceDMY.Enabled = ceGCY.Enabled = true;
                 RGAdviceStateChange();
             }
-            if(User.role == "2")
+            if (User.role == "2")
             {
                 this.rgAdviceState.Enabled = false;
             }
@@ -514,7 +554,7 @@ namespace CJia.PIVAS.App.UI
             CheckrgAdviceState();
             AssignFixParam();
             AssignChangeParam();
-            if(OnRefresh != null)
+            if (OnRefresh != null)
             {
                 OnRefresh(null, checkAdviceArgs);
             }
@@ -528,7 +568,7 @@ namespace CJia.PIVAS.App.UI
             CheckrgAdviceState();
             AssignFixParam();
             AssignChangeParam();
-            if(OnRefresh != null)
+            if (OnRefresh != null)
             {
                 OnRefresh(null, checkAdviceArgs);
             }
@@ -539,17 +579,17 @@ namespace CJia.PIVAS.App.UI
         /// </summary>
         public void SingleOk()
         {
-            if(CheckAdviceStatus())
+            if (CheckAdviceStatus())
             {
                 DataRow drFocus = gvAdvice.GetFocusedDataRow();
                 string isPwjj = drFocus["IS_PWJJ"].ToString();
                 string pharmStatus = drFocus["PHARM_STATUS"].ToString();
-                if(isPwjj == "0")
+                if (isPwjj == "0")
                 {
                     Message.Show("该医嘱违反配伍禁忌！无法进行审核！");
                     return;
                 }
-                if(pharmStatus == "0")
+                if (pharmStatus == "0")
                 {
                     Message.Show("该医嘱对应药品无效！无法进行审核！");
                     return;
@@ -557,7 +597,7 @@ namespace CJia.PIVAS.App.UI
                 MouseFocusParam();
                 checkAdviceArgs.OriginalPivasStatus = GetOriginalCheckStatus();
                 checkAdviceArgs.CheckPivasStatus = (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "已审", true);
-                if(OnInsertCheck != null)
+                if (OnInsertCheck != null)
                 {
                     OnInsertCheck(null, checkAdviceArgs);
                 }
@@ -570,14 +610,14 @@ namespace CJia.PIVAS.App.UI
         /// </summary>
         public void CancelCheck()
         {
-            if(IsCanCancelCheck())
+            if (IsCanCancelCheck())
             {
                 MouseFocusParam();
-                if(CJia.PIVAS.Tools.Message.ShowQuery("是否确认撤销审核", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
+                if (CJia.PIVAS.Tools.Message.ShowQuery("是否确认撤销审核", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
                 {
                     checkAdviceArgs.OriginalPivasStatus = GetOriginalCheckStatus();
                     checkAdviceArgs.CheckPivasStatus = (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "待审", true);
-                    if(OnCancelCheck != null)
+                    if (OnCancelCheck != null)
                     {
                         OnCancelCheck(null, checkAdviceArgs);
                     }
@@ -595,14 +635,14 @@ namespace CJia.PIVAS.App.UI
         /// </summary>
         public void RefuseAdvice()
         {
-            if(CheckAdviceStatus())
+            if (CheckAdviceStatus())
             {
-                if(CJia.PIVAS.Tools.Message.ShowQuery("是否确认拒绝医嘱", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
+                if (CJia.PIVAS.Tools.Message.ShowQuery("是否确认拒绝医嘱", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
                 {
                     MouseFocusParam();
                     checkAdviceArgs.OriginalPivasStatus = GetOriginalCheckStatus();
                     checkAdviceArgs.CheckPivasStatus = (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "拒绝", true);
-                    if(OnRefuseCheck != null)
+                    if (OnRefuseCheck != null)
                     {
                         OnRefuseCheck(null, checkAdviceArgs);
                     }
@@ -620,14 +660,14 @@ namespace CJia.PIVAS.App.UI
         /// </summary>
         public void RefuseDosage()
         {
-            if(CheckAdviceStatus())
+            if (CheckAdviceStatus())
             {
-                if(CJia.PIVAS.Tools.Message.ShowQuery("是否确认拒绝配药", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
+                if (CJia.PIVAS.Tools.Message.ShowQuery("是否确认拒绝配药", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
                 {
                     MouseFocusParam();
                     checkAdviceArgs.OriginalPivasStatus = GetOriginalCheckStatus();
                     checkAdviceArgs.CheckPivasStatus = (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "不予配药", true);
-                    if(OnRefuseCheck != null)
+                    if (OnRefuseCheck != null)
                     {
                         OnRefuseCheck(null, checkAdviceArgs);
                     }
@@ -646,22 +686,22 @@ namespace CJia.PIVAS.App.UI
         public void UpdateBatch()
         {
             DataRow drFocus = gvAdvice.GetFocusedDataRow();
-            if(drFocus["STANDING_FLAG"].ToString() == "0")
+            if (drFocus["STANDING_FLAG"].ToString() == "0")
             {
                 Message.Show("临时医嘱不能修改批次!");
                 return;
             }
             MouseFocusParam();
             checkAdviceArgs.OriginalPivasStatus = GetOriginalCheckStatus();
-            if(checkAdviceArgs.OriginalPivasStatus == 1000101)
+            if (checkAdviceArgs.OriginalPivasStatus == 1000101)
             {
                 checkAdviceArgs.CheckPivasStatus = (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "已审", true);
-                if(OnInsertCheck != null)
+                if (OnInsertCheck != null)
                 {
                     OnInsertCheck(null, checkAdviceArgs);
                 }
                 checkAdviceArgs.CheckPivasStatus = (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "待审", true);
-                if(OnCancelCheck != null)
+                if (OnCancelCheck != null)
                 {
                     OnCancelCheck(null, checkAdviceArgs);
                 }
@@ -676,7 +716,7 @@ namespace CJia.PIVAS.App.UI
             string frequencyName = "";
             string illfieldId = "";
             List<string> batchs = null;
-            if(drFocus["GROUP_INDEX"].ToString() != null)
+            if (drFocus["GROUP_INDEX"].ToString() != null)
             {
                 groupIndex = drFocus["GROUP_INDEX"].ToString();
             }
@@ -685,7 +725,7 @@ namespace CJia.PIVAS.App.UI
                 Message.Show("请先选择一行数据！");
                 flag = false;
             }
-            if(drFocus["FREQUENCY_NAME"].ToString() != null)
+            if (drFocus["FREQUENCY_NAME"].ToString() != null)
             {
                 frequencyName = drFocus["FREQUENCY_NAME"].ToString();
             }
@@ -695,7 +735,7 @@ namespace CJia.PIVAS.App.UI
                 flag = false;
             }
             illfieldId = drFocus["PATIENT_ILLFILED_CODE"].ToString();
-            if(drFocus["CHECK_PIVAS_BATCH_NO"].ToString() != null)
+            if (drFocus["CHECK_PIVAS_BATCH_NO"].ToString() != null)
             {
                 batchs = CJia.PIVAS.Common.BatchHandle(drFocus["CHECK_PIVAS_BATCH_NO"].ToString());
             }
@@ -704,7 +744,7 @@ namespace CJia.PIVAS.App.UI
                 Message.Show("批次号为空！");
                 flag = false;
             }
-            if(flag)
+            if (flag)
             {
                 CJia.PIVAS.App.UI.DataManage.EditFrequencyToBatchView editFrequencyBatch = new DataManage.EditFrequencyToBatchView(2, groupIndex, frequencyName, illfieldId, batchs);
                 this.ShowAsWindow("修改批次", editFrequencyBatch);
@@ -718,13 +758,13 @@ namespace CJia.PIVAS.App.UI
         public void SelectPatientHistory()
         {
             DataRow drFocus = gvAdvice.GetFocusedDataRow();
-            if(drFocus == null)
+            if (drFocus == null)
             {
                 Message.Show("请先选择一行数据！");
                 return;
             }
             checkAdviceArgs.InhosId = drFocus["INHOS_ID"].ToString();
-            if(OnPatientHistory != null)
+            if (OnPatientHistory != null)
             {
                 OnPatientHistory(null, checkAdviceArgs);
             }
@@ -736,13 +776,13 @@ namespace CJia.PIVAS.App.UI
         public void SelectPatientInfo()
         {
             DataRow drFocus = gvAdvice.GetFocusedDataRow();
-            if(drFocus == null)
+            if (drFocus == null)
             {
                 Message.Show("请先选择一行数据！");
                 return;
             }
             checkAdviceArgs.InhosId = drFocus["INHOS_ID"].ToString();
-            if(OnPatient != null)
+            if (OnPatient != null)
             {
                 OnPatient(null, checkAdviceArgs);
             }
@@ -761,7 +801,7 @@ namespace CJia.PIVAS.App.UI
             AssignChangeParam();
             MouseFocusParam();
             //checkAdviceArgs.CheckPivasStatus = (int)(AdviceStatus)Enum.Parse(typeof(AdviceStatus), "已审", true);
-            if(OnComplete != null)
+            if (OnComplete != null)
             {
                 OnComplete(null, checkAdviceArgs);
             }
@@ -877,7 +917,7 @@ namespace CJia.PIVAS.App.UI
         //审方完成按钮
         private void btnComplete_Click(object sender, EventArgs e)
         {
-            
+
             CompleteCheck();
             btnComplete.Enabled = true;
         }
@@ -886,7 +926,7 @@ namespace CJia.PIVAS.App.UI
         #region 快捷键
         protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
         {
-            switch(keyData)
+            switch (keyData)
             {
                 case Keys.F5:
                     btnRefresh.Focus();
@@ -902,13 +942,13 @@ namespace CJia.PIVAS.App.UI
         #region 显示有异常的医嘱
         private void gvAdvice_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
-            if(gvAdvice.RowCount > 0)
+            if (gvAdvice.RowCount > 0)
             {
-                for(int i = 0; i < gvAdvice.RowCount; i++)
+                for (int i = 0; i < gvAdvice.RowCount; i++)
                 {
                     string isInPivas = "1";
                     isInPivas = this.gvAdvice.GetRowCellDisplayText(e.RowHandle, this.colIsInPivas);
-                    if(isInPivas == "0")
+                    if (isInPivas == "0")
                     {
                         e.Appearance.BackColor = System.Drawing.Color.White;
                         e.Appearance.ForeColor = System.Drawing.Color.Red;
@@ -916,19 +956,19 @@ namespace CJia.PIVAS.App.UI
                 }
             }
             //如果医嘱为配伍禁忌  则背景色变红
-            if(e.RowHandle >= 0)
+            if (e.RowHandle >= 0)
             {
                 string isPWJJ = this.gvAdvice.GetDataRow(e.RowHandle)["IS_PWJJ"].ToString();
-                if(isPWJJ == "0")
+                if (isPWJJ == "0")
                 {
                     e.Appearance.BackColor = Color.Red;
                 }
             }
             // 药品状态
-            if(e.RowHandle >= 0)
+            if (e.RowHandle >= 0)
             {
                 string phamrStatus = this.gvAdvice.GetDataRow(e.RowHandle)["PHARM_STATUS"].ToString();
-                if(phamrStatus == "0")
+                if (phamrStatus == "0")
                 {
                     e.Appearance.BackColor = Color.Red;
                 }
@@ -938,7 +978,7 @@ namespace CJia.PIVAS.App.UI
         //配伍禁忌
         private void mbtnPWJJ_Click(object sender, EventArgs e)
         {
-            if(gvAdvice.GetFocusedDataRow() != null)
+            if (gvAdvice.GetFocusedDataRow() != null)
             {
                 checkAdviceArgs.GroupIndex = gvAdvice.GetFocusedDataRow()["GROUP_INDEX"].ToString();
                 OnPWJJ(sender, checkAdviceArgs);

@@ -720,7 +720,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "静脉药物配置中心 v1.12.19";
+            this.Text = "静脉药物配置中心 v2.2.3";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

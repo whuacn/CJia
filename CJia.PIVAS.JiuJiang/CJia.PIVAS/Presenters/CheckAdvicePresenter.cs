@@ -314,8 +314,8 @@ namespace CJia.PIVAS.Presenters
         /// <param name="e"></param>
         void view_OnInitLoad(object sender, EventArgs e)
         {
-            DataTable data = Model.GetOffice();
-            View.ExeBindOffice(data);
+            //DataTable data = Model.GetOffice();
+            View.ExeBindOffice(Common.GetIllfield());
         }
 
         /// <summary>

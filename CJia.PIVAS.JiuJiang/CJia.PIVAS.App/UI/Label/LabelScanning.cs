@@ -43,10 +43,16 @@ namespace CJia.PIVAS.App.UI.Label
                 dr["OFFICE_NAME"] = CJia.PIVAS.User.DeptName;
                 dr["OFFICE_ID"] = CJia.PIVAS.User.DeptId;
                 result.Rows.Add(dr);
-                this.cbIffield.DataSource = result;
-                this.cbIffield.DisplayMember = "OFFICE_NAME";
-                this.cbIffield.ValueMember = "OFFICE_ID";
-                this.cbIffield.Enabled = false;
+
+                for (int i = 0; i < result.Rows.Count; i++)
+                {
+                    ckceIllfield.Properties.Items.Add(result.Rows[i]["office_id"].ToString(), result.Rows[i]["office_name"].ToString(), CheckState.Checked, true);
+                }
+
+                //this.cbIffield.DataSource = result;
+                //this.cbIffield.DisplayMember = "OFFICE_NAME";
+                //this.cbIffield.ValueMember = "OFFICE_ID";
+                //this.cbIffield.Enabled = false;
 
                 //this.panel1.Visible = false;
 
@@ -89,8 +95,10 @@ namespace CJia.PIVAS.App.UI.Label
                 this.rbAllPrint.Checked = true;
 
 
-                this.cbIffield.Enabled = false;
-                this.cbBatch.Enabled = false;
+                //this.cbIffield.Enabled = false;
+                this.ckceIllfield.Enabled = false;
+                //this.cbBatch.Enabled = false;
+                this.ckceBatch.Enabled = false;
                 this.cbScanning.Enabled = false;
                 this.dtpStartTime.Value = Sysdate;
                 this.dtpStartTime.Enabled = false;
@@ -105,14 +113,7 @@ namespace CJia.PIVAS.App.UI.Label
                 this.panel4.Location = new Point(222, this.panel4.Location.Y);
                 this.rbAllPrint.Visible = true;
             }
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
+            //ControlCheck();
         }
 
         //初始化方法
@@ -330,13 +331,18 @@ namespace CJia.PIVAS.App.UI.Label
         //初始化病区回调函数
         public void ExeInitIffield(DataTable result)
         {
-            DataRow dr = result.NewRow();
-            dr["OFFICE_NAME"] = "< 全部 >";
-            dr["OFFICE_ID"] = 0;
-            result.Rows.InsertAt(dr, 0);
-            this.cbIffield.DataSource = result;
-            this.cbIffield.DisplayMember = "OFFICE_NAME";
-            this.cbIffield.ValueMember = "OFFICE_ID";
+            for (int i = 0; i < result.Rows.Count; i++)
+            {
+                ckceIllfield.Properties.Items.Add(result.Rows[i]["office_id"].ToString(), result.Rows[i]["office_name"].ToString(), CheckState.Checked, true);
+
+            }
+            //DataRow dr = result.NewRow();
+            //dr["OFFICE_NAME"] = "< 全部 >";
+            //dr["OFFICE_ID"] = 0;
+            //result.Rows.InsertAt(dr, 0);
+            //this.cbIffield.DataSource = result;
+            //this.cbIffield.DisplayMember = "OFFICE_NAME";
+            //this.cbIffield.ValueMember = "OFFICE_ID";
         }
 
         //初始化批次回调函数
@@ -345,13 +351,18 @@ namespace CJia.PIVAS.App.UI.Label
             result = this.GetDataSource(result.Select(" BATCH_ID <> 1000000005 "));
             result.DefaultView.Sort = " BATCH_TIME ASC ";
             result = result.DefaultView.ToTable();
-            DataRow dr = result.NewRow();
-            dr["BATCH_NAME"] = "< 全部 >";
-            dr["BATCH_ID"] = 0;
-            result.Rows.InsertAt(dr, 0);
-            this.cbBatch.DataSource = result;
-            this.cbBatch.DisplayMember = "BATCH_NAME";
-            this.cbBatch.ValueMember = "BATCH_ID";
+            for (int i = 0; i < result.Rows.Count; i++)
+            {
+                ckceBatch.Properties.Items.Add(result.Rows[i]["BATCH_ID"].ToString(), result.Rows[i]["BATCH_NAME"].ToString(), CheckState.Checked, true);
+
+            }		
+            //DataRow dr = result.NewRow();
+            //dr["BATCH_NAME"] = "< 全部 >";
+            //dr["BATCH_ID"] = 0;
+            //result.Rows.InsertAt(dr, 0);
+            //this.cbBatch.DataSource = result;
+            //this.cbBatch.DisplayMember = "BATCH_NAME";
+            //this.cbBatch.ValueMember = "BATCH_ID";
         }
 
         //瓶贴列表回调函数
@@ -394,8 +405,38 @@ namespace CJia.PIVAS.App.UI.Label
                 labelScanningEventArgs.grOrDr = "1";
             }
             labelScanningEventArgs.dataTime = this.dtpStartTime.Value;
-            labelScanningEventArgs.IffieldID = this.cbIffield.SelectedValue.ToString();
-            labelScanningEventArgs.BacthID = this.cbBatch.SelectedValue.ToString();
+            //labelScanningEventArgs.IffieldID = this.cbIffield.SelectedValue.ToString();
+            //labelScanningEventArgs.BacthID = this.cbBatch.SelectedValue.ToString();
+            //add by lp
+            string strIllfield = "";
+            foreach (string illList in ckceIllfield.Properties.Items.GetCheckedValues())
+            {
+                strIllfield += "'" + illList + "',";
+            }
+            if (strIllfield == "")
+            {
+                labelScanningEventArgs.IffieldID = "''";
+            }
+            else
+            {
+                labelScanningEventArgs.IffieldID = strIllfield.Substring(0, strIllfield.Length - 1);
+            }
+
+            string strBatch = "";
+            foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+            {
+                strBatch += illList + ",";
+            }
+            if (strBatch == "")
+            {
+                labelScanningEventArgs.BacthID = "''";
+            }
+            else
+            {
+                labelScanningEventArgs.BacthID = strBatch.Substring(0, strBatch.Length - 1);
+            }
+
+            //end
             this.OnPrindedLabelDetail(null, labelScanningEventArgs);
         }
 
@@ -661,7 +702,7 @@ namespace CJia.PIVAS.App.UI.Label
         /// <param name="e"></param>
         private void Print_CheckedChanged(object sender, EventArgs e)
         {
-            this.btnNoGroupScanning.Enabled = this.rbNoPrint.Checked;
+            //this.btnNoGroupScanning.Enabled = this.rbNoPrint.Checked;
             this.rbYesPrint.Font = new System.Drawing.Font("Tahoma", 15F);
             this.rbYesPrint.ForeColor = System.Drawing.Color.Black;
             this.rbNoPrint.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -671,14 +712,7 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Blue;
 
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
+            //ControlCheck();
         }
 
         /// <summary>
@@ -695,14 +729,7 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Green;
 
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
+            //ControlCheck();
         }
 
         private void rbLongTemporary_CheckedChanged(object sender, EventArgs e)
@@ -741,15 +768,8 @@ namespace CJia.PIVAS.App.UI.Label
             //    this.dtpStartTime.Enabled = false;
 
             //}
+            //ControlCheck();
 
-            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
-            {
-                this.btnNoGroupScanning.Enabled = true;
-            }
-            else
-            {
-                this.btnNoGroupScanning.Enabled = false;
-            }
         }
 
         #endregion
@@ -826,10 +846,41 @@ namespace CJia.PIVAS.App.UI.Label
             CJia.PIVAS.Views.Label.LabelScanningEventArgs labelScanningEventArgs = new Views.Label.LabelScanningEventArgs()
             {
                 Date = this.genTime,
-                BacthID = this.cbBatch.SelectedValue.ToString(),
-                IffieldID = this.cbIffield.SelectedValue.ToString(),
+                //BacthID = this.cbBatch.SelectedValue.ToString(),
+                //IffieldID = this.cbIffield.SelectedValue.ToString(),
                 longTemporary = this.rbLong.Checked ? "1" : "0"
             };
+            //add by lp
+            string strIllfield = "";
+            foreach (string illList in ckceIllfield.Properties.Items.GetCheckedValues())
+            {
+                strIllfield += "'" + illList + "',";
+            }
+            if (strIllfield == "")
+            {
+                labelScanningEventArgs.IffieldID = "''";
+            }
+            else
+            {
+                labelScanningEventArgs.IffieldID = strIllfield.Substring(0, strIllfield.Length - 1);
+            }
+
+            string strBatch = "";
+            foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+            {
+                strBatch += illList + ",";
+            }
+            if (strBatch == "")
+            {
+                labelScanningEventArgs.BacthID = "''";
+            }
+            else
+            {
+                labelScanningEventArgs.BacthID = strBatch.Substring(0, strBatch.Length - 1);
+            }
+
+            //end
+           
             if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
             {
                 labelScanningEventArgs.ScenningType = "1000601";
@@ -1081,17 +1132,20 @@ namespace CJia.PIVAS.App.UI.Label
             string bacthID = this.BarCodeLabel.Rows[0]["BATCH_ID"].ToString();
             string genDate = this.BarCodeLabel.Rows[0]["GEN_TIME"].ToString();
             string status = this.BarCodeLabel.Rows[0]["STATUS"].ToString();
-            if (this.cbIffield.SelectedValue.ToString() != "0" && this.cbIffield.SelectedValue.ToString() != illfieldID)
+            //if (this.cbIffield.SelectedValue.ToString() != "0" && this.cbIffield.SelectedValue.ToString() != illfieldID)
+            //{
+            //    this.lblMessage.BackColor = Color.LightGray;
+            //    this.lblMessage.ForeColor = Color.Red;
+            //    this.lblMessage.Text = "不在选定的病区内";
+            //}
+            //else if (this.cbBatch.SelectedValue.ToString() != "0" && this.cbBatch.SelectedValue.ToString() != bacthID)
+            //{
+            //    this.lblMessage.BackColor = Color.LightGray;
+            //    this.lblMessage.ForeColor = Color.Red;
+            //    this.lblMessage.Text = "不在选定的批次内";
+            //}
+            if (false)
             {
-                this.lblMessage.BackColor = Color.LightGray;
-                this.lblMessage.ForeColor = Color.Red;
-                this.lblMessage.Text = "不在选定的病区内";
-            }
-            else if (this.cbBatch.SelectedValue.ToString() != "0" && this.cbBatch.SelectedValue.ToString() != bacthID)
-            {
-                this.lblMessage.BackColor = Color.LightGray;
-                this.lblMessage.ForeColor = Color.Red;
-                this.lblMessage.Text = "不在选定的批次内";
             }
             else
             {
@@ -1415,7 +1469,7 @@ namespace CJia.PIVAS.App.UI.Label
 
 
                 //string sql = string.Format(CJia.PIVAS.Models.Label.SqlTools.SqlQueryFirstBarID, format.ToString(), labelTypeStr);
-                
+
                 FirstLabelBarID = dt.Rows[0]["FIRST_LABEL_BAR_ID"].ToString();
                 FirstLabelStatus = dt.Rows[0]["FIRST_STATUS"].ToString();
                 CurrentPage = dt.Rows[0]["PAGE_DETAIL"].ToString();
@@ -1464,7 +1518,19 @@ namespace CJia.PIVAS.App.UI.Label
         }
         #endregion
 
-
+        #region 控件控制
+        private void ControlCheck()
+        {
+            if (this.rbNoPrint.Checked || this.rbLong.Checked && this.rbNew.Checked)
+            {
+                this.btnNoGroupScanning.Enabled = true;
+            }
+            else
+            {
+                this.btnNoGroupScanning.Enabled = false;
+            }
+        }
+        #endregion
 
 
     }

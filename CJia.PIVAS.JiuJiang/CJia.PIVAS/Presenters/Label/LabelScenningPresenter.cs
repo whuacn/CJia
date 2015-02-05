@@ -123,13 +123,13 @@ namespace CJia.PIVAS.Presenters.Label
         //初始化批次事件绑定方法
         void View_OnInitBacth(object sender, Views.Label.LabelScanningEventArgs e)
         {
-            this.View.ExeInitBacth( this.Model.QueryAllBatch());
+            this.View.ExeInitBacth(Common.GetBatch());
         }
 
         //初始化病区事件绑定方法
         void View_OnInitIffield(object sender, Views.Label.LabelScanningEventArgs e)
         {
-            this.View.ExeInitIffield(this.Model.QueryAllIffield());
+            this.View.ExeInitIffield(Common.GetIllfield());
         }
 
         #endregion

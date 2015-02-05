@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendPharmSelect));
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.ckceBatch = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.ckceIllfield = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbGR = new System.Windows.Forms.RadioButton();
             this.rbDR = new System.Windows.Forms.RadioButton();
@@ -65,6 +67,9 @@
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.gcLabelSum = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rbOutScanning = new System.Windows.Forms.RadioButton();
             this.rbInScanning = new System.Windows.Forms.RadioButton();
@@ -105,11 +110,10 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.gcLabelSum = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceBatch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cdListDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpListDate.Properties.VistaTimeProperties)).BeginInit();
@@ -129,6 +133,9 @@
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLabelSum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLabel)).BeginInit();
@@ -140,9 +147,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcLabelSum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl4
@@ -153,6 +157,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl4.Appearance.BackColor = System.Drawing.Color.White;
             this.groupControl4.Appearance.Options.UseBackColor = true;
+            this.groupControl4.Controls.Add(this.ckceBatch);
+            this.groupControl4.Controls.Add(this.ckceIllfield);
             this.groupControl4.Controls.Add(this.panel5);
             this.groupControl4.Controls.Add(this.cdListDate);
             this.groupControl4.Controls.Add(this.dtpListDate);
@@ -177,6 +183,24 @@
             this.groupControl4.Size = new System.Drawing.Size(1422, 101);
             this.groupControl4.TabIndex = 5;
             this.groupControl4.Text = "筛选条件";
+            // 
+            // ckceBatch
+            // 
+            this.ckceBatch.Location = new System.Drawing.Point(1028, 69);
+            this.ckceBatch.Name = "ckceBatch";
+            this.ckceBatch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceBatch.Size = new System.Drawing.Size(100, 20);
+            this.ckceBatch.TabIndex = 67;
+            // 
+            // ckceIllfield
+            // 
+            this.ckceIllfield.Location = new System.Drawing.Point(1028, 35);
+            this.ckceIllfield.Name = "ckceIllfield";
+            this.ckceIllfield.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceIllfield.Size = new System.Drawing.Size(100, 20);
+            this.ckceIllfield.TabIndex = 66;
             // 
             // panel5
             // 
@@ -328,20 +352,22 @@
             // 
             // btnFilterBatch
             // 
-            this.btnFilterBatch.Location = new System.Drawing.Point(1028, 65);
+            this.btnFilterBatch.Location = new System.Drawing.Point(1142, 0);
             this.btnFilterBatch.Name = "btnFilterBatch";
             this.btnFilterBatch.Size = new System.Drawing.Size(97, 25);
             this.btnFilterBatch.TabIndex = 54;
             this.btnFilterBatch.Text = "批次筛选";
+            this.btnFilterBatch.Visible = false;
             this.btnFilterBatch.Click += new System.EventHandler(this.btnFilterBatch_Click);
             // 
             // btnFilterIllfield
             // 
-            this.btnFilterIllfield.Location = new System.Drawing.Point(1028, 34);
+            this.btnFilterIllfield.Location = new System.Drawing.Point(1028, 0);
             this.btnFilterIllfield.Name = "btnFilterIllfield";
             this.btnFilterIllfield.Size = new System.Drawing.Size(97, 25);
             this.btnFilterIllfield.TabIndex = 53;
             this.btnFilterIllfield.Text = "病区筛选";
+            this.btnFilterIllfield.Visible = false;
             this.btnFilterIllfield.Click += new System.EventHandler(this.btnFilterIllfield_Click);
             // 
             // panel4
@@ -636,6 +662,38 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1417, 562);
             this.panelControl1.TabIndex = 59;
+            // 
+            // gcLabelSum
+            // 
+            this.gcLabelSum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcLabelSum.Location = new System.Drawing.Point(960, 146);
+            this.gcLabelSum.MainView = this.gridView3;
+            this.gcLabelSum.Name = "gcLabelSum";
+            this.gcLabelSum.Size = new System.Drawing.Size(362, 339);
+            this.gcLabelSum.TabIndex = 55;
+            this.gcLabelSum.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3,
+            this.gridView4});
+            this.gcLabelSum.Visible = false;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Appearance.FocusedRow.BackColor = System.Drawing.Color.Snow;
+            this.gridView3.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.White;
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.GridControl = this.gcLabelSum;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridView4
+            // 
+            this.gridView4.GridControl = this.gcLabelSum;
+            this.gridView4.Name = "gridView4";
             // 
             // panel2
             // 
@@ -1079,38 +1137,6 @@
             this.panelControl4.Size = new System.Drawing.Size(1421, 588);
             this.panelControl4.TabIndex = 55;
             // 
-            // gcLabelSum
-            // 
-            this.gcLabelSum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcLabelSum.Location = new System.Drawing.Point(960, 146);
-            this.gcLabelSum.MainView = this.gridView3;
-            this.gcLabelSum.Name = "gcLabelSum";
-            this.gcLabelSum.Size = new System.Drawing.Size(362, 339);
-            this.gcLabelSum.TabIndex = 55;
-            this.gcLabelSum.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3,
-            this.gridView4});
-            this.gcLabelSum.Visible = false;
-            // 
-            // gridView3
-            // 
-            this.gridView3.Appearance.FocusedRow.BackColor = System.Drawing.Color.Snow;
-            this.gridView3.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.White;
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.GridControl = this.gcLabelSum;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.Editable = false;
-            this.gridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridView4
-            // 
-            this.gridView4.GridControl = this.gcLabelSum;
-            this.gridView4.Name = "gridView4";
-            // 
             // SendPharmSelect
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -1124,6 +1150,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceBatch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cdListDate.Properties)).EndInit();
@@ -1147,6 +1175,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLabelSum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLabel)).EndInit();
@@ -1160,9 +1191,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcLabelSum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1248,5 +1276,7 @@
         private DevExpress.XtraGrid.GridControl gcLabelSum;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceIllfield;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceBatch;
     }
 }

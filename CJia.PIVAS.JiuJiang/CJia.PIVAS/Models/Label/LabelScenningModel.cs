@@ -76,14 +76,11 @@ namespace CJia.PIVAS.Models.Label
             {
                 format.Append(" and gb.status in (1000602,1000605)  ");
             }
-            if(iffieldID != "0")
-            {
-                format.Append(" and spl.illfield_id = '" + iffieldID + "' ");
-            }
-            if(bacthID != "0")
-            {
-                format.Append(" and spl.batch_id = '" + bacthID + "' ");
-            }
+            
+                format.Append(" and spl.illfield_id in (" + iffieldID + ") ");
+           
+                format.Append(" and spl.batch_id in (" + bacthID + ") ");
+            
             string labelTypeStr = "";
             if(labelType == "10")
             {

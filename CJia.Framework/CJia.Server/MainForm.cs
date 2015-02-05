@@ -102,8 +102,8 @@ namespace CJia.Server
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Message.ShowWarning("本程序为静脉药物配置中心系统提供数据访问服务！关闭本程序将使静脉药物配置中心系统无法正常运行！");
-            e.Cancel = true;
+            //Message.ShowWarning("本程序为静脉药物配置中心系统提供数据访问服务！关闭本程序将使静脉药物配置中心系统无法正常运行！");
+            //e.Cancel = true;
 
             //try
             //{
