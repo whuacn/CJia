@@ -37,8 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Animator">
-      <HintPath>..\..\..\Winform动画\Animator\Animator\Animator\bin\Debug\Animator.dll</HintPath>
+    <Reference Include="Animator, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CJia.Bin\Framework\Debug\Animator.dll</HintPath>
     </Reference>
     <Reference Include="ChnCharInfo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=18f031bd02e5e291, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
