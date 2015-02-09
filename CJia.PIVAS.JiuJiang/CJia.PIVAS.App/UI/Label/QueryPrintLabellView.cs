@@ -456,7 +456,7 @@ namespace CJia.PIVAS.App.UI.Label
                     this.OnUpdateBarCode(null, queryPrintLabelViewEventArgs);
                     DataRow[] labelInfos = this.LabelDetailInfo.Select("LABEL_ID = " + labelId);
                     this.OnUpdateLabelPrintStatus(labelId, date);
-                    int allLabelCount = (labelInfos.Length - 1) / 4 + 1;
+                    int allLabelCount = (labelInfos.Length - 1) / Common.GetLabelCount() + 1;
                     for (int j = 1; j <= allLabelCount; j++)
                     {
                         DataTable reportDataSource = this.GetDataSource(labelInfos, j);
@@ -477,7 +477,7 @@ namespace CJia.PIVAS.App.UI.Label
                 if (this.SendPharm(GroupIndex, labelId, date))
                 {
                     this.OnUpdateLabelPrintStatus(labelId, date);
-                    int allLabelCount = (labelInfos.Length - 1) / 4 + 1;
+                    int allLabelCount = (labelInfos.Length - 1) / Common.GetLabelCount() + 1;
                     for (int j = 1; j <= allLabelCount; j++)
                     {
                         DataTable reportDataSource = this.GetDataSource(labelInfos, j);
@@ -1032,7 +1032,7 @@ namespace CJia.PIVAS.App.UI.Label
                         if (this.SendPharm(GroupIndex, labelId, date.AddSeconds(i)))
                         {
                             this.OnUpdateLabelPrintStatus(labelId, date);
-                            int allLabelCount = (labelInfos.Length - 1) / 4 + 1;
+                            int allLabelCount = (labelInfos.Length - 1) / Common.GetLabelCount() + 1;
                             for (int j = 1; j <= allLabelCount; j++)
                             {
                                 DataTable reportDataSource = this.GetDataSource(labelInfos, j);
@@ -1210,7 +1210,7 @@ namespace CJia.PIVAS.App.UI.Label
             if (LabelDetails != null && LabelDetails.Length != 0)
             {
                 DataTable result = LabelDetails[0].Table.Clone();
-                for (int i = (nowCount - 1) * 4; i < nowCount * 4; i++)
+                for (int i = (nowCount - 1) * Common.GetLabelCount(); i < nowCount * Common.GetLabelCount(); i++)
                 {
                     DataRow row = result.NewRow();
                     if (i < LabelDetails.Length)

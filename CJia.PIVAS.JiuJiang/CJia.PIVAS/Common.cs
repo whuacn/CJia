@@ -90,9 +90,9 @@ namespace CJia.PIVAS
         public static string GetBatchsName(List<string> clbc)
         {
             StringBuilder str = new StringBuilder("");
-            if(clbc != null && clbc.Count > 0 )
+            if (clbc != null && clbc.Count > 0)
             {
-                foreach(string i in clbc)
+                foreach (string i in clbc)
                 {
                     str.Append(i.ToString() + "-");
                 }
@@ -184,5 +184,20 @@ namespace CJia.PIVAS
             return _dtBatch;
         }
         #endregion
+
+        static int _lableCount = -1;
+        /// <summary>
+        /// 公共调用类
+        /// </summary>
+        public static int GetLabelCount()
+        {
+            if (_lableCount == -1)
+            {
+                object[] parms = new object[] { };
+                DataTable dt = CJia.DefaultOleDb.Query("select FN_GETLABELCOUNT() LABELCOUNT from dual", parms);
+                _lableCount = int.Parse(dt.Rows[0]["LABELCOUNT"].ToString());
+            }
+            return _lableCount;
+        }
     }
 }

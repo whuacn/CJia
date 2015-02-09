@@ -217,7 +217,7 @@ namespace CJia.PIVAS.App.UI.Label
             }
             else
             {
-                int allLabelCount = (result.Rows.Count - 1) / 4 + 1;
+                int allLabelCount = (result.Rows.Count - 1) / Common.GetLabelCount() + 1;
                 DataTable reportDataSource = this.GetDataSource(result, int.Parse(result.Rows[0]["LABEL_PAGE_NO"].ToString()));
                 string labelBarCode = result.Rows[0]["LABEL_BAR_ID"].ToString();
                 this.nowBarCode = labelBarCode;
@@ -326,7 +326,7 @@ namespace CJia.PIVAS.App.UI.Label
         private DataTable GetDataSource(DataTable LabelDetails, int nowCount)
         {
             DataTable result = LabelDetails.Clone();
-            for(int i = (nowCount - 1) * 4; i < nowCount * 4; i++)
+            for (int i = (nowCount - 1) * Common.GetLabelCount(); i < nowCount * Common.GetLabelCount(); i++)
             {
                 DataRow row = result.NewRow();
                 if(i < LabelDetails.Rows.Count)

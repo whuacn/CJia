@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -90,8 +89,8 @@
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.btnCancelPreview = new DevExpress.XtraEditors.SimpleButton();
             this.cbSpeak = new System.Windows.Forms.CheckBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.timerSpeak = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer();
+            this.timerSpeak = new System.Windows.Forms.Timer();
             this.btnQueryExpition = new DevExpress.XtraEditors.SimpleButton();
             this.btnQueryPharm = new DevExpress.XtraEditors.SimpleButton();
             this.btnNoPrintLabel = new DevExpress.XtraEditors.SimpleButton();
