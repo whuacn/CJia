@@ -28,7 +28,7 @@ namespace CJia.PIVAS.Models
         public DataTable GetOffice()
         {
             DataTable data = CJia.DefaultOleDb.Query(SqlTools.SqlSelectOffice);
-            if(data != null && data.Rows.Count > 0)
+            if (data != null && data.Rows.Count > 0)
             {
                 return data;
             }
@@ -66,51 +66,51 @@ namespace CJia.PIVAS.Models
             //{
             //    SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
             //}
-            SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE in  (" + officeId+")");
-            if(isAllCheck)//所有
+            SqlSelectAdvice = string.Format(SqlTools.SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE in  (" + officeId + ")");
+            if (isAllCheck)//所有
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000101,1000102) ";
             }
-            else if(isValidCheck)//无效
+            else if (isValidCheck)//无效
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000104,1000103)";
             }
-            else if(isYesCheck || isNoCheck)//已审 未审
+            else if (isYesCheck || isNoCheck)//已审 未审
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status = " + checkPivasStatus;
             }
             string type = "";
-            if(isTypePTY) //普通药
+            if (isTypePTY) //普通药
             {
                 type = type + 1000201 + ",";
             }
-            if(isTypeJSY)//精神药
+            if (isTypeJSY)//精神药
             {
                 type = type + 1000202 + ",";
             }
-            if(isTypeDMY)//毒麻药
+            if (isTypeDMY)//毒麻药
             {
                 type = type + 1000203 + ",";
             }
-            if(isTypeGCY)//贵重药
+            if (isTypeGCY)//贵重药
             {
                 type = type + 1000204 + ",";
             }
-            if(isTypeKSS)//抗生素
+            if (isTypeKSS)//抗生素
             {
                 type = type + 1000205 + ",";
             }
 
             string checd = "";
-            if(checkLong && checkTemporary)
+            if (checkLong && checkTemporary)
             {
                 checd += " AND 1 = 1 ";
             }
-            else if(!checkLong && checkTemporary)
+            else if (!checkLong && checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '0'  ";
             }
-            else if(checkLong && !checkTemporary)
+            else if (checkLong && !checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '1'  ";
             }
@@ -119,7 +119,7 @@ namespace CJia.PIVAS.Models
                 checd += " AND 1 = 0";
             }
 
-            if(type == "")
+            if (type == "")
                 return null;
             else
             {
@@ -130,7 +130,7 @@ namespace CJia.PIVAS.Models
                 //object[] sqlParams = new object[] { beginListDate, endListDate, officeId };
                 object[] sqlParams = new object[] { beginListDate, endListDate };
                 DataTable dtResult = CJia.DefaultOleDb.Query(SqlSelectAdvice, sqlParams);
-                if(dtResult != null && dtResult.Rows.Count > 0)
+                if (dtResult != null && dtResult.Rows.Count > 0)
                 {
                     //AddPWJJInfoInAdviceData(dtResult);//加入配伍禁忌
                     return dtResult;
@@ -153,7 +153,7 @@ namespace CJia.PIVAS.Models
             List<object> objects = new List<object>();
             objects.Add(groupIndex);
             DataTable dtResult = CJia.DefaultOleDb.Query(Models.SqlTools.SqlSelectCheckDetailByGroupIndex, objects);
-            if(dtResult != null && dtResult.Rows.Count > 0)
+            if (dtResult != null && dtResult.Rows.Count > 0)
             {
                 return dtResult;
             }
@@ -231,58 +231,59 @@ namespace CJia.PIVAS.Models
 
             //定义Sql语句
             string SqlSelectAdvice = SqlTools.SqlCheckDetail;
-            if(officeId == "0")          //全部病区
-            {
-                SqlSelectAdvice = string.Format(SqlSelectAdvice, "0 = ? ");
-            }
-            else if(officeId != "0")     //某一病区
-            {
-                SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
-            }
-            if(isAllCheck)//所有
+            //if (officeId == "0")          //全部病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlSelectAdvice, "0 = ? ");
+            //}
+            //else if (officeId != "0")     //某一病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
+            //}
+            SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE in (" + officeId + ") ");
+            if (isAllCheck)//所有
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000101,1000102) ";
             }
-            else if(isValidCheck)//无效
+            else if (isValidCheck)//无效
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000104,1000103)";
             }
-            else if(isYesCheck || isNoCheck)//已审 未审
+            else if (isYesCheck || isNoCheck)//已审 未审
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status = " + checkPivasStatus;
             }
             string type = "";
-            if(isTypePTY) //普通药
+            if (isTypePTY) //普通药
             {
                 type = type + 1000201 + ",";
             }
-            if(isTypeJSY)//精神药
+            if (isTypeJSY)//精神药
             {
                 type = type + 1000202 + ",";
             }
-            if(isTypeDMY)//毒麻药
+            if (isTypeDMY)//毒麻药
             {
                 type = type + 1000203 + ",";
             }
-            if(isTypeGCY)//贵重药
+            if (isTypeGCY)//贵重药
             {
                 type = type + 1000204 + ",";
             }
-            if(isTypeKSS)//抗生素
+            if (isTypeKSS)//抗生素
             {
                 type = type + 1000205 + ",";
             }
 
             string checd = "";
-            if(checkLong && checkTemporary)
+            if (checkLong && checkTemporary)
             {
                 checd += " AND 1 = 1 ";
             }
-            else if(!checkLong && checkTemporary)
+            else if (!checkLong && checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '0'  ";
             }
-            else if(checkLong && !checkTemporary)
+            else if (checkLong && !checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '1'  ";
             }
@@ -291,7 +292,7 @@ namespace CJia.PIVAS.Models
                 checd += " AND 1 = 0";
             }
 
-            if(type == "")
+            if (type == "")
                 return null;
             else
             {
@@ -299,9 +300,9 @@ namespace CJia.PIVAS.Models
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.GROUP_PHARM_TYPE in (" + type + ")";
                 SqlSelectAdvice += checd;
                 SqlSelectAdvice += ")";
-                object[] sqlParams = new object[] { beginListDate, endListDate, officeId };
+                object[] sqlParams = new object[] { beginListDate, endListDate };
                 DataTable dtResult = CJia.DefaultOleDb.Query(SqlSelectAdvice, sqlParams);
-                if(dtResult != null && dtResult.Rows.Count > 0)
+                if (dtResult != null && dtResult.Rows.Count > 0)
                 {
                     //AddPWJJInfoInAdviceData(dtResult);//加入配伍禁忌
                     return dtResult;
@@ -342,58 +343,59 @@ namespace CJia.PIVAS.Models
 
             //定义Sql语句
             string SqlSelectAdvice = SqlTools.SqlYesCheckDetail;
-            if(officeId == "0")          //全部病区
-            {
-                SqlSelectAdvice = string.Format(SqlSelectAdvice, "0 = ? ");
-            }
-            else if(officeId != "0")     //某一病区
-            {
-                SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
-            }
-            if(isAllCheck)//所有
+            //if (officeId == "0")          //全部病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlSelectAdvice, "0 = ? ");
+            //}
+            //else if (officeId != "0")     //某一病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
+            //}
+            SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE in (" + officeId + ") ");
+            if (isAllCheck)//所有
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000101,1000102) ";
             }
-            else if(isValidCheck)//无效
+            else if (isValidCheck)//无效
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000104,1000103)";
             }
-            else if(isYesCheck || isNoCheck)//已审 未审
+            else if (isYesCheck || isNoCheck)//已审 未审
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status = " + checkPivasStatus;
             }
             string type = "";
-            if(isTypePTY) //普通药
+            if (isTypePTY) //普通药
             {
                 type = type + 1000201 + ",";
             }
-            if(isTypeJSY)//精神药
+            if (isTypeJSY)//精神药
             {
                 type = type + 1000202 + ",";
             }
-            if(isTypeDMY)//毒麻药
+            if (isTypeDMY)//毒麻药
             {
                 type = type + 1000203 + ",";
             }
-            if(isTypeGCY)//贵重药
+            if (isTypeGCY)//贵重药
             {
                 type = type + 1000204 + ",";
             }
-            if(isTypeKSS)//抗生素
+            if (isTypeKSS)//抗生素
             {
                 type = type + 1000205 + ",";
             }
 
             string checd = "";
-            if(checkLong && checkTemporary)
+            if (checkLong && checkTemporary)
             {
                 checd += " AND 1 = 1 ";
             }
-            else if(!checkLong && checkTemporary)
+            else if (!checkLong && checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '0'  ";
             }
-            else if(checkLong && !checkTemporary)
+            else if (checkLong && !checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '1'  ";
             }
@@ -402,7 +404,7 @@ namespace CJia.PIVAS.Models
                 checd += " AND 1 = 0";
             }
 
-            if(type == "")
+            if (type == "")
                 return null;
             else
             {
@@ -410,9 +412,9 @@ namespace CJia.PIVAS.Models
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.GROUP_PHARM_TYPE in (" + type + ")";
                 SqlSelectAdvice += checd;
                 SqlSelectAdvice += ")";
-                object[] sqlParams = new object[] { beginListDate, endListDate, officeId };
+                object[] sqlParams = new object[] { beginListDate, endListDate };
                 DataTable dtResult = CJia.DefaultOleDb.Query(SqlSelectAdvice, sqlParams);
-                if(dtResult != null && dtResult.Rows.Count > 0)
+                if (dtResult != null && dtResult.Rows.Count > 0)
                 {
                     //AddPWJJInfoInAdviceData(dtResult);//加入配伍禁忌
                     return dtResult;
@@ -459,58 +461,60 @@ namespace CJia.PIVAS.Models
 
             //定义Sql语句
             string SqlSelectAdvice = SqlTools.SqlBatchData;
-            if(officeId == "0")          //全部病区
-            {
-                SqlSelectAdvice = string.Format(SqlSelectAdvice, "0 = ? ");
-            }
-            else if(officeId != "0")     //某一病区
-            {
-                SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
-            }
-            if(isAllCheck)//所有
+            //if(officeId == "0")          //全部病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlSelectAdvice, "0 = ? ");
+            //}
+            //else if(officeId != "0")     //某一病区
+            //{
+            //    SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
+            //}
+            SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE IN ( " + officeId + ") ");
+
+            if (isAllCheck)//所有
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000101,1000102) ";
             }
-            else if(isValidCheck)//无效
+            else if (isValidCheck)//无效
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000104,1000103)";
             }
-            else if(isYesCheck || isNoCheck)//已审 未审
+            else if (isYesCheck || isNoCheck)//已审 未审
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status = " + checkPivasStatus;
             }
             string type = "";
-            if(isTypePTY) //普通药
+            if (isTypePTY) //普通药
             {
                 type = type + 1000201 + ",";
             }
-            if(isTypeJSY)//精神药
+            if (isTypeJSY)//精神药
             {
                 type = type + 1000202 + ",";
             }
-            if(isTypeDMY)//毒麻药
+            if (isTypeDMY)//毒麻药
             {
                 type = type + 1000203 + ",";
             }
-            if(isTypeGCY)//贵重药
+            if (isTypeGCY)//贵重药
             {
                 type = type + 1000204 + ",";
             }
-            if(isTypeKSS)//抗生素
+            if (isTypeKSS)//抗生素
             {
                 type = type + 1000205 + ",";
             }
 
             string checd = "";
-            if(checkLong && checkTemporary)
+            if (checkLong && checkTemporary)
             {
                 checd += " AND 1 = 1 ";
             }
-            else if(!checkLong && checkTemporary)
+            else if (!checkLong && checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '0'  ";
             }
-            else if(checkLong && !checkTemporary)
+            else if (checkLong && !checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '1'  ";
             }
@@ -519,16 +523,16 @@ namespace CJia.PIVAS.Models
                 checd += " AND 1 = 0";
             }
 
-            if(type == "")
+            if (type == "")
                 return null;
             else
             {
                 type = type.Substring(0, type.Length - 1);
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.GROUP_PHARM_TYPE in (" + type + ")";
                 SqlSelectAdvice += checd;
-                object[] sqlParams = new object[] { beginListDate, endListDate, officeId };
+                object[] sqlParams = new object[] { beginListDate, endListDate };
                 DataTable dtResult = CJia.DefaultOleDb.Query(SqlSelectAdvice, sqlParams);
-                if(dtResult != null && dtResult.Rows.Count > 0)
+                if (dtResult != null && dtResult.Rows.Count > 0)
                 {
                     //AddPWJJInfoInAdviceData(dtResult);//加入配伍禁忌
                     return dtResult;
@@ -634,58 +638,58 @@ namespace CJia.PIVAS.Models
             CheckResult checkResult = new CheckResult();
             //定义Sql语句
             string SqlSelectAdvice = SqlTools.SqlSelectInsertCheckDetail;
-            if(officeId == "0")          //全部病区
+            if (officeId == "0")          //全部病区
             {
                 SqlSelectAdvice = string.Format(SqlSelectAdvice, "0 = ? ");
             }
-            else if(officeId != "0")     //某一病区
+            else if (officeId != "0")     //某一病区
             {
                 SqlSelectAdvice = string.Format(SqlSelectAdvice, "cav.PATIENT_ILLFILED_CODE= ?  ");
             }
-            if(isAllCheck)//所有
+            if (isAllCheck)//所有
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000101,1000102) ";
             }
-            else if(isValidCheck)//无效
+            else if (isValidCheck)//无效
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status in(1000104,1000103)";
             }
-            else if(isYesCheck || isNoCheck)//已审 未审
+            else if (isYesCheck || isNoCheck)//已审 未审
             {
                 SqlSelectAdvice = SqlSelectAdvice + " and cav.check_pivas_status = " + selectCheckPivasStatus;
             }
             string type = "";
-            if(isTypePTY) //普通药
+            if (isTypePTY) //普通药
             {
                 type = type + 1000201 + ",";
             }
-            if(isTypeJSY)//精神药
+            if (isTypeJSY)//精神药
             {
                 type = type + 1000202 + ",";
             }
-            if(isTypeDMY)//毒麻药
+            if (isTypeDMY)//毒麻药
             {
                 type = type + 1000203 + ",";
             }
-            if(isTypeGCY)//贵重药
+            if (isTypeGCY)//贵重药
             {
                 type = type + 1000204 + ",";
             }
-            if(isTypeKSS)//抗生素
+            if (isTypeKSS)//抗生素
             {
                 type = type + 1000205 + ",";
             }
 
             string checd = "";
-            if(checkLong && checkTemporary)
+            if (checkLong && checkTemporary)
             {
                 checd += " AND 1 = 1 ";
             }
-            else if(!checkLong && checkTemporary)
+            else if (!checkLong && checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '0'  ";
             }
-            else if(checkLong && !checkTemporary)
+            else if (checkLong && !checkTemporary)
             {
                 checd += " AND STANDING_FLAG = '1'  ";
             }
@@ -694,7 +698,7 @@ namespace CJia.PIVAS.Models
                 checd += " AND 1 = 0";
             }
 
-            if(type == "")
+            if (type == "")
                 return null;
             else
             {
@@ -703,15 +707,15 @@ namespace CJia.PIVAS.Models
                 SqlSelectAdvice += checd;
                 SqlSelectAdvice += ") cav";
                 object[] sqlParams = new object[] { checkId, checkPivasStatus, createBy, beginListDate, endListDate, officeId };
-                DataTable checkDetails = CJia.DefaultOleDb.Query( SqlSelectAdvice, sqlParams);
-                if(checkDetails != null && checkDetails.Rows != null && checkDetails.Rows.Count > 0)
+                DataTable checkDetails = CJia.DefaultOleDb.Query(SqlSelectAdvice, sqlParams);
+                if (checkDetails != null && checkDetails.Rows != null && checkDetails.Rows.Count > 0)
                 {
-                    foreach(DataRow row in checkDetails.Rows)
+                    foreach (DataRow row in checkDetails.Rows)
                     {
                         List<string> noCheckGroupPharmList = this.QueryPharm(row["GROUP_INDEX"].ToString());
                         //object[] params1 = new object[] { row["GROUP_INDEX"].ToString() };
                         //DataTable pharm = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.SqlTools.SqlQueryGroupIndexPharm, params1);
-                        if(noCheckGroupPharmList.Count != 0)
+                        if (noCheckGroupPharmList.Count != 0)
                         {
                             checkResult.NoCheckGroup.Add(new NoCheckGroupPharm()
                             {
@@ -722,7 +726,7 @@ namespace CJia.PIVAS.Models
                         else
                         {
                             object[] paramrs2 = row.ItemArray;
-                            bool result = CJia.DefaultOleDb.Execute(transID,CJia.PIVAS.Models.SqlTools.SqlInsertInsertCheckDetail, paramrs2) == 1 ? true : false;
+                            bool result = CJia.DefaultOleDb.Execute(transID, CJia.PIVAS.Models.SqlTools.SqlInsertInsertCheckDetail, paramrs2) == 1 ? true : false;
                             checkResult.CheckGroup.Add(row["GROUP_INDEX"].ToString());
                         }
                     }
@@ -742,9 +746,9 @@ namespace CJia.PIVAS.Models
             List<string> pharmList = new List<string>();
             object[] params1 = new object[] { groupIndex, groupIndex };
             DataTable pharm = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.SqlTools.SqlQueryGroupIndexPharm, params1);
-            if(pharm != null && pharm.Rows != null && pharm.Rows.Count > 0)
+            if (pharm != null && pharm.Rows != null && pharm.Rows.Count > 0)
             {
-                foreach(DataRow ph in pharm.Rows)
+                foreach (DataRow ph in pharm.Rows)
                 {
                     pharmList.Add(ph["PHARM_NAME"].ToString() + " " + ph["SPEC"] + " " + ph["FACTORY_NAME"] + " " + ph["AMOUNT_UNIT"] + " ");
                 }
@@ -767,11 +771,11 @@ namespace CJia.PIVAS.Models
         public void BatchAddCheckDetail(string transID, long checkId, int checkPivasStatus, long createBy, DateTime beginDate, DateTime endDate, string officeId)
         {
             string sqlBatchInsertCheckDetail = SqlTools.SqlBatchInsertCheckDetail;
-            if(officeId == "0")          //全部病区
+            if (officeId == "0")          //全部病区
             {
                 sqlBatchInsertCheckDetail = string.Format(SqlTools.SqlBatchInsertCheckDetail, "0 = ? ");
             }
-            else if(officeId != "0")     //某一病区
+            else if (officeId != "0")     //某一病区
             {
                 sqlBatchInsertCheckDetail = string.Format(SqlTools.SqlBatchInsertCheckDetail, "PATIENT_ILLFILED_CODE= ?  ");
             }
@@ -788,7 +792,7 @@ namespace CJia.PIVAS.Models
         public int GetDetailIdByGroupIndex(string groupIndex)
         {
             object[] sqlParams = new object[] { groupIndex };
-            if(string.IsNullOrEmpty(CJia.DefaultOleDb.QueryScalar(SqlTools.SqlSelectDetailIdByGroupIndex, sqlParams)))
+            if (string.IsNullOrEmpty(CJia.DefaultOleDb.QueryScalar(SqlTools.SqlSelectDetailIdByGroupIndex, sqlParams)))
             {
                 return 0;
             }
@@ -810,19 +814,19 @@ namespace CJia.PIVAS.Models
         public void ModifyCheckDetail(string transID, long updateBy, DateTime beginDate, DateTime endDate, string officeId, List<string> groupIndexs)
         {
             string sqlUpdateCheckDetail = CJia.PIVAS.Models.SqlTools.SqlUpdateCheckDetailToValid;
-            if(officeId == "0")          //全部病区
+            if (officeId == "0")          //全部病区
             {
                 sqlUpdateCheckDetail = string.Format(SqlTools.SqlUpdateCheckDetailToValid, "0 = ? ");
             }
-            else if(officeId != "0")     //某一病区
+            else if (officeId != "0")     //某一病区
             {
                 sqlUpdateCheckDetail = string.Format(SqlTools.SqlUpdateCheckDetailToValid, "PATIENT_ILLFILED_CODE= ?  ");
             }
             StringBuilder str = new StringBuilder("");
-            if(groupIndexs != null && groupIndexs.Count != 0)
+            if (groupIndexs != null && groupIndexs.Count != 0)
             {
                 str.Append("and scd.group_index in (");
-                foreach(string groupIndex in groupIndexs)
+                foreach (string groupIndex in groupIndexs)
                 {
                     str.Append("'" + groupIndex.ToString() + "'");
                     str.Append(",");
@@ -851,7 +855,7 @@ namespace CJia.PIVAS.Models
         /// <returns></returns>
         public void ModifyCheckDetailGroupIndex(string transID, string groupIndex, long updateBy)
         {
-            object[] sqlParams = new object[] { updateBy , groupIndex };
+            object[] sqlParams = new object[] { updateBy, groupIndex };
             CJia.DefaultOleDb.Execute(transID, SqlTools.SqlUpdateCheckDetailValidGroupIndex, sqlParams);
         }
 
@@ -867,11 +871,11 @@ namespace CJia.PIVAS.Models
         public bool BatchModifyCheckDetailValid(string transID, long updateBy, DateTime beginDate, DateTime endDate, string officeId)
         {
             string sqlBatchUpdateCheckDetailValid = SqlTools.SqlBatchUpdateCheckDetailValid;
-            if(officeId == "0")          //全部病区
+            if (officeId == "0")          //全部病区
             {
                 sqlBatchUpdateCheckDetailValid = string.Format(SqlTools.SqlBatchUpdateCheckDetailValid, "0 = ? ");
             }
-            else if(officeId != "0")     //某一病区
+            else if (officeId != "0")     //某一病区
             {
                 sqlBatchUpdateCheckDetailValid = string.Format(SqlTools.SqlBatchUpdateCheckDetailValid, "PATIENT_ILLFILED_CODE= ?  ");
             }
@@ -900,7 +904,7 @@ namespace CJia.PIVAS.Models
             List<object> objects = new List<object>();
             objects.Add(inhosId);
             DataTable dtResult = CJia.DefaultOleDb.Query(Models.SqlTools.SqlSelectPatientByInhosId, objects);
-            if(dtResult != null && dtResult.Rows.Count > 0)
+            if (dtResult != null && dtResult.Rows.Count > 0)
             {
                 return dtResult;
             }
@@ -920,7 +924,7 @@ namespace CJia.PIVAS.Models
             List<object> objects = new List<object>();
             objects.Add(inhosId);
             DataTable dtResult = CJia.DefaultOleDb.Query(Models.SqlTools.SqlSelectPatientHistoryByInhosId, objects);
-            if(dtResult != null && dtResult.Rows.Count > 0)
+            if (dtResult != null && dtResult.Rows.Count > 0)
             {
                 return dtResult;
             }
@@ -937,7 +941,7 @@ namespace CJia.PIVAS.Models
         public DataTable GetPharmNotInPivas()
         {
             DataTable dtResult = CJia.DefaultOleDb.Query(Models.SqlTools.SqlSelectPharmNotInPivas);
-            if(dtResult != null && dtResult.Rows.Count > 0)
+            if (dtResult != null && dtResult.Rows.Count > 0)
             {
                 return dtResult;
             }
@@ -955,9 +959,9 @@ namespace CJia.PIVAS.Models
         public void DeleteCommonLabel(string tranID, List<string> groupIndexs)
         {
             StringBuilder str = new StringBuilder("");
-            if(groupIndexs != null && groupIndexs.Count != 0)
+            if (groupIndexs != null && groupIndexs.Count != 0)
             {
-                foreach(string groupIndex in groupIndexs)
+                foreach (string groupIndex in groupIndexs)
                 {
                     str.Append("'" + groupIndex.ToString() + "'");
                     str.Append(",");
@@ -977,9 +981,9 @@ namespace CJia.PIVAS.Models
         /// <param name="userId"></param>
         public void InsertCommonLabel(string tranID, List<string> groupIndexs, long userId)
         {
-            if(groupIndexs != null && groupIndexs.Count != 0)
+            if (groupIndexs != null && groupIndexs.Count != 0)
             {
-                foreach(string groupIndex in groupIndexs)
+                foreach (string groupIndex in groupIndexs)
                 {
                     object[] sqlParams = new object[] { userId, groupIndex, groupIndex };
                     CJia.DefaultOleDb.Execute(tranID, CJia.PIVAS.Models.SqlTools.SqlInsertCommonLabel, sqlParams);
@@ -994,9 +998,9 @@ namespace CJia.PIVAS.Models
         /// <param name="groupIndexs"></param>
         public void InsertLabelDetail(string tranID, List<string> groupIndexs)
         {
-            if(groupIndexs != null && groupIndexs.Count != 0)
+            if (groupIndexs != null && groupIndexs.Count != 0)
             {
-                foreach(string groupIndex in groupIndexs)
+                foreach (string groupIndex in groupIndexs)
                 {
                     object[] sqlParams = new object[] { groupIndex, groupIndex };
                     CJia.DefaultOleDb.Execute(tranID, CJia.PIVAS.Models.SqlTools.SqlInsertLabelDetail, sqlParams);
@@ -1025,7 +1029,7 @@ namespace CJia.PIVAS.Models
         {
             data.Columns.Add("ISPWJJ", typeof(string));
             data.Columns.Add("PWJJ_INFO", typeof(string));
-            foreach(DataRow dr in data.Rows)
+            foreach (DataRow dr in data.Rows)
             {
                 string groupIndex = dr["GROUP_INDEX"].ToString();
                 string[] pwjjInfo = PIVASModel.GetPWJJByGroupIndex(groupIndex);
