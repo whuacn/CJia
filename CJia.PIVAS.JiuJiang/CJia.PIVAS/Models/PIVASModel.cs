@@ -179,7 +179,7 @@ namespace CJia.PIVAS.Models
             parms.Add("I_TIMES", count);
             parms.Add("I_FLAG", flag);
             parms.Add("O_FLAG", "");
-            CJia.DefaultOleDb.ExecuteProcedure("SP_PHARM_FEE", ref parms);
+            CJia.DefaultOleDb.ExecuteProcedure("SP_PHARM_FEE_TEMP", ref parms);
             string result = parms["O_FLAG"].ToString();
             return result;
         }
@@ -202,7 +202,7 @@ namespace CJia.PIVAS.Models
             parms.Add("I_TIMES", count);
             parms.Add("I_FLAG", flag);
             parms.Add("O_FLAG", "");
-            CJia.DefaultOleDb.ExecuteProcedure(transID, "SP_PHARM_FEE", ref parms);
+            CJia.DefaultOleDb.ExecuteProcedure(transID, "SP_PHARM_FEE_TEMP", ref parms);
             string result = parms["O_FLAG"].ToString();
             return result;
         }

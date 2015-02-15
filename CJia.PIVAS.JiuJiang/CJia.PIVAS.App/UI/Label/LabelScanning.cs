@@ -742,17 +742,19 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Red;
             if (this.rbLong.Checked)
             {
-                this.cbBatch.Enabled = true;
+                //this.cbBatch.Enabled = true;
+                this.ckceBatch.Enabled = true;
                 this.rbOld.Checked = true;
                 this.rbNew.Checked = false;
                 this.dtpStartTime.Value = Sysdate;
             }
             else
             {
-                this.cbBatch.Enabled = false;
+                //this.cbBatch.Enabled = false;
+                this.ckceBatch.Enabled = false;
                 this.rbOld.Checked = false;
                 this.rbNew.Checked = true;
-                this.cbBatch.SelectedValue = 0;
+                //this.cbBatch.SelectedValue = 0;
                 this.dtpStartTime.Value = Sysdate;
             }
 
@@ -866,19 +868,26 @@ namespace CJia.PIVAS.App.UI.Label
             }
 
             string strBatch = "";
-            foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+            string longTemporary = this.rbLong.Checked ? "1" : "0";
+            if (longTemporary == "1")
             {
-                strBatch += illList + ",";
-            }
-            if (strBatch == "")
-            {
-                labelScanningEventArgs.BacthID = "''";
+                foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+                {
+                    strBatch += illList + ",";
+                }
+                if (strBatch == "")
+                {
+                    labelScanningEventArgs.BacthID = "''";
+                }
+                else
+                {
+                    labelScanningEventArgs.BacthID = strBatch.Substring(0, strBatch.Length - 1);
+                }
             }
             else
             {
-                labelScanningEventArgs.BacthID = strBatch.Substring(0, strBatch.Length - 1);
+                labelScanningEventArgs.BacthID = "1000000005";
             }
-
             //end
            
             if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
