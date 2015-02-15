@@ -46,7 +46,11 @@ namespace CJia.PIVAS.Models.Label
         {
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
             string illfieldStr = " and t.illfield_id in (" + illfieldID + ")  ";
-            string batchStr = " and  t.batch_id in (" + batchID + ") ";
+            string batchStr = "";
+            if (longTemporary == "1")
+            {
+                batchStr = " and  t.batch_id in (" + batchID + ") ";
+            }
 
             string checkDataStr = "";
             if (userCheckData)
@@ -216,7 +220,11 @@ namespace CJia.PIVAS.Models.Label
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryGenLabel;
             string illfieldStr = " and spl.illfield_id in (" + illfieldID + ")  ";
 
-            string batchStr = " and  spl.batch_id in (" + batchID + ") ";
+            string batchStr = "";
+            if (batchID != "")
+            {
+                batchStr = " and  spl.batch_id in (" + batchID + ") ";
+            }
 
             string checkDataStr = "";
             if (userCheckData)
