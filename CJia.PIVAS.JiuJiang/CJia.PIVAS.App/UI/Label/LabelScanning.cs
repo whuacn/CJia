@@ -1150,7 +1150,7 @@ namespace CJia.PIVAS.App.UI.Label
                 this.lblMessage.ForeColor = Color.Red;
                 this.lblMessage.Text = "不在选定的病区内";
             }
-            else if (!this.ckceBatch.Text.Contains(batchName))
+            else if (!this.ckceBatch.Text.Contains(batchName) && rbLong.Checked)
             {
                 this.lblMessage.BackColor = Color.LightGray;
                 this.lblMessage.ForeColor = Color.Red;
