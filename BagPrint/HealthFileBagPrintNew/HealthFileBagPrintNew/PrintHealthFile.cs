@@ -49,14 +49,14 @@
                 Y = 2 * Y - 9;
             }
 
-            this.LableBlackTag.LocationFloat = new PointFloat(0f, Y * 78.2f);
+            this.LableBlackTag.LocationFloat = new PointFloat(0F, Y * 78.2f);
             this.LableBlackTag.Text = strBlackTag;
             this.LableBlackTag.ForeColor = System.Drawing.Color.White;
 
             System.Configuration.ConfigurationManager.RefreshSection("appSettings");
             this.PrinterName = ConfigurationSettings.AppSettings["bagPrint"];
             base.CreateDocument();
-            
+            base.PrintingSystem.ShowMarginsWarning = false;
             this.Print();
         }
 
@@ -97,7 +97,7 @@
             this.LableName,
             this.LableHealthIllcaseNo,
             this.LableBlackTag});
-            this.detailBand1.HeightF = 782.2917F;
+            this.detailBand1.HeightF = 733.125F;
             this.detailBand1.Name = "detailBand1";
             // 
             // LableHealthFileID
@@ -184,7 +184,7 @@
             // 
             // bottomMarginBand1
             // 
-            this.bottomMarginBand1.HeightF = 4.166667F;
+            this.bottomMarginBand1.HeightF = 4F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
             // 
             // PrintHealthFile
@@ -195,9 +195,11 @@
             this.bottomMarginBand1});
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 4);
-            this.PageHeight = 1004;
-            this.PageWidth = 1339;
+            this.PageHeight = 13140;
+            this.PageWidth = 9840;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
+            this.PaperName = "BagPrint";
+            this.PrinterName = "\\\\172.16.20.149\\Generic 18BW-7";
             this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
