@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -89,8 +90,8 @@
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.btnCancelPreview = new DevExpress.XtraEditors.SimpleButton();
             this.cbSpeak = new System.Windows.Forms.CheckBox();
-            this.timer = new System.Windows.Forms.Timer();
-            this.timerSpeak = new System.Windows.Forms.Timer();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.timerSpeak = new System.Windows.Forms.Timer(this.components);
             this.btnQueryExpition = new DevExpress.XtraEditors.SimpleButton();
             this.btnQueryPharm = new DevExpress.XtraEditors.SimpleButton();
             this.btnNoPrintLabel = new DevExpress.XtraEditors.SimpleButton();
@@ -719,7 +720,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "静脉药物配置中心 v2.2.16 老瓶贴版";
+            this.Text = "静脉药物配置中心 v2.2.16 新瓶贴版";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

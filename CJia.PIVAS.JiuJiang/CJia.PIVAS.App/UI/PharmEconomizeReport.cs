@@ -55,7 +55,7 @@ namespace CJia.PIVAS.App.UI
             if(pharmEconomizeData != null && pharmEconomizeData.Rows != null && pharmEconomizeData.Rows.Count > 0)
             {
                 result = pharmEconomizeData.Copy();
-                result.DefaultView.Sort = " PHATM_NAME,SPEC,FACTORY_NAME,UNITS ";
+                result.DefaultView.Sort = " PHARM_NAME,SPEC,FACTORY_NAME,UNITS ";
                 result = result.DefaultView.ToTable();
             }
             this.xlIllfield.Text = illfieldName;

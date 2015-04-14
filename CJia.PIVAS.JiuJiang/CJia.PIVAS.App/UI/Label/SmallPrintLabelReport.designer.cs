@@ -33,6 +33,7 @@
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.spec = new DevExpress.XtraReports.UI.XRTableCell();
             this.dosage = new DevExpress.XtraReports.UI.XRTableCell();
+            this.count = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.pharmName = new DevExpress.XtraReports.UI.XRTableCell();
@@ -61,6 +62,7 @@
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.adviceNO = new DevExpress.XtraReports.UI.XRLabel();
@@ -75,8 +77,6 @@
             this.labFrequency = new DevExpress.XtraReports.UI.XRLabel();
             this.PharmTime = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.count = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -95,11 +95,11 @@
             // xrTable3
             // 
             this.xrTable3.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(153.0336F, 0F);
+            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(174.4009F, 0F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(134.9664F, 18F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(130.5991F, 18F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UseTextAlignment = false;
             this.xrTable3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -121,7 +121,7 @@
             this.spec.StylePriority.UseBorders = false;
             this.spec.StylePriority.UseFont = false;
             this.spec.Text = "规格";
-            this.spec.Weight = 0.68756898658876675D;
+            this.spec.Weight = 0.67004496995042051D;
             this.spec.WordWrap = false;
             // 
             // dosage
@@ -132,8 +132,19 @@
             this.dosage.StylePriority.UseBorders = false;
             this.dosage.StylePriority.UseFont = false;
             this.dosage.Text = "使用量";
-            this.dosage.Weight = 0.57011130974845292D;
+            this.dosage.Weight = 0.55256179011333D;
             this.dosage.WordWrap = false;
+            // 
+            // count
+            // 
+            this.count.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.count.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.count.Name = "count";
+            this.count.StylePriority.UseBorders = false;
+            this.count.StylePriority.UseFont = false;
+            this.count.Text = "数量";
+            this.count.Weight = 0.52753891367163486D;
+            this.count.WordWrap = false;
             // 
             // xrTable2
             // 
@@ -142,7 +153,7 @@
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(142.2207F, 18F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(164.6295F, 18F);
             this.xrTable2.StylePriority.UseBorders = false;
             this.xrTable2.StylePriority.UseTextAlignment = false;
             this.xrTable2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -394,7 +405,7 @@
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(278F, 18F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(295F, 18F);
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
             this.xrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -417,7 +428,7 @@
             this.xrTableCell4.StylePriority.UseBorders = false;
             this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.Text = "药名";
-            this.xrTableCell4.Weight = 1.4107135606072092D;
+            this.xrTableCell4.Weight = 1.6333496243659786D;
             // 
             // xrTableCell1
             // 
@@ -427,7 +438,7 @@
             this.xrTableCell1.StylePriority.UseBorders = false;
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.Text = "规格/单位";
-            this.xrTableCell1.Weight = 0.52950667662792616D;
+            this.xrTableCell1.Weight = 0.49675820257902886D;
             // 
             // xrTableCell9
             // 
@@ -437,7 +448,17 @@
             this.xrTableCell9.StylePriority.UseBorders = false;
             this.xrTableCell9.StylePriority.UseFont = false;
             this.xrTableCell9.Text = "使用量";
-            this.xrTableCell9.Weight = 0.413261831272701D;
+            this.xrTableCell9.Weight = 0.40965844703326715D;
+            // 
+            // xrTableCell2
+            // 
+            this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell2.Font = new System.Drawing.Font("Times New Roman", 7F);
+            this.xrTableCell2.Name = "xrTableCell2";
+            this.xrTableCell2.StylePriority.UseBorders = false;
+            this.xrTableCell2.StylePriority.UseFont = false;
+            this.xrTableCell2.Text = "数量";
+            this.xrTableCell2.Weight = 0.39110701428637762D;
             // 
             // TopMargin
             // 
@@ -626,27 +647,6 @@
             this.xrLabel4.Text = "执行日期:";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrTableCell2
-            // 
-            this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell2.Font = new System.Drawing.Font("Times New Roman", 7F);
-            this.xrTableCell2.Name = "xrTableCell2";
-            this.xrTableCell2.StylePriority.UseBorders = false;
-            this.xrTableCell2.StylePriority.UseFont = false;
-            this.xrTableCell2.Text = "数量";
-            this.xrTableCell2.Weight = 0.40849343704325958D;
-            // 
-            // count
-            // 
-            this.count.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.count.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.count.Name = "count";
-            this.count.StylePriority.UseBorders = false;
-            this.count.StylePriority.UseFont = false;
-            this.count.Text = "数量";
-            this.count.Weight = 0.55099089713871985D;
-            this.count.WordWrap = false;
-            // 
             // SmallPrintLabelReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -655,9 +655,9 @@
             this.TopMargin,
             this.ReportHeader,
             this.ReportFooter});
-            this.Margins = new System.Drawing.Printing.Margins(0, 3, 0, 0);
+            this.Margins = new System.Drawing.Printing.Margins(0, 1, 0, 0);
             this.PageHeight = 402;
-            this.PageWidth = 295;
+            this.PageWidth = 306;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.PaperName = "新卷";
             this.Version = "12.1";
