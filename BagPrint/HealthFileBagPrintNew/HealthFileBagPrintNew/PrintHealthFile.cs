@@ -195,8 +195,9 @@
             this.bottomMarginBand1});
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 4);
-            this.PageHeight = 850;
-            this.PageWidth = 1100;
+            this.PageHeight = 1004;
+            this.PageWidth = 1339;
+            this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

@@ -674,21 +674,7 @@ namespace CJia.PIVAS.App.UI.Label
             }
             //end
             //queryPrintLabelViewEventArgs.batchid = this.cbBatch.SelectedValue.ToString();
-            //add by lip
-            string strBatch = "";
-            foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
-            {
-                strBatch += illList + ",";
-            }
-            if (strBatch == "")
-            {
-                queryPrintLabelViewEventArgs.batchid = "''";
-            }
-            else
-            {
-                queryPrintLabelViewEventArgs.batchid = strBatch.Substring(0, strBatch.Length - 1);
-            }
-            //end
+          
 
             queryPrintLabelViewEventArgs.selectDate = this.rbNewDate.Checked ? 1 : 0;
             queryPrintLabelViewEventArgs.grOrDr = this.rbNew.Checked ? 0 : 1;
@@ -712,6 +698,29 @@ namespace CJia.PIVAS.App.UI.Label
             {
                 queryPrintLabelViewEventArgs.longTemporary = "0";
             }
+
+            //add by lip
+            string strBatch = "";
+            if (queryPrintLabelViewEventArgs.longTemporary == "1")
+            {
+                foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+                {
+                    strBatch += illList + ",";
+                }
+                if (strBatch == "")
+                {
+                    queryPrintLabelViewEventArgs.batchid = "''";
+                }
+                else
+                {
+                    queryPrintLabelViewEventArgs.batchid = strBatch.Substring(0, strBatch.Length - 1);
+                }
+            }
+            else
+            {
+                queryPrintLabelViewEventArgs.batchid = "";
+            }
+            //end
             queryPrintLabelViewEventArgs.useCheckData = this.cbCheckData.Checked;
             queryPrintLabelViewEventArgs.CheckDataStart = this.dtStart.DateTime;
             queryPrintLabelViewEventArgs.CheckDataEnd = this.dtEnd.DateTime;

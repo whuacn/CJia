@@ -159,6 +159,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.filterView1.Appearance.BackColor = System.Drawing.Color.White;
             this.filterView1.Appearance.Options.UseBackColor = true;
+            this.filterView1.Data = null;
             this.filterView1.IsUseDept = true;
             this.filterView1.Location = new System.Drawing.Point(4, 4);
             this.filterView1.Name = "filterView1";

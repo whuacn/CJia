@@ -706,6 +706,7 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="favicon1.ico" />
+    <Content Include="Resources\logo.ico" />
     <None Include="Service References\JJCJ\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

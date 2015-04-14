@@ -355,7 +355,7 @@ namespace CJia.PIVAS.App.UI.Label
             {
                 ckceBatch.Properties.Items.Add(result.Rows[i]["BATCH_ID"].ToString(), result.Rows[i]["BATCH_NAME"].ToString(), CheckState.Checked, true);
 
-            }		
+            }
             //DataRow dr = result.NewRow();
             //dr["BATCH_NAME"] = "< 全部 >";
             //dr["BATCH_ID"] = 0;
@@ -742,17 +742,19 @@ namespace CJia.PIVAS.App.UI.Label
             ((RadioButton)sender).ForeColor = System.Drawing.Color.Red;
             if (this.rbLong.Checked)
             {
-                this.cbBatch.Enabled = true;
+                //this.cbBatch.Enabled = true;
+                this.ckceBatch.Enabled = true;
                 this.rbOld.Checked = true;
                 this.rbNew.Checked = false;
                 this.dtpStartTime.Value = Sysdate;
             }
             else
             {
-                this.cbBatch.Enabled = false;
+                //this.cbBatch.Enabled = false;
+                this.ckceBatch.Enabled = false;
                 this.rbOld.Checked = false;
                 this.rbNew.Checked = true;
-                this.cbBatch.SelectedValue = 0;
+                //this.cbBatch.SelectedValue = 0;
                 this.dtpStartTime.Value = Sysdate;
             }
 
@@ -866,21 +868,28 @@ namespace CJia.PIVAS.App.UI.Label
             }
 
             string strBatch = "";
-            foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+            string longTemporary = this.rbLong.Checked ? "1" : "0";
+            if (longTemporary == "1")
             {
-                strBatch += illList + ",";
-            }
-            if (strBatch == "")
-            {
-                labelScanningEventArgs.BacthID = "''";
+                foreach (string illList in ckceBatch.Properties.Items.GetCheckedValues())
+                {
+                    strBatch += illList + ",";
+                }
+                if (strBatch == "")
+                {
+                    labelScanningEventArgs.BacthID = "''";
+                }
+                else
+                {
+                    labelScanningEventArgs.BacthID = strBatch.Substring(0, strBatch.Length - 1);
+                }
             }
             else
             {
-                labelScanningEventArgs.BacthID = strBatch.Substring(0, strBatch.Length - 1);
+                labelScanningEventArgs.BacthID = "1000000005";
             }
-
             //end
-           
+
             if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
             {
                 labelScanningEventArgs.ScenningType = "1000601";
@@ -1129,24 +1138,27 @@ namespace CJia.PIVAS.App.UI.Label
                 BarCode = barCode
             };
             string illfieldID = this.BarCodeLabel.Rows[0]["ILLFIELD_ID"].ToString();
+            string illFieldName = this.BarCodeLabel.Rows[0]["ILLFIELD"].ToString();
             string bacthID = this.BarCodeLabel.Rows[0]["BATCH_ID"].ToString();
+            string batchName = this.BarCodeLabel.Rows[0]["BATCH_NAME"].ToString();
             string genDate = this.BarCodeLabel.Rows[0]["GEN_TIME"].ToString();
             string status = this.BarCodeLabel.Rows[0]["STATUS"].ToString();
-            //if (this.cbIffield.SelectedValue.ToString() != "0" && this.cbIffield.SelectedValue.ToString() != illfieldID)
-            //{
-            //    this.lblMessage.BackColor = Color.LightGray;
-            //    this.lblMessage.ForeColor = Color.Red;
-            //    this.lblMessage.Text = "不在选定的病区内";
-            //}
-            //else if (this.cbBatch.SelectedValue.ToString() != "0" && this.cbBatch.SelectedValue.ToString() != bacthID)
-            //{
-            //    this.lblMessage.BackColor = Color.LightGray;
-            //    this.lblMessage.ForeColor = Color.Red;
-            //    this.lblMessage.Text = "不在选定的批次内";
-            //}
-            if (false)
+
+            if (!this.ckceIllfield.Text.Contains(illFieldName))
             {
+                this.lblMessage.BackColor = Color.LightGray;
+                this.lblMessage.ForeColor = Color.Red;
+                this.lblMessage.Text = "不在选定的病区内";
             }
+            else if (!this.ckceBatch.Text.Contains(batchName) && rbLong.Checked)
+            {
+                this.lblMessage.BackColor = Color.LightGray;
+                this.lblMessage.ForeColor = Color.Red;
+                this.lblMessage.Text = "不在选定的批次内";
+            }
+            //if (false)
+            //{
+            //}
             else
             {
                 if (this.cbScanning.SelectedItem.ToString() == "入仓扫描")
