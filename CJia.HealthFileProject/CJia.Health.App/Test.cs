@@ -18,6 +18,7 @@ namespace CJia.Health.App
             //Image image = CJia.Health.Tools.Help.GetImageByUri("http://192.168.1.206:1717/2.jpg", "", "");
             Image image = Image.FromFile(@"E:\Health\2013\8\2\1343802\1343802_01_001_00.jpg");
             cJiaPicture1.Image = image;
+            //test
         }
 
         private void cJiaButton1_Click(object sender, EventArgs e)
