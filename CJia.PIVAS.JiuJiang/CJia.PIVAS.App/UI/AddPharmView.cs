@@ -115,7 +115,7 @@ namespace CJia.PIVAS.App.UI
 
         private void btnAddPharm_Click(object sender, EventArgs e)
         {
-            if (this.PharmData == null && this.PharmData.Rows == null && this.PharmData.Rows.Count == 0)
+            if (this.PharmData == null || this.PharmData.Rows == null || this.PharmData.Rows.Count == 0)
             {
                 Message.Show("没有需要入库的药品！");
                 return;
