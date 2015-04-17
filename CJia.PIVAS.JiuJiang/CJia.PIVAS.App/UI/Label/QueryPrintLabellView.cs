@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Linq;
 using System.Drawing.Printing;
+using CJia.PIVAS.Views.Label;
 
 namespace CJia.PIVAS.App.UI.Label
 {
@@ -444,8 +445,16 @@ namespace CJia.PIVAS.App.UI.Label
             string GroupIndex = this.gvLabel.GetFocusedDataRow()["GROUP_INDEX"].ToString();
             string labelId = this.gvLabel.GetFocusedDataRow()["LABEL_ID"].ToString();
             DateTime date = Sysdate;
-            //CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
-            Spec1PrintLabelReport labelReport = new Spec1PrintLabelReport();
+            IPrintLabelReport labelReport;
+            if (Common.GetLableSpec() == "1")
+            {
+                //CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
+                labelReport = new Spec1PrintLabelReport();
+            }
+            else
+            {
+                labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
+            }
             if (this.gvLabel.GetFocusedDataRow()["ISPRINT"].ToString() == "1")
             {
                 if (Message.ShowQuery("该瓶贴已经打印是否重打！重打将把原瓶贴作废并重新打印一张一模一样的瓶贴！", Message.Button.YesNo) == Message.Result.Yes)
@@ -997,7 +1006,7 @@ namespace CJia.PIVAS.App.UI.Label
                         isPrint = messageBoxView.SelectValue;
                     }
                 }
-                DevExpress.XtraReports.UI.XtraReport labelReport;
+                IPrintLabelReport labelReport;
                 if (Common.GetLableSpec() == "1")
                 {
                     //CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
