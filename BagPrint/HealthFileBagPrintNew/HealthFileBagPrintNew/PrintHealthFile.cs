@@ -195,10 +195,9 @@
             this.bottomMarginBand1});
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 4);
-            this.PageHeight = 13140;
-            this.PageWidth = 9840;
+            this.PageHeight = 984;
+            this.PageWidth = 1319;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
-            this.PaperName = "BagPrint";
             this.PrinterName = "\\\\172.16.20.149\\Generic 18BW-7";
             this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

@@ -65,8 +65,9 @@ namespace HealthFileBagPrintNew
 
                 for (int i = 0; i < checkeDataTable.Rows.Count; i++)
                 {
+                    string str2 = checkeDataTable.Rows[i]["FBIHID"].ToString();
+                    file.strBlackTag = str2.Substring(str2.Length - 3, 1);
                     string str = checkeDataTable.Rows[i]["FMRDID"].ToString();
-                    file.strBlackTag = str.Substring(str.Length - 5, 1);
                     file.DataBind(checkeDataTable.Rows[i]["FBIHID"].ToString(), str.Insert(str.Length - 2, "_"), checkeDataTable.Rows[i]["FNAME"].ToString(), checkeDataTable.Rows[i]["FDESC"].ToString(), checkeDataTable.Rows[i]["FICD_D"].ToString(), Convert.ToDateTime(checkeDataTable.Rows[i]["FODATE"]).ToShortDateString());
                 }
             }

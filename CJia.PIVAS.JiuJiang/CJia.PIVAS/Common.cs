@@ -193,11 +193,16 @@ namespace CJia.PIVAS
         {
             if (_lableCount == -1)
             {
-                object[] parms = new object[] { };
-                DataTable dt = CJia.DefaultOleDb.Query("select FN_GETLABELCOUNT() LABELCOUNT from dual", parms);
-                _lableCount = int.Parse(dt.Rows[0]["LABELCOUNT"].ToString());
+                //object[] parms = new object[] { };
+                //DataTable dt = CJia.DefaultOleDb.Query("select FN_GETLABELCOUNT() LABELCOUNT from dual", parms);
+                //_lableCount = int.Parse(dt.Rows[0]["LABELCOUNT"].ToString());
+                _lableCount =  int.Parse(CJia.PIVAS.Tools.ConfigHelper.GetAppStrings("LableCount"));
             }
             return _lableCount;
+        }
+        public static string GetLableSpec()
+        {
+            return CJia.PIVAS.Tools.ConfigHelper.GetAppStrings("LableSpec");
         }
     }
 }

@@ -272,6 +272,12 @@
     <Compile Include="UI\ExceptionLabel.Designer.cs">
       <DependentUpon>ExceptionLabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Label\Spec1PrintLabelReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Label\Spec1PrintLabelReport.designer.cs">
+      <DependentUpon>Spec1PrintLabelReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\LoginScanningView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -745,6 +751,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExceptionLabel.resx">
       <DependentUpon>ExceptionLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Label\Spec1PrintLabelReport.resx">
+      <DependentUpon>Spec1PrintLabelReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginScanningView.resx">
       <DependentUpon>LoginScanningView.cs</DependentUpon>

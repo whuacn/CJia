@@ -144,7 +144,8 @@ namespace CJia.PIVAS.App.UI.Label
         /// <summary>
         /// 当前瓶贴预览报表
         /// </summary>
-        private CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new SmallPrintLabelReport();
+        //private CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new SmallPrintLabelReport();
+        private Spec1PrintLabelReport labelReport = new Spec1PrintLabelReport();
 
         /// <summary>
         /// 上一个键盘事件是enter

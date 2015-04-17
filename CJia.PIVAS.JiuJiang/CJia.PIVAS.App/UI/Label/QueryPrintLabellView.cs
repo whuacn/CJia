@@ -444,7 +444,8 @@ namespace CJia.PIVAS.App.UI.Label
             string GroupIndex = this.gvLabel.GetFocusedDataRow()["GROUP_INDEX"].ToString();
             string labelId = this.gvLabel.GetFocusedDataRow()["LABEL_ID"].ToString();
             DateTime date = Sysdate;
-            CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
+            //CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
+            Spec1PrintLabelReport labelReport = new Spec1PrintLabelReport();
             if (this.gvLabel.GetFocusedDataRow()["ISPRINT"].ToString() == "1")
             {
                 if (Message.ShowQuery("该瓶贴已经打印是否重打！重打将把原瓶贴作废并重新打印一张一模一样的瓶贴！", Message.Button.YesNo) == Message.Result.Yes)
@@ -674,7 +675,7 @@ namespace CJia.PIVAS.App.UI.Label
             }
             //end
             //queryPrintLabelViewEventArgs.batchid = this.cbBatch.SelectedValue.ToString();
-          
+
 
             queryPrintLabelViewEventArgs.selectDate = this.rbNewDate.Checked ? 1 : 0;
             queryPrintLabelViewEventArgs.grOrDr = this.rbNew.Checked ? 0 : 1;
@@ -996,7 +997,16 @@ namespace CJia.PIVAS.App.UI.Label
                         isPrint = messageBoxView.SelectValue;
                     }
                 }
-                CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
+                DevExpress.XtraReports.UI.XtraReport labelReport;
+                if (Common.GetLableSpec() == "1")
+                {
+                    //CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
+                    labelReport = new Spec1PrintLabelReport();
+                }
+                else
+                {
+                    labelReport = new CJia.PIVAS.App.UI.Label.SmallPrintLabelReport();
+                }
                 DateTime now = CJia.PIVAS.Tools.Helper.Sysdate;
                 this.OnGenLabel(null, queryPrintLabelViewEventArgs);//批量插入瓶贴
                 CJia.PIVAS.Views.Label.QueryPrintLabelViewEventArgs eventArgs = this.GetFilter();
