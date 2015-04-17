@@ -243,6 +243,7 @@
     <Compile Include="Views\ISendPharmView.cs" />
     <Compile Include="Views\Label\IFilterLabelView.cs" />
     <Compile Include="Views\Label\IGenLabelView.cs" />
+    <Compile Include="Views\Label\IPrintLabelReport.cs" />
     <Compile Include="Views\Label\IQueryLabelView.cs" />
     <Compile Include="Views\Label\ILabelScanningView.cs" />
     <Compile Include="Views\ISendPharmSelectView.cs" />

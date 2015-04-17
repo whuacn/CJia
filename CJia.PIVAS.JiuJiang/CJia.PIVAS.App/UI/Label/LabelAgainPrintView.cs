@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CJia.PIVAS.Views;
+using CJia.PIVAS.Views.Label;
 
 namespace CJia.PIVAS.App.UI.Label
 {
@@ -25,6 +26,14 @@ namespace CJia.PIVAS.App.UI.Label
             this.init();
             this.OnInitIffield(null, null);
             this.OnInitBacth(null, null);
+            if (Common.GetLableSpec() == "1")
+            {
+                labelReport = new Spec1PrintLabelReport();
+            }
+            else
+            {
+                labelReport = new SmallPrintLabelReport();
+            }
         }
 
         protected override object CreatePresenter()
@@ -49,7 +58,8 @@ namespace CJia.PIVAS.App.UI.Label
         /// 当前瓶贴预览报表
         /// </summary>
         //private CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new SmallPrintLabelReport();
-        private CJia.PIVAS.App.UI.Label.Spec1PrintLabelReport labelReport = new Spec1PrintLabelReport();
+        //private CJia.PIVAS.App.UI.Label.Spec1PrintLabelReport labelReport = new Spec1PrintLabelReport();
+        private IPrintLabelReport labelReport = null;
 
         /// <summary>
         /// 上一个键盘事件是enter
@@ -99,9 +109,9 @@ namespace CJia.PIVAS.App.UI.Label
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
             DataTable data = this.gcCancel.DataSource as DataTable;
-            if(data != null && data.Rows != null && data.Rows.Count > 0)
+            if (data != null && data.Rows != null && data.Rows.Count > 0)
             {
-                for(int i = 0; i < data.Rows.Count; i++)
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
                     data.Rows[i]["ISCHECK"] = true;
                 }
@@ -113,9 +123,9 @@ namespace CJia.PIVAS.App.UI.Label
         private void btnNoSelectAll_Click(object sender, EventArgs e)
         {
             DataTable data = this.gcCancel.DataSource as DataTable;
-            if(data != null && data.Rows != null && data.Rows.Count > 0)
+            if (data != null && data.Rows != null && data.Rows.Count > 0)
             {
-                for(int i = 0; i < data.Rows.Count; i++)
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
                     data.Rows[i]["ISCHECK"] = false;
                 }
@@ -127,12 +137,12 @@ namespace CJia.PIVAS.App.UI.Label
         private void btnNoSelect_Click(object sender, EventArgs e)
         {
             DataTable data = this.gcCancel.DataSource as DataTable;
-            if(data != null && data.Rows != null && data.Rows.Count > 0)
+            if (data != null && data.Rows != null && data.Rows.Count > 0)
             {
-                for(int i = 0; i < data.Rows.Count; i++)
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
                     string checkStr = data.Rows[i]["ISCHECK"].ToString();
-                    if(checkStr == "" || checkStr == "False")
+                    if (checkStr == "" || checkStr == "False")
                     {
                         data.Rows[i]["ISCHECK"] = true;
                     }
@@ -156,11 +166,11 @@ namespace CJia.PIVAS.App.UI.Label
             string Index = this.gvBarCode.GetFocusedDataRow()["LABEL_BAR_ID"].ToString();
             value = this.gvBarCode.GetFocusedDataRow()["ISCHECK"].ToString();
             DataTable dt = gcCancel.DataSource as DataTable;
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
-                if(dr["LABEL_BAR_ID"].ToString() == Index)
+                if (dr["LABEL_BAR_ID"].ToString() == Index)
                 {
-                    if(value == "" || value == "False")
+                    if (value == "" || value == "False")
                     {
                         dr["ISCHECK"] = true;
                     }
@@ -213,7 +223,7 @@ namespace CJia.PIVAS.App.UI.Label
         public void ExePrintLabelInfo(DataTable result)
         {
             this.BarCodeLabel = result;
-            if(result == null || result.Rows == null || result.Rows.Count == 0)
+            if (result == null || result.Rows == null || result.Rows.Count == 0)
             {
             }
             else
@@ -268,10 +278,10 @@ namespace CJia.PIVAS.App.UI.Label
         /// <returns></returns>
         private DataTable GetDataSource(DataRow[] rows)
         {
-            if(rows != null && rows.Length != 0)
+            if (rows != null && rows.Length != 0)
             {
                 DataTable result = rows[0].Table.Clone();
-                for(int i = 0; i < rows.Length; i++)
+                for (int i = 0; i < rows.Length; i++)
                 {
                     DataRow row = result.NewRow();
                     row.ItemArray = rows[i].ItemArray;
@@ -300,17 +310,17 @@ namespace CJia.PIVAS.App.UI.Label
         {
             List<string> LabelBarIdList = new List<string>();
             DataTable data = this.gcCancel.DataSource as DataTable;
-            if(data != null && data.Rows != null && data.Rows.Count > 0)
+            if (data != null && data.Rows != null && data.Rows.Count > 0)
             {
                 data.DefaultView.Sort = "LABEL_BAR_ID ASC";
                 DataTable dtTemp = data.DefaultView.ToTable();
-                for(int i = 0; i < dtTemp.Rows.Count; i++)
+                for (int i = 0; i < dtTemp.Rows.Count; i++)
                 {
-                    if(i > 0 && dtTemp.Rows[i]["LABEL_BAR_ID"].ToString() == dtTemp.Rows[i - 1]["LABEL_BAR_ID"].ToString())
+                    if (i > 0 && dtTemp.Rows[i]["LABEL_BAR_ID"].ToString() == dtTemp.Rows[i - 1]["LABEL_BAR_ID"].ToString())
                     {
                         continue;
                     }
-                    if(dtTemp.Rows[i]["ISCHECK"].ToString() == "True")
+                    if (dtTemp.Rows[i]["ISCHECK"].ToString() == "True")
                     {
                         LabelBarIdList.Add(dtTemp.Rows[i]["LABEL_BAR_ID"].ToString());
                     }
@@ -330,7 +340,7 @@ namespace CJia.PIVAS.App.UI.Label
             for (int i = (nowCount - 1) * Common.GetLabelCount(); i < nowCount * Common.GetLabelCount(); i++)
             {
                 DataRow row = result.NewRow();
-                if(i < LabelDetails.Rows.Count)
+                if (i < LabelDetails.Rows.Count)
                 {
                     row.ItemArray = LabelDetails.Rows[i].ItemArray;
                 }

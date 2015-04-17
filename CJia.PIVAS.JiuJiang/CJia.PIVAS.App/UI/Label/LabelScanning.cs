@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SpeechLib;
+using CJia.PIVAS.Views.Label;
 
 namespace CJia.PIVAS.App.UI.Label
 {
@@ -124,6 +125,14 @@ namespace CJia.PIVAS.App.UI.Label
             this.OnInitIffield(null, null);
             this.OnInitBacth(null, null);
             this.txtSpeak.Text = CJia.PIVAS.Tools.ConfigHelper.GetAppStrings("Speak");
+            if (Common.GetLableSpec() == "1")
+            {
+                labelReport = new Spec1PrintLabelReport();
+            }
+            else
+            {
+                labelReport = new SmallPrintLabelReport();
+            }
         }
 
         protected override object CreatePresenter()
@@ -145,7 +154,8 @@ namespace CJia.PIVAS.App.UI.Label
         /// 当前瓶贴预览报表
         /// </summary>
         //private CJia.PIVAS.App.UI.Label.SmallPrintLabelReport labelReport = new SmallPrintLabelReport();
-        private Spec1PrintLabelReport labelReport = new Spec1PrintLabelReport();
+        //private Spec1PrintLabelReport labelReport = new Spec1PrintLabelReport();
+        private IPrintLabelReport labelReport = null;
 
         /// <summary>
         /// 上一个键盘事件是enter

@@ -7,13 +7,14 @@ using System.Data;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Printing;
+using CJia.PIVAS.Views.Label;
 
 namespace CJia.PIVAS.App.UI.Label
 {
     /// <summary>
     /// 瓶贴汇总报表
     /// </summary>
-    public partial class Spec1PrintLabelReport : DevExpress.XtraReports.UI.XtraReport
+    public partial class Spec1PrintLabelReport : DevExpress.XtraReports.UI.XtraReport,IPrintLabelReport
     {
         public Spec1PrintLabelReport()
         {

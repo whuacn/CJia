@@ -236,7 +236,7 @@
             this.groupControl4.Controls.Add(this.cbBatch);
             this.groupControl4.Location = new System.Drawing.Point(3, 3);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(1391, 102);
+            this.groupControl4.Size = new System.Drawing.Size(1346, 102);
             this.groupControl4.TabIndex = 38;
             this.groupControl4.Text = "筛选条件";
             // 
@@ -521,7 +521,7 @@
             this.btnFilter.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnFilter.Appearance.Options.UseFont = true;
             this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(744, 25);
+            this.btnFilter.Location = new System.Drawing.Point(699, 25);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(123, 23);
             this.btnFilter.TabIndex = 42;
@@ -539,7 +539,7 @@
             this.gcLable.Name = "gcLable";
             this.gcLable.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.gcLable.Size = new System.Drawing.Size(870, 530);
+            this.gcLable.Size = new System.Drawing.Size(825, 530);
             this.gcLable.TabIndex = 2;
             this.gcLable.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLabel});
@@ -801,14 +801,14 @@
             this.groupControl1.Controls.Add(this.panel2);
             this.groupControl1.Location = new System.Drawing.Point(3, 111);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(874, 586);
+            this.groupControl1.Size = new System.Drawing.Size(829, 586);
             this.groupControl1.TabIndex = 39;
             this.groupControl1.Text = "冲药明细";
             // 
             // btnFilterPharm
             // 
             this.btnFilterPharm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilterPharm.Location = new System.Drawing.Point(594, 25);
+            this.btnFilterPharm.Location = new System.Drawing.Point(549, 25);
             this.btnFilterPharm.Name = "btnFilterPharm";
             this.btnFilterPharm.Size = new System.Drawing.Size(124, 23);
             this.btnFilterPharm.TabIndex = 43;
@@ -869,7 +869,7 @@
             this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl3.Controls.Add(this.gcPharm);
-            this.groupControl3.Location = new System.Drawing.Point(883, 111);
+            this.groupControl3.Location = new System.Drawing.Point(838, 111);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(511, 586);
             this.groupControl3.TabIndex = 40;
@@ -886,7 +886,7 @@
             this.Controls.Add(this.cbIffield);
             this.Controls.Add(this.groupControl4);
             this.Name = "QueryPrintLabellView";
-            this.Size = new System.Drawing.Size(1400, 700);
+            this.Size = new System.Drawing.Size(1355, 700);
             this.ctmLabelDetail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);

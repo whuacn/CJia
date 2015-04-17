@@ -127,9 +127,9 @@
             this.groupControl1.Controls.Add(this.txbBarCode);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.pbLabelPreview);
-            this.groupControl1.Location = new System.Drawing.Point(1220, 3);
+            this.groupControl1.Location = new System.Drawing.Point(1166, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(276, 501);
+            this.groupControl1.Size = new System.Drawing.Size(330, 501);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "瓶贴详情";
             // 
@@ -207,7 +207,7 @@
             // 
             this.pbLabelPreview.Location = new System.Drawing.Point(7, 96);
             this.pbLabelPreview.Name = "pbLabelPreview";
-            this.pbLabelPreview.Size = new System.Drawing.Size(264, 358);
+            this.pbLabelPreview.Size = new System.Drawing.Size(321, 358);
             this.pbLabelPreview.TabIndex = 0;
             this.pbLabelPreview.TabStop = false;
             // 
@@ -243,13 +243,12 @@
             this.groupControl2.Controls.Add(this.gdcLabel);
             this.groupControl2.Location = new System.Drawing.Point(3, 117);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1213, 575);
+            this.groupControl2.Size = new System.Drawing.Size(1159, 575);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "瓶贴预览";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.rbAll);
             this.panel2.Controls.Add(this.rbNo);
             this.panel2.Controls.Add(this.rbYes);
@@ -304,7 +303,7 @@
             this.gdcLabel.Location = new System.Drawing.Point(2, 53);
             this.gdcLabel.MainView = this.gdvLabelCollect;
             this.gdcLabel.Name = "gdcLabel";
-            this.gdcLabel.Size = new System.Drawing.Size(1209, 515);
+            this.gdcLabel.Size = new System.Drawing.Size(1155, 515);
             this.gdcLabel.TabIndex = 2;
             this.gdcLabel.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gdvLabelCollect});
@@ -521,9 +520,9 @@
             this.groupControl7.Controls.Add(this.lblMessage);
             this.groupControl7.Controls.Add(this.txtSpeak);
             this.groupControl7.Controls.Add(this.cbSpeak);
-            this.groupControl7.Location = new System.Drawing.Point(1220, 510);
+            this.groupControl7.Location = new System.Drawing.Point(1166, 510);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(276, 183);
+            this.groupControl7.Size = new System.Drawing.Size(330, 183);
             this.groupControl7.TabIndex = 6;
             this.groupControl7.Text = "信息提示";
             // 
@@ -537,7 +536,7 @@
             this.lblMessage.ForeColor = System.Drawing.Color.White;
             this.lblMessage.Location = new System.Drawing.Point(2, 49);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(272, 131);
+            this.lblMessage.Size = new System.Drawing.Size(326, 131);
             this.lblMessage.TabIndex = 0;
             this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -684,7 +683,7 @@
             this.groupControl4.Controls.Add(this.cbBatch);
             this.groupControl4.Location = new System.Drawing.Point(4, 3);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(1212, 110);
+            this.groupControl4.Size = new System.Drawing.Size(1158, 110);
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "筛选条件";
             // 
