@@ -350,6 +350,12 @@
     <Compile Include="UI\PatientInfoInputView.Designer.cs">
       <DependentUpon>PatientInfoInputView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PhotoNewView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PhotoNewView.Designer.cs">
+      <DependentUpon>PhotoNewView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PictureInputView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -470,12 +476,6 @@
     <Compile Include="UI\CompleteQuery.Designer.cs">
       <DependentUpon>CompleteQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\PhotoNewView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\PhotoNewView.Designer.cs">
-      <DependentUpon>PhotoNewView.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="LoginFrom.resx">
       <DependentUpon>LoginFrom.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -563,6 +563,9 @@
     <EmbeddedResource Include="UI\PatientInfoView.resx">
       <DependentUpon>PatientInfoView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\PhotoNewView.resx">
+      <DependentUpon>PhotoNewView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\PictureInputView.resx">
       <DependentUpon>PictureInputView.cs</DependentUpon>
     </EmbeddedResource>
@@ -622,9 +625,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CompleteQuery.resx">
       <DependentUpon>CompleteQuery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\PhotoNewView.resx">
-      <DependentUpon>PhotoNewView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -747,6 +747,9 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CJ\" />
     <WCFMetadataStorage Include="Service References\JJCJ\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dll\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
