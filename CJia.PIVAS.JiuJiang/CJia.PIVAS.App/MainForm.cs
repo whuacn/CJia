@@ -228,7 +228,8 @@ namespace CJia.PIVAS.App
                         uc = new UI.Label.LabelAgainPrintView();
                         break;
                     case "日常用药":
-                        uc = new UI.PharmEconomizeView();
+                        //uc = new UI.PharmEconomizeView();
+                        uc = new UI.PharmEconomizeUI();
                         break;
                     case "扫描监控":
                         uc = new UI.ScanningMonitoringView();
