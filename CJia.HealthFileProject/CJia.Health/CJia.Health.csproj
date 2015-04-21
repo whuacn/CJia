@@ -64,6 +64,9 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\CJia.Bin\Framework\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>F:\赣州数字化病案\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -161,6 +164,13 @@
     <Compile Include="Tools\Page.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Tools\PDFHelp.cs" />
+    <Compile Include="Tools\PDFViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\PDFViewer.Designer.cs">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Presenter.cs" />
     <Compile Include="Tools\PresenterPage.cs" />
     <Compile Include="Tools\Utils.cs" />
@@ -214,9 +224,40 @@
     <EmbeddedResource Include="Tools\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PDFViewer.resx">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\WinFrom.resx">
       <DependentUpon>WinFrom.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxFoxitReaderSDKProLib">
+      <Guid>{5434C5AD-533F-4CE7-87D8-4F7EDD33F78A}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="FoxitReaderSDKProLib">
+      <Guid>{5434C5AD-533F-4CE7-87D8-4F7EDD33F78A}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

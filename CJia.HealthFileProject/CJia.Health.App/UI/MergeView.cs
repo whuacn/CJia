@@ -203,8 +203,6 @@ namespace CJia.Health.App.UI
         private void Loading(object uri)
         {
             Image img = CJia.Health.Tools.Help.GetImageByUri(uri.ToString(), UserName, Password);
-            //load.ParentForm.Close();
-            //this.ParentForm.Enabled = true;
             if (img != null)
             {
                 int panel_W = splitContainerControl1.Panel2.Width;
@@ -220,7 +218,6 @@ namespace CJia.Health.App.UI
             {
                 Message.Show("此图片不存在或已删除，请与管理员联系。。。");
             }
-            //this.ParentForm.Activate();
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -695,8 +692,8 @@ namespace CJia.Health.App.UI
                 bool bol = FtpHelp.FtpIsExistsFile(storagePath, HostName, UserName, Password);
                 if (bol)
                 {
-                    string imgExtension = ConfigHelper.GetAppStrings("ImgExtension");//图片格式
-                    string[] picName = FtpHelp.GetFileList(storagePath, HostName, UserName, Password, imgExtension);
+                    //string imgExtension = ConfigHelper.GetAppStrings("ImgExtension");//图片格式
+                    string[] picName = FtpHelp.GetFileList(storagePath, HostName, UserName, Password, ".pdf");
                     if (picName != null && picName.Length > 0)
                     {
                         for (int i = 0; i < picName.Length; i++)

@@ -43,6 +43,7 @@ namespace CJia.Health.App
                 SplashScreenManager.ShowForm(typeof(SplashScreenMain));  
                 Application.Run(new NewMainForm());
             }
+            //Application.Run(new Form1());
         }
 
         static void Init()
