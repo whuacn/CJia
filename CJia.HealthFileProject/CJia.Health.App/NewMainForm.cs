@@ -863,7 +863,7 @@ namespace CJia.Health.App
                     uc = new UI.RoleManageView();
                     break;
                 case "btnRoleFounction":
-                    uc = new UI.RoleFunctionView();
+                    uc = new UI.RoleFunctionView();                    
                     break;
                 default:
                     break;
@@ -893,6 +893,7 @@ namespace CJia.Health.App
                 xpage.Appearance.PageClient.Font = new System.Drawing.Font("微软雅黑", 9F);
                 xpage.Appearance.PageClient.Options.UseFont = true;
                 //添加要增加的控件
+                uc.Dock = DockStyle.Fill;
                 xpage.Controls.Add(uc);
                 xTC.TabPages.Add(xpage);
                 xTC.SelectedTabPage = xpage;

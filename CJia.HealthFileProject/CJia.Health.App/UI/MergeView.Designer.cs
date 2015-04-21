@@ -29,7 +29,6 @@ namespace CJia.Health.App.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeView));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
@@ -60,7 +59,7 @@ namespace CJia.Health.App.UI
             this.cJiaLabel16 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
             this.cJiaPicture = new CJia.Controls.CJiaPicture();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();

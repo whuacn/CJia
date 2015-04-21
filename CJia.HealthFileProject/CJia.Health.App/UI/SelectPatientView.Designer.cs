@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectPatientView));
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
@@ -155,7 +154,7 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lblprojectName = new CJia.Controls.CJiaLabel();
             this.cJiaPicture = new CJia.Controls.CJiaPicture();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
