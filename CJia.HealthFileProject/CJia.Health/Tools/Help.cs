@@ -374,22 +374,7 @@ namespace CJia.Health.Tools
                 }
             }
         }
-
-        public static Image GetImageByUri(string uri, string userName, string password)
-        {
-            try
-            {
-                System.Net.WebClient myWebClient = new System.Net.WebClient();
-                myWebClient.Credentials = new NetworkCredential(userName, password);
-                byte[] bytes = myWebClient.DownloadData(uri);
-                Image image = GetImageByBytes(bytes);
-                return image;
-            }
-            catch
-            {
-                return null;
-            }
-        }
+        
         #endregion
     }
 }
