@@ -304,7 +304,7 @@ namespace CJia.Health.App.UI
 
         private void inputPicGridView_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void Loading(object uri)
         {
@@ -441,7 +441,7 @@ namespace CJia.Health.App.UI
                 axCmCaptureOcx1.RotateVideo(i);
             }
         }
-        
+
         #region 内部调用方法
         /// <summary>
         /// 根据病案审核状态，提示信息
@@ -962,6 +962,8 @@ namespace CJia.Health.App.UI
                 if (Message.ShowQuery("文件已存在，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
                 {
                     axCmCaptureOcx1.CaptureImage(filePath);         //拍照保存图片
+                    string pdfPath=filePath.Split('.')[0]+".pdf";
+                    CJia.Health.Tools.PDFHelp.ConvertJPG2PDF(filePath, pdfPath);
                     DataTable data = CreatePictureDate(txtFolder.Text);
                     pictureGrid.DataSource = data;
                     pictureView.FocusedRowHandle = data.Rows.Count - 1;
@@ -971,6 +973,8 @@ namespace CJia.Health.App.UI
             else
             {
                 axCmCaptureOcx1.CaptureImage(filePath);         //拍照保存图片
+                string pdfPath=filePath.Split('.')[0]+".pdf";
+                CJia.Health.Tools.PDFHelp.ConvertJPG2PDF(filePath, pdfPath);
                 DataTable data = CreatePictureDate(txtFolder.Text);
                 pictureGrid.DataSource = data;
                 pictureView.FocusedRowHandle = data.Rows.Count - 1;
@@ -1015,12 +1019,12 @@ namespace CJia.Health.App.UI
 
         private void btnShij_Click(object sender, EventArgs e)
         {
-           // CJia.Health.Tools.Help.InFactSize(cJiaPicture, true);
+            // CJia.Health.Tools.Help.InFactSize(cJiaPicture, true);
         }
 
         private void btnHeShi_Click(object sender, EventArgs e)
         {
-           // CJia.Health.Tools.Help.InFactSize(cJiaPicture, false);
+            // CJia.Health.Tools.Help.InFactSize(cJiaPicture, false);
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -1044,6 +1048,6 @@ namespace CJia.Health.App.UI
             //    btnHeShi.Enabled = true;
             //}
         }
-        
+
     }
 }
