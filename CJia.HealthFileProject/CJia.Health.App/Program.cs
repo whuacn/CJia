@@ -40,6 +40,7 @@ namespace CJia.Health.App
             {
                 Application.Run(new NewMainForm());
             }
+            //Application.Run(new Form1());
         }
 
         static void Init()
