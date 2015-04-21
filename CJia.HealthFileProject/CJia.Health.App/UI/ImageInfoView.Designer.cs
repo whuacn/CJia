@@ -35,8 +35,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labPageNo = new CJia.Controls.CJiaLabel();
             this.labTitle = new CJia.Controls.CJiaLabel();
-            this.picDA = new CJia.Controls.CJiaPicture();
             this.imagePanel = new System.Windows.Forms.Panel();
+            this.picDA = new CJia.Controls.CJiaPicture();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
             this.cJiaPanel1.SuspendLayout();
@@ -97,6 +97,16 @@
             this.labTitle.TabIndex = 159;
             this.labTitle.Text = "cJiaLabel1";
             // 
+            // imagePanel
+            // 
+            this.imagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.imagePanel.AutoScroll = true;
+            this.imagePanel.Location = new System.Drawing.Point(7, 5);
+            this.imagePanel.Name = "imagePanel";
+            this.imagePanel.Size = new System.Drawing.Size(160, 481);
+            this.imagePanel.TabIndex = 6;
+            // 
             // picDA
             // 
             this.picDA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -111,16 +121,6 @@
             this.picDA.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.picDA.Size = new System.Drawing.Size(664, 439);
             this.picDA.TabIndex = 158;
-            // 
-            // imagePanel
-            // 
-            this.imagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.imagePanel.AutoScroll = true;
-            this.imagePanel.Location = new System.Drawing.Point(7, 5);
-            this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(160, 481);
-            this.imagePanel.TabIndex = 6;
             // 
             // ImageInfoView
             // 

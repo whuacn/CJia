@@ -10,7 +10,7 @@ using DevExpress.XtraBars.Ribbon;
 
 namespace CJia.Health.Tools
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm //Form
+    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
          private object _presenter;
 

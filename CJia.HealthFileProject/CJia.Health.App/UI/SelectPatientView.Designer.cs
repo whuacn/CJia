@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectPatientView));
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
+            this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
+            this.dtInputEnd = new CJia.Controls.CJiaDate();
+            this.dtInputStart = new CJia.Controls.CJiaDate();
+            this.ckInHos = new CJia.Controls.CJiaCheck();
+            this.ckInput = new CJia.Controls.CJiaCheck();
             this.txtPatientName = new CJia.Controls.CJiaTextBox();
             this.cJiaLabel4 = new CJia.Controls.CJiaLabel();
             this.btnPatientSearch = new CJia.Controls.BtnSearch();
@@ -158,13 +163,14 @@
             this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSavePic = new System.Windows.Forms.ToolStripMenuItem();
-            this.ckInput = new CJia.Controls.CJiaCheck();
-            this.ckInHos = new CJia.Controls.CJiaCheck();
-            this.dtInputStart = new CJia.Controls.CJiaDate();
-            this.dtInputEnd = new CJia.Controls.CJiaDate();
-            this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
             this.cJiaPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckInHos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPatientName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRecotdNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEndDate.Properties.VistaTimeProperties)).BeginInit();
@@ -183,12 +189,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckInput.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ckInHos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cJiaPanel1
@@ -216,6 +216,102 @@
             this.cJiaPanel1.Name = "cJiaPanel1";
             this.cJiaPanel1.Size = new System.Drawing.Size(335, 695);
             this.cJiaPanel1.TabIndex = 2;
+            // 
+            // cJiaLabel1
+            // 
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel1.Location = new System.Drawing.Point(164, 91);
+            this.cJiaLabel1.Name = "cJiaLabel1";
+            this.cJiaLabel1.Size = new System.Drawing.Size(9, 16);
+            this.cJiaLabel1.TabIndex = 166;
+            this.cJiaLabel1.Text = "~";
+            // 
+            // dtInputEnd
+            // 
+            this.dtInputEnd.EditValue = null;
+            this.dtInputEnd.Enabled = false;
+            this.dtInputEnd.Location = new System.Drawing.Point(185, 88);
+            this.dtInputEnd.Name = "dtInputEnd";
+            this.dtInputEnd.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.dtInputEnd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.dtInputEnd.Properties.Appearance.Options.UseFont = true;
+            this.dtInputEnd.Properties.Appearance.Options.UseTextOptions = true;
+            this.dtInputEnd.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.dtInputEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
+            this.dtInputEnd.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.dtInputEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtInputEnd.Properties.EditFormat.FormatString = "yyyy-MM-dd";
+            this.dtInputEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtInputEnd.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.dtInputEnd.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dtInputEnd.Properties.Mask.EditMask = "yyyy-MM-dd";
+            this.dtInputEnd.Properties.ShowToday = false;
+            this.dtInputEnd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(),
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dtInputEnd.Size = new System.Drawing.Size(145, 22);
+            this.dtInputEnd.TabIndex = 165;
+            // 
+            // dtInputStart
+            // 
+            this.dtInputStart.EditValue = null;
+            this.dtInputStart.Enabled = false;
+            this.dtInputStart.Location = new System.Drawing.Point(7, 88);
+            this.dtInputStart.Name = "dtInputStart";
+            this.dtInputStart.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.dtInputStart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.dtInputStart.Properties.Appearance.Options.UseFont = true;
+            this.dtInputStart.Properties.Appearance.Options.UseTextOptions = true;
+            this.dtInputStart.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.dtInputStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
+            this.dtInputStart.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.dtInputStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtInputStart.Properties.EditFormat.FormatString = "yyyy-MM-dd";
+            this.dtInputStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtInputStart.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.dtInputStart.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dtInputStart.Properties.Mask.EditMask = "yyyy-MM-dd";
+            this.dtInputStart.Properties.ShowToday = false;
+            this.dtInputStart.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(),
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dtInputStart.Size = new System.Drawing.Size(145, 22);
+            this.dtInputStart.TabIndex = 164;
+            // 
+            // ckInHos
+            // 
+            this.ckInHos.EditValue = true;
+            this.ckInHos.Location = new System.Drawing.Point(5, 6);
+            this.ckInHos.Name = "ckInHos";
+            this.ckInHos.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.ckInHos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ckInHos.Properties.Appearance.Options.UseBackColor = true;
+            this.ckInHos.Properties.Appearance.Options.UseFont = true;
+            this.ckInHos.Properties.Caption = "入院日期";
+            this.ckInHos.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.ckInHos.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ckInHos.Selectable = true;
+            this.ckInHos.Size = new System.Drawing.Size(113, 21);
+            this.ckInHos.TabIndex = 163;
+            this.ckInHos.CheckedChanged += new System.EventHandler(this.ckInHos_CheckedChanged);
+            // 
+            // ckInput
+            // 
+            this.ckInput.Location = new System.Drawing.Point(5, 61);
+            this.ckInput.Name = "ckInput";
+            this.ckInput.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.ckInput.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ckInput.Properties.Appearance.Options.UseBackColor = true;
+            this.ckInput.Properties.Appearance.Options.UseFont = true;
+            this.ckInput.Properties.Caption = "录入日期";
+            this.ckInput.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.ckInput.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ckInput.Selectable = true;
+            this.ckInput.Size = new System.Drawing.Size(113, 21);
+            this.ckInput.TabIndex = 161;
+            this.ckInput.CheckedChanged += new System.EventHandler(this.ckInput_CheckedChanged);
             // 
             // txtPatientName
             // 
@@ -1788,153 +1884,57 @@
             this.btnHeShi,
             this.btnSavePic});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 158);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 158);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // btnBig
             // 
             this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(122, 22);
+            this.btnBig.Size = new System.Drawing.Size(124, 22);
             this.btnBig.Text = "放大图片";
             this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
             // 
             // btnSmall
             // 
             this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(122, 22);
+            this.btnSmall.Size = new System.Drawing.Size(124, 22);
             this.btnSmall.Text = "缩小图片";
             this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
             // 
             // btnNiX
             // 
             this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(122, 22);
+            this.btnNiX.Size = new System.Drawing.Size(124, 22);
             this.btnNiX.Text = "逆向旋转";
             this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
             // 
             // btnShunX
             // 
             this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(122, 22);
+            this.btnShunX.Size = new System.Drawing.Size(124, 22);
             this.btnShunX.Text = "顺向旋转";
             this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
             // 
             // btnShij
             // 
             this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(122, 22);
+            this.btnShij.Size = new System.Drawing.Size(124, 22);
             this.btnShij.Text = "实际尺寸";
             this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
             // 
             // btnHeShi
             // 
             this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(122, 22);
+            this.btnHeShi.Size = new System.Drawing.Size(124, 22);
             this.btnHeShi.Text = "合适尺寸";
             this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
             // 
             // btnSavePic
             // 
             this.btnSavePic.Name = "btnSavePic";
-            this.btnSavePic.Size = new System.Drawing.Size(122, 22);
+            this.btnSavePic.Size = new System.Drawing.Size(124, 22);
             this.btnSavePic.Text = "保存图片";
             this.btnSavePic.Click += new System.EventHandler(this.btnSavePic_Click);
-            // 
-            // ckInput
-            // 
-            this.ckInput.Location = new System.Drawing.Point(5, 61);
-            this.ckInput.Name = "ckInput";
-            this.ckInput.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ckInput.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.ckInput.Properties.Appearance.Options.UseBackColor = true;
-            this.ckInput.Properties.Appearance.Options.UseFont = true;
-            this.ckInput.Properties.Caption = "录入日期";
-            this.ckInput.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.ckInput.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.ckInput.Selectable = true;
-            this.ckInput.Size = new System.Drawing.Size(113, 21);
-            this.ckInput.TabIndex = 161;
-            this.ckInput.CheckedChanged += new System.EventHandler(this.ckInput_CheckedChanged);
-            // 
-            // ckInHos
-            // 
-            this.ckInHos.EditValue = true;
-            this.ckInHos.Location = new System.Drawing.Point(5, 6);
-            this.ckInHos.Name = "ckInHos";
-            this.ckInHos.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ckInHos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.ckInHos.Properties.Appearance.Options.UseBackColor = true;
-            this.ckInHos.Properties.Appearance.Options.UseFont = true;
-            this.ckInHos.Properties.Caption = "入院日期";
-            this.ckInHos.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.ckInHos.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.ckInHos.Selectable = true;
-            this.ckInHos.Size = new System.Drawing.Size(113, 21);
-            this.ckInHos.TabIndex = 163;
-            this.ckInHos.CheckedChanged += new System.EventHandler(this.ckInHos_CheckedChanged);
-            // 
-            // dtInputStart
-            // 
-            this.dtInputStart.EditValue = null;
-            this.dtInputStart.Enabled = false;
-            this.dtInputStart.Location = new System.Drawing.Point(7, 88);
-            this.dtInputStart.Name = "dtInputStart";
-            this.dtInputStart.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.dtInputStart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.dtInputStart.Properties.Appearance.Options.UseFont = true;
-            this.dtInputStart.Properties.Appearance.Options.UseTextOptions = true;
-            this.dtInputStart.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.dtInputStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
-            this.dtInputStart.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.dtInputStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtInputStart.Properties.EditFormat.FormatString = "yyyy-MM-dd";
-            this.dtInputStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtInputStart.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.dtInputStart.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.dtInputStart.Properties.Mask.EditMask = "yyyy-MM-dd";
-            this.dtInputStart.Properties.ShowToday = false;
-            this.dtInputStart.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(),
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dtInputStart.Size = new System.Drawing.Size(145, 22);
-            this.dtInputStart.TabIndex = 164;
-            // 
-            // dtInputEnd
-            // 
-            this.dtInputEnd.EditValue = null;
-            this.dtInputEnd.Enabled = false;
-            this.dtInputEnd.Location = new System.Drawing.Point(185, 88);
-            this.dtInputEnd.Name = "dtInputEnd";
-            this.dtInputEnd.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.dtInputEnd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.dtInputEnd.Properties.Appearance.Options.UseFont = true;
-            this.dtInputEnd.Properties.Appearance.Options.UseTextOptions = true;
-            this.dtInputEnd.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.dtInputEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
-            this.dtInputEnd.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.dtInputEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtInputEnd.Properties.EditFormat.FormatString = "yyyy-MM-dd";
-            this.dtInputEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtInputEnd.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.dtInputEnd.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.dtInputEnd.Properties.Mask.EditMask = "yyyy-MM-dd";
-            this.dtInputEnd.Properties.ShowToday = false;
-            this.dtInputEnd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(),
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dtInputEnd.Size = new System.Drawing.Size(145, 22);
-            this.dtInputEnd.TabIndex = 165;
-            // 
-            // cJiaLabel1
-            // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cJiaLabel1.Location = new System.Drawing.Point(164, 91);
-            this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(9, 16);
-            this.cJiaLabel1.TabIndex = 166;
-            this.cJiaLabel1.Text = "~";
             // 
             // SelectPatientView
             // 
@@ -1947,6 +1947,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).EndInit();
             this.cJiaPanel1.ResumeLayout(false);
             this.cJiaPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckInHos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPatientName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRecotdNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboEndDate.Properties.VistaTimeProperties)).EndInit();
@@ -1966,12 +1972,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ckInput.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ckInHos.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputStart.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtInputEnd.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
