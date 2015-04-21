@@ -289,12 +289,11 @@
             this.pnlPatient.Controls.Add(this.cJiaLabel17);
             this.pnlPatient.Controls.Add(this.ltxtRecordNo);
             this.pnlPatient.Controls.Add(this.cJiaLabel2);
-            this.pnlPatient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPatient.Location = new System.Drawing.Point(0, 0);
+            this.pnlPatient.Location = new System.Drawing.Point(315, 14);
             this.pnlPatient.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlPatient.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlPatient.Name = "pnlPatient";
-            this.pnlPatient.Size = new System.Drawing.Size(1633, 817);
+            this.pnlPatient.Size = new System.Drawing.Size(995, 579);
             this.pnlPatient.TabIndex = 0;
             // 
             // ltxtInHospitalTime
