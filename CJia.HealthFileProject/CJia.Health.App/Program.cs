@@ -1,4 +1,6 @@
-﻿using CJia.Health.App.UI;
+﻿using CJia._3LevelReview.App;
+using CJia.Health.App.UI;
+using DevExpress.XtraSplashScreen;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -38,6 +40,7 @@ namespace CJia.Health.App
             }
             if (User.IsLoginSuccess)
             {
+                SplashScreenManager.ShowForm(typeof(SplashScreenMain));  
                 Application.Run(new NewMainForm());
             }
         }

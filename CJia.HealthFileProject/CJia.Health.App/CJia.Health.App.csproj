@@ -224,6 +224,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreenMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreenMain.designer.cs">
+      <DependentUpon>SplashScreenMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -500,6 +506,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SplashScreenMain.resx">
+      <DependentUpon>SplashScreenMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>

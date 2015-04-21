@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 using TwainLib;
+using DevExpress.XtraSplashScreen;
+using CJia._3LevelReview.App;
+using DevExpress.XtraTab;
 
 namespace CJia.Health.App
 {
@@ -22,6 +25,7 @@ namespace CJia.Health.App
             Tw = new Twain(MyProductName);
             Tw.Init(this.Handle);
             this.Text = this.Text + " " + CJia.Health.Tools.ConfigHelper.GetAppStrings("Version");
+            SplashScreenManager.CloseForm();
         }
         protected override object CreatePresenter()
         {
@@ -36,133 +40,144 @@ namespace CJia.Health.App
 
         private void btnInfoInput_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;//获得tabpage名称
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.NewPatientInfoInPutView pat = new UI.NewPatientInfoInPutView();
-                cJiaTabControl1.ShowPage(pageTitle, pat);
-            }
+            //string pageTitle = e.Item.Caption;//获得tabpage名称
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.NewPatientInfoInPutView pat = new UI.NewPatientInfoInPutView();
+            //    cJiaTabControl1.ShowPage(pageTitle, pat);
+            //}
+            ShowXTP(e);
         }
 
         private void btnImagesInput_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                string isAUTO = CJia.Health.Tools.ConfigHelper.GetAppStrings("AUTO");
-                string isGZ = CJia.Health.Tools.ConfigHelper.GetAppStrings("isGZ");
-                if (isAUTO == "0")
-                {
-                    UI.NewPictureInputView image = new UI.NewPictureInputView();
-                    cJiaTabControl1.ShowPage(pageTitle, image);
-                }
-                else
-                {
-                    if (isGZ == "1")
-                    {
-                        UI.PhotoNewView image = new UI.PhotoNewView();
-                        cJiaTabControl1.ShowPage(pageTitle, image);
-                    }
-                    else
-                    {
-                        UI.PhotoView image = new UI.PhotoView();
-                        cJiaTabControl1.ShowPage(pageTitle, image);
-                    }
-                }
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    string isAUTO = CJia.Health.Tools.ConfigHelper.GetAppStrings("AUTO");
+            //    string isGZ = CJia.Health.Tools.ConfigHelper.GetAppStrings("isGZ");
+            //    if (isAUTO == "0")
+            //    {
+            //        UI.NewPictureInputView image = new UI.NewPictureInputView();
+            //        cJiaTabControl1.ShowPage(pageTitle, image);
+            //    }
+            //    else
+            //    {
+            //        if (isGZ == "1")
+            //        {
+            //            UI.PhotoNewView image = new UI.PhotoNewView();
+            //            cJiaTabControl1.ShowPage(pageTitle, image);
+            //        }
+            //        else
+            //        {
+            //            UI.PhotoView image = new UI.PhotoView();
+            //            cJiaTabControl1.ShowPage(pageTitle, image);
+            //        }
+            //    }
+            //}
         }
 
         private void btnDataCheck_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.NewImageCheckView data = new UI.NewImageCheckView();
-                //UI.DataCheckView data = new UI.DataCheckView();
-                cJiaTabControl1.ShowPage(pageTitle, data);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.NewImageCheckView data = new UI.NewImageCheckView();
+            //    //UI.DataCheckView data = new UI.DataCheckView();
+            //    cJiaTabControl1.ShowPage(pageTitle, data);
+            //}
         }
 
         private void btnProject_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.ProjectManageView project = new UI.ProjectManageView();
-                cJiaTabControl1.ShowPage(pageTitle, project);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.ProjectManageView project = new UI.ProjectManageView();
+            //    cJiaTabControl1.ShowPage(pageTitle, project);
+            //}
         }
 
         private void btnDept_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.DeptManageView dept = new UI.DeptManageView();
-                cJiaTabControl1.ShowPage(pageTitle, dept);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.DeptManageView dept = new UI.DeptManageView();
+            //    cJiaTabControl1.ShowPage(pageTitle, dept);
+            //}
         }
 
         private void btnDoctor_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.DoctorManageView doctor = new UI.DoctorManageView();
-                cJiaTabControl1.ShowPage(pageTitle, doctor);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.DoctorManageView doctor = new UI.DoctorManageView();
+            //    cJiaTabControl1.ShowPage(pageTitle, doctor);
+            //}
         }
 
         // 用户维护
         private void btnUser_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.UserManageView user = new UI.UserManageView();
-                cJiaTabControl1.ShowPage(pageTitle, user);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.UserManageView user = new UI.UserManageView();
+            //    cJiaTabControl1.ShowPage(pageTitle, user);
+            //}
         }
 
         // 权限维护
         private void btnRole_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.RoleManageView user = new UI.RoleManageView();
-                cJiaTabControl1.ShowPage(pageTitle, user);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.RoleManageView user = new UI.RoleManageView();
+            //    cJiaTabControl1.ShowPage(pageTitle, user);
+            //}
         }
 
         // 权限功能维护
         private void btnRoleFounction_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.RoleFunctionView user = new UI.RoleFunctionView();
-                cJiaTabControl1.ShowPage(pageTitle, user);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.RoleFunctionView user = new UI.RoleFunctionView();
+            //    cJiaTabControl1.ShowPage(pageTitle, user);
+            //}
         }
         private void BtnBorrow_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;//获得tabpage名称
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.ApprovalBorrowView borrow = new UI.ApprovalBorrowView();
-                cJiaTabControl1.ShowPage(pageTitle, borrow);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;//获得tabpage名称
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.ApprovalBorrowView borrow = new UI.ApprovalBorrowView();
+            //    cJiaTabControl1.ShowPage(pageTitle, borrow);
+            //}
         }
 
         private void btnBorrowTime_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;//获得tabpage名称
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.BorrowTimeLenthView borrow = new UI.BorrowTimeLenthView();
-                cJiaTabControl1.ShowPage(pageTitle, borrow);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;//获得tabpage名称
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.BorrowTimeLenthView borrow = new UI.BorrowTimeLenthView();
+            //    cJiaTabControl1.ShowPage(pageTitle, borrow);
+            //}
         }
 
         //注销
@@ -187,9 +202,13 @@ namespace CJia.Health.App
                         this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
                         InitializeComponent();
 
-                        while (cJiaTabControl1.TabPages.Count > 0)
+                        //while (cJiaTabControl1.TabPages.Count > 0)
+                        //{
+                        //    cJiaTabControl1.TabPages[0].Dispose();
+                        //}
+                        while (xTC.TabPages.Count > 0)
                         {
-                            cJiaTabControl1.TabPages[0].Dispose();
+                            xTC.TabPages[0].Dispose();
                         }
                         Init();
                         mainFormArgs.UserID = User.UserData.Rows[0]["USER_ID"].ToString();
@@ -317,22 +336,24 @@ namespace CJia.Health.App
 
         private void btnHomePage_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.MyPatientHandelView uc = new UI.MyPatientHandelView();
-                cJiaTabControl1.ShowPage(pageTitle, uc);
-            }
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.MyPatientHandelView uc = new UI.MyPatientHandelView();
+            //    cJiaTabControl1.ShowPage(pageTitle, uc);
+            //}
+            ShowXTP(e);
         }
 
         private void btnDataQuery_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.SelectPatientView uc = new UI.SelectPatientView();
-                cJiaTabControl1.ShowPage(pageTitle, uc);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.SelectPatientView uc = new UI.SelectPatientView();
+            //    cJiaTabControl1.ShowPage(pageTitle, uc);
+            //}
         }
 
         private void btnToolDataCheck_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -367,22 +388,24 @@ namespace CJia.Health.App
 
         private void btnProSet_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.PictureProjectSetView image = new UI.PictureProjectSetView();
-                cJiaTabControl1.ShowPage(pageTitle, image);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.PictureProjectSetView image = new UI.PictureProjectSetView();
+            //    cJiaTabControl1.ShowPage(pageTitle, image);
+            //}
         }
 
         private void btnPrintApply_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.PrintApplyView image = new UI.PrintApplyView();
-                cJiaTabControl1.ShowPage(pageTitle, image);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.PrintApplyView image = new UI.PrintApplyView();
+            //    cJiaTabControl1.ShowPage(pageTitle, image);
+            //}
         }
 
         #region Scan扫描仪选择
@@ -409,31 +432,33 @@ namespace CJia.Health.App
 
         private void toolStripButton1_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                string isScan = CJia.Health.Tools.ConfigHelper.GetAppStrings("isScanInSoftware");
-                if (isScan == "1")//程序中调用扫描仪进行扫描
-                {
-                    UI.ScanView image = new UI.ScanView();
-                    cJiaTabControl1.ShowPage(pageTitle, image);
-                }
-                else
-                {
-                    UI.JJCJScanView image2 = new UI.JJCJScanView();
-                    cJiaTabControl1.ShowPage(pageTitle, image2);
-                }
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    string isScan = CJia.Health.Tools.ConfigHelper.GetAppStrings("isScanInSoftware");
+            //    if (isScan == "1")//程序中调用扫描仪进行扫描
+            //    {
+            //        UI.ScanView image = new UI.ScanView();
+            //        cJiaTabControl1.ShowPage(pageTitle, image);
+            //    }
+            //    else
+            //    {
+            //        UI.JJCJScanView image2 = new UI.JJCJScanView();
+            //        cJiaTabControl1.ShowPage(pageTitle, image2);
+            //    }
+            //}
         }
 
         private void toolStripButton2_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.MergeView image = new UI.MergeView();
-                cJiaTabControl1.ShowPage(pageTitle, image);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.MergeView image = new UI.MergeView();
+            //    cJiaTabControl1.ShowPage(pageTitle, image);
+            //}
         }
 
         private void cJiaTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
@@ -521,7 +546,7 @@ namespace CJia.Health.App
 
         void btnQuZhaodian_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             AxCmCaptureOcxLib.AxCmCaptureOcx photo = (AxCmCaptureOcxLib.AxCmCaptureOcx)page.Controls.Find("axCmCaptureOcx1", true)[0];
             if (btnQuZhaodian.Checked)
             {
@@ -535,7 +560,7 @@ namespace CJia.Health.App
 
         void ckTuo_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             AxCmCaptureOcxLib.AxCmCaptureOcx photo = (AxCmCaptureOcxLib.AxCmCaptureOcx)page.Controls.Find("axCmCaptureOcx1", true)[0];
             if (ckTuo.Checked)
             {
@@ -549,7 +574,7 @@ namespace CJia.Health.App
 
         void ckBaoguang_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             AxCmCaptureOcxLib.AxCmCaptureOcx photo = (AxCmCaptureOcxLib.AxCmCaptureOcx)page.Controls.Find("axCmCaptureOcx1", true)[0];
             if (ckBaoguang.Checked)
             {
@@ -563,7 +588,7 @@ namespace CJia.Health.App
 
         void ckShoudong_EditValueChanged(object sender, EventArgs e)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             AxCmCaptureOcxLib.AxCmCaptureOcx photo = (AxCmCaptureOcxLib.AxCmCaptureOcx)page.Controls.Find("axCmCaptureOcx1", true)[0];
             CJia.Controls.CJiaCheck ck = (CJia.Controls.CJiaCheck)page.Controls.Find("ckShouDong", true)[0];
             if (ckShoudong.Checked)
@@ -580,7 +605,7 @@ namespace CJia.Health.App
 
         void ckZidong_EditValueChanged(object sender, EventArgs e)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             AxCmCaptureOcxLib.AxCmCaptureOcx photo = (AxCmCaptureOcxLib.AxCmCaptureOcx)page.Controls.Find("axCmCaptureOcx1", true)[0];
             CJia.Controls.CJiaCheck ck = (CJia.Controls.CJiaCheck)page.Controls.Find("ckZiDong", true)[0];
             if (ckZidong.Checked)
@@ -630,7 +655,7 @@ namespace CJia.Health.App
         /// <param name="bol">true表示实际尺寸</param>
         public void InFactSize(bool bol)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             CJia.Controls.CJiaPicture pic = (CJia.Controls.CJiaPicture)page.Controls.Find("cJiaPicture", true)[0];
             if (pic.Image != null)
             {
@@ -656,7 +681,7 @@ namespace CJia.Health.App
         /// <param name="bol">true表示左旋转</param>
         public void XuanZhuang(bool bol)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             CJia.Controls.CJiaPicture pic = (CJia.Controls.CJiaPicture)page.Controls.Find("cJiaPicture", true)[0];
             if (pic.Image != null)
             {
@@ -689,7 +714,7 @@ namespace CJia.Health.App
         /// <param name="bol"></param>
         public void FangDa(bool bol)
         {
-            DevExpress.XtraTab.XtraTabPage page = cJiaTabControl1.SelectedTabPage;
+            DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
             CJia.Controls.CJiaPicture pic = (CJia.Controls.CJiaPicture)page.Controls.Find("cJiaPicture", true)[0];
             if (pic.Image != null)
             {
@@ -719,23 +744,254 @@ namespace CJia.Health.App
 
         private void btnUserWork_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
-            {
-                UI.UserWorkStat uc = new UI.UserWorkStat();
-                cJiaTabControl1.ShowPage(pageTitle, uc);
-            }
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.UserWorkStat uc = new UI.UserWorkStat();
+            //    cJiaTabControl1.ShowPage(pageTitle, uc);
+            //}
         }
 
         private void btnCompleteQuery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pageTitle = e.Item.Caption;
-            if (!cJiaTabControl1.isExistPage(pageTitle))
+            ShowXTP(e);
+            //string pageTitle = e.Item.Caption;
+            //if (!cJiaTabControl1.isExistPage(pageTitle))
+            //{
+            //    UI.CompleteQuery uc = new UI.CompleteQuery();
+            //    cJiaTabControl1.ShowPage(pageTitle, uc);
+            //}
+        }
+
+        #region  Tab控件操作
+        private void ShowXTP(DevExpress.XtraBars.ItemClickEventArgs bit)
+        {
+
+            string pageTitle = (bit.Item as DevExpress.XtraBars.BarItem).Caption;//获得tabpage名称
+            string name = (bit.Item as DevExpress.XtraBars.BarItem).Name;//获得tabpage名称
+            foreach (DevExpress.XtraTab.XtraTabPage page in xTC.TabPages)
             {
-                UI.CompleteQuery uc = new UI.CompleteQuery();
-                cJiaTabControl1.ShowPage(pageTitle, uc);
+
+                if (page.Text == pageTitle)
+                {
+                    xTC.SelectedTabPage = page;//显示该页
+                    return;
+                }
+            }
+            SplashScreenManager.ShowForm(typeof(SplashScreenMain));
+            //
+            UserControl uc = new UserControl();
+            switch (name)
+            {
+                case "btnInfoInput"://运行管理
+                    uc = new UI.NewPatientInfoInPutView();
+                    break;
+                case "btnHomePage":
+                    uc = new UI.MyPatientHandelView();
+                    break;
+                case "btnImagesInput":
+                    string isAUTO = CJia.Health.Tools.ConfigHelper.GetAppStrings("AUTO");
+                    string isGZ = CJia.Health.Tools.ConfigHelper.GetAppStrings("isGZ");
+                    if (isAUTO == "0")
+                    {
+                        uc = new UI.NewPictureInputView();
+                    }
+                    else
+                    {
+                        if (isGZ == "1")
+                        {
+                            uc = new UI.PhotoNewView();
+                        }
+                        else
+                        {
+                            uc = new UI.PhotoView();
+                        }
+                    }
+                    break;
+                case "toolStripButton1":
+                    string isScan = CJia.Health.Tools.ConfigHelper.GetAppStrings("isScanInSoftware");
+                    if (isScan == "1")//程序中调用扫描仪进行扫描
+                    {
+                        uc = new UI.ScanView();
+                    }
+                    else
+                    {
+                        uc = new UI.JJCJScanView();
+                    }
+                    break;
+                case "toolStripButton2":
+                    uc = new UI.MergeView();
+                    break;
+                case "btnProSet":
+                    uc = new UI.PictureProjectSetView();
+                    break;
+                case "btnDataCheck":
+                    uc = new UI.NewImageCheckView();
+                    break;
+                case "btnDataQuery":
+                    uc = new UI.SelectPatientView();
+                    break;
+                case "btnUserWork":
+                    uc = new UI.UserWorkStat();
+                    break;
+                case "btnCompleteQuery":
+                    uc = new UI.CompleteQuery();
+                    break;
+                case "btnPrintApply":
+                    uc = new UI.PrintApplyView();
+                    break;
+                case "BtnBorrow":
+                    uc = new UI.ApprovalBorrowView();
+                    break;
+                case "btnProject":
+                    uc = new UI.ProjectManageView();
+                    break;
+                case "btnDept":
+                    uc = new UI.DeptManageView();
+                    break;
+                case "btnDoctor":
+                    uc = new UI.DoctorManageView();
+                    break;
+                case "btnBorrowTime":
+                    uc = new UI.BorrowTimeLenthView();
+                    break;
+                case "btnUser":
+                    uc = new UI.UserManageView();
+                    break;
+                case "btnRole":
+                    uc = new UI.RoleManageView();
+                    break;
+                case "btnRoleFounction":
+                    uc = new UI.RoleFunctionView();
+                    break;
+                default:
+                    break;
+            }
+            if (uc != null)
+            {
+                //获得图标
+                Image pageImage = (bit.Item as DevExpress.XtraBars.BarButtonItem).Glyph;
+                Bitmap bmp = null;
+                if (pageImage != null)
+                    bmp = new Bitmap(pageImage, 16, 16);
+                //增加tabpage
+                XtraTabPage xpage = new XtraTabPage();
+                xpage.Name = name;
+                xpage.Text = pageTitle;
+                xpage.Image = bmp;
+                xpage.Appearance.Header.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+                xpage.Appearance.Header.Options.UseFont = true;
+                xpage.Appearance.HeaderActive.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+                xpage.Appearance.HeaderActive.ForeColor = System.Drawing.SystemColors.HotTrack;
+                xpage.Appearance.HeaderActive.Options.UseFont = true;
+                xpage.Appearance.HeaderActive.Options.UseForeColor = true;
+                xpage.Appearance.HeaderDisabled.Font = new System.Drawing.Font("微软雅黑", 9F);
+                xpage.Appearance.HeaderDisabled.Options.UseFont = true;
+                xpage.Appearance.HeaderHotTracked.Font = new System.Drawing.Font("微软雅黑", 9F);
+                xpage.Appearance.HeaderHotTracked.Options.UseFont = true;
+                xpage.Appearance.PageClient.Font = new System.Drawing.Font("微软雅黑", 9F);
+                xpage.Appearance.PageClient.Options.UseFont = true;
+                //添加要增加的控件
+                xpage.Controls.Add(uc);
+                xTC.TabPages.Add(xpage);
+                xTC.SelectedTabPage = xpage;
+            }
+            else
+            {
+                return;
+            }
+            //System.Threading.Thread.Sleep(1000);
+            SplashScreenManager.CloseForm();
+        }
+        #endregion
+
+        private void xTC_CloseButtonClick(object sender, EventArgs e)
+        {
+            DevExpress.XtraTab.ViewInfo.ClosePageButtonEventArgs EArg = (DevExpress.XtraTab.ViewInfo.ClosePageButtonEventArgs)e;
+            string name = EArg.Page.Text;//得到关闭的选项卡的text
+            foreach (XtraTabPage page in xTC.TabPages)//遍历得到和关闭的选项卡一样的Text
+            {
+                if (page.Text == name)
+                {
+                    xTC.TabPages.Remove(page);
+                    page.Dispose();
+                    return;
+                }
             }
         }
 
+        private void xTC_SelectedPageChanged(object sender, TabPageChangedEventArgs e)
+        {
+            if (xTC.TabPages.Count > 0)
+            {
+                DevExpress.XtraTab.XtraTabPage page = xTC.SelectedTabPage;
+                if (page.Controls.Find("axCmCaptureOcx1", true).Length > 0)
+                {
+                    pgPhoto.Enabled = true;
+                    ckZidong.Checked = true;
+                    ckZidong.CheckedChanged -= ckZidong_EditValueChanged;
+                    ckZidong.CheckedChanged += ckZidong_EditValueChanged;
+                    ckShoudong.CheckedChanged -= ckShoudong_EditValueChanged;
+                    ckShoudong.CheckedChanged += ckShoudong_EditValueChanged;
+                    ckBaoguang.CheckedChanged -= ckBaoguang_CheckedChanged;
+                    ckBaoguang.CheckedChanged += ckBaoguang_CheckedChanged;
+                    ckTuo.CheckedChanged -= ckTuo_CheckedChanged;
+                    ckTuo.CheckedChanged += ckTuo_CheckedChanged;
+                    btnQuZhaodian.CheckedChanged -= btnQuZhaodian_ItemClick;
+                    btnQuZhaodian.CheckedChanged += btnQuZhaodian_ItemClick;
+                    //combType.EditValueChanged -= combType_EditValueChanged;
+                    //combType.EditValueChanged += combType_EditValueChanged;
+                }
+                else
+                {
+                    pgPhoto.Enabled = false;
+                    ckZidong.CheckedChanged -= ckZidong_EditValueChanged;
+                    ckShoudong.CheckedChanged -= ckShoudong_EditValueChanged;
+                    ckBaoguang.CheckedChanged -= ckBaoguang_CheckedChanged;
+                    ckTuo.CheckedChanged -= ckTuo_CheckedChanged;
+                    btnQuZhaodian.CheckedChanged -= btnQuZhaodian_ItemClick;
+                    //combType.EditValueChanged -= combType_EditValueChanged;
+                }
+                if (page.Controls.Find("cJiaPicture", true).Length > 0)
+                {
+                    btnBig.ItemClick -= btnBig_ItemClick;
+                    btnBig.Enabled = true;
+                    btnBig.ItemClick += btnBig_ItemClick;
+                    btnSmall.ItemClick -= btnSmall_ItemClick;
+                    btnSmall.Enabled = true;
+                    btnSmall.ItemClick += btnSmall_ItemClick;
+
+                    btnRight.ItemClick -= btnRight_ItemClick;
+                    btnRight.Enabled = true;
+                    btnRight.ItemClick += btnRight_ItemClick;
+                    btnLeft.ItemClick -= btnLeft_ItemClick;
+                    btnLeft.Enabled = true;
+                    btnLeft.ItemClick += btnLeft_ItemClick;
+
+                    btnFact.ItemClick -= btnFact_ItemClick;
+                    btnFact.Enabled = true;
+                    btnFact.ItemClick += btnFact_ItemClick;
+                    btnFit.ItemClick -= btnFit_ItemClick;
+                    btnFit.Enabled = true;
+                    btnFit.ItemClick += btnFit_ItemClick;
+                }
+                else
+                {
+                    btnBig.Enabled = false;
+                    btnBig.ItemClick -= btnBig_ItemClick;
+                    btnSmall.Enabled = false;
+                    btnSmall.ItemClick -= btnSmall_ItemClick;
+                    btnRight.Enabled = false;
+                    btnRight.ItemClick -= btnRight_ItemClick;
+                    btnLeft.Enabled = false;
+                    btnLeft.ItemClick -= btnLeft_ItemClick;
+                    btnFact.Enabled = false;
+                    btnFact.ItemClick -= btnFact_ItemClick;
+                    btnFit.Enabled = false;
+                    btnFit.ItemClick -= btnFit_ItemClick;
+                }
+            }
+        }
     }
 }

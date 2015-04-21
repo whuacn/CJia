@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewPatientInfoInPutView));
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
             this.pnlPatient = new CJia.Controls.CJiaPanel();
+            this.ltxtInHospitalTime = new CJia.Controls.CJiaTextBox();
             this.ltxtBirthPlace = new CJia.Controls.CJiaLineTextBox();
             this.cJiaLabel56 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel51 = new CJia.Controls.CJiaLabel();
@@ -137,9 +138,9 @@
             this.cJiaLabel17 = new CJia.Controls.CJiaLabel();
             this.ltxtRecordNo = new CJia.Controls.CJiaLineTextBox();
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
-            this.ltxtInHospitalTime = new CJia.Controls.CJiaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pnlPatient)).BeginInit();
             this.pnlPatient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ltxtInHospitalTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSurgeryDate2.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSurgeryDate2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSurgeryDate3.Properties.VistaTimeProperties)).BeginInit();
@@ -176,7 +177,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboBirthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaComboBox21View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ltxtInHospitalTime.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cJiaLabel1
@@ -289,12 +289,31 @@
             this.pnlPatient.Controls.Add(this.cJiaLabel17);
             this.pnlPatient.Controls.Add(this.ltxtRecordNo);
             this.pnlPatient.Controls.Add(this.cJiaLabel2);
-            this.pnlPatient.Location = new System.Drawing.Point(315, 14);
+            this.pnlPatient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPatient.Location = new System.Drawing.Point(0, 0);
             this.pnlPatient.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlPatient.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlPatient.Name = "pnlPatient";
-            this.pnlPatient.Size = new System.Drawing.Size(995, 579);
+            this.pnlPatient.Size = new System.Drawing.Size(1633, 817);
             this.pnlPatient.TabIndex = 0;
+            // 
+            // ltxtInHospitalTime
+            // 
+            this.ltxtInHospitalTime.Location = new System.Drawing.Point(283, 53);
+            this.ltxtInHospitalTime.Name = "ltxtInHospitalTime";
+            this.ltxtInHospitalTime.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.ltxtInHospitalTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtInHospitalTime.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.ltxtInHospitalTime.Properties.Appearance.Options.UseBackColor = true;
+            this.ltxtInHospitalTime.Properties.Appearance.Options.UseFont = true;
+            this.ltxtInHospitalTime.Properties.Appearance.Options.UseForeColor = true;
+            this.ltxtInHospitalTime.Properties.Appearance.Options.UseTextOptions = true;
+            this.ltxtInHospitalTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ltxtInHospitalTime.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.ltxtInHospitalTime.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ltxtInHospitalTime.Size = new System.Drawing.Size(41, 22);
+            this.ltxtInHospitalTime.TabIndex = 601;
+            this.ltxtInHospitalTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ltxtInHospitalTime_KeyDown);
             // 
             // ltxtBirthPlace
             // 
@@ -1794,24 +1813,6 @@
             this.cJiaLabel2.TabIndex = 139;
             this.cJiaLabel2.Text = "病案号";
             // 
-            // ltxtInHospitalTime
-            // 
-            this.ltxtInHospitalTime.Location = new System.Drawing.Point(283, 53);
-            this.ltxtInHospitalTime.Name = "ltxtInHospitalTime";
-            this.ltxtInHospitalTime.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.ltxtInHospitalTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.ltxtInHospitalTime.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.ltxtInHospitalTime.Properties.Appearance.Options.UseBackColor = true;
-            this.ltxtInHospitalTime.Properties.Appearance.Options.UseFont = true;
-            this.ltxtInHospitalTime.Properties.Appearance.Options.UseForeColor = true;
-            this.ltxtInHospitalTime.Properties.Appearance.Options.UseTextOptions = true;
-            this.ltxtInHospitalTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ltxtInHospitalTime.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.ltxtInHospitalTime.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.ltxtInHospitalTime.Size = new System.Drawing.Size(41, 22);
-            this.ltxtInHospitalTime.TabIndex = 601;
-            this.ltxtInHospitalTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ltxtInHospitalTime_KeyDown);
-            // 
             // NewPatientInfoInPutView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1825,6 +1826,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnlPatient)).EndInit();
             this.pnlPatient.ResumeLayout(false);
             this.pnlPatient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ltxtInHospitalTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSurgeryDate2.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSurgeryDate2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSurgeryDate3.Properties.VistaTimeProperties)).EndInit();
@@ -1861,7 +1863,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboBirthday.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaComboBox21View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ltxtInHospitalTime.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

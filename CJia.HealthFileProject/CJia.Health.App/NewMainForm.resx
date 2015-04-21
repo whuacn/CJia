@@ -9406,6 +9406,21 @@
   <data name="ribbonPage1.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
   </data>
+  <data name="efff.Text" xml:space="preserve">
+    <value>起始页</value>
+  </data>
+  <data name="gggg.Text" xml:space="preserve">
+    <value>档案采集</value>
+  </data>
+  <data name="ewg.Text" xml:space="preserve">
+    <value>档案加工</value>
+  </data>
+  <data name="pgPhoto.Text" xml:space="preserve">
+    <value>拍照设置</value>
+  </data>
+  <data name="ribbonPageGroup3.Text" xml:space="preserve">
+    <value>图片处理</value>
+  </data>
   <data name="ribbonPage1.Text" xml:space="preserve">
     <value>数据加工</value>
   </data>
@@ -9446,7 +9461,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ribbonStatusBar1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ribbonControl1.Name" xml:space="preserve">
     <value>ribbonControl1</value>
@@ -9458,22 +9473,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ribbonControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="efff.Text" xml:space="preserve">
-    <value>起始页</value>
-  </data>
-  <data name="gggg.Text" xml:space="preserve">
-    <value>档案采集</value>
-  </data>
-  <data name="ewg.Text" xml:space="preserve">
-    <value>档案加工</value>
-  </data>
-  <data name="pgPhoto.Text" xml:space="preserve">
-    <value>拍照设置</value>
-  </data>
-  <data name="ribbonPageGroup3.Text" xml:space="preserve">
-    <value>图片处理</value>
+    <value>3</value>
   </data>
   <data name="ddde.Text" xml:space="preserve">
     <value>查询</value>
@@ -9546,12 +9546,12 @@
   <data name="cJiaTabControl1.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
+  <data name="cJiaTabControl1.BorderStyle" type="DevExpress.XtraEditors.Controls.BorderStyles, DevExpress.Utils.v12.1">
+    <value>UltraFlat</value>
+  </data>
   <assembly alias="DevExpress.XtraEditors.v12.1" name="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6" />
   <data name="cJiaTabControl1.ClosePageButtonShowMode" type="DevExpress.XtraTab.ClosePageButtonShowMode, DevExpress.XtraEditors.v12.1">
     <value>InActiveTabPageHeaderAndOnMouseHover</value>
-  </data>
-  <data name="cJiaTabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="cJiaTabControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
@@ -9563,10 +9563,97 @@
     <value>Always</value>
   </data>
   <data name="cJiaTabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 153</value>
+    <value>241, 165</value>
   </data>
   <data name="cJiaTabControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>xTPHome</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xTPHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 461</value>
+  </data>
+  <data name="xTPHome.Text" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="&gt;&gt;xTPHome.Name" xml:space="preserve">
+    <value>xTPHome</value>
+  </data>
+  <data name="&gt;&gt;xTPHome.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;xTPHome.Parent" xml:space="preserve">
+    <value>cJiaTabControl1</value>
+  </data>
+  <data name="&gt;&gt;xTPHome.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cJiaTabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>793, 489</value>
+  </data>
+  <data name="cJiaTabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="cJiaTabControl1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cJiaTabControl1.Name" xml:space="preserve">
+    <value>cJiaTabControl1</value>
+  </data>
+  <data name="&gt;&gt;cJiaTabControl1.Type" xml:space="preserve">
+    <value>CJia.Controls.CJiaTabControl, CJia.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cJiaTabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cJiaTabControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Name" xml:space="preserve">
+    <value>lblSystem</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 45</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>xTPHome</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblSystem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9595,69 +9682,60 @@
   <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1032, 45</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>xTPHome</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="xTPHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1032, 565</value>
-  </data>
-  <data name="xTPHome.Text" xml:space="preserve">
-    <value>首页</value>
-  </data>
-  <data name="&gt;&gt;xTPHome.Name" xml:space="preserve">
-    <value>xTPHome</value>
-  </data>
-  <data name="&gt;&gt;xTPHome.Type" xml:space="preserve">
-    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
-  </data>
-  <data name="&gt;&gt;xTPHome.Parent" xml:space="preserve">
-    <value>cJiaTabControl1</value>
-  </data>
-  <data name="&gt;&gt;xTPHome.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cJiaTabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1034, 591</value>
-  </data>
-  <data name="cJiaTabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;cJiaTabControl1.Name" xml:space="preserve">
-    <value>cJiaTabControl1</value>
-  </data>
-  <data name="&gt;&gt;cJiaTabControl1.Type" xml:space="preserve">
-    <value>CJia.Controls.CJiaTabControl, CJia.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cJiaTabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cJiaTabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="xTC.ClosePageButtonShowMode" type="DevExpress.XtraTab.ClosePageButtonShowMode, DevExpress.XtraEditors.v12.1">
+    <value>InAllTabPageHeaders</value>
+  </data>
+  <data name="xTC.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="xTC.HeaderButtons" type="DevExpress.XtraTab.TabButtons, DevExpress.XtraEditors.v12.1">
+    <value>Close, Default</value>
+  </data>
+  <data name="xTC.HeaderButtonsShowMode" type="DevExpress.XtraTab.TabButtonShowMode, DevExpress.XtraEditors.v12.1">
+    <value>Always</value>
+  </data>
+  <data name="xTC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 153</value>
+  </data>
+  <data name="xttpHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1032, 565</value>
+  </data>
+  <data name="xttpHome.Text" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="&gt;&gt;xttpHome.Name" xml:space="preserve">
+    <value>xttpHome</value>
+  </data>
+  <data name="&gt;&gt;xttpHome.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;xttpHome.Parent" xml:space="preserve">
+    <value>xTC</value>
+  </data>
+  <data name="&gt;&gt;xttpHome.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xTC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1034, 591</value>
+  </data>
+  <data name="xTC.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;xTC.Name" xml:space="preserve">
+    <value>xTC</value>
+  </data>
+  <data name="&gt;&gt;xTC.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabControl, DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;xTC.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;xTC.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -10386,6 +10464,30 @@
   <data name="&gt;&gt;btnCompleteQuery.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
+  <data name="&gt;&gt;lblLoginTime.Name" xml:space="preserve">
+    <value>lblLoginTime</value>
+  </data>
+  <data name="&gt;&gt;lblLoginTime.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;barStaticItem1.Name" xml:space="preserve">
+    <value>barStaticItem1</value>
+  </data>
+  <data name="&gt;&gt;barStaticItem1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
+    <value>lblUserName</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;bsiCompany.Name" xml:space="preserve">
+    <value>bsiCompany</value>
+  </data>
+  <data name="&gt;&gt;bsiCompany.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
   <data name="&gt;&gt;ribbonPage1.Name" xml:space="preserve">
     <value>ribbonPage1</value>
   </data>
@@ -10493,30 +10595,6 @@
   </data>
   <data name="&gt;&gt;barButtonItem40.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
-  </data>
-  <data name="&gt;&gt;lblLoginTime.Name" xml:space="preserve">
-    <value>lblLoginTime</value>
-  </data>
-  <data name="&gt;&gt;lblLoginTime.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem1.Name" xml:space="preserve">
-    <value>barStaticItem1</value>
-  </data>
-  <data name="&gt;&gt;barStaticItem1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
-    <value>lblUserName</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
-  </data>
-  <data name="&gt;&gt;bsiCompany.Name" xml:space="preserve">
-    <value>bsiCompany</value>
-  </data>
-  <data name="&gt;&gt;bsiCompany.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
   <data name="&gt;&gt;defaultLookAndFeel1.Name" xml:space="preserve">
     <value>defaultLookAndFeel1</value>
