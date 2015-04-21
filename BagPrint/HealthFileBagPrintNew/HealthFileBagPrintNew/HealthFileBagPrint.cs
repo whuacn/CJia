@@ -26,8 +26,8 @@ namespace HealthFileBagPrintNew
         {
             using (DBHelper helper = new DBHelper())
             {
-                string sql = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? AND (V.FOOFFI = ? OR ?='quanbu')";
-                string str2 = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FMRDID LIKE ? \r\n                               AND V.FUDATE between ? and ? AND (V.FOOFFI = ? OR ?='quanbu')";
+                string sql = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FBIHID LIKE ? AND (V.FOOFFI = ? OR ?='quanbu')";
+                string str2 = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FBIHID LIKE ? \r\n                               AND V.FUDATE between ? and ? AND (V.FOOFFI = ? OR ?='quanbu')";
                 string text = this.txtFmrdid.Text;
                 string str4 = this.CbUser.SelectedValue.ToString();
                 string str5 = (str4 == "quanbu") ? "%%" : str4;
@@ -52,6 +52,7 @@ namespace HealthFileBagPrintNew
                 };
                 table.Columns.Add(column);
                 this.gridFile.DataSource = table;
+                lblRowsCount.Text = "查询结果共【"+table.Rows.Count+"】行";
             }
         }
 

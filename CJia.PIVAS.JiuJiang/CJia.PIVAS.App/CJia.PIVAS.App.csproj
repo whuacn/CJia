@@ -293,6 +293,12 @@
     <Compile Include="UI\OneScanningMonitoringView.Designer.cs">
       <DependentUpon>OneScanningMonitoringView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PharmEconomizeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PharmEconomizeUI.Designer.cs">
+      <DependentUpon>PharmEconomizeUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PharmFilterView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -763,6 +769,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\OneScanningMonitoringView.resx">
       <DependentUpon>OneScanningMonitoringView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PharmEconomizeUI.resx">
+      <DependentUpon>PharmEconomizeUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PharmFilterView.resx">
       <DependentUpon>PharmFilterView.cs</DependentUpon>

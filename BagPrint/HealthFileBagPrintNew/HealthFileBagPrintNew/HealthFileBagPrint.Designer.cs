@@ -38,6 +38,7 @@
             this.DEBegin = new DevExpress.XtraEditors.DateEdit();
             this.gridFile = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,7 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CbDept = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lblRowsCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DEBegin.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DEBegin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFile)).BeginInit();
@@ -95,7 +96,7 @@
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(47, 12);
             this.label.TabIndex = 1;
-            this.label.Text = "病案号:";
+            this.label.Text = "住院号:";
             // 
             // label3
             // 
@@ -137,7 +138,7 @@
             // DEBegin
             // 
             this.DEBegin.EditValue = null;
-            this.DEBegin.Location = new System.Drawing.Point(99, 69);
+            this.DEBegin.Location = new System.Drawing.Point(78, 69);
             this.DEBegin.Name = "DEBegin";
             this.DEBegin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -148,7 +149,7 @@
             this.DEBegin.Properties.Mask.EditMask = "yyyy/MM/dd HH:mm:ss";
             this.DEBegin.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.DEBegin.Size = new System.Drawing.Size(141, 20);
+            this.DEBegin.Size = new System.Drawing.Size(162, 20);
             this.DEBegin.TabIndex = 7;
             // 
             // gridFile
@@ -182,6 +183,15 @@
             this.gridView1.GridControl = this.gridFile;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "住院号";
+            this.gridColumn1.FieldName = "FBIHID";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
             // 
             // gridColumn2
             // 
@@ -308,6 +318,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblRowsCount);
             this.panel1.Controls.Add(this.btnPrintSetting);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -350,7 +361,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 74);
+            this.label2.Location = new System.Drawing.Point(13, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 12);
             this.label2.TabIndex = 14;
@@ -359,7 +370,7 @@
             // DEEnd
             // 
             this.DEEnd.EditValue = null;
-            this.DEEnd.Location = new System.Drawing.Point(330, 69);
+            this.DEEnd.Location = new System.Drawing.Point(311, 69);
             this.DEEnd.Name = "DEEnd";
             this.DEEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -370,7 +381,7 @@
             this.DEEnd.Properties.Mask.EditMask = "yyyy/MM/dd HH:mm:ss";
             this.DEEnd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.DEEnd.Size = new System.Drawing.Size(141, 20);
+            this.DEEnd.Size = new System.Drawing.Size(160, 20);
             this.DEEnd.TabIndex = 13;
             // 
             // label1
@@ -400,14 +411,14 @@
             this.panel2.Size = new System.Drawing.Size(965, 343);
             this.panel2.TabIndex = 12;
             // 
-            // gridColumn1
+            // lblRowsCount
             // 
-            this.gridColumn1.Caption = "住院号";
-            this.gridColumn1.FieldName = "FBIHID";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
+            this.lblRowsCount.AutoSize = true;
+            this.lblRowsCount.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRowsCount.Location = new System.Drawing.Point(13, 104);
+            this.lblRowsCount.Name = "lblRowsCount";
+            this.lblRowsCount.Size = new System.Drawing.Size(0, 12);
+            this.lblRowsCount.TabIndex = 17;
             // 
             // HealthFileBagPrint
             // 
@@ -476,5 +487,6 @@
         private DevExpress.XtraEditors.DateEdit DEEnd;
         private System.Windows.Forms.Button btnPrintSetting;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private System.Windows.Forms.Label lblRowsCount;
     }
 }

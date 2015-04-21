@@ -161,6 +161,7 @@
     <Compile Include="Presenters\Label\LabelAgainPrintPresenter.cs" />
     <Compile Include="Presenters\NewCancelApplyPresenter.cs" />
     <Compile Include="Presenters\NewCancelRCPPresenter.cs" />
+    <Compile Include="Presenters\PharmEconomizeUIP.cs" />
     <Compile Include="Presenters\SendPharmPresenter.cs" />
     <Compile Include="Presenters\DataManage\AddDeptUsagePresenter.cs" />
     <Compile Include="Presenters\DataManage\AddFrequencyToBatchPresenter.cs" />
@@ -235,6 +236,7 @@
     <Compile Include="Views\INewCancelRCPView.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\IPharmEconomizeVw.cs" />
     <Compile Include="Views\IPharmSendSelectView.cs" />
     <Compile Include="Views\IPharmSendStatSelectView.cs" />
     <Compile Include="Views\IPharmSendView.cs" />
