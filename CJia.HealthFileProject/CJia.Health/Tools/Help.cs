@@ -178,7 +178,6 @@ namespace CJia.Health.Tools
             }
             catch
             {
-                //Message.Show("此图片不存在或已删除，请与管理员联系。。。");
                 return null;
             }
         }
@@ -373,6 +372,22 @@ namespace CJia.Health.Tools
                         pic.Height = Convert.ToInt32(height);
                     }
                 }
+            }
+        }
+
+        public static Image GetImageByUri(string uri, string userName, string password)
+        {
+            try
+            {
+                System.Net.WebClient myWebClient = new System.Net.WebClient();
+                myWebClient.Credentials = new NetworkCredential(userName, password);
+                byte[] bytes = myWebClient.DownloadData(uri);
+                Image image = GetImageByBytes(bytes);
+                return image;
+            }
+            catch
+            {
+                return null;
             }
         }
         #endregion

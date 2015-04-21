@@ -185,7 +185,7 @@
             // 
             // cJiaPicture1
             // 
-            this.cJiaPicture1.Location = new System.Drawing.Point(12, 210);
+            this.cJiaPicture1.Location = new System.Drawing.Point(1, 196);
             this.cJiaPicture1.Name = "cJiaPicture1";
             this.cJiaPicture1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cJiaPicture1.Properties.Appearance.Options.UseBackColor = true;
@@ -201,7 +201,7 @@
             this.cJiaButton4.Appearance.Options.UseFont = true;
             this.cJiaButton4.Appearance.Options.UseForeColor = true;
             this.cJiaButton4.CustomText = "加密";
-            this.cJiaButton4.Location = new System.Drawing.Point(669, 162);
+            this.cJiaButton4.Location = new System.Drawing.Point(623, 73);
             this.cJiaButton4.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaButton4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaButton4.Name = "cJiaButton4";
@@ -240,7 +240,7 @@
             this.cJiaButton5.Appearance.Options.UseFont = true;
             this.cJiaButton5.Appearance.Options.UseForeColor = true;
             this.cJiaButton5.CustomText = "左";
-            this.cJiaButton5.Location = new System.Drawing.Point(454, 247);
+            this.cJiaButton5.Location = new System.Drawing.Point(498, 131);
             this.cJiaButton5.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaButton5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaButton5.Name = "cJiaButton5";
@@ -257,7 +257,7 @@
             this.cJiaButton6.Appearance.Options.UseFont = true;
             this.cJiaButton6.Appearance.Options.UseForeColor = true;
             this.cJiaButton6.CustomText = "右";
-            this.cJiaButton6.Location = new System.Drawing.Point(454, 295);
+            this.cJiaButton6.Location = new System.Drawing.Point(610, 119);
             this.cJiaButton6.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaButton6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaButton6.Name = "cJiaButton6";
@@ -274,7 +274,7 @@
             this.cJiaButton7.Appearance.Options.UseFont = true;
             this.cJiaButton7.Appearance.Options.UseForeColor = true;
             this.cJiaButton7.CustomText = "左";
-            this.cJiaButton7.Location = new System.Drawing.Point(634, 263);
+            this.cJiaButton7.Location = new System.Drawing.Point(498, 85);
             this.cJiaButton7.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaButton7.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaButton7.Name = "cJiaButton7";
