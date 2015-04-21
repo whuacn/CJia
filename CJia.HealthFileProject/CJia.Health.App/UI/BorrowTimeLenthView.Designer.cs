@@ -148,7 +148,7 @@
             this.cbDocDes.Location = new System.Drawing.Point(50, 11);
             this.cbDocDes.Name = "cbDocDes";
             this.cbDocDes.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cbDocDes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbDocDes.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cbDocDes.Properties.Appearance.Options.UseFont = true;
             this.cbDocDes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -160,7 +160,7 @@
             this.cbDocDes.Properties.PopupFormSize = new System.Drawing.Size(150, 150);
             this.cbDocDes.Properties.ShowFooter = false;
             this.cbDocDes.Properties.View = this.cJiaComboBox21View;
-            this.cbDocDes.Size = new System.Drawing.Size(150, 22);
+            this.cbDocDes.Size = new System.Drawing.Size(150, 26);
             this.cbDocDes.TabIndex = 9;
             // 
             // cJiaComboBox21View
@@ -185,10 +185,10 @@
             // 
             // cJiaLabel4
             // 
-            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel4.Location = new System.Drawing.Point(371, 14);
             this.cJiaLabel4.Name = "cJiaLabel4";
-            this.cJiaLabel4.Size = new System.Drawing.Size(25, 16);
+            this.cJiaLabel4.Size = new System.Drawing.Size(21, 19);
             this.cJiaLabel4.TabIndex = 5;
             this.cJiaLabel4.Text = "(天)";
             // 
@@ -197,30 +197,30 @@
             this.txtBorrowTime.Location = new System.Drawing.Point(297, 10);
             this.txtBorrowTime.Name = "txtBorrowTime";
             this.txtBorrowTime.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtBorrowTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtBorrowTime.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtBorrowTime.Properties.Appearance.Options.UseBackColor = true;
             this.txtBorrowTime.Properties.Appearance.Options.UseFont = true;
             this.txtBorrowTime.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtBorrowTime.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtBorrowTime.Size = new System.Drawing.Size(68, 22);
+            this.txtBorrowTime.Size = new System.Drawing.Size(68, 26);
             this.txtBorrowTime.TabIndex = 3;
             this.txtBorrowTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBorrowTime_KeyPress);
             // 
             // cJiaLabel3
             // 
-            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel3.Location = new System.Drawing.Point(218, 15);
             this.cJiaLabel3.Name = "cJiaLabel3";
-            this.cJiaLabel3.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel3.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel3.TabIndex = 2;
             this.cJiaLabel3.Text = "借阅时间";
             // 
             // cJiaLabel2
             // 
-            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel2.Location = new System.Drawing.Point(4, 15);
             this.cJiaLabel2.Name = "cJiaLabel2";
-            this.cJiaLabel2.Size = new System.Drawing.Size(30, 16);
+            this.cJiaLabel2.Size = new System.Drawing.Size(26, 19);
             this.cJiaLabel2.TabIndex = 0;
             this.cJiaLabel2.Text = "职称";
             // 
@@ -373,6 +373,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "职称";
             this.gridColumn1.FieldName = "NAME";
             this.gridColumn1.Name = "gridColumn1";
@@ -381,6 +385,10 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "借阅时间";
             this.gridColumn2.FieldName = "TIME_LENTH";
             this.gridColumn2.Name = "gridColumn2";
@@ -389,10 +397,10 @@
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel1.Location = new System.Drawing.Point(398, 5);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(96, 29);
+            this.cJiaLabel1.Size = new System.Drawing.Size(96, 31);
             this.cJiaLabel1.TabIndex = 3;
             this.cJiaLabel1.Text = "借阅时间";
             // 

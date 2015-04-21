@@ -232,7 +232,7 @@
             this.dtInputEnd.Location = new System.Drawing.Point(185, 88);
             this.dtInputEnd.Name = "dtInputEnd";
             this.dtInputEnd.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.dtInputEnd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.dtInputEnd.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.dtInputEnd.Properties.Appearance.Options.UseFont = true;
             this.dtInputEnd.Properties.Appearance.Options.UseTextOptions = true;
             this.dtInputEnd.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -249,7 +249,7 @@
             this.dtInputEnd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dtInputEnd.Size = new System.Drawing.Size(145, 22);
+            this.dtInputEnd.Size = new System.Drawing.Size(145, 26);
             this.dtInputEnd.TabIndex = 165;
             // 
             // dtInputStart
@@ -259,7 +259,7 @@
             this.dtInputStart.Location = new System.Drawing.Point(7, 88);
             this.dtInputStart.Name = "dtInputStart";
             this.dtInputStart.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.dtInputStart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.dtInputStart.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.dtInputStart.Properties.Appearance.Options.UseFont = true;
             this.dtInputStart.Properties.Appearance.Options.UseTextOptions = true;
             this.dtInputStart.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -276,7 +276,7 @@
             this.dtInputStart.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dtInputStart.Size = new System.Drawing.Size(145, 22);
+            this.dtInputStart.Size = new System.Drawing.Size(145, 26);
             this.dtInputStart.TabIndex = 164;
             // 
             // ckInHos
@@ -285,14 +285,14 @@
             this.ckInHos.Location = new System.Drawing.Point(5, 6);
             this.ckInHos.Name = "ckInHos";
             this.ckInHos.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ckInHos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ckInHos.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.ckInHos.Properties.Appearance.Options.UseBackColor = true;
             this.ckInHos.Properties.Appearance.Options.UseFont = true;
             this.ckInHos.Properties.Caption = "入院日期";
             this.ckInHos.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.ckInHos.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.ckInHos.Selectable = true;
-            this.ckInHos.Size = new System.Drawing.Size(113, 21);
+            this.ckInHos.Size = new System.Drawing.Size(113, 24);
             this.ckInHos.TabIndex = 163;
             this.ckInHos.CheckedChanged += new System.EventHandler(this.ckInHos_CheckedChanged);
             // 
@@ -301,14 +301,14 @@
             this.ckInput.Location = new System.Drawing.Point(5, 61);
             this.ckInput.Name = "ckInput";
             this.ckInput.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ckInput.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ckInput.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.ckInput.Properties.Appearance.Options.UseBackColor = true;
             this.ckInput.Properties.Appearance.Options.UseFont = true;
             this.ckInput.Properties.Caption = "录入日期";
             this.ckInput.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.ckInput.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.ckInput.Selectable = true;
-            this.ckInput.Size = new System.Drawing.Size(113, 21);
+            this.ckInput.Size = new System.Drawing.Size(113, 24);
             this.ckInput.TabIndex = 161;
             this.ckInput.CheckedChanged += new System.EventHandler(this.ckInput_CheckedChanged);
             // 
@@ -317,21 +317,21 @@
             this.txtPatientName.Location = new System.Drawing.Point(57, 123);
             this.txtPatientName.Name = "txtPatientName";
             this.txtPatientName.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtPatientName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtPatientName.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.txtPatientName.Properties.Appearance.Options.UseBackColor = true;
             this.txtPatientName.Properties.Appearance.Options.UseFont = true;
             this.txtPatientName.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtPatientName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtPatientName.Size = new System.Drawing.Size(273, 22);
+            this.txtPatientName.Size = new System.Drawing.Size(273, 26);
             this.txtPatientName.TabIndex = 3;
             // 
             // cJiaLabel4
             // 
-            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.cJiaLabel4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.cJiaLabel4.Location = new System.Drawing.Point(6, 126);
             this.cJiaLabel4.Name = "cJiaLabel4";
-            this.cJiaLabel4.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel4.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel4.TabIndex = 160;
             this.cJiaLabel4.Text = "姓名：";
             // 
@@ -358,12 +358,12 @@
             this.txtRecotdNo.Location = new System.Drawing.Point(57, 159);
             this.txtRecotdNo.Name = "txtRecotdNo";
             this.txtRecotdNo.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtRecotdNo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtRecotdNo.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.txtRecotdNo.Properties.Appearance.Options.UseBackColor = true;
             this.txtRecotdNo.Properties.Appearance.Options.UseFont = true;
             this.txtRecotdNo.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtRecotdNo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtRecotdNo.Size = new System.Drawing.Size(273, 22);
+            this.txtRecotdNo.Size = new System.Drawing.Size(273, 26);
             this.txtRecotdNo.TabIndex = 5;
             this.txtRecotdNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRecotdNo_KeyDown);
             // 
@@ -373,7 +373,7 @@
             this.cboEndDate.Location = new System.Drawing.Point(185, 33);
             this.cboEndDate.Name = "cboEndDate";
             this.cboEndDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.cboEndDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboEndDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.cboEndDate.Properties.Appearance.Options.UseFont = true;
             this.cboEndDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cboEndDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -390,7 +390,7 @@
             this.cboEndDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cboEndDate.Size = new System.Drawing.Size(145, 22);
+            this.cboEndDate.Size = new System.Drawing.Size(145, 26);
             this.cboEndDate.TabIndex = 2;
             // 
             // cJiaLabel63
@@ -408,7 +408,7 @@
             this.cboStartDate.Location = new System.Drawing.Point(7, 33);
             this.cboStartDate.Name = "cboStartDate";
             this.cboStartDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.cboStartDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboStartDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.cboStartDate.Properties.Appearance.Options.UseFont = true;
             this.cboStartDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cboStartDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -425,16 +425,16 @@
             this.cboStartDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cboStartDate.Size = new System.Drawing.Size(145, 22);
+            this.cboStartDate.Size = new System.Drawing.Size(145, 26);
             this.cboStartDate.TabIndex = 1;
             // 
             // cJiaLabel62
             // 
-            this.cJiaLabel62.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel62.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.cJiaLabel62.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.cJiaLabel62.Location = new System.Drawing.Point(3, 162);
             this.cJiaLabel62.Name = "cJiaLabel62";
-            this.cJiaLabel62.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel62.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel62.TabIndex = 149;
             this.cJiaLabel62.Text = "病案号：";
             // 
@@ -591,6 +591,10 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "病案号";
             this.gridColumn3.FieldName = "RECORDNO";
             this.gridColumn3.Name = "gridColumn3";
@@ -600,6 +604,10 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "入院次数";
             this.gridColumn2.FieldName = "IN_HOSPITAL_TIME";
             this.gridColumn2.Name = "gridColumn2";
@@ -609,6 +617,10 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "姓名";
             this.gridColumn4.FieldName = "PATIENT_NAME";
             this.gridColumn4.Name = "gridColumn4";
@@ -618,6 +630,10 @@
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "性别";
             this.gridColumn5.FieldName = "GENDER_NAME";
             this.gridColumn5.Name = "gridColumn5";
@@ -627,6 +643,10 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn8.AppearanceCell.Options.UseFont = true;
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.Caption = "录入人";
             this.gridColumn8.FieldName = "PAT_COMMIT_NAME";
             this.gridColumn8.Name = "gridColumn8";
@@ -636,6 +656,10 @@
             // 
             // gridColumn9
             // 
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.Caption = "录入时间";
             this.gridColumn9.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -668,17 +692,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(213)))), ((int)(((byte)(238)))));
+            this.xtraTabControl1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.xtraTabControl1.Appearance.Options.UseBackColor = true;
+            this.xtraTabControl1.Appearance.Options.UseFont = true;
             this.xtraTabControl1.AppearancePage.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(224)))), ((int)(((byte)(248)))));
-            this.xtraTabControl1.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.xtraTabControl1.AppearancePage.Header.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.xtraTabControl1.AppearancePage.Header.Options.UseBackColor = true;
             this.xtraTabControl1.AppearancePage.Header.Options.UseFont = true;
             this.xtraTabControl1.AppearancePage.HeaderActive.BackColor = System.Drawing.Color.White;
+            this.xtraTabControl1.AppearancePage.HeaderActive.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.xtraTabControl1.AppearancePage.HeaderActive.ForeColor = System.Drawing.Color.DimGray;
             this.xtraTabControl1.AppearancePage.HeaderActive.Options.UseBackColor = true;
+            this.xtraTabControl1.AppearancePage.HeaderActive.Options.UseFont = true;
             this.xtraTabControl1.AppearancePage.HeaderActive.Options.UseForeColor = true;
             this.xtraTabControl1.AppearancePage.PageClient.BackColor = System.Drawing.Color.White;
+            this.xtraTabControl1.AppearancePage.PageClient.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.xtraTabControl1.AppearancePage.PageClient.Options.UseBackColor = true;
+            this.xtraTabControl1.AppearancePage.PageClient.Options.UseFont = true;
             this.xtraTabControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.xtraTabControl1.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left;
             this.xtraTabControl1.Location = new System.Drawing.Point(341, 3);
@@ -787,457 +817,457 @@
             this.pageInfo.Controls.Add(this.cJiaLabel25);
             this.pageInfo.Controls.Add(this.cJiaLabel46);
             this.pageInfo.Name = "pageInfo";
-            this.pageInfo.Size = new System.Drawing.Size(1262, 693);
+            this.pageInfo.Size = new System.Drawing.Size(1259, 693);
             this.pageInfo.Text = "基本信息";
             // 
             // rtlkICDSurgery4
             // 
-            this.rtlkICDSurgery4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDSurgery4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery4.Location = new System.Drawing.Point(94, 461);
             this.rtlkICDSurgery4.Name = "rtlkICDSurgery4";
-            this.rtlkICDSurgery4.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDSurgery4.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDSurgery4.TabIndex = 733;
             this.rtlkICDSurgery4.Text = "   ";
             // 
             // ltxtSurgeryName4
             // 
-            this.ltxtSurgeryName4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtSurgeryName4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName4.Location = new System.Drawing.Point(406, 461);
             this.ltxtSurgeryName4.Name = "ltxtSurgeryName4";
-            this.ltxtSurgeryName4.Size = new System.Drawing.Size(12, 16);
+            this.ltxtSurgeryName4.Size = new System.Drawing.Size(12, 19);
             this.ltxtSurgeryName4.TabIndex = 732;
             this.ltxtSurgeryName4.Text = "   ";
             // 
             // cboSurgeryDate4
             // 
-            this.cboSurgeryDate4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboSurgeryDate4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate4.Location = new System.Drawing.Point(777, 461);
             this.cboSurgeryDate4.Name = "cboSurgeryDate4";
-            this.cboSurgeryDate4.Size = new System.Drawing.Size(12, 16);
+            this.cboSurgeryDate4.Size = new System.Drawing.Size(12, 19);
             this.cboSurgeryDate4.TabIndex = 731;
             this.cboSurgeryDate4.Text = "   ";
             // 
             // rtlkICDSurgery3
             // 
-            this.rtlkICDSurgery3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDSurgery3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery3.Location = new System.Drawing.Point(94, 431);
             this.rtlkICDSurgery3.Name = "rtlkICDSurgery3";
-            this.rtlkICDSurgery3.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDSurgery3.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDSurgery3.TabIndex = 730;
             this.rtlkICDSurgery3.Text = "   ";
             // 
             // ltxtSurgeryName3
             // 
-            this.ltxtSurgeryName3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtSurgeryName3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName3.Location = new System.Drawing.Point(406, 431);
             this.ltxtSurgeryName3.Name = "ltxtSurgeryName3";
-            this.ltxtSurgeryName3.Size = new System.Drawing.Size(12, 16);
+            this.ltxtSurgeryName3.Size = new System.Drawing.Size(12, 19);
             this.ltxtSurgeryName3.TabIndex = 729;
             this.ltxtSurgeryName3.Text = "   ";
             // 
             // cboSurgeryDate3
             // 
-            this.cboSurgeryDate3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboSurgeryDate3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate3.Location = new System.Drawing.Point(777, 431);
             this.cboSurgeryDate3.Name = "cboSurgeryDate3";
-            this.cboSurgeryDate3.Size = new System.Drawing.Size(12, 16);
+            this.cboSurgeryDate3.Size = new System.Drawing.Size(12, 19);
             this.cboSurgeryDate3.TabIndex = 728;
             this.cboSurgeryDate3.Text = "   ";
             // 
             // rtlkICDSurgery2
             // 
-            this.rtlkICDSurgery2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDSurgery2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery2.Location = new System.Drawing.Point(94, 400);
             this.rtlkICDSurgery2.Name = "rtlkICDSurgery2";
-            this.rtlkICDSurgery2.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDSurgery2.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDSurgery2.TabIndex = 727;
             this.rtlkICDSurgery2.Text = "   ";
             // 
             // ltxtSurgeryName2
             // 
-            this.ltxtSurgeryName2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtSurgeryName2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName2.Location = new System.Drawing.Point(406, 400);
             this.ltxtSurgeryName2.Name = "ltxtSurgeryName2";
-            this.ltxtSurgeryName2.Size = new System.Drawing.Size(12, 16);
+            this.ltxtSurgeryName2.Size = new System.Drawing.Size(12, 19);
             this.ltxtSurgeryName2.TabIndex = 726;
             this.ltxtSurgeryName2.Text = "   ";
             // 
             // cboSurgeryDate2
             // 
-            this.cboSurgeryDate2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboSurgeryDate2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate2.Location = new System.Drawing.Point(777, 400);
             this.cboSurgeryDate2.Name = "cboSurgeryDate2";
-            this.cboSurgeryDate2.Size = new System.Drawing.Size(12, 16);
+            this.cboSurgeryDate2.Size = new System.Drawing.Size(12, 19);
             this.cboSurgeryDate2.TabIndex = 725;
             this.cboSurgeryDate2.Text = "   ";
             // 
             // rtlkICDSurgery1
             // 
-            this.rtlkICDSurgery1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDSurgery1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery1.Location = new System.Drawing.Point(94, 368);
             this.rtlkICDSurgery1.Name = "rtlkICDSurgery1";
-            this.rtlkICDSurgery1.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDSurgery1.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDSurgery1.TabIndex = 724;
             this.rtlkICDSurgery1.Text = "   ";
             // 
             // ltxtSurgeryName1
             // 
-            this.ltxtSurgeryName1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtSurgeryName1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName1.Location = new System.Drawing.Point(407, 368);
             this.ltxtSurgeryName1.Name = "ltxtSurgeryName1";
-            this.ltxtSurgeryName1.Size = new System.Drawing.Size(12, 16);
+            this.ltxtSurgeryName1.Size = new System.Drawing.Size(12, 19);
             this.ltxtSurgeryName1.TabIndex = 723;
             this.ltxtSurgeryName1.Text = "   ";
             // 
             // cboSurgeryDate1
             // 
-            this.cboSurgeryDate1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboSurgeryDate1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate1.Location = new System.Drawing.Point(777, 368);
             this.cboSurgeryDate1.Name = "cboSurgeryDate1";
-            this.cboSurgeryDate1.Size = new System.Drawing.Size(12, 16);
+            this.cboSurgeryDate1.Size = new System.Drawing.Size(12, 19);
             this.cboSurgeryDate1.TabIndex = 722;
             this.cboSurgeryDate1.Text = "   ";
             // 
             // rtlkICDOutDia4
             // 
-            this.rtlkICDOutDia4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDOutDia4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia4.Location = new System.Drawing.Point(94, 323);
             this.rtlkICDOutDia4.Name = "rtlkICDOutDia4";
-            this.rtlkICDOutDia4.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDOutDia4.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDOutDia4.TabIndex = 721;
             this.rtlkICDOutDia4.Text = "   ";
             // 
             // ltxtOutDiaName4
             // 
-            this.ltxtOutDiaName4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtOutDiaName4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName4.Location = new System.Drawing.Point(406, 323);
             this.ltxtOutDiaName4.Name = "ltxtOutDiaName4";
-            this.ltxtOutDiaName4.Size = new System.Drawing.Size(12, 16);
+            this.ltxtOutDiaName4.Size = new System.Drawing.Size(12, 19);
             this.ltxtOutDiaName4.TabIndex = 720;
             this.ltxtOutDiaName4.Text = "   ";
             // 
             // cboTreatResult4
             // 
-            this.cboTreatResult4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboTreatResult4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult4.Location = new System.Drawing.Point(777, 323);
             this.cboTreatResult4.Name = "cboTreatResult4";
-            this.cboTreatResult4.Size = new System.Drawing.Size(12, 16);
+            this.cboTreatResult4.Size = new System.Drawing.Size(12, 19);
             this.cboTreatResult4.TabIndex = 719;
             this.cboTreatResult4.Text = "   ";
             // 
             // rtlkICDOutDia3
             // 
-            this.rtlkICDOutDia3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDOutDia3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia3.Location = new System.Drawing.Point(94, 292);
             this.rtlkICDOutDia3.Name = "rtlkICDOutDia3";
-            this.rtlkICDOutDia3.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDOutDia3.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDOutDia3.TabIndex = 718;
             this.rtlkICDOutDia3.Text = "   ";
             // 
             // ltxtOutDiaName3
             // 
-            this.ltxtOutDiaName3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtOutDiaName3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName3.Location = new System.Drawing.Point(406, 292);
             this.ltxtOutDiaName3.Name = "ltxtOutDiaName3";
-            this.ltxtOutDiaName3.Size = new System.Drawing.Size(12, 16);
+            this.ltxtOutDiaName3.Size = new System.Drawing.Size(12, 19);
             this.ltxtOutDiaName3.TabIndex = 717;
             this.ltxtOutDiaName3.Text = "   ";
             // 
             // cboTreatResult3
             // 
-            this.cboTreatResult3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboTreatResult3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult3.Location = new System.Drawing.Point(777, 292);
             this.cboTreatResult3.Name = "cboTreatResult3";
-            this.cboTreatResult3.Size = new System.Drawing.Size(12, 16);
+            this.cboTreatResult3.Size = new System.Drawing.Size(12, 19);
             this.cboTreatResult3.TabIndex = 716;
             this.cboTreatResult3.Text = "   ";
             // 
             // rtlkICDOutDia2
             // 
-            this.rtlkICDOutDia2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDOutDia2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia2.Location = new System.Drawing.Point(94, 261);
             this.rtlkICDOutDia2.Name = "rtlkICDOutDia2";
-            this.rtlkICDOutDia2.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDOutDia2.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDOutDia2.TabIndex = 715;
             this.rtlkICDOutDia2.Text = "   ";
             // 
             // ltxtOutDiaName2
             // 
-            this.ltxtOutDiaName2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtOutDiaName2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName2.Location = new System.Drawing.Point(406, 261);
             this.ltxtOutDiaName2.Name = "ltxtOutDiaName2";
-            this.ltxtOutDiaName2.Size = new System.Drawing.Size(12, 16);
+            this.ltxtOutDiaName2.Size = new System.Drawing.Size(12, 19);
             this.ltxtOutDiaName2.TabIndex = 714;
             this.ltxtOutDiaName2.Text = "   ";
             // 
             // cboTreatResult2
             // 
-            this.cboTreatResult2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboTreatResult2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult2.Location = new System.Drawing.Point(777, 261);
             this.cboTreatResult2.Name = "cboTreatResult2";
-            this.cboTreatResult2.Size = new System.Drawing.Size(12, 16);
+            this.cboTreatResult2.Size = new System.Drawing.Size(12, 19);
             this.cboTreatResult2.TabIndex = 713;
             this.cboTreatResult2.Text = "   ";
             // 
             // cboTreatResult1
             // 
-            this.cboTreatResult1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboTreatResult1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult1.Location = new System.Drawing.Point(777, 230);
             this.cboTreatResult1.Name = "cboTreatResult1";
-            this.cboTreatResult1.Size = new System.Drawing.Size(12, 16);
+            this.cboTreatResult1.Size = new System.Drawing.Size(12, 19);
             this.cboTreatResult1.TabIndex = 712;
             this.cboTreatResult1.Text = "   ";
             // 
             // ltxtOutDiaName1
             // 
-            this.ltxtOutDiaName1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtOutDiaName1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName1.Location = new System.Drawing.Point(406, 230);
             this.ltxtOutDiaName1.Name = "ltxtOutDiaName1";
-            this.ltxtOutDiaName1.Size = new System.Drawing.Size(12, 16);
+            this.ltxtOutDiaName1.Size = new System.Drawing.Size(12, 19);
             this.ltxtOutDiaName1.TabIndex = 711;
             this.ltxtOutDiaName1.Text = "   ";
             // 
             // rtlkICDOutDia1
             // 
-            this.rtlkICDOutDia1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkICDOutDia1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia1.Location = new System.Drawing.Point(94, 230);
             this.rtlkICDOutDia1.Name = "rtlkICDOutDia1";
-            this.rtlkICDOutDia1.Size = new System.Drawing.Size(12, 16);
+            this.rtlkICDOutDia1.Size = new System.Drawing.Size(12, 19);
             this.rtlkICDOutDia1.TabIndex = 710;
             this.rtlkICDOutDia1.Text = "   ";
             // 
             // rtlkOutHospitalDept
             // 
-            this.rtlkOutHospitalDept.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkOutHospitalDept.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkOutHospitalDept.Location = new System.Drawing.Point(404, 184);
             this.rtlkOutHospitalDept.Name = "rtlkOutHospitalDept";
-            this.rtlkOutHospitalDept.Size = new System.Drawing.Size(12, 16);
+            this.rtlkOutHospitalDept.Size = new System.Drawing.Size(12, 19);
             this.rtlkOutHospitalDept.TabIndex = 709;
             this.rtlkOutHospitalDept.Text = "   ";
             // 
             // cboOutHospitalDate
             // 
-            this.cboOutHospitalDate.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboOutHospitalDate.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboOutHospitalDate.Location = new System.Drawing.Point(103, 184);
             this.cboOutHospitalDate.Name = "cboOutHospitalDate";
-            this.cboOutHospitalDate.Size = new System.Drawing.Size(12, 16);
+            this.cboOutHospitalDate.Size = new System.Drawing.Size(12, 19);
             this.cboOutHospitalDate.TabIndex = 708;
             this.cboOutHospitalDate.Text = "   ";
             // 
             // rtlkInHospitalDept
             // 
-            this.rtlkInHospitalDept.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rtlkInHospitalDept.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkInHospitalDept.Location = new System.Drawing.Point(402, 152);
             this.rtlkInHospitalDept.Name = "rtlkInHospitalDept";
-            this.rtlkInHospitalDept.Size = new System.Drawing.Size(12, 16);
+            this.rtlkInHospitalDept.Size = new System.Drawing.Size(12, 19);
             this.rtlkInHospitalDept.TabIndex = 707;
             this.rtlkInHospitalDept.Text = "   ";
             // 
             // cboInHospitalDate
             // 
-            this.cboInHospitalDate.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboInHospitalDate.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboInHospitalDate.Location = new System.Drawing.Point(103, 152);
             this.cboInHospitalDate.Name = "cboInHospitalDate";
-            this.cboInHospitalDate.Size = new System.Drawing.Size(12, 16);
+            this.cboInHospitalDate.Size = new System.Drawing.Size(12, 19);
             this.cboInHospitalDate.TabIndex = 706;
             this.cboInHospitalDate.Text = "   ";
             // 
             // ltxtPatientAddress
             // 
-            this.ltxtPatientAddress.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtPatientAddress.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtPatientAddress.Location = new System.Drawing.Point(400, 107);
             this.ltxtPatientAddress.Name = "ltxtPatientAddress";
-            this.ltxtPatientAddress.Size = new System.Drawing.Size(8, 16);
+            this.ltxtPatientAddress.Size = new System.Drawing.Size(8, 19);
             this.ltxtPatientAddress.TabIndex = 705;
             this.ltxtPatientAddress.Text = "  ";
             // 
             // ltxtBirthPlace
             // 
-            this.ltxtBirthPlace.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtBirthPlace.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtBirthPlace.Location = new System.Drawing.Point(86, 107);
             this.ltxtBirthPlace.Name = "ltxtBirthPlace";
-            this.ltxtBirthPlace.Size = new System.Drawing.Size(8, 16);
+            this.ltxtBirthPlace.Size = new System.Drawing.Size(8, 19);
             this.ltxtBirthPlace.TabIndex = 704;
             this.ltxtBirthPlace.Text = "  ";
             // 
             // ltxtIdCard
             // 
-            this.ltxtIdCard.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtIdCard.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtIdCard.Location = new System.Drawing.Point(777, 74);
             this.ltxtIdCard.Name = "ltxtIdCard";
-            this.ltxtIdCard.Size = new System.Drawing.Size(12, 16);
+            this.ltxtIdCard.Size = new System.Drawing.Size(12, 19);
             this.ltxtIdCard.TabIndex = 703;
             this.ltxtIdCard.Text = "   ";
             // 
             // ltxtPatientAge
             // 
-            this.ltxtPatientAge.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtPatientAge.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtPatientAge.Location = new System.Drawing.Point(604, 74);
             this.ltxtPatientAge.Name = "ltxtPatientAge";
-            this.ltxtPatientAge.Size = new System.Drawing.Size(8, 16);
+            this.ltxtPatientAge.Size = new System.Drawing.Size(8, 19);
             this.ltxtPatientAge.TabIndex = 702;
             this.ltxtPatientAge.Text = "  ";
             // 
             // cboBirthday
             // 
-            this.cboBirthday.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboBirthday.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboBirthday.Location = new System.Drawing.Point(400, 74);
             this.cboBirthday.Name = "cboBirthday";
-            this.cboBirthday.Size = new System.Drawing.Size(8, 16);
+            this.cboBirthday.Size = new System.Drawing.Size(8, 19);
             this.cboBirthday.TabIndex = 701;
             this.cboBirthday.Text = "  ";
             // 
             // cboGender
             // 
-            this.cboGender.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboGender.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboGender.Location = new System.Drawing.Point(254, 74);
             this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(8, 16);
+            this.cboGender.Size = new System.Drawing.Size(8, 19);
             this.cboGender.TabIndex = 700;
             this.cboGender.Text = "  ";
             // 
             // ltxtPatientName
             // 
-            this.ltxtPatientName.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtPatientName.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtPatientName.Location = new System.Drawing.Point(72, 74);
             this.ltxtPatientName.Name = "ltxtPatientName";
-            this.ltxtPatientName.Size = new System.Drawing.Size(8, 16);
+            this.ltxtPatientName.Size = new System.Drawing.Size(8, 19);
             this.ltxtPatientName.TabIndex = 699;
             this.ltxtPatientName.Text = "  ";
             // 
             // ltxtInHospitalTime
             // 
-            this.ltxtInHospitalTime.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtInHospitalTime.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ltxtInHospitalTime.Location = new System.Drawing.Point(234, 29);
             this.ltxtInHospitalTime.Name = "ltxtInHospitalTime";
-            this.ltxtInHospitalTime.Size = new System.Drawing.Size(8, 16);
+            this.ltxtInHospitalTime.Size = new System.Drawing.Size(8, 19);
             this.ltxtInHospitalTime.TabIndex = 698;
             this.ltxtInHospitalTime.Text = "  ";
             // 
             // ltxtRecordNo
             // 
-            this.ltxtRecordNo.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ltxtRecordNo.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ltxtRecordNo.Location = new System.Drawing.Point(87, 29);
             this.ltxtRecordNo.Name = "ltxtRecordNo";
-            this.ltxtRecordNo.Size = new System.Drawing.Size(8, 16);
+            this.ltxtRecordNo.Size = new System.Drawing.Size(8, 19);
             this.ltxtRecordNo.TabIndex = 697;
             this.ltxtRecordNo.Text = "  ";
             // 
             // cJiaLabel56
             // 
-            this.cJiaLabel56.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel56.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel56.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel56.Location = new System.Drawing.Point(325, 154);
             this.cJiaLabel56.Name = "cJiaLabel56";
-            this.cJiaLabel56.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel56.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel56.TabIndex = 695;
             this.cJiaLabel56.Text = "*";
             // 
             // cJiaLabel51
             // 
-            this.cJiaLabel51.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel51.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel51.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel51.Location = new System.Drawing.Point(325, 186);
             this.cJiaLabel51.Name = "cJiaLabel51";
-            this.cJiaLabel51.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel51.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel51.TabIndex = 694;
             this.cJiaLabel51.Text = "*";
             // 
             // cJiaLabel65
             // 
-            this.cJiaLabel65.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel65.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel65.Location = new System.Drawing.Point(329, 107);
             this.cJiaLabel65.Name = "cJiaLabel65";
-            this.cJiaLabel65.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel65.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel65.TabIndex = 685;
             this.cJiaLabel65.Text = "户口地址:";
             // 
             // cJiaLabel50
             // 
-            this.cJiaLabel50.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel50.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel50.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel50.Location = new System.Drawing.Point(206, 31);
             this.cJiaLabel50.Name = "cJiaLabel50";
-            this.cJiaLabel50.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel50.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel50.TabIndex = 693;
             this.cJiaLabel50.Text = "*";
             // 
             // cJiaLabel49
             // 
-            this.cJiaLabel49.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel49.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel49.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel49.Location = new System.Drawing.Point(205, 76);
             this.cJiaLabel49.Name = "cJiaLabel49";
-            this.cJiaLabel49.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel49.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel49.TabIndex = 692;
             this.cJiaLabel49.Text = "*";
             // 
             // cJiaLabel48
             // 
-            this.cJiaLabel48.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel48.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel48.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel48.Location = new System.Drawing.Point(321, 76);
             this.cJiaLabel48.Name = "cJiaLabel48";
-            this.cJiaLabel48.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel48.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel48.TabIndex = 691;
             this.cJiaLabel48.Text = "*";
             // 
             // cJiaLabel47
             // 
-            this.cJiaLabel47.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel47.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel47.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel47.Location = new System.Drawing.Point(557, 76);
             this.cJiaLabel47.Name = "cJiaLabel47";
-            this.cJiaLabel47.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel47.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel47.TabIndex = 690;
             this.cJiaLabel47.Text = "*";
             // 
             // cJiaLabel23
             // 
-            this.cJiaLabel23.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel23.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel23.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel23.Location = new System.Drawing.Point(25, 186);
             this.cJiaLabel23.Name = "cJiaLabel23";
-            this.cJiaLabel23.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel23.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel23.TabIndex = 689;
             this.cJiaLabel23.Text = "*";
             // 
             // cJiaLabel22
             // 
-            this.cJiaLabel22.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel22.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel22.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel22.Location = new System.Drawing.Point(25, 154);
             this.cJiaLabel22.Name = "cJiaLabel22";
-            this.cJiaLabel22.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel22.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel22.TabIndex = 688;
             this.cJiaLabel22.Text = "*";
             // 
             // cJiaLabel15
             // 
-            this.cJiaLabel15.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel15.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel15.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel15.Location = new System.Drawing.Point(24, 76);
             this.cJiaLabel15.Name = "cJiaLabel15";
-            this.cJiaLabel15.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel15.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel15.TabIndex = 687;
             this.cJiaLabel15.Text = "*";
             // 
             // cJiaLabel13
             // 
-            this.cJiaLabel13.Appearance.Font = new System.Drawing.Font("华文楷体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cJiaLabel13.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel13.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel13.Location = new System.Drawing.Point(24, 31);
             this.cJiaLabel13.Name = "cJiaLabel13";
-            this.cJiaLabel13.Size = new System.Drawing.Size(6, 14);
+            this.cJiaLabel13.Size = new System.Drawing.Size(6, 19);
             this.cJiaLabel13.TabIndex = 686;
             this.cJiaLabel13.Text = "*";
             // 
             // cJiaLabel12
             // 
-            this.cJiaLabel12.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel12.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel12.Location = new System.Drawing.Point(30, 107);
             this.cJiaLabel12.Name = "cJiaLabel12";
-            this.cJiaLabel12.Size = new System.Drawing.Size(50, 16);
+            this.cJiaLabel12.Size = new System.Drawing.Size(42, 19);
             this.cJiaLabel12.TabIndex = 682;
             this.cJiaLabel12.Text = "出生地:";
             // 
@@ -1251,7 +1281,7 @@
             this.cJiaLine5.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaLine5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaLine5.Name = "cJiaLine5";
-            this.cJiaLine5.Size = new System.Drawing.Size(1203, 12);
+            this.cJiaLine5.Size = new System.Drawing.Size(1200, 12);
             this.cJiaLine5.TabIndex = 681;
             // 
             // cJiaLine4
@@ -1264,7 +1294,7 @@
             this.cJiaLine4.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaLine4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaLine4.Name = "cJiaLine4";
-            this.cJiaLine4.Size = new System.Drawing.Size(1202, 12);
+            this.cJiaLine4.Size = new System.Drawing.Size(1199, 12);
             this.cJiaLine4.TabIndex = 680;
             // 
             // cJiaLine3
@@ -1277,20 +1307,21 @@
             this.cJiaLine3.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaLine3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaLine3.Name = "cJiaLine3";
-            this.cJiaLine3.Size = new System.Drawing.Size(1202, 13);
+            this.cJiaLine3.Size = new System.Drawing.Size(1199, 13);
             this.cJiaLine3.TabIndex = 679;
             // 
             // cJiaLine1
             // 
             this.cJiaLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cJiaLine1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLine1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.cJiaLine1.LineVisible = true;
             this.cJiaLine1.Location = new System.Drawing.Point(7, 51);
             this.cJiaLine1.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaLine1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaLine1.Name = "cJiaLine1";
-            this.cJiaLine1.Size = new System.Drawing.Size(1202, 12);
+            this.cJiaLine1.Size = new System.Drawing.Size(1199, 12);
             this.cJiaLine1.TabIndex = 678;
             // 
             // cJiaLine2
@@ -1303,339 +1334,339 @@
             this.cJiaLine2.LookAndFeel.SkinName = "Office 2010 Blue";
             this.cJiaLine2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaLine2.Name = "cJiaLine2";
-            this.cJiaLine2.Size = new System.Drawing.Size(1202, 12);
+            this.cJiaLine2.Size = new System.Drawing.Size(1199, 12);
             this.cJiaLine2.TabIndex = 677;
             // 
             // cJiaLabel9
             // 
-            this.cJiaLabel9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel9.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel9.Location = new System.Drawing.Point(706, 400);
             this.cJiaLabel9.Name = "cJiaLabel9";
-            this.cJiaLabel9.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel9.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel9.TabIndex = 676;
             this.cJiaLabel9.Text = "手术日期:";
             // 
             // cJiaLabel8
             // 
-            this.cJiaLabel8.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel8.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel8.Location = new System.Drawing.Point(706, 461);
             this.cJiaLabel8.Name = "cJiaLabel8";
-            this.cJiaLabel8.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel8.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel8.TabIndex = 675;
             this.cJiaLabel8.Text = "手术日期:";
             // 
             // cJiaLabel7
             // 
-            this.cJiaLabel7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel7.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel7.Location = new System.Drawing.Point(706, 431);
             this.cJiaLabel7.Name = "cJiaLabel7";
-            this.cJiaLabel7.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel7.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel7.TabIndex = 674;
             this.cJiaLabel7.Text = "手术日期:";
             // 
             // cJiaLabel5
             // 
-            this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel5.Location = new System.Drawing.Point(706, 368);
             this.cJiaLabel5.Name = "cJiaLabel5";
-            this.cJiaLabel5.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel5.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel5.TabIndex = 673;
             this.cJiaLabel5.Text = "手术日期:";
             // 
             // cJiaLabel42
             // 
-            this.cJiaLabel42.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel42.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel42.Location = new System.Drawing.Point(328, 461);
             this.cJiaLabel42.Name = "cJiaLabel42";
-            this.cJiaLabel42.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel42.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel42.TabIndex = 668;
             this.cJiaLabel42.Text = "手术名称4:";
             // 
             // cJiaLabel43
             // 
-            this.cJiaLabel43.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel43.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel43.Location = new System.Drawing.Point(328, 431);
             this.cJiaLabel43.Name = "cJiaLabel43";
-            this.cJiaLabel43.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel43.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel43.TabIndex = 667;
             this.cJiaLabel43.Text = "手术名称3:";
             // 
             // cJiaLabel44
             // 
-            this.cJiaLabel44.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel44.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel44.Location = new System.Drawing.Point(328, 400);
             this.cJiaLabel44.Name = "cJiaLabel44";
-            this.cJiaLabel44.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel44.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel44.TabIndex = 666;
             this.cJiaLabel44.Text = "手术名称2:";
             // 
             // cJiaLabel45
             // 
-            this.cJiaLabel45.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel45.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel45.Location = new System.Drawing.Point(329, 368);
             this.cJiaLabel45.Name = "cJiaLabel45";
-            this.cJiaLabel45.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel45.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel45.TabIndex = 665;
             this.cJiaLabel45.Text = "手术名称1:";
             // 
             // cJiaLabel38
             // 
-            this.cJiaLabel38.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel38.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel38.Location = new System.Drawing.Point(25, 461);
             this.cJiaLabel38.Name = "cJiaLabel38";
-            this.cJiaLabel38.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel38.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel38.TabIndex = 664;
             this.cJiaLabel38.Text = "  ICD编号:";
             // 
             // cJiaLabel39
             // 
-            this.cJiaLabel39.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel39.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel39.Location = new System.Drawing.Point(25, 431);
             this.cJiaLabel39.Name = "cJiaLabel39";
-            this.cJiaLabel39.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel39.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel39.TabIndex = 663;
             this.cJiaLabel39.Text = "  ICD编号:";
             // 
             // cJiaLabel40
             // 
-            this.cJiaLabel40.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel40.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel40.Location = new System.Drawing.Point(25, 400);
             this.cJiaLabel40.Name = "cJiaLabel40";
-            this.cJiaLabel40.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel40.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel40.TabIndex = 662;
             this.cJiaLabel40.Text = "  ICD编号:";
             // 
             // cJiaLabel41
             // 
-            this.cJiaLabel41.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel41.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel41.Location = new System.Drawing.Point(25, 368);
             this.cJiaLabel41.Name = "cJiaLabel41";
-            this.cJiaLabel41.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel41.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel41.TabIndex = 661;
             this.cJiaLabel41.Text = "  ICD编号:";
             // 
             // cJiaLabel34
             // 
-            this.cJiaLabel34.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel34.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel34.Location = new System.Drawing.Point(706, 323);
             this.cJiaLabel34.Name = "cJiaLabel34";
-            this.cJiaLabel34.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel34.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel34.TabIndex = 660;
             this.cJiaLabel34.Text = "治疗结果:";
             // 
             // cJiaLabel35
             // 
-            this.cJiaLabel35.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel35.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel35.Location = new System.Drawing.Point(706, 292);
             this.cJiaLabel35.Name = "cJiaLabel35";
-            this.cJiaLabel35.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel35.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel35.TabIndex = 648;
             this.cJiaLabel35.Text = "治疗结果:";
             // 
             // cJiaLabel36
             // 
-            this.cJiaLabel36.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel36.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel36.Location = new System.Drawing.Point(706, 261);
             this.cJiaLabel36.Name = "cJiaLabel36";
-            this.cJiaLabel36.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel36.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel36.TabIndex = 647;
             this.cJiaLabel36.Text = "治疗结果:";
             // 
             // cJiaLabel37
             // 
-            this.cJiaLabel37.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel37.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel37.Location = new System.Drawing.Point(706, 230);
             this.cJiaLabel37.Name = "cJiaLabel37";
-            this.cJiaLabel37.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel37.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel37.TabIndex = 646;
             this.cJiaLabel37.Text = "治疗结果:";
             // 
             // cJiaLabel31
             // 
-            this.cJiaLabel31.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel31.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel31.Location = new System.Drawing.Point(328, 323);
             this.cJiaLabel31.Name = "cJiaLabel31";
-            this.cJiaLabel31.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel31.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel31.TabIndex = 659;
             this.cJiaLabel31.Text = "出院诊断4:";
             // 
             // cJiaLabel32
             // 
-            this.cJiaLabel32.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel32.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel32.Location = new System.Drawing.Point(328, 292);
             this.cJiaLabel32.Name = "cJiaLabel32";
-            this.cJiaLabel32.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel32.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel32.TabIndex = 658;
             this.cJiaLabel32.Text = "出院诊断3:";
             // 
             // cJiaLabel33
             // 
-            this.cJiaLabel33.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel33.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel33.Location = new System.Drawing.Point(328, 261);
             this.cJiaLabel33.Name = "cJiaLabel33";
-            this.cJiaLabel33.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel33.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel33.TabIndex = 657;
             this.cJiaLabel33.Text = "出院诊断2:";
             // 
             // cJiaLabel30
             // 
-            this.cJiaLabel30.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel30.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel30.Location = new System.Drawing.Point(328, 230);
             this.cJiaLabel30.Name = "cJiaLabel30";
-            this.cJiaLabel30.Size = new System.Drawing.Size(72, 16);
+            this.cJiaLabel30.Size = new System.Drawing.Size(63, 19);
             this.cJiaLabel30.TabIndex = 656;
             this.cJiaLabel30.Text = "出院诊断1:";
             // 
             // cJiaLabel29
             // 
-            this.cJiaLabel29.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel29.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel29.Location = new System.Drawing.Point(25, 323);
             this.cJiaLabel29.Name = "cJiaLabel29";
-            this.cJiaLabel29.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel29.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel29.TabIndex = 655;
             this.cJiaLabel29.Text = "  ICD编号:";
             // 
             // cJiaLabel28
             // 
-            this.cJiaLabel28.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel28.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel28.Location = new System.Drawing.Point(25, 292);
             this.cJiaLabel28.Name = "cJiaLabel28";
-            this.cJiaLabel28.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel28.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel28.TabIndex = 654;
             this.cJiaLabel28.Text = "  ICD编号:";
             // 
             // cJiaLabel26
             // 
-            this.cJiaLabel26.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel26.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel26.Location = new System.Drawing.Point(25, 261);
             this.cJiaLabel26.Name = "cJiaLabel26";
-            this.cJiaLabel26.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel26.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel26.TabIndex = 653;
             this.cJiaLabel26.Text = "  ICD编号:";
             // 
             // cJiaLabel27
             // 
-            this.cJiaLabel27.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel27.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel27.Location = new System.Drawing.Point(25, 230);
             this.cJiaLabel27.Name = "cJiaLabel27";
-            this.cJiaLabel27.Size = new System.Drawing.Size(63, 16);
+            this.cJiaLabel27.Size = new System.Drawing.Size(60, 19);
             this.cJiaLabel27.TabIndex = 652;
             this.cJiaLabel27.Text = "  ICD编号:";
             // 
             // cJiaLabel21
             // 
-            this.cJiaLabel21.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel21.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel21.Location = new System.Drawing.Point(333, 184);
             this.cJiaLabel21.Name = "cJiaLabel21";
-            this.cJiaLabel21.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel21.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel21.TabIndex = 645;
             this.cJiaLabel21.Text = "出院科别:";
             // 
             // cJiaLabel20
             // 
-            this.cJiaLabel20.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel20.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel20.Location = new System.Drawing.Point(331, 152);
             this.cJiaLabel20.Name = "cJiaLabel20";
-            this.cJiaLabel20.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel20.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel20.TabIndex = 644;
             this.cJiaLabel20.Text = "入院科别:";
             // 
             // cJiaLabel19
             // 
-            this.cJiaLabel19.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel19.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel19.Location = new System.Drawing.Point(32, 184);
             this.cJiaLabel19.Name = "cJiaLabel19";
-            this.cJiaLabel19.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel19.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel19.TabIndex = 643;
             this.cJiaLabel19.Text = "出院日期:";
             // 
             // cJiaLabel18
             // 
-            this.cJiaLabel18.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel18.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel18.Location = new System.Drawing.Point(32, 152);
             this.cJiaLabel18.Name = "cJiaLabel18";
-            this.cJiaLabel18.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel18.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel18.TabIndex = 642;
             this.cJiaLabel18.Text = "入院日期:";
             // 
             // cJiaLabel14
             // 
-            this.cJiaLabel14.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel14.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel14.Location = new System.Drawing.Point(706, 74);
             this.cJiaLabel14.Name = "cJiaLabel14";
-            this.cJiaLabel14.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel14.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel14.TabIndex = 641;
             this.cJiaLabel14.Text = "身份证号:";
             // 
             // cJiaLabel64
             // 
-            this.cJiaLabel64.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel64.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel64.Location = new System.Drawing.Point(633, 74);
             this.cJiaLabel64.Name = "cJiaLabel64";
-            this.cJiaLabel64.Size = new System.Drawing.Size(15, 16);
+            this.cJiaLabel64.Size = new System.Drawing.Size(13, 19);
             this.cJiaLabel64.TabIndex = 640;
             this.cJiaLabel64.Text = "岁";
             // 
             // cJiaLabel3
             // 
-            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel3.Location = new System.Drawing.Point(563, 74);
             this.cJiaLabel3.Name = "cJiaLabel3";
-            this.cJiaLabel3.Size = new System.Drawing.Size(35, 16);
+            this.cJiaLabel3.Size = new System.Drawing.Size(29, 19);
             this.cJiaLabel3.TabIndex = 639;
             this.cJiaLabel3.Text = "年龄:";
             // 
             // cJiaLabel6
             // 
-            this.cJiaLabel6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel6.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel6.Location = new System.Drawing.Point(329, 74);
             this.cJiaLabel6.Name = "cJiaLabel6";
-            this.cJiaLabel6.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel6.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel6.TabIndex = 638;
             this.cJiaLabel6.Text = "出生日期:";
             // 
             // cJiaLabel16
             // 
-            this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel16.Location = new System.Drawing.Point(213, 74);
             this.cJiaLabel16.Name = "cJiaLabel16";
-            this.cJiaLabel16.Size = new System.Drawing.Size(35, 16);
+            this.cJiaLabel16.Size = new System.Drawing.Size(29, 19);
             this.cJiaLabel16.TabIndex = 637;
             this.cJiaLabel16.Text = "性别:";
             // 
             // cJiaLabel17
             // 
-            this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel17.Location = new System.Drawing.Point(31, 74);
             this.cJiaLabel17.Name = "cJiaLabel17";
-            this.cJiaLabel17.Size = new System.Drawing.Size(35, 16);
+            this.cJiaLabel17.Size = new System.Drawing.Size(29, 19);
             this.cJiaLabel17.TabIndex = 636;
             this.cJiaLabel17.Text = "姓名:";
             // 
             // cJiaLabel24
             // 
-            this.cJiaLabel24.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel24.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel24.Location = new System.Drawing.Point(213, 29);
             this.cJiaLabel24.Name = "cJiaLabel24";
-            this.cJiaLabel24.Size = new System.Drawing.Size(15, 16);
+            this.cJiaLabel24.Size = new System.Drawing.Size(13, 19);
             this.cJiaLabel24.TabIndex = 633;
             this.cJiaLabel24.Text = "第";
             // 
             // cJiaLabel25
             // 
-            this.cJiaLabel25.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel25.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel25.Location = new System.Drawing.Point(249, 29);
             this.cJiaLabel25.Name = "cJiaLabel25";
-            this.cJiaLabel25.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel25.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel25.TabIndex = 634;
             this.cJiaLabel25.Text = "次入院";
             // 
             // cJiaLabel46
             // 
-            this.cJiaLabel46.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel46.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel46.Location = new System.Drawing.Point(31, 29);
             this.cJiaLabel46.Name = "cJiaLabel46";
-            this.cJiaLabel46.Size = new System.Drawing.Size(50, 16);
+            this.cJiaLabel46.Size = new System.Drawing.Size(42, 19);
             this.cJiaLabel46.TabIndex = 632;
             this.cJiaLabel46.Text = "病案号:";
             // 
@@ -1643,7 +1674,7 @@
             // 
             this.pagePic.Controls.Add(this.splitContainerControl2);
             this.pagePic.Name = "pagePic";
-            this.pagePic.Size = new System.Drawing.Size(1262, 693);
+            this.pagePic.Size = new System.Drawing.Size(1259, 693);
             this.pagePic.Text = "图片信息";
             // 
             // splitContainerControl2
@@ -1659,7 +1690,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.lblprojectName);
             this.splitContainerControl2.Panel2.Controls.Add(this.cJiaPicture);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1262, 693);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1259, 693);
             this.splitContainerControl2.SplitterPosition = 289;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -1813,6 +1844,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "页码";
             this.gridColumn1.FieldName = "PAGE_NO";
             this.gridColumn1.Name = "gridColumn1";
@@ -1823,6 +1858,10 @@
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.Caption = "附加码";
             this.gridColumn6.FieldName = "SUBPAGE";
             this.gridColumn6.Name = "gridColumn6";
@@ -1833,6 +1872,10 @@
             // 
             // gridColumn7
             // 
+            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn7.AppearanceCell.Options.UseFont = true;
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.Caption = "项目名称";
             this.gridColumn7.FieldName = "PRO_NAME";
             this.gridColumn7.Name = "gridColumn7";
@@ -1845,11 +1888,11 @@
             // 
             this.lblprojectName.Appearance.BackColor = System.Drawing.Color.White;
             this.lblprojectName.Appearance.BackColor2 = System.Drawing.Color.Transparent;
-            this.lblprojectName.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lblprojectName.Appearance.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprojectName.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblprojectName.Location = new System.Drawing.Point(11, 3);
             this.lblprojectName.Name = "lblprojectName";
-            this.lblprojectName.Size = new System.Drawing.Size(84, 25);
+            this.lblprojectName.Size = new System.Drawing.Size(84, 28);
             this.lblprojectName.TabIndex = 175;
             this.lblprojectName.Text = "病案首页";
             // 

@@ -95,6 +95,8 @@
             // 
             // navBarGroup1
             // 
+            this.navBarGroup1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.navBarGroup1.Appearance.Options.UseFont = true;
             this.navBarGroup1.Caption = "我的病案管理";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -104,6 +106,8 @@
             // 
             // btnCommit
             // 
+            this.btnCommit.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.btnCommit.Appearance.Options.UseFont = true;
             this.btnCommit.Caption = "我的录入";
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCommit.SmallImage")));
@@ -111,6 +115,8 @@
             // 
             // btnNoPass
             // 
+            this.btnNoPass.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.btnNoPass.Appearance.Options.UseFont = true;
             this.btnNoPass.Caption = "审核未通过";
             this.btnNoPass.Name = "btnNoPass";
             this.btnNoPass.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNoPass.SmallImage")));
@@ -142,19 +148,29 @@
             // cJiaTabControl1
             // 
             this.cJiaTabControl1.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.cJiaTabControl1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaTabControl1.Appearance.Options.UseBackColor = true;
+            this.cJiaTabControl1.Appearance.Options.UseFont = true;
             this.cJiaTabControl1.AppearancePage.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(224)))), ((int)(((byte)(248)))));
             this.cJiaTabControl1.AppearancePage.Header.BorderColor = System.Drawing.Color.Transparent;
-            this.cJiaTabControl1.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaTabControl1.AppearancePage.Header.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaTabControl1.AppearancePage.Header.Options.UseBackColor = true;
             this.cJiaTabControl1.AppearancePage.Header.Options.UseBorderColor = true;
             this.cJiaTabControl1.AppearancePage.Header.Options.UseFont = true;
             this.cJiaTabControl1.AppearancePage.HeaderActive.BackColor = System.Drawing.Color.White;
+            this.cJiaTabControl1.AppearancePage.HeaderActive.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaTabControl1.AppearancePage.HeaderActive.ForeColor = System.Drawing.Color.DimGray;
             this.cJiaTabControl1.AppearancePage.HeaderActive.Options.UseBackColor = true;
+            this.cJiaTabControl1.AppearancePage.HeaderActive.Options.UseFont = true;
             this.cJiaTabControl1.AppearancePage.HeaderActive.Options.UseForeColor = true;
+            this.cJiaTabControl1.AppearancePage.HeaderDisabled.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.cJiaTabControl1.AppearancePage.HeaderDisabled.Options.UseFont = true;
+            this.cJiaTabControl1.AppearancePage.HeaderHotTracked.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.cJiaTabControl1.AppearancePage.HeaderHotTracked.Options.UseFont = true;
             this.cJiaTabControl1.AppearancePage.PageClient.BackColor = System.Drawing.Color.White;
+            this.cJiaTabControl1.AppearancePage.PageClient.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaTabControl1.AppearancePage.PageClient.Options.UseBackColor = true;
+            this.cJiaTabControl1.AppearancePage.PageClient.Options.UseFont = true;
             this.cJiaTabControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.cJiaTabControl1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
             this.cJiaTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleManageView));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.pnlRole = new CJia.Controls.CJiaPanel();
             this.btnRefresh = new CJia.Controls.BtnRefresh();
             this.btnSearch = new CJia.Controls.CJiaTextSearch();
@@ -103,15 +103,15 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.PointText = "";
             this.btnSearch.Properties.Appearance.BorderColor = System.Drawing.Color.Salmon;
-            this.btnSearch.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnSearch.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.btnSearch.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Properties.Appearance.Options.UseBorderColor = true;
             this.btnSearch.Properties.Appearance.Options.UseFont = true;
             this.btnSearch.Properties.Appearance.Options.UseForeColor = true;
-            toolTipItem2.Text = "查询";
-            superToolTip2.Items.Add(toolTipItem2);
+            toolTipItem1.Text = "查询";
+            superToolTip1.Items.Add(toolTipItem1);
             this.btnSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, superToolTip2, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
             this.btnSearch.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnSearch.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnSearch.Size = new System.Drawing.Size(300, 32);
@@ -139,7 +139,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cklstRoleFunction.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.cklstRoleFunction.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.cklstRoleFunction.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cklstRoleFunction.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cklstRoleFunction.Appearance.Options.UseBackColor = true;
             this.cklstRoleFunction.Appearance.Options.UseBorderColor = true;
             this.cklstRoleFunction.Appearance.Options.UseFont = true;
@@ -160,20 +160,20 @@
             this.txtRoleName.Location = new System.Drawing.Point(45, 16);
             this.txtRoleName.Name = "txtRoleName";
             this.txtRoleName.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtRoleName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtRoleName.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtRoleName.Properties.Appearance.Options.UseBackColor = true;
             this.txtRoleName.Properties.Appearance.Options.UseFont = true;
             this.txtRoleName.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtRoleName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtRoleName.Size = new System.Drawing.Size(157, 22);
+            this.txtRoleName.Size = new System.Drawing.Size(157, 26);
             this.txtRoleName.TabIndex = 3;
             // 
             // cJiaLabel3
             // 
-            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel3.Location = new System.Drawing.Point(7, 20);
             this.cJiaLabel3.Name = "cJiaLabel3";
-            this.cJiaLabel3.Size = new System.Drawing.Size(30, 16);
+            this.cJiaLabel3.Size = new System.Drawing.Size(26, 19);
             this.cJiaLabel3.TabIndex = 2;
             this.cJiaLabel3.Text = "名称";
             // 
@@ -347,6 +347,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "角色名称";
             this.gridColumn1.FieldName = "ROLE_NAME";
             this.gridColumn1.Name = "gridColumn1";
@@ -356,6 +360,10 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "类型";
             this.gridColumn2.FieldName = "NAME";
             this.gridColumn2.Name = "gridColumn2";
@@ -365,6 +373,10 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "名称";
             this.gridColumn3.FieldName = "FUNCTION_NAME";
             this.gridColumn3.Name = "gridColumn3";
@@ -374,19 +386,19 @@
             // 
             // cJiaLabel5
             // 
-            this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel5.Location = new System.Drawing.Point(5, 552);
             this.cJiaLabel5.Name = "cJiaLabel5";
-            this.cJiaLabel5.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel5.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel5.TabIndex = 1;
             this.cJiaLabel5.Text = "关键字";
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cJiaLabel1.Location = new System.Drawing.Point(444, 7);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(96, 29);
+            this.cJiaLabel1.Size = new System.Drawing.Size(96, 31);
             this.cJiaLabel1.TabIndex = 3;
             this.cJiaLabel1.Text = "角色维护";
             // 

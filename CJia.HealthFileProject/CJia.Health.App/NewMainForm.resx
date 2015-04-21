@@ -165,6 +165,9 @@
   <data name="barCheckItem1.Caption" xml:space="preserve">
     <value>barCheckItem1</value>
   </data>
+  <data name="barButtonItem3.Caption" xml:space="preserve">
+    <value>barButtonItem3</value>
+  </data>
   <data name="barSubItem3.Caption" xml:space="preserve">
     <value>barSubItem3</value>
   </data>
@@ -5285,10 +5288,10 @@
   <data name="barButtonItem22.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem23.Caption" xml:space="preserve">
+  <data name="btnProject.Caption" xml:space="preserve">
     <value>类别维护</value>
   </data>
-  <data name="barButtonItem23.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnProject.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAASbSURBVGhD1ZbHSmxLFIaPk/MCd3YfxFdwoBOPs/Me
@@ -5326,10 +5329,10 @@
   <data name="barButtonItem23.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem24.Caption" xml:space="preserve">
+  <data name="btnDept.Caption" xml:space="preserve">
     <value>科室维护</value>
   </data>
-  <data name="barButtonItem24.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDept.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAD+NJREFUWEfdWQtwXNV5BkKTTkIpIelAcHBmCJ266RTCJAUybWZom4ZJZjIQmrSk
@@ -5415,10 +5418,10 @@
   <data name="barButtonItem24.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem25.Caption" xml:space="preserve">
+  <data name="btnDoctor.Caption" xml:space="preserve">
     <value>医生维护</value>
   </data>
-  <data name="barButtonItem25.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDoctor.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACIAAAApCAYAAABQgPsBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAADSpJREFUWEfFmHlU01mWx6t7pnp6erp7Zrqnp7SoknYcLUVBuuxSW9xQS0vRQqvG
@@ -5492,10 +5495,10 @@
   <data name="barButtonItem25.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem26.Caption" xml:space="preserve">
+  <data name="btnBorrowTime.Caption" xml:space="preserve">
     <value>时间维护</value>
   </data>
-  <data name="barButtonItem26.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBorrowTime.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
         0AAADdABEGw9BwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAP+NSURBVHhe7J0H
@@ -7549,10 +7552,10 @@
         KsgPdO3WjcNWU902b8v/CveHCfwf7gHw4LTFgG4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnRole1.Caption" xml:space="preserve">
+  <data name="btnRole.Caption" xml:space="preserve">
     <value>角色设置</value>
   </data>
-  <data name="btnRole1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRole.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AABSJklEQVR4Xu1dB3hVVbYWkSJgA6npvQD2
@@ -7921,10 +7924,10 @@
   <data name="btnRole1.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="btnRoleFounction1.Caption" xml:space="preserve">
+  <data name="btnRoleFounction.Caption" xml:space="preserve">
     <value>功能设置</value>
   </data>
-  <data name="btnRoleFounction1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRoleFounction.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAn5SURBVGhD1Zh5bFTHHceXQE2hECAcDSmBBJIQCATC
@@ -8778,9 +8781,6 @@
   <data name="btnUser.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem3.Caption" xml:space="preserve">
-    <value>barButtonItem3</value>
-  </data>
   <data name="btnBig.Caption" xml:space="preserve">
     <value>放大图片</value>
   </data>
@@ -9406,11 +9406,32 @@
   <data name="ribbonPage1.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
   </data>
+  <data name="efff.Text" xml:space="preserve">
+    <value>起始页</value>
+  </data>
+  <data name="gggg.Text" xml:space="preserve">
+    <value>档案采集</value>
+  </data>
+  <data name="ewg.Text" xml:space="preserve">
+    <value>档案加工</value>
+  </data>
+  <data name="pgPhoto.Text" xml:space="preserve">
+    <value>拍照设置</value>
+  </data>
+  <data name="ribbonPageGroup3.Text" xml:space="preserve">
+    <value>图片处理</value>
+  </data>
   <data name="ribbonPage1.Text" xml:space="preserve">
     <value>数据加工</value>
   </data>
   <data name="ribbonPage3.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
+  </data>
+  <data name="ddde.Text" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="fff.Text" xml:space="preserve">
+    <value>病案管理</value>
   </data>
   <data name="ribbonPage3.Text" xml:space="preserve">
     <value>病案管理</value>
@@ -9418,11 +9439,23 @@
   <data name="jj.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
   </data>
+  <data name="btnDicManage1.Text" xml:space="preserve">
+    <value>字典维护</value>
+  </data>
+  <data name="ribbonPageGroup1.Text" xml:space="preserve">
+    <value>系统维护</value>
+  </data>
   <data name="jj.Text" xml:space="preserve">
     <value>系统维护</value>
   </data>
   <data name="ribbonPage6.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
+  </data>
+  <data name="ribbonPageGroup6.Text" xml:space="preserve">
+    <value>个人</value>
+  </data>
+  <data name="ribbonPageGroup7.Text" xml:space="preserve">
+    <value>系统</value>
   </data>
   <data name="ribbonPage6.Text" xml:space="preserve">
     <value>文件</value>
@@ -9459,39 +9492,6 @@
   </data>
   <data name="&gt;&gt;ribbonControl1.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="efff.Text" xml:space="preserve">
-    <value>起始页</value>
-  </data>
-  <data name="gggg.Text" xml:space="preserve">
-    <value>档案采集</value>
-  </data>
-  <data name="ewg.Text" xml:space="preserve">
-    <value>档案加工</value>
-  </data>
-  <data name="pgPhoto.Text" xml:space="preserve">
-    <value>拍照设置</value>
-  </data>
-  <data name="ribbonPageGroup3.Text" xml:space="preserve">
-    <value>图片处理</value>
-  </data>
-  <data name="ddde.Text" xml:space="preserve">
-    <value>查询</value>
-  </data>
-  <data name="fff.Text" xml:space="preserve">
-    <value>病案管理</value>
-  </data>
-  <data name="btnDicManage1.Text" xml:space="preserve">
-    <value>字典维护</value>
-  </data>
-  <data name="ribbonPageGroup1.Text" xml:space="preserve">
-    <value>系统维护</value>
-  </data>
-  <data name="ribbonPageGroup6.Text" xml:space="preserve">
-    <value>个人</value>
-  </data>
-  <data name="ribbonPageGroup7.Text" xml:space="preserve">
-    <value>系统</value>
   </data>
   <data name="ribbonPageGroup2.Text" xml:space="preserve">
     <value>首页录入</value>
@@ -9568,6 +9568,45 @@
   <data name="cJiaTabControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
+  <data name="lblSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 16</value>
+  </data>
+  <data name="lblSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="lblSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSystem.Text" xml:space="preserve">
+    <value>系统流程图</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Name" xml:space="preserve">
+    <value>lblSystem</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 45</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -9618,69 +9657,6 @@
   </data>
   <data name="&gt;&gt;cJiaTabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Name" xml:space="preserve">
-    <value>lblSystem</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 45</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>xTPHome</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblSystem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 16</value>
-  </data>
-  <data name="lblSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
-  </data>
-  <data name="lblSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSystem.Text" xml:space="preserve">
-    <value>系统流程图</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Name" xml:space="preserve">
-    <value>lblSystem</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -10260,28 +10236,28 @@
   <data name="&gt;&gt;barButtonItem22.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
-  <data name="&gt;&gt;barButtonItem23.Name" xml:space="preserve">
-    <value>barButtonItem23</value>
+  <data name="&gt;&gt;btnProject.Name" xml:space="preserve">
+    <value>btnProject</value>
   </data>
-  <data name="&gt;&gt;barButtonItem23.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnProject.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
-  <data name="&gt;&gt;barButtonItem24.Name" xml:space="preserve">
-    <value>barButtonItem24</value>
+  <data name="&gt;&gt;btnDept.Name" xml:space="preserve">
+    <value>btnDept</value>
   </data>
-  <data name="&gt;&gt;barButtonItem24.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnDept.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
-  <data name="&gt;&gt;barButtonItem25.Name" xml:space="preserve">
-    <value>barButtonItem25</value>
+  <data name="&gt;&gt;btnDoctor.Name" xml:space="preserve">
+    <value>btnDoctor</value>
   </data>
-  <data name="&gt;&gt;barButtonItem25.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnDoctor.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
-  <data name="&gt;&gt;barButtonItem26.Name" xml:space="preserve">
-    <value>barButtonItem26</value>
+  <data name="&gt;&gt;btnBorrowTime.Name" xml:space="preserve">
+    <value>btnBorrowTime</value>
   </data>
-  <data name="&gt;&gt;barButtonItem26.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnBorrowTime.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
   <data name="&gt;&gt;barButtonItem27.Name" xml:space="preserve">
@@ -10338,16 +10314,16 @@
   <data name="&gt;&gt;barButtonItem35.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
-  <data name="&gt;&gt;btnRole1.Name" xml:space="preserve">
-    <value>btnRole1</value>
+  <data name="&gt;&gt;btnRole.Name" xml:space="preserve">
+    <value>btnRole</value>
   </data>
-  <data name="&gt;&gt;btnRole1.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnRole.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
-  <data name="&gt;&gt;btnRoleFounction1.Name" xml:space="preserve">
-    <value>btnRoleFounction1</value>
+  <data name="&gt;&gt;btnRoleFounction.Name" xml:space="preserve">
+    <value>btnRoleFounction</value>
   </data>
-  <data name="&gt;&gt;btnRoleFounction1.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnRoleFounction.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
   <data name="&gt;&gt;btnSelectScanner.Name" xml:space="preserve">

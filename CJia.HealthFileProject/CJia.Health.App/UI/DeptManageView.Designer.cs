@@ -67,15 +67,19 @@
             // 
             this.cJiaLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel1.Location = new System.Drawing.Point(398, 5);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(96, 29);
+            this.cJiaLabel1.Size = new System.Drawing.Size(96, 31);
             this.cJiaLabel1.TabIndex = 3;
             this.cJiaLabel1.Text = "科室字典";
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "科室名称";
             this.gridColumn2.FieldName = "DEPT_NAME";
             this.gridColumn2.Name = "gridColumn2";
@@ -84,6 +88,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "科室编号";
             this.gridColumn1.FieldName = "DEPT_NO";
             this.gridColumn1.Name = "gridColumn1";
@@ -222,6 +230,10 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "拼音编码";
             this.gridColumn3.FieldName = "FIRST_PINYIN";
             this.gridColumn3.Name = "gridColumn3";
@@ -251,21 +263,21 @@
             this.TxtDeptPinyin.Location = new System.Drawing.Point(519, 12);
             this.TxtDeptPinyin.Name = "TxtDeptPinyin";
             this.TxtDeptPinyin.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.TxtDeptPinyin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.TxtDeptPinyin.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.TxtDeptPinyin.Properties.Appearance.Options.UseBackColor = true;
             this.TxtDeptPinyin.Properties.Appearance.Options.UseFont = true;
             this.TxtDeptPinyin.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.TxtDeptPinyin.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.TxtDeptPinyin.Properties.ReadOnly = true;
-            this.TxtDeptPinyin.Size = new System.Drawing.Size(135, 22);
+            this.TxtDeptPinyin.Size = new System.Drawing.Size(135, 26);
             this.TxtDeptPinyin.TabIndex = 4;
             // 
             // cJiaLabel4
             // 
-            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel4.Location = new System.Drawing.Point(453, 16);
             this.cJiaLabel4.Name = "cJiaLabel4";
-            this.cJiaLabel4.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel4.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel4.TabIndex = 4;
             this.cJiaLabel4.Text = "拼音编码";
             // 
@@ -276,7 +288,7 @@
             this.DeptSearch.Name = "DeptSearch";
             this.DeptSearch.PointText = "";
             this.DeptSearch.Properties.Appearance.BorderColor = System.Drawing.Color.Salmon;
-            this.DeptSearch.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.DeptSearch.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.DeptSearch.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.DeptSearch.Properties.Appearance.Options.UseBorderColor = true;
             this.DeptSearch.Properties.Appearance.Options.UseFont = true;
@@ -293,10 +305,10 @@
             // 
             // cJiaLabel5
             // 
-            this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel5.Location = new System.Drawing.Point(9, 550);
             this.cJiaLabel5.Name = "cJiaLabel5";
-            this.cJiaLabel5.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel5.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel5.TabIndex = 1;
             this.cJiaLabel5.Text = "关键字";
             // 
@@ -305,20 +317,20 @@
             this.TxtDeptName.Location = new System.Drawing.Point(295, 13);
             this.TxtDeptName.Name = "TxtDeptName";
             this.TxtDeptName.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.TxtDeptName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.TxtDeptName.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.TxtDeptName.Properties.Appearance.Options.UseBackColor = true;
             this.TxtDeptName.Properties.Appearance.Options.UseFont = true;
             this.TxtDeptName.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.TxtDeptName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.TxtDeptName.Size = new System.Drawing.Size(135, 22);
+            this.TxtDeptName.Size = new System.Drawing.Size(135, 26);
             this.TxtDeptName.TabIndex = 3;
             // 
             // cJiaLabel3
             // 
-            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel3.Location = new System.Drawing.Point(229, 15);
             this.cJiaLabel3.Name = "cJiaLabel3";
-            this.cJiaLabel3.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel3.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel3.TabIndex = 2;
             this.cJiaLabel3.Text = "科室名称";
             // 
@@ -327,20 +339,20 @@
             this.TxtDeptNo.Location = new System.Drawing.Point(77, 12);
             this.TxtDeptNo.Name = "TxtDeptNo";
             this.TxtDeptNo.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.TxtDeptNo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.TxtDeptNo.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.TxtDeptNo.Properties.Appearance.Options.UseBackColor = true;
             this.TxtDeptNo.Properties.Appearance.Options.UseFont = true;
             this.TxtDeptNo.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.TxtDeptNo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.TxtDeptNo.Size = new System.Drawing.Size(135, 22);
+            this.TxtDeptNo.Size = new System.Drawing.Size(135, 26);
             this.TxtDeptNo.TabIndex = 2;
             // 
             // cJiaLabel2
             // 
-            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel2.Location = new System.Drawing.Point(11, 14);
             this.cJiaLabel2.Name = "cJiaLabel2";
-            this.cJiaLabel2.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel2.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel2.TabIndex = 0;
             this.cJiaLabel2.Text = "科室编号";
             // 

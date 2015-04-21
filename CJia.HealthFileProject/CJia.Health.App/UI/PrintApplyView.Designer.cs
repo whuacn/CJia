@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintApplyView));
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
             this.txtPatientName = new CJia.Controls.CJiaTextBox();
@@ -54,7 +53,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pnlPicture = new System.Windows.Forms.Panel();
             this.cJiaPicture = new CJia.Controls.CJiaPicture();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,21 +106,21 @@
             this.txtPatientName.Location = new System.Drawing.Point(72, 44);
             this.txtPatientName.Name = "txtPatientName";
             this.txtPatientName.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtPatientName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtPatientName.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtPatientName.Properties.Appearance.Options.UseBackColor = true;
             this.txtPatientName.Properties.Appearance.Options.UseFont = true;
             this.txtPatientName.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtPatientName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtPatientName.Size = new System.Drawing.Size(259, 22);
+            this.txtPatientName.Size = new System.Drawing.Size(259, 26);
             this.txtPatientName.TabIndex = 3;
             // 
             // cJiaLabel4
             // 
-            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.cJiaLabel4.Location = new System.Drawing.Point(32, 47);
             this.cJiaLabel4.Name = "cJiaLabel4";
-            this.cJiaLabel4.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel4.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel4.TabIndex = 160;
             this.cJiaLabel4.Text = "姓名：";
             // 
@@ -148,12 +147,12 @@
             this.txtRecotdNo.Location = new System.Drawing.Point(72, 80);
             this.txtRecotdNo.Name = "txtRecotdNo";
             this.txtRecotdNo.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtRecotdNo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtRecotdNo.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtRecotdNo.Properties.Appearance.Options.UseBackColor = true;
             this.txtRecotdNo.Properties.Appearance.Options.UseFont = true;
             this.txtRecotdNo.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtRecotdNo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtRecotdNo.Size = new System.Drawing.Size(259, 22);
+            this.txtRecotdNo.Size = new System.Drawing.Size(259, 26);
             this.txtRecotdNo.TabIndex = 5;
             this.txtRecotdNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRecotdNo_KeyDown);
             // 
@@ -163,7 +162,7 @@
             this.cboEndDate.Location = new System.Drawing.Point(213, 9);
             this.cboEndDate.Name = "cboEndDate";
             this.cboEndDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.cboEndDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboEndDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboEndDate.Properties.Appearance.Options.UseFont = true;
             this.cboEndDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cboEndDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -180,7 +179,7 @@
             this.cboEndDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cboEndDate.Size = new System.Drawing.Size(118, 22);
+            this.cboEndDate.Size = new System.Drawing.Size(118, 26);
             this.cboEndDate.TabIndex = 2;
             // 
             // cJiaLabel63
@@ -198,7 +197,7 @@
             this.cboStartDate.Location = new System.Drawing.Point(72, 9);
             this.cboStartDate.Name = "cboStartDate";
             this.cboStartDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.cboStartDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cboStartDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboStartDate.Properties.Appearance.Options.UseFont = true;
             this.cboStartDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cboStartDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -215,25 +214,25 @@
             this.cboStartDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cboStartDate.Size = new System.Drawing.Size(118, 22);
+            this.cboStartDate.Size = new System.Drawing.Size(118, 26);
             this.cboStartDate.TabIndex = 1;
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel1.Location = new System.Drawing.Point(2, 12);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(75, 16);
+            this.cJiaLabel1.Size = new System.Drawing.Size(65, 19);
             this.cJiaLabel1.TabIndex = 150;
             this.cJiaLabel1.Text = "入院日期：";
             // 
             // cJiaLabel62
             // 
-            this.cJiaLabel62.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel62.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel62.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.cJiaLabel62.Location = new System.Drawing.Point(17, 83);
             this.cJiaLabel62.Name = "cJiaLabel62";
-            this.cJiaLabel62.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel62.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel62.TabIndex = 149;
             this.cJiaLabel62.Text = "病案号：";
             // 
@@ -241,7 +240,7 @@
             // 
             this.gridPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.gridPatient.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridPatient.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.gridPatient.IndicatorWidth = 30;
             this.gridPatient.Location = new System.Drawing.Point(3, 144);
             this.gridPatient.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -387,6 +386,10 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "病案号";
             this.gridColumn3.FieldName = "RECORDNO";
             this.gridColumn3.Name = "gridColumn3";
@@ -396,6 +399,10 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "入院次数";
             this.gridColumn2.FieldName = "IN_HOSPITAL_TIME";
             this.gridColumn2.Name = "gridColumn2";
@@ -405,6 +412,10 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "姓名";
             this.gridColumn4.FieldName = "PATIENT_NAME";
             this.gridColumn4.Name = "gridColumn4";
@@ -414,6 +425,10 @@
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "性别";
             this.gridColumn5.FieldName = "GENDER_NAME";
             this.gridColumn5.Name = "gridColumn5";
@@ -475,10 +490,10 @@
             // 
             this.chkAllPicture.Location = new System.Drawing.Point(6, 6);
             this.chkAllPicture.Name = "chkAllPicture";
-            this.chkAllPicture.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.5F);
+            this.chkAllPicture.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.chkAllPicture.Properties.Appearance.Options.UseFont = true;
             this.chkAllPicture.Properties.Caption = "全部";
-            this.chkAllPicture.Size = new System.Drawing.Size(113, 22);
+            this.chkAllPicture.Size = new System.Drawing.Size(113, 24);
             this.chkAllPicture.TabIndex = 8;
             this.chkAllPicture.CheckedChanged += new System.EventHandler(this.chkAllPicture_CheckedChanged);
             // 
@@ -489,7 +504,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPicture.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             this.chkPicture.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.chkPicture.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.chkPicture.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.chkPicture.Appearance.Options.UseBackColor = true;
             this.chkPicture.Appearance.Options.UseBorderColor = true;
             this.chkPicture.Appearance.Options.UseFont = true;
@@ -550,48 +565,48 @@
             this.btnShij,
             this.btnHeShi});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 158);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 136);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // btnBig
             // 
             this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(152, 22);
+            this.btnBig.Size = new System.Drawing.Size(124, 22);
             this.btnBig.Text = "放大图片";
             this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
             // 
             // btnSmall
             // 
             this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(152, 22);
+            this.btnSmall.Size = new System.Drawing.Size(124, 22);
             this.btnSmall.Text = "缩小图片";
             this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
             // 
             // btnNiX
             // 
             this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(152, 22);
+            this.btnNiX.Size = new System.Drawing.Size(124, 22);
             this.btnNiX.Text = "逆向旋转";
             this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
             // 
             // btnShunX
             // 
             this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(152, 22);
+            this.btnShunX.Size = new System.Drawing.Size(124, 22);
             this.btnShunX.Text = "顺向旋转";
             this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
             // 
             // btnShij
             // 
             this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(152, 22);
+            this.btnShij.Size = new System.Drawing.Size(124, 22);
             this.btnShij.Text = "实际尺寸";
             this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
             // 
             // btnHeShi
             // 
             this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(152, 22);
+            this.btnHeShi.Size = new System.Drawing.Size(124, 22);
             this.btnHeShi.Text = "合适尺寸";
             this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
             // 
