@@ -892,9 +892,11 @@ namespace CJia.Health.App
                 xpage.Appearance.HeaderHotTracked.Options.UseFont = true;
                 xpage.Appearance.PageClient.Font = new System.Drawing.Font("微软雅黑", 9F);
                 xpage.Appearance.PageClient.Options.UseFont = true;
+                xpage.AutoScroll = true;
                 //添加要增加的控件
                 uc.Dock = DockStyle.Fill;
                 xpage.Controls.Add(uc);
+                uc.Dock = DockStyle.Fill;
                 xTC.TabPages.Add(xpage);
                 xTC.SelectedTabPage = xpage;
             }
