@@ -29,6 +29,7 @@ namespace CJia.Health.App
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMainForm));
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -99,6 +100,7 @@ namespace CJia.Health.App
             this.ckTuo = new DevExpress.XtraBars.BarCheckItem();
             this.ckBaoguang = new DevExpress.XtraBars.BarCheckItem();
             this.btnQuZhaodian = new DevExpress.XtraBars.BarCheckItem();
+            this.btnCompleteQuery = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.efff = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gggg = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -117,25 +119,26 @@ namespace CJia.Health.App
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnUser1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem40 = new DevExpress.XtraBars.BarButtonItem();
-            this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
-            this.cJiaLabel3 = new CJia.Controls.CJiaLabel();
-            this.lblUserName = new CJia.Controls.CJiaLabel();
-            this.cJiaPicture2 = new CJia.Controls.CJiaPicture();
-            this.lblLoginTime = new CJia.Controls.CJiaLabel();
-            this.cJiaPicture1 = new CJia.Controls.CJiaPicture();
             this.cJiaTabControl1 = new CJia.Controls.CJiaTabControl();
-            this.btnCompleteQuery = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.lblLoginTime = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.lblUserName = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiCompany = new DevExpress.XtraBars.BarStaticItem();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.xTPHome = new DevExpress.XtraTab.XtraTabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSystem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
-            this.cJiaPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTabControl1)).BeginInit();
+            this.cJiaTabControl1.SuspendLayout();
+            this.xTPHome.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // repositoryItemCheckEdit1
@@ -170,9 +173,9 @@ namespace CJia.Health.App
             // 
             // ribbonControl1
             // 
-            resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
             this.ribbonControl1.BackColor = System.Drawing.SystemColors.Control;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.barButtonItem1,
@@ -238,14 +241,20 @@ namespace CJia.Health.App
             this.ckTuo,
             this.ckBaoguang,
             this.btnQuZhaodian,
-            this.btnCompleteQuery});
-            this.ribbonControl1.MaxItemId = 94;
+            this.btnCompleteQuery,
+            this.lblLoginTime,
+            this.barStaticItem1,
+            this.lblUserName,
+            this.bsiCompany});
+            this.ribbonControl1.MaxItemId = 98;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage3,
             this.jj,
             this.ribbonPage6});
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // barButtonItem1
@@ -1006,6 +1015,23 @@ namespace CJia.Health.App
             this.btnQuZhaodian.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnQuZhaodian.Name = "btnQuZhaodian";
             // 
+            // btnCompleteQuery
+            // 
+            resources.ApplyResources(this.btnCompleteQuery, "btnCompleteQuery");
+            this.btnCompleteQuery.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCompleteQuery.Glyph")));
+            this.btnCompleteQuery.Id = 93;
+            this.btnCompleteQuery.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Disabled.Font")));
+            this.btnCompleteQuery.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnCompleteQuery.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Hovered.Font")));
+            this.btnCompleteQuery.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnCompleteQuery.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Normal.Font")));
+            this.btnCompleteQuery.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnCompleteQuery.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Pressed.Font")));
+            this.btnCompleteQuery.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnCompleteQuery.Name = "btnCompleteQuery";
+            this.btnCompleteQuery.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCompleteQuery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCompleteQuery_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ribbonPage1.Appearance.Font")));
@@ -1177,125 +1203,104 @@ namespace CJia.Health.App
             this.barButtonItem40.Name = "barButtonItem40";
             this.barButtonItem40.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // cJiaPanel1
-            // 
-            this.cJiaPanel1.Appearance.BackColor = ((System.Drawing.Color)(resources.GetObject("cJiaPanel1.Appearance.BackColor")));
-            this.cJiaPanel1.Appearance.Options.UseBackColor = true;
-            this.cJiaPanel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cJiaPanel1.Controls.Add(this.cJiaLabel3);
-            this.cJiaPanel1.Controls.Add(this.lblUserName);
-            this.cJiaPanel1.Controls.Add(this.cJiaPicture2);
-            this.cJiaPanel1.Controls.Add(this.lblLoginTime);
-            this.cJiaPanel1.Controls.Add(this.cJiaPicture1);
-            resources.ApplyResources(this.cJiaPanel1, "cJiaPanel1");
-            this.cJiaPanel1.LookAndFeel.SkinName = "Office 2010 Silver";
-            this.cJiaPanel1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
-            this.cJiaPanel1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaPanel1.Name = "cJiaPanel1";
-            // 
-            // cJiaLabel3
-            // 
-            resources.ApplyResources(this.cJiaLabel3, "cJiaLabel3");
-            this.cJiaLabel3.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cJiaLabel3.Appearance.Font")));
-            this.cJiaLabel3.Appearance.ForeColor = ((System.Drawing.Color)(resources.GetObject("cJiaLabel3.Appearance.ForeColor")));
-            this.cJiaLabel3.Name = "cJiaLabel3";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblUserName.Appearance.Font")));
-            this.lblUserName.Appearance.ForeColor = ((System.Drawing.Color)(resources.GetObject("lblUserName.Appearance.ForeColor")));
-            resources.ApplyResources(this.lblUserName, "lblUserName");
-            this.lblUserName.Name = "lblUserName";
-            // 
-            // cJiaPicture2
-            // 
-            resources.ApplyResources(this.cJiaPicture2, "cJiaPicture2");
-            this.cJiaPicture2.Name = "cJiaPicture2";
-            this.cJiaPicture2.Properties.Appearance.BackColor = ((System.Drawing.Color)(resources.GetObject("cJiaPicture2.Properties.Appearance.BackColor")));
-            this.cJiaPicture2.Properties.Appearance.Options.UseBackColor = true;
-            this.cJiaPicture2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            // 
-            // lblLoginTime
-            // 
-            this.lblLoginTime.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblLoginTime.Appearance.Font")));
-            this.lblLoginTime.Appearance.ForeColor = ((System.Drawing.Color)(resources.GetObject("lblLoginTime.Appearance.ForeColor")));
-            resources.ApplyResources(this.lblLoginTime, "lblLoginTime");
-            this.lblLoginTime.Name = "lblLoginTime";
-            // 
-            // cJiaPicture1
-            // 
-            resources.ApplyResources(this.cJiaPicture1, "cJiaPicture1");
-            this.cJiaPicture1.Name = "cJiaPicture1";
-            this.cJiaPicture1.Properties.Appearance.BackColor = ((System.Drawing.Color)(resources.GetObject("cJiaPicture1.Properties.Appearance.BackColor")));
-            this.cJiaPicture1.Properties.Appearance.Options.UseBackColor = true;
-            this.cJiaPicture1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cJiaPicture1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            // 
             // cJiaTabControl1
             // 
-            this.cJiaTabControl1.Appearance.BackColor = ((System.Drawing.Color)(resources.GetObject("cJiaTabControl1.Appearance.BackColor")));
             this.cJiaTabControl1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cJiaTabControl1.Appearance.Font")));
-            this.cJiaTabControl1.Appearance.Options.UseBackColor = true;
             this.cJiaTabControl1.Appearance.Options.UseFont = true;
-            this.cJiaTabControl1.AppearancePage.Header.BackColor = ((System.Drawing.Color)(resources.GetObject("cJiaTabControl1.AppearancePage.Header.BackColor")));
-            this.cJiaTabControl1.AppearancePage.Header.BorderColor = ((System.Drawing.Color)(resources.GetObject("cJiaTabControl1.AppearancePage.Header.BorderColor")));
-            this.cJiaTabControl1.AppearancePage.Header.Font = ((System.Drawing.Font)(resources.GetObject("cJiaTabControl1.AppearancePage.Header.Font")));
-            this.cJiaTabControl1.AppearancePage.Header.ForeColor = ((System.Drawing.Color)(resources.GetObject("cJiaTabControl1.AppearancePage.Header.ForeColor")));
-            this.cJiaTabControl1.AppearancePage.Header.Options.UseBackColor = true;
-            this.cJiaTabControl1.AppearancePage.Header.Options.UseBorderColor = true;
-            this.cJiaTabControl1.AppearancePage.Header.Options.UseFont = true;
-            this.cJiaTabControl1.AppearancePage.Header.Options.UseForeColor = true;
-            this.cJiaTabControl1.AppearancePage.HeaderActive.BackColor = ((System.Drawing.Color)(resources.GetObject("cJiaTabControl1.AppearancePage.HeaderActive.BackColor")));
-            this.cJiaTabControl1.AppearancePage.HeaderActive.Font = ((System.Drawing.Font)(resources.GetObject("cJiaTabControl1.AppearancePage.HeaderActive.Font")));
-            this.cJiaTabControl1.AppearancePage.HeaderActive.ForeColor = ((System.Drawing.Color)(resources.GetObject("cJiaTabControl1.AppearancePage.HeaderActive.ForeColor")));
-            this.cJiaTabControl1.AppearancePage.HeaderActive.Options.UseBackColor = true;
-            this.cJiaTabControl1.AppearancePage.HeaderActive.Options.UseFont = true;
-            this.cJiaTabControl1.AppearancePage.HeaderActive.Options.UseForeColor = true;
-            this.cJiaTabControl1.AppearancePage.HeaderDisabled.Font = ((System.Drawing.Font)(resources.GetObject("cJiaTabControl1.AppearancePage.HeaderDisabled.Font")));
-            this.cJiaTabControl1.AppearancePage.HeaderDisabled.Options.UseFont = true;
-            this.cJiaTabControl1.AppearancePage.HeaderHotTracked.Font = ((System.Drawing.Font)(resources.GetObject("cJiaTabControl1.AppearancePage.HeaderHotTracked.Font")));
-            this.cJiaTabControl1.AppearancePage.HeaderHotTracked.Options.UseFont = true;
-            this.cJiaTabControl1.AppearancePage.PageClient.BackColor = ((System.Drawing.Color)(resources.GetObject("cJiaTabControl1.AppearancePage.PageClient.BackColor")));
-            this.cJiaTabControl1.AppearancePage.PageClient.Font = ((System.Drawing.Font)(resources.GetObject("cJiaTabControl1.AppearancePage.PageClient.Font")));
-            this.cJiaTabControl1.AppearancePage.PageClient.Options.UseBackColor = true;
-            this.cJiaTabControl1.AppearancePage.PageClient.Options.UseFont = true;
             resources.ApplyResources(this.cJiaTabControl1, "cJiaTabControl1");
-            this.cJiaTabControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.cJiaTabControl1.LookAndFeel.SkinName = "Office 2013";
             this.cJiaTabControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaTabControl1.Name = "cJiaTabControl1";
+            this.cJiaTabControl1.SelectedTabPage = this.xTPHome;
+            this.cJiaTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xTPHome});
             this.cJiaTabControl1.Tag = "28, 169, 102";
             this.cJiaTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.cJiaTabControl1_SelectedPageChanged);
             // 
-            // btnCompleteQuery
+            // ribbonStatusBar1
             // 
-            resources.ApplyResources(this.btnCompleteQuery, "btnCompleteQuery");
-            this.btnCompleteQuery.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCompleteQuery.Glyph")));
-            this.btnCompleteQuery.Id = 93;
-            this.btnCompleteQuery.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Disabled.Font")));
-            this.btnCompleteQuery.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btnCompleteQuery.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Hovered.Font")));
-            this.btnCompleteQuery.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnCompleteQuery.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Normal.Font")));
-            this.btnCompleteQuery.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnCompleteQuery.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnCompleteQuery.ItemAppearance.Pressed.Font")));
-            this.btnCompleteQuery.ItemAppearance.Pressed.Options.UseFont = true;
-            this.btnCompleteQuery.Name = "btnCompleteQuery";
-            this.btnCompleteQuery.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnCompleteQuery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCompleteQuery_ItemClick);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblLoginTime);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblUserName);
+            this.ribbonStatusBar1.ItemLinks.Add(this.bsiCompany);
+            resources.ApplyResources(this.ribbonStatusBar1, "ribbonStatusBar1");
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            // 
+            // lblLoginTime
+            // 
+            resources.ApplyResources(this.lblLoginTime, "lblLoginTime");
+            this.lblLoginTime.Glyph = ((System.Drawing.Image)(resources.GetObject("lblLoginTime.Glyph")));
+            this.lblLoginTime.Id = 94;
+            this.lblLoginTime.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("lblLoginTime.ItemAppearance.Normal.Font")));
+            this.lblLoginTime.ItemAppearance.Normal.Options.UseFont = true;
+            this.lblLoginTime.Name = "lblLoginTime";
+            this.lblLoginTime.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barStaticItem1
+            // 
+            resources.ApplyResources(this.barStaticItem1, "barStaticItem1");
+            this.barStaticItem1.Id = 95;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // lblUserName
+            // 
+            resources.ApplyResources(this.lblUserName, "lblUserName");
+            this.lblUserName.Glyph = ((System.Drawing.Image)(resources.GetObject("lblUserName.Glyph")));
+            this.lblUserName.Id = 96;
+            this.lblUserName.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("lblUserName.ItemAppearance.Normal.Font")));
+            this.lblUserName.ItemAppearance.Normal.Options.UseFont = true;
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // bsiCompany
+            // 
+            this.bsiCompany.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            resources.ApplyResources(this.bsiCompany, "bsiCompany");
+            this.bsiCompany.Id = 97;
+            this.bsiCompany.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("bsiCompany.ItemAppearance.Normal.Font")));
+            this.bsiCompany.ItemAppearance.Normal.Options.UseFont = true;
+            this.bsiCompany.Name = "bsiCompany";
+            this.bsiCompany.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
+            // 
+            // xTPHome
+            // 
+            this.xTPHome.Controls.Add(this.panel1);
+            this.xTPHome.Name = "xTPHome";
+            this.xTPHome.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
+            resources.ApplyResources(this.xTPHome, "xTPHome");
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblSystem);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // lblSystem
+            // 
+            resources.ApplyResources(this.lblSystem, "lblSystem");
+            this.lblSystem.Name = "lblSystem";
             // 
             // NewMainForm
             // 
+            this.Appearance.BackColor = ((System.Drawing.Color)(resources.GetObject("NewMainForm.Appearance.BackColor")));
             this.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("NewMainForm.Appearance.Font")));
-            this.Appearance.ForeColor = ((System.Drawing.Color)(resources.GetObject("NewMainForm.Appearance.ForeColor")));
+            this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.Appearance.Options.UseForeColor = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cJiaTabControl1);
-            this.Controls.Add(this.cJiaPanel1);
+            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "NewMainForm";
             this.Ribbon = this.ribbonControl1;
+            this.StatusBar = this.ribbonStatusBar1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -1304,12 +1309,11 @@ namespace CJia.Health.App
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).EndInit();
-            this.cJiaPanel1.ResumeLayout(false);
-            this.cJiaPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTabControl1)).EndInit();
+            this.cJiaTabControl1.ResumeLayout(false);
+            this.xTPHome.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1382,12 +1386,6 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.BarButtonItem btnUser;
         private DevExpress.XtraBars.BarButtonItem barButtonItem40;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private Controls.CJiaPanel cJiaPanel1;
-        private Controls.CJiaLabel cJiaLabel3;
-        private Controls.CJiaLabel lblUserName;
-        private Controls.CJiaPicture cJiaPicture2;
-        private Controls.CJiaLabel lblLoginTime;
-        private Controls.CJiaPicture cJiaPicture1;
         private Controls.CJiaTabControl cJiaTabControl1;
         private DevExpress.XtraBars.BarButtonItem btnBig;
         private DevExpress.XtraBars.BarButtonItem btnSmall;
@@ -1412,5 +1410,14 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.BarCheckItem ckBaoguang;
         private DevExpress.XtraBars.BarCheckItem btnQuZhaodian;
         private DevExpress.XtraBars.BarButtonItem btnCompleteQuery;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraBars.BarStaticItem lblLoginTime;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem lblUserName;
+        private DevExpress.XtraBars.BarStaticItem bsiCompany;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraTab.XtraTabPage xTPHome;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblSystem;
     }
 }

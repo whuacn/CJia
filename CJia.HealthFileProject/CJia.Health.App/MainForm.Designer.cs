@@ -86,14 +86,14 @@ namespace CJia.Health.App
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnBorrow = new System.Windows.Forms.ToolStripButton();
             this.cJiaTabControl1 = new CJia.Controls.CJiaTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
             this.cJiaLabel3 = new CJia.Controls.CJiaLabel();
             this.lblUserName = new CJia.Controls.CJiaLabel();
             this.cJiaPicture2 = new CJia.Controls.CJiaPicture();
             this.lblLoginTime = new CJia.Controls.CJiaLabel();
             this.cJiaPicture1 = new CJia.Controls.CJiaPicture();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTabControl1)).BeginInit();
@@ -116,7 +116,7 @@ namespace CJia.Health.App
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1376, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1372, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -403,7 +403,7 @@ namespace CJia.Health.App
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
+            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnHomePage,
@@ -425,7 +425,7 @@ namespace CJia.Health.App
             this.BtnBorrow});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1376, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(1372, 56);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -434,7 +434,7 @@ namespace CJia.Health.App
             this.btnHomePage.Image = ((System.Drawing.Image)(resources.GetObject("btnHomePage.Image")));
             this.btnHomePage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHomePage.Name = "btnHomePage";
-            this.btnHomePage.Size = new System.Drawing.Size(54, 54);
+            this.btnHomePage.Size = new System.Drawing.Size(54, 53);
             this.btnHomePage.Text = "起始页";
             this.btnHomePage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHomePage.Click += new System.EventHandler(this.btnHomePage_Click);
@@ -442,14 +442,14 @@ namespace CJia.Health.App
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 56);
             // 
             // btnInfoInput
             // 
             this.btnInfoInput.Image = ((System.Drawing.Image)(resources.GetObject("btnInfoInput.Image")));
             this.btnInfoInput.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnInfoInput.Name = "btnInfoInput";
-            this.btnInfoInput.Size = new System.Drawing.Size(68, 54);
+            this.btnInfoInput.Size = new System.Drawing.Size(68, 53);
             this.btnInfoInput.Text = "首页录入";
             this.btnInfoInput.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnInfoInput.Click += new System.EventHandler(this.btnInfoInput_Click);
@@ -457,14 +457,14 @@ namespace CJia.Health.App
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 56);
             // 
             // btnImagesInput
             // 
             this.btnImagesInput.Image = ((System.Drawing.Image)(resources.GetObject("btnImagesInput.Image")));
             this.btnImagesInput.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnImagesInput.Name = "btnImagesInput";
-            this.btnImagesInput.Size = new System.Drawing.Size(68, 54);
+            this.btnImagesInput.Size = new System.Drawing.Size(68, 53);
             this.btnImagesInput.Text = "图片拍照";
             this.btnImagesInput.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImagesInput.Click += new System.EventHandler(this.btnImagesInput_Click);
@@ -472,14 +472,14 @@ namespace CJia.Health.App
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 56);
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(68, 54);
+            this.toolStripButton1.Size = new System.Drawing.Size(68, 53);
             this.toolStripButton1.Text = "图片扫描";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -487,14 +487,14 @@ namespace CJia.Health.App
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 56);
             // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(68, 54);
+            this.toolStripButton2.Size = new System.Drawing.Size(68, 53);
             this.toolStripButton2.Text = "图片合并";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
@@ -502,14 +502,14 @@ namespace CJia.Health.App
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 56);
             // 
             // btnProSet
             // 
             this.btnProSet.Image = ((System.Drawing.Image)(resources.GetObject("btnProSet.Image")));
             this.btnProSet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnProSet.Name = "btnProSet";
-            this.btnProSet.Size = new System.Drawing.Size(68, 54);
+            this.btnProSet.Size = new System.Drawing.Size(68, 53);
             this.btnProSet.Text = "图片分类";
             this.btnProSet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProSet.Click += new System.EventHandler(this.btnProSet_Click);
@@ -517,14 +517,14 @@ namespace CJia.Health.App
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 56);
             // 
             // btnDataCheck
             // 
             this.btnDataCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnDataCheck.Image")));
             this.btnDataCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDataCheck.Name = "btnDataCheck";
-            this.btnDataCheck.Size = new System.Drawing.Size(68, 54);
+            this.btnDataCheck.Size = new System.Drawing.Size(68, 53);
             this.btnDataCheck.Text = "病案审核";
             this.btnDataCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDataCheck.Click += new System.EventHandler(this.btnDataCheck_Click);
@@ -532,14 +532,14 @@ namespace CJia.Health.App
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 56);
             // 
             // btnDataQuery
             // 
             this.btnDataQuery.Image = ((System.Drawing.Image)(resources.GetObject("btnDataQuery.Image")));
             this.btnDataQuery.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDataQuery.Name = "btnDataQuery";
-            this.btnDataQuery.Size = new System.Drawing.Size(68, 54);
+            this.btnDataQuery.Size = new System.Drawing.Size(68, 53);
             this.btnDataQuery.Text = "档案查询";
             this.btnDataQuery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDataQuery.Click += new System.EventHandler(this.btnDataQuery_Click);
@@ -547,14 +547,14 @@ namespace CJia.Health.App
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 57);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 56);
             // 
             // BtnBorrow
             // 
             this.BtnBorrow.Image = ((System.Drawing.Image)(resources.GetObject("BtnBorrow.Image")));
             this.BtnBorrow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnBorrow.Name = "BtnBorrow";
-            this.BtnBorrow.Size = new System.Drawing.Size(68, 54);
+            this.BtnBorrow.Size = new System.Drawing.Size(68, 53);
             this.BtnBorrow.Text = "借阅批准";
             this.BtnBorrow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnBorrow.Click += new System.EventHandler(this.BtnBorrow_Click);
@@ -581,16 +581,30 @@ namespace CJia.Health.App
             this.cJiaTabControl1.HeaderButtons = ((DevExpress.XtraTab.TabButtons)((((DevExpress.XtraTab.TabButtons.Prev | DevExpress.XtraTab.TabButtons.Next) 
             | DevExpress.XtraTab.TabButtons.Close) 
             | DevExpress.XtraTab.TabButtons.Default)));
-            this.cJiaTabControl1.Location = new System.Drawing.Point(0, 85);
+            this.cJiaTabControl1.Location = new System.Drawing.Point(0, 84);
             this.cJiaTabControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.cJiaTabControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaTabControl1.Name = "cJiaTabControl1";
             this.cJiaTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.cJiaTabControl1.Size = new System.Drawing.Size(1376, 581);
+            this.cJiaTabControl1.Size = new System.Drawing.Size(1372, 582);
             this.cJiaTabControl1.TabIndex = 2;
             this.cJiaTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.Image")));
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(1370, 538);
+            this.xtraTabPage1.Text = "起始页";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.Image")));
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(1374, 537);
+            this.xtraTabPage2.Text = "首页录入";
             // 
             // cJiaPanel1
             // 
@@ -609,7 +623,7 @@ namespace CJia.Health.App
             this.cJiaPanel1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.cJiaPanel1.Name = "cJiaPanel1";
-            this.cJiaPanel1.Size = new System.Drawing.Size(1376, 35);
+            this.cJiaPanel1.Size = new System.Drawing.Size(1372, 35);
             this.cJiaPanel1.TabIndex = 3;
             // 
             // cJiaLabel3
@@ -617,7 +631,7 @@ namespace CJia.Health.App
             this.cJiaLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cJiaLabel3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.cJiaLabel3.Location = new System.Drawing.Point(1055, 9);
+            this.cJiaLabel3.Location = new System.Drawing.Point(1051, 9);
             this.cJiaLabel3.Name = "cJiaLabel3";
             this.cJiaLabel3.Size = new System.Drawing.Size(270, 16);
             this.cJiaLabel3.TabIndex = 5;
@@ -666,25 +680,11 @@ namespace CJia.Health.App
             this.cJiaPicture1.Size = new System.Drawing.Size(35, 35);
             this.cJiaPicture1.TabIndex = 2;
             // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.Image")));
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1374, 537);
-            this.xtraTabPage1.Text = "起始页";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.Image")));
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1374, 537);
-            this.xtraTabPage2.Text = "首页录入";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 701);
+            this.ClientSize = new System.Drawing.Size(1372, 701);
             this.Controls.Add(this.cJiaTabControl1);
             this.Controls.Add(this.cJiaPanel1);
             this.Controls.Add(this.toolStrip1);

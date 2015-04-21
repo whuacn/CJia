@@ -30,8 +30,8 @@ namespace CJia.Health.App
 
         public void Init()
         {
-            lblLoginTime.Text = User.LoginTime.ToString();
-            lblUserName.Text = User.UserData.Rows[0]["USER_NAME"].ToString();
+            lblLoginTime.Caption = User.LoginTime.ToString();
+            lblUserName.Caption = User.UserData.Rows[0]["USER_NAME"].ToString();
         }
 
         private void btnInfoInput_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

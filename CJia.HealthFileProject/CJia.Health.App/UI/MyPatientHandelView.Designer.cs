@@ -136,7 +136,7 @@
             this.cJiaPanel2.LookAndFeel.SkinName = "Office 2010 Silver";
             this.cJiaPanel2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaPanel2.Name = "cJiaPanel2";
-            this.cJiaPanel2.Size = new System.Drawing.Size(1397, 700);
+            this.cJiaPanel2.Size = new System.Drawing.Size(1390, 700);
             this.cJiaPanel2.TabIndex = 0;
             // 
             // cJiaTabControl1
@@ -166,7 +166,7 @@
             this.cJiaTabControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.cJiaTabControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaTabControl1.Name = "cJiaTabControl1";
-            this.cJiaTabControl1.Size = new System.Drawing.Size(1393, 696);
+            this.cJiaTabControl1.Size = new System.Drawing.Size(1386, 696);
             this.cJiaTabControl1.TabIndex = 0;
             // 
             // MyPatientHandelView
