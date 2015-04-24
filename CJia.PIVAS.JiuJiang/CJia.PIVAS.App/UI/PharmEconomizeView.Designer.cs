@@ -82,6 +82,7 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -201,7 +202,7 @@
             this.gcAddPharm.Location = new System.Drawing.Point(5, 54);
             this.gcAddPharm.MainView = this.gvEconomizeDetail;
             this.gcAddPharm.Name = "gcAddPharm";
-            this.gcAddPharm.Size = new System.Drawing.Size(624, 439);
+            this.gcAddPharm.Size = new System.Drawing.Size(595, 439);
             this.gcAddPharm.TabIndex = 61;
             this.gcAddPharm.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEconomizeDetail,
@@ -508,7 +509,7 @@
             this.groupControl3.Controls.Add(this.labelControl6);
             this.groupControl3.Location = new System.Drawing.Point(3, 94);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(659, 495);
+            this.groupControl3.Size = new System.Drawing.Size(688, 495);
             this.groupControl3.TabIndex = 9;
             this.groupControl3.Text = "未入库药品汇总";
             // 
@@ -535,7 +536,7 @@
             this.gcPharm.Location = new System.Drawing.Point(4, 54);
             this.gcPharm.MainView = this.gridView1;
             this.gcPharm.Name = "gcPharm";
-            this.gcPharm.Size = new System.Drawing.Size(655, 439);
+            this.gcPharm.Size = new System.Drawing.Size(684, 439);
             this.gcPharm.TabIndex = 2;
             this.gcPharm.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -551,7 +552,8 @@
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn24,
-            this.gridColumn25});
+            this.gridColumn25,
+            this.gridColumn26});
             this.gridView1.GridControl = this.gcPharm;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -569,7 +571,7 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 0;
-            this.gridColumn14.Width = 233;
+            this.gridColumn14.Width = 159;
             // 
             // gridColumn15
             // 
@@ -578,7 +580,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 1;
-            this.gridColumn15.Width = 113;
+            this.gridColumn15.Width = 90;
             // 
             // gridColumn16
             // 
@@ -587,7 +589,7 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 2;
-            this.gridColumn16.Width = 84;
+            this.gridColumn16.Width = 66;
             // 
             // gridColumn1
             // 
@@ -596,7 +598,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 57;
+            this.gridColumn1.Width = 45;
             // 
             // gridColumn2
             // 
@@ -605,7 +607,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 4;
-            this.gridColumn2.Width = 51;
+            this.gridColumn2.Width = 40;
             // 
             // gridColumn17
             // 
@@ -614,7 +616,7 @@
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 5;
-            this.gridColumn17.Width = 48;
+            this.gridColumn17.Width = 38;
             // 
             // gridColumn18
             // 
@@ -623,7 +625,7 @@
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 6;
-            this.gridColumn18.Width = 51;
+            this.gridColumn18.Width = 40;
             // 
             // gridColumn24
             // 
@@ -632,6 +634,7 @@
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 7;
+            this.gridColumn24.Width = 59;
             // 
             // gridColumn25
             // 
@@ -640,6 +643,18 @@
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 8;
+            this.gridColumn25.Width = 47;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "最近节约时间";
+            this.gridColumn26.DisplayFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
+            this.gridColumn26.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn26.FieldName = "LAST_ECONOMIZE_TIME";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 9;
+            this.gridColumn26.Width = 82;
             // 
             // labelControl16
             // 
@@ -730,9 +745,9 @@
             this.groupControl2.Controls.Add(this.labelControl14);
             this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.labelControl16);
-            this.groupControl2.Location = new System.Drawing.Point(668, 94);
+            this.groupControl2.Location = new System.Drawing.Point(697, 94);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(631, 495);
+            this.groupControl2.Size = new System.Drawing.Size(602, 495);
             this.groupControl2.TabIndex = 10;
             this.groupControl2.Text = "药品入库记录";
             // 
@@ -830,5 +845,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraEditors.LabelControl txtNoAllMoney;
         private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
     }
 }

@@ -22,6 +22,7 @@ namespace CJia.PIVAS.Presenters
         {
             this.View.OnSelectFilterPharm += View_OnSelectFilterPharm;
             this.View.OnSelectPharmEconomize += View_OnSelectPharmEconomize;
+            this.View.OnSelectPharmEconomizeInput += View_OnSelectPharmEconomizeInput;
             this.View.OnInitIffield += View_OnInitIffield;
             this.View.OnAddPharm += View_OnAddPharm;
             this.View.OnAddFilterPharm += View_OnAddFilterPharm;
@@ -55,6 +56,13 @@ namespace CJia.PIVAS.Presenters
         {
             this.View.ExeSelectPharmEconomize(this.Model.SelectPharmEconomize(e.startDate, e.endDate,e.illfitld, e.pharmIds));
             this.View.ExeSelectAddPharm(this.Model.SelectAddPharmDetail(e.startDate, e.endDate, e.illfitld, e.pharmIds), this.Model.SelectAddPharm(e.startDate, e.endDate, e.illfitld, e.pharmIds));
+        }
+
+        // 获取节约用药信息(入库)
+        void View_OnSelectPharmEconomizeInput(object sender, Views.PharmEconomizeViewEventArgs e)
+        {
+            this.View.ExeSelectPharmEconomizeInput(this.Model.SelectPharmEconomizeInput(e.endDate, e.illfitld, e.pharmIds));
+            //this.View.ExeSelectAddPharm(this.Model.SelectAddPharmDetail(e.startDate, e.endDate, e.illfitld, e.pharmIds), this.Model.SelectAddPharm(e.startDate, e.endDate, e.illfitld, e.pharmIds));
         }
 
         // 查询过滤用药品信息

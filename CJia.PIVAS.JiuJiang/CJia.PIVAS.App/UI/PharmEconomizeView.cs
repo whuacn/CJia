@@ -152,7 +152,7 @@ namespace CJia.PIVAS.App.UI
                 if (MessageBox.Show( "是否需要针对全院进行药品节约入库？","提醒", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
             }
-            this.OnSelectPharmEconomize(null, new Views.PharmEconomizeViewEventArgs()
+            this.OnSelectPharmEconomizeInput(null, new Views.PharmEconomizeViewEventArgs()
             {
                 startDate = this.dtpStartTime.Value,
                 endDate = this.dtpEndTime.Value,
@@ -230,7 +230,7 @@ namespace CJia.PIVAS.App.UI
         public event EventHandler<Views.PharmEconomizeViewEventArgs> OnSelectFilterPharm;
 
         public event EventHandler<Views.PharmEconomizeViewEventArgs> OnSelectPharmEconomize;
-
+        public event EventHandler<Views.PharmEconomizeViewEventArgs> OnSelectPharmEconomizeInput;
         public event EventHandler<PharmEconomizeViewEventArgs> OnAddFilterPharm;
 
         public event EventHandler<PharmEconomizeViewEventArgs> OnDeleteFilterPharm;
@@ -277,6 +277,18 @@ namespace CJia.PIVAS.App.UI
             this.pharmData = result;
             this.FilterZero();
             this.SetAllAcount();
+
+        }
+
+        /// <summary>
+        /// 获取节约药品信息
+        /// </summary>
+        /// <param name="result"></param>
+        public void ExeSelectPharmEconomizeInput(DataTable result)
+        {
+            this.pharmData = result;
+            //this.FilterZero();
+            //this.SetAllAcount();
 
         }
 

@@ -2859,6 +2859,133 @@ where spl.label_id = ?";
         }
 
         /// <summary>
+        /// 查询节约用药信息
+        /// </summary>
+        public static string SqlSelectPharmEconomize2
+        {
+            get
+            {
+                return @"select tt.*,
+       round(tt.all_fee_pharm_amount - tt.all_reality_pharm_amount, 2) all_economize_pharm_amount,
+       floor(tt.all_fee_pharm_amount - tt.all_reality_pharm_amount) add_pharm_count,
+       round(tt.all_fee_pharm_amount - tt.all_reality_pharm_amount, 2) *
+       tt.inhos_price all_money,LAST_ECONOMIZE_TIME
+  from (select t.DRUG_CODE,
+               t.INHOS_PRICE,
+               t.flag,
+               t.pharm_id,
+               t.pharm_name,
+               t.pharm_spec,
+               t.pharm_unit,
+               t.pharm_factory,LAST_ECONOMIZE_TIME,
+               sum(t.reality_pharm_amount) all_reality_pharm_amount,
+               sum(t.fee_pharm_amount) all_fee_pharm_amount
+          from (select DRUG_CODE,
+                       INHOS_PRICE,
+                       FLAG,
+                       pharm_id,
+                       pharm_name,
+                       pharm_spec,
+                       pharm_factory,
+                       ceil(sum(reality_pharm_amount)) reality_pharm_amount,
+                       sum(fee_pharm_amount) fee_pharm_amount,
+                       pharm_unit,
+                       create_date,
+                       CHECK_BATCH_ID,
+                       FN_LAST_ECONOMIZE_TIME(PHARM_ID, PHARM_UNIT, ?) LAST_ECONOMIZE_TIME
+                  from pt_pharm_send_view_JP 
+                  where PHARM_SEND_DATE between ? and ? 
+                   AND IS_ECONOMIZE(PHARM_ID, PHARM_UNIT, PHARM_SEND_DATE, ? ) = 1
+                    AND (illfield_id = ? or ? = '0' )
+                    {0}
+                 group by DRUG_CODE,
+                          INHOS_PRICE,
+                          flag,
+                          pharm_id,
+                          pharm_name,
+                          pharm_spec,
+                          pharm_unit,
+                          pharm_factory,
+                          create_date,
+                          CHECK_BATCH_ID,
+                          FN_LAST_ECONOMIZE_TIME(PHARM_ID, PHARM_UNIT, ?)) t
+         group by t.DRUG_CODE,
+                  t.INHOS_PRICE,
+                  t.flag,
+                  t.pharm_id,
+                  t.pharm_name,
+                  t.pharm_spec,
+                  t.pharm_unit,
+                  t.pharm_factory,LAST_ECONOMIZE_TIME) tt
+";
+            }
+        }
+
+        /// <summary>
+        /// 查询节约用药信息
+        /// </summary>
+        public static string SqlSelectPharmEconomizeInput
+        {
+            get
+            {
+                return @"select tt.*,
+       round(tt.all_fee_pharm_amount - tt.all_reality_pharm_amount, 2) all_economize_pharm_amount,
+       floor(tt.all_fee_pharm_amount - tt.all_reality_pharm_amount) add_pharm_count,
+       round(tt.all_fee_pharm_amount - tt.all_reality_pharm_amount, 2) *
+       tt.inhos_price all_money,LAST_ECONOMIZE_TIME
+  from (select t.DRUG_CODE,
+               t.INHOS_PRICE,
+               t.flag,
+               t.pharm_id,
+               t.pharm_name,
+               t.pharm_spec,
+               t.pharm_unit,
+               t.pharm_factory,LAST_ECONOMIZE_TIME,
+               sum(t.reality_pharm_amount) all_reality_pharm_amount,
+               sum(t.fee_pharm_amount) all_fee_pharm_amount
+          from (select DRUG_CODE,
+                       INHOS_PRICE,
+                       FLAG,
+                       pharm_id,
+                       pharm_name,
+                       pharm_spec,
+                       pharm_factory,
+                       ceil(sum(reality_pharm_amount)) reality_pharm_amount,
+                       sum(fee_pharm_amount) fee_pharm_amount,
+                       pharm_unit,
+                       create_date,
+                       CHECK_BATCH_ID,
+                       FN_LAST_ECONOMIZE_TIME(PHARM_ID, PHARM_UNIT, ?) LAST_ECONOMIZE_TIME
+                  from pt_pharm_send_view_JP 
+                  where PHARM_SEND_DATE > nvl(FN_LAST_ECONOMIZE_TIME(PHARM_ID, PHARM_UNIT, ?), to_date('19000101','yyyymmdd'))
+                     and PHARM_SEND_DATE <= ? 
+                   AND IS_ECONOMIZE(PHARM_ID, PHARM_UNIT, PHARM_SEND_DATE, ? ) = 1
+                    AND (illfield_id = ? or ? = '0' )
+                    {0}
+                 group by DRUG_CODE,
+                          INHOS_PRICE,
+                          flag,
+                          pharm_id,
+                          pharm_name,
+                          pharm_spec,
+                          pharm_unit,
+                          pharm_factory,
+                          create_date,
+                          CHECK_BATCH_ID,
+                          FN_LAST_ECONOMIZE_TIME(PHARM_ID, PHARM_UNIT, ?)) t
+         group by t.DRUG_CODE,
+                  t.INHOS_PRICE,
+                  t.flag,
+                  t.pharm_id,
+                  t.pharm_name,
+                  t.pharm_spec,
+                  t.pharm_unit,
+                  t.pharm_factory,LAST_ECONOMIZE_TIME) tt
+";
+            }
+        }
+
+        /// <summary>
         /// 药品入库记录详情查询
         /// </summary>
         public static string SqlSelectAddPharmDetail
@@ -2872,6 +2999,23 @@ where spe.economize_id = sped.economize_id
   {0}
   {1}
   and spe.economize_date between ? and ?";
+            }
+        }
+
+        /// <summary>
+        /// 药品入库记录详情查询
+        /// </summary>
+        public static string SqlSelectAddPharmDetail2
+        {
+            get
+            {
+                return @"select spe.*,sped.*,gpv.*,sped.economize_count * gpv.INHOS_PRICE all_money  from st_pharm_economize spe,st_pharm_economize_detail sped,gm_pharm_view gpv
+where spe.economize_id = sped.economize_id
+  and sped.pharm_id = gpv.PHARM_ID
+  and sped.pharm_units = gpv.UNITS
+  {0}
+  and spe.economize_date between ? and ?
+  and (spe.economize_illfield = ? or ?='0') ";
             }
         }
 
@@ -2898,6 +3042,38 @@ values
             {
                 return @"delete ht_illfield_filter_pharm hifp
  where hifp.illfield_id = ? and hifp.pharm_id = ?";
+            }
+        }
+
+        /// <summary>
+        /// 药品入库汇总查询
+        /// </summary>
+        public static string SqlSelectAddPharm2
+        {
+            get
+            {
+                return @"select gpv.PHARM_ID,
+       gpv.PHARM_NAME,
+       gpv.SPEC,
+       gpv.FACTORY_NAME,
+       sum(sped.economize_count) economize_count,
+       gpv.UNITS,
+       gpv.INHOS_PRICE,
+       sum(sped.economize_count) * gpv.INHOS_PRICE all_money
+  from st_pharm_economize        spe,
+       st_pharm_economize_detail sped,
+       gm_pharm_view             gpv
+ where spe.economize_id = sped.economize_id
+   and sped.pharm_id = gpv.PHARM_ID
+   and sped.pharm_units = gpv.UNITS {0} 
+   and spe.economize_date between ? and ?
+  and (spe.economize_illfield = ? or ?='0') 
+ group by gpv.PHARM_ID,
+          gpv.PHARM_NAME,
+          gpv.SPEC,
+          gpv.FACTORY_NAME,
+          gpv.UNITS,
+          gpv.INHOS_PRICE";
             }
         }
 
@@ -2931,6 +3107,7 @@ values
           gpv.INHOS_PRICE";
             }
         }
+
 
         public static string QueryPharmEconomizeId
         {

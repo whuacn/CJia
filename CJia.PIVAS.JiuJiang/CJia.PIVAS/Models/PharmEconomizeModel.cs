@@ -26,7 +26,7 @@ namespace CJia.PIVAS.Models
         public DataTable SelectFilterPharm(string illfieldId)
         {
             string str = " where  1 = 0 ";
-            if(illfieldId != "0")
+            if (illfieldId != "0")
             {
                 str = " where nhifp.illfield_id = '" + illfieldId + "' ";
             }
@@ -46,11 +46,11 @@ namespace CJia.PIVAS.Models
         public DataTable SelectPharmEconomize(DateTime startDate, DateTime endDate, string illfield, List<string> pharmIds)
         {
             StringBuilder pharmIdStr = new StringBuilder("");
-            if(pharmIds != null && pharmIds.Count > 0)
+            if (pharmIds != null && pharmIds.Count > 0)
             {
                 //pharmIdStr.Append(" and  gpv.pharm_id in (");
                 pharmIdStr.Append(" and  pharm_id in (");// by dh
-                foreach(string pharmId in pharmIds)
+                foreach (string pharmId in pharmIds)
                 {
                     pharmIdStr.Append("'");
                     pharmIdStr.Append(pharmId);
@@ -59,21 +59,46 @@ namespace CJia.PIVAS.Models
                 pharmIdStr.Remove(pharmIdStr.Length - 1, 1);
                 pharmIdStr.Append(") ");
             }
-            StringBuilder illifeldStr = new StringBuilder("");
-            if(illfield != "0")
+            //StringBuilder illifeldStr = new StringBuilder("");
+            //if(illfield != "0")
+            //{
+            //    //illifeldStr.Append(" and  spl.illfield_id = ");
+            //    illifeldStr.Append(" and  illfield_id = ");
+            //    illifeldStr.Append("'");
+            //    illifeldStr.Append(illfield);
+            //    illifeldStr.Append("' ");
+            //}
+            //else
+            //{
+            //    illifeldStr.Append(" and 1 = 1 ");
+            //}
+            //string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectPharmEconomize, pharmIdStr.ToString(), illifeldStr.ToString());
+            //object[] parames = new object[] { startDate, endDate };
+            string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectPharmEconomize2, pharmIdStr.ToString());
+            object[] parames = new object[] { illfield, startDate, endDate, illfield, illfield, illfield, illfield };
+            DataTable result = CJia.DefaultOleDb.Query(sql, parames);
+            //DataTable result = CJia.DefaultOleDb.Query(sql);
+            return result;
+        }
+
+        public DataTable SelectPharmEconomizeInput( DateTime endDate, string illfield, List<string> pharmIds)
+        {
+            StringBuilder pharmIdStr = new StringBuilder("");
+            if (pharmIds != null && pharmIds.Count > 0)
             {
-                //illifeldStr.Append(" and  spl.illfield_id = ");
-                illifeldStr.Append(" and  illfield_id = ");
-                illifeldStr.Append("'");
-                illifeldStr.Append(illfield);
-                illifeldStr.Append("' ");
+                //pharmIdStr.Append(" and  gpv.pharm_id in (");
+                pharmIdStr.Append(" and  pharm_id in (");// by dh
+                foreach (string pharmId in pharmIds)
+                {
+                    pharmIdStr.Append("'");
+                    pharmIdStr.Append(pharmId);
+                    pharmIdStr.Append("',");
+                }
+                pharmIdStr.Remove(pharmIdStr.Length - 1, 1);
+                pharmIdStr.Append(") ");
             }
-            else
-            {
-                illifeldStr.Append(" and 1 = 1 ");
-            }
-            string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectPharmEconomize, pharmIdStr.ToString(), illifeldStr.ToString());
-            object[] parames = new object[] { startDate, endDate };
+            string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectPharmEconomizeInput, pharmIdStr.ToString());
+            object[] parames = new object[] { illfield, illfield, endDate, illfield, illfield, illfield, illfield };
             DataTable result = CJia.DefaultOleDb.Query(sql, parames);
             //DataTable result = CJia.DefaultOleDb.Query(sql);
             return result;
@@ -87,39 +112,39 @@ namespace CJia.PIVAS.Models
         /// <returns></returns>
         public bool AddPharm(DataTable pharmData, string selectIllfield)
         {
-            if(pharmData != null && pharmData.Rows != null && pharmData.Rows.Count > 0)
+            if (pharmData != null && pharmData.Rows != null && pharmData.Rows.Count > 0)
             {
-                using(CJia.Transaction tran = new Transaction(CJia.DefaultOleDb.DefaultAdapter))
+                using (CJia.Transaction tran = new Transaction(CJia.DefaultOleDb.DefaultAdapter))
                 {
                     string pharmEconomizeId = CJia.DefaultOleDb.QueryScalar(tran.ID, CJia.PIVAS.Models.SqlTools.QueryPharmEconomizeId);
                     object[] parames = new object[] { pharmEconomizeId, CJia.PIVAS.User.UserId, CJia.PIVAS.User.UserName, selectIllfield };
                     bool result1 = CJia.DefaultOleDb.Execute(tran.ID, CJia.PIVAS.Models.SqlTools.InsertPharmEconomize, parames) > 0 ? true : false;
-                    if(!result1)
+                    if (!result1)
                     {
                         return false;
                     }
-                    foreach(DataRow row in pharmData.Rows)
+                    foreach (DataRow row in pharmData.Rows)
                     {
                         parames = new object[] { row["PHARM_ID"].ToString(), row["ADD_PHARM_COUNT"].ToString(), pharmEconomizeId, row["PHARM_UNIT"].ToString() };
                         bool result2 = CJia.DefaultOleDb.Execute(tran.ID, CJia.PIVAS.Models.SqlTools.InsertPharmEconomizeDetail, parames) > 0 ? true : false;
-                        if(!result2)
+                        if (!result2)
                         {
                             return false;
                         }
 
                         parames = new object[] { row["PHARM_ID"].ToString(), row["PHARM_UNIT"].ToString(), selectIllfield };
                         bool result3 = CJia.DefaultOleDb.Execute(tran.ID, CJia.PIVAS.Models.SqlTools.UpdatePharmEconomizeLastDate, parames) > 0 ? true : false;
-                        if(!result3)
+                        if (!result3)
                         {
                             parames = new object[] { row["PHARM_ID"].ToString(), row["PHARM_UNIT"].ToString(), selectIllfield };
                             bool result4 = CJia.DefaultOleDb.Execute(tran.ID, CJia.PIVAS.Models.SqlTools.InsertPharmEconomizeLastDate, parames) > 0 ? true : false;
-                            if(!result4)
+                            if (!result4)
                             {
                                 return false;
                             }
                         }
                     }
-                    if(!this.AddPharmHis(tran.ID, pharmEconomizeId))
+                    if (!this.AddPharmHis(tran.ID, pharmEconomizeId))
                     {
                         return false;
                     }
@@ -142,7 +167,7 @@ namespace CJia.PIVAS.Models
             parms.Add("O_FLAG", "");
             CJia.DefaultOleDb.ExecuteProcedure(transID, "ADD_PHARM_ECONOMIZE", ref parms);
             string result = parms["O_FLAG"].ToString();
-            if(result == "1")
+            if (result == "1")
             {
                 return true;
             }
@@ -155,10 +180,10 @@ namespace CJia.PIVAS.Models
         public DataTable SelectAddPharm(DateTime startDate, DateTime endDate, string illfield, List<string> pharmIds)
         {
             StringBuilder pharmIdStr = new StringBuilder("");
-            if(pharmIds != null && pharmIds.Count > 0)
+            if (pharmIds != null && pharmIds.Count > 0)
             {
                 pharmIdStr.Append(" and  gpv.pharm_id in (");
-                foreach(string pharmId in pharmIds)
+                foreach (string pharmId in pharmIds)
                 {
                     pharmIdStr.Append("'");
                     pharmIdStr.Append(pharmId);
@@ -167,16 +192,18 @@ namespace CJia.PIVAS.Models
                 pharmIdStr.Remove(pharmIdStr.Length - 1, 1);
                 pharmIdStr.Append(") ");
             }
-            StringBuilder illifeldStr = new StringBuilder("");
-            if(illfield != "0")
-            {
-                illifeldStr.Append(" and    spe.economize_illfield = ");
-                illifeldStr.Append("'");
-                illifeldStr.Append(illfield);
-                illifeldStr.Append("' ");
-            }
-            string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectAddPharm, pharmIdStr.ToString(), illifeldStr.ToString());
-            object[] parames = new object[] { startDate, endDate };
+            //StringBuilder illifeldStr = new StringBuilder("");
+            //if (illfield != "0")
+            //{
+            //    illifeldStr.Append(" and    spe.economize_illfield = ");
+            //    illifeldStr.Append("'");
+            //    illifeldStr.Append(illfield);
+            //    illifeldStr.Append("' ");
+            //}
+            //string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectAddPharm, pharmIdStr.ToString(), illifeldStr.ToString());
+            //object[] parames = new object[] { startDate, endDate };
+            string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectAddPharm2, pharmIdStr.ToString());
+            object[] parames = new object[] { startDate, endDate, illfield, illfield };
             DataTable result = CJia.DefaultOleDb.Query(sql, parames);
             return result;
         }
@@ -185,10 +212,10 @@ namespace CJia.PIVAS.Models
         public DataTable SelectAddPharmDetail(DateTime startDate, DateTime endDate, string illfield, List<string> pharmIds)
         {
             StringBuilder pharmIdStr = new StringBuilder("");
-            if(pharmIds != null && pharmIds.Count > 0)
+            if (pharmIds != null && pharmIds.Count > 0)
             {
                 pharmIdStr.Append(" and  gpv.pharm_id in (");
-                foreach(string pharmId in pharmIds)
+                foreach (string pharmId in pharmIds)
                 {
                     pharmIdStr.Append("'");
                     pharmIdStr.Append(pharmId);
@@ -197,20 +224,22 @@ namespace CJia.PIVAS.Models
                 pharmIdStr.Remove(pharmIdStr.Length - 1, 1);
                 pharmIdStr.Append(") ");
             }
-            StringBuilder illifeldStr = new StringBuilder("");
-            if(illfield != "0")
-            {
-                illifeldStr.Append(" and    spe.economize_illfield = ");
-                illifeldStr.Append("'");
-                illifeldStr.Append(illfield);
-                illifeldStr.Append("' ");
-            }
-            else
-            {
-                illifeldStr.Append(" and 1 = 1 ");
-            }
-            string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectAddPharmDetail, pharmIdStr.ToString(), illifeldStr.ToString());
-            object[] parames = new object[] { startDate, endDate };
+            //StringBuilder illifeldStr = new StringBuilder("");
+            //if(illfield != "0")
+            //{
+            //    illifeldStr.Append(" and    spe.economize_illfield = ");
+            //    illifeldStr.Append("'");
+            //    illifeldStr.Append(illfield);
+            //    illifeldStr.Append("' ");
+            //}
+            //else
+            //{
+            //    illifeldStr.Append(" and 1 = 1 ");
+            //}
+            //string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectAddPharmDetail, pharmIdStr.ToString(), illifeldStr.ToString());
+            //object[] parames = new object[] { startDate, endDate };
+            string sql = string.Format(CJia.PIVAS.Models.SqlTools.SqlSelectAddPharmDetail2, pharmIdStr.ToString());
+            object[] parames = new object[] { startDate, endDate, illfield, illfield };
             DataTable result = CJia.DefaultOleDb.Query(sql, parames);
             return result;
         }
