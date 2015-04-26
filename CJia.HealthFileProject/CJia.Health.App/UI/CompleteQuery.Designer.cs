@@ -43,6 +43,9 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,9 +55,6 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sfExcel = new System.Windows.Forms.SaveFileDialog();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
             this.cJiaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcAll)).BeginInit();
@@ -112,29 +112,32 @@
             // 
             // txtBNO
             // 
+            this.txtBNO.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtBNO.Location = new System.Drawing.Point(500, 25);
             this.txtBNO.Name = "txtBNO";
-            this.txtBNO.Size = new System.Drawing.Size(122, 22);
+            this.txtBNO.Size = new System.Drawing.Size(122, 25);
             this.txtBNO.TabIndex = 15;
             // 
             // txtSNO
             // 
+            this.txtSNO.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtSNO.Location = new System.Drawing.Point(357, 25);
             this.txtSNO.Name = "txtSNO";
-            this.txtSNO.Size = new System.Drawing.Size(122, 22);
+            this.txtSNO.Size = new System.Drawing.Size(122, 25);
             this.txtSNO.TabIndex = 14;
             // 
             // cJiaLabel2
             // 
-            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel2.Location = new System.Drawing.Point(276, 28);
             this.cJiaLabel2.Name = "cJiaLabel2";
-            this.cJiaLabel2.Size = new System.Drawing.Size(75, 16);
+            this.cJiaLabel2.Size = new System.Drawing.Size(65, 19);
             this.cJiaLabel2.TabIndex = 13;
             this.cJiaLabel2.Text = "档案编号：";
             // 
             // cboFileDate
             // 
+            this.cboFileDate.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboFileDate.FormattingEnabled = true;
             this.cboFileDate.Items.AddRange(new object[] {
             "2003",
@@ -160,7 +163,7 @@
             "2023"});
             this.cboFileDate.Location = new System.Drawing.Point(112, 26);
             this.cboFileDate.Name = "cboFileDate";
-            this.cboFileDate.Size = new System.Drawing.Size(121, 22);
+            this.cboFileDate.Size = new System.Drawing.Size(121, 27);
             this.cboFileDate.TabIndex = 12;
             this.cboFileDate.Text = "2003";
             // 
@@ -184,10 +187,10 @@
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel1.Location = new System.Drawing.Point(31, 31);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(75, 16);
+            this.cJiaLabel1.Size = new System.Drawing.Size(65, 19);
             this.cJiaLabel1.TabIndex = 0;
             this.cJiaLabel1.Text = "档案年度：";
             // 
@@ -356,6 +359,10 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "档案编号";
             this.gridColumn2.FieldName = "RECORDNO";
             this.gridColumn2.Name = "gridColumn2";
@@ -364,11 +371,51 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "病人姓名";
             this.gridColumn3.FieldName = "FNAME";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn6.Caption = "出院日期";
+            this.gridColumn6.FieldName = "OUT_HOSPITAL_DATE";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn9.Caption = "出院科室";
+            this.gridColumn9.FieldName = "FOOFFI";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 3;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn10.AppearanceCell.Options.UseFont = true;
+            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn10.Caption = "编码员";
+            this.gridColumn10.FieldName = "CREATER";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 4;
             // 
             // gridView2
             // 
@@ -687,30 +734,6 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 2;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "出院日期";
-            this.gridColumn6.FieldName = "OUT_HOSPITAL_DATE";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "出院科室";
-            this.gridColumn9.FieldName = "FOOFFI";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 3;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "编码员";
-            this.gridColumn10.FieldName = "CREATER";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 4;
             // 
             // CompleteQuery
             // 

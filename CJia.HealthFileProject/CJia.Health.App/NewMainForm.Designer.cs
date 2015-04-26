@@ -29,7 +29,6 @@ namespace CJia.Health.App
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMainForm));
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -67,10 +66,10 @@ namespace CJia.Health.App
             this.btnPrintApply = new DevExpress.XtraBars.BarButtonItem();
             this.btnHomePage = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProject = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDept = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDoctor = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBorrowTime = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
@@ -80,8 +79,8 @@ namespace CJia.Health.App
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.btnUserWork = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRole1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRoleFounction1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRole = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRoleFounction = new DevExpress.XtraBars.BarButtonItem();
             this.btnSelectScanner = new DevExpress.XtraBars.BarButtonItem();
             this.BtnBorrow = new DevExpress.XtraBars.BarButtonItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
@@ -128,7 +127,7 @@ namespace CJia.Health.App
             this.xTPHome = new DevExpress.XtraTab.XtraTabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSystem = new System.Windows.Forms.Label();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.xTC = new DevExpress.XtraTab.XtraTabControl();
             this.xttpHome = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -211,10 +210,10 @@ namespace CJia.Health.App
             this.btnPrintApply,
             this.btnHomePage,
             this.barButtonItem22,
-            this.barButtonItem23,
-            this.barButtonItem24,
-            this.barButtonItem25,
-            this.barButtonItem26,
+            this.btnProject,
+            this.btnDept,
+            this.btnDoctor,
+            this.btnBorrowTime,
             this.barButtonItem27,
             this.barButtonItem28,
             this.barButtonItem29,
@@ -224,8 +223,8 @@ namespace CJia.Health.App
             this.barButtonItem33,
             this.btnUserWork,
             this.barButtonItem35,
-            this.btnRole1,
-            this.btnRoleFounction1,
+            this.btnRole,
+            this.btnRoleFounction,
             this.btnSelectScanner,
             this.BtnBorrow,
             this.btnUser,
@@ -568,73 +567,73 @@ namespace CJia.Health.App
             this.barButtonItem22.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem22.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBorrow_Click);
             // 
-            // barButtonItem23
+            // btnProject
             // 
-            resources.ApplyResources(this.barButtonItem23, "barButtonItem23");
-            this.barButtonItem23.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.Glyph")));
-            this.barButtonItem23.Id = 42;
-            this.barButtonItem23.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Disabled.Font")));
-            this.barButtonItem23.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem23.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Hovered.Font")));
-            this.barButtonItem23.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem23.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Normal.Font")));
-            this.barButtonItem23.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem23.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Pressed.Font")));
-            this.barButtonItem23.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem23.Name = "barButtonItem23";
-            this.barButtonItem23.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProject_Click);
+            resources.ApplyResources(this.btnProject, "btnProject");
+            this.btnProject.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProject.Glyph")));
+            this.btnProject.Id = 42;
+            this.btnProject.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Disabled.Font")));
+            this.btnProject.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnProject.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Hovered.Font")));
+            this.btnProject.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnProject.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Normal.Font")));
+            this.btnProject.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnProject.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem23.ItemAppearance.Pressed.Font")));
+            this.btnProject.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnProject.Name = "btnProject";
+            this.btnProject.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnProject.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProject_Click);
             // 
-            // barButtonItem24
+            // btnDept
             // 
-            resources.ApplyResources(this.barButtonItem24, "barButtonItem24");
-            this.barButtonItem24.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem24.Glyph")));
-            this.barButtonItem24.Id = 43;
-            this.barButtonItem24.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Disabled.Font")));
-            this.barButtonItem24.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem24.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Hovered.Font")));
-            this.barButtonItem24.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem24.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Normal.Font")));
-            this.barButtonItem24.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem24.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Pressed.Font")));
-            this.barButtonItem24.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem24.Name = "barButtonItem24";
-            this.barButtonItem24.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem24.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDept_Click);
+            resources.ApplyResources(this.btnDept, "btnDept");
+            this.btnDept.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDept.Glyph")));
+            this.btnDept.Id = 43;
+            this.btnDept.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Disabled.Font")));
+            this.btnDept.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnDept.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Hovered.Font")));
+            this.btnDept.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnDept.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Normal.Font")));
+            this.btnDept.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnDept.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem24.ItemAppearance.Pressed.Font")));
+            this.btnDept.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnDept.Name = "btnDept";
+            this.btnDept.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnDept.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDept_Click);
             // 
-            // barButtonItem25
+            // btnDoctor
             // 
-            resources.ApplyResources(this.barButtonItem25, "barButtonItem25");
-            this.barButtonItem25.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.Glyph")));
-            this.barButtonItem25.Id = 44;
-            this.barButtonItem25.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Disabled.Font")));
-            this.barButtonItem25.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem25.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Hovered.Font")));
-            this.barButtonItem25.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem25.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Normal.Font")));
-            this.barButtonItem25.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem25.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Pressed.Font")));
-            this.barButtonItem25.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem25.Name = "barButtonItem25";
-            this.barButtonItem25.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem25.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoctor_Click);
+            resources.ApplyResources(this.btnDoctor, "btnDoctor");
+            this.btnDoctor.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDoctor.Glyph")));
+            this.btnDoctor.Id = 44;
+            this.btnDoctor.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Disabled.Font")));
+            this.btnDoctor.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnDoctor.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Hovered.Font")));
+            this.btnDoctor.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnDoctor.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Normal.Font")));
+            this.btnDoctor.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnDoctor.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem25.ItemAppearance.Pressed.Font")));
+            this.btnDoctor.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnDoctor.Name = "btnDoctor";
+            this.btnDoctor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnDoctor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoctor_Click);
             // 
-            // barButtonItem26
+            // btnBorrowTime
             // 
-            resources.ApplyResources(this.barButtonItem26, "barButtonItem26");
-            this.barButtonItem26.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.Glyph")));
-            this.barButtonItem26.Id = 45;
-            this.barButtonItem26.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Disabled.Font")));
-            this.barButtonItem26.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem26.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Hovered.Font")));
-            this.barButtonItem26.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem26.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Normal.Font")));
-            this.barButtonItem26.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem26.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Pressed.Font")));
-            this.barButtonItem26.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem26.Name = "barButtonItem26";
-            this.barButtonItem26.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem26.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrowTime_Click);
+            resources.ApplyResources(this.btnBorrowTime, "btnBorrowTime");
+            this.btnBorrowTime.Glyph = ((System.Drawing.Image)(resources.GetObject("btnBorrowTime.Glyph")));
+            this.btnBorrowTime.Id = 45;
+            this.btnBorrowTime.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Disabled.Font")));
+            this.btnBorrowTime.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnBorrowTime.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Hovered.Font")));
+            this.btnBorrowTime.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnBorrowTime.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Normal.Font")));
+            this.btnBorrowTime.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnBorrowTime.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem26.ItemAppearance.Pressed.Font")));
+            this.btnBorrowTime.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnBorrowTime.Name = "btnBorrowTime";
+            this.btnBorrowTime.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnBorrowTime.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrowTime_Click);
             // 
             // barButtonItem27
             // 
@@ -745,39 +744,39 @@ namespace CJia.Health.App
             this.barButtonItem35.Name = "barButtonItem35";
             this.barButtonItem35.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // btnRole1
+            // btnRole
             // 
-            resources.ApplyResources(this.btnRole1, "btnRole1");
-            this.btnRole1.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRole1.Glyph")));
-            this.btnRole1.Id = 58;
-            this.btnRole1.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Disabled.Font")));
-            this.btnRole1.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btnRole1.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Hovered.Font")));
-            this.btnRole1.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnRole1.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Normal.Font")));
-            this.btnRole1.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnRole1.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Pressed.Font")));
-            this.btnRole1.ItemAppearance.Pressed.Options.UseFont = true;
-            this.btnRole1.Name = "btnRole1";
-            this.btnRole1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnRole1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRole_Click);
+            resources.ApplyResources(this.btnRole, "btnRole");
+            this.btnRole.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRole.Glyph")));
+            this.btnRole.Id = 58;
+            this.btnRole.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Disabled.Font")));
+            this.btnRole.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnRole.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Hovered.Font")));
+            this.btnRole.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnRole.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Normal.Font")));
+            this.btnRole.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnRole.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnRole1.ItemAppearance.Pressed.Font")));
+            this.btnRole.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnRole.Name = "btnRole";
+            this.btnRole.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRole_Click);
             // 
-            // btnRoleFounction1
+            // btnRoleFounction
             // 
-            resources.ApplyResources(this.btnRoleFounction1, "btnRoleFounction1");
-            this.btnRoleFounction1.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRoleFounction1.Glyph")));
-            this.btnRoleFounction1.Id = 59;
-            this.btnRoleFounction1.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Disabled.Font")));
-            this.btnRoleFounction1.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btnRoleFounction1.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Hovered.Font")));
-            this.btnRoleFounction1.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnRoleFounction1.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Normal.Font")));
-            this.btnRoleFounction1.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnRoleFounction1.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Pressed.Font")));
-            this.btnRoleFounction1.ItemAppearance.Pressed.Options.UseFont = true;
-            this.btnRoleFounction1.Name = "btnRoleFounction1";
-            this.btnRoleFounction1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnRoleFounction1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRoleFounction_Click);
+            resources.ApplyResources(this.btnRoleFounction, "btnRoleFounction");
+            this.btnRoleFounction.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRoleFounction.Glyph")));
+            this.btnRoleFounction.Id = 59;
+            this.btnRoleFounction.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Disabled.Font")));
+            this.btnRoleFounction.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnRoleFounction.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Hovered.Font")));
+            this.btnRoleFounction.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnRoleFounction.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Normal.Font")));
+            this.btnRoleFounction.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnRoleFounction.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnRoleFounction1.ItemAppearance.Pressed.Font")));
+            this.btnRoleFounction.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnRoleFounction.Name = "btnRoleFounction";
+            this.btnRoleFounction.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRoleFounction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRoleFounction_Click);
             // 
             // btnSelectScanner
             // 
@@ -1173,10 +1172,10 @@ namespace CJia.Health.App
             // 
             // btnDicManage1
             // 
-            this.btnDicManage1.ItemLinks.Add(this.barButtonItem23);
-            this.btnDicManage1.ItemLinks.Add(this.barButtonItem24);
-            this.btnDicManage1.ItemLinks.Add(this.barButtonItem25);
-            this.btnDicManage1.ItemLinks.Add(this.barButtonItem26);
+            this.btnDicManage1.ItemLinks.Add(this.btnProject);
+            this.btnDicManage1.ItemLinks.Add(this.btnDept);
+            this.btnDicManage1.ItemLinks.Add(this.btnDoctor);
+            this.btnDicManage1.ItemLinks.Add(this.btnBorrowTime);
             this.btnDicManage1.Name = "btnDicManage1";
             this.btnDicManage1.ShowCaptionButton = false;
             resources.ApplyResources(this.btnDicManage1, "btnDicManage1");
@@ -1184,8 +1183,8 @@ namespace CJia.Health.App
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnUser);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnRole1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnRoleFounction1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnRole);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnRoleFounction);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnSelectScanner);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
@@ -1387,10 +1386,10 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup efff;
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup btnDicManage1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem24;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem25;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem26;
+        private DevExpress.XtraBars.BarButtonItem btnProject;
+        private DevExpress.XtraBars.BarButtonItem btnDept;
+        private DevExpress.XtraBars.BarButtonItem btnDoctor;
+        private DevExpress.XtraBars.BarButtonItem btnBorrowTime;
         private DevExpress.XtraBars.BarButtonItem barButtonItem27;
         private DevExpress.XtraBars.BarButtonItem barButtonItem28;
         private DevExpress.XtraBars.BarButtonItem barButtonItem29;
@@ -1401,8 +1400,8 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.BarButtonItem barButtonItem33;
         private DevExpress.XtraBars.BarButtonItem btnUserWork;
         private DevExpress.XtraBars.BarButtonItem barButtonItem35;
-        private DevExpress.XtraBars.BarButtonItem btnRole1;
-        private DevExpress.XtraBars.BarButtonItem btnRoleFounction1;
+        private DevExpress.XtraBars.BarButtonItem btnRole;
+        private DevExpress.XtraBars.BarButtonItem btnRoleFounction;
         private DevExpress.XtraBars.BarButtonItem btnSelectScanner;
         private DevExpress.XtraBars.BarButtonItem BtnBorrow;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;

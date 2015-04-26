@@ -603,7 +603,7 @@ namespace CJia.Health.App
             // 
             this.xtraTabPage2.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.Image")));
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1374, 537);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1370, 538);
             this.xtraTabPage2.Text = "首页录入";
             // 
             // cJiaPanel1

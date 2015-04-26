@@ -270,19 +270,19 @@ namespace CJia.Health.App
                             this.btnUser.Enabled = false;
                             break;
                         case "1000000126":              //角色设置
-                            this.btnRole1.Enabled = false;
+                            this.btnRole.Enabled = false;
                             break;
                         case "1000000127":              //功能设置
-                            this.btnRoleFounction1.Enabled = false;
+                            this.btnRoleFounction.Enabled = false;
                             break;
                         case "1000000141":              //起始页
                             this.btnHomePage.Enabled = false;
                             break;
                         case "1000000123":              //字典维护
-                            barButtonItem23.Enabled = false;
-                            barButtonItem24.Enabled = false;
-                            barButtonItem25.Enabled = false;
-                            barButtonItem26.Enabled = false;
+                            btnProject.Enabled = false;
+                            btnDept.Enabled = false;
+                            btnDoctor.Enabled = false;
+                            btnBorrowTime.Enabled = false;
                             break;
                         case "1000000161":              //图片拍照
                             this.btnImagesInput.Enabled = false;
@@ -863,7 +863,7 @@ namespace CJia.Health.App
                     uc = new UI.RoleManageView();
                     break;
                 case "btnRoleFounction":
-                    uc = new UI.RoleFunctionView();
+                    uc = new UI.RoleFunctionView();                    
                     break;
                 default:
                     break;
@@ -894,6 +894,7 @@ namespace CJia.Health.App
                 xpage.Appearance.PageClient.Options.UseFont = true;
                 xpage.AutoScroll = true;
                 //添加要增加的控件
+                uc.Dock = DockStyle.Fill;
                 xpage.Controls.Add(uc);
                 uc.Dock = DockStyle.Fill;
                 xTC.TabPages.Add(xpage);

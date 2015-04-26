@@ -29,7 +29,6 @@ namespace CJia.Health.App.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JJCJScanView));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
@@ -52,7 +51,7 @@ namespace CJia.Health.App.UI
             this.btnDelete = new CJia.Controls.BtnDelete();
             this.ckInput = new CJia.Controls.CJiaCheck();
             this.pictureGrid = new CJia.Controls.CJiaGrid();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.btnOneReName = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,6 +75,13 @@ namespace CJia.Health.App.UI
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
             this.cJiaPicture = new CJia.Controls.CJiaPicture();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip();
+            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -88,13 +94,6 @@ namespace CJia.Health.App.UI
             this.smallPicture = new CJia.Controls.CJiaPicture();
             this.btnLeft = new CJia.Controls.CJiaButton();
             this.btnRight = new CJia.Controls.CJiaButton();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
@@ -110,10 +109,10 @@ namespace CJia.Health.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.txtFolder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlRight)).BeginInit();
             this.pnlRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.smallPicture.Properties)).BeginInit();
-            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -184,24 +183,24 @@ namespace CJia.Health.App.UI
             this.txtStartPage.Location = new System.Drawing.Point(62, 82);
             this.txtStartPage.Name = "txtStartPage";
             this.txtStartPage.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtStartPage.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtStartPage.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtStartPage.Properties.Appearance.Options.UseBackColor = true;
             this.txtStartPage.Properties.Appearance.Options.UseFont = true;
             this.txtStartPage.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtStartPage.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtStartPage.Properties.Mask.EditMask = "\\d{3}|\\d{2}|\\d{1}";
             this.txtStartPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.txtStartPage.Size = new System.Drawing.Size(200, 20);
+            this.txtStartPage.Size = new System.Drawing.Size(200, 26);
             this.txtStartPage.TabIndex = 178;
             this.txtStartPage.TextChanged += new System.EventHandler(this.txtStartPage_TextChanged);
             this.txtStartPage.Leave += new System.EventHandler(this.txtStartPage_Leave);
             // 
             // cJiaLabel3
             // 
-            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel3.Location = new System.Drawing.Point(7, 88);
             this.cJiaLabel3.Name = "cJiaLabel3";
-            this.cJiaLabel3.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel3.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel3.TabIndex = 179;
             this.cJiaLabel3.Text = "起始页";
             // 
@@ -383,6 +382,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn19
             // 
+            this.gridColumn19.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn19.AppearanceCell.Options.UseFont = true;
+            this.gridColumn19.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn19.AppearanceHeader.Options.UseFont = true;
             this.gridColumn19.Caption = "图片名称";
             this.gridColumn19.FieldName = "PICTURE_NAME";
             this.gridColumn19.Name = "gridColumn19";
@@ -392,6 +395,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn20
             // 
+            this.gridColumn20.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn20.AppearanceCell.Options.UseFont = true;
+            this.gridColumn20.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn20.AppearanceHeader.Options.UseFont = true;
             this.gridColumn20.Caption = "页码";
             this.gridColumn20.FieldName = "PAGE_NO";
             this.gridColumn20.Name = "gridColumn20";
@@ -401,6 +408,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn21
             // 
+            this.gridColumn21.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn21.AppearanceCell.Options.UseFont = true;
+            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn21.AppearanceHeader.Options.UseFont = true;
             this.gridColumn21.Caption = "附加码";
             this.gridColumn21.FieldName = "SUBPAGE";
             this.gridColumn21.Name = "gridColumn21";
@@ -410,6 +421,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn23
             // 
+            this.gridColumn23.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn23.AppearanceCell.Options.UseFont = true;
+            this.gridColumn23.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn23.AppearanceHeader.Options.UseFont = true;
             this.gridColumn23.Caption = "项目名称";
             this.gridColumn23.FieldName = "PRO_NAME";
             this.gridColumn23.Name = "gridColumn23";
@@ -419,8 +434,12 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn24
             // 
+            this.gridColumn24.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.gridColumn24.AppearanceCell.ForeColor = System.Drawing.Color.Red;
+            this.gridColumn24.AppearanceCell.Options.UseFont = true;
             this.gridColumn24.AppearanceCell.Options.UseForeColor = true;
+            this.gridColumn24.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn24.AppearanceHeader.Options.UseFont = true;
             this.gridColumn24.Caption = "状态";
             this.gridColumn24.FieldName = "PICTURE_CHECK_STATUS";
             this.gridColumn24.Name = "gridColumn24";
@@ -430,6 +449,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn28
             // 
+            this.gridColumn28.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn28.AppearanceCell.Options.UseFont = true;
+            this.gridColumn28.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn28.AppearanceHeader.Options.UseFont = true;
             this.gridColumn28.Caption = "原因";
             this.gridColumn28.FieldName = "CHECK_INFO";
             this.gridColumn28.Name = "gridColumn28";
@@ -439,24 +462,40 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn25
             // 
+            this.gridColumn25.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn25.AppearanceCell.Options.UseFont = true;
+            this.gridColumn25.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn25.AppearanceHeader.Options.UseFont = true;
             this.gridColumn25.Caption = "图片路径";
             this.gridColumn25.FieldName = "SRC";
             this.gridColumn25.Name = "gridColumn25";
             // 
             // gridColumn26
             // 
+            this.gridColumn26.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn26.AppearanceCell.Options.UseFont = true;
+            this.gridColumn26.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn26.AppearanceHeader.Options.UseFont = true;
             this.gridColumn26.Caption = "项目id";
             this.gridColumn26.FieldName = "PRO_ID";
             this.gridColumn26.Name = "gridColumn26";
             // 
             // gridColumn30
             // 
+            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn30.AppearanceCell.Options.UseFont = true;
+            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn30.AppearanceHeader.Options.UseFont = true;
             this.gridColumn30.Caption = "病人表id";
             this.gridColumn30.FieldName = "HEALTH_ID";
             this.gridColumn30.Name = "gridColumn30";
             // 
             // gridColumn27
             // 
+            this.gridColumn27.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn27.AppearanceCell.Options.UseFont = true;
+            this.gridColumn27.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn27.AppearanceHeader.Options.UseFont = true;
             this.gridColumn27.Caption = "图片id";
             this.gridColumn27.FieldName = "PICTURE_ID";
             this.gridColumn27.Name = "gridColumn27";
@@ -484,14 +523,14 @@ namespace CJia.Health.App.UI
             this.ckInput.Location = new System.Drawing.Point(5, 164);
             this.ckInput.Name = "ckInput";
             this.ckInput.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ckInput.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ckInput.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ckInput.Properties.Appearance.Options.UseBackColor = true;
             this.ckInput.Properties.Appearance.Options.UseFont = true;
             this.ckInput.Properties.Caption = "已入库";
             this.ckInput.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.ckInput.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.ckInput.Selectable = true;
-            this.ckInput.Size = new System.Drawing.Size(75, 21);
+            this.ckInput.Size = new System.Drawing.Size(75, 24);
             this.ckInput.TabIndex = 170;
             this.ckInput.CheckedChanged += new System.EventHandler(this.ckInput_CheckedChanged);
             // 
@@ -519,13 +558,13 @@ namespace CJia.Health.App.UI
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnOneReName});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(111, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(113, 26);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // btnOneReName
             // 
             this.btnOneReName.Name = "btnOneReName";
-            this.btnOneReName.Size = new System.Drawing.Size(110, 22);
+            this.btnOneReName.Size = new System.Drawing.Size(112, 22);
             this.btnOneReName.Text = "重命名";
             this.btnOneReName.Click += new System.EventHandler(this.btnOneReName_Click);
             // 
@@ -758,7 +797,7 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Location = new System.Drawing.Point(62, 43);
             this.LURecordNO.Name = "LURecordNO";
             this.LURecordNO.OpenAfterEnter = false;
-            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.LURecordNO.Properties.Appearance.Options.UseFont = true;
             this.LURecordNO.Properties.Appearance.Options.UseTextOptions = true;
             this.LURecordNO.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -770,7 +809,7 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(280, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(200, 20);
+            this.LURecordNO.Size = new System.Drawing.Size(200, 26);
             this.LURecordNO.TabIndex = 1;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -789,7 +828,7 @@ namespace CJia.Health.App.UI
             // 
             this.txtFolder.Location = new System.Drawing.Point(62, 9);
             this.txtFolder.Name = "txtFolder";
-            this.txtFolder.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtFolder.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtFolder.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtFolder.Properties.Appearance.Options.UseFont = true;
             this.txtFolder.Properties.Appearance.Options.UseForeColor = true;
@@ -798,7 +837,7 @@ namespace CJia.Health.App.UI
             this.txtFolder.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtFolder.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtFolder.Properties.ReadOnly = true;
-            this.txtFolder.Size = new System.Drawing.Size(311, 20);
+            this.txtFolder.Size = new System.Drawing.Size(311, 26);
             this.txtFolder.TabIndex = 1;
             this.txtFolder.TextChanged += new System.EventHandler(this.txtFolder_TextChanged);
             // 
@@ -808,7 +847,7 @@ namespace CJia.Health.App.UI
             this.txtTimes.Location = new System.Drawing.Point(287, 44);
             this.txtTimes.Name = "txtTimes";
             this.txtTimes.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtTimes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtTimes.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtTimes.Properties.Appearance.Options.UseBackColor = true;
             this.txtTimes.Properties.Appearance.Options.UseFont = true;
             this.txtTimes.Properties.Appearance.Options.UseTextOptions = true;
@@ -818,7 +857,7 @@ namespace CJia.Health.App.UI
             this.txtTimes.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtTimes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTimes.Properties.ReadOnly = true;
-            this.txtTimes.Size = new System.Drawing.Size(34, 20);
+            this.txtTimes.Size = new System.Drawing.Size(34, 26);
             this.txtTimes.TabIndex = 161;
             this.txtTimes.Leave += new System.EventHandler(this.txtTimes_Leave);
             // 
@@ -842,37 +881,37 @@ namespace CJia.Health.App.UI
             // 
             // cJiaLabel17
             // 
-            this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel17.Location = new System.Drawing.Point(325, 51);
             this.cJiaLabel17.Name = "cJiaLabel17";
-            this.cJiaLabel17.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel17.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel17.TabIndex = 142;
             this.cJiaLabel17.Text = "次入院";
             // 
             // cJiaLabel16
             // 
-            this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel16.Location = new System.Drawing.Point(268, 51);
             this.cJiaLabel16.Name = "cJiaLabel16";
-            this.cJiaLabel16.Size = new System.Drawing.Size(15, 16);
+            this.cJiaLabel16.Size = new System.Drawing.Size(13, 19);
             this.cJiaLabel16.TabIndex = 141;
             this.cJiaLabel16.Text = "第";
             // 
             // cJiaLabel2
             // 
-            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel2.Location = new System.Drawing.Point(7, 50);
             this.cJiaLabel2.Name = "cJiaLabel2";
-            this.cJiaLabel2.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel2.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel2.TabIndex = 2;
             this.cJiaLabel2.Text = "病案号";
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel1.Location = new System.Drawing.Point(22, 16);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(30, 16);
+            this.cJiaLabel1.Size = new System.Drawing.Size(26, 19);
             this.cJiaLabel1.TabIndex = 0;
             this.cJiaLabel1.Text = "目录";
             // 
@@ -894,6 +933,61 @@ namespace CJia.Health.App.UI
             this.cJiaPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseDown);
             this.cJiaPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseMove);
             this.cJiaPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseUp);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBig,
+            this.btnSmall,
+            this.btnNiX,
+            this.btnShunX,
+            this.btnShij,
+            this.btnHeShi});
+            this.contextMenuStrip2.Name = "contextMenuStrip1";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(125, 136);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            // 
+            // btnBig
+            // 
+            this.btnBig.Name = "btnBig";
+            this.btnBig.Size = new System.Drawing.Size(124, 22);
+            this.btnBig.Text = "放大图片";
+            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
+            // 
+            // btnSmall
+            // 
+            this.btnSmall.Name = "btnSmall";
+            this.btnSmall.Size = new System.Drawing.Size(124, 22);
+            this.btnSmall.Text = "缩小图片";
+            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
+            // 
+            // btnNiX
+            // 
+            this.btnNiX.Name = "btnNiX";
+            this.btnNiX.Size = new System.Drawing.Size(124, 22);
+            this.btnNiX.Text = "逆向旋转";
+            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
+            // 
+            // btnShunX
+            // 
+            this.btnShunX.Name = "btnShunX";
+            this.btnShunX.Size = new System.Drawing.Size(124, 22);
+            this.btnShunX.Text = "顺向旋转";
+            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
+            // 
+            // btnShij
+            // 
+            this.btnShij.Name = "btnShij";
+            this.btnShij.Size = new System.Drawing.Size(124, 22);
+            this.btnShij.Text = "实际尺寸";
+            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
+            // 
+            // btnHeShi
+            // 
+            this.btnHeShi.Name = "btnHeShi";
+            this.btnHeShi.Size = new System.Drawing.Size(124, 22);
+            this.btnHeShi.Text = "合适尺寸";
+            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
             // 
             // gridColumn12
             // 
@@ -1023,61 +1117,6 @@ namespace CJia.Health.App.UI
             this.btnRight.Text = "逆时针旋转";
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBig,
-            this.btnSmall,
-            this.btnNiX,
-            this.btnShunX,
-            this.btnShij,
-            this.btnHeShi});
-            this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 158);
-            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
-            // 
-            // btnBig
-            // 
-            this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(152, 22);
-            this.btnBig.Text = "放大图片";
-            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
-            // 
-            // btnSmall
-            // 
-            this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(152, 22);
-            this.btnSmall.Text = "缩小图片";
-            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
-            // 
-            // btnNiX
-            // 
-            this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(152, 22);
-            this.btnNiX.Text = "逆向旋转";
-            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
-            // 
-            // btnShunX
-            // 
-            this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(152, 22);
-            this.btnShunX.Text = "顺向旋转";
-            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
-            // 
-            // btnShij
-            // 
-            this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(152, 22);
-            this.btnShij.Text = "实际尺寸";
-            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
-            // 
-            // btnHeShi
-            // 
-            this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(152, 22);
-            this.btnHeShi.Text = "合适尺寸";
-            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
-            // 
             // JJCJScanView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1102,10 +1141,10 @@ namespace CJia.Health.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.txtFolder.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pnlRight)).EndInit();
             this.pnlRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.smallPicture.Properties)).EndInit();
-            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

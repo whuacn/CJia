@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewImageCheckView));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
@@ -44,6 +43,13 @@
             this.crdCheck = new CJia.Controls.CJiaRadioBox();
             this.lblprojectName = new CJia.Controls.CJiaLabel();
             this.cJiaPicture = new CJia.Controls.CJiaPicture();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
             this.cJiaPanel2 = new CJia.Controls.CJiaPanel();
             this.btnAllCheck = new CJia.Controls.CJiaButton();
             this.txtCheckStatusName = new CJia.Controls.CJiaLabel();
@@ -59,13 +65,6 @@
             this.btnNoPass = new CJia.Controls.BtnDelete();
             this.btnUpPage = new CJia.Controls.CJiaButton();
             this.btnPass = new CJia.Controls.BtnSave();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
@@ -75,9 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.LURecordNO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crdCheck.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).BeginInit();
             this.cJiaPanel2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -268,6 +267,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "页码";
             this.gridColumn1.FieldName = "PAGE_NO";
             this.gridColumn1.Name = "gridColumn1";
@@ -278,6 +281,10 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "附加码";
             this.gridColumn3.FieldName = "SUBPAGE";
             this.gridColumn3.Name = "gridColumn3";
@@ -288,6 +295,10 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "项目名称";
             this.gridColumn2.FieldName = "PRO_NAME";
             this.gridColumn2.Name = "gridColumn2";
@@ -298,6 +309,10 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "状态";
             this.gridColumn4.FieldName = "CHECK_STATUS_NAME";
             this.gridColumn4.Name = "gridColumn4";
@@ -318,7 +333,7 @@
             this.LURecordNO.Location = new System.Drawing.Point(65, 12);
             this.LURecordNO.Name = "LURecordNO";
             this.LURecordNO.OpenAfterEnter = false;
-            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LURecordNO.Properties.Appearance.Options.UseFont = true;
             this.LURecordNO.Properties.Appearance.Options.UseTextOptions = true;
             this.LURecordNO.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -330,7 +345,7 @@
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(270, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(278, 20);
+            this.LURecordNO.Size = new System.Drawing.Size(278, 26);
             this.LURecordNO.TabIndex = 174;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -357,11 +372,11 @@
             // 
             // cJiaLabel62
             // 
-            this.cJiaLabel62.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel62.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel62.Appearance.ForeColor = System.Drawing.Color.Black;
             this.cJiaLabel62.Location = new System.Drawing.Point(7, 17);
             this.cJiaLabel62.Name = "cJiaLabel62";
-            this.cJiaLabel62.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel62.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel62.TabIndex = 171;
             this.cJiaLabel62.Text = "病案号：";
             // 
@@ -371,7 +386,7 @@
             this.crdCheck.Location = new System.Drawing.Point(4, 45);
             this.crdCheck.Name = "crdCheck";
             this.crdCheck.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.crdCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.crdCheck.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.crdCheck.Properties.Appearance.Options.UseBackColor = true;
             this.crdCheck.Properties.Appearance.Options.UseFont = true;
             this.crdCheck.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -389,11 +404,11 @@
             // lblprojectName
             // 
             this.lblprojectName.Appearance.BackColor = System.Drawing.Color.White;
-            this.lblprojectName.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lblprojectName.Appearance.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprojectName.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblprojectName.Location = new System.Drawing.Point(16, 3);
             this.lblprojectName.Name = "lblprojectName";
-            this.lblprojectName.Size = new System.Drawing.Size(84, 25);
+            this.lblprojectName.Size = new System.Drawing.Size(84, 28);
             this.lblprojectName.TabIndex = 161;
             this.lblprojectName.Text = "病案首页";
             // 
@@ -414,6 +429,61 @@
             this.cJiaPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDA_MouseDown);
             this.cJiaPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDA_MouseMove);
             this.cJiaPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDA_MouseUp);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBig,
+            this.btnSmall,
+            this.btnNiX,
+            this.btnShunX,
+            this.btnShij,
+            this.btnHeShi});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 136);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // btnBig
+            // 
+            this.btnBig.Name = "btnBig";
+            this.btnBig.Size = new System.Drawing.Size(124, 22);
+            this.btnBig.Text = "放大图片";
+            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
+            // 
+            // btnSmall
+            // 
+            this.btnSmall.Name = "btnSmall";
+            this.btnSmall.Size = new System.Drawing.Size(124, 22);
+            this.btnSmall.Text = "缩小图片";
+            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
+            // 
+            // btnNiX
+            // 
+            this.btnNiX.Name = "btnNiX";
+            this.btnNiX.Size = new System.Drawing.Size(124, 22);
+            this.btnNiX.Text = "逆向旋转";
+            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
+            // 
+            // btnShunX
+            // 
+            this.btnShunX.Name = "btnShunX";
+            this.btnShunX.Size = new System.Drawing.Size(124, 22);
+            this.btnShunX.Text = "顺向旋转";
+            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
+            // 
+            // btnShij
+            // 
+            this.btnShij.Name = "btnShij";
+            this.btnShij.Size = new System.Drawing.Size(124, 22);
+            this.btnShij.Text = "实际尺寸";
+            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
+            // 
+            // btnHeShi
+            // 
+            this.btnHeShi.Name = "btnHeShi";
+            this.btnHeShi.Size = new System.Drawing.Size(124, 22);
+            this.btnHeShi.Text = "合适尺寸";
+            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
             // 
             // cJiaPanel2
             // 
@@ -634,61 +704,6 @@
             this.btnPass.Text = "审核通过(F5)";
             this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBig,
-            this.btnSmall,
-            this.btnNiX,
-            this.btnShunX,
-            this.btnShij,
-            this.btnHeShi});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 158);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // btnBig
-            // 
-            this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(152, 22);
-            this.btnBig.Text = "放大图片";
-            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
-            // 
-            // btnSmall
-            // 
-            this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(152, 22);
-            this.btnSmall.Text = "缩小图片";
-            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
-            // 
-            // btnNiX
-            // 
-            this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(152, 22);
-            this.btnNiX.Text = "逆向旋转";
-            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
-            // 
-            // btnShunX
-            // 
-            this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(152, 22);
-            this.btnShunX.Text = "顺向旋转";
-            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
-            // 
-            // btnShij
-            // 
-            this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(152, 22);
-            this.btnShij.Text = "实际尺寸";
-            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
-            // 
-            // btnHeShi
-            // 
-            this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(152, 22);
-            this.btnHeShi.Text = "合适尺寸";
-            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
-            // 
             // NewImageCheckView
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -710,10 +725,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.LURecordNO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crdCheck.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).EndInit();
             this.cJiaPanel2.ResumeLayout(false);
             this.cJiaPanel2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

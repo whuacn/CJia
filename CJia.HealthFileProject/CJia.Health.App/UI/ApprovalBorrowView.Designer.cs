@@ -363,6 +363,10 @@
             // 
             // gridColumn12
             // 
+            this.gridColumn12.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn12.AppearanceCell.Options.UseFont = true;
+            this.gridColumn12.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn12.AppearanceHeader.Options.UseFont = true;
             this.gridColumn12.Caption = "全选";
             this.gridColumn12.ColumnEdit = this.ischecked;
             this.gridColumn12.FieldName = "ISCHECK";
@@ -381,6 +385,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "借阅单号";
             this.gridColumn1.FieldName = "BORROW_LIST_NO";
             this.gridColumn1.Name = "gridColumn1";
@@ -392,6 +400,10 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "借阅医生";
             this.gridColumn2.FieldName = "USER_NAME";
             this.gridColumn2.Name = "gridColumn2";
@@ -403,6 +415,10 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn8.AppearanceCell.Options.UseFont = true;
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.Caption = "医生职称";
             this.gridColumn8.FieldName = "NAME";
             this.gridColumn8.Name = "gridColumn8";
@@ -414,6 +430,10 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "医生科室";
             this.gridColumn3.FieldName = "DEPT_NAME";
             this.gridColumn3.Name = "gridColumn3";
@@ -425,6 +445,10 @@
             // 
             // gridColumn9
             // 
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.Caption = "借阅原由";
             this.gridColumn9.FieldName = "APPLY_REASON";
             this.gridColumn9.Name = "gridColumn9";
@@ -436,6 +460,10 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "申请时间";
             this.gridColumn4.FieldName = "APPLY_DATE";
             this.gridColumn4.Name = "gridColumn4";
@@ -447,6 +475,10 @@
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "借阅时间";
             this.gridColumn5.FieldName = "BORROW_DATE";
             this.gridColumn5.Name = "gridColumn5";
@@ -458,6 +490,10 @@
             // 
             // gridColumn15
             // 
+            this.gridColumn15.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn15.AppearanceCell.Options.UseFont = true;
+            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn15.AppearanceHeader.Options.UseFont = true;
             this.gridColumn15.Caption = "归还时间";
             this.gridColumn15.FieldName = "RETURN_DATE";
             this.gridColumn15.Name = "gridColumn15";
@@ -551,7 +587,7 @@
             this.cdEndDate.Location = new System.Drawing.Point(252, 12);
             this.cdEndDate.Name = "cdEndDate";
             this.cdEndDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.cdEndDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cdEndDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cdEndDate.Properties.Appearance.Options.UseFont = true;
             this.cdEndDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cdEndDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -568,7 +604,7 @@
             this.cdEndDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cdEndDate.Size = new System.Drawing.Size(155, 22);
+            this.cdEndDate.Size = new System.Drawing.Size(155, 26);
             this.cdEndDate.TabIndex = 30;
             // 
             // cdBeginDate
@@ -577,7 +613,7 @@
             this.cdBeginDate.Location = new System.Drawing.Point(76, 12);
             this.cdBeginDate.Name = "cdBeginDate";
             this.cdBeginDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.cdBeginDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cdBeginDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cdBeginDate.Properties.Appearance.Options.UseFont = true;
             this.cdBeginDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cdBeginDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -594,7 +630,7 @@
             this.cdBeginDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cdBeginDate.Size = new System.Drawing.Size(155, 22);
+            this.cdBeginDate.Size = new System.Drawing.Size(155, 26);
             this.cdBeginDate.TabIndex = 29;
             // 
             // cbDept
@@ -602,7 +638,7 @@
             this.cbDept.Location = new System.Drawing.Point(770, 12);
             this.cbDept.Name = "cbDept";
             this.cbDept.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cbDept.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbDept.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cbDept.Properties.Appearance.Options.UseFont = true;
             this.cbDept.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -614,7 +650,7 @@
             this.cbDept.Properties.PopupFormSize = new System.Drawing.Size(250, 250);
             this.cbDept.Properties.ShowFooter = false;
             this.cbDept.Properties.View = this.gridView1;
-            this.cbDept.Size = new System.Drawing.Size(150, 22);
+            this.cbDept.Size = new System.Drawing.Size(150, 26);
             this.cbDept.TabIndex = 28;
             // 
             // gridView1
@@ -639,10 +675,10 @@
             // 
             // cJiaLabel3
             // 
-            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel3.Location = new System.Drawing.Point(721, 14);
             this.cJiaLabel3.Name = "cJiaLabel3";
-            this.cJiaLabel3.Size = new System.Drawing.Size(43, 16);
+            this.cJiaLabel3.Size = new System.Drawing.Size(37, 19);
             this.cJiaLabel3.TabIndex = 26;
             this.cJiaLabel3.Text = "部  门:";
             // 
@@ -678,7 +714,7 @@
             this.cbBorrowState.Location = new System.Drawing.Point(521, 12);
             this.cbBorrowState.Name = "cbBorrowState";
             this.cbBorrowState.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cbBorrowState.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbBorrowState.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cbBorrowState.Properties.Appearance.Options.UseFont = true;
             this.cbBorrowState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -690,7 +726,7 @@
             this.cbBorrowState.Properties.PopupFormSize = new System.Drawing.Size(150, 150);
             this.cbBorrowState.Properties.ShowFooter = false;
             this.cbBorrowState.Properties.View = this.cJiaComboBox21View;
-            this.cbBorrowState.Size = new System.Drawing.Size(150, 22);
+            this.cbBorrowState.Size = new System.Drawing.Size(150, 26);
             this.cbBorrowState.TabIndex = 8;
             // 
             // cJiaComboBox21View
@@ -715,19 +751,19 @@
             // 
             // cJiaLabel2
             // 
-            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel2.Location = new System.Drawing.Point(450, 15);
             this.cJiaLabel2.Name = "cJiaLabel2";
-            this.cJiaLabel2.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel2.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel2.TabIndex = 1;
             this.cJiaLabel2.Text = "借阅状态:";
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cJiaLabel1.Location = new System.Drawing.Point(5, 15);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(65, 16);
+            this.cJiaLabel1.Size = new System.Drawing.Size(55, 19);
             this.cJiaLabel1.TabIndex = 0;
             this.cJiaLabel1.Text = "借阅时间:";
             // 
