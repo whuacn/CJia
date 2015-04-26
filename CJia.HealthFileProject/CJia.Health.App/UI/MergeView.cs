@@ -79,7 +79,6 @@ namespace CJia.Health.App.UI
             lblMesg.Text = "";
             Tw = new Twain(MyProductName);
             Tw.Init(this.Handle);
-            LURecordNO.Focus();
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             NoBlankPage = new List<string>();
             lblNoBlank.Text = "";
@@ -208,19 +207,18 @@ namespace CJia.Health.App.UI
                 if (!File.Exists(downLoadFile))
                 {
                     if (File.Exists(pdfData))
-                    {
                         File.Move(pdfData, downLoadFile);
-                    }
                 }
                 pdfViewer.FileName = downLoadFile;
-                if (OldRowHandel != -1)
+                if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
                 {
                     DataRow dr = pictureView.GetDataRow(OldRowHandel);
                     arr = dr["Pic_Path"].ToString().Split('/');
                     fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
                     downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     pdfData = downLoadFile.Replace(".pdf", "");
-                    File.Move(downLoadFile, pdfData);
+                    if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                        File.Move(downLoadFile, pdfData);
                 }
             }
             else
@@ -832,11 +830,18 @@ namespace CJia.Health.App.UI
             {
                 if (Message.ShowQuery("确定删除？", Message.Button.OkCancel) == Message.Result.Ok)
                 {
+                    int i = pictureView.FocusedRowHandle;
                     DataRow focuseRow = pictureView.GetFocusedDataRow();
                     string fileName = focuseRow["Pic_Path"].ToString();
                     FtpHelp.DeleteFile(fileName, UserName, Password);
-                    pictureView.DeleteRow(pictureView.FocusedRowHandle);
+                    string[] arr = fileName.Split('/');
+                    string name = focuseRow["Pic_Path"].ToString().Split('/')[arr.Length - 1];
+                    string filePath = Application.StartupPath + @"\Cache\" + name;
+                    pdfViewer.FileName = "";
+                    File.Delete(filePath);
+                    pictureView.DeleteRow(i);
                     pictureView.RefreshData();
+                    pictureGrid.Focus();
                 }
             }
         }
@@ -888,57 +893,10 @@ namespace CJia.Health.App.UI
                 }
             }
         }
-        private void btnBig_Click(object sender, EventArgs e)
-        {
-            //CJia.Health.Tools.Help.FangDa(cJiaPicture, true);
-        }
 
-        private void btnSmall_Click(object sender, EventArgs e)
+        private void pictureView_RowCountChanged(object sender, EventArgs e)
         {
-            //CJia.Health.Tools.Help.FangDa(cJiaPicture, false);
+            pictureView_FocusedRowChanged(null, null);
         }
-
-        private void btnNiX_Click(object sender, EventArgs e)
-        {
-            //CJia.Health.Tools.Help.XuanZhuang(cJiaPicture, true);
-        }
-
-        private void btnShunX_Click(object sender, EventArgs e)
-        {
-            //CJia.Health.Tools.Help.XuanZhuang(cJiaPicture, false);
-        }
-
-        private void btnShij_Click(object sender, EventArgs e)
-        {
-            //CJia.Health.Tools.Help.InFactSize(cJiaPicture, true);
-        }
-
-        private void btnHeShi_Click(object sender, EventArgs e)
-        {
-            //CJia.Health.Tools.Help.InFactSize(cJiaPicture, false);
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-            //if (cJiaPicture.Image == null)
-            //{
-            //    btnBig.Enabled = false;
-            //    btnSmall.Enabled = false;
-            //    btnNiX.Enabled = false;
-            //    btnShunX.Enabled = false;
-            //    btnShij.Enabled = false;
-            //    btnHeShi.Enabled = false;
-            //}
-            //else
-            //{
-            //    btnBig.Enabled = true;
-            //    btnSmall.Enabled = true;
-            //    btnNiX.Enabled = true;
-            //    btnShunX.Enabled = true;
-            //    btnShij.Enabled = true;
-            //    btnHeShi.Enabled = true;
-            //}
-        }
-
     }
 }
