@@ -29,7 +29,6 @@ namespace CJia.Health.App.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeView));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
@@ -59,13 +58,7 @@ namespace CJia.Health.App.UI
             this.cJiaLabel17 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel16 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
+            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,7 +67,7 @@ namespace CJia.Health.App.UI
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
+            this.btnBlank = new CJia.Controls.CJiaButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
@@ -83,7 +76,6 @@ namespace CJia.Health.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LURecordNO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimes.Properties)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -97,12 +89,13 @@ namespace CJia.Health.App.UI
             this.splitContainerControl1.Panel2.Controls.Add(this.pdfViewer);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1358, 600);
-            this.splitContainerControl1.SplitterPosition = 390;
+            this.splitContainerControl1.SplitterPosition = 391;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // cJiaPanel1
             // 
+            this.cJiaPanel1.Controls.Add(this.btnBlank);
             this.cJiaPanel1.Controls.Add(this.cJiaLabel3);
             this.cJiaPanel1.Controls.Add(this.lblNoBlank);
             this.cJiaPanel1.Controls.Add(this.cJiaLabel1);
@@ -122,14 +115,14 @@ namespace CJia.Health.App.UI
             this.cJiaPanel1.LookAndFeel.SkinName = "Office 2010 Silver";
             this.cJiaPanel1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaPanel1.Name = "cJiaPanel1";
-            this.cJiaPanel1.Size = new System.Drawing.Size(390, 600);
+            this.cJiaPanel1.Size = new System.Drawing.Size(391, 600);
             this.cJiaPanel1.TabIndex = 0;
             // 
             // cJiaLabel3
             // 
             this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cJiaLabel3.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.cJiaLabel3.Location = new System.Drawing.Point(7, 111);
+            this.cJiaLabel3.Location = new System.Drawing.Point(7, 154);
             this.cJiaLabel3.Name = "cJiaLabel3";
             this.cJiaLabel3.Size = new System.Drawing.Size(135, 16);
             this.cJiaLabel3.TabIndex = 180;
@@ -139,7 +132,7 @@ namespace CJia.Health.App.UI
             // 
             this.lblNoBlank.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblNoBlank.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.lblNoBlank.Location = new System.Drawing.Point(133, 89);
+            this.lblNoBlank.Location = new System.Drawing.Point(133, 132);
             this.lblNoBlank.Name = "lblNoBlank";
             this.lblNoBlank.Size = new System.Drawing.Size(46, 16);
             this.lblNoBlank.TabIndex = 179;
@@ -149,7 +142,7 @@ namespace CJia.Health.App.UI
             // 
             this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cJiaLabel1.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.cJiaLabel1.Location = new System.Drawing.Point(7, 89);
+            this.cJiaLabel1.Location = new System.Drawing.Point(7, 132);
             this.cJiaLabel1.Name = "cJiaLabel1";
             this.cJiaLabel1.Size = new System.Drawing.Size(120, 16);
             this.cJiaLabel1.TabIndex = 178;
@@ -162,7 +155,7 @@ namespace CJia.Health.App.UI
             this.btnNoBlamk.Appearance.Options.UseFont = true;
             this.btnNoBlamk.Appearance.Options.UseForeColor = true;
             this.btnNoBlamk.CustomText = "非空白页";
-            this.btnNoBlamk.Location = new System.Drawing.Point(32, 53);
+            this.btnNoBlamk.Location = new System.Drawing.Point(165, 93);
             this.btnNoBlamk.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnNoBlamk.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNoBlamk.Name = "btnNoBlamk";
@@ -176,7 +169,7 @@ namespace CJia.Health.App.UI
             // 
             this.lblMesg.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblMesg.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblMesg.Location = new System.Drawing.Point(148, 111);
+            this.lblMesg.Location = new System.Drawing.Point(148, 154);
             this.lblMesg.Name = "lblMesg";
             this.lblMesg.Size = new System.Drawing.Size(46, 16);
             this.lblMesg.TabIndex = 176;
@@ -190,7 +183,7 @@ namespace CJia.Health.App.UI
             this.btnDelete.Appearance.Options.UseForeColor = true;
             this.btnDelete.CustomText = "删除(F6)";
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(118, 53);
+            this.btnDelete.Location = new System.Drawing.Point(62, 53);
             this.btnDelete.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Name = "btnDelete";
@@ -208,7 +201,7 @@ namespace CJia.Health.App.UI
             this.btnRefresh.Appearance.Options.UseForeColor = true;
             this.btnRefresh.CustomText = "刷新(F5)";
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(204, 53);
+            this.btnRefresh.Location = new System.Drawing.Point(165, 53);
             this.btnRefresh.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnRefresh.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnRefresh.Name = "btnRefresh";
@@ -226,7 +219,7 @@ namespace CJia.Health.App.UI
             this.btnMerge.Appearance.Options.UseForeColor = true;
             this.btnMerge.CustomText = "合并(F3)";
             this.btnMerge.Image = ((System.Drawing.Image)(resources.GetObject("btnMerge.Image")));
-            this.btnMerge.Location = new System.Drawing.Point(290, 53);
+            this.btnMerge.Location = new System.Drawing.Point(268, 53);
             this.btnMerge.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnMerge.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnMerge.Name = "btnMerge";
@@ -243,13 +236,13 @@ namespace CJia.Health.App.UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureGrid.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.pictureGrid.IndicatorWidth = 30;
-            this.pictureGrid.Location = new System.Drawing.Point(3, 133);
+            this.pictureGrid.Location = new System.Drawing.Point(3, 176);
             this.pictureGrid.LookAndFeel.SkinName = "Office 2010 Blue";
             this.pictureGrid.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pictureGrid.MainView = this.pictureView;
             this.pictureGrid.Name = "pictureGrid";
             this.pictureGrid.ShowRowNumber = true;
-            this.pictureGrid.Size = new System.Drawing.Size(384, 464);
+            this.pictureGrid.Size = new System.Drawing.Size(388, 421);
             this.pictureGrid.TabIndex = 169;
             this.pictureGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.pictureView});
@@ -392,6 +385,7 @@ namespace CJia.Health.App.UI
             this.pictureView.RowHeight = 25;
             this.pictureView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.pictureView_RowCellStyle);
             this.pictureView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.pictureView_FocusedRowChanged);
+            this.pictureView.RowCountChanged += new System.EventHandler(this.pictureView_RowCountChanged);
             // 
             // gridColumn1
             // 
@@ -496,8 +490,8 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(280, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(200, 20);
-            this.LURecordNO.TabIndex = 1;
+            this.LURecordNO.Size = new System.Drawing.Size(209, 22);
+            this.LURecordNO.TabIndex = 0;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
             this.LURecordNO.ValueField = "";
@@ -505,7 +499,7 @@ namespace CJia.Health.App.UI
             // txtTimes
             // 
             this.txtTimes.EditValue = "1";
-            this.txtTimes.Location = new System.Drawing.Point(287, 15);
+            this.txtTimes.Location = new System.Drawing.Point(296, 15);
             this.txtTimes.Name = "txtTimes";
             this.txtTimes.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txtTimes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -518,14 +512,14 @@ namespace CJia.Health.App.UI
             this.txtTimes.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtTimes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTimes.Properties.ReadOnly = true;
-            this.txtTimes.Size = new System.Drawing.Size(34, 20);
-            this.txtTimes.TabIndex = 161;
+            this.txtTimes.Size = new System.Drawing.Size(34, 22);
+            this.txtTimes.TabIndex = 1;
             this.txtTimes.Leave += new System.EventHandler(this.txtTimes_Leave);
             // 
             // cJiaLabel17
             // 
             this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cJiaLabel17.Location = new System.Drawing.Point(325, 22);
+            this.cJiaLabel17.Location = new System.Drawing.Point(334, 22);
             this.cJiaLabel17.Name = "cJiaLabel17";
             this.cJiaLabel17.Size = new System.Drawing.Size(45, 16);
             this.cJiaLabel17.TabIndex = 142;
@@ -534,7 +528,7 @@ namespace CJia.Health.App.UI
             // cJiaLabel16
             // 
             this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cJiaLabel16.Location = new System.Drawing.Point(268, 22);
+            this.cJiaLabel16.Location = new System.Drawing.Point(277, 22);
             this.cJiaLabel16.Name = "cJiaLabel16";
             this.cJiaLabel16.Size = new System.Drawing.Size(15, 16);
             this.cJiaLabel16.TabIndex = 141;
@@ -549,60 +543,16 @@ namespace CJia.Health.App.UI
             this.cJiaLabel2.TabIndex = 2;
             this.cJiaLabel2.Text = "病案号";
             // 
-            // contextMenuStrip1
+            // pdfViewer
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBig,
-            this.btnSmall,
-            this.btnNiX,
-            this.btnShunX,
-            this.btnShij,
-            this.btnHeShi});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 136);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // btnBig
-            // 
-            this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(122, 22);
-            this.btnBig.Text = "放大图片";
-            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
-            // 
-            // btnSmall
-            // 
-            this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(122, 22);
-            this.btnSmall.Text = "缩小图片";
-            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
-            // 
-            // btnNiX
-            // 
-            this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(122, 22);
-            this.btnNiX.Text = "逆向旋转";
-            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
-            // 
-            // btnShunX
-            // 
-            this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(122, 22);
-            this.btnShunX.Text = "顺向旋转";
-            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
-            // 
-            // btnShij
-            // 
-            this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(122, 22);
-            this.btnShij.Text = "实际尺寸";
-            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
-            // 
-            // btnHeShi
-            // 
-            this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(122, 22);
-            this.btnHeShi.Text = "合适尺寸";
-            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
+            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfViewer.FileName = null;
+            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Size = new System.Drawing.Size(955, 600);
+            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
+            this.pdfViewer.TabIndex = 0;
+            this.pdfViewer.ZoomLevel = 3;
             // 
             // gridColumn12
             // 
@@ -669,16 +619,21 @@ namespace CJia.Health.App.UI
             this.gridColumn18.FieldName = "PRO_ID";
             this.gridColumn18.Name = "gridColumn18";
             // 
-            // pdfViewer
+            // btnBlank
             // 
-            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pdfViewer.FileName = null;
-            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
-            this.pdfViewer.Name = "pdfViewer";
-            this.pdfViewer.Size = new System.Drawing.Size(963, 600);
-            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
-            this.pdfViewer.TabIndex = 0;
-            this.pdfViewer.ZoomLevel = 3;
+            this.btnBlank.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnBlank.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnBlank.Appearance.Options.UseFont = true;
+            this.btnBlank.Appearance.Options.UseForeColor = true;
+            this.btnBlank.CustomText = "空白页";
+            this.btnBlank.Location = new System.Drawing.Point(268, 93);
+            this.btnBlank.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnBlank.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnBlank.Name = "btnBlank";
+            this.btnBlank.Selectable = false;
+            this.btnBlank.Size = new System.Drawing.Size(80, 28);
+            this.btnBlank.TabIndex = 181;
+            this.btnBlank.Text = "空白页";
             // 
             // MergeView
             // 
@@ -696,7 +651,6 @@ namespace CJia.Health.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LURecordNO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimes.Properties)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -740,13 +694,7 @@ namespace CJia.Health.App.UI
         private Controls.CJiaLabel cJiaLabel1;
         private Controls.CJiaButton btnNoBlamk;
         private Controls.CJiaLabel cJiaLabel3;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btnBig;
-        private System.Windows.Forms.ToolStripMenuItem btnSmall;
-        private System.Windows.Forms.ToolStripMenuItem btnNiX;
-        private System.Windows.Forms.ToolStripMenuItem btnShunX;
-        private System.Windows.Forms.ToolStripMenuItem btnShij;
-        private System.Windows.Forms.ToolStripMenuItem btnHeShi;
         private Tools.PDFViewer pdfViewer;
+        private Controls.CJiaButton btnBlank;
     }
 }
