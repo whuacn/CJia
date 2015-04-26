@@ -36,6 +36,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pdfViewer1 = new CJia.Health.Tools.PDFViewer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -125,11 +126,20 @@
             this.pdfViewer1.TabIndex = 29;
             this.pdfViewer1.ZoomLevel = 1;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(460, 99);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox1.TabIndex = 30;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 489);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pdfViewer1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -154,5 +164,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private Tools.PDFViewer pdfViewer1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

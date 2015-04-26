@@ -172,6 +172,70 @@ namespace CJia.Health.Tools
             ftp = null;
         }
         /// <summary>
+        /// 下载文件
+        /// </summary>
+        /// <param name="localDir"></param>
+        /// <param name="uri"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        public static void DownloadFile(string localDir, string uri, string username, string password)
+        {
+            string[] arr = uri.Split('/');
+            string fileName = uri.Split('/')[arr.Length - 1];
+            string URI = uri;
+            string tmpname = Guid.NewGuid().ToString();
+            string localfile = localDir + @"\" + fileName.Split('.')[0];
+            if (File.Exists(localfile)) return;
+            if (File.Exists(localDir + @"\" + fileName)) return;
+            System.Net.FtpWebRequest ftp = GetRequest(URI, username, password);
+            ftp.Method = System.Net.WebRequestMethods.Ftp.DownloadFile;
+            ftp.UseBinary = true;
+            ftp.UsePassive = false;
+
+            using (FtpWebResponse response = (FtpWebResponse)ftp.GetResponse())
+            {
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    using (FileStream fs = new FileStream(localfile, FileMode.CreateNew))
+                    {
+                        try
+                        {
+                            byte[] buffer = new byte[2048];
+                            int read = 0;
+                            do
+                            {
+                                read = responseStream.Read(buffer, 0, buffer.Length);
+                                fs.Write(buffer, 0, read);
+                            } while (!(read == 0));
+                            responseStream.Close();
+                            fs.Flush();
+                            fs.Close();
+                        }
+                        catch (Exception)
+                        {
+                            fs.Close();
+                            File.Delete(localfile);
+                            throw;
+                        }
+                    }
+                    responseStream.Close();
+                }
+                response.Close();
+            }
+            try
+            {
+                //File.Delete(localDir + @"\" + fileName);
+                //File.Move(localfile, localDir + @"\" + fileName);
+
+            }
+            catch (Exception ex)
+            {
+                File.Delete(localfile);
+                throw ex;
+            }
+            ftp = null;
+        }
+        /// <summary>
         /// 在ftp服务器上创建目录
         /// </summary>
         /// <param name="dirName">创建的目录名称</param>
