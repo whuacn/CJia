@@ -50,7 +50,7 @@ namespace CJia.Health.App
             //axFoxitReader.ShowBookmark(false);
             //axFoxitReader.ShowFormFieldsMessageBar(false);
             //axFoxitReader.ShowNavigationPanels(false);
-            pdfViewer1.FileName = @"ftp://127.0.0.1/2015/4/19/001/01/PZ_001_01_002_00.pdf";
+            pdfViewer1.FileName = fileName;
             pdfViewer1.ZoomLevel = 1;
         }
 

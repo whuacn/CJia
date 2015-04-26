@@ -166,7 +166,7 @@ namespace CJia.Health.Tools
         /// <param name="userName">用户名 凭证(可以为空)</param>
         /// <param name="password">密码</param>
         /// <returns></returns>
-        public static Image GetImageByUri(string uri,string userName,string password)
+        public static Image GetImageByUri(string uri, string userName, string password)
         {
             try
             {
@@ -235,10 +235,10 @@ namespace CJia.Health.Tools
         /// <returns></returns>
         public static DataTable GetDataSource(DataRow[] rows)
         {
-            if(rows != null && rows.Length != 0)
+            if (rows != null && rows.Length != 0)
             {
                 DataTable result = rows[0].Table.Clone();
-                for(int i = 0; i < rows.Length; i++)
+                for (int i = 0; i < rows.Length; i++)
                 {
                     DataRow row = result.NewRow();
                     row.ItemArray = rows[i].ItemArray;
@@ -255,9 +255,9 @@ namespace CJia.Health.Tools
         /// <returns></returns>
         public static void DataAddRow(DataTable tabel, DataRow[] rows)
         {
-            if(rows != null && rows.Length != 0)
+            if (rows != null && rows.Length != 0)
             {
-                foreach(DataRow row in rows)
+                foreach (DataRow row in rows)
                 {
                     DataRow nowRow = tabel.NewRow();
                     nowRow.ItemArray = row.ItemArray;
@@ -273,7 +273,7 @@ namespace CJia.Health.Tools
         /// <returns></returns>
         public static bool IsNull(this DataTable dt)
         {
-            if(dt != null && dt.Rows != null && dt.Rows.Count > 0)
+            if (dt != null && dt.Rows != null && dt.Rows.Count > 0)
             {
                 return false;
             }
@@ -374,7 +374,28 @@ namespace CJia.Health.Tools
                 }
             }
         }
-        
+        /// <summary>
+        /// 根据ftp路径下载文件
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static bool DownLoadFileByUri(string uri, string userName, string password)
+        {
+            try
+            {
+                string downLoadFile = Application.StartupPath + @"\Cache";
+                if (!Directory.Exists(downLoadFile))
+                    Directory.CreateDirectory(downLoadFile);
+                FtpHelp.DownloadFile(downLoadFile, uri, userName, password);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         #endregion
     }
 }

@@ -40,7 +40,7 @@ namespace CJia.Health.App
             }
             if (User.IsLoginSuccess)
             {
-                SplashScreenManager.ShowForm(typeof(SplashScreenMain));  
+                SplashScreenManager.ShowForm(typeof(SplashScreenMain));
                 Application.Run(new NewMainForm());
             }
             //Application.Run(new Form1());
