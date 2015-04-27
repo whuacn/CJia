@@ -151,9 +151,7 @@ namespace CJia.Health.App.UI
             lblNoBlank.Text = "";
             SMAllpageList = new List<string>();
             NoBlankPage = new List<string>();
-            string path = Application.StartupPath + @"\Cache";
-            if (Directory.Exists(path))
-                Directory.Delete(path, true);
+            
         }
 
         void LURecordNO_GetData(object sender, Controls.CJiaRTLookUpMoreColArgs e)
@@ -200,34 +198,38 @@ namespace CJia.Health.App.UI
         }
         private void Loading(string uri)
         {
-            bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
-            if (bol)
+            try
             {
-                string[] arr = uri.Split('/');
-                string fileName = uri.Split('/')[arr.Length - 1];
-                string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                string pdfData = downLoadFile.Replace(".pdf", "");
-                if (!File.Exists(downLoadFile))
+                bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+                if (bol)
                 {
-                    if (File.Exists(pdfData))
-                        File.Move(pdfData, downLoadFile);
+                    string[] arr = uri.Split('/');
+                    string fileName = uri.Split('/')[arr.Length - 1];
+                    string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    string pdfData = downLoadFile.Replace(".pdf", "");
+                    if (!File.Exists(downLoadFile))
+                    {
+                        if (File.Exists(pdfData))
+                            File.Move(pdfData, downLoadFile);
+                    }
+                    pdfViewer.FileName = downLoadFile;
+                    if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
+                    {
+                        DataRow dr = pictureView.GetDataRow(OldRowHandel);
+                        arr = dr["Pic_Path"].ToString().Split('/');
+                        fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
+                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                        pdfData = downLoadFile.Replace(".pdf", "");
+                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                            File.Move(downLoadFile, pdfData);
+                    }
                 }
-                pdfViewer.FileName = downLoadFile;
-                if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
+                else
                 {
-                    DataRow dr = pictureView.GetDataRow(OldRowHandel);
-                    arr = dr["Pic_Path"].ToString().Split('/');
-                    fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
-                    downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                    pdfData = downLoadFile.Replace(".pdf", "");
-                    if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                        File.Move(downLoadFile, pdfData);
+                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
                 }
             }
-            else
-            {
-                Message.Show("此图片不存在或已删除，请与管理员联系。。。");
-            }
+            catch { }
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -400,8 +402,17 @@ namespace CJia.Health.App.UI
                     MessageBox.Show("合并成功");
                     Match();//处理审核未通过的图片
                     BindNull();
-                    //DataTable data = CreatePictureDate();
-                    //pictureGrid.DataSource = data;
+                    try
+                    {
+                        foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                        {
+                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
+                        string path = Application.StartupPath + @"\Cache";
+                        if (Directory.Exists(path))
+                            Directory.Delete(path, true);
+                    }
+                    catch { }
                 }
             }
         }

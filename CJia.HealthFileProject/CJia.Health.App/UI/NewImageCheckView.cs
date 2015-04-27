@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using CJia.Health.Tools;
+using System.IO;
 
 namespace CJia.Health.App.UI
 {
@@ -275,23 +276,6 @@ namespace CJia.Health.App.UI
             this.keyDown(Keys.F7);
         }
 
-        // 图片改变
-        private void picDA_ImageChanged(object sender, EventArgs e)
-        {
-            //int height = this.picDA.Width * this.picDA.Image.Height / this.picDA.Image.Width;
-            //this.picDA.Height = height;
-            Image img = this.cJiaPicture.Image;
-            int panel_W = splitContainerControl1.Panel2.Width;
-            float i = float.Parse(img.Height.ToString()) / float.Parse(img.Width.ToString());
-            cJiaPicture.Width = panel_W - 20;
-            float height = i * (panel_W - 20);
-            cJiaPicture.Height = Convert.ToInt32(height);
-            this.cJiaPicture.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            splitContainerControl1.Panel2.AutoScrollPosition = new Point(0, 0);
-        }
-
-
-
         #endregion
 
 
@@ -467,32 +451,15 @@ namespace CJia.Health.App.UI
         {
             if (picPath != null)
             {
-                //string path = CJia.Health.Tools.ConfigHelper.GetAppStrings("IP_PATH") + @"\" + picPath["STORAGE_PATH"].ToString() + @"\" + picPath["PICTURE_NAME"].ToString();
-                //by denghua 2013-11-6
                 string host = "ftp://" + CJia.Health.Tools.ConfigHelper.GetAppStrings("ftp_ip");
                 string path = host + "/" + picPath["STORAGE_PATH"].ToString().Replace('\\', '/') + "/" + picPath["PICTURE_NAME"].ToString();
-                //this.Enabled = false;
-                //this.ParentForm.Enabled = false;
-                //load = new UI.Loading();
-                //CJia.Health.Tools.Help.NewRedBorderFrom(load);
-                //thread = new Thread(new ParameterizedThreadStart(Loading));
-                //thread.Start((object)path);
-                Loading((object)path);
-                //Image img = CJia.Health.Tools.Help.GetImageByUri(path, UserName, Password);
-                //this.picDA.Image = imageCache.GetImage(path);
-                //this.picDA.Image = img;
+                Loading(path);
                 if (picPath["CHECK_STATUS"].ToString() == "103")
-                {
                     this.txtCheckStatusName.ForeColor = Color.Black;
-                }
                 else if (picPath["CHECK_STATUS"].ToString() == "101")
-                {
                     this.txtCheckStatusName.ForeColor = Color.Green;
-                }
                 else
-                {
                     this.txtCheckStatusName.ForeColor = Color.Red;
-                }
                 this.txtPageNo.Text = picPath["PAGE_NO"].ToString();
                 this.txtProName.Text = picPath["PRO_NAME"].ToString();
                 lblprojectName.Text = picPath["PRO_NAME"].ToString();
@@ -502,21 +469,39 @@ namespace CJia.Health.App.UI
                 this.SetBtnStyle();
             }
         }
-        private void Loading(object uri)
+        private void Loading(string uri)
         {
-            Image img = CJia.Health.Tools.Help.GetImageByUri(uri.ToString(), UserName, Password);
-            //load.ParentForm.Close();
-            //this.ParentForm.Enabled = true;
-            //this.Enabled = true;
-            if (img != null)
+            bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+            if (bol)
             {
-                this.cJiaPicture.Image = img;
+                string[] arr = uri.Split('/');
+                string fileName = uri.Split('/')[arr.Length - 1];
+                string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                string pdfData = downLoadFile.Replace(".pdf", "");
+                if (!File.Exists(downLoadFile))
+                {
+                    if (File.Exists(pdfData))
+                        File.Move(pdfData, downLoadFile);
+                }
+                pdfViewer.FileName = downLoadFile;
+                if (OldRowHandel != -1 && OldRowHandel < gvPicture.RowCount)
+                {
+                    DataRow dr = gvPicture.GetDataRow(OldRowHandel);
+                    string oldfileName = dr["PICTURE_NAME"].ToString();
+                    if (fileName != oldfileName)
+                    {
+                        downLoadFile = Application.StartupPath + @"\Cache\" + oldfileName;
+                        pdfData = downLoadFile.Replace(".pdf", "");
+                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                            File.Move(downLoadFile, pdfData);
+                    }
+                }
+                cgPicture.Focus();
             }
             else
             {
                 Message.Show("此图片不存在或已删除，请与管理员联系。。。");
             }
-            //this.ParentForm.Activate();
         }
 
         #endregion
@@ -809,46 +794,6 @@ namespace CJia.Health.App.UI
 
         #endregion
 
-        private void picDA_MouseUp(object sender, MouseEventArgs e)
-        {
-            m_StarMove = false;
-            cJiaPicture.Cursor = Cursors.Default;
-        }
-
-        private void picDA_MouseDown(object sender, MouseEventArgs e)
-        {
-            cJiaPicture.Cursor = Cursors.Hand;
-            m_StarMove = true;
-            m_StarPoint = e.Location;
-        }
-
-        private void picDA_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (m_StarMove)
-            {
-                int Grasp_y = splitContainerControl1.Panel2.AutoScrollPosition.Y;
-                int Grasp_x = splitContainerControl1.Panel2.AutoScrollPosition.X;
-                int x, y;
-                int move_y; //滚动的位置
-                int move_x;
-                x = m_StarPoint.X - e.X;
-                y = m_StarPoint.Y - e.Y;
-                if (Grasp_y - y > 0) move_y = 0;
-                else move_y = Grasp_y - y;
-                if (Grasp_x - x > 0) move_x = 0;
-                else move_x = Grasp_x - x;
-                splitContainerControl1.Panel2.AutoScrollPosition = new Point(Math.Abs(move_x), Math.Abs(move_y));
-            }
-        }
-
-        private Point m_StarPoint = Point.Empty;        //for 拖动
-        private Point m_ViewPoint = Point.Empty;
-        private bool m_StarMove = false;
-
-        private void gvPicture_Click(object sender, EventArgs e)
-        {
-            //this.BindPicture();
-        }
 
         private void btnAllCheck_Click(object sender, EventArgs e)
         {
@@ -912,63 +857,13 @@ namespace CJia.Health.App.UI
         {
 
         }
-
+        private int OldRowHandel = -1;
         private void gvPicture_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gvPicture.GetFocusedDataRow() != null)
             {
                 this.BindPicture();
-            }
-        }
-        private void btnBig_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.FangDa(cJiaPicture, true);
-        }
-
-        private void btnSmall_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.FangDa(cJiaPicture, false);
-        }
-
-        private void btnNiX_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.XuanZhuang(cJiaPicture, true);
-        }
-
-        private void btnShunX_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.XuanZhuang(cJiaPicture, false);
-        }
-
-        private void btnShij_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.InFactSize(cJiaPicture, true);
-        }
-
-        private void btnHeShi_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.InFactSize(cJiaPicture, false);
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-            if (cJiaPicture.Image == null)
-            {
-                btnBig.Enabled = false;
-                btnSmall.Enabled = false;
-                btnNiX.Enabled = false;
-                btnShunX.Enabled = false;
-                btnShij.Enabled = false;
-                btnHeShi.Enabled = false;
-            }
-            else
-            {
-                btnBig.Enabled = true;
-                btnSmall.Enabled = true;
-                btnNiX.Enabled = true;
-                btnShunX.Enabled = true;
-                btnShij.Enabled = true;
-                btnHeShi.Enabled = true;
+                OldRowHandel = gvPicture.FocusedRowHandle;
             }
         }
 

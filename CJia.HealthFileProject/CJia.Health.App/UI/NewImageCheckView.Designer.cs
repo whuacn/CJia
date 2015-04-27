@@ -42,14 +42,7 @@
             this.cJiaLabel62 = new CJia.Controls.CJiaLabel();
             this.crdCheck = new CJia.Controls.CJiaRadioBox();
             this.lblprojectName = new CJia.Controls.CJiaLabel();
-            this.cJiaPicture = new CJia.Controls.CJiaPicture();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
-            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
+            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             this.cJiaPanel2 = new CJia.Controls.CJiaPanel();
             this.btnAllCheck = new CJia.Controls.CJiaButton();
             this.txtCheckStatusName = new CJia.Controls.CJiaLabel();
@@ -73,8 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LURecordNO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crdCheck.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).BeginInit();
             this.cJiaPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +81,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.AutoScroll = true;
             this.splitContainerControl1.Panel2.Controls.Add(this.lblprojectName);
-            this.splitContainerControl1.Panel2.Controls.Add(this.cJiaPicture);
+            this.splitContainerControl1.Panel2.Controls.Add(this.pdfViewer);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1118, 621);
             this.splitContainerControl1.SplitterPosition = 350;
@@ -345,7 +336,7 @@
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(270, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(278, 26);
+            this.LURecordNO.Size = new System.Drawing.Size(278, 20);
             this.LURecordNO.TabIndex = 174;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -404,86 +395,25 @@
             // lblprojectName
             // 
             this.lblprojectName.Appearance.BackColor = System.Drawing.Color.White;
-            this.lblprojectName.Appearance.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprojectName.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.lblprojectName.Appearance.Font = new System.Drawing.Font("Tahoma", 22F);
             this.lblprojectName.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblprojectName.Location = new System.Drawing.Point(16, 3);
+            this.lblprojectName.Location = new System.Drawing.Point(29, 48);
             this.lblprojectName.Name = "lblprojectName";
-            this.lblprojectName.Size = new System.Drawing.Size(84, 28);
-            this.lblprojectName.TabIndex = 161;
+            this.lblprojectName.Size = new System.Drawing.Size(116, 35);
+            this.lblprojectName.TabIndex = 5;
             this.lblprojectName.Text = "病案首页";
             // 
-            // cJiaPicture
+            // pdfViewer
             // 
-            this.cJiaPicture.Location = new System.Drawing.Point(2, 3);
-            this.cJiaPicture.Name = "cJiaPicture";
-            this.cJiaPicture.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.cJiaPicture.Properties.Appearance.Options.UseBackColor = true;
-            this.cJiaPicture.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cJiaPicture.Properties.ContextMenuStrip = this.contextMenuStrip1;
-            this.cJiaPicture.Properties.NullText = " ";
-            this.cJiaPicture.Properties.ShowMenu = false;
-            this.cJiaPicture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.cJiaPicture.Size = new System.Drawing.Size(450, 476);
-            this.cJiaPicture.TabIndex = 160;
-            this.cJiaPicture.ImageChanged += new System.EventHandler(this.picDA_ImageChanged);
-            this.cJiaPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDA_MouseDown);
-            this.cJiaPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDA_MouseMove);
-            this.cJiaPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDA_MouseUp);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBig,
-            this.btnSmall,
-            this.btnNiX,
-            this.btnShunX,
-            this.btnShij,
-            this.btnHeShi});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 136);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // btnBig
-            // 
-            this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(124, 22);
-            this.btnBig.Text = "放大图片";
-            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
-            // 
-            // btnSmall
-            // 
-            this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(124, 22);
-            this.btnSmall.Text = "缩小图片";
-            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
-            // 
-            // btnNiX
-            // 
-            this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(124, 22);
-            this.btnNiX.Text = "逆向旋转";
-            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
-            // 
-            // btnShunX
-            // 
-            this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(124, 22);
-            this.btnShunX.Text = "顺向旋转";
-            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
-            // 
-            // btnShij
-            // 
-            this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(124, 22);
-            this.btnShij.Text = "实际尺寸";
-            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
-            // 
-            // btnHeShi
-            // 
-            this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(124, 22);
-            this.btnHeShi.Text = "合适尺寸";
-            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
+            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfViewer.FileName = null;
+            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Size = new System.Drawing.Size(756, 621);
+            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
+            this.pdfViewer.TabIndex = 2;
+            this.pdfViewer.ZoomLevel = 3;
             // 
             // cJiaPanel2
             // 
@@ -724,8 +654,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LURecordNO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crdCheck.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).EndInit();
             this.cJiaPanel2.ResumeLayout(false);
             this.cJiaPanel2.PerformLayout();
@@ -761,16 +689,9 @@
         private Controls.CJiaLabel cJiaLabel2;
         private Controls.CJiaLabel txtCheckStatusName;
         private Controls.CJiaLabel cJiaLabel3;
-        private Controls.CJiaPicture cJiaPicture;
         private Controls.CJiaButton btnAllCheck;
+        private Tools.PDFViewer pdfViewer;
         private Controls.CJiaLabel lblprojectName;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btnBig;
-        private System.Windows.Forms.ToolStripMenuItem btnSmall;
-        private System.Windows.Forms.ToolStripMenuItem btnNiX;
-        private System.Windows.Forms.ToolStripMenuItem btnShunX;
-        private System.Windows.Forms.ToolStripMenuItem btnShij;
-        private System.Windows.Forms.ToolStripMenuItem btnHeShi;
 
     }
 }

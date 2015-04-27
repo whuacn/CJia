@@ -125,6 +125,7 @@ namespace CJia.Health.App.UI
             pdfViewer.FileName = "";
             lblprojectName.Text = "";
             PicName = "";
+
         }
         void repositoryItemComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -411,47 +412,53 @@ namespace CJia.Health.App.UI
                 inputGrid.Visible = true;
                 pictureGrid.Visible = false;
                 btnDelete.CustomText = "删除(F6)";
+                inputGrid.Focus();
             }
             else
             {
                 inputGrid.Visible = false;
                 pictureGrid.Visible = true;
                 btnDelete.CustomText = "取消(F6)";
+                pictureGrid.Focus();
             }
         }
 
         private void Loading(string uri)
         {
-            bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
-            this.ParentForm.Enabled = true;
-            if (bol)
+            try
             {
-                string[] arr = uri.Split('/');
-                string fileName = uri.Split('/')[arr.Length - 1];
-                string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                string pdfData = downLoadFile.Replace(".pdf", "");
-                if (!File.Exists(downLoadFile))
+                bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+                this.ParentForm.Enabled = true;
+                if (bol)
                 {
-                    if (File.Exists(pdfData))
-                        File.Move(pdfData, downLoadFile);
+                    string[] arr = uri.Split('/');
+                    string fileName = uri.Split('/')[arr.Length - 1];
+                    string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    string pdfData = downLoadFile.Replace(".pdf", "");
+                    if (!File.Exists(downLoadFile))
+                    {
+                        if (File.Exists(pdfData))
+                            File.Move(pdfData, downLoadFile);
+                    }
+                    pdfViewer.FileName = downLoadFile;
+                    if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
+                    {
+                        DataRow dr = pictureView.GetDataRow(OldRowHandel);
+                        arr = dr["Pic_Path"].ToString().Split('/');
+                        fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
+                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                        pdfData = downLoadFile.Replace(".pdf", "");
+                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                            File.Move(downLoadFile, pdfData);
+                    }
                 }
-                pdfViewer.FileName = downLoadFile;
-                if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
+                else
                 {
-                    DataRow dr = pictureView.GetDataRow(OldRowHandel);
-                    arr = dr["Pic_Path"].ToString().Split('/');
-                    fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
-                    downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                    pdfData = downLoadFile.Replace(".pdf", "");
-                    if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                        File.Move(downLoadFile, pdfData);
+                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
                 }
+                this.ParentForm.Activate();
             }
-            else
-            {
-                Message.Show("此图片不存在或已删除，请与管理员联系。。。");
-            }
-            this.ParentForm.Activate();
+            catch { }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -470,6 +477,11 @@ namespace CJia.Health.App.UI
                     DataRow focuseRow = pictureView.GetFocusedDataRow();
                     string fileName = focuseRow["Pic_Path"].ToString();
                     FtpHelp.DeleteFile(fileName, UserName, Password);
+                    string[] arr = fileName.Split('/');
+                    string name = focuseRow["Pic_Path"].ToString().Split('/')[arr.Length - 1];
+                    string filePath = Application.StartupPath + @"\Cache\" + name;
+                    pdfViewer.FileName = "";
+                    File.Delete(filePath);
                     pictureView.DeleteRow(pictureView.FocusedRowHandle);
                     pictureView.RefreshData();
                 }
@@ -1079,18 +1091,31 @@ namespace CJia.Health.App.UI
                 imagesInputArgs.HealthID = LURecordNO.DisplayValue;
                 imagesInputArgs.RecordNO = LURecordNO.DisplayText;
                 OnReview(sender, imagesInputArgs);
-                if (OnSelectPicture != null)
-                {
-                    imagesInputArgs.HealthID = LURecordNO.DisplayValue;
-                    OnSelectPicture(null, imagesInputArgs);
-                }
                 RecordNOData = null;
                 LURecordNO.DataSource = null;
                 LURecordNO.DisplayText = "";
                 LURecordNO.DisplayValue = "";
+                LUProject.DataSource = null;
+                LUProject.DisplayText = "";
+                LUProject.DisplayValue = "";
+                LUProject.Text = "";
                 txtTimes.Text = "1";
                 txtPage.Text = "001";
                 txtSubPage.Text = "00";
+                pdfViewer.FileName = "";
+                pictureGrid.DataSource = null;
+                inputGrid.DataSource = null;
+                try
+                {
+                    foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                    {
+                        (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                    }
+                    string path = Application.StartupPath + @"\Cache";
+                    if (Directory.Exists(path))
+                        Directory.Delete(path, true);
+                }
+                catch { }
             }
         }
 
@@ -1152,47 +1177,52 @@ namespace CJia.Health.App.UI
         private int OldRowHandel2 = -1;
         private void inputView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (inputView.GetFocusedDataRow() != null)
+            try
             {
-                DataRow focuseRow = inputView.GetFocusedDataRow();
-                string uri = focuseRow["SRC"].ToString();
-                LUProject.DisplayText = focuseRow["PRO_NAME"].ToString();
-                LUProject.Text = focuseRow["PRO_NAME"].ToString();
-                LUProject.DisplayValue = focuseRow["PRO_ID"].ToString();
-                lblprojectName.Text = focuseRow["PRO_NAME"].ToString();
-                txtPage.Text = focuseRow["PAGE_NO"].ToString();
-                txtSubPage.Text = focuseRow["SUBPAGE"].ToString();
-                bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
-                if (bol)
+                if (inputView.GetFocusedDataRow() != null && ckInput.Checked)
                 {
-                    string[] arr = uri.Split('/');
-                    string fileName = uri.Split('/')[arr.Length - 1];
-                    string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                    string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
+                    DataRow focuseRow = inputView.GetFocusedDataRow();
+                    string uri = focuseRow["SRC"].ToString();
+                    LUProject.DisplayText = focuseRow["PRO_NAME"].ToString();
+                    LUProject.Text = focuseRow["PRO_NAME"].ToString();
+                    LUProject.DisplayValue = focuseRow["PRO_ID"].ToString();
+                    lblprojectName.Text = focuseRow["PRO_NAME"].ToString();
+                    txtPage.Text = focuseRow["PAGE_NO"].ToString();
+                    txtSubPage.Text = focuseRow["SUBPAGE"].ToString();
+                    bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+                    if (bol)
                     {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
+                        string[] arr = uri.Split('/');
+                        string fileName = uri.Split('/')[arr.Length - 1];
+                        string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                        string pdfData = downLoadFile.Replace(".pdf", "");
+                        if (!File.Exists(downLoadFile))
+                        {
+                            if (File.Exists(pdfData))
+                                File.Move(pdfData, downLoadFile);
+                        }
+                        pdfViewer.FileName = downLoadFile;
+                        pdfViewer.Tag = focuseRow["SRC"].ToString();
+                        PicName = focuseRow["PICTURE_NAME"].ToString();
+                        if (OldRowHandel2 != -1 && OldRowHandel2 < inputView.RowCount)
+                        {
+                            DataRow dr = inputView.GetDataRow(OldRowHandel2);
+                            arr = dr["SRC"].ToString().Split('/');
+                            fileName = dr["SRC"].ToString().Split('/')[arr.Length - 1];
+                            downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                            pdfData = downLoadFile.Replace(".pdf", "");
+                            if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                                File.Move(downLoadFile, pdfData);
+                        }
+                        inputGrid.Focus();
                     }
-                    pdfViewer.FileName = downLoadFile;
-                    pdfViewer.Tag = focuseRow["SRC"].ToString();
-                    PicName = focuseRow["PICTURE_NAME"].ToString();
-                    if (OldRowHandel2 != -1 && OldRowHandel2 < inputView.RowCount)
+                    else
                     {
-                        DataRow dr = inputView.GetDataRow(OldRowHandel2);
-                        arr = dr["SRC"].ToString().Split('/');
-                        fileName = dr["SRC"].ToString().Split('/')[arr.Length - 1];
-                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
+                        Message.Show("此图片不存在或已删除，请与管理员联系。。。");
                     }
-                }
-                else
-                {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
                 }
             }
+            catch { }
         }
         /// <summary>
         /// 图片名称
