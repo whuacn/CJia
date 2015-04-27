@@ -151,6 +151,9 @@ namespace CJia.Health.App.UI
             lblNoBlank.Text = "";
             SMAllpageList = new List<string>();
             NoBlankPage = new List<string>();
+            string path = Application.StartupPath + @"\Cache";
+            if (Directory.Exists(path))
+                Directory.Delete(path, true);
         }
 
         void LURecordNO_GetData(object sender, Controls.CJiaRTLookUpMoreColArgs e)
@@ -258,22 +261,22 @@ namespace CJia.Health.App.UI
                         waitUC.Do("执行进度(" + j + "/" + PictureInfo.Rows.Count + ")");
                         if (dr["Pic_Name"].ToString().Substring(0, 2) != "PZ")
                         {
-                            img = Tools.Help.GetImageByUri(dr["Pic_Path"].ToString(), UserName, Password);
-                            string isjjfb = CJia.Health.Tools.ConfigHelper.GetAppStrings("isJJCJBlank");
-                            if (isjjfb == "0")//妇保
-                            {
-                                if (isBlankPage((Bitmap)img, 400))
-                                {
-                                    SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
-                                }
-                            }
-                            else //创佳
-                            {
-                                if (isBlankPage((Bitmap)img, 200))
-                                {
-                                    SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
-                                }
-                            }
+                            //img = Tools.Help.GetImageByUri(dr["Pic_Path"].ToString(), UserName, Password);
+                            //string isjjfb = CJia.Health.Tools.ConfigHelper.GetAppStrings("isJJCJBlank");
+                            //if (isjjfb == "0")//妇保
+                            //{
+                            //    if (isBlankPage((Bitmap)img, 400))
+                            //    {
+                            //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
+                            //    }
+                            //}
+                            //else //创佳
+                            //{
+                            //    if (isBlankPage((Bitmap)img, 200))
+                            //    {
+                            //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
+                            //    }
+                            //}
                         }
                     }
                     waitUC.ParentForm.Close();

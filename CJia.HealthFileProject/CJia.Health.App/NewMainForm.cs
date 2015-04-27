@@ -11,6 +11,8 @@ using TwainLib;
 using DevExpress.XtraSplashScreen;
 using CJia._3LevelReview.App;
 using DevExpress.XtraTab;
+using System.IO;
+using CJia.Health.App.UI;
 
 namespace CJia.Health.App
 {
@@ -187,8 +189,21 @@ namespace CJia.Health.App
             {
                 if (CJia.Health.Tools.Help.SystemInitConfig())
                 {
-                    UI.LoginView login = new UI.LoginView();
-                    CJia.Health.Tools.Help.NewNoBorderForm(login);
+                    string isDev = CJia.Health.Tools.ConfigHelper.GetAppStrings("isDev");
+                    if (isDev == "0")
+                    {
+                        LoginWaitFrm frm = new LoginWaitFrm();
+                        frm.Show();
+                        Application.DoEvents();
+                        UI.LoginView login = new UI.LoginView();
+                        frm.Close();
+                        CJia.Health.Tools.Help.NewNoBorderForm(login);
+                    }
+                    else
+                    {
+                        LoginFrom log = new LoginFrom();
+                        log.ShowDialog();
+                    }
                     if (User.IsLoginSuccess)
                     {
                         if (this.Controls != null)
@@ -227,6 +242,13 @@ namespace CJia.Health.App
         //退出
         private void btnQuit_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            foreach (Control cs in this.Controls.Find("pdfViewer", true))
+            {
+                (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+            }
+            string path = Application.StartupPath + @"\Cache";
+            if (Directory.Exists(path))
+                Directory.Delete(path, true);
             this.Close();
         }
 
@@ -422,6 +444,13 @@ namespace CJia.Health.App
         {
             if (Message.ShowQuery("确定退出此系统吗？", Message.Button.OkCancel) == Message.Result.Ok)
             {
+                foreach (Control cs in this.Controls.Find("pdfViewer", true))
+                {
+                    (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                }
+                string path = Application.StartupPath + @"\Cache";
+                if (Directory.Exists(path))
+                    Directory.Delete(path, true);
                 e.Cancel = false;
             }
             else

@@ -32,6 +32,7 @@ namespace CJia.Health.App.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeView));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
+            this.btnBlank = new CJia.Controls.CJiaButton();
             this.cJiaLabel3 = new CJia.Controls.CJiaLabel();
             this.lblNoBlank = new CJia.Controls.CJiaLabel();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
@@ -67,7 +68,6 @@ namespace CJia.Health.App.UI
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnBlank = new CJia.Controls.CJiaButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
@@ -117,6 +117,22 @@ namespace CJia.Health.App.UI
             this.cJiaPanel1.Name = "cJiaPanel1";
             this.cJiaPanel1.Size = new System.Drawing.Size(391, 600);
             this.cJiaPanel1.TabIndex = 0;
+            // 
+            // btnBlank
+            // 
+            this.btnBlank.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnBlank.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnBlank.Appearance.Options.UseFont = true;
+            this.btnBlank.Appearance.Options.UseForeColor = true;
+            this.btnBlank.CustomText = "空白页";
+            this.btnBlank.Location = new System.Drawing.Point(268, 93);
+            this.btnBlank.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnBlank.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnBlank.Name = "btnBlank";
+            this.btnBlank.Selectable = false;
+            this.btnBlank.Size = new System.Drawing.Size(80, 28);
+            this.btnBlank.TabIndex = 181;
+            this.btnBlank.Text = "空白页";
             // 
             // cJiaLabel3
             // 
@@ -618,22 +634,6 @@ namespace CJia.Health.App.UI
             this.gridColumn18.Caption = "项目id";
             this.gridColumn18.FieldName = "PRO_ID";
             this.gridColumn18.Name = "gridColumn18";
-            // 
-            // btnBlank
-            // 
-            this.btnBlank.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnBlank.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnBlank.Appearance.Options.UseFont = true;
-            this.btnBlank.Appearance.Options.UseForeColor = true;
-            this.btnBlank.CustomText = "空白页";
-            this.btnBlank.Location = new System.Drawing.Point(268, 93);
-            this.btnBlank.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnBlank.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnBlank.Name = "btnBlank";
-            this.btnBlank.Selectable = false;
-            this.btnBlank.Size = new System.Drawing.Size(80, 28);
-            this.btnBlank.TabIndex = 181;
-            this.btnBlank.Text = "空白页";
             // 
             // MergeView
             // 
