@@ -730,6 +730,12 @@
     <Compile Include="UI\NoPrintLabel.Designer.cs">
       <DependentUpon>NoPrintLabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitLoading.designer.cs">
+      <DependentUpon>WaitLoading.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -999,6 +1005,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NoPrintLabel.resx">
       <DependentUpon>NoPrintLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitLoading.resx">
+      <DependentUpon>WaitLoading.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
