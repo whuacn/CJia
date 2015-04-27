@@ -122,7 +122,7 @@ namespace CJia.Health.App.UI
             txtTimes.Text = "1";
             pictureGrid.DataSource = null;
             inputGrid.DataSource = null;
-            cJiaPicture.Image = null;
+            pdfViewer.FileName = "";
             lblprojectName.Text = "";
             PicName = "";
         }
@@ -420,19 +420,32 @@ namespace CJia.Health.App.UI
             }
         }
 
-        private void Loading(object uri)
+        private void Loading(string uri)
         {
-            Image img = CJia.Health.Tools.Help.GetImageByUri(uri.ToString(), UserName, Password);
-            //load.ParentForm.Close();
+            bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
             this.ParentForm.Enabled = true;
-            if (img != null)
+            if (bol)
             {
-                int panel_W = splitContainerControl1.Panel2.Width;
-                float i = float.Parse(img.Height.ToString()) / float.Parse(img.Width.ToString());
-                cJiaPicture.Width = panel_W - 20;
-                float height = i * (panel_W - 20);
-                cJiaPicture.Height = Convert.ToInt32(height);
-                cJiaPicture.Image = img;
+                string[] arr = uri.Split('/');
+                string fileName = uri.Split('/')[arr.Length - 1];
+                string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                string pdfData = downLoadFile.Replace(".pdf", "");
+                if (!File.Exists(downLoadFile))
+                {
+                    if (File.Exists(pdfData))
+                        File.Move(pdfData, downLoadFile);
+                }
+                pdfViewer.FileName = downLoadFile;
+                if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
+                {
+                    DataRow dr = pictureView.GetDataRow(OldRowHandel);
+                    arr = dr["Pic_Path"].ToString().Split('/');
+                    fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
+                    downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    pdfData = downLoadFile.Replace(".pdf", "");
+                    if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                        File.Move(downLoadFile, pdfData);
+                }
             }
             else
             {
@@ -457,7 +470,6 @@ namespace CJia.Health.App.UI
                     DataRow focuseRow = pictureView.GetFocusedDataRow();
                     string fileName = focuseRow["Pic_Path"].ToString();
                     FtpHelp.DeleteFile(fileName, UserName, Password);
-                    //File.Delete(fileName);
                     pictureView.DeleteRow(pictureView.FocusedRowHandle);
                     pictureView.RefreshData();
                 }
@@ -473,11 +485,6 @@ namespace CJia.Health.App.UI
                         inputView.DeleteRow(inputView.FocusedRowHandle);
                         inputView.RefreshData();
                     }
-                    //if (OnSelectPicture != null)
-                    //{
-                    //    imagesInputArgs.HealthID = LURecordNO.DisplayValue;
-                    //    OnSelectPicture(null, imagesInputArgs);
-                    //}
                 }
             }
         }
@@ -1018,16 +1025,6 @@ namespace CJia.Health.App.UI
         }
         #endregion
 
-        private void cJiaButton1_Click(object sender, EventArgs e)
-        {
-            int i = 90;
-            Image img = cJiaPicture.Image;
-            if (img != null)
-            {
-                cJiaPicture.Image = Rotate((Bitmap)img, i);
-            }
-        }
-
         #region 图片旋转函数
         /// <summary>
         /// 以逆时针为方向对图像进行旋转
@@ -1097,46 +1094,43 @@ namespace CJia.Health.App.UI
             }
         }
 
-        private void cJiaPicture_ImageChanged(object sender, EventArgs e)
-        {
-            if (cJiaPicture.Image != null)
-            {
-                //btnXZ.Visible = true;
-            }
-            else
-            {
-                //btnXZ.Visible = false;
-            }
-        }
-
+        private int OldRowHandel = -1;
         private void pictureView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (pictureView.GetFocusedDataRow() != null)
             {
-                //this.ParentForm.Enabled = false;
                 DataRow focuseRow = pictureView.GetFocusedDataRow();
-                Image img = CJia.Health.Tools.Help.GetImageByUri(focuseRow["Pic_Path"].ToString(), UserName, Password);
-                //load = new UI.Loading();
-                //CJia.Health.Tools.Help.NewRedBorderFrom(load);
-                //thread = new Thread(new ParameterizedThreadStart(Loading));
-                //thread.Start((object)focuseRow["Pic_Path"].ToString());
-                if (img != null)
+                string uri = focuseRow["Pic_Path"].ToString();
+                bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+                if (bol)
                 {
-                    int panel_W = splitContainerControl1.Panel2.Width;
-                    float i = float.Parse(img.Height.ToString()) / float.Parse(img.Width.ToString());
-                    cJiaPicture.Width = panel_W - 20;
-                    float height = i * (panel_W - 20);
-                    cJiaPicture.Height = Convert.ToInt32(height);
-                    cJiaPicture.Image = img;
-                    cJiaPicture.Tag = focuseRow["Pic_Path"].ToString();
+                    string[] arr = uri.Split('/');
+                    string fileName = uri.Split('/')[arr.Length - 1];
+                    string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    string pdfData = downLoadFile.Replace(".pdf", "");
+                    if (!File.Exists(downLoadFile))
+                    {
+                        if (File.Exists(pdfData))
+                            File.Move(pdfData, downLoadFile);
+                    }
+                    pdfViewer.FileName = downLoadFile;
+                    pdfViewer.Tag = focuseRow["Pic_Path"].ToString();
                     PicName = focuseRow["Pic_Name"].ToString();
+                    if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
+                    {
+                        DataRow dr = pictureView.GetDataRow(OldRowHandel);
+                        arr = dr["Pic_Path"].ToString().Split('/');
+                        fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
+                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                        pdfData = downLoadFile.Replace(".pdf", "");
+                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                            File.Move(downLoadFile, pdfData);
+                    }
                 }
                 else
                 {
                     Message.Show("此图片不存在或已删除，请与管理员联系。。。");
                 }
-
-                cJiaPicture.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
                 LUProject.DisplayText = focuseRow["Pic_ProjectName"].ToString();
                 LUProject.Text = focuseRow["Pic_ProjectName"].ToString();
                 lblprojectName.Text = focuseRow["Pic_ProjectName"].ToString();
@@ -1151,127 +1145,53 @@ namespace CJia.Health.App.UI
                 {
                     btnDelete.CustomText = "删除(F6)";
                 }
-                splitContainerControl1.Panel2.AutoScrollPosition = new Point(0, 0);
+                pictureGrid.Focus();
+                OldRowHandel = pictureView.FocusedRowHandle;
             }
         }
-
-        private void cJiaPicture_MouseDown(object sender, MouseEventArgs e)
-        {
-            cJiaPicture.Cursor = Cursors.Hand;
-            m_StarMove = true;
-            m_StarPoint = e.Location;
-        }
-
-        private void cJiaPicture_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (m_StarMove)
-            {
-                int Grasp_y = splitContainerControl1.Panel2.AutoScrollPosition.Y;
-                int Grasp_x = splitContainerControl1.Panel2.AutoScrollPosition.X;
-                int x, y;
-                int move_y; //滚动的位置
-                int move_x;
-                x = m_StarPoint.X - e.X;
-                y = m_StarPoint.Y - e.Y;
-                if (Grasp_y - y > 0) move_y = 0;
-                else move_y = Grasp_y - y;
-                if (Grasp_x - x > 0) move_x = 0;
-                else move_x = Grasp_x - x;
-                splitContainerControl1.Panel2.AutoScrollPosition = new Point(Math.Abs(move_x), Math.Abs(move_y));
-            }
-        }
-
-        private void cJiaPicture_MouseUp(object sender, MouseEventArgs e)
-        {
-            m_StarMove = false;
-            cJiaPicture.Cursor = Cursors.Default;
-        }
-
+        private int OldRowHandel2 = -1;
         private void inputView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (inputView.GetFocusedDataRow() != null)
             {
-                //this.ParentForm.Enabled = false;
                 DataRow focuseRow = inputView.GetFocusedDataRow();
+                string uri = focuseRow["SRC"].ToString();
                 LUProject.DisplayText = focuseRow["PRO_NAME"].ToString();
                 LUProject.Text = focuseRow["PRO_NAME"].ToString();
                 LUProject.DisplayValue = focuseRow["PRO_ID"].ToString();
                 lblprojectName.Text = focuseRow["PRO_NAME"].ToString();
                 txtPage.Text = focuseRow["PAGE_NO"].ToString();
                 txtSubPage.Text = focuseRow["SUBPAGE"].ToString();
-                Image img = Tools.Help.GetImageByUri(focuseRow["SRC"].ToString(), UserName, Password);
-                //load = new UI.Loading();
-                //CJia.Health.Tools.Help.NewRedBorderFrom(load);
-                //thread = new Thread(new ParameterizedThreadStart(Loading));
-                //thread.Start((object)focuseRow["SRC"].ToString());
-                if (img != null)
+                bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+                if (bol)
                 {
-                    int panel_W = splitContainerControl1.Panel2.Width;
-                    float i = float.Parse(img.Height.ToString()) / float.Parse(img.Width.ToString());
-                    cJiaPicture.Width = panel_W - 20;
-                    float height = i * (panel_W - 20);
-                    cJiaPicture.Height = Convert.ToInt32(height);
-                    cJiaPicture.Image = img;
-                    cJiaPicture.Tag = focuseRow["SRC"].ToString();
+                    string[] arr = uri.Split('/');
+                    string fileName = uri.Split('/')[arr.Length - 1];
+                    string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    string pdfData = downLoadFile.Replace(".pdf", "");
+                    if (!File.Exists(downLoadFile))
+                    {
+                        if (File.Exists(pdfData))
+                            File.Move(pdfData, downLoadFile);
+                    }
+                    pdfViewer.FileName = downLoadFile;
+                    pdfViewer.Tag = focuseRow["SRC"].ToString();
                     PicName = focuseRow["PICTURE_NAME"].ToString();
+                    if (OldRowHandel2 != -1 && OldRowHandel2 < inputView.RowCount)
+                    {
+                        DataRow dr = inputView.GetDataRow(OldRowHandel2);
+                        arr = dr["SRC"].ToString().Split('/');
+                        fileName = dr["SRC"].ToString().Split('/')[arr.Length - 1];
+                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                        pdfData = downLoadFile.Replace(".pdf", "");
+                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                            File.Move(downLoadFile, pdfData);
+                    }
                 }
                 else
                 {
                     Message.Show("此图片不存在或已删除，请与管理员联系。。。");
                 }
-            }
-        }
-        private void btnBig_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.FangDa(cJiaPicture, true);
-        }
-
-        private void btnSmall_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.FangDa(cJiaPicture, false);
-        }
-
-        private void btnNiX_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.XuanZhuang(cJiaPicture, true);
-        }
-
-        private void btnShunX_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.XuanZhuang(cJiaPicture, false);
-        }
-
-        private void btnShij_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.InFactSize(cJiaPicture, true);
-        }
-
-        private void btnHeShi_Click(object sender, EventArgs e)
-        {
-            CJia.Health.Tools.Help.InFactSize(cJiaPicture, false);
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-            if (cJiaPicture.Image == null)
-            {
-                btnBig.Enabled = false;
-                btnSmall.Enabled = false;
-                btnNiX.Enabled = false;
-                btnShunX.Enabled = false;
-                btnShij.Enabled = false;
-                btnHeShi.Enabled = false;
-                btnSavePic.Enabled = false;
-            }
-            else
-            {
-                btnBig.Enabled = true;
-                btnSmall.Enabled = true;
-                btnNiX.Enabled = true;
-                btnShunX.Enabled = true;
-                btnShij.Enabled = true;
-                btnHeShi.Enabled = true;
-                btnSavePic.Enabled = true;
             }
         }
         /// <summary>
@@ -1280,24 +1200,24 @@ namespace CJia.Health.App.UI
         private string PicName;
         private void btnSavePic_Click(object sender, EventArgs e)
         {
-            if (cJiaPicture.Image != null)
-            {
-                try
-                {
-                    Image img = cJiaPicture.Image;
-                    string linshipath = CJia.Health.Tools.ConfigHelper.GetAppStrings("JJCJScanPicPath");//临时保存图片
-                    CreaterFolder(linshipath);
-                    string picInfo = linshipath + "\\" + PicName;
-                    img.Save(picInfo);
-                    FtpHelp.UploadFileByUri(picInfo, cJiaPicture.Tag.ToString(), HostName, UserName, Password);
-                    File.Delete(picInfo);
-                    MessageBox.Show("保存成功");
-                }
-                catch
-                {
-                    MessageBox.Show("保存失败");
-                }
-            }
+            //if (cJiaPicture.Image != null)
+            //{
+            //    try
+            //    {
+            //        Image img = cJiaPicture.Image;
+            //        string linshipath = CJia.Health.Tools.ConfigHelper.GetAppStrings("JJCJScanPicPath");//临时保存图片
+            //        CreaterFolder(linshipath);
+            //        string picInfo = linshipath + "\\" + PicName;
+            //        img.Save(picInfo);
+            //        FtpHelp.UploadFileByUri(picInfo, cJiaPicture.Tag.ToString(), HostName, UserName, Password);
+            //        File.Delete(picInfo);
+            //        MessageBox.Show("保存成功");
+            //    }
+            //    catch
+            //    {
+            //        MessageBox.Show("保存失败");
+            //    }
+            //}
         }
 
         private void pictureView_KeyDown(object sender, KeyEventArgs e)
@@ -1404,6 +1324,16 @@ namespace CJia.Health.App.UI
                     lblprojectName.Text = proName;
                 }
             }
+        }
+
+        private void pictureView_RowCountChanged(object sender, EventArgs e)
+        {
+            pictureView_FocusedRowChanged(null, null);
+        }
+
+        private void inputView_RowCountChanged(object sender, EventArgs e)
+        {
+            inputView_FocusedRowChanged(null, null);
         }
     }
 }

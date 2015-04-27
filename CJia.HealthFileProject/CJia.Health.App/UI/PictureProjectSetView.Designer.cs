@@ -76,15 +76,7 @@
             this.cJiaLabel16 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
             this.lblprojectName = new CJia.Controls.CJiaLabel();
-            this.cJiaPicture = new CJia.Controls.CJiaPicture();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
-            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSavePic = new System.Windows.Forms.ToolStripMenuItem();
+            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -110,8 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckPage.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -123,7 +113,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.AutoScroll = true;
             this.splitContainerControl1.Panel2.Controls.Add(this.lblprojectName);
-            this.splitContainerControl1.Panel2.Controls.Add(this.cJiaPicture);
+            this.splitContainerControl1.Panel2.Controls.Add(this.pdfViewer);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1400, 600);
             this.splitContainerControl1.SplitterPosition = 390;
@@ -187,7 +177,7 @@
             this.LUProject.Location = new System.Drawing.Point(68, 49);
             this.LUProject.Name = "LUProject";
             this.LUProject.OpenAfterEnter = false;
-            this.LUProject.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LUProject.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.LUProject.Properties.Appearance.Options.UseFont = true;
             this.LUProject.Properties.Appearance.Options.UseTextOptions = true;
             this.LUProject.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -199,7 +189,7 @@
             this.LUProject.Properties.PopupFormSize = new System.Drawing.Size(312, 350);
             this.LUProject.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LUProject.ResultRow = null;
-            this.LUProject.Size = new System.Drawing.Size(312, 26);
+            this.LUProject.Size = new System.Drawing.Size(312, 22);
             this.LUProject.TabIndex = 172;
             this.LUProject.UseRowNumDirectSelect = false;
             this.LUProject.UseRowNumLocate = false;
@@ -360,6 +350,7 @@
             this.inputView.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.True;
             this.inputView.RowHeight = 25;
             this.inputView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.inputView_FocusedRowChanged);
+            this.inputView.RowCountChanged += new System.EventHandler(this.inputView_RowCountChanged);
             // 
             // gridColumn19
             // 
@@ -653,6 +644,7 @@
             this.pictureView.RowHeight = 25;
             this.pictureView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.pictureView_FocusedRowChanged);
             this.pictureView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pictureView_KeyDown);
+            this.pictureView.RowCountChanged += new System.EventHandler(this.pictureView_RowCountChanged);
             // 
             // gridColumn1
             // 
@@ -795,7 +787,7 @@
             this.LURecordNO.Location = new System.Drawing.Point(68, 12);
             this.LURecordNO.Name = "LURecordNO";
             this.LURecordNO.OpenAfterEnter = false;
-            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.LURecordNO.Properties.Appearance.Options.UseFont = true;
             this.LURecordNO.Properties.Appearance.Options.UseTextOptions = true;
             this.LURecordNO.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -807,7 +799,7 @@
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(280, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(193, 26);
+            this.LURecordNO.Size = new System.Drawing.Size(193, 22);
             this.LURecordNO.TabIndex = 167;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -826,10 +818,10 @@
             // txtSubPage
             // 
             this.txtSubPage.EditValue = "00";
-            this.txtSubPage.Location = new System.Drawing.Point(208, 83);
+            this.txtSubPage.Location = new System.Drawing.Point(208, 85);
             this.txtSubPage.Name = "txtSubPage";
             this.txtSubPage.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtSubPage.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubPage.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtSubPage.Properties.Appearance.Options.UseBackColor = true;
             this.txtSubPage.Properties.Appearance.Options.UseFont = true;
             this.txtSubPage.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -837,17 +829,17 @@
             this.txtSubPage.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtSubPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtSubPage.Properties.ReadOnly = true;
-            this.txtSubPage.Size = new System.Drawing.Size(47, 26);
+            this.txtSubPage.Size = new System.Drawing.Size(47, 22);
             this.txtSubPage.TabIndex = 164;
             this.txtSubPage.Leave += new System.EventHandler(this.txtSubPage_Leave);
             // 
             // txtPage
             // 
             this.txtPage.EditValue = "001";
-            this.txtPage.Location = new System.Drawing.Point(144, 83);
+            this.txtPage.Location = new System.Drawing.Point(144, 85);
             this.txtPage.Name = "txtPage";
             this.txtPage.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtPage.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPage.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPage.Properties.Appearance.Options.UseBackColor = true;
             this.txtPage.Properties.Appearance.Options.UseFont = true;
             this.txtPage.Properties.Appearance.Options.UseTextOptions = true;
@@ -857,7 +849,7 @@
             this.txtPage.Properties.Mask.EditMask = "\\d{3}|\\d{2}|\\d{1}";
             this.txtPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtPage.Properties.ReadOnly = true;
-            this.txtPage.Size = new System.Drawing.Size(47, 26);
+            this.txtPage.Size = new System.Drawing.Size(47, 22);
             this.txtPage.TabIndex = 163;
             this.txtPage.Leave += new System.EventHandler(this.txtPage_Leave);
             // 
@@ -867,7 +859,7 @@
             this.txtTimes.Location = new System.Drawing.Point(295, 13);
             this.txtTimes.Name = "txtTimes";
             this.txtTimes.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtTimes.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTimes.Properties.Appearance.Options.UseBackColor = true;
             this.txtTimes.Properties.Appearance.Options.UseFont = true;
             this.txtTimes.Properties.Appearance.Options.UseTextOptions = true;
@@ -877,7 +869,7 @@
             this.txtTimes.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtTimes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTimes.Properties.ReadOnly = true;
-            this.txtTimes.Size = new System.Drawing.Size(34, 26);
+            this.txtTimes.Size = new System.Drawing.Size(34, 22);
             this.txtTimes.TabIndex = 161;
             this.txtTimes.Leave += new System.EventHandler(this.txtTimes_Leave);
             // 
@@ -920,7 +912,7 @@
             // cJiaLabel4
             // 
             this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cJiaLabel4.Location = new System.Drawing.Point(197, 86);
+            this.cJiaLabel4.Location = new System.Drawing.Point(197, 88);
             this.cJiaLabel4.Name = "cJiaLabel4";
             this.cJiaLabel4.Size = new System.Drawing.Size(5, 16);
             this.cJiaLabel4.TabIndex = 150;
@@ -982,93 +974,24 @@
             // 
             this.lblprojectName.Appearance.BackColor = System.Drawing.Color.White;
             this.lblprojectName.Appearance.BackColor2 = System.Drawing.Color.Transparent;
-            this.lblprojectName.Appearance.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblprojectName.Appearance.Font = new System.Drawing.Font("Tahoma", 22F);
             this.lblprojectName.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblprojectName.Location = new System.Drawing.Point(10, 3);
+            this.lblprojectName.Location = new System.Drawing.Point(28, 52);
             this.lblprojectName.Name = "lblprojectName";
-            this.lblprojectName.Size = new System.Drawing.Size(84, 28);
+            this.lblprojectName.Size = new System.Drawing.Size(116, 35);
             this.lblprojectName.TabIndex = 4;
             this.lblprojectName.Text = "病案首页";
             // 
-            // cJiaPicture
+            // pdfViewer
             // 
-            this.cJiaPicture.Location = new System.Drawing.Point(1, 2);
-            this.cJiaPicture.Name = "cJiaPicture";
-            this.cJiaPicture.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.cJiaPicture.Properties.Appearance.Options.UseBackColor = true;
-            this.cJiaPicture.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cJiaPicture.Properties.ContextMenuStrip = this.contextMenuStrip1;
-            this.cJiaPicture.Properties.NullText = " ";
-            this.cJiaPicture.Properties.ShowMenu = false;
-            this.cJiaPicture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.cJiaPicture.Size = new System.Drawing.Size(827, 459);
-            this.cJiaPicture.TabIndex = 3;
-            this.cJiaPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseDown);
-            this.cJiaPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseMove);
-            this.cJiaPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseUp);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBig,
-            this.btnSmall,
-            this.btnNiX,
-            this.btnShunX,
-            this.btnShij,
-            this.btnHeShi,
-            this.btnSavePic});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 158);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // btnBig
-            // 
-            this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(124, 22);
-            this.btnBig.Text = "放大图片";
-            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
-            // 
-            // btnSmall
-            // 
-            this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(124, 22);
-            this.btnSmall.Text = "缩小图片";
-            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
-            // 
-            // btnNiX
-            // 
-            this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(124, 22);
-            this.btnNiX.Text = "逆向旋转";
-            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
-            // 
-            // btnShunX
-            // 
-            this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(124, 22);
-            this.btnShunX.Text = "顺向旋转";
-            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
-            // 
-            // btnShij
-            // 
-            this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(124, 22);
-            this.btnShij.Text = "实际尺寸";
-            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
-            // 
-            // btnHeShi
-            // 
-            this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(124, 22);
-            this.btnHeShi.Text = "合适尺寸";
-            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
-            // 
-            // btnSavePic
-            // 
-            this.btnSavePic.Name = "btnSavePic";
-            this.btnSavePic.Size = new System.Drawing.Size(124, 22);
-            this.btnSavePic.Text = "保存图片";
-            this.btnSavePic.Click += new System.EventHandler(this.btnSavePic_Click);
+            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfViewer.FileName = null;
+            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Size = new System.Drawing.Size(998, 600);
+            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
+            this.pdfViewer.TabIndex = 1;
+            this.pdfViewer.ZoomLevel = 3;
             // 
             // gridColumn12
             // 
@@ -1160,8 +1083,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckPage.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1222,15 +1143,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private Controls.CJiaButton btnReview;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
-        private Controls.CJiaPicture cJiaPicture;
         private Controls.CJiaLabel lblprojectName;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btnBig;
-        private System.Windows.Forms.ToolStripMenuItem btnSmall;
-        private System.Windows.Forms.ToolStripMenuItem btnNiX;
-        private System.Windows.Forms.ToolStripMenuItem btnShunX;
-        private System.Windows.Forms.ToolStripMenuItem btnShij;
-        private System.Windows.Forms.ToolStripMenuItem btnHeShi;
-        private System.Windows.Forms.ToolStripMenuItem btnSavePic;
+        private Tools.PDFViewer pdfViewer;
     }
 }

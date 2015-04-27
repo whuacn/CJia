@@ -722,7 +722,7 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(280, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(200, 20);
+            this.LURecordNO.Size = new System.Drawing.Size(200, 22);
             this.LURecordNO.TabIndex = 1;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -751,7 +751,7 @@ namespace CJia.Health.App.UI
             this.txtSubPage.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtSubPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtSubPage.Properties.ReadOnly = true;
-            this.txtSubPage.Size = new System.Drawing.Size(47, 20);
+            this.txtSubPage.Size = new System.Drawing.Size(47, 22);
             this.txtSubPage.TabIndex = 164;
             this.txtSubPage.Leave += new System.EventHandler(this.txtSubPage_Leave);
             // 
@@ -771,7 +771,7 @@ namespace CJia.Health.App.UI
             this.txtPage.Properties.Mask.EditMask = "\\d{3}|\\d{2}|\\d{1}";
             this.txtPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtPage.Properties.ReadOnly = true;
-            this.txtPage.Size = new System.Drawing.Size(47, 20);
+            this.txtPage.Size = new System.Drawing.Size(47, 22);
             this.txtPage.TabIndex = 163;
             this.txtPage.TextChanged += new System.EventHandler(this.txtPage_TextChanged);
             this.txtPage.Leave += new System.EventHandler(this.txtPage_Leave);
@@ -788,7 +788,7 @@ namespace CJia.Health.App.UI
             this.txtFolder.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtFolder.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtFolder.Properties.ReadOnly = true;
-            this.txtFolder.Size = new System.Drawing.Size(311, 20);
+            this.txtFolder.Size = new System.Drawing.Size(311, 22);
             this.txtFolder.TabIndex = 1;
             this.txtFolder.TextChanged += new System.EventHandler(this.txtFolder_TextChanged);
             // 
@@ -808,7 +808,7 @@ namespace CJia.Health.App.UI
             this.txtTimes.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtTimes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTimes.Properties.ReadOnly = true;
-            this.txtTimes.Size = new System.Drawing.Size(34, 20);
+            this.txtTimes.Size = new System.Drawing.Size(34, 22);
             this.txtTimes.TabIndex = 161;
             this.txtTimes.Leave += new System.EventHandler(this.txtTimes_Leave);
             // 
@@ -951,7 +951,7 @@ namespace CJia.Health.App.UI
             this.pnlRight.Controls.Add(this.btnLeft);
             this.pnlRight.Controls.Add(this.btnRight);
             this.pnlRight.Controls.Add(this.ckShouDong);
-            this.pnlRight.Location = new System.Drawing.Point(753, 1);
+            this.pnlRight.Location = new System.Drawing.Point(746, 1);
             this.pnlRight.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlRight.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlRight.Name = "pnlRight";
@@ -1053,7 +1053,7 @@ namespace CJia.Health.App.UI
             this.axCmCaptureOcx1.Location = new System.Drawing.Point(1, 3);
             this.axCmCaptureOcx1.Name = "axCmCaptureOcx1";
             this.axCmCaptureOcx1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axCmCaptureOcx1.OcxState")));
-            this.axCmCaptureOcx1.Size = new System.Drawing.Size(749, 596);
+            this.axCmCaptureOcx1.Size = new System.Drawing.Size(742, 596);
             this.axCmCaptureOcx1.TabIndex = 10;
             // 
             // bigpdfViewer
@@ -1062,7 +1062,7 @@ namespace CJia.Health.App.UI
             this.bigpdfViewer.FileName = null;
             this.bigpdfViewer.Location = new System.Drawing.Point(0, 0);
             this.bigpdfViewer.Name = "bigpdfViewer";
-            this.bigpdfViewer.Size = new System.Drawing.Size(963, 600);
+            this.bigpdfViewer.Size = new System.Drawing.Size(956, 600);
             this.bigpdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
             this.bigpdfViewer.TabIndex = 17;
             this.bigpdfViewer.ZoomLevel = 3;
