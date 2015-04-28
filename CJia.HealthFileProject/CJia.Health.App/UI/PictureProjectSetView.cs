@@ -1095,6 +1095,8 @@ namespace CJia.Health.App.UI
                 LURecordNO.DataSource = null;
                 LURecordNO.DisplayText = "";
                 LURecordNO.DisplayValue = "";
+                LURecordNO.Text = "";
+                lblprojectName.Text = "";
                 LUProject.DataSource = null;
                 LUProject.DisplayText = "";
                 LUProject.DisplayValue = "";
@@ -1108,6 +1110,10 @@ namespace CJia.Health.App.UI
                 try
                 {
                     foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                    {
+                        (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                    }
+                    foreach (Control cs in this.ParentForm.Controls.Find("smallpdfViewer", true))
                     {
                         (cs as CJia.Health.Tools.PDFViewer).FileName = "";
                     }
