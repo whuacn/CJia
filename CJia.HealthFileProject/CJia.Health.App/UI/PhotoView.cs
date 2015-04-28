@@ -1003,7 +1003,7 @@ namespace CJia.Health.App.UI
             string[] strs = SetImagePage();
             if (strs[0].Length == 0) return;
             //图片名称 S_123456_01_001_00
-            string fileName = "PZ_" + LURecordNO.DisplayText + "_" + strs[0] + "_" + strs[1] + "_" + strs[2] + CJia.Health.Tools.ConfigHelper.GetAppStrings("ImgExtension");
+            string fileName = "PZ_" + LURecordNO.DisplayText + "_" + strs[0] + "_" + strs[1] + "_" + strs[2] + ".jpg";
             string filePath = txtFolder.Text + "\\" + fileName;
             string[] tmp1 = System.IO.Directory.GetFiles(txtFolder.Text, "*.PDF");
             bool isHave = false;
