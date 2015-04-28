@@ -52,14 +52,7 @@
             this.chkPicture = new CJia.Controls.CJiaCheckedListBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pnlPicture = new System.Windows.Forms.Panel();
-            this.cJiaPicture = new CJia.Controls.CJiaPicture();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
-            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
+            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
             this.cJiaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPatientName.Properties)).BeginInit();
@@ -75,8 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkAllPicture.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkPicture)).BeginInit();
             this.pnlPicture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cJiaPanel1
@@ -532,83 +523,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPicture.AutoScroll = true;
-            this.pnlPicture.Controls.Add(this.cJiaPicture);
+            this.pnlPicture.Controls.Add(this.pdfViewer);
             this.pnlPicture.Location = new System.Drawing.Point(582, 3);
             this.pnlPicture.Name = "pnlPicture";
             this.pnlPicture.Size = new System.Drawing.Size(1048, 694);
             this.pnlPicture.TabIndex = 5;
             // 
-            // cJiaPicture
+            // pdfViewer
             // 
-            this.cJiaPicture.Location = new System.Drawing.Point(0, 0);
-            this.cJiaPicture.Name = "cJiaPicture";
-            this.cJiaPicture.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.cJiaPicture.Properties.Appearance.Options.UseBackColor = true;
-            this.cJiaPicture.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cJiaPicture.Properties.ContextMenuStrip = this.contextMenuStrip1;
-            this.cJiaPicture.Properties.NullText = " ";
-            this.cJiaPicture.Properties.ShowMenu = false;
-            this.cJiaPicture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.cJiaPicture.Size = new System.Drawing.Size(736, 409);
-            this.cJiaPicture.TabIndex = 7;
-            this.cJiaPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseDown);
-            this.cJiaPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseMove);
-            this.cJiaPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cJiaPicture_MouseUp);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBig,
-            this.btnSmall,
-            this.btnNiX,
-            this.btnShunX,
-            this.btnShij,
-            this.btnHeShi});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 136);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // btnBig
-            // 
-            this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(124, 22);
-            this.btnBig.Text = "放大图片";
-            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
-            // 
-            // btnSmall
-            // 
-            this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(124, 22);
-            this.btnSmall.Text = "缩小图片";
-            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
-            // 
-            // btnNiX
-            // 
-            this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(124, 22);
-            this.btnNiX.Text = "逆向旋转";
-            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
-            // 
-            // btnShunX
-            // 
-            this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(124, 22);
-            this.btnShunX.Text = "顺向旋转";
-            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
-            // 
-            // btnShij
-            // 
-            this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(124, 22);
-            this.btnShij.Text = "实际尺寸";
-            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
-            // 
-            // btnHeShi
-            // 
-            this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(124, 22);
-            this.btnHeShi.Text = "合适尺寸";
-            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
+            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfViewer.FileName = null;
+            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Size = new System.Drawing.Size(1048, 694);
+            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
+            this.pdfViewer.TabIndex = 4;
+            this.pdfViewer.ZoomLevel = 3;
             // 
             // PrintApplyView
             // 
@@ -635,8 +565,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkAllPicture.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkPicture)).EndInit();
             this.pnlPicture.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture.Properties)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -665,14 +593,7 @@
         private Controls.CJiaCheckedListBox chkPicture;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Panel pnlPicture;
-        private Controls.CJiaPicture cJiaPicture;
         private DevExpress.XtraEditors.CheckEdit chkAllPicture;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btnBig;
-        private System.Windows.Forms.ToolStripMenuItem btnSmall;
-        private System.Windows.Forms.ToolStripMenuItem btnNiX;
-        private System.Windows.Forms.ToolStripMenuItem btnShunX;
-        private System.Windows.Forms.ToolStripMenuItem btnShij;
-        private System.Windows.Forms.ToolStripMenuItem btnHeShi;
+        private Tools.PDFViewer pdfViewer;
     }
 }

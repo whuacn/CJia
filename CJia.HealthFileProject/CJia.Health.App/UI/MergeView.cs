@@ -408,6 +408,10 @@ namespace CJia.Health.App.UI
                         {
                             (cs as CJia.Health.Tools.PDFViewer).FileName = "";
                         }
+                        foreach (Control cs in this.ParentForm.Controls.Find("smallpdfViewer", true))
+                        {
+                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
                         string path = Application.StartupPath + @"\Cache";
                         if (Directory.Exists(path))
                             Directory.Delete(path, true);

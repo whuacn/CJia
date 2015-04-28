@@ -397,7 +397,7 @@ namespace CJia.Health.Tools
             }
             catch (Exception ex)
             {
-                Message.Show(ex.Message);
+                //Message.Show(ex.Message);
             }
         }
         /// <summary>

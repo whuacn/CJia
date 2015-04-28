@@ -29,7 +29,6 @@ namespace CJia.Health.App.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhotoView));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
@@ -84,14 +83,7 @@ namespace CJia.Health.App.UI
             this.btnRight = new CJia.Controls.CJiaButton();
             this.ckShouDong = new CJia.Controls.CJiaCheck();
             this.axCmCaptureOcx1 = new AxCmCaptureOcxLib.AxCmCaptureOcx();
-            this.bigpdfViewer = new CJia.Health.Tools.PDFViewer();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnBig = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNiX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShunX = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnShij = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeShi = new System.Windows.Forms.ToolStripMenuItem();
+            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -122,7 +114,6 @@ namespace CJia.Health.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.ckZiDong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckShouDong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axCmCaptureOcx1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -135,7 +126,7 @@ namespace CJia.Health.App.UI
             this.splitContainerControl1.Panel2.AutoScroll = true;
             this.splitContainerControl1.Panel2.Controls.Add(this.pnlRight);
             this.splitContainerControl1.Panel2.Controls.Add(this.axCmCaptureOcx1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.bigpdfViewer);
+            this.splitContainerControl1.Panel2.Controls.Add(this.pdfViewer);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1358, 600);
             this.splitContainerControl1.SplitterPosition = 390;
@@ -951,7 +942,7 @@ namespace CJia.Health.App.UI
             this.pnlRight.Controls.Add(this.btnLeft);
             this.pnlRight.Controls.Add(this.btnRight);
             this.pnlRight.Controls.Add(this.ckShouDong);
-            this.pnlRight.Location = new System.Drawing.Point(746, 1);
+            this.pnlRight.Location = new System.Drawing.Point(739, 1);
             this.pnlRight.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlRight.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlRight.Name = "pnlRight";
@@ -1053,74 +1044,19 @@ namespace CJia.Health.App.UI
             this.axCmCaptureOcx1.Location = new System.Drawing.Point(1, 3);
             this.axCmCaptureOcx1.Name = "axCmCaptureOcx1";
             this.axCmCaptureOcx1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axCmCaptureOcx1.OcxState")));
-            this.axCmCaptureOcx1.Size = new System.Drawing.Size(742, 596);
+            this.axCmCaptureOcx1.Size = new System.Drawing.Size(734, 596);
             this.axCmCaptureOcx1.TabIndex = 10;
             // 
-            // bigpdfViewer
+            // pdfViewer
             // 
-            this.bigpdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bigpdfViewer.FileName = null;
-            this.bigpdfViewer.Location = new System.Drawing.Point(0, 0);
-            this.bigpdfViewer.Name = "bigpdfViewer";
-            this.bigpdfViewer.Size = new System.Drawing.Size(956, 600);
-            this.bigpdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
-            this.bigpdfViewer.TabIndex = 17;
-            this.bigpdfViewer.ZoomLevel = 3;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBig,
-            this.btnSmall,
-            this.btnNiX,
-            this.btnShunX,
-            this.btnShij,
-            this.btnHeShi});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 136);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // btnBig
-            // 
-            this.btnBig.Name = "btnBig";
-            this.btnBig.Size = new System.Drawing.Size(122, 22);
-            this.btnBig.Text = "放大图片";
-            this.btnBig.Click += new System.EventHandler(this.btnBig_Click);
-            // 
-            // btnSmall
-            // 
-            this.btnSmall.Name = "btnSmall";
-            this.btnSmall.Size = new System.Drawing.Size(122, 22);
-            this.btnSmall.Text = "缩小图片";
-            this.btnSmall.Click += new System.EventHandler(this.btnSmall_Click);
-            // 
-            // btnNiX
-            // 
-            this.btnNiX.Name = "btnNiX";
-            this.btnNiX.Size = new System.Drawing.Size(122, 22);
-            this.btnNiX.Text = "逆向旋转";
-            this.btnNiX.Click += new System.EventHandler(this.btnNiX_Click);
-            // 
-            // btnShunX
-            // 
-            this.btnShunX.Name = "btnShunX";
-            this.btnShunX.Size = new System.Drawing.Size(122, 22);
-            this.btnShunX.Text = "顺向旋转";
-            this.btnShunX.Click += new System.EventHandler(this.btnShunX_Click);
-            // 
-            // btnShij
-            // 
-            this.btnShij.Name = "btnShij";
-            this.btnShij.Size = new System.Drawing.Size(122, 22);
-            this.btnShij.Text = "实际尺寸";
-            this.btnShij.Click += new System.EventHandler(this.btnShij_Click);
-            // 
-            // btnHeShi
-            // 
-            this.btnHeShi.Name = "btnHeShi";
-            this.btnHeShi.Size = new System.Drawing.Size(122, 22);
-            this.btnHeShi.Text = "合适尺寸";
-            this.btnHeShi.Click += new System.EventHandler(this.btnHeShi_Click);
+            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfViewer.FileName = null;
+            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Size = new System.Drawing.Size(956, 600);
+            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
+            this.pdfViewer.TabIndex = 17;
+            this.pdfViewer.ZoomLevel = 3;
             // 
             // gridColumn12
             // 
@@ -1217,7 +1153,6 @@ namespace CJia.Health.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.ckZiDong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckShouDong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axCmCaptureOcx1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1285,14 +1220,7 @@ namespace CJia.Health.App.UI
         private Controls.CJiaButton btnLeft;
         private Controls.CJiaPanel pnlRight;
         private Controls.CJiaButton btnRefresh;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btnBig;
-        private System.Windows.Forms.ToolStripMenuItem btnSmall;
-        private System.Windows.Forms.ToolStripMenuItem btnNiX;
-        private System.Windows.Forms.ToolStripMenuItem btnShunX;
-        private System.Windows.Forms.ToolStripMenuItem btnShij;
-        private System.Windows.Forms.ToolStripMenuItem btnHeShi;
-        private Tools.PDFViewer bigpdfViewer;
+        private Tools.PDFViewer pdfViewer;
         private Tools.PDFViewer smallpdfViewer;
     }
 }

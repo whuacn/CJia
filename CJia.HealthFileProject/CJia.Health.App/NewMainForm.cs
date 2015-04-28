@@ -246,6 +246,10 @@ namespace CJia.Health.App
             {
                 (cs as CJia.Health.Tools.PDFViewer).FileName = "";
             }
+            foreach (Control cs in this.Controls.Find("smallpdfViewer", true))
+            {
+                (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+            }
             string path = Application.StartupPath + @"\Cache";
             if (Directory.Exists(path))
                 Directory.Delete(path, true);
@@ -445,6 +449,10 @@ namespace CJia.Health.App
             if (Message.ShowQuery("确定退出此系统吗？", Message.Button.OkCancel) == Message.Result.Ok)
             {
                 foreach (Control cs in this.Controls.Find("pdfViewer", true))
+                {
+                    (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                }
+                foreach (Control cs in this.Controls.Find("smallpdfViewer", true))
                 {
                     (cs as CJia.Health.Tools.PDFViewer).FileName = "";
                 }
@@ -940,16 +948,30 @@ namespace CJia.Health.App
 
         private void xTC_CloseButtonClick(object sender, EventArgs e)
         {
-            DevExpress.XtraTab.ViewInfo.ClosePageButtonEventArgs EArg = (DevExpress.XtraTab.ViewInfo.ClosePageButtonEventArgs)e;
-            string name = EArg.Page.Text;//得到关闭的选项卡的text
-            foreach (XtraTabPage page in xTC.TabPages)//遍历得到和关闭的选项卡一样的Text
+            try
             {
-                if (page.Text == name)
+                DevExpress.XtraTab.ViewInfo.ClosePageButtonEventArgs EArg = (DevExpress.XtraTab.ViewInfo.ClosePageButtonEventArgs)e;
+                string name = EArg.Page.Text;//得到关闭的选项卡的text
+                foreach (XtraTabPage page in xTC.TabPages)//遍历得到和关闭的选项卡一样的Text
                 {
-                    xTC.TabPages.Remove(page);
-                    page.Dispose();
-                    return;
+                    if (page.Text == name)
+                    {
+                        foreach (Control cs in page.Controls.Find("pdfViewer", true))
+                        {
+                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
+                        foreach (Control cs in page.Controls.Find("smallpdfViewer", true))
+                        {
+                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
+                        xTC.TabPages.Remove(page);
+                        page.Dispose();
+                        return;
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
             }
         }
 
