@@ -62,6 +62,8 @@
             // 
             // pnlRole
             // 
+            this.pnlRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlRole.Controls.Add(this.btnRefresh);
             this.pnlRole.Controls.Add(this.btnSearch);
             this.pnlRole.Controls.Add(this.cJiaPanel2);
@@ -80,13 +82,14 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.btnRefresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnRefresh.Appearance.Options.UseFont = true;
             this.btnRefresh.Appearance.Options.UseForeColor = true;
             this.btnRefresh.CustomText = "刷新(F5)";
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(900, 545);
+            this.btnRefresh.Location = new System.Drawing.Point(900, 535);
             this.btnRefresh.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnRefresh.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnRefresh.Name = "btnRefresh";
@@ -98,8 +101,9 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSearch.EditValue = "";
-            this.btnSearch.Location = new System.Drawing.Point(65, 541);
+            this.btnSearch.Location = new System.Drawing.Point(65, 531);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.PointText = "";
             this.btnSearch.Properties.Appearance.BorderColor = System.Drawing.Color.Salmon;
@@ -179,13 +183,14 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAdd.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.btnAdd.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.Appearance.Options.UseForeColor = true;
             this.btnAdd.CustomText = "添加(F1)";
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(642, 545);
+            this.btnAdd.Location = new System.Drawing.Point(642, 535);
             this.btnAdd.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Name = "btnAdd";
@@ -197,7 +202,8 @@
             // 
             // gridRole
             // 
-            this.gridRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridRole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRole.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gridRole.IndicatorWidth = 30;
@@ -208,7 +214,7 @@
             this.gridRole.Margin = new System.Windows.Forms.Padding(27);
             this.gridRole.Name = "gridRole";
             this.gridRole.ShowRowNumber = true;
-            this.gridRole.Size = new System.Drawing.Size(975, 283);
+            this.gridRole.Size = new System.Drawing.Size(975, 271);
             this.gridRole.TabIndex = 100;
             this.gridRole.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -386,8 +392,9 @@
             // 
             // cJiaLabel5
             // 
+            this.cJiaLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.cJiaLabel5.Location = new System.Drawing.Point(5, 552);
+            this.cJiaLabel5.Location = new System.Drawing.Point(5, 542);
             this.cJiaLabel5.Name = "cJiaLabel5";
             this.cJiaLabel5.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel5.TabIndex = 1;
@@ -404,13 +411,14 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDelete.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.btnDelete.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Appearance.Options.UseForeColor = true;
             this.btnDelete.CustomText = "删除(F3)";
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(814, 545);
+            this.btnDelete.Location = new System.Drawing.Point(814, 535);
             this.btnDelete.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Name = "btnDelete";
@@ -422,13 +430,14 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.btnUpdate.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnUpdate.Appearance.Options.UseFont = true;
             this.btnUpdate.Appearance.Options.UseForeColor = true;
             this.btnUpdate.CustomText = "修改(F2)";
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(728, 545);
+            this.btnUpdate.Location = new System.Drawing.Point(728, 535);
             this.btnUpdate.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpdate.Name = "btnUpdate";
@@ -442,7 +451,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.Controls.Add(this.pnlRole);
             this.Name = "RoleManageView";
             this.Size = new System.Drawing.Size(1400, 600);

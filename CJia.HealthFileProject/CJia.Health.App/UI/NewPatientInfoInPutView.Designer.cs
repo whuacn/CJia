@@ -87,16 +87,12 @@
             this.rtlkICDOutDia2 = new CJia.Controls.CJiaRTLookUpMoreCol();
             this.cboTreatResult4 = new CJia.Controls.CJiaComboBox2();
             this.gridView15 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboTreatResult3 = new CJia.Controls.CJiaComboBox2();
             this.gridView14 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboTreatResult2 = new CJia.Controls.CJiaComboBox2();
             this.gridView13 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboTreatResult1 = new CJia.Controls.CJiaComboBox2();
             this.gridView12 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ltxtOutDiaName4 = new CJia.Controls.CJiaLineTextBox();
             this.ltxtOutDiaName3 = new CJia.Controls.CJiaLineTextBox();
             this.ltxtOutDiaName2 = new CJia.Controls.CJiaLineTextBox();
@@ -131,13 +127,17 @@
             this.cJiaLabel6 = new CJia.Controls.CJiaLabel();
             this.cboGender = new CJia.Controls.CJiaComboBox2();
             this.cJiaComboBox21View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cJiaLabel3 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel4 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel16 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel17 = new CJia.Controls.CJiaLabel();
             this.ltxtRecordNo = new CJia.Controls.CJiaLineTextBox();
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pnlPatient)).BeginInit();
             this.pnlPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ltxtInHospitalTime.Properties)).BeginInit();
@@ -1198,14 +1198,6 @@
             this.gridView15.OptionsView.ShowColumnHeaders = false;
             this.gridView15.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "婚否";
-            this.gridColumn10.FieldName = "NAME";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 0;
-            // 
             // cboTreatResult3
             // 
             this.cboTreatResult3.EditValue = "";
@@ -1241,14 +1233,6 @@
             this.gridView14.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView14.OptionsView.ShowColumnHeaders = false;
             this.gridView14.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "婚否";
-            this.gridColumn9.FieldName = "NAME";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 0;
             // 
             // cboTreatResult2
             // 
@@ -1286,14 +1270,6 @@
             this.gridView13.OptionsView.ShowColumnHeaders = false;
             this.gridView13.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "婚否";
-            this.gridColumn8.FieldName = "NAME";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            // 
             // cboTreatResult1
             // 
             this.cboTreatResult1.EditValue = "";
@@ -1329,14 +1305,6 @@
             this.gridView12.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView12.OptionsView.ShowColumnHeaders = false;
             this.gridView12.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "婚否";
-            this.gridColumn7.FieldName = "NAME";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
             // 
             // ltxtOutDiaName4
             // 
@@ -1777,14 +1745,6 @@
             this.cJiaComboBox21View.OptionsView.ShowColumnHeaders = false;
             this.cJiaComboBox21View.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "性别";
-            this.gridColumn1.FieldName = "NAME";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
             // cJiaLabel3
             // 
             this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
@@ -1842,6 +1802,46 @@
             this.cJiaLabel2.Size = new System.Drawing.Size(45, 20);
             this.cJiaLabel2.TabIndex = 139;
             this.cJiaLabel2.Text = "病案号";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "婚否";
+            this.gridColumn10.FieldName = "NAME";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "婚否";
+            this.gridColumn9.FieldName = "NAME";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "婚否";
+            this.gridColumn8.FieldName = "NAME";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "婚否";
+            this.gridColumn7.FieldName = "NAME";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "性别";
+            this.gridColumn1.FieldName = "NAME";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // NewPatientInfoInPutView
             // 

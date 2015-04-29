@@ -71,6 +71,8 @@
             // 
             // pnlProject
             // 
+            this.pnlProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlProject.Controls.Add(this.BtnAddProject);
             this.pnlProject.Controls.Add(this.BtnProjectDelect);
             this.pnlProject.Controls.Add(this.BtnUpdateProject);
@@ -83,18 +85,19 @@
             this.pnlProject.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlProject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlProject.Name = "pnlProject";
-            this.pnlProject.Size = new System.Drawing.Size(892, 580);
+            this.pnlProject.Size = new System.Drawing.Size(892, 465);
             this.pnlProject.TabIndex = 10;
             // 
             // BtnAddProject
             // 
+            this.BtnAddProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnAddProject.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnAddProject.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnAddProject.Appearance.Options.UseFont = true;
             this.BtnAddProject.Appearance.Options.UseForeColor = true;
             this.BtnAddProject.CustomText = "添加(F1)";
             this.BtnAddProject.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddProject.Image")));
-            this.BtnAddProject.Location = new System.Drawing.Point(625, 547);
+            this.BtnAddProject.Location = new System.Drawing.Point(626, 419);
             this.BtnAddProject.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnAddProject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnAddProject.Name = "BtnAddProject";
@@ -106,13 +109,14 @@
             // 
             // BtnProjectDelect
             // 
+            this.BtnProjectDelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnProjectDelect.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnProjectDelect.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnProjectDelect.Appearance.Options.UseFont = true;
             this.BtnProjectDelect.Appearance.Options.UseForeColor = true;
             this.BtnProjectDelect.CustomText = "删除(F3)";
             this.BtnProjectDelect.Image = ((System.Drawing.Image)(resources.GetObject("BtnProjectDelect.Image")));
-            this.BtnProjectDelect.Location = new System.Drawing.Point(807, 547);
+            this.BtnProjectDelect.Location = new System.Drawing.Point(808, 419);
             this.BtnProjectDelect.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnProjectDelect.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnProjectDelect.Name = "BtnProjectDelect";
@@ -124,13 +128,14 @@
             // 
             // BtnUpdateProject
             // 
+            this.BtnUpdateProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnUpdateProject.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnUpdateProject.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnUpdateProject.Appearance.Options.UseFont = true;
             this.BtnUpdateProject.Appearance.Options.UseForeColor = true;
             this.BtnUpdateProject.CustomText = "修改(F2)";
             this.BtnUpdateProject.Image = ((System.Drawing.Image)(resources.GetObject("BtnUpdateProject.Image")));
-            this.BtnUpdateProject.Location = new System.Drawing.Point(716, 547);
+            this.BtnUpdateProject.Location = new System.Drawing.Point(717, 419);
             this.BtnUpdateProject.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnUpdateProject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnUpdateProject.Name = "BtnUpdateProject";
@@ -265,8 +270,9 @@
             // 
             // ProjectSearch
             // 
+            this.ProjectSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectSearch.EditValue = "";
-            this.ProjectSearch.Location = new System.Drawing.Point(57, 543);
+            this.ProjectSearch.Location = new System.Drawing.Point(58, 415);
             this.ProjectSearch.Name = "ProjectSearch";
             this.ProjectSearch.PointText = "";
             this.ProjectSearch.Properties.Appearance.BorderColor = System.Drawing.Color.Salmon;
@@ -287,7 +293,8 @@
             // 
             // ProjectGrid
             // 
-            this.ProjectGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ProjectGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProjectGrid.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ProjectGrid.IndicatorWidth = 30;
@@ -298,7 +305,7 @@
             this.ProjectGrid.Margin = new System.Windows.Forms.Padding(20);
             this.ProjectGrid.Name = "ProjectGrid";
             this.ProjectGrid.ShowRowNumber = true;
-            this.ProjectGrid.Size = new System.Drawing.Size(882, 445);
+            this.ProjectGrid.Size = new System.Drawing.Size(882, 313);
             this.ProjectGrid.TabIndex = 4;
             this.ProjectGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -484,8 +491,9 @@
             // 
             // cJiaLabel5
             // 
+            this.cJiaLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.cJiaLabel5.Location = new System.Drawing.Point(6, 551);
+            this.cJiaLabel5.Location = new System.Drawing.Point(6, 421);
             this.cJiaLabel5.Name = "cJiaLabel5";
             this.cJiaLabel5.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel5.TabIndex = 1;
@@ -504,10 +512,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.Controls.Add(this.pnlProject);
             this.Name = "ProjectManageView";
-            this.Size = new System.Drawing.Size(1400, 600);
+            this.Size = new System.Drawing.Size(1400, 492);
             this.SizeChanged += new System.EventHandler(this.ProjectManageView_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pnlProject)).EndInit();
             this.pnlProject.ResumeLayout(false);

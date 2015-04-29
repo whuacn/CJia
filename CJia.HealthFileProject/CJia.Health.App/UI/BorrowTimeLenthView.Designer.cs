@@ -60,6 +60,8 @@
             // 
             // pnlBorrpwTime
             // 
+            this.pnlBorrpwTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlBorrpwTime.Controls.Add(this.BtnAddBorrowTime);
             this.pnlBorrpwTime.Controls.Add(this.BtnDeleteBorrowTime);
             this.pnlBorrpwTime.Controls.Add(this.BtnUpdateBorrowTime);
@@ -70,18 +72,19 @@
             this.pnlBorrpwTime.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlBorrpwTime.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlBorrpwTime.Name = "pnlBorrpwTime";
-            this.pnlBorrpwTime.Size = new System.Drawing.Size(892, 580);
+            this.pnlBorrpwTime.Size = new System.Drawing.Size(892, 565);
             this.pnlBorrpwTime.TabIndex = 11;
             // 
             // BtnAddBorrowTime
             // 
+            this.BtnAddBorrowTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnAddBorrowTime.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnAddBorrowTime.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnAddBorrowTime.Appearance.Options.UseFont = true;
             this.BtnAddBorrowTime.Appearance.Options.UseForeColor = true;
             this.BtnAddBorrowTime.CustomText = "添加(F1)";
             this.BtnAddBorrowTime.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddBorrowTime.Image")));
-            this.BtnAddBorrowTime.Location = new System.Drawing.Point(635, 547);
+            this.BtnAddBorrowTime.Location = new System.Drawing.Point(635, 516);
             this.BtnAddBorrowTime.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnAddBorrowTime.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnAddBorrowTime.Name = "BtnAddBorrowTime";
@@ -93,13 +96,14 @@
             // 
             // BtnDeleteBorrowTime
             // 
+            this.BtnDeleteBorrowTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnDeleteBorrowTime.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnDeleteBorrowTime.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnDeleteBorrowTime.Appearance.Options.UseFont = true;
             this.BtnDeleteBorrowTime.Appearance.Options.UseForeColor = true;
             this.BtnDeleteBorrowTime.CustomText = "删除(F3)";
             this.BtnDeleteBorrowTime.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeleteBorrowTime.Image")));
-            this.BtnDeleteBorrowTime.Location = new System.Drawing.Point(807, 547);
+            this.BtnDeleteBorrowTime.Location = new System.Drawing.Point(807, 516);
             this.BtnDeleteBorrowTime.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnDeleteBorrowTime.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnDeleteBorrowTime.Name = "BtnDeleteBorrowTime";
@@ -111,13 +115,14 @@
             // 
             // BtnUpdateBorrowTime
             // 
+            this.BtnUpdateBorrowTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnUpdateBorrowTime.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnUpdateBorrowTime.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnUpdateBorrowTime.Appearance.Options.UseFont = true;
             this.BtnUpdateBorrowTime.Appearance.Options.UseForeColor = true;
             this.BtnUpdateBorrowTime.CustomText = "修改(F2)";
             this.BtnUpdateBorrowTime.Image = ((System.Drawing.Image)(resources.GetObject("BtnUpdateBorrowTime.Image")));
-            this.BtnUpdateBorrowTime.Location = new System.Drawing.Point(721, 547);
+            this.BtnUpdateBorrowTime.Location = new System.Drawing.Point(721, 516);
             this.BtnUpdateBorrowTime.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnUpdateBorrowTime.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnUpdateBorrowTime.Name = "BtnUpdateBorrowTime";
@@ -226,7 +231,8 @@
             // 
             // gcBorrowTime
             // 
-            this.gcBorrowTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gcBorrowTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcBorrowTime.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gcBorrowTime.IndicatorWidth = 30;
@@ -237,7 +243,7 @@
             this.gcBorrowTime.Margin = new System.Windows.Forms.Padding(23);
             this.gcBorrowTime.Name = "gcBorrowTime";
             this.gcBorrowTime.ShowRowNumber = true;
-            this.gcBorrowTime.Size = new System.Drawing.Size(882, 446);
+            this.gcBorrowTime.Size = new System.Drawing.Size(882, 410);
             this.gcBorrowTime.TabIndex = 4;
             this.gcBorrowTime.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -416,7 +422,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.Controls.Add(this.pnlBorrpwTime);
             this.Name = "BorrowTimeLenthView";
             this.Size = new System.Drawing.Size(1400, 600);
