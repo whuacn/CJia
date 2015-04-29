@@ -153,7 +153,7 @@ namespace CJia.Health.App.UI
         // 病案输入框键盘事件
         private void LURecordNO_KeyDown(object sender, KeyEventArgs e)
         {
-            //this.keyDown(e.KeyData);
+            this.keyDown(e.KeyData);
         }
 
         // grid键盘事件

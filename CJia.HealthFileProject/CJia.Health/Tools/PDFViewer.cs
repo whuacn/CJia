@@ -70,6 +70,8 @@ namespace CJia.Health.Tools
                     axFoxitReader.ShowToolbarButton(9, false);
                     axFoxitReader.ShowToolbarButton(10, false);
                     axFoxitReader.ShowToolbarButton(11, false);
+                    axFoxitReader.ShowToolbarButton(12, false);
+                    axFoxitReader.ShowToolbarButton(27, false);
                     axFoxitReader.ShowToolbarButton(26, false);
                     axFoxitReader.ShowToolbarButton(25, false);
                     axFoxitReader.ShowToolbarButton(29, false);
