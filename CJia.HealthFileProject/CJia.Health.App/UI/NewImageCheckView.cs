@@ -471,37 +471,41 @@ namespace CJia.Health.App.UI
         }
         private void Loading(string uri)
         {
-            bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
-            if (bol)
+            try
             {
-                string[] arr = uri.Split('/');
-                string fileName = uri.Split('/')[arr.Length - 1];
-                string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                string pdfData = downLoadFile.Replace(".pdf", "");
-                if (!File.Exists(downLoadFile))
+                bool bol = CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+                if (bol)
                 {
-                    if (File.Exists(pdfData))
-                        File.Move(pdfData, downLoadFile);
-                }
-                pdfViewer.FileName = downLoadFile;
-                if (OldRowHandel != -1 && OldRowHandel < gvPicture.RowCount)
-                {
-                    DataRow dr = gvPicture.GetDataRow(OldRowHandel);
-                    string oldfileName = dr["PICTURE_NAME"].ToString();
-                    if (fileName != oldfileName)
+                    string[] arr = uri.Split('/');
+                    string fileName = uri.Split('/')[arr.Length - 1];
+                    string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    string pdfData = downLoadFile.Replace(".pdf", "");
+                    if (!File.Exists(downLoadFile))
                     {
-                        downLoadFile = Application.StartupPath + @"\Cache\" + oldfileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
+                        if (File.Exists(pdfData))
+                            File.Move(pdfData, downLoadFile);
                     }
+                    pdfViewer.FileName = downLoadFile;
+                    if (OldRowHandel != -1 && OldRowHandel < gvPicture.RowCount)
+                    {
+                        DataRow dr = gvPicture.GetDataRow(OldRowHandel);
+                        string oldfileName = dr["PICTURE_NAME"].ToString();
+                        if (fileName != oldfileName)
+                        {
+                            downLoadFile = Application.StartupPath + @"\Cache\" + oldfileName;
+                            pdfData = downLoadFile.Replace(".pdf", "");
+                            if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
+                                File.Move(downLoadFile, pdfData);
+                        }
+                    }
+                    cgPicture.Focus();
                 }
-                cgPicture.Focus();
+                else
+                {
+                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                }
             }
-            else
-            {
-                Message.Show("此图片不存在或已删除，请与管理员联系。。。");
-            }
+            catch { }
         }
 
         #endregion

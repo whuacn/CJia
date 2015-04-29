@@ -10,7 +10,6 @@ using System.Drawing.Printing;
 using CJia.Health.Tools;
 using System.Threading;
 using System.IO;
-using FoxitReaderSDKProLib;
 
 namespace CJia.Health.App.UI
 {
@@ -156,7 +155,7 @@ namespace CJia.Health.App.UI
                     chkPicture.Focus();
                 }
                 catch
-                { 
+                {
                 }
             }
         }
@@ -201,9 +200,6 @@ namespace CJia.Health.App.UI
         {
             try
             {
-                //PrintDialog printDialog = new PrintDialog();
-                //Image image;
-                //listPic.Clear();
                 for (int i = 0; i < chkPicture.CheckedIndices.Count; i++)
                 {
                     string uri = chkPicture.CheckedItems[i].ToString();
@@ -217,17 +213,12 @@ namespace CJia.Health.App.UI
                         if (File.Exists(pdfData))
                             File.Move(pdfData, downLoadFile);
                     }
-                    axFoxitReaderSDK1.OpenFile(downLoadFile, "");
-                    PDFPrinter ip = axFoxitReaderSDK1.Printer;
-                    ip.printerName = "Microsoft XPS Document Writer";
-                    ip.PrinterRangeMode = PrinterRangeMode.PRINT_RANGE_SELECTED;
-                    ip.printerRangeFrom = 1;
-                    ip.printerRangeTo = 2;
-                    //ip.PrintWithDialog();
-                    ip.PrintQuiet();
+                    PDFViewer printPDFView = new PDFViewer();
+                    printPDFView.Print(downLoadFile);
+                    printPDFView.FileName = "";
                     if (chkPicture.CheckedItems[i].ToString() != chkPicture.SelectedValue.ToString())
-                    { 
-                    
+                    {
+                        File.Delete(downLoadFile);
                     }
                 }
             }
