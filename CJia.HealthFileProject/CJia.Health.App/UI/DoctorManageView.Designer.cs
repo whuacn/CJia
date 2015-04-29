@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorManageView));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -276,7 +276,8 @@
             // 
             // DoctorGrid
             // 
-            this.DoctorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DoctorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DoctorGrid.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DoctorGrid.IndicatorWidth = 30;
@@ -287,7 +288,7 @@
             this.DoctorGrid.Margin = new System.Windows.Forms.Padding(23);
             this.DoctorGrid.Name = "DoctorGrid";
             this.DoctorGrid.ShowRowNumber = true;
-            this.DoctorGrid.Size = new System.Drawing.Size(882, 402);
+            this.DoctorGrid.Size = new System.Drawing.Size(882, 393);
             this.DoctorGrid.TabIndex = 100;
             this.DoctorGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -303,8 +304,9 @@
             // 
             // DocSearch
             // 
+            this.DocSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.DocSearch.EditValue = "";
-            this.DocSearch.Location = new System.Drawing.Point(67, 539);
+            this.DocSearch.Location = new System.Drawing.Point(67, 530);
             this.DocSearch.Name = "DocSearch";
             this.DocSearch.PointText = "";
             this.DocSearch.Properties.Appearance.BorderColor = System.Drawing.Color.Salmon;
@@ -313,10 +315,10 @@
             this.DocSearch.Properties.Appearance.Options.UseBorderColor = true;
             this.DocSearch.Properties.Appearance.Options.UseFont = true;
             this.DocSearch.Properties.Appearance.Options.UseForeColor = true;
-            toolTipItem1.Text = "查询";
-            superToolTip1.Items.Add(toolTipItem1);
+            toolTipItem2.Text = "查询";
+            superToolTip2.Items.Add(toolTipItem2);
             this.DocSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("DocSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("DocSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, superToolTip2, true)});
             this.DocSearch.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.DocSearch.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.DocSearch.Size = new System.Drawing.Size(300, 32);
@@ -325,8 +327,9 @@
             // 
             // cJiaLabel5
             // 
+            this.cJiaLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cJiaLabel5.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.cJiaLabel5.Location = new System.Drawing.Point(7, 549);
+            this.cJiaLabel5.Location = new System.Drawing.Point(7, 540);
             this.cJiaLabel5.Name = "cJiaLabel5";
             this.cJiaLabel5.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel5.TabIndex = 1;
@@ -378,13 +381,14 @@
             // 
             // BtnAddDocject
             // 
+            this.BtnAddDocject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnAddDocject.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnAddDocject.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnAddDocject.Appearance.Options.UseFont = true;
             this.BtnAddDocject.Appearance.Options.UseForeColor = true;
             this.BtnAddDocject.CustomText = "添加(F1)";
             this.BtnAddDocject.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddDocject.Image")));
-            this.BtnAddDocject.Location = new System.Drawing.Point(635, 541);
+            this.BtnAddDocject.Location = new System.Drawing.Point(635, 532);
             this.BtnAddDocject.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnAddDocject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnAddDocject.Name = "BtnAddDocject";
@@ -396,13 +400,14 @@
             // 
             // BtnDocDelect
             // 
+            this.BtnDocDelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnDocDelect.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnDocDelect.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnDocDelect.Appearance.Options.UseFont = true;
             this.BtnDocDelect.Appearance.Options.UseForeColor = true;
             this.BtnDocDelect.CustomText = "删除(F3)";
             this.BtnDocDelect.Image = ((System.Drawing.Image)(resources.GetObject("BtnDocDelect.Image")));
-            this.BtnDocDelect.Location = new System.Drawing.Point(807, 541);
+            this.BtnDocDelect.Location = new System.Drawing.Point(807, 532);
             this.BtnDocDelect.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnDocDelect.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnDocDelect.Name = "BtnDocDelect";
@@ -414,13 +419,14 @@
             // 
             // BtnUpdateDocject
             // 
+            this.BtnUpdateDocject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnUpdateDocject.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.BtnUpdateDocject.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.BtnUpdateDocject.Appearance.Options.UseFont = true;
             this.BtnUpdateDocject.Appearance.Options.UseForeColor = true;
             this.BtnUpdateDocject.CustomText = "修改(F2)";
             this.BtnUpdateDocject.Image = ((System.Drawing.Image)(resources.GetObject("BtnUpdateDocject.Image")));
-            this.BtnUpdateDocject.Location = new System.Drawing.Point(721, 541);
+            this.BtnUpdateDocject.Location = new System.Drawing.Point(721, 532);
             this.BtnUpdateDocject.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnUpdateDocject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnUpdateDocject.Name = "BtnUpdateDocject";
@@ -432,8 +438,9 @@
             // 
             // checkBox
             // 
+            this.checkBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox.EditValue = true;
-            this.checkBox.Location = new System.Drawing.Point(529, 547);
+            this.checkBox.Location = new System.Drawing.Point(529, 538);
             this.checkBox.Name = "checkBox";
             this.checkBox.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.checkBox.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
@@ -445,6 +452,7 @@
             this.checkBox.Selectable = true;
             this.checkBox.Size = new System.Drawing.Size(97, 22);
             this.checkBox.TabIndex = 11;
+            this.checkBox.Visible = false;
             // 
             // cJiaPanel2
             // 
@@ -556,6 +564,8 @@
             // 
             // pnlDoctor
             // 
+            this.pnlDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlDoctor.Controls.Add(this.checkBox);
             this.pnlDoctor.Controls.Add(this.BtnAddDocject);
             this.pnlDoctor.Controls.Add(this.cJiaPanel2);
@@ -569,14 +579,13 @@
             this.pnlDoctor.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlDoctor.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlDoctor.Name = "pnlDoctor";
-            this.pnlDoctor.Size = new System.Drawing.Size(892, 580);
+            this.pnlDoctor.Size = new System.Drawing.Size(892, 571);
             this.pnlDoctor.TabIndex = 10;
             // 
             // DoctorManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.Controls.Add(this.pnlDoctor);
             this.Name = "DoctorManageView";
             this.Size = new System.Drawing.Size(1400, 600);

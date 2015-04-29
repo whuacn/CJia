@@ -136,31 +136,31 @@ namespace CJia.Health.App.UI
             // 
             // cJiaLabel3
             // 
-            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel3.Appearance.ForeColor = System.Drawing.Color.Red;
             this.cJiaLabel3.Location = new System.Drawing.Point(7, 154);
             this.cJiaLabel3.Name = "cJiaLabel3";
-            this.cJiaLabel3.Size = new System.Drawing.Size(135, 16);
+            this.cJiaLabel3.Size = new System.Drawing.Size(117, 19);
             this.cJiaLabel3.TabIndex = 180;
             this.cJiaLabel3.Text = "自动识别空白页码：";
             // 
             // lblNoBlank
             // 
-            this.lblNoBlank.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblNoBlank.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblNoBlank.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.lblNoBlank.Location = new System.Drawing.Point(133, 132);
             this.lblNoBlank.Name = "lblNoBlank";
-            this.lblNoBlank.Size = new System.Drawing.Size(46, 16);
+            this.lblNoBlank.Size = new System.Drawing.Size(51, 19);
             this.lblNoBlank.TabIndex = 179;
             this.lblNoBlank.Text = "001,002";
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel1.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.cJiaLabel1.Location = new System.Drawing.Point(7, 132);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(120, 16);
+            this.cJiaLabel1.Size = new System.Drawing.Size(104, 19);
             this.cJiaLabel1.TabIndex = 178;
             this.cJiaLabel1.Text = "设置非空白页码：";
             // 
@@ -183,11 +183,11 @@ namespace CJia.Health.App.UI
             // 
             // lblMesg
             // 
-            this.lblMesg.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblMesg.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblMesg.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblMesg.Location = new System.Drawing.Point(148, 154);
             this.lblMesg.Name = "lblMesg";
-            this.lblMesg.Size = new System.Drawing.Size(46, 16);
+            this.lblMesg.Size = new System.Drawing.Size(51, 19);
             this.lblMesg.TabIndex = 176;
             this.lblMesg.Text = "001,002";
             // 
@@ -405,6 +405,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "图片名称";
             this.gridColumn1.FieldName = "Pic_Name";
             this.gridColumn1.Name = "gridColumn1";
@@ -414,6 +418,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "页码";
             this.gridColumn2.FieldName = "Pic_Page";
             this.gridColumn2.Name = "gridColumn2";
@@ -423,6 +431,10 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "附加码";
             this.gridColumn3.FieldName = "Pic_SubPage";
             this.gridColumn3.Name = "gridColumn3";
@@ -494,7 +506,7 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Location = new System.Drawing.Point(62, 14);
             this.LURecordNO.Name = "LURecordNO";
             this.LURecordNO.OpenAfterEnter = false;
-            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.LURecordNO.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LURecordNO.Properties.Appearance.Options.UseFont = true;
             this.LURecordNO.Properties.Appearance.Options.UseTextOptions = true;
             this.LURecordNO.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -506,7 +518,7 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(280, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(209, 22);
+            this.LURecordNO.Size = new System.Drawing.Size(209, 26);
             this.LURecordNO.TabIndex = 0;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -518,7 +530,7 @@ namespace CJia.Health.App.UI
             this.txtTimes.Location = new System.Drawing.Point(296, 15);
             this.txtTimes.Name = "txtTimes";
             this.txtTimes.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtTimes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtTimes.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtTimes.Properties.Appearance.Options.UseBackColor = true;
             this.txtTimes.Properties.Appearance.Options.UseFont = true;
             this.txtTimes.Properties.Appearance.Options.UseTextOptions = true;
@@ -528,34 +540,34 @@ namespace CJia.Health.App.UI
             this.txtTimes.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtTimes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTimes.Properties.ReadOnly = true;
-            this.txtTimes.Size = new System.Drawing.Size(34, 22);
+            this.txtTimes.Size = new System.Drawing.Size(34, 26);
             this.txtTimes.TabIndex = 1;
             this.txtTimes.Leave += new System.EventHandler(this.txtTimes_Leave);
             // 
             // cJiaLabel17
             // 
-            this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel17.Location = new System.Drawing.Point(334, 22);
             this.cJiaLabel17.Name = "cJiaLabel17";
-            this.cJiaLabel17.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel17.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel17.TabIndex = 142;
             this.cJiaLabel17.Text = "次入院";
             // 
             // cJiaLabel16
             // 
-            this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel16.Location = new System.Drawing.Point(277, 22);
             this.cJiaLabel16.Name = "cJiaLabel16";
-            this.cJiaLabel16.Size = new System.Drawing.Size(15, 16);
+            this.cJiaLabel16.Size = new System.Drawing.Size(13, 19);
             this.cJiaLabel16.TabIndex = 141;
             this.cJiaLabel16.Text = "第";
             // 
             // cJiaLabel2
             // 
-            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cJiaLabel2.Location = new System.Drawing.Point(7, 21);
             this.cJiaLabel2.Name = "cJiaLabel2";
-            this.cJiaLabel2.Size = new System.Drawing.Size(45, 16);
+            this.cJiaLabel2.Size = new System.Drawing.Size(39, 19);
             this.cJiaLabel2.TabIndex = 2;
             this.cJiaLabel2.Text = "病案号";
             // 

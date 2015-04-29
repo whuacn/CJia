@@ -289,7 +289,7 @@
             this.pnlPatient.Controls.Add(this.cJiaLabel17);
             this.pnlPatient.Controls.Add(this.ltxtRecordNo);
             this.pnlPatient.Controls.Add(this.cJiaLabel2);
-            this.pnlPatient.Location = new System.Drawing.Point(315, 14);
+            this.pnlPatient.Location = new System.Drawing.Point(315, 18);
             this.pnlPatient.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlPatient.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlPatient.Name = "pnlPatient";
@@ -298,10 +298,10 @@
             // 
             // ltxtInHospitalTime
             // 
-            this.ltxtInHospitalTime.Location = new System.Drawing.Point(283, 53);
+            this.ltxtInHospitalTime.Location = new System.Drawing.Point(283, 49);
             this.ltxtInHospitalTime.Name = "ltxtInHospitalTime";
             this.ltxtInHospitalTime.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.ltxtInHospitalTime.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtInHospitalTime.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtInHospitalTime.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.ltxtInHospitalTime.Properties.Appearance.Options.UseBackColor = true;
             this.ltxtInHospitalTime.Properties.Appearance.Options.UseFont = true;
@@ -316,9 +316,9 @@
             // 
             // ltxtBirthPlace
             // 
-            this.ltxtBirthPlace.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtBirthPlace.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtBirthPlace.Appearance.Options.UseFont = true;
-            this.ltxtBirthPlace.Location = new System.Drawing.Point(80, 127);
+            this.ltxtBirthPlace.Location = new System.Drawing.Point(80, 131);
             this.ltxtBirthPlace.MyText = "";
             this.ltxtBirthPlace.Name = "ltxtBirthPlace";
             this.ltxtBirthPlace.ReadOnly = true;
@@ -347,9 +347,9 @@
             // 
             // ltxtPatientAddress
             // 
-            this.ltxtPatientAddress.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtPatientAddress.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtPatientAddress.Appearance.Options.UseFont = true;
-            this.ltxtPatientAddress.Location = new System.Drawing.Point(775, 128);
+            this.ltxtPatientAddress.Location = new System.Drawing.Point(775, 132);
             this.ltxtPatientAddress.MyText = "";
             this.ltxtPatientAddress.Name = "ltxtPatientAddress";
             this.ltxtPatientAddress.ReadOnly = false;
@@ -452,7 +452,7 @@
             this.cboSurgeryDate2.Location = new System.Drawing.Point(783, 424);
             this.cboSurgeryDate2.Name = "cboSurgeryDate2";
             this.cboSurgeryDate2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboSurgeryDate2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboSurgeryDate2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate2.Properties.Appearance.Options.UseFont = true;
             this.cboSurgeryDate2.Properties.Appearance.Options.UseTextOptions = true;
             this.cboSurgeryDate2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -481,7 +481,7 @@
             this.cboSurgeryDate3.Location = new System.Drawing.Point(783, 455);
             this.cboSurgeryDate3.Name = "cboSurgeryDate3";
             this.cboSurgeryDate3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboSurgeryDate3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboSurgeryDate3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate3.Properties.Appearance.Options.UseFont = true;
             this.cboSurgeryDate3.Properties.Appearance.Options.UseTextOptions = true;
             this.cboSurgeryDate3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -509,7 +509,7 @@
             this.cboSurgeryDate4.Location = new System.Drawing.Point(783, 488);
             this.cboSurgeryDate4.Name = "cboSurgeryDate4";
             this.cboSurgeryDate4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboSurgeryDate4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboSurgeryDate4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate4.Properties.Appearance.Options.UseFont = true;
             this.cboSurgeryDate4.Properties.Appearance.Options.UseTextOptions = true;
             this.cboSurgeryDate4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -539,7 +539,7 @@
             this.cboSurgeryDate1.Location = new System.Drawing.Point(783, 392);
             this.cboSurgeryDate1.Name = "cboSurgeryDate1";
             this.cboSurgeryDate1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboSurgeryDate1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboSurgeryDate1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboSurgeryDate1.Properties.Appearance.Options.UseFont = true;
             this.cboSurgeryDate1.Properties.Appearance.Options.UseTextOptions = true;
             this.cboSurgeryDate1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -574,7 +574,7 @@
             this.rtlkCity.Location = new System.Drawing.Point(533, 131);
             this.rtlkCity.Name = "rtlkCity";
             this.rtlkCity.OpenAfterEnter = false;
-            this.rtlkCity.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkCity.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkCity.Properties.Appearance.Options.UseFont = true;
             this.rtlkCity.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkCity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -606,7 +606,7 @@
             this.rtlkProvince.Location = new System.Drawing.Point(320, 131);
             this.rtlkProvince.Name = "rtlkProvince";
             this.rtlkProvince.OpenAfterEnter = false;
-            this.rtlkProvince.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkProvince.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkProvince.Properties.Appearance.Options.UseFont = true;
             this.rtlkProvince.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkProvince.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -795,7 +795,7 @@
             this.rtlkICDSurgery1.Location = new System.Drawing.Point(99, 392);
             this.rtlkICDSurgery1.Name = "rtlkICDSurgery1";
             this.rtlkICDSurgery1.OpenAfterEnter = false;
-            this.rtlkICDSurgery1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDSurgery1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery1.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDSurgery1.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDSurgery1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -828,7 +828,7 @@
             this.rtlkICDSurgery2.Location = new System.Drawing.Point(99, 424);
             this.rtlkICDSurgery2.Name = "rtlkICDSurgery2";
             this.rtlkICDSurgery2.OpenAfterEnter = false;
-            this.rtlkICDSurgery2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDSurgery2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery2.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDSurgery2.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDSurgery2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -861,7 +861,7 @@
             this.rtlkICDSurgery3.Location = new System.Drawing.Point(99, 455);
             this.rtlkICDSurgery3.Name = "rtlkICDSurgery3";
             this.rtlkICDSurgery3.OpenAfterEnter = false;
-            this.rtlkICDSurgery3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDSurgery3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery3.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDSurgery3.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDSurgery3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -894,7 +894,7 @@
             this.rtlkICDSurgery4.Location = new System.Drawing.Point(99, 488);
             this.rtlkICDSurgery4.Name = "rtlkICDSurgery4";
             this.rtlkICDSurgery4.OpenAfterEnter = false;
-            this.rtlkICDSurgery4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDSurgery4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDSurgery4.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDSurgery4.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDSurgery4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -916,9 +916,9 @@
             // 
             // ltxtSurgeryName4
             // 
-            this.ltxtSurgeryName4.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtSurgeryName4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName4.Appearance.Options.UseFont = true;
-            this.ltxtSurgeryName4.Location = new System.Drawing.Point(413, 483);
+            this.ltxtSurgeryName4.Location = new System.Drawing.Point(413, 487);
             this.ltxtSurgeryName4.MyText = "";
             this.ltxtSurgeryName4.Name = "ltxtSurgeryName4";
             this.ltxtSurgeryName4.ReadOnly = true;
@@ -927,9 +927,9 @@
             // 
             // ltxtSurgeryName3
             // 
-            this.ltxtSurgeryName3.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtSurgeryName3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName3.Appearance.Options.UseFont = true;
-            this.ltxtSurgeryName3.Location = new System.Drawing.Point(413, 451);
+            this.ltxtSurgeryName3.Location = new System.Drawing.Point(413, 455);
             this.ltxtSurgeryName3.MyText = "";
             this.ltxtSurgeryName3.Name = "ltxtSurgeryName3";
             this.ltxtSurgeryName3.ReadOnly = true;
@@ -938,9 +938,9 @@
             // 
             // ltxtSurgeryName2
             // 
-            this.ltxtSurgeryName2.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtSurgeryName2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName2.Appearance.Options.UseFont = true;
-            this.ltxtSurgeryName2.Location = new System.Drawing.Point(413, 420);
+            this.ltxtSurgeryName2.Location = new System.Drawing.Point(413, 424);
             this.ltxtSurgeryName2.MyText = "";
             this.ltxtSurgeryName2.Name = "ltxtSurgeryName2";
             this.ltxtSurgeryName2.ReadOnly = true;
@@ -949,9 +949,9 @@
             // 
             // ltxtSurgeryName1
             // 
-            this.ltxtSurgeryName1.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtSurgeryName1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtSurgeryName1.Appearance.Options.UseFont = true;
-            this.ltxtSurgeryName1.Location = new System.Drawing.Point(413, 389);
+            this.ltxtSurgeryName1.Location = new System.Drawing.Point(413, 393);
             this.ltxtSurgeryName1.MyText = "";
             this.ltxtSurgeryName1.Name = "ltxtSurgeryName1";
             this.ltxtSurgeryName1.ReadOnly = true;
@@ -1043,7 +1043,7 @@
             this.rtlkICDOutDia1.Location = new System.Drawing.Point(99, 254);
             this.rtlkICDOutDia1.Name = "rtlkICDOutDia1";
             this.rtlkICDOutDia1.OpenAfterEnter = false;
-            this.rtlkICDOutDia1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDOutDia1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia1.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDOutDia1.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDOutDia1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1076,7 +1076,7 @@
             this.rtlkICDOutDia3.Location = new System.Drawing.Point(99, 316);
             this.rtlkICDOutDia3.Name = "rtlkICDOutDia3";
             this.rtlkICDOutDia3.OpenAfterEnter = false;
-            this.rtlkICDOutDia3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDOutDia3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia3.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDOutDia3.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDOutDia3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1109,7 +1109,7 @@
             this.rtlkICDOutDia4.Location = new System.Drawing.Point(99, 347);
             this.rtlkICDOutDia4.Name = "rtlkICDOutDia4";
             this.rtlkICDOutDia4.OpenAfterEnter = false;
-            this.rtlkICDOutDia4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDOutDia4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia4.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDOutDia4.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDOutDia4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1142,7 +1142,7 @@
             this.rtlkICDOutDia2.Location = new System.Drawing.Point(99, 285);
             this.rtlkICDOutDia2.Name = "rtlkICDOutDia2";
             this.rtlkICDOutDia2.OpenAfterEnter = false;
-            this.rtlkICDOutDia2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkICDOutDia2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkICDOutDia2.Properties.Appearance.Options.UseFont = true;
             this.rtlkICDOutDia2.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkICDOutDia2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1169,7 +1169,7 @@
             this.cboTreatResult4.Location = new System.Drawing.Point(783, 347);
             this.cboTreatResult4.Name = "cboTreatResult4";
             this.cboTreatResult4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboTreatResult4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboTreatResult4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult4.Properties.Appearance.Options.UseFont = true;
             this.cboTreatResult4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -1213,7 +1213,7 @@
             this.cboTreatResult3.Location = new System.Drawing.Point(783, 316);
             this.cboTreatResult3.Name = "cboTreatResult3";
             this.cboTreatResult3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboTreatResult3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboTreatResult3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult3.Properties.Appearance.Options.UseFont = true;
             this.cboTreatResult3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -1257,7 +1257,7 @@
             this.cboTreatResult2.Location = new System.Drawing.Point(783, 285);
             this.cboTreatResult2.Name = "cboTreatResult2";
             this.cboTreatResult2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboTreatResult2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboTreatResult2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult2.Properties.Appearance.Options.UseFont = true;
             this.cboTreatResult2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -1301,7 +1301,7 @@
             this.cboTreatResult1.Location = new System.Drawing.Point(783, 254);
             this.cboTreatResult1.Name = "cboTreatResult1";
             this.cboTreatResult1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboTreatResult1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboTreatResult1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboTreatResult1.Properties.Appearance.Options.UseFont = true;
             this.cboTreatResult1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -1340,9 +1340,9 @@
             // 
             // ltxtOutDiaName4
             // 
-            this.ltxtOutDiaName4.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtOutDiaName4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName4.Appearance.Options.UseFont = true;
-            this.ltxtOutDiaName4.Location = new System.Drawing.Point(412, 343);
+            this.ltxtOutDiaName4.Location = new System.Drawing.Point(412, 347);
             this.ltxtOutDiaName4.MyText = "";
             this.ltxtOutDiaName4.Name = "ltxtOutDiaName4";
             this.ltxtOutDiaName4.ReadOnly = true;
@@ -1351,9 +1351,9 @@
             // 
             // ltxtOutDiaName3
             // 
-            this.ltxtOutDiaName3.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtOutDiaName3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName3.Appearance.Options.UseFont = true;
-            this.ltxtOutDiaName3.Location = new System.Drawing.Point(412, 312);
+            this.ltxtOutDiaName3.Location = new System.Drawing.Point(412, 316);
             this.ltxtOutDiaName3.MyText = "";
             this.ltxtOutDiaName3.Name = "ltxtOutDiaName3";
             this.ltxtOutDiaName3.ReadOnly = true;
@@ -1362,9 +1362,9 @@
             // 
             // ltxtOutDiaName2
             // 
-            this.ltxtOutDiaName2.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtOutDiaName2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName2.Appearance.Options.UseFont = true;
-            this.ltxtOutDiaName2.Location = new System.Drawing.Point(412, 280);
+            this.ltxtOutDiaName2.Location = new System.Drawing.Point(412, 284);
             this.ltxtOutDiaName2.MyText = "";
             this.ltxtOutDiaName2.Name = "ltxtOutDiaName2";
             this.ltxtOutDiaName2.ReadOnly = true;
@@ -1373,9 +1373,9 @@
             // 
             // ltxtOutDiaName1
             // 
-            this.ltxtOutDiaName1.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtOutDiaName1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtOutDiaName1.Appearance.Options.UseFont = true;
-            this.ltxtOutDiaName1.Location = new System.Drawing.Point(412, 250);
+            this.ltxtOutDiaName1.Location = new System.Drawing.Point(412, 254);
             this.ltxtOutDiaName1.MyText = "";
             this.ltxtOutDiaName1.Name = "ltxtOutDiaName1";
             this.ltxtOutDiaName1.ReadOnly = true;
@@ -1497,7 +1497,7 @@
             this.cboOutHospitalDate.Location = new System.Drawing.Point(99, 208);
             this.cboOutHospitalDate.Name = "cboOutHospitalDate";
             this.cboOutHospitalDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboOutHospitalDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboOutHospitalDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboOutHospitalDate.Properties.Appearance.Options.UseFont = true;
             this.cboOutHospitalDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cboOutHospitalDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1524,7 +1524,7 @@
             this.cboInHospitalDate.Location = new System.Drawing.Point(99, 176);
             this.cboInHospitalDate.Name = "cboInHospitalDate";
             this.cboInHospitalDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboInHospitalDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboInHospitalDate.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboInHospitalDate.Properties.Appearance.Options.UseFont = true;
             this.cboInHospitalDate.Properties.Appearance.Options.UseTextOptions = true;
             this.cboInHospitalDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1558,7 +1558,7 @@
             this.rtlkOutHospitalDept.Location = new System.Drawing.Point(399, 208);
             this.rtlkOutHospitalDept.Name = "rtlkOutHospitalDept";
             this.rtlkOutHospitalDept.OpenAfterEnter = false;
-            this.rtlkOutHospitalDept.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkOutHospitalDept.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkOutHospitalDept.Properties.Appearance.Options.UseFont = true;
             this.rtlkOutHospitalDept.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkOutHospitalDept.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1589,7 +1589,7 @@
             this.rtlkInHospitalDept.Location = new System.Drawing.Point(399, 176);
             this.rtlkInHospitalDept.Name = "rtlkInHospitalDept";
             this.rtlkInHospitalDept.OpenAfterEnter = false;
-            this.rtlkInHospitalDept.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.rtlkInHospitalDept.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.rtlkInHospitalDept.Properties.Appearance.Options.UseFont = true;
             this.rtlkInHospitalDept.Properties.Appearance.Options.UseTextOptions = true;
             this.rtlkInHospitalDept.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1645,9 +1645,9 @@
             // 
             // ltxtIdCard
             // 
-            this.ltxtIdCard.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtIdCard.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtIdCard.Appearance.Options.UseFont = true;
-            this.ltxtIdCard.Location = new System.Drawing.Point(775, 96);
+            this.ltxtIdCard.Location = new System.Drawing.Point(775, 100);
             this.ltxtIdCard.MyText = "";
             this.ltxtIdCard.Name = "ltxtIdCard";
             this.ltxtIdCard.ReadOnly = false;
@@ -1674,9 +1674,9 @@
             // 
             // ltxtPatientAge
             // 
-            this.ltxtPatientAge.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtPatientAge.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtPatientAge.Appearance.Options.UseFont = true;
-            this.ltxtPatientAge.Location = new System.Drawing.Point(612, 95);
+            this.ltxtPatientAge.Location = new System.Drawing.Point(612, 99);
             this.ltxtPatientAge.MyText = "";
             this.ltxtPatientAge.Name = "ltxtPatientAge";
             this.ltxtPatientAge.ReadOnly = false;
@@ -1694,11 +1694,11 @@
             // 
             // ltxtPatientName
             // 
-            this.ltxtPatientName.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtPatientName.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtPatientName.Appearance.ForeColor = System.Drawing.Color.Red;
             this.ltxtPatientName.Appearance.Options.UseFont = true;
             this.ltxtPatientName.Appearance.Options.UseForeColor = true;
-            this.ltxtPatientName.Location = new System.Drawing.Point(67, 94);
+            this.ltxtPatientName.Location = new System.Drawing.Point(67, 98);
             this.ltxtPatientName.MyText = "";
             this.ltxtPatientName.Name = "ltxtPatientName";
             this.ltxtPatientName.ReadOnly = false;
@@ -1712,7 +1712,7 @@
             this.cboBirthday.Location = new System.Drawing.Point(405, 98);
             this.cboBirthday.Name = "cboBirthday";
             this.cboBirthday.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.cboBirthday.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboBirthday.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboBirthday.Properties.Appearance.Options.UseFont = true;
             this.cboBirthday.Properties.Appearance.Options.UseTextOptions = true;
             this.cboBirthday.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1748,7 +1748,7 @@
             this.cboGender.Location = new System.Drawing.Point(234, 98);
             this.cboGender.Name = "cboGender";
             this.cboGender.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cboGender.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.cboGender.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.cboGender.Properties.Appearance.Options.UseFont = true;
             this.cboGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -1806,7 +1806,7 @@
             // cJiaLabel16
             // 
             this.cJiaLabel16.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
-            this.cJiaLabel16.Location = new System.Drawing.Point(261, 59);
+            this.cJiaLabel16.Location = new System.Drawing.Point(261, 55);
             this.cJiaLabel16.Name = "cJiaLabel16";
             this.cJiaLabel16.Size = new System.Drawing.Size(15, 20);
             this.cJiaLabel16.TabIndex = 140;
@@ -1815,7 +1815,7 @@
             // cJiaLabel17
             // 
             this.cJiaLabel17.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
-            this.cJiaLabel17.Location = new System.Drawing.Point(330, 59);
+            this.cJiaLabel17.Location = new System.Drawing.Point(330, 55);
             this.cJiaLabel17.Name = "cJiaLabel17";
             this.cJiaLabel17.Size = new System.Drawing.Size(45, 20);
             this.cJiaLabel17.TabIndex = 141;
@@ -1823,11 +1823,11 @@
             // 
             // ltxtRecordNo
             // 
-            this.ltxtRecordNo.Appearance.Font = new System.Drawing.Font("微软雅黑", 11.25F);
+            this.ltxtRecordNo.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.ltxtRecordNo.Appearance.ForeColor = System.Drawing.Color.Red;
             this.ltxtRecordNo.Appearance.Options.UseFont = true;
             this.ltxtRecordNo.Appearance.Options.UseForeColor = true;
-            this.ltxtRecordNo.Location = new System.Drawing.Point(82, 48);
+            this.ltxtRecordNo.Location = new System.Drawing.Point(82, 49);
             this.ltxtRecordNo.MyText = "";
             this.ltxtRecordNo.Name = "ltxtRecordNo";
             this.ltxtRecordNo.ReadOnly = false;
