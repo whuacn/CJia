@@ -53,6 +53,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pnlPicture = new System.Windows.Forms.Panel();
             this.pdfViewer = new CJia.Health.Tools.PDFViewer();
+            this.axFoxitReaderSDK1 = new AxFoxitReaderSDKProLib.AxFoxitReaderSDK();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
             this.cJiaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPatientName.Properties)).BeginInit();
@@ -68,12 +69,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkAllPicture.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkPicture)).BeginInit();
             this.pnlPicture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axFoxitReaderSDK1)).BeginInit();
             this.SuspendLayout();
             // 
             // cJiaPanel1
             // 
             this.cJiaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cJiaPanel1.Controls.Add(this.axFoxitReaderSDK1);
             this.cJiaPanel1.Controls.Add(this.txtPatientName);
             this.cJiaPanel1.Controls.Add(this.cJiaLabel4);
             this.cJiaPanel1.Controls.Add(this.btnPatientSearch);
@@ -540,6 +543,16 @@
             this.pdfViewer.TabIndex = 4;
             this.pdfViewer.ZoomLevel = 3;
             // 
+            // axFoxitReaderSDK1
+            // 
+            this.axFoxitReaderSDK1.Enabled = true;
+            this.axFoxitReaderSDK1.Location = new System.Drawing.Point(5, 112);
+            this.axFoxitReaderSDK1.Name = "axFoxitReaderSDK1";
+            this.axFoxitReaderSDK1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axFoxitReaderSDK1.OcxState")));
+            this.axFoxitReaderSDK1.Size = new System.Drawing.Size(203, 28);
+            this.axFoxitReaderSDK1.TabIndex = 161;
+            this.axFoxitReaderSDK1.Visible = false;
+            // 
             // PrintApplyView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -565,6 +578,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkAllPicture.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkPicture)).EndInit();
             this.pnlPicture.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axFoxitReaderSDK1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,5 +609,6 @@
         private System.Windows.Forms.Panel pnlPicture;
         private DevExpress.XtraEditors.CheckEdit chkAllPicture;
         private Tools.PDFViewer pdfViewer;
+        private AxFoxitReaderSDKProLib.AxFoxitReaderSDK axFoxitReaderSDK1;
     }
 }

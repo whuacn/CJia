@@ -10,6 +10,7 @@ using System.Drawing.Printing;
 using CJia.Health.Tools;
 using System.Threading;
 using System.IO;
+using FoxitReaderSDKProLib;
 
 namespace CJia.Health.App.UI
 {
@@ -198,29 +199,39 @@ namespace CJia.Health.App.UI
         // 打印按钮
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            PrintDialog printDialog = new PrintDialog();
-            Image image;
-            listPic.Clear();
-            for (int i = 0; i < chkPicture.CheckedIndices.Count; i++)
+            try
             {
-                pageNo = i;
-                image = CJia.Health.Tools.Help.GetImageByUri(chkPicture.CheckedItems[i].ToString(), UserName, Password);
-                //listPic.Add(Image.FromFile(chkPicture.CheckedItems[i].ToString()));
-                listPic.Add(image);
-                printDialog.Document = printDocument1;
-
-                //if (printDialog.ShowDialog() == DialogResult.OK)
-                //{
-                try
+                //PrintDialog printDialog = new PrintDialog();
+                //Image image;
+                //listPic.Clear();
+                for (int i = 0; i < chkPicture.CheckedIndices.Count; i++)
                 {
-                    printDocument1.Print();
+                    string uri = chkPicture.CheckedItems[i].ToString();
+                    CJia.Health.Tools.Help.DownLoadFileByUri(uri, UserName, Password);
+                    string[] arr = uri.Split('/');
+                    string fileName = uri.Split('/')[arr.Length - 1];
+                    string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    string pdfData = downLoadFile.Replace(".pdf", "");
+                    if (!File.Exists(downLoadFile))
+                    {
+                        if (File.Exists(pdfData))
+                            File.Move(pdfData, downLoadFile);
+                    }
+                    axFoxitReaderSDK1.OpenFile(downLoadFile, "");
+                    PDFPrinter ip = axFoxitReaderSDK1.Printer;
+                    ip.printerName = "Microsoft XPS Document Writer";
+                    ip.PrinterRangeMode = PrinterRangeMode.PRINT_RANGE_SELECTED;
+                    ip.printerRangeFrom = 1;
+                    ip.printerRangeTo = 2;
+                    //ip.PrintWithDialog();
+                    ip.PrintQuiet();
+                    if (chkPicture.CheckedItems[i].ToString() != chkPicture.SelectedValue.ToString())
+                    { 
+                    
+                    }
                 }
-                catch
-                {   //停止打印
-                    printDocument1.PrintController.OnEndPrint(printDocument1, new System.Drawing.Printing.PrintEventArgs());
-                }
-                //}
             }
+            catch { }
         }
 
         //// 打印每张图片
