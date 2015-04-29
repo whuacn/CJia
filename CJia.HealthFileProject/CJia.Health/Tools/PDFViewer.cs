@@ -92,6 +92,20 @@ namespace CJia.Health.Tools
                 axFoxitReader.ZoomLevel = value;
             }
         }
-
+        /// <summary>
+        /// 打印单张PDF文件
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void Print(string fileName)
+        {
+            axFoxitReader.OpenFile(fileName, "");
+            PDFPrinter ip = axFoxitReader.Printer;
+            //ip.printerName = "Microsoft XPS Document Writer";
+            ip.PrinterRangeMode = PrinterRangeMode.PRINT_RANGE_SELECTED;
+            //ip.printerRangeFrom = 1;
+            //ip.printerRangeTo = 1;
+            //ip.PrintWithDialog();
+            ip.PrintQuiet();
+        }
     }
 }
