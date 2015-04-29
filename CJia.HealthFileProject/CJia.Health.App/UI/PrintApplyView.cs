@@ -143,7 +143,6 @@ namespace CJia.Health.App.UI
         }
         //Thread thread;
         //UI.Loading load;
-        private int OldRowHandel = -1;
         private void chkPicture_SelectedValueChanged(object sender, EventArgs e)
         {
             if (chkPicture.SelectedIndex >= 0)
@@ -151,7 +150,6 @@ namespace CJia.Health.App.UI
                 try
                 {
                     Loading(chkPicture.SelectedValue.ToString());
-                    OldRowHandel = chkPicture.SelectedIndex;
                     chkPicture.Focus();
                 }
                 catch
@@ -170,23 +168,8 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
-                    pdfViewer.FileName = downLoadFile;
-                    pdfViewer.Tag = uri.ToString();
-                    if (OldRowHandel != -1 && OldRowHandel < chkPicture.ItemCount)
-                    {
-                        uri = (chkPicture.DataSource as DataTable).Rows[OldRowHandel]["SRC"].ToString();
-                        arr = uri.Split('/');
-                        fileName = uri.Split('/')[arr.Length - 1];
-                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
-                    }
+                    pdfViewer.FileName = pdfData;
+                    pdfViewer.Tag = uri;
                 }
                 else
                 {
@@ -208,18 +191,9 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
                     PDFViewer printPDFView = new PDFViewer();
-                    printPDFView.Print(downLoadFile);
+                    printPDFView.Print(pdfData);
                     printPDFView.FileName = "";
-                    if (chkPicture.CheckedItems[i].ToString() != chkPicture.SelectedValue.ToString())
-                    {
-                        File.Delete(downLoadFile);
-                    }
                 }
             }
             catch { }

@@ -185,7 +185,7 @@ namespace CJia.Health.App.UI
                 txtTimes.Text = "1";
             }
         }
-        private int OldRowHandel = -1;
+
         private void pictureView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (pictureView.GetFocusedDataRow() != null)
@@ -193,7 +193,6 @@ namespace CJia.Health.App.UI
                 DataRow focuseRow = pictureView.GetFocusedDataRow();
                 Loading(focuseRow["Pic_Path"].ToString());
                 pictureGrid.Focus();
-                OldRowHandel = pictureView.FocusedRowHandle;
             }
         }
         private void Loading(string uri)
@@ -207,22 +206,7 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
-                    pdfViewer.FileName = downLoadFile;
-                    if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
-                    {
-                        DataRow dr = pictureView.GetDataRow(OldRowHandel);
-                        arr = dr["Pic_Path"].ToString().Split('/');
-                        fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
-                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
-                    }
+                    pdfViewer.FileName = pdfData;
                 }
                 else
                 {
@@ -402,21 +386,6 @@ namespace CJia.Health.App.UI
                     MessageBox.Show("合并成功");
                     Match();//处理审核未通过的图片
                     BindNull();
-                    try
-                    {
-                        foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
-                        {
-                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                        }
-                        foreach (Control cs in this.ParentForm.Controls.Find("smallpdfViewer", true))
-                        {
-                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                        }
-                        string path = Application.StartupPath + @"\Cache";
-                        if (Directory.Exists(path))
-                            Directory.Delete(path, true);
-                    }
-                    catch { }
                 }
             }
         }

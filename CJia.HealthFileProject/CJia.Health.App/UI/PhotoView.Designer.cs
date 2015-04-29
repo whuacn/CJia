@@ -955,6 +955,7 @@ namespace CJia.Health.App.UI
             this.smallpdfViewer.FileName = null;
             this.smallpdfViewer.Location = new System.Drawing.Point(2, 0);
             this.smallpdfViewer.Name = "smallpdfViewer";
+            this.smallpdfViewer.Password = null;
             this.smallpdfViewer.Size = new System.Drawing.Size(203, 259);
             this.smallpdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.single;
             this.smallpdfViewer.TabIndex = 15;
@@ -1053,6 +1054,7 @@ namespace CJia.Health.App.UI
             this.pdfViewer.FileName = null;
             this.pdfViewer.Location = new System.Drawing.Point(0, 0);
             this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Password = null;
             this.pdfViewer.Size = new System.Drawing.Size(956, 600);
             this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
             this.pdfViewer.TabIndex = 17;

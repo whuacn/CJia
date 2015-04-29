@@ -104,5 +104,15 @@ namespace CJia.Health.Tools
                 return DateTime.Parse(CJia.DefaultOleDb.QueryScalar("select sysdate from dual"));
             }
         }
+        /// <summary>
+        /// PDF密码
+        /// </summary>
+        public string PDFPassword
+        {
+            get
+            {
+                return CJia.DefaultOleDb.QueryScalar("SELECT t.value FROM GM_PARAMETER t WHERE t.value_type='PDF_Password'");
+            }
+        }
     }
 }

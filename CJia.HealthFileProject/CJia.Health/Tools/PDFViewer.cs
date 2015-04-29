@@ -20,6 +20,14 @@ namespace CJia.Health.Tools
             axFoxitReader.ShowBookmark(false);
             axFoxitReader.ShowFormFieldsMessageBar(false);
         }
+        //PDF密码
+        private string PDFPassword
+        {
+            get
+            {
+                return CJia.DefaultOleDb.QueryScalar("SELECT t.value FROM GM_PARAMETER t WHERE t.value_type='PDF_Password'");
+            }
+        }
         private string fileName;
         /// <summary>
         /// PDF文件路径
@@ -31,8 +39,22 @@ namespace CJia.Health.Tools
             set
             {
                 fileName = value;
-                axFoxitReader.OpenFile(value, "");
+                axFoxitReader.OpenFile(value, PDFPassword);
                 axFoxitReader.ShowNavigationPanels(false);
+            }
+        }
+        private string password;
+        /// <summary>
+        /// PDF密码
+        /// </summary>
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                password = value;
+                //axFoxitReader.OpenFile(value, "");
+                //axFoxitReader.ShowNavigationPanels(false);
             }
         }
         public enum PDFStyle

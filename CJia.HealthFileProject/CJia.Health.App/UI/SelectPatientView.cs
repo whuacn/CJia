@@ -167,13 +167,6 @@ namespace CJia.Health.App.UI
         private void btnPatientSearch_Click(object sender, EventArgs e)
         {
             pdfViewer.FileName = "";
-            try
-            {
-                string path = Application.StartupPath + @"\Cache";
-                if (Directory.Exists(path))
-                    Directory.Delete(path, true);
-            }
-            catch { }
             PatientSearch();
         }
 
@@ -199,22 +192,8 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
-                    pdfViewer.FileName = downLoadFile;
-                    pdfViewer.Tag = uri.ToString();
-                    if (OldRowHandel != -1 && OldRowHandel < gvPicture.RowCount)
-                    {
-                        DataRow dr = gvPicture.GetDataRow(OldRowHandel);
-                        fileName = dr["PICTURE_NAME"].ToString();
-                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
-                    }
+                    pdfViewer.FileName = pdfData;
+                    pdfViewer.Tag = uri;
                 }
                 else
                 {
@@ -309,7 +288,6 @@ namespace CJia.Health.App.UI
                 OnPatientDoubleClick(sender, SetArgs());
             }
         }
-        private int OldRowHandel = -1;
         private void gvPicture_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gvPicture.GetFocusedDataRow() != null)
@@ -320,7 +298,6 @@ namespace CJia.Health.App.UI
                     lblprojectName.Text = dr["PRO_NAME"].ToString();
                     PicName = dr["PICTURE_NAME"].ToString();
                     Loading(dr["SRC"].ToString());
-                    OldRowHandel = gvPicture.FocusedRowHandle;
                     cgPicture.Focus();
                 }
                 catch

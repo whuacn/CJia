@@ -22,7 +22,13 @@ namespace CJia.Health.Tools
                 var document = new Document(iTextSharp.text.PageSize.A4, 25, 25, 25, 25);
                 using (var stream = new FileStream(outPDFPath, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
-                    PdfWriter.GetInstance(document, stream);
+                    //PdfReader reader = new PdfReader(sname);
+                    //int n = reader.NumberOfPages;
+                    //Document document = new Document(reader.GetPageSizeWithRotation(1));
+                    //PdfWriter.GetInstance(document, new FileStream(sname1, FileMode.Create));
+                    //writer.SetEncryption(PdfWriter.STRENGTH128BITS, "123456", null, PdfWriter.AllowPrinting);
+                    PdfWriter writer = PdfWriter.GetInstance(document, stream);
+                    //writer.SetEncryption(PdfWriter.STRENGTH128BITS, "123456", null, PdfWriter.AllowPrinting);
                     document.Open();
                     using (var imageStream = new FileStream(jpgFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
@@ -81,6 +87,29 @@ namespace CJia.Health.Tools
             {
             }
             document.Close();
+        }
+        /// <summary>
+        /// 加密PDF
+        /// </summary>
+        /// <param name="pdfFile"></param>
+        /// <param name="passWord"></param>
+        public static void EncryptionPDF(string pdfFile, string passWord)
+        {
+            try
+            {
+                string fileName = Path.GetFileName(pdfFile);
+                string dir = Path.GetDirectoryName(pdfFile);
+                string tmpname = Guid.NewGuid().ToString();
+                string pdfDest = Path.GetDirectoryName(pdfFile) + "\\" + tmpname + ".pdf";
+                PdfReader reader = new PdfReader(pdfFile);
+                Stream os = (Stream)(new FileStream(pdfDest, FileMode.Create));
+                PdfEncryptor.Encrypt(reader, os, PdfWriter.STRENGTH128BITS, passWord, passWord, PdfWriter.AllowPrinting);
+                reader.Close();
+                reader.Dispose();
+                File.Delete(pdfFile);
+                File.Move(pdfDest, dir + "\\" + fileName);
+            }
+            catch { }
         }
     }
 }

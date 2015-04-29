@@ -958,11 +958,13 @@ namespace CJia.Health.App
                     {
                         foreach (Control cs in page.Controls.Find("pdfViewer", true))
                         {
-                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                            page.Controls.Remove(cs);
+                            cs.Dispose();
                         }
                         foreach (Control cs in page.Controls.Find("smallpdfViewer", true))
                         {
-                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                            page.Controls.Remove(cs);
+                            cs.Dispose();
                         }
                         xTC.TabPages.Remove(page);
                         page.Dispose();

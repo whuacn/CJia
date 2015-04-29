@@ -190,21 +190,6 @@ namespace CJia.Health.App.UI
                     //{
                     //    BindNull();
                     //}
-                    try
-                    {
-                        foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
-                        {
-                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                        }
-                        foreach (Control cs in this.ParentForm.Controls.Find("smallpdfViewer", true))
-                        {
-                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                        }
-                        string path = Application.StartupPath + @"\Cache";
-                        if (Directory.Exists(path))
-                            Directory.Delete(path, true);
-                    }
-                    catch { }
                 }
                 else
                 {
@@ -287,22 +272,8 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
-                    pdfViewer.FileName = downLoadFile;
-                    smallpdfViewer.FileName = downLoadFile;
-                    if (OldRowHandel != -1 && OldRowHandel < inputView.RowCount)
-                    {
-                        DataRow dr = inputView.GetDataRow(OldRowHandel);
-                        fileName = dr["PICTURE_NAME"].ToString();
-                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
-                    }
+                    pdfViewer.FileName = pdfData;
+                    smallpdfViewer.FileName = pdfData;
                 }
                 else
                 {
@@ -645,11 +616,13 @@ namespace CJia.Health.App.UI
         /// </summary>
         public void CopyFilesToNet(DataTable data)
         {
+            string pdsPassword = PDFPassword;
             CJia.Controls.UCForWaitingForm waitUC = new CJia.Controls.UCForWaitingForm("正在努力上传....", 0, data.Rows.Count);
             this.Enabled = false;
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 string fileName = data.Rows[i]["Pic_Path"].ToString();
+                PDFHelp.EncryptionPDF(fileName, pdsPassword);//上传加密
                 FtpHelp.UploadFile(fileName, data.Rows[i]["STORAGE_PATH"].ToString(), HostName, UserName, Password);
                 waitUC.Do("执行进度(" + i + "/" + data.Rows.Count + ")");
             }
@@ -1145,7 +1118,7 @@ namespace CJia.Health.App.UI
             }
             return true;
         }
-        private int OldRowHandel = -1;
+
         private void inputView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (inputView.GetFocusedDataRow() != null)
@@ -1153,7 +1126,6 @@ namespace CJia.Health.App.UI
                 DataRow focuseRow = inputView.GetFocusedDataRow();
                 Loading(focuseRow["SRC"].ToString());
                 inputGrid.Focus();
-                OldRowHandel = inputView.FocusedRowHandle;
             }
         }
     }

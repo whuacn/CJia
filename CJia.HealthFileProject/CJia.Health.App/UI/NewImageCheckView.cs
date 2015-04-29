@@ -480,24 +480,7 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
-                    pdfViewer.FileName = downLoadFile;
-                    if (OldRowHandel != -1 && OldRowHandel < gvPicture.RowCount)
-                    {
-                        DataRow dr = gvPicture.GetDataRow(OldRowHandel);
-                        string oldfileName = dr["PICTURE_NAME"].ToString();
-                        if (fileName != oldfileName)
-                        {
-                            downLoadFile = Application.StartupPath + @"\Cache\" + oldfileName;
-                            pdfData = downLoadFile.Replace(".pdf", "");
-                            if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                                File.Move(downLoadFile, pdfData);
-                        }
-                    }
+                    pdfViewer.FileName = pdfData;
                     cgPicture.Focus();
                 }
                 else
@@ -861,13 +844,12 @@ namespace CJia.Health.App.UI
         {
 
         }
-        private int OldRowHandel = -1;
+
         private void gvPicture_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gvPicture.GetFocusedDataRow() != null)
             {
                 this.BindPicture();
-                OldRowHandel = gvPicture.FocusedRowHandle;
             }
         }
 

@@ -412,6 +412,7 @@ namespace CJia.Health.App.UI
                 inputGrid.Visible = true;
                 pictureGrid.Visible = false;
                 btnDelete.CustomText = "删除(F6)";
+                inputView_FocusedRowChanged(null, null);
                 inputGrid.Focus();
             }
             else
@@ -419,6 +420,7 @@ namespace CJia.Health.App.UI
                 inputGrid.Visible = false;
                 pictureGrid.Visible = true;
                 btnDelete.CustomText = "取消(F6)";
+                pictureView_FocusedRowChanged(null, null);
                 pictureGrid.Focus();
             }
         }
@@ -435,22 +437,7 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
-                    pdfViewer.FileName = downLoadFile;
-                    if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
-                    {
-                        DataRow dr = pictureView.GetDataRow(OldRowHandel);
-                        arr = dr["Pic_Path"].ToString().Split('/');
-                        fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
-                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
-                    }
+                    pdfViewer.FileName = pdfData;
                 }
                 else
                 {
@@ -1107,25 +1094,9 @@ namespace CJia.Health.App.UI
                 pdfViewer.FileName = "";
                 pictureGrid.DataSource = null;
                 inputGrid.DataSource = null;
-                try
-                {
-                    foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
-                    {
-                        (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                    }
-                    foreach (Control cs in this.ParentForm.Controls.Find("smallpdfViewer", true))
-                    {
-                        (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                    }
-                    string path = Application.StartupPath + @"\Cache";
-                    if (Directory.Exists(path))
-                        Directory.Delete(path, true);
-                }
-                catch { }
             }
         }
 
-        private int OldRowHandel = -1;
         private void pictureView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (pictureView.GetFocusedDataRow() != null)
@@ -1139,24 +1110,9 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
-                    if (!File.Exists(downLoadFile))
-                    {
-                        if (File.Exists(pdfData))
-                            File.Move(pdfData, downLoadFile);
-                    }
-                    pdfViewer.FileName = downLoadFile;
+                    pdfViewer.FileName = pdfData;
                     pdfViewer.Tag = focuseRow["Pic_Path"].ToString();
                     PicName = focuseRow["Pic_Name"].ToString();
-                    if (OldRowHandel != -1 && OldRowHandel < pictureView.RowCount)
-                    {
-                        DataRow dr = pictureView.GetDataRow(OldRowHandel);
-                        arr = dr["Pic_Path"].ToString().Split('/');
-                        fileName = dr["Pic_Path"].ToString().Split('/')[arr.Length - 1];
-                        downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                        pdfData = downLoadFile.Replace(".pdf", "");
-                        if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                            File.Move(downLoadFile, pdfData);
-                    }
                 }
                 else
                 {
@@ -1177,10 +1133,8 @@ namespace CJia.Health.App.UI
                     btnDelete.CustomText = "删除(F6)";
                 }
                 pictureGrid.Focus();
-                OldRowHandel = pictureView.FocusedRowHandle;
             }
         }
-        private int OldRowHandel2 = -1;
         private void inputView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
@@ -1202,24 +1156,9 @@ namespace CJia.Health.App.UI
                         string fileName = uri.Split('/')[arr.Length - 1];
                         string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                         string pdfData = downLoadFile.Replace(".pdf", "");
-                        if (!File.Exists(downLoadFile))
-                        {
-                            if (File.Exists(pdfData))
-                                File.Move(pdfData, downLoadFile);
-                        }
-                        pdfViewer.FileName = downLoadFile;
+                        pdfViewer.FileName = pdfData;
                         pdfViewer.Tag = focuseRow["SRC"].ToString();
                         PicName = focuseRow["PICTURE_NAME"].ToString();
-                        if (OldRowHandel2 != -1 && OldRowHandel2 < inputView.RowCount)
-                        {
-                            DataRow dr = inputView.GetDataRow(OldRowHandel2);
-                            arr = dr["SRC"].ToString().Split('/');
-                            fileName = dr["SRC"].ToString().Split('/')[arr.Length - 1];
-                            downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                            pdfData = downLoadFile.Replace(".pdf", "");
-                            if (File.Exists(downLoadFile) && pdfViewer.FileName != downLoadFile)
-                                File.Move(downLoadFile, pdfData);
-                        }
                         inputGrid.Focus();
                     }
                     else
