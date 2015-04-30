@@ -17,28 +17,9 @@ Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "HealthFileSetup", "HealthFi
 		{8E1E538D-DF08-4A16-9494-E476717A4320} = {8E1E538D-DF08-4A16-9494-E476717A4320}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJia.Health.ExtWeb", "CJia.Health.ExtWeb\CJia.Health.ExtWeb.csproj", "{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://192.168.1.207:8080/tfs/cjia
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = CJia.Health\\CJia.Health.csproj
-		SccProjectName1 = CJia.Health
-		SccLocalPath1 = CJia.Health
-		SccProjectUniqueName2 = CJia.Health.App\\CJia.Health.App.csproj
-		SccProjectName2 = CJia.Health.App
-		SccLocalPath2 = CJia.Health.App
-		SccProjectUniqueName3 = CJia.Health.Web\\CJia.Health.Web.csproj
-		SccProjectName3 = CJia.Health.Web
-		SccLocalPath3 = CJia.Health.Web
-		SccProjectUniqueName4 = CJia.Health.Service\\CJia.Health.Service.csproj
-		SccProjectName4 = CJia.Health.Service
-		SccLocalPath4 = CJia.Health.Service
-		SccProjectUniqueName5 = HealthFileSetup\\HealthFileSetup.isproj
-		SccProjectName5 = HealthFileSetup
-		SccLocalPath5 = HealthFileSetup
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +78,16 @@ Global
 		{91CB0DC3-FB8D-404B-8EAA-1DA258136E91}.Release|Any CPU.Build.0 = SingleImage
 		{91CB0DC3-FB8D-404B-8EAA-1DA258136E91}.SingleImage|Any CPU.ActiveCfg = SingleImage
 		{91CB0DC3-FB8D-404B-8EAA-1DA258136E91}.SingleImage|Any CPU.Build.0 = SingleImage
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA4AC38-2F05-47D0-8F77-0B016709DB4C}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
