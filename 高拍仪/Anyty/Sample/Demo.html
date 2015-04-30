@@ -1,0 +1,266 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<title>SDK 演示</title>
+<Script language="javascript">
+var nFileCount = 0;
+var bAdjustMode = 0;
+var bCropArea = 0;
+var bSeriesCapture = 0;
+var bReadBarCode=0;
+var bSetDenoise = 0;
+var Width = 0;
+var Height = 0;
+var strFile;
+var index = 0;
+function Capture()
+{
+	var obj=document.getElementById("FileType") ;
+	var index=obj.selectedIndex;
+	strFile = "d:\\test\\Img" + nFileCount;
+	if(index == 0)
+	{
+		strFile += ".bmp";
+	}
+	if(index == 1)
+	{
+		strFile += ".jpg";
+	}
+	if(index == 2)
+	{
+		strFile += ".tif";
+	}
+	if(index == 3)
+	{
+		strFile += ".png";
+	}
+	CmCaptureOcx.CaptureImage(strFile);
+	nFileCount ++;
+}
+function Adjust()
+{
+	if(bAdjustMode == 0)
+	{
+		CmCaptureOcx.AutoCrop(1);
+		bAdjustMode = 1;
+	}
+	else
+	{
+		CmCaptureOcx.AutoCrop(0);
+		bAdjustMode = 0;
+	}
+}
+function SetCropArea()
+{
+	if(bCropArea == 0)
+	{	
+		bCropArea = 1;
+		CmCaptureOcx.CusCrop(bCropArea);
+	}
+	else
+	{
+		bCropArea = 0;
+		CmCaptureOcx.CusCrop(bCropArea);
+	}
+}
+function UpdataFile()
+{
+	var Url = document.getElementById("URL").value;
+	CmCaptureOcx.UpdataFile(Url,strFile,0);
+}
+function Preview()
+{
+	CmCaptureOcx.PreviewFile(strFile);
+}
+
+function SetResolution()
+{
+	var obj=document.getElementById("Resolution") ;
+	var index=obj.selectedIndex;
+	CmCaptureOcx.SetResolution(index);
+}
+
+function StartVideo()
+{
+	var path = "d:\\temp\\1"
+	CmCaptureOcx.StartVideo(path,1);
+}
+
+function SeriesCapture()
+{
+	var path = "d:\\temp\\自动连拍\\";
+	CmCaptureOcx.SeriesCapture(1,path);
+}
+
+function ReadBarCode()
+{
+	if(bReadBarCode == 0)
+	{	
+		bReadBarCode = 1;
+		CmCaptureOcx.ReadBarCode(bReadBarCode);
+	}
+	else	
+	{
+		bReadBarCode = 0;
+		CmCaptureOcx.ReadBarCode(bReadBarCode);
+	}
+}
+
+function DeleteFile()
+{
+	CmCaptureOcx.DeleteFile(strFile);
+}
+
+function SetDenoise()
+{
+	if(bSetDenoise == 0)
+	{	
+		bSetDenoise = 1;
+		CmCaptureOcx.SetDenoise(bSetDenoise);
+	}
+	else
+	{
+		bSetDenoise = 0;
+		CmCaptureOcx.SetDenoise(bSetDenoise);
+	}
+}
+
+function SetFileType()
+{
+	var obj=document.getElementById("FileType") ;
+	var index=obj.selectedIndex;
+	CmCaptureOcx.SetFileType(index);
+}
+
+function SetImageColorMode()
+{
+	var obj=document.getElementById("ColourMode") ;
+	var index=obj.selectedIndex;
+	CmCaptureOcx.SetImageColorMode(index);
+}
+
+function StartVideo()
+{
+	CmCaptureOcx.Initial();
+	CmCaptureOcx.StartRun(index);
+	AddResolution2Comb(Reso);
+	SetResolution();
+	SetFileType();
+}
+
+function AddResolution2Comb(f)
+{
+	var i = 0;
+	var total = CmCaptureOcx.GetResolutionCount();
+	for( i = 0 ; i < total ; i++ )
+	{
+		var resolution = CmCaptureOcx.GetResolution(i);
+		f.Resolution.options[i].text=resolution;
+	}
+}
+
+function ChangeDevice()
+{
+	var obj=document.getElementById("DeviceName") ;
+	index=obj.selectedIndex;
+	CmCaptureOcx.StartRun(index);
+	AddResolution2Comb(Reso);
+	SetResolution();
+}
+
+function AddDevice()
+{
+	var i = 0;
+	var total = CmCaptureOcx.GetDevCount();
+	for( i = 0 ; i < total ; i++ )
+	{
+		var DevEle = CmCaptureOcx.GetDevFriendName(i);
+		Reso.DeviceName.options[i].text=DevEle;
+	}
+}
+
+</script>
+	</head>
+
+	<body onload =" CmCaptureOcx.Initial();AddDevice();">
+
+		<center>
+		<p>
+
+			<OBJECT id="CmCaptureOcx" style="MARGIN-LEFT:5px; WIDTH: 52.4%; HEIGHT:80%" 
+			codeBase="CmCaptureOcx.ocx"
+			classid="clsid:3CA842C5-9B56-4329-A7CA-35CA77C7128D" > 		
+			</OBJECT>	
+		</p>
+		</center>
+
+		<p>
+			<center>
+				<input type = "button" value = " 开始视频 " onClick = "StartVideo();" name = "start">
+				<input type = "button" value = " 停止视频 " onClick = "CmCaptureOcx.Destory();" name = "Destory">
+				<input type = "button" value = " 拍    照 " onClick = "Capture();" name = "Capture">
+				<input type = "button" value = " 条码拍摄 " onClick = "ReadBarCode();" name = "ReadBarCode">
+				<input type = "button" value = " 自动连拍 " onClick = "SeriesCapture();" name = "SeriesCapture"><br>
+				<input type = "button" value = " 自动裁切 " onClick = "Adjust();" name = "AutoCrop">
+				<input type = "button" value = " 手动裁切 " onClick = "SetCropArea();" name = "CusCrop">
+				<input type = "button" value = " 预    览 " onClick = "Preview();" name = "Preview">
+				<input type = "button" value = " 开始录像 " onClick = "StartVideo();" name = "StartVideo">
+				<input type = "button" value = " 关闭录像 " onClick = "CmCaptureOcx.EndVideo();" name = "EndVideo"><br>
+				<input type = "button" value = " 删除文件 " onClick = "DeleteFile();" name = "DeleteFile">
+				<input type = "button" value = " 消除噪点 " onClick = "SetDenoise();" name = "SetDenoise">
+				<input type = "button" value = " 图像设置 " onClick = "CmCaptureOcx.ShowImageSettingWindow();" name = "ShowImageSettingWindow">
+				<input type = "button" value = " 自动对焦 " onClick = "CmCaptureOcx.AutoFocus();" name = "AutoFocus">
+				<br><br>
+			</center>
+
+
+			<form name = "Reso">
+			设 备 名 称:
+				<select name="DeviceName" id = "DeviceName" onchange = "ChangeDevice()">
+					<option value="0"></option>
+					<option value="1"></option>
+					<option value="2"></option>
+					<option value="3"></option>
+					<option value="4"></option>
+				</select>
+			分  辨  率 ：
+				<select name="Resolution" id = "Resolution" onchange = "SetResolution()">
+					<option value="0">开启视频后获取分辨率</option>
+					<option value="1"></option>
+					<option value="2"></option>
+					<option value="3"></option>
+					<option value="4"></option>
+					<option value="5"></option>
+					<option value="6"></option>
+					<option value="7"></option>
+					<option value="8"></option>
+					<option value="9"></option>
+				</select>
+
+			图 片 格 式:
+				<select name="FileType" id = "FileType" onchange = "SetFileType()">
+					<option value="0">bmp</option>
+					<option value="1">jpg</option>
+					<option value="2">tif</option>
+					<option value="3">png</option>
+				</select>
+			颜 色 格 式:
+				<select name="ColourMode" id = "ColourMode" onchange = "SetImageColorMode()">
+					<option value="0">彩色</option>
+					<option value="1">灰度</option>
+					<option value="2">黑白</option>
+					<option value="3">印章</option>
+					<option value="4">签名</option>
+				</select>
+			</form>
+
+			输入URL地址：
+			<input type = "text" name = "URL" id = "URL" value = "http://192.168.1.123:8080/UploadTestApp/uploadfile.do">
+			<input type = "button" value = " 文件上传 " onClick = "UpdataFile();" name = "Updata">
+		</p>
+		
+
+	</body>
+
+</html>

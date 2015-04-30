@@ -1,0 +1,457 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<head>  
+</head>
+<body onload="contentLoad()">
+
+
+     <object classid="clsid:6CA705D0-BB6E-46DF-BE44-64809B0B0E36" id=VIDEOCAP CODEBASE="*.cab#version=1,0,0,0"  width=640 height=480> 
+     </object>
+     <script   LANGUAGE=JavaScript>   
+
+
+
+        var idx=0;
+        var str_houzui="jpg";
+  　    function   start_preview(url)     
+  　　  {   
+  　　 
+           VIDEOCAP.StartPreview();
+  　　  }   
+
+  　　  function   stop_preview(url)     
+  　　  {    
+        
+            VIDEOCAP.StopPreview();
+  　　  } 
+
+        function contentLoad()
+        {
+
+             str_houzui ="jpg";
+             addoption1("彩色");
+             addoption1("灰度");
+             addoption1("黑白");
+             seloption1(0); 
+
+             addoption2("JPG");
+             addoption2("TIF");
+             addoption2("PNG");
+             addoption2("BMP");
+             seloption2(0); 
+
+
+
+             addoption3("200");
+             addoption3("300");
+             addoption3("400");
+             addoption3("500");
+             seloption3(0);
+
+
+            VIDEOCAP.SetOcrType(0x80);
+            VIDEOCAP.BuildVideo();
+             VIDEOCAP.StartPreview();
+
+
+            var num=VIDEOCAP.GetColorSpaceOutputsizeNum(0);
+
+            var selindex=0;
+            var width = VIDEOCAP.GetMediaWidth();
+
+	     var height= VIDEOCAP.GetMediaHeight();     
+          
+             for(i=0;i<num;i++)
+             {
+                var w=VIDEOCAP.GetOutPutSizeWidth(0,i);
+                var h=VIDEOCAP.GetOutPutSizeHeight(0,i);
+                var str=w.toString()+"X"+h.toString();
+                //addoption(str);
+                if(w==width)selindex=i;
+             }    
+             //seloption(selindex); 
+
+       
+        }
+         
+        function   addoption(s)   
+        {
+         var   obj=document.getElementById("sel").options; 
+         var   opt   =   new   Option(s, obj.length ); 
+         obj.options.add(opt);   
+        }
+        function   addoption1(s)   
+        {
+         var   obj=document.getElementById("picsel").options; 
+         var   opt   =   new   Option(s, obj.length ); 
+         obj.options.add(opt);   
+        }
+
+      function   seloption(index)
+      {   
+        var   objSelect=document.getElementById("sel").options; 
+        objSelect.options[index].selected = true; 
+      }   
+
+
+
+      function   seloption1(index)
+      {   
+        var   objSelect=document.getElementById("picsel").options; 
+        objSelect.options[index].selected = true; 
+      }  
+  　    function   ShowVideoProperty(url)     
+  　　  {   
+  　　      VIDEOCAP.ShowVideoPropertyPage();
+ 
+  　　  }   
+
+
+     
+
+        function   addoption2(s)   
+        {
+         var   obj=document.getElementById("formatsel").options; 
+         var   opt   =   new   Option(s, obj.length ); 
+         obj.options.add(opt);   
+        }
+
+      function   seloption2(index)
+      {   
+        var   objSelect=document.getElementById("formatsel").options; 
+        objSelect.options[index].selected = true; 
+      }   
+
+
+
+
+
+
+        function   addoption3(s)   
+        {
+          var   obj=document.getElementById("limitfilesizeSel").options; 
+          var   opt   =   new   Option(s, obj.length ); 
+          obj.options.add(opt);   
+        }
+
+        function   seloption3(index)
+        {    
+           var   objSelect=document.getElementById("limitfilesizeSel").options; 
+           objSelect.options[index].selected = true; 
+        }   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  　　  function   ShowVideoFormat(url)     
+  　　  {    
+            VIDEOCAP.ShowVideoPinPropertyPage();
+          
+  　　  } 
+
+
+  　　  function   Fit(url)     
+  　　  {    
+            VIDEOCAP.VideoFit();
+          
+  　　  } 
+
+  　　  function   Fill(url)     
+  　　  {    
+            VIDEOCAP.VideoFill();
+          
+  　　  } 
+
+        function onmouse_wheel() 
+        {
+            // VIDEOCAP.OnMouseWheel1(event.wheelDelta);
+              
+        }
+
+  　　  function   EnAutoRange(url)     
+  　　  {    
+            VIDEOCAP.EnableAuto_Range(1);          
+  　　  } 
+
+  　　  function   DisAutoRange(url)     
+  　　  {    
+            VIDEOCAP.EnableAuto_Range(0);           
+  　　  } 
+  　　  function   Takepic(url)     
+  　　  {    
+   　　  var Path = "c:\\1."+str_houzui;
+   　　  VIDEOCAP.SetJpgQuality (65);                  //设置JPEG压缩比， 0~100，100为不压缩。
+   　　  VIDEOCAP.SetPicDpi (300);                     //设置DPI
+   　　 
+   　　  VIDEOCAP.TakePicture (Path);  
+　       var Path1 = "c:\\2.txt";
+         VIDEOCAP.AddOCRList(Path,Path1);
+       
+  　　  } 
+
+
+
+　　 
+
+
+　      function   CheckDeiceExist(url)  
+        {
+           var devnum= VIDEOCAP.GetDeviceNum();
+           if(devnum==0) alert("没法发现视频设备");
+           else  alert("视频设备存在");
+
+        }
+
+    
+    function changeoutputsize()
+    {
+     
+
+             var   obj=document.getElementById("sel").options; 
+ 
+             num= VIDEOCAP.GetColorSpaceOutputsizeNum(0);
+
+             var selindex;
+             var   x = obj.selectedIndex; 
+    
+            if(x<num)
+            {
+
+              var w=VIDEOCAP.GetOutPutSizeWidth(0,x);             
+              var h=VIDEOCAP.GetOutPutSizeHeight(0,x); 
+
+  　　        //VIDEOCAP.style.width=w;
+             // VIDEOCAP.style.height=h; 
+              VIDEOCAP.SetVideoOutpsize(w,h);
+           }
+           else   window.alert("Out of  Range");  
+
+
+               
+    }
+      function PicType()
+      {
+          var   obj=document.getElementById("formatsel").options; 
+          var   x = obj.selectedIndex; 
+       
+      
+
+      }
+
+      function   RotateLeft(url) 
+      {
+         VIDEOCAP.RotateLeft();
+
+      }
+
+      function  RotateRight(url) 
+      {
+          VIDEOCAP.RotateRight();
+      }
+
+      
+
+      function  ChangeDevice(url) 
+      {
+         if(idx) idx=0;
+         else    idx=1;
+          VIDEOCAP.ReSetUpDevice(idx);
+      }
+
+
+
+    function  TakePicType()
+    {
+     
+
+             var   obj=document.getElementById("picsel").options; 
+ 
+            
+             var selindex;
+             var   x = obj.selectedIndex; 
+    
+              if(x==1)VIDEOCAP.SetTakeColorMode(1,0);
+              if(x==2)VIDEOCAP.SetTakeColorMode(0,0);
+              if(x==0)VIDEOCAP.SetTakeColorMode(2,0);
+
+
+               
+    }
+
+   
+      function  SetBarCode(obj)
+      {
+   
+           if(obj.checked)
+           {
+                VIDEOCAP.SetBarCode(1);
+
+           }
+           else 
+           { 
+                VIDEOCAP.SetBarCode(0);
+
+           }
+
+      }
+
+
+     function GetBarCode(url)
+     {
+          var num=VIDEOCAP.GetBarCodeNum();
+          if(num==0)
+          {
+            alert("无条形码");
+            return ;
+          }
+          str="";
+          for(i=0;i<num;i++)
+          {
+            str+="barcodeType:"+VIDEOCAP.GetBarCodeTypeStringAt(i)+"\r\n";
+            str+="barcode:"+VIDEOCAP.GetBarCodeStringAt(i)+"\r\n";
+          }
+          alert(str);
+     }
+
+
+      function  LimitFile(obj)
+      {
+           if(obj.checked)
+           {
+                VIDEOCAP.EnableLimitFileSize(1);
+               var   obj=document.getElementById("limitfilesizeSel").options; 
+              var   x = obj.selectedIndex; 
+                  
+              if(x==0) VIDEOCAP.SetLimitFileSize(200);
+              if(x==1) VIDEOCAP.SetLimitFileSize(300);
+              if(x==2) VIDEOCAP.SetLimitFileSize(400);
+              if(x==3) VIDEOCAP.SetLimitFileSize(500);
+        
+           }
+           else 
+           { 
+               VIDEOCAP.EnableLimitFileSize(0);
+               
+               
+           }
+      }
+         
+      function   limitfilesize()
+      {
+              var   obj=document.getElementById("limitfilesizeSel").options; 
+              var   x = obj.selectedIndex; 
+                  
+              if(x==0) VIDEOCAP.SetLimitFileSize(200);
+              if(x==1) VIDEOCAP.SetLimitFileSize(300);
+              if(x==2) VIDEOCAP.SetLimitFileSize(400);
+              if(x==3) VIDEOCAP.SetLimitFileSize(500);
+
+
+      }
+      function   PicType()
+      {
+             VIDEOCAP.EnableLimitFileSize(1);
+              var   obj=document.getElementById("formatse").options; 
+              var   x = obj.selectedIndex; 
+                  
+              if(x==0) str_houzui="jpg";
+              if(x==1) str_houzui="tif";
+              if(x==2) str_houzui="png";
+              if(x==3) str_houzui="bmp";
+
+
+
+
+       }
+
+
+
+	   function  StartRecord()
+	   {
+			VIDEOCAP.StartRecord("C:\\1.wmv");
+	   }
+
+	   function  StopRecord()
+	   {
+		   VIDEOCAP.StopRecord();
+	   }
+
+
+	   function  StartWMVRecord()
+	   {
+		   VIDEOCAP.StartWMVRecord("C:\\1.wma");
+	   }
+
+
+	   function  StopWMVRecord()
+	   {
+		   VIDEOCAP.StopWMVRecord();
+	   }
+
+      document.onmousewheel=onmouse_wheel; 
+     </script> 
+
+
+<script language="javascript"  for=VIDEOCAP  event="FireOcr(p1,p2)">   
+
+//alert("Event_TestEvent1 Param_nVar is:" + String(nVar));   
+alert("ocr end");
+</script>   
+
+
+
+
+
+     <form>  
+</br>
+     视频输出大小 <select name="sel"  onchange="changeoutputsize()"  /select >
+     <input   TYPE="button"   VALUE="开始预览"   onClick="start_preview()"> 
+     <input   TYPE="button"   VALUE="停止预览"   onClick="stop_preview()"> 
+     <input   TYPE="button"   VALUE="视频属性"   onClick="ShowVideoProperty()"> 
+     <input   TYPE="button"   VALUE="视频格式"   onClick="ShowVideoFormat()"> 
+     <input   TYPE="button"   VALUE="适合"       onClick="Fit()"> 
+     <input   TYPE="button"   VALUE="视频填充"       onClick="Fill()"> 
+      <input   TYPE="button"   VALUE="左旋"       onClick="RotateLeft()"> 
+     <input   TYPE="button"   VALUE="右旋"        onClick="RotateRight()"> 
+     <input   TYPE="button"   VALUE="开始自动捕获"       onClick="EnAutoRange()"> 
+     <input   TYPE="button"   VALUE="停止自动捕获"       onClick="DisAutoRange()"> 
+	 <input   TYPE="button"   VALUE="开始录像"   onClick="StartRecord()"> 
+	   <input   TYPE="button"   VALUE="停止录像"   onClick="StopRecord()"> 
+	   <input   TYPE="button"   VALUE="开始录音"   onClick="StartWMVRecord()"> 
+	   <input   TYPE="button"   VALUE="停止录音"   onClick="StopWMVRecord()"> 
+ 图片格式  <select name="formatsel"  onchange="PicType()" >
+    
+     <input   TYPE="button"   VALUE="检测设备的存在"   onClick="CheckDeiceExist()"> 
+     <input   TYPE="button"   VALUE="拍照"   onClick="Takepic()"> 
+     <input   TYPE="button"   VALUE="切换设备"   onClick="ChangeDevice()"> 
+
+       </br>  拍照图片类型  <select name="picsel"  onchange="TakePicType()">
+  
+       <input type="checkbox"  onclick="SetBarCode(this);"  >条码识别
+       <input   TYPE="button"   VALUE="获取条码"       onClick="GetBarCode()"> 
+
+	   
+  
+   </br>
+       <input type="checkbox"  onclick="LimitFile(this);">限制文件大小拍照
+       </br>  文件大小 <select name="limitfilesizeSel"  onchange="limitfilesize()"> K字节
+
+     </form>   
+          
+      <form>  
+      </form>  
+</body>
+  
+</html> 

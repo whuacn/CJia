@@ -1,0 +1,89 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<title>SDK 演示</title>
+<Script language="javascript">
+
+function Capture()
+{
+	CmCaptureOcx.SetFileType(1);
+	var strFile = "d:\\test\\Img.jpg";
+alert(strFile);
+	CmCaptureOcx.CaptureImage(strFile);
+}
+
+
+
+
+function StartVideo()
+{
+	var index = CmCaptureOcx.Initial();
+	//alert(index);
+	if(index == -2)
+	{
+		alert("没有设备");
+	}
+	else if(index == -1)
+	{
+		alert("设备没有授权");
+		index = 0;
+	}
+	CmCaptureOcx.StartRun(index);
+	CmCaptureOcx.SetJpgQuanlity(100);
+}
+
+function Adjust()
+{
+	
+	CmCaptureOcx.AutoCrop(1);
+	
+}
+
+function CropOne()
+{
+	CmCaptureOcx.SetCropMode(1);
+}
+
+function CropMulti()
+{
+
+      CmCaptureOcx.SetCropMode(0);
+
+}
+
+
+</script>
+<SCRIPT type="text/javascript" for="CmCaptureOcx" event="GetImageFileName(fileName);">
+	CmCaptureOcx.AddPDFImageFile(fileName);
+</SCRIPT>
+	</head>
+
+	<body onload =" CmCaptureOcx.Initial();">
+	<center>
+		<p>
+
+			<OBJECT id="CmCaptureOcx" style="MARGIN-LEFT:5px; WIDTH: 52.4%; HEIGHT:80%" 
+			classid="clsid:3CA842C5-9B56-4329-A7CA-35CA77C7128D" > 		
+			</OBJECT>	
+			
+		</p>
+	</center>
+		<p>
+			<center>
+				<input type = "button" value = " 开始视频 " onClick = "StartVideo();" name = "start">
+				<input type = "button" value = " 停止视频 " onClick = "CmCaptureOcx.Destory();" name = "Destory">
+				<input type = "button" value = " 拍    照 " onClick = "Capture();" name = "Capture">
+				<input type = "button" value = " 自动裁切 " onClick = "Adjust();" name = "AutoCrop">
+				<input type = "button" value = " 单图裁切 " onClick = "CropOne();" name = "CropOne">
+				<input type = "button" value = " 多图裁切 " onClick = "CropMulti();" name = "CropMulti">
+				<br><br>
+			</center>
+
+
+		</p>
+		
+
+	</body>
+
+</html>
