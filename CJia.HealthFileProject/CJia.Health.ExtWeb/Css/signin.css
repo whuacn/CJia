@@ -1,0 +1,97 @@
+﻿.signin_box{width:1000px;height:450px;border:solid 1px #CCCCCC;margin:0 auto 20px;border-top:none;box-shadow:2px 2px 4px #CCCCCC,-2px 2px 4px #CCCCCC}
+.signin_box .signin_left{height:450px;width:700px;float:left;padding-left:50px;background:url('../Images/res8.png') no-repeat 730px 0}
+.signin_box .signin_left h2.signin_title{color:#777777; letter-spacing:2px;margin-top:20px}
+.signin_box .signin_left .signin_in{width:550px;margin:0 auto;padding-top:50px}
+.signin_box .signin_left .signin_up{width:550px;margin:0 auto;padding-top:30px}
+.signin_box .signin_left .signin_in .signin_linediv{height:50px;line-height:50px}
+.signin_box .signin_left .signin_up .signin_linediv{height:40px;line-height:40px}
+    .signin_box .signin_left .signin_in .signin_linediv a:hover {color:red;text-decoration:underline;
+    }
+.signin_box .signin_left .userlabel{width:100px;display:inline-block;text-align:right;font-size:15px;color:#666666;font-weight:bold;}
+.signin_box .signin_left .usertext,.UserEdit_main .useredit_left .user_input_box{height:25px;width:220px;border:solid 1px #CCCCCC;border-top-color:#999999;border-left-color:#999999;font-size:15px;font-weight:bold;color:Gray;line-height:25px;border-radius:3px;background:#faffbd}
+.signin_box .signin_left .CheckCode{width:80px}
+.signin_box .signin_left .signin_in .login_btn{height:30px;width:72px;background:url('../Images/bottons.png') no-repeat -12px -1px;border:none;cursor:pointer;margin-left:252px}
+.signin_box .signin_left .signin_in .login_btn:hover{background-position:-12px -32px}
+.signin_box .signin_left .signin_up .register_btn{height:30px;width:80px;background:url('../Images/bottons.png') no-repeat -108px -3px;border:none;cursor:pointer;margin-top:20px;margin-left:102px}
+.signin_box .signin_left .signin_up .register_btn:hover{background-position:-108px -34px}
+.signin_box .signin_left .signin_in .psdRecovery{margin-left:20px;color:Gray;font-size:16px;font-weight:bold}
+.signin_box .signin_left .signin_in .psdRecovery:hover{color:#ff3300}
+.signin_box .signin_left .signin_in .remember_password{margin-left:102px;}
+.signin_box .signin_left #getcode{height: 26px;width: 80px;vertical-align: middle}
+.signin_box .signin_left .signin_up .checkbox_agree{margin-left:102px}
+.signin_box .signin_left .signin_error{margin-left:102px;font-size:14px;color:Red;}
+.signin_box .signin_left .r_error{font-size:14px;color:Red;}
+.signin_box .signin_right{height:450px;width:250px;float:right}
+.signin_box .signin_right .right_main{padding-top:100px;font-size:15px;color:#555555;padding-left:40px;}
+.signin_box .signin_right .right_main a.to_register{font-size:16px;color:#CD4E32;font-weight:bold}
+.failmsg{ font-weight:normal;color:Red;margin-left:10px;font-size:14px}
+.PsdRecovery_main{width: 1000px;margin: 100px auto;padding: 30px 0;background:#F6F6F6;box-shadow: 0 2px 2px rgba(173, 176, 179, 0.8);border: 1px solid #C5C9CC;border-radius: 4px;}
+.PsdRecovery_title{height: 20px;margin-bottom: 20px;padding: 0 40px;color: #686868;}
+.reg_content{padding: 0 40px;}
+.form_item{margin-bottom: 20px;}
+.PsdRecovery_text{border-color: #C9CACC #C9CACC #B1B3B5;border-radius: 4px;border-style: solid;color: #666;font-size: 14px;border-width: 1px;box-shadow: 0 1px 1px #C9CACC;height: 18px;line-height: 18px;width: 250px;padding: 9px 8px;}
+.send_PsdRecovery,.UserEdit_main .mod_addr_btn,.UserEdit_main .mod_tel_btn,.UserEdit_main .PasswordUpdat,.UserEdit_main .apply_btn,.UserEdit_main .tousu_btn{border-color: #63A62F #63A62F #5B992B;border-style: solid;border-width: 1px;box-shadow: 0 1px 0 0 #96CA6D inset;padding: 7px 6px 8px;text-shadow: 0 -1px 0 #4C9021;width: 150px;text-align: center;border-radius: 3px;font-size: 18px;color: White;font-weight: bold;background: #7FBF4D;cursor: pointer;letter-spacing: 2px;}
+.send_PsdRecovery:hover,.UserEdit_main .mod_addr_btn:hover,.UserEdit_main .mod_tel_btn:hover,.UserEdit_main .PasswordUpdat:hover{background: #76B347;box-shadow: 0 1px 0 0 #8DBF67 inset;}
+.UserEdit_main{width:1000px;margin: 20px auto;box-shadow: 2px 2px 4px #CCCCCC,-2px 2px 4px #CCCCCC;border: solid 1px #D0D0D0;overflow:hidden;background:#F4F4F4}
+.UserEdit_main .useredit_left{width:750px;float:left;min-height:400px;background:#F4F4F4}
+.UserEdit_main .useredit_left .orderlist{width:665px;margin:10px auto 20px;min-height:300px;}
+.UserEdit_main .useredit_left .orderlist li{width:665px;height:125px;background:url('../Image/webimages/menulist_bg.png') no-repeat -3px -3px;margin-bottom:20px;}
+.UserEdit_main .useredit_left .orderlist li a{color:#F97C37;font-weight:bold}
+.UserEdit_main .useredit_left .orderlist li a:hover{font-size:16px;}
+.UserEdit_main .useredit_left .editBox{display:none;min-height:350px;padding-bottom:30px}
+.UserEdit_main .useredit_left .editbox_active{display:block}
+.UserEdit_main .useredit_left .order_box_left{display:inline-block;width:160px;padding:10px 10px 0 20px;float:left}
+.UserEdit_main .useredit_left .order_box_left .hotel_pic{display:inline-block;height:90px;width:150px;padding:5px;background:url('../Image/webimages/information_box_bg.png')}
+.UserEdit_main .useredit_left .order_box_left .hotel_pic img{height:80px;width:140px;border:solid 5px white}
+.UserEdit_main .useredit_left .order_box_middle{width:280px;float:left;padding:10px 0}
+.UserEdit_main .useredit_left .orderbox_line{display:block;height:33px;line-height:33px;font-size:15px;letter-spacing:1px;overflow:hidden;color:#565656}
+.UserEdit_main .useredit_left .order_box_right{display:inline-block;width:160px;padding:10px 20px 10px 5px;float:right}
+.UserEdit_main .useredit_left .order_count{height:35px;padding-left:40px;line-height:35px;font-size:17px;letter-spacing:1px;font-weight:bold;margin-top:35px;color:#666666}
+.UserEdit_main .useredit_left .user_info_box,.UserEdit_main .useredit_left .passwordUpdate,.UserEdit_main .apply_info_box,.UserEdit_main .tousu_box,.UserEdit_main .yijian_box{width:650px;margin:35px auto;padding-top:55px}
+.UserEdit_main .useredit_left .user_line{padding:15px 0;overflow:hidden}
+.UserEdit_main .useredit_left .left_lbl{display:inline-block;float:left;width:220px;text-align:right;font-size:17px;font-weight:bold;color:#666666}
+.UserEdit_main .useredit_left .right_lbl{display:inline-block;float:right;width:400px;}
+.UserEdit_main .useredit_left .user_info_box .newaddr_top{display:block;border-bottom:solid 40px #DDDDDD;border-top:none;border-left:30px solid #f4f4f4;border-right:30px solid #f4f4f4;clear:both;width:0;height:0;margin-left:140px;}
+.UserEdit_main .useredit_left .user_info_box .new_addr{clear:both;padding:20px 0;overflow:hidden;background:#DDDDDD;border-radius:5px}
+.UserEdit_main .useredit_left .user_info_box .new_addr .dropdown{height: 25px;width: 98px;border: solid 1px #CCCCCC;border-top-color: #999999;border-left-color: #999999;font-size: 15px;font-weight: bold;color: Gray;line-height: 25px;background: #E6E6FA;}
+.UserEdit_main .useredit_left .user_info_box .new_addr .useraddr_input{width:350px;}
+.UserEdit_main .useredit_left .user_info_box .new_addr .mod_addr_btnbox{display:block;clear:both;padding:10px 0;}
+.UserEdit_main .useredit_left .user_info_box .updateaddr_btn{display:inline-block;padding:2px 5px;background:#F97C37;border-radius:5px;color:White;margin-left:10px;}
+.addrbox{display:none}
+.UserEdit_main .mod_tel_btn{height:28px;width:120px;padding:0; vertical-align:middle}
+.UserEdit_main .mod_addr_btn{float:right;margin-right:48px;}
+.UserEdit_main .Intergal_box{width:700px;margin:60px auto 0;}
+.UserEdit_main .Intergal_box .now_intergal{height:40px;line-height:40px;font-size:18px;letter-spacing:1px;font-weight:bold;color:#565656}
+.UserEdit_main .Intergal_box .now_intergal .lblIntegral{font-size:20px;color:#F97C37}
+.UserEdit_main .Intergal_box .howtoget{padding-top:30px;}
+.UserEdit_main .Intergal_box .get_tip,.UserEdit_main .Intergal_box .use_tip{padding:10px 0;}
+.UserEdit_main .Intergal_box .tip_cont{display:inline-block;padding:3px 10px;border-radius:5px;background:#F97C37;color:White;font-size:17px;letter-spacing:2px;}
+.UserEdit_main .Intergal_box .howtouse{padding-top:30px}
+.UserEdit_main .Intergal_box .Intergalcont{line-height:25px;font-size:16px;color:#666666; letter-spacing:2px;}
+.UserEdit_main .useredit_right{width:250px;float:left;min-height:400px;background:#E5E5E5}
+.UserEdit_main .useredit_right .edit_list{width:200px;float:left;padding-top:40px;}
+.UserEdit_main .useredit_right .edit_list li{width:200px;height:50px;line-height:50px;color:#676767;font-size:20px;letter-spacing:2px;text-align:center;cursor:pointer;margin-bottom:10px;font-weight:bold;}
+.UserEdit_main .useredit_right .edit_list li.active{background:#F4F4F4;color:#555555;border-radius:0 5px 5px 0;}
+.UserEdit_main .user_contact_top{margin-top:30px;height:60px;background:url('../Image/web-images/contact_menu2.png') no-repeat center center}
+.apply_top{line-height:25px;font-size:16px;text-align:center;font-weight:bold;color:#565656}
+.UserEdit_main .apply_info_box{padding-top:10px;}
+.UserEdit_main .useredit_left .contacttop_line{height:25px;line-height:25px;color:#666666;font-size:18px;letter-spacing:2px;padding:5px 0}
+.UserEdit_main .useredit_left .tousu_input,.UserEdit_main .useredit_left .yijian_input{width:645px;height:60px;line-height:30px}
+.UserEdit_main .tousu_btn{height:30px;width:140px;font-size:16px;line-height:30px;padding:0;float:right}
+.after_login{height:200px;line-height:200px;font-size:18px;font-weight:bold;text-align:center;letter-spacing:2px;}
+.after_login a{color:#F97C37}
+.C_bottom{height:40px;border-top:solid 2px #DDDDDD;background:#EEEEEE}
+.C_bottom .bottom_m{width:1000px;margin:0 auto;}
+.C_bottom .bottom_m ul li{width:330px;float:left;text-align:center; list-style:none;}
+.C_bottom .bottom_m ul li{color:#666666;font-size:12px;font-weight:bold; letter-spacing:2px}
+    .C_bottom ul li a {
+        color:#666666;font-size:12px;font-weight:bold; letter-spacing:2px;text-decoration-style:none;
+    }
+.C_bottom  ul li a:hover{font-size:13px;color:#555555}
+    .C_bottom table label {
+        color:#666666;font-size:10px;font-weight:bold; letter-spacing:2px
+    }
+        .C_bottom table label a {
+            color:#666666;
+            text-decoration:none;
+        }
