@@ -43,7 +43,7 @@ namespace CJia.Health.ExtWeb
             Session["User"] = new DataTable();
             Session["User"] = data;
             Session.Timeout = int.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("SessionTimeOut"));
-            Response.Redirect("~/UI/HomePage.aspx");
+            Response.Redirect("~/HomePage.aspx");
         }
         #endregion
 
