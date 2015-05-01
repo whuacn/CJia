@@ -27,14 +27,6 @@
                         <div style="background-color:#007ACC; font-weight: bold;height:100px; font-size:30px; color:#ffffff; float:left;width:100%;">
                             <table>
                                 <tr  style="height:100%;width:100%">
-                                    <%--<td style="width:70px;">
-                                        <img src="../Images/hsz.png" height="65" width="65" title="" alt="" style="margin-top:2px;"/>
-                                    </td>
-                                    <td style="align-content:center;vertical-align:middle;width:600px;">
-                                        <label>医院等级评审资料查阅系统</label>
-                                    </td>
-                                    <td>
-                                    </td>--%>
                                 </tr>
                             </table>
                          </div>
@@ -82,13 +74,25 @@
                                     <Items>
                                         <ext:Tree ID="tree_MBasic" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
                                             <Nodes>
-                                                <ext:TreeNode NodeID="node_DeptUser" Text="查询病案" IconUrl="Icons/user_home.png" NavigateUrl="UI/QueryPatientView.aspx">
+                                                <ext:TreeNode NodeID="node_DeptUser" Text="病案查询" IconUrl="Icons/user_home.png" NavigateUrl="UI/QueryPatientView.aspx">
+                                                </ext:TreeNode>
+                                            </Nodes>
+                                            <Nodes>
+                                                <ext:TreeNode NodeID="node_MyReceipt" Text="我的申请" IconUrl="Icons/user_home.png" NavigateUrl="UI/QueryPatientView.aspx">
+                                                </ext:TreeNode>
+                                            </Nodes>
+                                             <Nodes>
+                                                <ext:TreeNode NodeID="node_MyBorrow" Text="我的借阅" IconUrl="Icons/user_home.png" NavigateUrl="UI/QueryPatientView.aspx">
+                                                </ext:TreeNode>
+                                            </Nodes>
+                                             <Nodes>
+                                                <ext:TreeNode NodeID="node_MyFavorite" Text="我的收藏" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyFavorite.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
                                         </ext:Tree>
                                     </Items>
                                 </ext:AccordionPane>
-                                <ext:AccordionPane ID="ap_MBusiness" Icon="FolderBell" runat="server" Hidden="false" Expanded="false" Title="病案管理" Layout="Fit">
+                                <ext:AccordionPane ID="ap_MBusiness" Icon="FolderBell" runat="server" Hidden="false" Expanded="false" Title="病案管理" Layout="Fit" Visible="false">
                                     <Items>
                                         <ext:Tree ID="tree_MBusiness" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
                                             <Nodes>
