@@ -1884,6 +1884,7 @@
     <Content Include="Js\tab.js" />
     <Content Include="LoginView.aspx" />
     <Content Include="UI\QueryPatientView.aspx" />
+    <Content Include="UI\MyFavorite.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1915,6 +1916,13 @@
     </Compile>
     <Compile Include="UI\QueryPatientView.aspx.designer.cs">
       <DependentUpon>QueryPatientView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyFavorite.aspx.cs">
+      <DependentUpon>MyFavorite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MyFavorite.aspx.designer.cs">
+      <DependentUpon>MyFavorite.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

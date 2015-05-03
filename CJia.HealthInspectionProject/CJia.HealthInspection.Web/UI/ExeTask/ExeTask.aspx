@@ -18,7 +18,7 @@
                 <ext:Region ID="ren_Center" ShowHeader="false" Layout="Fit" Position="Center" Margins="2 0 2 2" runat="server">
                     <Items>
                         <ext:Form ID="sf_Edit" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true"
-                            AutoScroll="true" LabelWidth="75px" BodyPadding="25px 15px" runat="server" EnableCollapse="True">
+                            AutoScroll="true"  runat="server" EnableCollapse="True">
                             <Rows>
                                 <ext:FormRow ColumnWidths="72% 28%">
                                     <Items>
