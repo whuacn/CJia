@@ -994,6 +994,7 @@ namespace CJia.Health.App.UI
                     string pdfPath = filePath.Split('.')[0] + ".pdf";
                     CJia.Health.Tools.PDFHelp.ConvertJPG2PDF(filePath, pdfPath);
                     File.Delete(filePath);
+                    CJia.Health.Tools.PDFHelp.SetWatermark(pdfPath, LogoName, PDFPassword, LogoInclination);
                     DataTable data = CreatePictureDate(txtFolder.Text);
                     pictureGrid.DataSource = data;
                     pictureView.FocusedRowHandle = data.Rows.Count - 1;
@@ -1006,6 +1007,7 @@ namespace CJia.Health.App.UI
                 string pdfPath = filePath.Split('.')[0] + ".pdf";
                 CJia.Health.Tools.PDFHelp.ConvertJPG2PDF(filePath, pdfPath);
                 File.Delete(filePath);
+                CJia.Health.Tools.PDFHelp.SetWatermark(pdfPath, LogoName, PDFPassword, LogoInclination);
                 DataTable data = CreatePictureDate(txtFolder.Text);
                 pictureGrid.DataSource = data;
                 pictureView.FocusedRowHandle = data.Rows.Count - 1;

@@ -114,5 +114,25 @@ namespace CJia.Health.Tools
                 return CJia.DefaultOleDb.QueryScalar("SELECT t.value FROM GM_PARAMETER t WHERE t.value_type='PDF_Password'");
             }
         }
+        /// <summary>
+        /// 水印名称
+        /// </summary>
+        public string LogoName
+        {
+            get
+            {
+                return CJia.DefaultOleDb.QueryScalar("SELECT t.value FROM GM_PARAMETER t WHERE t.value_type='LogoContent'");
+            }
+        }
+        /// <summary>
+        /// 水印倾斜度
+        /// </summary>
+        public int LogoInclination
+        {
+            get
+            {
+                return int.Parse(CJia.DefaultOleDb.QueryScalar("SELECT t.value FROM GM_PARAMETER t WHERE t.value_type='LogoInclination'"));
+            }
+        }
     }
 }

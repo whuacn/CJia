@@ -494,6 +494,12 @@
     <Compile Include="UI\CompleteQuery.Designer.cs">
       <DependentUpon>CompleteQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\LogoSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\LogoSet.Designer.cs">
+      <DependentUpon>LogoSet.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -649,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CompleteQuery.resx">
       <DependentUpon>CompleteQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LogoSet.resx">
+      <DependentUpon>LogoSet.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
