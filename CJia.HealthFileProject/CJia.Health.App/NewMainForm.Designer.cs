@@ -131,6 +131,7 @@ namespace CJia.Health.App
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xTC = new DevExpress.XtraTab.XtraTabControl();
             this.homePage = new DevExpress.XtraTab.XtraTabPage();
+            this.btnLoge = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
@@ -249,8 +250,9 @@ namespace CJia.Health.App
             this.lblLoginTime,
             this.barStaticItem1,
             this.lblUserName,
-            this.bsiCompany});
-            this.ribbonControl1.MaxItemId = 98;
+            this.bsiCompany,
+            this.btnLoge});
+            this.ribbonControl1.MaxItemId = 99;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1187,6 +1189,7 @@ namespace CJia.Health.App
             this.ribbonPageGroup1.ItemLinks.Add(this.btnRole);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnRoleFounction);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnSelectScanner);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnLoge);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             resources.ApplyResources(this.ribbonPageGroup1, "ribbonPageGroup1");
@@ -1307,6 +1310,15 @@ namespace CJia.Health.App
             this.homePage.Name = "homePage";
             this.homePage.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             resources.ApplyResources(this.homePage, "homePage");
+            // 
+            // btnLoge
+            // 
+            resources.ApplyResources(this.btnLoge, "btnLoge");
+            this.btnLoge.Glyph = ((System.Drawing.Image)(resources.GetObject("btnLoge.Glyph")));
+            this.btnLoge.Id = 98;
+            this.btnLoge.Name = "btnLoge";
+            this.btnLoge.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLoge.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoge_ItemClick);
             // 
             // NewMainForm
             // 
@@ -1445,5 +1457,6 @@ namespace CJia.Health.App
         private System.Windows.Forms.Label lblSystem;
         private DevExpress.XtraTab.XtraTabControl xTC;
         private DevExpress.XtraTab.XtraTabPage homePage;
+        private DevExpress.XtraBars.BarButtonItem btnLoge;
     }
 }

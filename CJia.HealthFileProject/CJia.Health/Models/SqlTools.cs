@@ -2530,5 +2530,20 @@ values
             }
         }
         #endregion
+
+        public static string SqlModifyLogoContent
+        {
+            get
+            {
+                return @"update gm_parameter t set t.value=? WHERE t.value_type='LogoContent'";
+            }
+        }
+        public static string SqlModifyLogoInclination
+        {
+            get
+            {
+                return @"update gm_parameter t set t.value=? WHERE t.value_type='LogoInclination'";
+            }
+        }
     }
 }

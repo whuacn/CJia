@@ -591,6 +591,14 @@ namespace CJia.Health.App.UI
             if (pathname.Trim().Length == 0) { return null; }
             try
             {
+                foreach (Control cs in this.Controls.Find("pdfViewer", true))
+                {
+                    (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                }
+                foreach (Control cs in this.Controls.Find("smallpdfViewer", true))
+                {
+                    (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                }
                 DataTable data = PictureData();
                 string imgtype = "*.PDF";
                 string[] ImageType = imgtype.Split('|');
@@ -599,6 +607,7 @@ namespace CJia.Health.App.UI
                     string[] tmp1 = System.IO.Directory.GetFiles(pathname, ImageType[i], SearchOption.TopDirectoryOnly);
                     foreach (string str in tmp1)
                     {
+                        Tools.PDFHelp.SetWatermark(str, LogoName, PDFPassword, LogoInclination);//打水印
                         data = SetPictureDataRows(data, str);
                     }
                 }

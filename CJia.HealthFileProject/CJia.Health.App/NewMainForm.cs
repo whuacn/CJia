@@ -1049,5 +1049,11 @@ namespace CJia.Health.App
                 }
             }
         }
+
+        private void btnLoge_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UI.LogoSet ui = new LogoSet();
+            Tools.Help.NewRedBorderFrom(ui);
+        }
     }
 }

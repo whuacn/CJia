@@ -89,6 +89,7 @@
     <Compile Include="Models\DoctorManageModel.cs" />
     <Compile Include="Models\ImagesInputModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\LogoSetModel.cs" />
     <Compile Include="Models\MainFormModel.cs" />
     <Compile Include="Models\MyPatientInputModel.cs" />
     <Compile Include="Models\MyUndoPatientModel.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Presenters\DoctorManagePresenter.cs" />
     <Compile Include="Presenters\ImagesInputPresenter.cs" />
     <Compile Include="Presenters\LoginViewPresenter.cs" />
+    <Compile Include="Presenters\LogoSetPresenter.cs" />
     <Compile Include="Presenters\MainFormPresenter.cs" />
     <Compile Include="Presenters\MyPatientInputPresenter.cs" />
     <Compile Include="Presenters\MyUndoPatientPresenter.cs" />
@@ -195,6 +197,7 @@
     <Compile Include="Views\IDoctorManageView.cs" />
     <Compile Include="Views\IImagesInputView.cs" />
     <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\ILogoSet.cs" />
     <Compile Include="Views\IMainFormView.cs" />
     <Compile Include="Views\IMyPatientInputView.cs" />
     <Compile Include="Views\IMyUndoPatientView.cs" />
