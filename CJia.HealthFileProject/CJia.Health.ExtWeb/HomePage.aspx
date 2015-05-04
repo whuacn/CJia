@@ -82,7 +82,7 @@
                                                 </ext:TreeNode>
                                             </Nodes>
                                              <Nodes>
-                                                <ext:TreeNode NodeID="node_MyBorrow" Text="我的借阅" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyBorrow.aspx">
+                                                <ext:TreeNode NodeID="node_MyBorrow" Text="我的借阅" IconUrl="Icons/user_home.png" NavigateUrl="UI/ReceiptFavorite.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
                                              <Nodes>

@@ -85,40 +85,13 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.DatePicker DatePicker1;
         
         /// <summary>
-        /// dp_start 控件。
+        /// DatePicker3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DatePicker dp_start;
-        
-        /// <summary>
-        /// txt_Task 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.TextBox txt_Task;
-        
-        /// <summary>
-        /// TextBox1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.TextBox TextBox1;
-        
-        /// <summary>
-        /// DatePicker2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.DatePicker DatePicker2;
+        protected global::ExtAspNet.DatePicker DatePicker3;
         
         /// <summary>
         /// DropDownList1 控件。
@@ -130,40 +103,13 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.DropDownList DropDownList1;
         
         /// <summary>
-        /// ddl_wuzheng 控件。
+        /// Button1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList ddl_wuzheng;
-        
-        /// <summary>
-        /// TextBox3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.TextBox TextBox3;
-        
-        /// <summary>
-        /// TextBox4 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.TextBox TextBox4;
-        
-        /// <summary>
-        /// btnQuery 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Button btnQuery;
+        protected global::ExtAspNet.Button Button1;
         
         /// <summary>
         /// Panel2 控件。

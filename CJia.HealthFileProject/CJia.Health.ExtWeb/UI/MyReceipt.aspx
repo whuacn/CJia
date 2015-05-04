@@ -15,7 +15,7 @@
         <ext:PageManager ID="pm_Main" AutoSizePanelID="rpnl_Main" runat="server" />
         <ext:RegionPanel ID="rpnl_Main" ShowBorder="false" runat="server">
             <Regions>
-                <ext:Region ID="ren_Center" Title="病人基本信息" ShowHeader="true" Layout="Row" Position="Center" Margins="2 2 2 0" runat="server">
+                <ext:Region ID="ren_Center" Title="申请单信息" ShowHeader="true" Layout="Row" Position="Center" Margins="2 2 2 0" runat="server">
                     <Items>
                         <ext:Panel ID="Panel1" runat="server" ShowHeader="false" ShowBorder="false">
                             <Items>
@@ -24,52 +24,36 @@
                                     <Rows>
                                         <ext:FormRow>
                                             <Items>
-                                                <ext:DatePicker ID="DatePicker1" Label="入院时间" runat="server"></ext:DatePicker>
-                                                <ext:DatePicker ID="dp_start" Label="出院时间" runat="server"></ext:DatePicker>
-                                                <ext:TextBox ID="txt_Task" AutoPostBack="true" runat="server" Label="住院号" MaxLength="100" Text=""></ext:TextBox>
-                                                <ext:TextBox ID="TextBox1" AutoPostBack="true" runat="server" Label="病人名称" MaxLength="100" Text=""></ext:TextBox>
-                                                <ext:DatePicker ID="DatePicker2" Label="出生日期" runat="server"></ext:DatePicker>
+                                                <ext:DatePicker ID="DatePicker1" Label="申请时间" runat="server"></ext:DatePicker>
+                                                <ext:DatePicker ID="DatePicker3" Label="至" runat="server"></ext:DatePicker>
+                                                <ext:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server" Label="借阅状态" EnableSimulateTree="true">
+                                                    <ext:ListItem Text="已申请" Value="0" />
+                                                    <ext:ListItem Text="已审批" Value="1" Selected="true" />
+                                                    <ext:ListItem Text="拒绝" Value="2" />
+                                                </ext:DropDownList>
+                                                <ext:Button ID="Button1" runat="server" Icon="SystemSearch" Text="查询"></ext:Button>
                                             </Items>
                                         </ext:FormRow>
-                                        <ext:FormRow>
-                                            <Items>
-                                                <ext:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server" Label="入院科室" EnableSimulateTree="true">
-                                                    <ext:ListItem Text="无证" Value="0" />
-                                                    <ext:ListItem Text="有证" Value="1" Selected="true" />
-                                                    <ext:ListItem Text="不用发证" Value="2" />
-                                                </ext:DropDownList>
-                                                <ext:DropDownList ID="ddl_wuzheng" AutoPostBack="true" runat="server" Label="出院科室" EnableSimulateTree="true">
-                                                    <ext:ListItem Text="无证" Value="0" />
-                                                    <ext:ListItem Text="有证" Value="1" Selected="true" />
-                                                    <ext:ListItem Text="不用发证" Value="2" />
-                                                </ext:DropDownList>
-                                                <ext:TextBox ID="TextBox3" AutoPostBack="true" runat="server" Label="出院诊断" MaxLength="100" Text=""></ext:TextBox>
-                                                <ext:TextBox ID="TextBox4" AutoPostBack="true" runat="server" Label="手术名称" MaxLength="100" Text=""></ext:TextBox>
-                                                <ext:Button ID="btnQuery" runat="server" Icon="SystemSearch" Text="查询"></ext:Button>
-                                            </Items>
-                                        </ext:FormRow>
-                                       
+
                                     </Rows>
                                 </ext:Form>
                             </Items>
                         </ext:Panel>
-                        <ext:Panel ID="Panel2" runat="server" RowHeight="100%" Layout="Fit" ShowHeader="false">
+                        <ext:Panel ID="Panel2" runat="server" RowHeight="100%" Layout="Fit" ShowHeader="false" ShowBorder="false">
                             <Items>
                                 <ext:Grid ID="gr_Data" ShowHeader="False" runat="server" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true"
-                                            IsDatabasePaging="true" DataKeyNames="DATA_ID" EnableCheckBoxSelect="true">
-                                            <Columns>
-                                                <ext:BoundField DataToolTipField="DATA_NAME" HeaderText="病案号" SortField="DATA_NAME" DataField="DATA_NAME" Width="120px" />
-                                                <ext:BoundField DataToolTipField="TREE_PATH" HeaderText="病人ID" SortField="TREE_PATH" DataField="TREE_PATH" Width="120" />
-                                                <ext:BoundField DataToolTipField="TYPE_VALUE" Width="70px" HeaderText="入院次数" DataField="TYPE_VALUE" />
-                                                <ext:BoundField DataToolTipField="USER_NAME" Width="100px" HeaderText="病人姓名" DataField="USER_NAME" />
-                                                <ext:BoundField DataToolTipField="CREATER_DATE" HeaderText="性别" SortField="CREATER_DATE" DataField="CREATER_DATE" Width="60px" />
-                                                <ext:BoundField DataToolTipField="USER_NAME" Width="120px" HeaderText="入院日期" DataField="USER_NAME" />
-                                                <ext:BoundField DataToolTipField="CREATER_DATE" HeaderText="入院科室" SortField="CREATER_DATE" DataField="CREATER_DATE" Width="120px" />
-                                                <ext:BoundField DataToolTipField="USER_NAME" Width="120px" HeaderText="出院日期" DataField="USER_NAME" />
-                                                <ext:BoundField DataToolTipField="CREATER_DATE" HeaderText="出院科室" SortField="CREATER_DATE" DataField="CREATER_DATE" Width="120px" />
-                                                <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="60px" Icon="SystemSearch" CommandName="data_Query" />
-                                            </Columns>
-                                        </ext:Grid>
+                                    IsDatabasePaging="true" DataKeyNames="DATA_ID" EnableCheckBoxSelect="true">
+                                    <Columns>
+                                        <ext:BoundField DataToolTipField="DATA_NAME" HeaderText="借阅单号" SortField="DATA_NAME" DataField="DATA_NAME" Width="120px" />
+                                        <ext:BoundField DataToolTipField="TREE_PATH" HeaderText="借阅医生" SortField="TREE_PATH" DataField="TREE_PATH" Width="120px" />
+                                        <ext:BoundField DataToolTipField="TREE_PATH" HeaderText="借阅状态" SortField="TREE_PATH" DataField="TREE_PATH" Width="120px" />
+                                        <ext:BoundField DataToolTipField="TYPE_VALUE" Width="200px" HeaderText="借阅原由说明" DataField="TYPE_VALUE" />
+                                        <ext:BoundField DataToolTipField="USER_NAME" Width="100px" HeaderText="申请时间" DataField="USER_NAME" />
+                                        <ext:BoundField DataToolTipField="CREATER_DATE" HeaderText="借阅时间" DataField="CREATER_DATE" Width="60px" />
+                                        <ext:BoundField DataToolTipField="USER_NAME" Width="120px" HeaderText="归还时间" DataField="USER_NAME" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="60px" Icon="SystemSearch" CommandName="data_Query" />
+                                    </Columns>
+                                </ext:Grid>
                             </Items>
                         </ext:Panel>
                     </Items>
