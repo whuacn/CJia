@@ -78,11 +78,11 @@
                                                 </ext:TreeNode>
                                             </Nodes>
                                             <Nodes>
-                                                <ext:TreeNode NodeID="node_MyReceipt" Text="我的申请" IconUrl="Icons/user_home.png" NavigateUrl="UI/QueryPatientView.aspx">
+                                                <ext:TreeNode NodeID="node_MyReceipt" Text="我的申请" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyReceipt.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
                                              <Nodes>
-                                                <ext:TreeNode NodeID="node_MyBorrow" Text="我的借阅" IconUrl="Icons/user_home.png" NavigateUrl="UI/QueryPatientView.aspx">
+                                                <ext:TreeNode NodeID="node_MyBorrow" Text="我的借阅" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyBorrow.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
                                              <Nodes>

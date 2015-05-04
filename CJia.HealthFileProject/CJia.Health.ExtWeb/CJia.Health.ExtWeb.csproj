@@ -1885,6 +1885,8 @@
     <Content Include="LoginView.aspx" />
     <Content Include="UI\QueryPatientView.aspx" />
     <Content Include="UI\MyFavorite.aspx" />
+    <Content Include="UI\MyBorrow.aspx" />
+    <Content Include="UI\MyReceipt.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1923,6 +1925,20 @@
     </Compile>
     <Compile Include="UI\MyFavorite.aspx.designer.cs">
       <DependentUpon>MyFavorite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyBorrow.aspx.cs">
+      <DependentUpon>MyBorrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MyBorrow.aspx.designer.cs">
+      <DependentUpon>MyBorrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyReceipt.aspx.cs">
+      <DependentUpon>MyReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MyReceipt.aspx.designer.cs">
+      <DependentUpon>MyReceipt.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

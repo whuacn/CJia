@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyFavorite.aspx.cs" Inherits="CJia.Health.ExtWeb.UI.MyFavorite" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyBorrow.aspx.cs" Inherits="CJia.Health.ExtWeb.UI.MyBorrow" %>
 
 <%@ Register Assembly="ExtAspNet" Namespace="ExtAspNet" TagPrefix="ext" %>
 <!DOCTYPE html>
@@ -24,11 +24,8 @@
                             <Toolbars>
                                 <ext:Toolbar ID="Toolbar1" runat="server" Width="300px" CssClass="fontSize">
                                     <Items>
-                                        <ext:Button ID="Button1" runat="server" Icon="SystemSearch" Text="收藏夹管理"></ext:Button>
+                                        <ext:Label ID="Label13" runat="server" Text="我的借阅："></ext:Label>
                                         <ext:DropDownList ID="ddl_Data_Type" AutoPostBack="true" runat="server" Width="150px">
-                                            <ext:ListItem Text="<全部>" Value="0" Selected="true" />
-                                            <ext:ListItem Text="糖尿病" Value="1" Selected="false" />
-                                            <ext:ListItem Text="高血压" Value="2" Selected="false" />
                                         </ext:DropDownList>
                                         <ext:Button ID="btnQuery" runat="server" Icon="SystemSearch" Text="查询"></ext:Button>
                                     </Items>
