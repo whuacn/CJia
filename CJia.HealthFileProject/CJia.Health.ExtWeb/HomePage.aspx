@@ -74,7 +74,7 @@
                                     <Items>
                                         <ext:Tree ID="tree_MBasic" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
                                             <Nodes>
-                                                <ext:TreeNode NodeID="node_DeptUser" Text="病案查询" IconUrl="Icons/user_home.png" NavigateUrl="UI/QueryPatientView.aspx">
+                                                <ext:TreeNode NodeID="node_DeptUser" Text="病案查询" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyQuery.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
                                             <Nodes>

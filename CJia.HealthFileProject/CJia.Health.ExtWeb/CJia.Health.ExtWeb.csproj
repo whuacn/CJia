@@ -1887,6 +1887,7 @@
     <Content Include="UI\MyFavorite.aspx" />
     <Content Include="UI\MyBorrow.aspx" />
     <Content Include="UI\MyReceipt.aspx" />
+    <Content Include="UI\MyQuery.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1939,6 +1940,13 @@
     </Compile>
     <Compile Include="UI\MyReceipt.aspx.designer.cs">
       <DependentUpon>MyReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyQuery.aspx.cs">
+      <DependentUpon>MyQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MyQuery.aspx.designer.cs">
+      <DependentUpon>MyQuery.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

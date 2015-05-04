@@ -10,7 +10,7 @@
 namespace CJia.Health.ExtWeb.UI {
     
     
-    public partial class MyReceipt {
+    public partial class MyQuery {
         
         /// <summary>
         /// Icon 控件。

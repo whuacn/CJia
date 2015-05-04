@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyReceipt.aspx.cs" Inherits="CJia.Health.ExtWeb.UI.MyReceipt" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyQuery.aspx.cs" Inherits="CJia.Health.ExtWeb.UI.MyQuery" %>
 
 <%@ Register Assembly="ExtAspNet" Namespace="ExtAspNet" TagPrefix="ext" %>
 <!DOCTYPE html>
