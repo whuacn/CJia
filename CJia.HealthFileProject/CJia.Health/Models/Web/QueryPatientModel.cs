@@ -6,7 +6,7 @@ using System.Data;
 
 namespace CJia.Health.Models.Web
 {
-    public class QueryPatientModel : CJia.Health.Tools.Model
+    public class QueryPatientModel : PatientApplyModel
     {
         /// <summary>
         /// 查询省
@@ -186,14 +186,7 @@ namespace CJia.Health.Models.Web
             }
             string newsqlStr = string.Format(SqlTools.SqlQueryPatient, str);
             DataTable dtResult = CJia.DefaultOleDb.Query(newsqlStr);
-            if (dtResult != null && dtResult.Rows.Count > 0)
-            {
-                return dtResult;
-            }
-            else
-            {
-                return null;
-            }
+            return dtResult;
         }
         /// <summary>
         /// 根据用户id查询申请病案

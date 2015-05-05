@@ -247,5 +247,23 @@ namespace CJia.Health.Models.Web
                 return null;
             }
         }
+        /// <summary>
+        /// 根据病案ID 查询病案
+        /// </summary>
+        /// <param name="patientID"></param>
+        /// <returns></returns>
+        public DataTable GetPatientByID(string patientID)
+        {
+            object[] sqlParams = new object[] { patientID };
+            DataTable dtResult = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlQueryPatientByID, sqlParams);
+            if (dtResult != null && dtResult.Rows.Count > 0)
+            {
+                return dtResult;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

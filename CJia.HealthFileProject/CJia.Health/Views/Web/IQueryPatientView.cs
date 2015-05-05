@@ -14,6 +14,7 @@ namespace CJia.Health.Views.Web
         event EventHandler OnInit;
         event EventHandler<QueryPatientArgs> OnProviceChanged;
         event EventHandler<QueryPatientArgs> OnDeptChanged;
+        event EventHandler<QueryPatientArgs> OnApply;
         /// <summary>
         /// 查询事件
         /// </summary>
@@ -23,6 +24,7 @@ namespace CJia.Health.Views.Web
         /// </summary>
         /// <param name="data"></param>
         void ExeBindSelectRecord(DataTable data);
+        void ExeBindPatient(DataTable data);
         /// <summary>
         /// 初始化绑定
         /// </summary>
@@ -62,5 +64,13 @@ namespace CJia.Health.Views.Web
         /// </summary>
         public MyPatient Patient;
         public DataTable UserData;
+        /// <summary>
+        /// 病案号
+        /// </summary>
+        public List<string> HealthIDList;
+        /// <summary>
+        /// 借阅原因
+        /// </summary>
+        public string Reason;
     }
 }

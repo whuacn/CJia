@@ -12,6 +12,13 @@ namespace CJia.Health.Presenters.Web
             : base(view)
         {
             view.OnApply += view_OnApply;
+            view.OnGetPatientByID += view_OnGetPatientByID;
+        }
+
+        void view_OnGetPatientByID(object sender, Views.Web.PatientApplyArgs e)
+        {
+            DataTable data = Model.GetPatientByID(e.ID);
+            View.ExeBindPatient(data);
         }
 
         void view_OnApply(object sender, Views.Web.PatientApplyArgs e)

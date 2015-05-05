@@ -12,6 +12,7 @@ namespace CJia.Health.Views.Web
         /// 提交借阅申请
         /// </summary>
         event EventHandler<PatientApplyArgs> OnApply;
+        event EventHandler<PatientApplyArgs> OnGetPatientByID;
         /// <summary>
         /// 绑定病案
         /// </summary>
@@ -33,5 +34,9 @@ namespace CJia.Health.Views.Web
         /// </summary>
         public string Reason;
         public DataTable UserData;
+        /// <summary>
+        /// 病案ID
+        /// </summary>
+        public string ID;
     }
 }

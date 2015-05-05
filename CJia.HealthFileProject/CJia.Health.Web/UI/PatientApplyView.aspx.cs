@@ -33,6 +33,7 @@ namespace CJia.Health.Web.UI
 
         #region IPatientApplyView成员
         public event EventHandler<Views.Web.PatientApplyArgs> OnApply;
+        public event EventHandler<Views.Web.PatientApplyArgs> OnGetPatientByID;
         public void ExeBindPatient(DataTable data)
         {
             PatientGridView.DataSource = data;

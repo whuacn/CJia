@@ -15,6 +15,44 @@ namespace CJia.Health.Presenters.Web
             view.OnProviceChanged += view_OnProviceChanged;
             view.OnDeptChanged += view_OnDeptChanged;
             view.OnSelect += view_OnSelect;
+            view.OnApply += view_OnApply;
+        }
+
+        void view_OnApply(object sender, Views.Web.QueryPatientArgs e)
+        {
+            if (e.HealthIDList.Count > 0)
+            {
+                string borrowSeq = Model.GetBorrowSeq();
+                string borrowNO = Model.GetBorrowNO();
+                using (CJia.Transaction trans = new Transaction(CJia.DefaultOleDb.DefaultAdapter))
+                {
+                    bool bolBorrow = Model.AddBorrow(trans.ID, borrowSeq, borrowNO, e.Reason, e.UserData.Rows[0]["USER_ID"].ToString(), e.UserData.Rows[0]["USER_NAME"].ToString());
+                    for (int i = 0; i < e.HealthIDList.Count; i++)
+                    {
+                        bool bolBorrowDetail = Model.AddBorrowDetail(trans.ID, e.HealthIDList[i], borrowSeq, e.UserData.Rows[0]["USER_ID"].ToString());
+                    }
+                    trans.Complete();
+                }
+                DataTable recordData = Model.QueryPatient(e.Patient);
+                DataTable applyData = Model.GetApply(e.UserData.Rows[0]["USER_ID"].ToString());
+                if (applyData == null)
+                {
+                    DataColumn dc = new DataColumn("FLAG", typeof(String));
+                    DataColumn dc1 = new DataColumn("ENABLE", typeof(Boolean));
+                    recordData.Columns.Add(dc);
+                    recordData.Columns.Add(dc1);
+                    foreach (DataRow dr in recordData.Rows)
+                    {
+                        dr["ENABLE"] = true;
+                        dr["FLAG"] = "";
+                    }
+                    View.ExeBindPatient(recordData);
+                }
+                else if (recordData != null && applyData != null)
+                {
+                    View.ExeBindPatient(isApply(recordData, applyData));
+                }
+            }
         }
 
         void view_OnSelect(object sender, Views.Web.QueryPatientArgs e)

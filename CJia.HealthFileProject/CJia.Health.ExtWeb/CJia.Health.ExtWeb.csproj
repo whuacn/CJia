@@ -1883,6 +1883,7 @@
     <Content Include="Js\menu.js" />
     <Content Include="Js\tab.js" />
     <Content Include="LoginView.aspx" />
+    <Content Include="UI\PatientInfoView.aspx" />
     <Content Include="UI\QueryPatientView.aspx" />
     <Content Include="UI\MyFavorite.aspx" />
     <Content Include="UI\MyBorrow.aspx" />
@@ -1915,6 +1916,13 @@
       <DependentUpon>LoginView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\PatientInfoView.aspx.cs">
+      <DependentUpon>PatientInfoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PatientInfoView.aspx.designer.cs">
+      <DependentUpon>PatientInfoView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\QueryPatientView.aspx.cs">
       <DependentUpon>QueryPatientView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

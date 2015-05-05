@@ -10,16 +10,7 @@
 namespace CJia.Health.ExtWeb.UI {
     
     
-    public partial class MyQuery {
-        
-        /// <summary>
-        /// Icon 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlLink Icon;
+    public partial class PatientInfoView {
         
         /// <summary>
         /// form1 控件。
@@ -31,228 +22,291 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// pm_Main 控件。
+        /// lblPatientName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.PageManager pm_Main;
+        protected global::System.Web.UI.WebControls.Label lblPatientName;
         
         /// <summary>
-        /// rpnl_Main 控件。
+        /// lblInHosTimes 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.RegionPanel rpnl_Main;
+        protected global::System.Web.UI.WebControls.Label lblInHosTimes;
         
         /// <summary>
-        /// ren_Center 控件。
+        /// lblRecordNO 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Region ren_Center;
+        protected global::System.Web.UI.WebControls.Label lblRecordNO;
         
         /// <summary>
-        /// Panel1 控件。
+        /// lblPatientName1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Label lblPatientName1;
         
         /// <summary>
-        /// sf_Edit 控件。
+        /// lblGender 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Form sf_Edit;
+        protected global::System.Web.UI.WebControls.Label lblGender;
         
         /// <summary>
-        /// startDate 控件。
+        /// lblBirthDay1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DatePicker startDate;
+        protected global::System.Web.UI.WebControls.Label lblBirthDay1;
         
         /// <summary>
-        /// endDate 控件。
+        /// lblHunFou 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DatePicker endDate;
+        protected global::System.Web.UI.WebControls.Label lblHunFou;
         
         /// <summary>
-        /// txtRecordNO 控件。
+        /// lblZhiYe 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txtRecordNO;
+        protected global::System.Web.UI.WebControls.Label lblZhiYe;
         
         /// <summary>
-        /// txtPatientName 控件。
+        /// lblBirthCity 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox txtPatientName;
+        protected global::System.Web.UI.WebControls.Label lblBirthCity;
         
         /// <summary>
-        /// btnResert 控件。
+        /// lblMinZu 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnResert;
+        protected global::System.Web.UI.WebControls.Label lblMinZu;
         
         /// <summary>
-        /// cbRYKS 控件。
+        /// lblGuoJi 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList cbRYKS;
+        protected global::System.Web.UI.WebControls.Label lblGuoJi;
         
         /// <summary>
-        /// cbCYKS 控件。
+        /// lblRYFS 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList cbCYKS;
+        protected global::System.Web.UI.WebControls.Label lblRYFS;
         
         /// <summary>
-        /// CYZD 控件。
+        /// lblRYDept 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox CYZD;
+        protected global::System.Web.UI.WebControls.Label lblRYDept;
         
         /// <summary>
-        /// SSMC 控件。
+        /// lblRYDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextBox SSMC;
+        protected global::System.Web.UI.WebControls.Label lblRYDate;
         
         /// <summary>
-        /// btnQuery 控件。
+        /// lblRYDoctor 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnQuery;
+        protected global::System.Web.UI.WebControls.Label lblRYDoctor;
         
         /// <summary>
-        /// Panel2 控件。
+        /// lblRYDoctorNO 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel Panel2;
+        protected global::System.Web.UI.WebControls.Label lblRYDoctorNO;
         
         /// <summary>
-        /// gr_Main 控件。
+        /// lblCYDept 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Grid gr_Main;
+        protected global::System.Web.UI.WebControls.Label lblCYDept;
         
         /// <summary>
-        /// btnApply 控件。
+        /// lblCYDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnApply;
+        protected global::System.Web.UI.WebControls.Label lblCYDate;
         
         /// <summary>
-        /// win_Edit 控件。
+        /// lblCYDoctor 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Window win_Edit;
+        protected global::System.Web.UI.WebControls.Label lblCYDoctor;
         
         /// <summary>
-        /// win_Reson 控件。
+        /// lblCYDoctorNO 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Window win_Reson;
+        protected global::System.Web.UI.WebControls.Label lblCYDoctorNO;
         
         /// <summary>
-        /// pnl_Search 控件。
+        /// lblCYZD1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel pnl_Search;
+        protected global::System.Web.UI.WebControls.Label lblCYZD1;
         
         /// <summary>
-        /// txtReson 控件。
+        /// lblCYZD2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.TextArea txtReson;
+        protected global::System.Web.UI.WebControls.Label lblCYZD2;
         
         /// <summary>
-        /// tbr_Search 控件。
+        /// lblCYZD3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Toolbar tbr_Search;
+        protected global::System.Web.UI.WebControls.Label lblCYZD3;
         
         /// <summary>
-        /// tf_sb 控件。
+        /// lblCYZD4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.ToolbarFill tf_sb;
+        protected global::System.Web.UI.WebControls.Label lblCYZD4;
         
         /// <summary>
-        /// btnOk 控件。
+        /// lblSSMC1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnOk;
+        protected global::System.Web.UI.WebControls.Label lblSSMC1;
+        
+        /// <summary>
+        /// lblSSMC2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSSMC2;
+        
+        /// <summary>
+        /// lblSSMC3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSSMC3;
+        
+        /// <summary>
+        /// lblSSMC4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSSMC4;
+        
+        /// <summary>
+        /// lblYNGR1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblYNGR1;
+        
+        /// <summary>
+        /// lblYNGR2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblYNGR2;
+        
+        /// <summary>
+        /// lblBLZD1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBLZD1;
+        
+        /// <summary>
+        /// lblBLZD2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBLZD2;
     }
 }

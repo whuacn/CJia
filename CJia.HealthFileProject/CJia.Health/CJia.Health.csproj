@@ -61,6 +61,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CJia.Bin\DevExpress\DevExpress.XtraEditors.v12.1.dll</HintPath>
     </Reference>
+    <Reference Include="ExtAspNet">
+      <HintPath>..\..\CJia.Bin\Framework\Debug\ExtAspNet.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\CJia.Bin\Framework\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>

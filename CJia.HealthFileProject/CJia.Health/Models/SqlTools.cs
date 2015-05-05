@@ -790,7 +790,7 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @"select * from gm_patient_view p where p.status='1' AND P.check_status='101' {0}";
+                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where p.status='1' AND P.check_status='101' {0}";
             }
         }
         /// <summary>
@@ -2543,6 +2543,13 @@ values
             get
             {
                 return @"update gm_parameter t set t.value=? WHERE t.value_type='LogoInclination'";
+            }
+        }
+        public static string SqlQueryPatientByID
+        {
+            get
+            {
+                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where P.id=?";
             }
         }
     }
