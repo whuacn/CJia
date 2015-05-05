@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.LblLogTime = new System.Windows.Forms.ToolStripStatusLabel();
@@ -89,10 +88,12 @@
             this.tsbScanningMonitoring = new System.Windows.Forms.ToolStripButton();
             this.btnError = new System.Windows.Forms.ToolStripButton();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
+            this.xtpHome = new DevExpress.XtraTab.XtraTabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnCancelPreview = new DevExpress.XtraEditors.SimpleButton();
             this.cbSpeak = new System.Windows.Forms.CheckBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.timerSpeak = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer();
+            this.timerSpeak = new System.Windows.Forms.Timer();
             this.btnQueryExpition = new DevExpress.XtraEditors.SimpleButton();
             this.btnQueryPharm = new DevExpress.XtraEditors.SimpleButton();
             this.btnNoPrintLabel = new DevExpress.XtraEditors.SimpleButton();
@@ -101,6 +102,8 @@
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
+            this.tabMain.SuspendLayout();
+            this.xtpHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -590,9 +593,33 @@
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 64);
             this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedTabPage = this.xtpHome;
             this.tabMain.Size = new System.Drawing.Size(1362, 475);
             this.tabMain.TabIndex = 3;
+            this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtpHome});
             this.tabMain.DoubleClick += new System.EventHandler(this.tabMain_DoubleClick);
+            // 
+            // xtpHome
+            // 
+            this.xtpHome.Controls.Add(this.richTextBox1);
+            this.xtpHome.Name = "xtpHome";
+            this.xtpHome.Size = new System.Drawing.Size(1356, 446);
+            this.xtpHome.Text = "首页";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(1356, 446);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "2015-05-05 版本发布信息\n  1.完成审方，点击无反应\n  2.医嘱开具的时候，不关心药房。静配可能无此药品。需要在审方的时候进行提示，用相同代码的药品" +
+    "进行替换。当有多个相同代码的药品，则任意选择。\n  3.取消批次顺延\n  4.日常用药，增加静配入库功能\n  5.静脉注射的瓶贴样式需要修改，详细见样张\n  6" +
+    ".新老瓶贴版本合并，采用的瓶贴样式根据配置文件自动调整";
             // 
             // btnCancelPreview
             // 
@@ -721,7 +748,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "静脉药物配置中心 v2.2.16 新瓶贴版";
+            this.Text = "静脉药物配置中心 v2.5.5 ";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -729,6 +756,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
+            this.tabMain.ResumeLayout(false);
+            this.xtpHome.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -802,6 +831,8 @@
         private System.Windows.Forms.ToolStripButton tsbScanningMonitoring;
         private DevExpress.XtraEditors.SimpleButton btnTimer;
         private System.Windows.Forms.ToolStripButton btnError;
+        private DevExpress.XtraTab.XtraTabPage xtpHome;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

@@ -33,8 +33,8 @@ namespace CJia.PIVAS.App
             LblUserName.Text = User.UserName;
             LblLogTime.Text = User.LogTime.ToString();
             this.IimitsManagement();
-
-
+            string labelSpec = (Common.GetLableSpec() == "1") ? "普通瓶贴版" : "静脉高营养";
+            this.Text = this.Text + "【" + labelSpec + "】";
         }
 
         protected override object CreatePresenter()
@@ -50,7 +50,7 @@ namespace CJia.PIVAS.App
         /// </summary>
         public void IimitsManagement()
         {
-            if(User.IsAdmin != "1")
+            if (User.IsAdmin != "1")
             {
                 this.TmsiDataManage.Visible = false;
                 this.btnPharmEconomize.Visible = false;
@@ -62,7 +62,7 @@ namespace CJia.PIVAS.App
                 this.btnPharmEconomize.Visible = true;
                 this.btnEconomizePharm.Visible = true;
             }
-            if(User.role == "0")
+            if (User.role == "0")
             {
                 this.btnCheckAdvice.Text = "修改医嘱批次";
                 this.基本业务ToolStripMenuItem.Visible = false;
@@ -98,7 +98,7 @@ namespace CJia.PIVAS.App
                 this.btnQueryExpition.Visible = false;
                 this.btnQueryPharm.Visible = false;
             }
-            else if(User.role == "2")
+            else if (User.role == "2")
             {
                 this.基本业务ToolStripMenuItem.Visible = false;
                 this.综合查询ToolStripMenuItem.Visible = false;
@@ -162,10 +162,10 @@ namespace CJia.PIVAS.App
         /// <param name="pageTitle">button的text属性字段</param>
         private void MenuShowPage(string pageTitle)
         {
-            if(!isExistPage(pageTitle))
+            if (!isExistPage(pageTitle))
             {
                 UserControl uc = null;
-                switch(pageTitle)
+                switch (pageTitle)
                 {
                     case "单组冲药":
                         uc = new UI.SendPharm();
@@ -240,7 +240,7 @@ namespace CJia.PIVAS.App
                     default:
                         break;
                 }
-                if(uc != null)
+                if (uc != null)
                 {
                     ShowPage(pageTitle, uc);
                 }
@@ -271,9 +271,9 @@ namespace CJia.PIVAS.App
         /// <returns>bool</returns>
         public bool isExistPage(string PageTitle)
         {
-            for(int i = 0; i < tabMain.TabPages.Count; i++)
+            for (int i = 0; i < tabMain.TabPages.Count; i++)
             {
-                if(tabMain.TabPages[i].Name == PageTitle)
+                if (tabMain.TabPages[i].Name == PageTitle)
                 {
                     tabMain.SelectedTabPage = tabMain.TabPages[i];
                     return true;
@@ -288,7 +288,7 @@ namespace CJia.PIVAS.App
         /// <param name="e"></param>
         private void tabMain_DoubleClick(object sender, EventArgs e)
         {
-            if(tabMain.SelectedTabPage != null)
+            if (tabMain.SelectedTabPage != null)
             {
                 int index = tabMain.SelectedTabPageIndex;
                 this.tabMain.SelectedTabPage.Dispose();
@@ -336,7 +336,7 @@ namespace CJia.PIVAS.App
         private void btnTimer_Click(object sender, EventArgs e)
         {
             this.isTimer = !this.isTimer;
-            if(this.isTimer)
+            if (this.isTimer)
             {
                 this.cbSpeak.Visible = true;
                 this.btnCancelPreview.Visible = true;
@@ -376,7 +376,7 @@ namespace CJia.PIVAS.App
         // 退出系统
         private void TmsiQuit_Click(object sender, EventArgs e)
         {
-            if(CJia.PIVAS.Tools.Message.ShowQuery("是否确认退出系统", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
+            if (CJia.PIVAS.Tools.Message.ShowQuery("是否确认退出系统", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
             {
                 this.Close();
             }
@@ -389,7 +389,7 @@ namespace CJia.PIVAS.App
         // 注销
         private void TmsiLogOut_Click(object sender, EventArgs e)
         {
-            if(CJia.PIVAS.Tools.Message.ShowQuery("是否确认注销", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
+            if (CJia.PIVAS.Tools.Message.ShowQuery("是否确认注销", CJia.PIVAS.Tools.Message.Button.YesNo) == CJia.PIVAS.Tools.Message.Result.Yes)
             {
                 Form frm = new Form();
                 frm.Text = "登录";
@@ -401,7 +401,7 @@ namespace CJia.PIVAS.App
                 frm.Controls.Add(loginView);
                 loginView.Dock = DockStyle.Fill;
                 frm.ShowDialog();
-                if(User.isLoginSuccess)
+                if (User.isLoginSuccess)
                 {
 
                     this.isLogOff = true;
@@ -417,7 +417,7 @@ namespace CJia.PIVAS.App
         //定时监测
         private void timer_Tick(object sender, EventArgs e)
         {
-            if(this.isTimer)
+            if (this.isTimer)
             {
                 this.timer.Stop();
                 CJia.PIVAS.Views.MainFromEventArgs mainFromEventArgs = new Views.MainFromEventArgs();
@@ -432,23 +432,23 @@ namespace CJia.PIVAS.App
         //语音提示
         private void timerSpeak_Tick(object sender, EventArgs e)
         {
-            if(this.isTimer)
+            if (this.isTimer)
             {
-                if(this.cbSpeak.Checked)
+                if (this.cbSpeak.Checked)
                 {
-                    if(this.IsNoCheck)
+                    if (this.IsNoCheck)
                     {
                         this.SpeakMessage("有未审核的医嘱");
                     }
-                    if(this.IsExceptionLabel)
+                    if (this.IsExceptionLabel)
                     {
                         this.SpeakMessage("有异常瓶贴");
                     }
-                    if(this.IsSorage)
+                    if (this.IsSorage)
                     {
                         this.SpeakMessage("有药品库存不足");
                     }
-                    if(this.IsNoPrintLabel)
+                    if (this.IsNoPrintLabel)
                     {
                         this.SpeakMessage("有未打印的瓶贴");
                     }
@@ -588,7 +588,7 @@ namespace CJia.PIVAS.App
         //监测异常瓶贴回调方法
         public void ExeQueryExceptionLabel(DataTable result)
         {
-            if(result != null && result.Rows != null && result.Rows.Count != 0)
+            if (result != null && result.Rows != null && result.Rows.Count != 0)
             {
                 this.btnQueryExpition.ForeColor = Color.Red;
                 this.btnQueryExpition.Text = "有异常瓶贴";
@@ -610,7 +610,7 @@ namespace CJia.PIVAS.App
         private bool IsSorage = false;
         public void ExeQueryStorage(DataTable result)
         {
-            if(result != null && result.Rows != null && result.Rows.Count != 0)
+            if (result != null && result.Rows != null && result.Rows.Count != 0)
             {
                 this.btnQueryPharm.ForeColor = Color.Red;
                 this.btnQueryPharm.Text = "有药品库存不足";
@@ -630,7 +630,7 @@ namespace CJia.PIVAS.App
         //回调方法
         public void ExeQueryNoCheckAdvice(bool result)
         {
-            if(result)
+            if (result)
             {
                 this.btnCancelPreview.ForeColor = Color.Red;
                 this.btnCancelPreview.Text = "有未审核的医嘱";
