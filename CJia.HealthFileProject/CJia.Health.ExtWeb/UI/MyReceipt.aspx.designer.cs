@@ -49,22 +49,22 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.RegionPanel rpnl_Main;
         
         /// <summary>
-        /// ren_Center 控件。
+        /// rgn_Top 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Region ren_Center;
+        protected global::ExtAspNet.Region rgn_Top;
         
         /// <summary>
-        /// Panel1 控件。
+        /// Toolbar1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel Panel1;
+        protected global::ExtAspNet.Toolbar Toolbar1;
         
         /// <summary>
         /// sf_Edit 控件。
@@ -76,40 +76,31 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.Form sf_Edit;
         
         /// <summary>
-        /// DatePicker1 控件。
+        /// applyName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DatePicker DatePicker1;
+        protected global::ExtAspNet.Label applyName;
         
         /// <summary>
-        /// DatePicker3 控件。
+        /// applyTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DatePicker DatePicker3;
+        protected global::ExtAspNet.Label applyTime;
         
         /// <summary>
-        /// DropDownList1 控件。
+        /// applyReson 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// Button1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Button Button1;
+        protected global::ExtAspNet.Label applyReson;
         
         /// <summary>
         /// Panel2 控件。
@@ -121,12 +112,48 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.Panel Panel2;
         
         /// <summary>
-        /// gr_Data 控件。
+        /// gr_Main 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Grid gr_Data;
+        protected global::ExtAspNet.Grid gr_Main;
+        
+        /// <summary>
+        /// ren_Center 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Region ren_Center;
+        
+        /// <summary>
+        /// pnl_Main 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Panel pnl_Main;
+        
+        /// <summary>
+        /// gr_detail 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Grid gr_detail;
+        
+        /// <summary>
+        /// win_Edit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Window win_Edit;
     }
 }

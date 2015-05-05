@@ -113,36 +113,36 @@ namespace CJia.Health.Tools
 
         protected void ddl_PageSize_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Session["DataSource"] != null)
-            {
-                this.B_gr_Main.PageIndex = 0;
-                this.B_gr_Main.PageSize = int.Parse(this.B_ddl_PageSize.SelectedValue);
-                DataTable data = Session["DataSource"] as DataTable;
-                this.InitGrid(data);
-            }
+            //if (Session["DataSource"] != null)
+            //{
+            //    this.B_gr_Main.PageIndex = 0;
+            //    this.B_gr_Main.PageSize = int.Parse(this.B_ddl_PageSize.SelectedValue);
+            //    DataTable data = Session["DataSource"] as DataTable;
+            //    this.InitGrid(data);
+            //}
         }
 
-        protected void gr_Main_Sort(object sender, GridSortEventArgs e)
+        protected void gr_Main_Sort2(object sender, GridSortEventArgs e)
         {
-            if (Session["DataSource"] != null)
-            {
-                this.ViewState["SortExpression"] = e.SortField;
-                this.ViewState["SortDirection"] = e.SortDirection;
-                DataTable dt = Session["DataSource"] as DataTable;
-                dt.DefaultView.Sort = e.SortField + " " + e.SortDirection;
-                //this.InitGrid(Tools.ExtGridBase.DataSource);
-                this.InitGrid(dt);
-            }
+            //if (Session["DataSource"] != null)
+            //{
+            //    this.ViewState["SortExpression"] = e.SortField;
+            //    this.ViewState["SortDirection"] = e.SortDirection;
+            //    DataTable dt = Session["DataSource"] as DataTable;
+            //    dt.DefaultView.Sort = e.SortField + " " + e.SortDirection;
+            //    //this.InitGrid(Tools.ExtGridBase.DataSource);
+            //    this.InitGrid(dt);
+            //}
         }
 
-        protected void gr_Main_PageIndexChange(object sender, GridPageEventArgs e)
+        protected void gr_Main_PageIndexChange2(object sender, GridPageEventArgs e)
         {
-            if (Session["DataSource"] != null)
-            {
-                this.B_gr_Main.PageIndex = e.NewPageIndex;
-                DataTable dt = Session["DataSource"] as DataTable;
-                this.InitGrid(dt);
-            }
+            //if (Session["DataSource"] != null)
+            //{
+            //    this.B_gr_Main.PageIndex = e.NewPageIndex;
+            //    DataTable dt = Session["DataSource"] as DataTable;
+            //    this.InitGrid(dt);
+            //}
         }
         #region【树绑定】
         /// <summary>

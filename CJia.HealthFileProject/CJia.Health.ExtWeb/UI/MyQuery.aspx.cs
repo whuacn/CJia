@@ -14,7 +14,6 @@ namespace CJia.Health.ExtWeb.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            InitPage();
             if (!IsPostBack)
             {
                 if (OnInit != null)
@@ -27,20 +26,14 @@ namespace CJia.Health.ExtWeb.UI
         {
             return new Presenters.Web.QueryPatientPresenter(this);
         }
-        protected override bool InitPage()
-        {
-            this.B_gr_Main = this.gr_Main;
-            return true;
-        }
         Views.Web.QueryPatientArgs queryPatientArgs = new Views.Web.QueryPatientArgs();
         #region IQueryPatientView成员
         public event EventHandler<QueryPatientArgs> OnApply;
         public void ExeBindPatient(DataTable data)
         {
-            if (data != null)
-            {
-                InitGrid(data);
-            }
+            Session["MyQuery"] = new DataTable();
+            Session["MyQuery"] = data;
+            InitGrid(data);
         }
         public event EventHandler OnInit;
         public event EventHandler<Views.Web.QueryPatientArgs> OnProviceChanged;
@@ -68,10 +61,9 @@ namespace CJia.Health.ExtWeb.UI
         public event EventHandler<Views.Web.QueryPatientArgs> OnSelect;
         public void ExeBindSelectRecord(DataTable data)
         {
-            if (data != null)
-            {
-                InitGrid(data);
-            }
+            Session["MyQuery"] = new DataTable();
+            Session["MyQuery"] = data;
+            InitGrid(data);
         }
         #endregion
 
@@ -130,13 +122,24 @@ namespace CJia.Health.ExtWeb.UI
             }
             return patient;
         }
+        public void InitGrid(DataTable data)
+        {
+            PagedDataSource ps = new PagedDataSource();
+            ps.DataSource = data.DefaultView;
+            ps.AllowPaging = true; //是否可以分页
+            ps.PageSize = gr_Main.PageSize; //显示的数量
+            ps.CurrentPageIndex = gr_Main.PageIndex; //取得当前页的页码
+            gr_Main.RecordCount = data.Rows.Count;
+            gr_Main.DataSource = ps;
+            gr_Main.DataBind();
+        }
         #endregion
 
         protected void btnQuery_Click(object sender, EventArgs e)
         {
             if (OnSelect != null && Session["User"] != null)
             {
-                B_gr_Main.PageIndex = 0;
+                gr_Main.PageIndex = 0;
                 queryPatientArgs.Patient = GetUserSelect();
                 queryPatientArgs.UserData = Session["User"] as DataTable;
                 OnSelect(sender, queryPatientArgs);
@@ -205,6 +208,16 @@ namespace CJia.Health.ExtWeb.UI
                 return;
             }
             win_Reson.Hidden = false;
+        }
+
+        protected void gr_Main_PageIndexChange(object sender, GridPageEventArgs e)
+        {
+            if (Session["MyQuery"] != null)
+            {
+                this.gr_Main.PageIndex = e.NewPageIndex;
+                DataTable dt = Session["MyQuery"] as DataTable;
+                this.InitGrid(dt);
+            }
         }
 
     }

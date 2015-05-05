@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using CJia.Health.Views.Web;
 
 namespace CJia.Health.Web.UI
 {
@@ -31,6 +32,14 @@ namespace CJia.Health.Web.UI
         Views.Web.QueryPatientArgs queryPatientArgs = new Views.Web.QueryPatientArgs();
 
         #region IQueryPatientView成员
+        public event EventHandler<QueryPatientArgs> OnApply;
+        public void ExeBindPatient(DataTable data)
+        {
+            if (data != null)
+            {
+                InitGrid(data);
+            }
+        }
         public event EventHandler OnInit;
         public event EventHandler<Views.Web.QueryPatientArgs> OnProviceChanged;
         public event EventHandler<Views.Web.QueryPatientArgs> OnDeptChanged;

@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>病案借阅系统 用户登录</title>
     <script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="css/register.css" />
+    <link rel="stylesheet" type="text/css" href="Css/register.css" />
 </head>
 <body>
     <div id="Div1" class='signup_container' runat="server">

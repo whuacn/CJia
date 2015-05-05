@@ -42,12 +42,11 @@
                                                 <ext:Button ID="btnQuery" runat="server" Icon="SystemSearch" OnClick="btnQuery_Click" Text="查询"></ext:Button>
                                             </Items>
                                         </ext:FormRow>
-
                                     </Rows>
                                 </ext:Form>
                             </Items>
                         </ext:Panel>
-                        <ext:Panel ID="Panel2" runat="server" RowHeight="84%" Layout="Fit" ShowHeader="false" BodyPadding="3px">
+                        <ext:Panel ID="Panel2" runat="server" Layout="Fit" AutoScroll="true" RowHeight="84%" ShowHeader="false" BodyPadding="3px">
                             <Items>
                                 <ext:Grid ID="gr_Main" ShowHeader="False" runat="server" EnableCheckBoxSelect="true" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true"
                                     IsDatabasePaging="true" OnPageIndexChange="gr_Main_PageIndexChange" OnRowCommand="gr_Main_RowCommand"
@@ -57,7 +56,7 @@
                                         <ext:BoundField DataToolTipField="RECORDNO" HeaderText="病案号" SortField="RECORDNO" DataField="RECORDNO" Width="110px" />
                                         <%--<ext:BoundField DataToolTipField="PATIENT_ID" HeaderText="病人ID" DataField="PATIENT_ID" Width="110" />--%>
                                         <ext:BoundField DataToolTipField="IN_HOSPITAL_TIME" Width="70px" HeaderText="入院次数" DataField="IN_HOSPITAL_TIME" />
-                                        <ext:BoundField DataToolTipField="PATIENT_NAME" Width="100px" HeaderText="病人姓名" DataField="PATIENT_NAME" />
+                                        <ext:BoundField DataToolTipField="PATIENT_NAME" Width="90px" HeaderText="病人姓名" DataField="PATIENT_NAME" />
                                         <ext:BoundField DataToolTipField="GENDER_NAME" HeaderText="性别" DataField="GENDER_NAME" Width="50px" />
                                         <ext:BoundField DataToolTipField="IN_HOSPITAL_DATE2" Width="100px" HeaderText="入院日期" DataField="IN_HOSPITAL_DATE2" />
                                         <ext:BoundField DataToolTipField="IN_HOSPITAL_DEPT_NAME" HeaderText="入院科室" SortField="IN_HOSPITAL_DEPT_NAME" DataField="IN_HOSPITAL_DEPT_NAME" Width="120px" />
@@ -65,11 +64,11 @@
                                         <ext:BoundField DataToolTipField="OUT_HOSPITAL_DEPT_NAME" HeaderText="出院科室" SortField="OUT_HOSPITAL_DEPT_NAME" DataField="OUT_HOSPITAL_DEPT_NAME" Width="120px" />
                                         <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Info" HeaderText="&nbsp;" Width="80px" CommandName="Info" Text="详细信息>>" />
                                         <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_fav" HeaderText="&nbsp;" Width="40px" Icon="Add" CommandName="Favorite" ToolTip="收藏" Text="" />
-                                        <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Apply" HeaderText="&nbsp;" Width="60px" Icon="ApplicationEdit" CommandName="Apply" ToolTip="申请借阅" Text="" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Apply" HeaderText="&nbsp;" Width="80px" CommandName="Apply" Text="申请借阅" />
                                     </Columns>
                                 </ext:Grid>
                             </Items>
-                            <Toolbars >
+                            <Toolbars>
                                 <ext:Toolbar runat="server" Position="Bottom">
                                     <Items>
                                         <ext:ToolbarFill runat="server"></ext:ToolbarFill>

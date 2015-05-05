@@ -26,7 +26,15 @@
                         <ext:ContentPanel CssClass="topBJ" ShowBorder="false" ShowHeader="false" ID="cpnl_Logo" runat="server" CssStyle="topBJ">                        
                         <div style="background-color:#007ACC; font-weight: bold;height:100px; font-size:30px; color:#ffffff; float:left;width:100%;">
                             <table>
-                                <tr  style="height:100%;width:100%">
+                                <tr style="height:100%;width:100%">
+                                    <td style="width:70px;">
+                                        <img src="images/hsz.png" height="65" width="65" title="" alt="" style="margin-top:2px;"/>
+                                    </td>
+                                    <td style="align-content:center;vertical-align:middle;width:600px;">
+                                        <label>病案借阅申请系统</label>
+                                    </td>
+                                    <td>
+                                    </td>
                                 </tr>
                             </table>
                          </div>
@@ -81,11 +89,11 @@
                                                 <ext:TreeNode NodeID="node_MyReceipt" Text="我的申请" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyReceipt.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
-                                             <Nodes>
+                                            <Nodes>
                                                 <ext:TreeNode NodeID="node_MyBorrow" Text="我的借阅" IconUrl="Icons/user_home.png" NavigateUrl="UI/ReceiptFavorite.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
-                                             <Nodes>
+                                            <Nodes>
                                                 <ext:TreeNode NodeID="node_MyFavorite" Text="我的收藏" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyFavorite.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
