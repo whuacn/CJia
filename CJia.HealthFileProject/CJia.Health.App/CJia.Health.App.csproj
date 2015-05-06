@@ -752,6 +752,7 @@
     <Content Include="favicon.ico" />
     <Content Include="favicon1.ico" />
     <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\WatermarkGallery.png" />
     <Content Include="SQLScript.sql" />
     <None Include="Service References\JJCJ\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>

@@ -105,6 +105,7 @@ namespace CJia.Health.App
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.lblUserName = new DevExpress.XtraBars.BarStaticItem();
             this.bsiCompany = new DevExpress.XtraBars.BarStaticItem();
+            this.btnLoge = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.efff = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gggg = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -131,7 +132,6 @@ namespace CJia.Health.App
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xTC = new DevExpress.XtraTab.XtraTabControl();
             this.homePage = new DevExpress.XtraTab.XtraTabPage();
-            this.btnLoge = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
@@ -1075,6 +1075,23 @@ namespace CJia.Health.App
             this.bsiCompany.Name = "bsiCompany";
             this.bsiCompany.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
+            // btnLoge
+            // 
+            resources.ApplyResources(this.btnLoge, "btnLoge");
+            this.btnLoge.Glyph = ((System.Drawing.Image)(resources.GetObject("btnLoge.Glyph")));
+            this.btnLoge.Id = 98;
+            this.btnLoge.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnLoge.ItemAppearance.Disabled.Font")));
+            this.btnLoge.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnLoge.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnLoge.ItemAppearance.Hovered.Font")));
+            this.btnLoge.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnLoge.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnLoge.ItemAppearance.Normal.Font")));
+            this.btnLoge.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnLoge.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnLoge.ItemAppearance.Pressed.Font")));
+            this.btnLoge.ItemAppearance.Pressed.Options.UseFont = true;
+            this.btnLoge.Name = "btnLoge";
+            this.btnLoge.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLoge.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoge_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ribbonPage1.Appearance.Font")));
@@ -1296,6 +1313,7 @@ namespace CJia.Health.App
             // 
             // xTC
             // 
+            this.xTC.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("xTC.Appearance.Font")));
             this.xTC.Appearance.Options.UseFont = true;
             resources.ApplyResources(this.xTC, "xTC");
             this.xTC.Name = "xTC";
@@ -1310,15 +1328,6 @@ namespace CJia.Health.App
             this.homePage.Name = "homePage";
             this.homePage.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             resources.ApplyResources(this.homePage, "homePage");
-            // 
-            // btnLoge
-            // 
-            resources.ApplyResources(this.btnLoge, "btnLoge");
-            this.btnLoge.Glyph = ((System.Drawing.Image)(resources.GetObject("btnLoge.Glyph")));
-            this.btnLoge.Id = 98;
-            this.btnLoge.Name = "btnLoge";
-            this.btnLoge.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnLoge.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoge_ItemClick);
             // 
             // NewMainForm
             // 
