@@ -22,7 +22,7 @@
                             Height="" ShowBorder="false" ShowHeader="false"
                             Layout="Fit">
                             <Items>
-                                <ext:Grid ID="gr_detail" ShowHeader="False" runat="server" AllowSorting="true" PageSize="5" ShowBorder="true" AllowPaging="true" EnableTextSelection="true" EnableRowNumber="true"
+                                <ext:Grid ID="gr_detail" ShowHeader="False" runat="server" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true" EnableRowNumber="true"
                                     IsDatabasePaging="true" OnPageIndexChange="gr_detail_PageIndexChange" OnRowCommand="gr_detail_RowCommand"
                                     DataKeyNames="ID" AutoScroll="true">
                                     <Columns>
