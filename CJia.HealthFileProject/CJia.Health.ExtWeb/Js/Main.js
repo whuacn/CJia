@@ -2,7 +2,6 @@
 
     //初始化菜单
     var tree_MBasic = Ext.getCmp(IDS.tree_MBasic);
-    var tree_MBusiness = Ext.getCmp(IDS.tree_MBusiness);
     var tree_MArticle = Ext.getCmp(IDS.tree_MArticle);
     var tree_MCenter = Ext.getCmp(IDS.tree_MCenter);
     //var tree_MInfo = Ext.getCmp(IDS.tree_MInfo);
@@ -14,7 +13,6 @@
     var tabs_Main = Ext.getCmp(IDS.tabs_Main);
 
     IniTree(tree_MBasic);
-    IniTree(tree_MBusiness);
     IniTree(tree_MArticle);
     IniTree(tree_MCenter);
     //IniTree(tree_MInfo);
@@ -98,9 +96,6 @@
     if (HASH) {
         if (!FOUND) {
             findTab(tree_MBasic.getRootNode());
-        }
-        if (!FOUND) {
-            findTab(tree_MBusiness.getRootNode());
         }
         if (!FOUND) {
             findTab(tree_MArticle.getRootNode());

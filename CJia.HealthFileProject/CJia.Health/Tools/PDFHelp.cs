@@ -5,6 +5,9 @@ using System.Text;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using O2S.Components.PDFRender4NET;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace CJia.Health.Tools
 {
@@ -177,6 +180,39 @@ namespace CJia.Health.Tools
                     File.Move(pdfDest, dir + "\\" + fileName);
                 }
             }
+        }
+        public enum Definition
+        {
+            One = 1, Two = 2, Three = 3, Four = 4, Five = 5, Six = 6, Seven = 7, Eight = 8, Nine = 9, Ten = 10
+        }
+        public static void ConvertPDF2Image(string pdfInputPath, string password, int startPageNum, int endPageNum, ImageFormat imageFormat, Definition definition)
+        {
+            string fileName = Path.GetFileName(pdfInputPath);
+            string dir = Path.GetDirectoryName(pdfInputPath);
+            System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
+            Byte[] bytes = encoding.GetBytes(password);
+            PDFFile pdfFile = PDFFile.Open(pdfInputPath, bytes);
+            if (startPageNum <= 0)
+            {
+                startPageNum = 1;
+            }
+            if (endPageNum > pdfFile.PageCount)
+            {
+                endPageNum = pdfFile.PageCount;
+            }
+            if (startPageNum > endPageNum)
+            {
+                int tempPageNum = startPageNum;
+                startPageNum = endPageNum;
+                endPageNum = startPageNum;
+            }
+            for (int i = startPageNum; i <= endPageNum; i++)
+            {
+                Bitmap pageImage = pdfFile.GetPageImage(i - 1, 300 * (int)definition);
+                pageImage.Save(dir + "\\" + fileName.Replace(".pdf", "") + "." + imageFormat.ToString(), imageFormat);
+                pageImage.Dispose();
+            }
+            pdfFile.Dispose();
         }
     }
 }

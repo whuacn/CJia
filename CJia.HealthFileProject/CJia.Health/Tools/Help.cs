@@ -8,6 +8,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Data;
 using System.Net;
+using System.Drawing.Imaging;
 
 namespace CJia.Health.Tools
 {
@@ -395,6 +396,112 @@ namespace CJia.Health.Tools
             {
                 return false;
             }
+        }
+        public static bool DownLoadFileByUri(string uri, string savePath, string userName, string password)
+        {
+            try
+            {
+                if (!Directory.Exists(savePath))
+                    Directory.CreateDirectory(savePath);
+                FtpHelp.DownloadFile(savePath, uri, userName, password);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public enum WaterPositionMode
+        {
+            LeftTop,
+            LeftBottom,
+            RightTop,
+            RightBottom,
+            Center
+        }
+        /// <summary>
+        /// 获得本地IP地址
+        /// </summary>
+        /// <returns></returns>
+        public static string GetAddressIP()
+        {
+            string AddressIP = string.Empty;
+            foreach (IPAddress _IPAddress in Dns.GetHostEntry(Dns.GetHostName()).AddressList)
+            {
+                if (_IPAddress.AddressFamily.ToString() == "InterNetwork")
+                {
+                    AddressIP = _IPAddress.ToString();
+                }
+            }
+            return AddressIP;
+        }
+        /// <summary>
+        /// 图片添加水印文字
+        /// </summary>
+        /// <param name="oldpath"></param>
+        /// <param name="savepath"></param>
+        /// <param name="watertext"></param>
+        /// <param name="position"></param>
+        /// <param name="color"></param>
+        /// <param name="alpha"></param>
+        public static void AddWaterText(string oldpath, string savepath, string watertext, WaterPositionMode position, string color, int alpha)
+        {
+            Image image = Image.FromFile(oldpath);
+            Bitmap bitmap = new Bitmap(image.Width, image.Height);
+            Graphics graphics = Graphics.FromImage(bitmap);
+            graphics.Clear(Color.White);
+            graphics.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel);
+            Font font = new Font("arial", 60);
+            SizeF ziSizeF = new SizeF();
+            ziSizeF = graphics.MeasureString(watertext, font);
+            float x = 0f;
+            float y = 0f;
+            switch (position)
+            {
+                case WaterPositionMode.LeftTop:
+                    x = ziSizeF.Width / 2f;
+                    y = 8f;
+                    break;
+                case WaterPositionMode.LeftBottom:
+                    x = ziSizeF.Width / 2f;
+                    y = image.Height - ziSizeF.Height;
+                    break;
+                case WaterPositionMode.RightTop:
+                    x = image.Width * 1f - ziSizeF.Width / 2f;
+                    y = 8f;
+                    break;
+                case WaterPositionMode.RightBottom:
+                    x = image.Width - ziSizeF.Width;
+                    y = image.Height - ziSizeF.Height;
+                    break;
+                case WaterPositionMode.Center:
+                    x = image.Width / 2;
+                    y = image.Height / 2 - ziSizeF.Height / 2;
+                    break;
+            }
+            try
+            {
+                StringFormat stringFormat = new StringFormat { Alignment = StringAlignment.Center };
+                SolidBrush solidBrush = new SolidBrush(Color.FromArgb(alpha, 0, 0, 0));
+                graphics.DrawString(watertext, font, solidBrush, x + 1f, y + 1f, stringFormat);
+                //SolidBrush brush = new SolidBrush(Color.FromArgb(alpha, ColorTranslator.FromHtml(color)));
+                SolidBrush brush = new SolidBrush(Color.FromArgb(alpha, Color.Red));
+                graphics.DrawString(watertext, font, brush, x, y, stringFormat);
+                solidBrush.Dispose();
+                brush.Dispose();
+                bitmap.Save(savepath, ImageFormat.Jpeg);
+            }
+            catch (Exception e)
+            {
+
+
+            }
+            finally
+            {
+                bitmap.Dispose();
+                image.Dispose();
+            }
+
         }
         #endregion
     }

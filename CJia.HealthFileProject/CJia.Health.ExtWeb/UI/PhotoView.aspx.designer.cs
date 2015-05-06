@@ -76,112 +76,49 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.Form sf_Edit;
         
         /// <summary>
-        /// Label1 控件。
+        /// lblRecordNO 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Label Label1;
+        protected global::ExtAspNet.Label lblRecordNO;
         
         /// <summary>
-        /// Label2 控件。
+        /// lblTimes 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Label Label2;
+        protected global::ExtAspNet.Label lblTimes;
         
         /// <summary>
-        /// Label3 控件。
+        /// lblName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Label Label3;
+        protected global::ExtAspNet.Label lblName;
         
         /// <summary>
-        /// Label4 控件。
+        /// lblGender 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Label Label4;
+        protected global::ExtAspNet.Label lblGender;
         
         /// <summary>
-        /// Label5 控件。
+        /// lblBirthDay 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Label Label5;
-        
-        /// <summary>
-        /// Label6 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label Label6;
-        
-        /// <summary>
-        /// Label7 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label Label7;
-        
-        /// <summary>
-        /// Label8 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label Label8;
-        
-        /// <summary>
-        /// Label9 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label Label9;
-        
-        /// <summary>
-        /// Label10 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label Label10;
-        
-        /// <summary>
-        /// Label11 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label Label11;
-        
-        /// <summary>
-        /// Label12 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label Label12;
+        protected global::ExtAspNet.Label lblBirthDay;
         
         /// <summary>
         /// Panel3 控件。
@@ -193,13 +130,13 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.Panel Panel3;
         
         /// <summary>
-        /// grid1 控件。
+        /// gr_project 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Grid grid1;
+        protected global::ExtAspNet.Grid gr_project;
         
         /// <summary>
         /// ren_Right 控件。
@@ -229,49 +166,49 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.Toolbar Toolbar2;
         
         /// <summary>
-        /// Button5 控件。
+        /// btnFirst 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button Button5;
+        protected global::ExtAspNet.Button btnFirst;
         
         /// <summary>
-        /// Button6 控件。
+        /// btnPre 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button Button6;
+        protected global::ExtAspNet.Button btnPre;
         
         /// <summary>
-        /// Button7 控件。
+        /// btnNext 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button Button7;
+        protected global::ExtAspNet.Button btnNext;
         
         /// <summary>
-        /// Button8 控件。
+        /// btnLast 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button Button8;
+        protected global::ExtAspNet.Button btnLast;
         
         /// <summary>
-        /// image 控件。
+        /// pimg 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Image image;
+        protected global::ExtAspNet.Image pimg;
         
         /// <summary>
         /// Toolbar3 控件。
@@ -292,39 +229,39 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.ToolbarFill ToolbarFill2;
         
         /// <summary>
-        /// btn_answer 控件。
+        /// btnLeft 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btn_answer;
+        protected global::ExtAspNet.Button btnLeft;
         
         /// <summary>
-        /// Button2 控件。
+        /// btnRight 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button Button2;
+        protected global::ExtAspNet.Button btnRight;
         
         /// <summary>
-        /// Button3 控件。
+        /// btnBig 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button Button3;
+        protected global::ExtAspNet.Button btnBig;
         
         /// <summary>
-        /// Button4 控件。
+        /// BtnSmall 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button Button4;
+        protected global::ExtAspNet.Button BtnSmall;
     }
 }

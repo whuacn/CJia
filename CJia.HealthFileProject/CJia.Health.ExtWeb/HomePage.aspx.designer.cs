@@ -229,24 +229,6 @@ namespace CJia.Health.ExtWeb {
         protected global::ExtAspNet.Tree tree_MBasic;
         
         /// <summary>
-        /// ap_MBusiness 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.AccordionPane ap_MBusiness;
-        
-        /// <summary>
-        /// tree_MBusiness 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Tree tree_MBusiness;
-        
-        /// <summary>
         /// ap_MArticle 控件。
         /// </summary>
         /// <remarks>

@@ -104,16 +104,6 @@
                                         </ext:Tree>
                                     </Items>
                                 </ext:AccordionPane>
-                                <ext:AccordionPane ID="ap_MBusiness" Icon="FolderBell" runat="server" Hidden="false" Expanded="false" Title="病案管理" Layout="Fit" Visible="false">
-                                    <Items>
-                                        <ext:Tree ID="tree_MBusiness" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
-                                            <Nodes>
-                                                <ext:TreeNode Text="我的申请" NodeID="node_DataInput" IconUrl="Icons/database_yellow.png" NavigateUrl="BackStage/DataInput.aspx">
-                                                </ext:TreeNode>
-                                            </Nodes>
-                                        </ext:Tree>
-                                    </Items>
-                                </ext:AccordionPane>
                                 <ext:AccordionPane ID="ap_MArticle" AutoScroll="true" Icon="FolderImage" runat="server" Expanded="false" Hidden="false" Title="病案查阅" Layout="Fit">
                                     <Items>
                                         <ext:Tree ID="tree_MArticle" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
@@ -180,7 +170,6 @@
     <script type="text/javascript">
         var IDS = {
             tree_MBasic: '<%= tree_MBasic.ClientID %>',
-            tree_MBusiness: '<%= tree_MBusiness.ClientID %>',
             tree_MArticle: '<%= tree_MArticle.ClientID %>',
             tree_MCenter: '<%= tree_MCenter.ClientID %>',
             tabs_Main: '<%= tabs_Main.ClientID %>'

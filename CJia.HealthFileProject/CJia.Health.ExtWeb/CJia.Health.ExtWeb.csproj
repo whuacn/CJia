@@ -1815,6 +1815,7 @@
     <Content Include="images\5.gif" />
     <Content Include="images\6.gif" />
     <Content Include="images\7.gif" />
+    <Content Include="images\test.jpg" />
     <Content Include="images\Admin\6.png" />
     <Content Include="images\Admin\7.png" />
     <Content Include="images\Admin\8.png" />
@@ -1873,6 +1874,8 @@
     <Content Include="images\shadow2.png" />
     <Content Include="images\tip.png" />
     <Content Include="images\unfold.png" />
+    <Content Include="Js\jquery.min.js" />
+    <Content Include="Js\jquery.rotate.min.js" />
     <Content Include="Js\Main.js" />
     <Content Include="Js\exporting.js" />
     <Content Include="Js\highcharts.js" />

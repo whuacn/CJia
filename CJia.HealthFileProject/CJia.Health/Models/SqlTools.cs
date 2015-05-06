@@ -868,7 +868,7 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @"select pv.*,
+                return @"select pv.*,to_char(PV.birthday,'yyyy/mm/dd') birthday2,
                        pic.*,
                        pic.storage_path || '/' || pic.picture_name src,
                        GC.NAME PICTURE_CHECK_STATUS,
