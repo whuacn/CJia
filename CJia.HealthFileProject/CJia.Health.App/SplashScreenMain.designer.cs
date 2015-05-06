@@ -54,18 +54,18 @@
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.labelControl1.Location = new System.Drawing.Point(23, 264);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(290, 17);
+            this.labelControl1.Size = new System.Drawing.Size(266, 17);
             this.labelControl1.TabIndex = 6;
-            this.labelControl1.Text = "Copyright © 2012-2015  江西创佳信息技术有限公司";
+            this.labelControl1.Text = "Copyright © 2012-2015  江西创佳科技有限公司";
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Location = new System.Drawing.Point(23, 190);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(237, 17);
+            this.labelControl2.Size = new System.Drawing.Size(249, 17);
             this.labelControl2.TabIndex = 7;
-            this.labelControl2.Text = "正在进入【创佳数字化病案加工管理系统】...";
+            this.labelControl2.Text = "正在进入【创佳病案数字化存储与管理系统】...";
             // 
             // pictureEdit2
             // 

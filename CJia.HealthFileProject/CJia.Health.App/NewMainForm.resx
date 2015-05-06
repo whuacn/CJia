@@ -9390,7 +9390,7 @@
     <value>微软雅黑, 9pt</value>
   </data>
   <data name="bsiCompany.Caption" xml:space="preserve">
-    <value>© 2012-2015  江西创佳信息技术有限公司版权所有</value>
+    <value>© 2012-2015  江西创佳科技有限公司版权所有</value>
   </data>
   <data name="bsiCompany.ItemAppearance.Normal.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
@@ -9400,60 +9400,44 @@
   </data>
   <data name="btnLoge.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
-        RK5CYII=
+        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
 </value>
+  </data>
+  <data name="btnLoge.ItemAppearance.Disabled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="btnLoge.ItemAppearance.Hovered.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="btnLoge.ItemAppearance.Normal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="btnLoge.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
   </data>
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -9744,6 +9728,9 @@
   <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="xTC.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
   <data name="xTC.ClosePageButtonShowMode" type="DevExpress.XtraTab.ClosePageButtonShowMode, DevExpress.XtraEditors.v12.1">
     <value>InAllTabPageHeaders</value>
   </data>
@@ -10107,7 +10094,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>病案数字化存储与管理系统</value>
+    <value>创佳病案数字化存储与管理系统</value>
   </data>
   <data name="&gt;&gt;repositoryItemCheckEdit1.Name" xml:space="preserve">
     <value>repositoryItemCheckEdit1</value>
@@ -10547,6 +10534,12 @@
   <data name="&gt;&gt;bsiCompany.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
+  <data name="&gt;&gt;btnLoge.Name" xml:space="preserve">
+    <value>btnLoge</value>
+  </data>
+  <data name="&gt;&gt;btnLoge.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
   <data name="&gt;&gt;ribbonPage1.Name" xml:space="preserve">
     <value>ribbonPage1</value>
   </data>
@@ -10660,12 +10653,6 @@
   </data>
   <data name="&gt;&gt;defaultLookAndFeel1.Type" xml:space="preserve">
     <value>DevExpress.LookAndFeel.DefaultLookAndFeel, DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
-  </data>
-  <data name="&gt;&gt;btnLoge.Name" xml:space="preserve">
-    <value>btnLoge</value>
-  </data>
-  <data name="&gt;&gt;btnLoge.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>NewMainForm</value>

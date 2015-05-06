@@ -41,10 +41,10 @@
             // 
             // cJiaLabel1
             // 
-            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.cJiaLabel1.Location = new System.Drawing.Point(26, 29);
             this.cJiaLabel1.Name = "cJiaLabel1";
-            this.cJiaLabel1.Size = new System.Drawing.Size(75, 16);
+            this.cJiaLabel1.Size = new System.Drawing.Size(60, 17);
             this.cJiaLabel1.TabIndex = 0;
             this.cJiaLabel1.Text = "水印内容：";
             // 
@@ -53,12 +53,12 @@
             this.txtContent.Location = new System.Drawing.Point(107, 26);
             this.txtContent.Name = "txtContent";
             this.txtContent.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtContent.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtContent.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.txtContent.Properties.Appearance.Options.UseBackColor = true;
             this.txtContent.Properties.Appearance.Options.UseFont = true;
             this.txtContent.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtContent.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtContent.Size = new System.Drawing.Size(258, 22);
+            this.txtContent.Size = new System.Drawing.Size(258, 24);
             this.txtContent.TabIndex = 1;
             // 
             // txtDu
@@ -66,20 +66,20 @@
             this.txtDu.Location = new System.Drawing.Point(107, 74);
             this.txtDu.Name = "txtDu";
             this.txtDu.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtDu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtDu.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.txtDu.Properties.Appearance.Options.UseBackColor = true;
             this.txtDu.Properties.Appearance.Options.UseFont = true;
             this.txtDu.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtDu.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtDu.Size = new System.Drawing.Size(258, 22);
+            this.txtDu.Size = new System.Drawing.Size(258, 24);
             this.txtDu.TabIndex = 3;
             // 
             // cJiaLabel2
             // 
-            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.cJiaLabel2.Location = new System.Drawing.Point(41, 77);
             this.cJiaLabel2.Name = "cJiaLabel2";
-            this.cJiaLabel2.Size = new System.Drawing.Size(60, 16);
+            this.cJiaLabel2.Size = new System.Drawing.Size(48, 17);
             this.cJiaLabel2.TabIndex = 2;
             this.cJiaLabel2.Text = "倾斜度：";
             // 
