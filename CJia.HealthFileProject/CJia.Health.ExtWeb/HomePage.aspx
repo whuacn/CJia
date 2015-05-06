@@ -94,6 +94,10 @@
                                                 </ext:TreeNode>
                                             </Nodes>
                                             <Nodes>
+                                                <ext:TreeNode NodeID="node_MyPatient" Text="我的病案" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyBorrow.aspx">
+                                                </ext:TreeNode>
+                                            </Nodes>
+                                            <Nodes>
                                                 <ext:TreeNode NodeID="node_MyFavorite" Text="我的收藏" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyFavorite.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>

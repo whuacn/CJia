@@ -18,7 +18,7 @@
                 <ext:Region ID="ren_Center" ShowHeader="false" Layout="Fit" Position="Center" Margins="2 2 2 0" runat="server">
                     <Items>
                         <ext:Panel ID="pnl_Main" runat="server" Layout="Fit" EnableBackgroundColor="true" BodyPadding="0"
-                            Height="" EnableLargeHeader="true" ShowBorder="false" ShowHeader="false">
+                            Height="80px" EnableLargeHeader="true" ShowBorder="false" ShowHeader="false">
                             <Toolbars>
                                 <ext:Toolbar ID="Toolbar1" runat="server">
                                     <Items>

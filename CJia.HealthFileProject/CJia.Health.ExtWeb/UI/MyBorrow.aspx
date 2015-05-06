@@ -15,138 +15,40 @@
         <ext:PageManager ID="pm_Main" AutoSizePanelID="rpnl_Main" runat="server" />
         <ext:RegionPanel ID="rpnl_Main" ShowBorder="false" runat="server">
             <Regions>
-                <ext:Region ID="rgn_Top" Split="true" EnableSplitTip="true" CollapseMode="Mini" EnableCollapse="true" Width="300px" Margins="2 0 2 2" ShowHeader="false" Position="Left"
+                <ext:Region ID="ren_Center" EnableSplitTip="true" ShowBorder="false" CollapseMode="Mini" EnableCollapse="true" Width="500px" Margins="0" ShowHeader="false" Position="Center"
                     Layout="Fit" runat="server" CssClass="fontSize">
                     <Items>
-                        <ext:Panel ID="Panel1" runat="server" EnableBackgroundColor="true" BodyPadding="3px"
-                            Height="" EnableLargeHeader="true" ShowBorder="false" ShowHeader="false"
+                        <ext:Panel ID="pnl_Main" runat="server" BodyPadding="2px"
+                            Height="" ShowBorder="false" ShowHeader="false"
                             Layout="Fit">
-                            <Toolbars>
-                                <ext:Toolbar ID="Toolbar1" runat="server" Width="300px" CssClass="fontSize">
-                                    <Items>
-                                        <ext:Label ID="Label13" runat="server" Text="我的借阅："></ext:Label>
-                                        <ext:DropDownList ID="ddl_Data_Type" AutoPostBack="true" runat="server" Width="150px">
-                                        </ext:DropDownList>
-                                        <ext:Button ID="btnQuery" runat="server" Icon="SystemSearch" Text="查询"></ext:Button>
-                                    </Items>
-                                </ext:Toolbar>
-                            </Toolbars>
                             <Items>
-                                <ext:Grid ID="gr_title" ShowHeader="false" Title="病人列表" runat="server">
+                                <ext:Grid ID="gr_detail" ShowHeader="False" runat="server" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true" EnableRowNumber="true"
+                                    IsDatabasePaging="true" OnPageIndexChange="gr_detail_PageIndexChange" OnRowCommand="gr_detail_RowCommand"
+                                    DataKeyNames="ID" AutoScroll="true">
                                     <Columns>
-                                        <ext:BoundField DataToolTipField="CHECK_TITLE_NAME" Width="150px" HeaderText="病人姓名" SortField="CHECK_TITLE_NAME" DataField="CHECK_TITLE_NAME" />
-                                        <ext:BoundField DataToolTipField="CHECK_TITLE_NAME" Width="150px" HeaderText="出院诊断" SortField="CHECK_TITLE_NAME" DataField="CHECK_TITLE_NAME" />
+                                        <ext:BoundField DataToolTipField="RECORDNO" Width="120px" HeaderText="病案号" SortField="RECORDNO" DataField="RECORDNO" />
+                                        <ext:BoundField DataToolTipField="IN_HOSPITAL_TIME" HeaderText="入院次数" DataField="IN_HOSPITAL_TIME" Width="60px" />
+                                        <ext:BoundField HeaderText="病人姓名" SortField="PATIENT_NAME" DataField="PATIENT_NAME" Width="80px" />
+                                        <ext:BoundField Width="60px" HeaderText="性别" DataField="GENDER_NAME" />
+                                        <ext:BoundField Width="110px" HeaderText="入院日期" SortField="IN_HOSPITAL_DATE2" DataField="IN_HOSPITAL_DATE2" />
+                                        <ext:BoundField Width="110px" HeaderText="入院科室" SortField="IN_HOSPITAL_DEPT_NAME" DataField="IN_HOSPITAL_DEPT_NAME" />
+                                        <ext:BoundField Width="110px" HeaderText="出院日期" SortField="OUT_HOSPITAL_DATE2" DataField="OUT_HOSPITAL_DATE2" />
+                                        <ext:BoundField Width="110px" HeaderText="出院科室" SortField="OUT_HOSPITAL_DEPT_NAME" DataField="OUT_HOSPITAL_DEPT_NAME" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" Text="详细>>" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="80px" CommandName="Details" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" Text="浏览图片" ColumnID="lbf_Edit2" HeaderText="&nbsp;" Width="80px" CommandName="Image" />
                                     </Columns>
                                 </ext:Grid>
                             </Items>
-                        </ext:Panel>
-                    </Items>
-                </ext:Region>
-                <ext:Region ID="ren_Center" Title="病人基本信息" ShowHeader="true" Layout="Row" Position="Center" Margins="2 2 2 0" runat="server">
-                    <Items>
-                        <ext:Panel runat="server" ShowHeader="false" ShowBorder="false">
-                            <Items>
-                                <ext:Form ID="sf_Edit" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true"
-                                    AutoScroll="true" LabelWidth="5px" BodyPadding="5px 5px" runat="server" EnableCollapse="True">
-                                    <Rows>
-                                        <ext:FormRow>
-                                            <Items>
-                                                <ext:Label ID="Label1" runat="server" Text="病案号： "></ext:Label>
-                                                <ext:Label ID="Label2" runat="server" Text="病案号： "></ext:Label>
-                                            </Items>
-                                        </ext:FormRow>
-                                        <ext:FormRow>
-                                            <Items>
-                                                <ext:Label ID="Label3" runat="server" Text="病人姓名： "></ext:Label>
-                                                <ext:Label ID="Label4" runat="server" Text="病人姓名： "></ext:Label>
-                                            </Items>
-                                        </ext:FormRow>
-                                        <ext:FormRow>
-                                            <Items>
-                                                <ext:Label ID="Label5" runat="server" Text="性别： "></ext:Label>
-                                                <ext:Label ID="Label6" runat="server" Text="性别： "></ext:Label>
-                                            </Items>
-                                        </ext:FormRow>
-                                        <ext:FormRow>
-                                            <Items>
-                                                <ext:Label ID="Label7" runat="server" Text="出生日期： "></ext:Label>
-                                                <ext:Label ID="Label8" runat="server" Text="出生日期： "></ext:Label>
-                                            </Items>
-                                        </ext:FormRow>
-                                        <ext:FormRow>
-                                            <Items>
-                                                <ext:Label ID="Label9" runat="server" Text="出生日期： "></ext:Label>
-                                                <ext:Label ID="Label10" runat="server" Text="出生日期： "></ext:Label>
-                                            </Items>
-                                        </ext:FormRow>
-                                        <ext:FormRow>
-                                            <Items>
-                                                <ext:Label ID="Label11" runat="server" Text="出生日期： "></ext:Label>
-                                                <ext:Label ID="Label12" runat="server" Text="出生日期： "></ext:Label>
-                                            </Items>
-                                        </ext:FormRow>
-                                    </Rows>
-                                </ext:Form>
-                            </Items>
-                        </ext:Panel>
-                        <ext:Panel runat="server" RowHeight="100%" Layout="Fit" ShowHeader="false">
-                            <Items>
-                                <ext:Grid ID="grid1" ShowHeader="False" runat="server" ShowBorder="false">
-                                    <Columns>
-                                        <ext:BoundField DataToolTipField="CHECK_TITLE_NAME" Width="500px" HeaderText="病案分类" SortField="CHECK_TITLE_NAME" DataField="CHECK_TITLE_NAME" />
-                                    </Columns>
-                                </ext:Grid>
-                            </Items>
-                        </ext:Panel>
-                    </Items>
-                </ext:Region>
-                <ext:Region ID="ren_Right" Title="图像浏览" Split="true"
-                    EnableSplitTip="true" Margins="2 0 2 0" BodyPadding="0px" Position="Right" Width="1000px"
-                    runat="server" Layout="Fit">
-                    <Items>
-                        <ext:Panel ID="Panel2" runat="server" EnableBackgroundColor="true" BodyPadding="2 2 2 2"
-                            Height="" EnableLargeHeader="true" ShowBorder="false" ShowHeader="false"
-                            Layout="Fit">
-                            <Toolbars>
-                                <ext:Toolbar ID="Toolbar2" runat="server" Width="300px" CssClass="fontSize">
-                                    <Items>
-                                        <ext:Button ID="Button5" Text="首页" runat="server" Icon="Picture">
-                                        </ext:Button>
-                                        <ext:Button ID="Button6" Text="上一页" runat="server" Icon="ArrowLeft">
-                                        </ext:Button>
-                                        <ext:Button ID="Button7" Text="下一页" runat="server" Icon="ArrowRight">
-                                        </ext:Button>
-                                        <ext:Button ID="Button8" Text="尾页" runat="server" Icon="HouseConnect">
-                                        </ext:Button>
-                                    </Items>
-                                </ext:Toolbar>
-                            </Toolbars>
-                            <Items>
-                                <ext:Image ID="image" runat="server" ImageUrl="../Icons/Desert.jpg"></ext:Image>
-                            </Items>
-                            <Toolbars>
-                                <ext:Toolbar ID="Toolbar3" Position="Bottom" runat="server">
-                                    <Items>
-                                        <ext:ToolbarFill ID="ToolbarFill2" runat="server"></ext:ToolbarFill>
-                                        <ext:Button ID="btn_answer" Text="左转" runat="server" Icon="ArrowRotateAnticlockwise">
-                                        </ext:Button>
-                                        <ext:Button ID="Button2" Text="右转" runat="server" Icon="ArrowRotateClockwise">
-                                        </ext:Button>
-                                        <ext:Button ID="Button3" Text="放大" runat="server" Icon="ZoomIn">
-                                        </ext:Button>
-                                        <ext:Button ID="Button4" Text="缩小" runat="server" Icon="ZoomOut">
-                                        </ext:Button>
-
-                                    </Items>
-                                </ext:Toolbar>
-                            </Toolbars>
                         </ext:Panel>
                     </Items>
                 </ext:Region>
             </Regions>
         </ext:RegionPanel>
+        <ext:Window ID="win_Image" Hidden="true" EnableIFrame="true" Icon="ApplicationFormEdit" Target="Parent" runat="server"
+            CloseAction="HidePostBack" IsModal="true" Width="1000px" Height="550px">
+        </ext:Window>
         <ext:Window ID="win_Edit" Hidden="true" EnableIFrame="true" Icon="ApplicationFormEdit" Target="Parent" runat="server"
-            CloseAction="HidePostBack" IsModal="true" Width="880px" Height="550px">
+            CloseAction="HidePostBack" IsModal="true" Width="1050px" Height="500px">
         </ext:Window>
     </form>
 </body>
