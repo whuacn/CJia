@@ -1855,6 +1855,7 @@
     <Content Include="images\Find_16x16.png" />
     <Content Include="images\GoToPreviousHeaderFooter_16x16.png" />
     <Content Include="images\heart.png" />
+    <Content Include="images\hsz.png" />
     <Content Include="images\i1.png" />
     <Content Include="images\i2.png" />
     <Content Include="images\i3.png" />

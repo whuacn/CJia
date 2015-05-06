@@ -66,10 +66,11 @@ namespace CJia.Health.ExtWeb.UI
         protected void gr_Main_RowCommand(object sender, ExtAspNet.GridCommandEventArgs e)
         {
             object[] keys = this.gr_Main.DataKeys[e.RowIndex];
+            string listID = keys[0].ToString();
             switch (e.CommandName)
             {
                 case "Info":
-                    string listID = keys[0].ToString();
+                    gr_detail.PageIndex = 0;
                     if (OnDetail != null)
                     {
                         myApplyArgs.ListID = listID;
@@ -81,6 +82,13 @@ namespace CJia.Health.ExtWeb.UI
                     applyReson.ToolTip = keys[3].ToString();
                     break;
                 case "Resert":
+                    if (OnUndo != null && Session["User"] != null)
+                    {
+                        myApplyArgs.ListID = listID;
+                        myApplyArgs.UserData = Session["User"] as DataTable;
+                        OnUndo(sender, myApplyArgs);
+                        Init();
+                    }
                     break;
             }
         }

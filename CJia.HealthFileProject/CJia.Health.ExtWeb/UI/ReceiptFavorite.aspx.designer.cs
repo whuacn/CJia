@@ -13,6 +13,15 @@ namespace CJia.Health.ExtWeb.UI {
     public partial class ReceiptFavorite {
         
         /// <summary>
+        /// Head1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        
+        /// <summary>
         /// Icon 控件。
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::System.Web.UI.HtmlControls.HtmlLink Icon;
         
         /// <summary>
-        /// frm_Main 控件。
+        /// form1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frm_Main;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// pm_Main 控件。
@@ -40,112 +49,94 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.PageManager pm_Main;
         
         /// <summary>
-        /// pnl_Main 控件。
+        /// rpnl_Main 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Panel pnl_Main;
+        protected global::ExtAspNet.RegionPanel rpnl_Main;
         
         /// <summary>
-        /// tlr_Btn 控件。
+        /// rgn_Top 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Toolbar tlr_Btn;
+        protected global::ExtAspNet.Region rgn_Top;
         
         /// <summary>
-        /// DropDownList1 控件。
+        /// Toolbar1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList DropDownList1;
+        protected global::ExtAspNet.Toolbar Toolbar1;
         
         /// <summary>
-        /// ddl_Data_Type 控件。
+        /// sf_Edit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList ddl_Data_Type;
+        protected global::ExtAspNet.Form sf_Edit;
         
         /// <summary>
-        /// btnQuery 控件。
+        /// applyName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnQuery;
+        protected global::ExtAspNet.Label applyName;
         
         /// <summary>
-        /// btnDataBaseDelete 控件。
+        /// applyTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnDataBaseDelete;
+        protected global::ExtAspNet.Label applyTime;
         
         /// <summary>
-        /// tbf_t 控件。
+        /// applyReson 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.ToolbarFill tbf_t;
+        protected global::ExtAspNet.Label applyReson;
         
         /// <summary>
-        /// ddl_PageSize 控件。
+        /// lblStart 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList ddl_PageSize;
+        protected global::ExtAspNet.Label lblStart;
         
         /// <summary>
-        /// lbl_c 控件。
+        /// lblEnd 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Label lbl_c;
+        protected global::ExtAspNet.Label lblEnd;
         
         /// <summary>
-        /// ddl_Search 控件。
+        /// Panel2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.DropDownList ddl_Search;
-        
-        /// <summary>
-        /// lbl_r 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Label lbl_r;
-        
-        /// <summary>
-        /// btnSearch 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.TwinTriggerBox btnSearch;
+        protected global::ExtAspNet.Panel Panel2;
         
         /// <summary>
         /// gr_Main 控件。
@@ -157,6 +148,42 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.Grid gr_Main;
         
         /// <summary>
+        /// ren_Center 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Region ren_Center;
+        
+        /// <summary>
+        /// pnl_Main 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Panel pnl_Main;
+        
+        /// <summary>
+        /// gr_detail 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Grid gr_detail;
+        
+        /// <summary>
+        /// win_Image 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Window win_Image;
+        
+        /// <summary>
         /// win_Edit 控件。
         /// </summary>
         /// <remarks>
@@ -164,122 +191,5 @@ namespace CJia.Health.ExtWeb.UI {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::ExtAspNet.Window win_Edit;
-        
-        /// <summary>
-        /// win_Search 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Window win_Search;
-        
-        /// <summary>
-        /// pnl_Search 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Panel pnl_Search;
-        
-        /// <summary>
-        /// sf_Search 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Form sf_Search;
-        
-        /// <summary>
-        /// txt_NameD 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.TextBox txt_NameD;
-        
-        /// <summary>
-        /// txt_SortD 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.NumberBox txt_SortD;
-        
-        /// <summary>
-        /// dp_AddTimeD_Min 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.DatePicker dp_AddTimeD_Min;
-        
-        /// <summary>
-        /// dp_AddTimeD_Max 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.DatePicker dp_AddTimeD_Max;
-        
-        /// <summary>
-        /// dp_UpdateTimeD_Min 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.DatePicker dp_UpdateTimeD_Min;
-        
-        /// <summary>
-        /// dp_UpdateTimeD_Max 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.DatePicker dp_UpdateTimeD_Max;
-        
-        /// <summary>
-        /// tbr_Search 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Toolbar tbr_Search;
-        
-        /// <summary>
-        /// tf_sb 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.ToolbarFill tf_sb;
-        
-        /// <summary>
-        /// btn_XSearch 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Button btn_XSearch;
-        
-        /// <summary>
-        /// btn_Return 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Button btn_Return;
     }
 }

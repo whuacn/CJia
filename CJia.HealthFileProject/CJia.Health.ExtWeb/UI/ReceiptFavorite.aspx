@@ -4,123 +4,108 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>病案借阅申请系统</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" id="Icon" />
     <link rel="stylesheet" type="text/css" href="../Css/main.css" />
 </head>
 <body>
-    <form id="frm_Main" runat="server">
-        <ext:PageManager ID="pm_Main" AutoSizePanelID="pnl_Main" runat="server" />
-        <ext:Panel ID="pnl_Main" runat="server" EnableBackgroundColor="true" BodyPadding="3px"
-            Height="" EnableLargeHeader="true" Title="借阅/收藏" ShowBorder="false" ShowHeader="True"
-            Layout="Fit">
-            <Toolbars>
-                <ext:Toolbar ID="tlr_Btn" runat="server">
-                    <Items>
-                        <ext:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server" Width="150px">
-                            <ext:ListItem Text="<全部>" Value="0" Selected="true" />
-                            <ext:ListItem Text="借阅" Value="1" Selected="false" />
-                            <ext:ListItem Text="收藏" Value="2" Selected="false" />
-                        </ext:DropDownList>
-                        <ext:DropDownList ID="ddl_Data_Type" AutoPostBack="true" runat="server" Width="150px">
-                            <ext:ListItem Text="<全部>" Value="0" Selected="true" />
-                            <ext:ListItem Text="糖尿病" Value="1" Selected="false" />
-                            <ext:ListItem Text="高血压" Value="2" Selected="false" />
-                        </ext:DropDownList>
-                        <ext:Button ID="btnQuery" runat="server" Icon="SystemSearch" Text="查询"></ext:Button>
-                        <ext:Button ID="btnDataBaseDelete" Icon="DatabaseDelete" Text="图片弹框测试，实际用于GRID里的显示图片" runat="server" OnClick="btnDataBaseDelete_Click">
-                        </ext:Button>
-                        <ext:ToolbarFill ID="tbf_t" runat="server"></ext:ToolbarFill>
-                        <ext:DropDownList ID="ddl_PageSize" AutoPostBack="true" Width="80" runat="server">
-                            <ext:ListItem Text="每页10条" Value="10" />
-                            <ext:ListItem Text="每页18条" Value="18" Selected="true" />
-                            <ext:ListItem Text="每页30条" Value="30" />
-                            <ext:ListItem Text="每页50条" Value="50" />
-                        </ext:DropDownList>
-                        <ext:Label ID="lbl_c" runat="server" Width="3"></ext:Label>
-                        <ext:DropDownList ID="ddl_Search" AutoPostBack="true" Width="80"
-                            runat="server">
-                            <ext:ListItem Text="名称" Value="UnitName" />
-                            <ext:ListItem Text="法人" Value="LegalPerson" />
-                        </ext:DropDownList>
-                        <ext:Label ID="lbl_r" runat="server" Width="3"></ext:Label>
-                        <ext:TwinTriggerBox ID="btnSearch" runat="server" Width="150" EmptyText="输入要搜索的关键字"
-                            ShowTrigger1="false" Trigger1Icon="Clear" Trigger2Icon="Search">
-                        </ext:TwinTriggerBox>
-                    </Items>
-                </ext:Toolbar>
-            </Toolbars>
-            <Items>
-                <ext:Grid ID="gr_Main" ShowHeader="False" runat="server" EnableCheckBoxSelect="true" AllowSorting="true" PageSize="18" ShowBorder="true" AllowPaging="true" EnableTextSelection="true"
-                    IsDatabasePaging="true"
-                    DataKeyNames="UNIT_ID" AutoScroll="true" EnableRowDoubleClick="true">
-                    <Columns>
-                        <ext:BoundField DataToolTipField="DATA_NAME" HeaderText="病案号" SortField="DATA_NAME" DataField="DATA_NAME" Width="120px" />
-                        <ext:BoundField DataToolTipField="TREE_PATH" HeaderText="病人ID" SortField="TREE_PATH" DataField="TREE_PATH" Width="120" />
-                        <ext:BoundField DataToolTipField="TYPE_VALUE" Width="70px" HeaderText="入院次数" DataField="TYPE_VALUE" />
-                        <ext:BoundField DataToolTipField="USER_NAME" Width="100px" HeaderText="病人姓名" DataField="USER_NAME" />
-                        <ext:BoundField DataToolTipField="CREATER_DATE" HeaderText="性别" SortField="CREATER_DATE" DataField="CREATER_DATE" Width="60px" />
-                        <ext:BoundField DataToolTipField="USER_NAME" Width="120px" HeaderText="入院日期" DataField="USER_NAME" />
-                        <ext:BoundField DataToolTipField="CREATER_DATE" HeaderText="入院科室" SortField="CREATER_DATE" DataField="CREATER_DATE" Width="120px" />
-                        <ext:BoundField DataToolTipField="USER_NAME" Width="120px" HeaderText="出院日期" DataField="USER_NAME" />
-                        <ext:BoundField DataToolTipField="CREATER_DATE" HeaderText="出院科室" SortField="CREATER_DATE" DataField="CREATER_DATE" Width="120px" />
-                        <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="60px" Icon="SystemSearch" CommandName="data_Query" />
-                    </Columns>
-                </ext:Grid>
-            </Items>
-        </ext:Panel>
-        <ext:Window ID="win_Edit" Hidden="true" EnableIFrame="true" Icon="ApplicationFormEdit" Target="Parent" runat="server"
-            CloseAction="HidePostBack" IsModal="true" Width="1000px" Height="550px">
-        </ext:Window>
-        <ext:Window ID="win_Search" Title="详细筛选" Hidden="true" Icon="ApplicationFormMagnify" Target="Self"
-            runat="server" IsModal="true" CloseAction="HidePostBack" Width="600px" Height="332px">
-            <Items>
-                <ext:Panel ID="pnl_Search" runat="server" Layout="Fit" ShowBorder="False" ShowHeader="false" Height="300px" EnableBackgroundColor="true">
-                    <Items>
-                        <ext:Form ID="sf_Search" BodyPadding="25px 15px" LabelWidth="100" AutoScroll="true" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true" runat="server">
-                            <Rows>
-                                <ext:FormRow ColumnWidths="50% 50%">
-                                    <Items>
-                                        <ext:TextBox ID="txt_NameD" runat="server" Label="名称" Text="">
-                                        </ext:TextBox>
-                                        <ext:NumberBox ID="txt_SortD" runat="server" Label="排序" Text="">
-                                        </ext:NumberBox>
-                                    </Items>
-                                </ext:FormRow>
-                                <ext:FormRow ColumnWidths="50% 50%">
-                                    <Items>
-                                        <ext:DatePicker ID="dp_AddTimeD_Min" Label="添加时间-开始" runat="server">
-                                        </ext:DatePicker>
-                                        <ext:DatePicker ID="dp_AddTimeD_Max" Label="添加时间-结束" runat="server">
-                                        </ext:DatePicker>
-                                    </Items>
-                                </ext:FormRow>
-                                <ext:FormRow ColumnWidths="50% 50%">
-                                    <Items>
-                                        <ext:DatePicker ID="dp_UpdateTimeD_Min" Label="更新时间-开始" runat="server">
-                                        </ext:DatePicker>
-                                        <ext:DatePicker ID="dp_UpdateTimeD_Max" Label="更新时间-结束" runat="server">
-                                        </ext:DatePicker>
-                                    </Items>
-                                </ext:FormRow>
-                            </Rows>
-                        </ext:Form>
-                    </Items>
+    <form id="form1" runat="server">
+        <ext:PageManager ID="pm_Main" AutoSizePanelID="rpnl_Main" runat="server" />
+        <ext:RegionPanel ID="rpnl_Main" ShowBorder="false" runat="server">
+            <Regions>
+                <ext:Region ID="rgn_Top" Split="true" EnableSplitTip="true" CollapseMode="Mini" EnableCollapse="true" Width="500px" Margins="2 0 2 2" ShowHeader="false" Position="Left"
+                    Layout="Fit" runat="server" CssClass="fontSize">
                     <Toolbars>
-                        <ext:Toolbar ID="tbr_Search" Position="Bottom" runat="server">
+                        <ext:Toolbar ID="Toolbar1" runat="server" Width="500px" CssClass="fontSize">
                             <Items>
-                                <ext:ToolbarFill ID="tf_sb" runat="server"></ext:ToolbarFill>
-                                <ext:Button ID="btn_XSearch" Text="检索" ValidateForms="sf_Search" runat="server" Icon="TextRuler">
-                                </ext:Button>
-                                <ext:Button ID="btn_Return" Text="返回" runat="server" Icon="BulletGo">
-                                </ext:Button>
+                                <ext:Form ID="sf_Edit" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true"
+                                    AutoScroll="true" LabelWidth="80px" CssClass="fontSize" BodyPadding="10px 5px" runat="server" EnableCollapse="True" Width="500px" ColumnWidth="500px">
+                                    <Rows>
+                                        <ext:FormRow ColumnWidths="100%">
+                                            <Items>
+                                                <ext:Label runat="server" ID="applyName" Label="申请人" Text=""></ext:Label>
+                                            </Items>
+                                        </ext:FormRow>
+                                        <ext:FormRow ColumnWidths="100%">
+                                            <Items>
+                                                <ext:Label runat="server" ID="applyTime" Label="申请时间" Text=""></ext:Label>
+                                            </Items>
+                                        </ext:FormRow>
+                                        <ext:FormRow ColumnWidths="100%">
+                                            <Items>
+                                                <ext:Label runat="server" ID="applyReson" ToolTip="" Label="申请理由" Text=""></ext:Label>
+                                            </Items>
+                                        </ext:FormRow>
+                                        <ext:FormRow ColumnWidths="100%">
+                                            <Items>
+                                                <ext:Label runat="server" ID="lblStart" ToolTip="" Label="借阅开始时间" Text=""></ext:Label>
+                                            </Items>
+                                        </ext:FormRow>
+                                        <ext:FormRow ColumnWidths="100%">
+                                            <Items>
+                                                <ext:Label runat="server" ID="lblEnd" ToolTip="" Label="借阅截止时间" Text=""></ext:Label>
+                                            </Items>
+                                        </ext:FormRow>
+                                    </Rows>
+                                </ext:Form>
                             </Items>
                         </ext:Toolbar>
                     </Toolbars>
-                </ext:Panel>
-            </Items>
+                    <Items>
+                        <ext:Panel ID="Panel2" BodyPadding="2px" Title="申请记录单" runat="server" Layout="Fit" ShowHeader="true" ShowBorder="false">
+                            <Items>
+                                <ext:Grid ID="gr_Main" ShowHeader="False" runat="server" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true"
+                                    IsDatabasePaging="true" OnPageIndexChange="gr_Main_PageIndexChange" OnRowCommand="gr_Main_RowCommand"
+                                    DataKeyNames="BORROW_LIST_ID,APPLYER_NAME,APPLY_DATE,APPLY_REASON,BORROW_DATE,RETURN_DATE" OnRowClick="gr_Main_RowClick" AutoScroll="true" EnableRowClick="true" EnableRowNumber="true">
+                                    <Columns>
+                                        <ext:BoundField DataToolTipField="BORROW_LIST_NO" HeaderText="申请单编号" SortField="BORROW_LIST_NO" DataField="BORROW_LIST_NO" Width="150px" ExpandUnusedSpace="true" />
+                                        <ext:BoundField DataToolTipField="APPLY_DATE" HeaderText="申请时间" SortField="APPLY_DATE" DataField="APPLY_DATE" Width="120px" />
+                                        <ext:BoundField Hidden="true" DataToolTipField="APPLYER_NAME" HeaderText="申请人" SortField="APPLYER_NAME" DataField="APPLYER_NAME" Width="80px" />
+                                        <ext:BoundField DataToolTipField="BORROW_STATE_NAME" Width="60px" HeaderText="状态" DataField="BORROW_STATE_NAME" />
+                                        <ext:BoundField Hidden="true" DataToolTipField="APPLY_REASON" Width="400px" HeaderText="申请理由" DataField="APPLY_REASON" ExpandUnusedSpace="true" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="60px" CommandName="Info" Text="详情>>" />
+                                        <ext:LinkButtonField Hidden="true" ConfirmText="确定归还？" ConfirmTarget="Top" ColumnID="lbf_Edit1" HeaderText="&nbsp;" Width="50px" CommandName="Resert" Text="归还" />
+                                    </Columns>
+                                </ext:Grid>
+                            </Items>
+                        </ext:Panel>
+                    </Items>
+                </ext:Region>
+                <ext:Region ID="ren_Center" EnableSplitTip="true" CollapseMode="Mini" EnableCollapse="true" Width="500px" Margins="2 2 2 0" ShowHeader="false" Position="Center"
+                    Layout="Fit" runat="server" CssClass="fontSize">
+
+                    <Items>
+                        <ext:Panel ID="pnl_Main" Title="申请单详情" runat="server" BodyPadding="2px"
+                            Height="" ShowBorder="false" ShowHeader="true"
+                            Layout="Fit">
+                            <Items>
+                                <ext:Grid ID="gr_detail" ShowHeader="False" runat="server" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true" EnableRowNumber="true"
+                                    IsDatabasePaging="true" OnPageIndexChange="gr_detail_PageIndexChange" OnRowCommand="gr_detail_RowCommand"
+                                    DataKeyNames="ID" AutoScroll="true">
+                                    <Columns>
+                                        <ext:BoundField DataToolTipField="RECORDNO" Width="100px" HeaderText="病案号" SortField="RECORDNO" DataField="RECORDNO" />
+                                        <ext:BoundField DataToolTipField="IN_HOSPITAL_TIME" HeaderText="入院次数" DataField="IN_HOSPITAL_TIME" Width="60px" />
+                                        <ext:BoundField HeaderText="病人姓名" SortField="PATIENT_NAME" DataField="PATIENT_NAME" Width="80px" />
+                                        <ext:BoundField Width="50px" HeaderText="性别" DataField="GENDER_NAME" />
+                                        <ext:BoundField Width="90px" HeaderText="入院日期" SortField="IN_HOSPITAL_DATE2" DataField="IN_HOSPITAL_DATE2" />
+                                        <ext:BoundField Width="100px" HeaderText="入院科室" SortField="IN_HOSPITAL_DEPT_NAME" DataField="IN_HOSPITAL_DEPT_NAME" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" Text="详细>>" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="60px" CommandName="Details" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" Text="浏览图片" ColumnID="lbf_Edit2" HeaderText="&nbsp;" Width="70px" CommandName="Image" />
+                                    </Columns>
+                                </ext:Grid>
+                            </Items>
+                        </ext:Panel>
+                    </Items>
+                </ext:Region>
+            </Regions>
+        </ext:RegionPanel>
+        <ext:Window ID="win_Image" Hidden="true" EnableIFrame="true" Icon="ApplicationFormEdit" Target="Parent" runat="server"
+            CloseAction="HidePostBack" IsModal="true" Width="1000px" Height="550px">
+        </ext:Window>
+        <ext:Window ID="win_Edit" Hidden="true" EnableIFrame="true" Icon="ApplicationFormEdit" Target="Parent" runat="server"
+            CloseAction="HidePostBack" IsModal="true" Width="1050px" Height="500px">
         </ext:Window>
     </form>
 </body>

@@ -17,7 +17,7 @@
             <Regions>
                 <ext:Region ID="ren_Center" Title="病人基本信息" ShowBorder="false" ShowHeader="false" Layout="Row" Position="Center" Margins="2 0 2 2" runat="server">
                     <Items>
-                        <ext:Panel ID="Panel1" runat="server" ShowHeader="false" ShowBorder="false">
+                        <ext:Panel ID="Panel1" runat="server" Height="80px" ShowHeader="false" ShowBorder="false">
                             <Items>
                                 <ext:Form ID="sf_Edit" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true"
                                     AutoScroll="true" LabelWidth="75px" BodyPadding="15px 15px" runat="server" EnableCollapse="True">
@@ -46,7 +46,7 @@
                                 </ext:Form>
                             </Items>
                         </ext:Panel>
-                        <ext:Panel ID="Panel2" runat="server" Layout="Fit" AutoScroll="true" RowHeight="84%" ShowHeader="false" BodyPadding="3px">
+                        <ext:Panel ID="Panel2" runat="server" Layout="Fit" AutoScroll="true" RowHeight="100%" ShowHeader="false" BodyPadding="2px">
                             <Items>
                                 <ext:Grid ID="gr_Main" ShowHeader="False" runat="server" EnableCheckBoxSelect="true" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true"
                                     IsDatabasePaging="true" OnPageIndexChange="gr_Main_PageIndexChange" OnRowCommand="gr_Main_RowCommand"
@@ -54,7 +54,6 @@
                                     <Columns>
                                         <ext:BoundField DataToolTipField="FLAG" HeaderText="状态" DataField="FLAG" Width="60px" />
                                         <ext:BoundField DataToolTipField="RECORDNO" HeaderText="病案号" SortField="RECORDNO" DataField="RECORDNO" Width="110px" />
-                                        <%--<ext:BoundField DataToolTipField="PATIENT_ID" HeaderText="病人ID" DataField="PATIENT_ID" Width="110" />--%>
                                         <ext:BoundField DataToolTipField="IN_HOSPITAL_TIME" Width="70px" HeaderText="入院次数" DataField="IN_HOSPITAL_TIME" />
                                         <ext:BoundField DataToolTipField="PATIENT_NAME" Width="90px" HeaderText="病人姓名" DataField="PATIENT_NAME" />
                                         <ext:BoundField DataToolTipField="GENDER_NAME" HeaderText="性别" DataField="GENDER_NAME" Width="50px" />

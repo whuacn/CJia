@@ -910,7 +910,7 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @"select pv.*,b.*,gc.name borrow_state_name from st_borrow_detail bd,gm_patient_view pv,st_borrow b,gm_code gc 
+                return @"select pv.*,b.*,gc.name borrow_state_name,to_char( pv.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char( pv.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from st_borrow_detail bd,gm_patient_view pv,st_borrow b,gm_code gc 
                         where bd.health_id=pv.id and bd.borrow_list_id=b.borrow_list_id and gc.code=b.borrow_state
                         and bd.status='1' and pv.status='1' and b.borrow_state='91' and b.applyer_id=?";
             }
