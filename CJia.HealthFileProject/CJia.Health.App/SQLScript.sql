@@ -59,3 +59,7 @@ alter table GM_PARAMETER
 
 insert into gm_parameter (ID, VALUE, VALUE_TYPE, VALUE_DESC)
 values (1, '123456', 'PDF_Password', 'PDF加密的密码');
+insert into gm_parameter (ID, VALUE, VALUE_TYPE, VALUE_DESC)
+values (2, '赣南医学院附属医院', 'LogoContent', '水印内容');
+insert into gm_parameter (ID, VALUE, VALUE_TYPE, VALUE_DESC)
+values (3, '50', 'LogoInclination', '水印倾斜度');
