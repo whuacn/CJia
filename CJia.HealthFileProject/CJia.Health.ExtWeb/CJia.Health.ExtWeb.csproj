@@ -40,13 +40,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CJia">
-      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
+      <HintPath>..\CJia.Health.App\bin\Debug\CJia.dll</HintPath>
     </Reference>
     <Reference Include="CJia.Editors">
-      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Editors.dll</HintPath>
+      <HintPath>..\CJia.Health.App\bin\Debug\CJia.Editors.dll</HintPath>
     </Reference>
     <Reference Include="CJia.Net">
-      <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.Net.dll</HintPath>
+      <HintPath>..\CJia.Health.App\bin\Debug\CJia.Net.dll</HintPath>
     </Reference>
     <Reference Include="Coolite.Ext.Web">
       <HintPath>..\..\CJia.Bin\Framework\Debug\Coolite.Ext.Web.dll</HintPath>
@@ -76,12 +76,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Coolite.Ext.Web.dll" />
     <Content Include="Css\base.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\register.css" />
     <Content Include="Css\signin.css" />
     <Content Include="Css\Style.css" />
     <Content Include="ErrorPage.aspx" />
+    <Content Include="ExtAspNet.dll" />
     <Content Include="HomePage.aspx" />
     <Content Include="Icons\accept.png" />
     <Content Include="Icons\add.png" />
@@ -1883,6 +1885,7 @@
     <Content Include="Js\menu.js" />
     <Content Include="Js\tab.js" />
     <Content Include="LoginView.aspx" />
+    <Content Include="Newtonsoft.Json.dll" />
     <Content Include="UI\PatientInfoView.aspx" />
     <Content Include="UI\QueryPatientView.aspx" />
     <Content Include="UI\MyFavorite.aspx" />

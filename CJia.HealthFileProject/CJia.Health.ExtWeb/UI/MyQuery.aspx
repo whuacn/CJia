@@ -17,7 +17,7 @@
             <Regions>
                 <ext:Region ID="ren_Center" Title="病人基本信息" ShowBorder="false" ShowHeader="false" Layout="Row" Position="Center" Margins="2 0 2 2" runat="server">
                     <Items>
-                        <ext:Panel ID="Panel1" runat="server" ShowHeader="false" ShowBorder="false">
+                        <ext:Panel ID="Panel1" runat="server" ShowHeader="false" ShowBorder="false" Height="80px">
                             <Items>
                                 <ext:Form ID="sf_Edit" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true"
                                     AutoScroll="true" LabelWidth="75px" BodyPadding="15px 15px" runat="server" EnableCollapse="True">
@@ -46,7 +46,7 @@
                                 </ext:Form>
                             </Items>
                         </ext:Panel>
-                        <ext:Panel ID="Panel2" runat="server" Layout="Fit" AutoScroll="true" RowHeight="84%" ShowHeader="false" BodyPadding="3px">
+                        <ext:Panel ID="Panel2" runat="server" AutoScroll="true" ShowHeader="false" Layout="Fit" ShowBorder="false" RowHeight="100%">
                             <Items>
                                 <ext:Grid ID="gr_Main" ShowHeader="False" runat="server" EnableCheckBoxSelect="true" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true"
                                     IsDatabasePaging="true" OnPageIndexChange="gr_Main_PageIndexChange" OnRowCommand="gr_Main_RowCommand"
