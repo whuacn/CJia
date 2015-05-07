@@ -60,5 +60,20 @@ namespace CJia.Health.Tools
                 return DateTime.Parse(CJia.DefaultOleDb.QueryScalar("select sysdate from dual"));
             }
         }
+        public static bool SystemInitConfig()
+        {
+            try
+            {
+                CJia.ClientConfig.ServerIP = CJia.Health.Tools.ConfigHelper.GetAppStrings("Host");
+                CJia.ClientConfig.ServerPort = int.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("Port"));
+                CJia.ClientConfig.ClientNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("ClientNo");
+                CJia.ClientConfig.SystemNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("SystemNo");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

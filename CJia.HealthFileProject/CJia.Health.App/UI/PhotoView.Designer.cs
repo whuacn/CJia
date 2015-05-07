@@ -845,7 +845,7 @@ namespace CJia.Health.App.UI
             this.btnInput.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnInput.Appearance.Options.UseFont = true;
             this.btnInput.Appearance.Options.UseForeColor = true;
-            this.btnInput.CustomText = "上传(F4)";
+            this.btnInput.CustomText = "上传(F2)";
             this.btnInput.Image = ((System.Drawing.Image)(resources.GetObject("btnInput.Image")));
             this.btnInput.Location = new System.Drawing.Point(292, 144);
             this.btnInput.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -854,7 +854,7 @@ namespace CJia.Health.App.UI
             this.btnInput.Selectable = false;
             this.btnInput.Size = new System.Drawing.Size(80, 28);
             this.btnInput.TabIndex = 158;
-            this.btnInput.Text = "上传(F4)";
+            this.btnInput.Text = "上传(F2)";
             this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // btnTakePhoto
@@ -863,7 +863,7 @@ namespace CJia.Health.App.UI
             this.btnTakePhoto.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnTakePhoto.Appearance.Options.UseFont = true;
             this.btnTakePhoto.Appearance.Options.UseForeColor = true;
-            this.btnTakePhoto.CustomText = "拍照(F2)";
+            this.btnTakePhoto.CustomText = "拍照(F1)";
             this.btnTakePhoto.Enabled = false;
             this.btnTakePhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnTakePhoto.Image")));
             this.btnTakePhoto.Location = new System.Drawing.Point(202, 144);
@@ -873,7 +873,7 @@ namespace CJia.Health.App.UI
             this.btnTakePhoto.Selectable = false;
             this.btnTakePhoto.Size = new System.Drawing.Size(80, 28);
             this.btnTakePhoto.TabIndex = 157;
-            this.btnTakePhoto.Text = "拍照(F2)";
+            this.btnTakePhoto.Text = "拍照(F1)";
             this.btnTakePhoto.Click += new System.EventHandler(this.btnTakePhoto_Click);
             // 
             // ckModel

@@ -15,10 +15,13 @@ namespace CJia.Health.ExtWeb.UI
         {
             if (!IsPostBack)
             {
-                if (OnLoadBorrow != null && Session["User"] != null)
+                if (Session["User"] != null)
                 {
-                    readBorrowArgs.UserData = Session["User"] as DataTable;
-                    OnLoadBorrow(null, readBorrowArgs);
+                    if (OnLoadBorrow != null)
+                    {
+                        readBorrowArgs.UserData = Session["User"] as DataTable;
+                        OnLoadBorrow(null, readBorrowArgs);
+                    }
                 }
             }
         }

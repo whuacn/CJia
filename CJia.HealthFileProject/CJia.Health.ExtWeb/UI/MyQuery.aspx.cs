@@ -16,9 +16,12 @@ namespace CJia.Health.ExtWeb.UI
         {
             if (!IsPostBack)
             {
-                if (OnInit != null)
+                if (Session["User"] != null)
                 {
-                    OnInit(null, null);
+                    if (OnInit != null)
+                    {
+                        OnInit(null, null);
+                    }
                 }
             }
         }

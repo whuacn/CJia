@@ -18,28 +18,6 @@ namespace CJia.Health.ExtWeb
                 SystemInitConfig();//连接数据库
             }
         }
-        public static bool SystemInitConfig()
-        {
-            try
-            {
-                CJia.ClientConfig.ServerIP = CJia.Health.Tools.ConfigHelper.GetAppStrings("Host");
-                CJia.ClientConfig.ServerPort = int.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("Port"));
-                CJia.ClientConfig.ClientNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("ClientNo");
-                CJia.ClientConfig.SystemNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("SystemNo");
-                if (CJia.DefaultOleDb.QueryScalar("select 1 from dual") == "1")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
         protected override object CreatePresenter()
         {
             return new Presenters.Web.LoginPresenter(this);

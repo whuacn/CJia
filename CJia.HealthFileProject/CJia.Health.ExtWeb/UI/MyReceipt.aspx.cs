@@ -15,7 +15,10 @@ namespace CJia.Health.ExtWeb.UI
         {
             if (!IsPostBack)
             {
-                Init();
+                if (Session["User"] != null)
+                {
+                    Init();
+                }
             }
         }
         protected override object CreatePresenter()

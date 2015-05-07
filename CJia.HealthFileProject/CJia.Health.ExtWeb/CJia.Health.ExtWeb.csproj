@@ -76,14 +76,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Coolite.Ext.Web.dll" />
     <Content Include="Css\base.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\register.css" />
     <Content Include="Css\signin.css" />
     <Content Include="Css\Style.css" />
     <Content Include="ErrorPage.aspx" />
-    <Content Include="ExtAspNet.dll" />
     <Content Include="HomePage.aspx" />
     <Content Include="Icons\accept.png" />
     <Content Include="Icons\add.png" />
@@ -1889,7 +1887,6 @@
     <Content Include="Js\menu.js" />
     <Content Include="Js\tab.js" />
     <Content Include="LoginView.aspx" />
-    <Content Include="Newtonsoft.Json.dll" />
     <Content Include="UI\PatientInfoView.aspx" />
     <Content Include="UI\QueryPatientView.aspx" />
     <Content Include="UI\MyFavorite.aspx" />

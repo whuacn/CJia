@@ -27,7 +27,7 @@ namespace CJia.Health.Tools
         /// <returns></returns>
         protected virtual object CreatePresenter()
         {
-            if(LicenseManager.CurrentContext.UsageMode == LicenseUsageMode.Designtime)
+            if (LicenseManager.CurrentContext.UsageMode == LicenseUsageMode.Designtime)
             {
                 return null;
             }
@@ -216,6 +216,21 @@ namespace CJia.Health.Tools
                 }
             }
             B_Tree.Nodes.Add(node);
+        }
+        public static bool SystemInitConfig()
+        {
+            try
+            {
+                CJia.ClientConfig.ServerIP = CJia.Health.Tools.ConfigHelper.GetAppStrings("Host");
+                CJia.ClientConfig.ServerPort = int.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("Port"));
+                CJia.ClientConfig.ClientNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("ClientNo");
+                CJia.ClientConfig.SystemNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("SystemNo");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         #endregion
     }

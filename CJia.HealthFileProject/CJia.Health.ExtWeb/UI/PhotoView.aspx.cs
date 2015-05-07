@@ -19,11 +19,17 @@ namespace CJia.Health.ExtWeb.UI
         {
             if (!IsPostBack)
             {
-                if (OnLoadPicture != null)
+                if (Session["User"] != null)
                 {
-                    string healthID = Request.QueryString["ID"].ToString();
-                    myPictureArgs.HealthID = healthID;
-                    OnLoadPicture(sender, myPictureArgs);
+                    if (Request.QueryString["ID"] != null)
+                    {
+                        if (OnLoadPicture != null)
+                        {
+                            string healthID = Request.QueryString["ID"].ToString();
+                            myPictureArgs.HealthID = healthID;
+                            OnLoadPicture(sender, myPictureArgs);
+                        }
+                    }
                 }
             }
         }

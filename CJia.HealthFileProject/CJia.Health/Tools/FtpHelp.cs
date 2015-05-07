@@ -549,5 +549,29 @@ namespace CJia.Health.Tools
             result.KeepAlive = false;
             return result;
         }
+        /// <summary>
+        /// 判断ftp服务器是否存在
+        /// </summary>
+        /// <param name="hostname"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static bool isLoginFtp(string hostname, string username, string password)
+        { 
+            FtpWebRequest reqFTP;
+            try
+            {
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + hostname + "/"));
+                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(username, password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+        }
     }
 }

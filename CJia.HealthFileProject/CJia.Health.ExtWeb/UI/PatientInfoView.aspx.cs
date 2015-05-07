@@ -14,10 +14,13 @@ namespace CJia.Health.ExtWeb.UI
         {
             if (!IsPostBack)
             {
-                if (Request["ID"] != null)
+                if (Session["User"] != null)
                 {
-                    PatientApplyArgs.ID = Request["ID"].ToString();
-                    OnGetPatientByID(null, PatientApplyArgs);
+                    if (Request["ID"] != null)
+                    {
+                        PatientApplyArgs.ID = Request["ID"].ToString();
+                        OnGetPatientByID(null, PatientApplyArgs);
+                    }
                 }
             }
         }

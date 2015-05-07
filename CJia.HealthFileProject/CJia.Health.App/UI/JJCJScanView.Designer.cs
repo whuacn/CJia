@@ -75,6 +75,7 @@ namespace CJia.Health.App.UI
             this.cJiaLabel16 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
+            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,10 +85,9 @@ namespace CJia.Health.App.UI
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlRight = new CJia.Controls.CJiaPanel();
+            this.smallpdfViewer = new CJia.Health.Tools.PDFViewer();
             this.btnLeft = new CJia.Controls.CJiaButton();
             this.btnRight = new CJia.Controls.CJiaButton();
-            this.pdfViewer = new CJia.Health.Tools.PDFViewer();
-            this.smallpdfViewer = new CJia.Health.Tools.PDFViewer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
@@ -156,7 +156,7 @@ namespace CJia.Health.App.UI
             this.btnReName.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnReName.Appearance.Options.UseFont = true;
             this.btnReName.Appearance.Options.UseForeColor = true;
-            this.btnReName.CustomText = "重命名(F3)";
+            this.btnReName.CustomText = "重命名(F1)";
             this.btnReName.Location = new System.Drawing.Point(199, 123);
             this.btnReName.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnReName.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -164,7 +164,7 @@ namespace CJia.Health.App.UI
             this.btnReName.Selectable = false;
             this.btnReName.Size = new System.Drawing.Size(80, 28);
             this.btnReName.TabIndex = 180;
-            this.btnReName.Text = "重命名(F3)";
+            this.btnReName.Text = "重命名(F1)";
             this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
             // 
             // txtStartPage
@@ -858,7 +858,7 @@ namespace CJia.Health.App.UI
             this.btnInput.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnInput.Appearance.Options.UseFont = true;
             this.btnInput.Appearance.Options.UseForeColor = true;
-            this.btnInput.CustomText = "上传(F4)";
+            this.btnInput.CustomText = "上传(F2)";
             this.btnInput.Image = ((System.Drawing.Image)(resources.GetObject("btnInput.Image")));
             this.btnInput.Location = new System.Drawing.Point(286, 123);
             this.btnInput.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -867,7 +867,7 @@ namespace CJia.Health.App.UI
             this.btnInput.Selectable = false;
             this.btnInput.Size = new System.Drawing.Size(80, 28);
             this.btnInput.TabIndex = 158;
-            this.btnInput.Text = "上传(F4)";
+            this.btnInput.Text = "上传(F2)";
             this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // cJiaLabel17
@@ -905,6 +905,18 @@ namespace CJia.Health.App.UI
             this.cJiaLabel1.Size = new System.Drawing.Size(26, 19);
             this.cJiaLabel1.TabIndex = 0;
             this.cJiaLabel1.Text = "目录";
+            // 
+            // pdfViewer
+            // 
+            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfViewer.FileName = null;
+            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Password = null;
+            this.pdfViewer.Size = new System.Drawing.Size(748, 600);
+            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
+            this.pdfViewer.TabIndex = 3;
+            this.pdfViewer.ZoomLevel = 3;
             // 
             // gridColumn12
             // 
@@ -985,6 +997,17 @@ namespace CJia.Health.App.UI
             this.pnlRight.Size = new System.Drawing.Size(206, 594);
             this.pnlRight.TabIndex = 18;
             // 
+            // smallpdfViewer
+            // 
+            this.smallpdfViewer.FileName = null;
+            this.smallpdfViewer.Location = new System.Drawing.Point(3, 3);
+            this.smallpdfViewer.Name = "smallpdfViewer";
+            this.smallpdfViewer.Password = null;
+            this.smallpdfViewer.Size = new System.Drawing.Size(201, 252);
+            this.smallpdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.single;
+            this.smallpdfViewer.TabIndex = 17;
+            this.smallpdfViewer.ZoomLevel = 3;
+            // 
             // btnLeft
             // 
             this.btnLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1020,27 +1043,6 @@ namespace CJia.Health.App.UI
             this.btnRight.TabIndex = 14;
             this.btnRight.Text = "逆时针旋转";
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
-            // 
-            // pdfViewer
-            // 
-            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pdfViewer.FileName = null;
-            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
-            this.pdfViewer.Name = "pdfViewer";
-            this.pdfViewer.Size = new System.Drawing.Size(741, 600);
-            this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
-            this.pdfViewer.TabIndex = 3;
-            this.pdfViewer.ZoomLevel = 3;
-            // 
-            // smallpdfViewer
-            // 
-            this.smallpdfViewer.FileName = null;
-            this.smallpdfViewer.Location = new System.Drawing.Point(3, 3);
-            this.smallpdfViewer.Name = "smallpdfViewer";
-            this.smallpdfViewer.Size = new System.Drawing.Size(201, 252);
-            this.smallpdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.single;
-            this.smallpdfViewer.TabIndex = 17;
-            this.smallpdfViewer.ZoomLevel = 3;
             // 
             // JJCJScanView
             // 

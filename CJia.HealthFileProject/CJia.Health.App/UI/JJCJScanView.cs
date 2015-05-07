@@ -159,17 +159,25 @@ namespace CJia.Health.App.UI
                             "是否确认入库? ";
                     if (Message.ShowQuery(meg, Message.Button.YesNo) == Message.Result.Yes)
                     {
-                        if (OnRecordNO != null)
+                        if (FtpHelp.isLoginFtp(HostName, UserName, Password))
                         {
-                            imagesInputArgs.RecordNO = LURecordNO.DisplayText;
-                            OnRecordNO(sender, imagesInputArgs);
+                            if (OnRecordNO != null)
+                            {
+                                imagesInputArgs.RecordNO = LURecordNO.DisplayText;
+                                OnRecordNO(sender, imagesInputArgs);
+                            }
+                            DataRow[] selectRow = RecordNOData.Select(" ID='" + LURecordNO.DisplayValue + "' ");
+                            string checkState = selectRow[0]["CHECK_STATUS"].ToString();
+                            if (!isSuccessCheckStatus(checkState, false)) return;
+                            pdfViewer.FileName = "";
+                            smallpdfViewer.FileName = "";
+                            CopyFilesToNet(PictureInfo);//上传图片
                         }
-                        DataRow[] selectRow = RecordNOData.Select(" ID='" + LURecordNO.DisplayValue + "' ");
-                        string checkState = selectRow[0]["CHECK_STATUS"].ToString();
-                        if (!isSuccessCheckStatus(checkState, false)) return;
-                        pdfViewer.FileName = "";
-                        smallpdfViewer.FileName = "";
-                        CopyFilesToNet(PictureInfo);//上传图片
+                        else
+                        {
+                            MessageBox.Show("Ftp服务没启动");
+                            return;
+                        }
                     }
                     else
                     {
@@ -256,10 +264,10 @@ namespace CJia.Health.App.UI
                 pictureGrid.Focus();
             }
         }
-        
+
         private void inputPicGridView_Click(object sender, EventArgs e)
         {
-           
+
         }
         private void Loading(string uri)
         {
@@ -698,10 +706,10 @@ namespace CJia.Health.App.UI
                 case Keys.F5:
                     btnRefresh_Click(null, null);
                     return true;
-                case Keys.F3:
+                case Keys.F1:
                     btnReName_Click(null, null);
                     return true;
-                case Keys.F4:
+                case Keys.F2:
                     btnInput_Click(null, null);
                     return true;
                 case Keys.F6:
@@ -916,7 +924,7 @@ namespace CJia.Health.App.UI
 
         private void btnRight_Click(object sender, EventArgs e)
         {
-            
+
         }
         /// <summary>
         /// 设定图片控件大小
@@ -1008,7 +1016,7 @@ namespace CJia.Health.App.UI
                         }
                         pictureGrid.DataSource = PictureInfo;
                         isReName = true;
-                        btnRefresh_Click(null, null);
+                        pictureView_FocusedRowChanged(null, null);
                     }
                     else
                     {
