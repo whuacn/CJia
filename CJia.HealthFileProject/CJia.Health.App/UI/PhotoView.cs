@@ -868,7 +868,7 @@ namespace CJia.Health.App.UI
         {
             switch (keyData)
             {
-                case Keys.F3:
+                case Keys.F2:
                     btnTakePhoto_Click(null, null);
                     return true;
                 case Keys.F5:

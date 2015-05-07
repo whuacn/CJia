@@ -749,7 +749,7 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(280, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(200, 26);
+            this.LURecordNO.Size = new System.Drawing.Size(200, 20);
             this.LURecordNO.TabIndex = 1;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -778,7 +778,7 @@ namespace CJia.Health.App.UI
             this.txtSubPage.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtSubPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtSubPage.Properties.ReadOnly = true;
-            this.txtSubPage.Size = new System.Drawing.Size(47, 26);
+            this.txtSubPage.Size = new System.Drawing.Size(47, 20);
             this.txtSubPage.TabIndex = 164;
             this.txtSubPage.Leave += new System.EventHandler(this.txtSubPage_Leave);
             // 
@@ -798,7 +798,7 @@ namespace CJia.Health.App.UI
             this.txtPage.Properties.Mask.EditMask = "\\d{3}|\\d{2}|\\d{1}";
             this.txtPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtPage.Properties.ReadOnly = true;
-            this.txtPage.Size = new System.Drawing.Size(47, 26);
+            this.txtPage.Size = new System.Drawing.Size(47, 20);
             this.txtPage.TabIndex = 163;
             this.txtPage.TextChanged += new System.EventHandler(this.txtPage_TextChanged);
             this.txtPage.Leave += new System.EventHandler(this.txtPage_Leave);
@@ -815,7 +815,7 @@ namespace CJia.Health.App.UI
             this.txtFolder.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtFolder.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtFolder.Properties.ReadOnly = true;
-            this.txtFolder.Size = new System.Drawing.Size(311, 26);
+            this.txtFolder.Size = new System.Drawing.Size(311, 20);
             this.txtFolder.TabIndex = 1;
             this.txtFolder.TextChanged += new System.EventHandler(this.txtFolder_TextChanged);
             // 
@@ -835,7 +835,7 @@ namespace CJia.Health.App.UI
             this.txtTimes.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtTimes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTimes.Properties.ReadOnly = true;
-            this.txtTimes.Size = new System.Drawing.Size(34, 26);
+            this.txtTimes.Size = new System.Drawing.Size(34, 20);
             this.txtTimes.TabIndex = 161;
             this.txtTimes.Leave += new System.EventHandler(this.txtTimes_Leave);
             // 
@@ -863,7 +863,7 @@ namespace CJia.Health.App.UI
             this.btnTakePhoto.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             this.btnTakePhoto.Appearance.Options.UseFont = true;
             this.btnTakePhoto.Appearance.Options.UseForeColor = true;
-            this.btnTakePhoto.CustomText = "拍照(F3)";
+            this.btnTakePhoto.CustomText = "拍照(F2)";
             this.btnTakePhoto.Enabled = false;
             this.btnTakePhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnTakePhoto.Image")));
             this.btnTakePhoto.Location = new System.Drawing.Point(202, 144);
@@ -873,7 +873,7 @@ namespace CJia.Health.App.UI
             this.btnTakePhoto.Selectable = false;
             this.btnTakePhoto.Size = new System.Drawing.Size(80, 28);
             this.btnTakePhoto.TabIndex = 157;
-            this.btnTakePhoto.Text = "拍照(F3)";
+            this.btnTakePhoto.Text = "拍照(F2)";
             this.btnTakePhoto.Click += new System.EventHandler(this.btnTakePhoto_Click);
             // 
             // ckModel
@@ -1091,7 +1091,7 @@ namespace CJia.Health.App.UI
             this.pdfViewer.Location = new System.Drawing.Point(0, 0);
             this.pdfViewer.Name = "pdfViewer";
             this.pdfViewer.Password = null;
-            this.pdfViewer.Size = new System.Drawing.Size(956, 600);
+            this.pdfViewer.Size = new System.Drawing.Size(963, 600);
             this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
             this.pdfViewer.TabIndex = 17;
             this.pdfViewer.ZoomLevel = 3;
