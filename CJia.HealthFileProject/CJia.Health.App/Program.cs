@@ -20,37 +20,50 @@ namespace CJia.Health.App
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.ThreadException += Application_ThreadException;
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            if (AppRunAlready("WSLPrinter.App"))
+            try
             {
-                MessageBox.Show("程序已启动！");
-                return;
+                //处理未捕获的异常
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                //处理UI线程异常 
+                Application.ThreadException += Application_ThreadException;
+                //处理非UI线程异常
+                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                if (AppRunAlready("WSLPrinter.App"))
+                {
+                    MessageBox.Show("程序已启动！");
+                    return;
+                }
+                Init();
+                string isDev = CJia.Health.Tools.ConfigHelper.GetAppStrings("isDev");
+                if (isDev == "0")
+                {
+                    LoginWaitFrm frm = new LoginWaitFrm();
+                    frm.Show();
+                    Application.DoEvents();
+                    UI.LoginView login = new UI.LoginView();
+                    frm.Close();
+                    CJia.Health.Tools.Help.NewNoBorderForm(login);
+                }
+                else
+                {
+                    LoginFrom log = new LoginFrom();
+                    log.ShowDialog();
+                }
+                if (User.IsLoginSuccess)
+                {
+                    SplashScreenManager.ShowForm(typeof(SplashScreenMain));
+                    Application.Run(new NewMainForm());
+                }
+                //Application.Run(new Form1());
             }
-            Init();
-            string isDev = CJia.Health.Tools.ConfigHelper.GetAppStrings("isDev");
-            if (isDev == "0")
+            catch (Exception e)
             {
-                LoginWaitFrm frm = new LoginWaitFrm();
-                frm.Show();
-                Application.DoEvents();
-                UI.LoginView login = new UI.LoginView();
-                frm.Close();
-                CJia.Health.Tools.Help.NewNoBorderForm(login);
+                Message.ShowWarning(e.Message);
+                string str = GetExceptionMsg(e, e.ToString());
+                NlogMonitor.LogMonitor.Info("错误日志：" + str);
             }
-            else
-            {
-                LoginFrom log = new LoginFrom();
-                log.ShowDialog();
-            }
-            if (User.IsLoginSuccess)
-            {
-                SplashScreenManager.ShowForm(typeof(SplashScreenMain));
-                Application.Run(new NewMainForm());
-            }
-            //Application.Run(new Form1());
         }
 
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -62,9 +75,9 @@ namespace CJia.Health.App
 
         static void Init()
         {
-            string path = Application.StartupPath + @"\Cache";
-            if (Directory.Exists(path))
-                Directory.Delete(path, true);
+            //string path = Application.StartupPath + @"\Cache";
+            //if (Directory.Exists(path))
+            //    Directory.Delete(path, true);
             CJia.ClientConfig.ServerIP = CJia.Health.Tools.ConfigHelper.GetAppStrings("Host");
             CJia.ClientConfig.ServerPort = int.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("Port"));
             CJia.ClientConfig.ClientNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("ClientNo");

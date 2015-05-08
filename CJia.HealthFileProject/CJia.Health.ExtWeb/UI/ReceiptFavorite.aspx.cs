@@ -52,14 +52,17 @@ namespace CJia.Health.ExtWeb.UI
         #endregion
         public void InitGrid(DataTable data, Grid grid)
         {
-            PagedDataSource ps = new PagedDataSource();
-            ps.DataSource = data.DefaultView;
-            ps.AllowPaging = true; //是否可以分页
-            ps.PageSize = grid.PageSize; //显示的数量
-            ps.CurrentPageIndex = grid.PageIndex; //取得当前页的页码
-            grid.RecordCount = data.Rows.Count;
-            grid.DataSource = ps;
-            grid.DataBind();
+            if (data != null)
+            {
+                PagedDataSource ps = new PagedDataSource();
+                ps.DataSource = data.DefaultView;
+                ps.AllowPaging = true; //是否可以分页
+                ps.PageSize = grid.PageSize; //显示的数量
+                ps.CurrentPageIndex = grid.PageIndex; //取得当前页的页码
+                grid.RecordCount = data.Rows.Count;
+                grid.DataSource = ps;
+                grid.DataBind();
+            }
         }
         protected void gr_Main_RowCommand(object sender, ExtAspNet.GridCommandEventArgs e)
         {

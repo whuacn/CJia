@@ -50,7 +50,7 @@
                             <Items>
                                 <ext:Grid ID="gr_Main" ShowHeader="False" runat="server" EnableCheckBoxSelect="true" AllowSorting="true" PageSize="20" ShowBorder="true" AllowPaging="true" EnableTextSelection="true"
                                     IsDatabasePaging="true" OnPageIndexChange="gr_Main_PageIndexChange" OnRowCommand="gr_Main_RowCommand"
-                                    DataKeyNames="ID" AutoScroll="true" EnableRowDoubleClick="true">
+                                    DataKeyNames="ID,IN_HOSPITAL_DEPT,OUT_HOSPITAL_DEPT" AutoScroll="true" EnableRowDoubleClick="true" OnPreRowDataBound="gr_Main_PreRowDataBound">
                                     <Columns>
                                         <ext:BoundField DataToolTipField="FLAG" HeaderText="状态" DataField="FLAG" Width="60px" />
                                         <ext:BoundField DataToolTipField="RECORDNO" HeaderText="病案号" SortField="RECORDNO" DataField="RECORDNO" Width="110px" />
@@ -62,7 +62,7 @@
                                         <ext:BoundField DataToolTipField="OUT_HOSPITAL_DATE2" Width="100px" HeaderText="出院日期" DataField="OUT_HOSPITAL_DATE2" />
                                         <ext:BoundField DataToolTipField="OUT_HOSPITAL_DEPT_NAME" HeaderText="出院科室" SortField="OUT_HOSPITAL_DEPT_NAME" DataField="OUT_HOSPITAL_DEPT_NAME" Width="120px" />
                                         <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Info" HeaderText="&nbsp;" Width="80px" CommandName="Info" Text="详细信息>>" />
-                                        <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_fav" HeaderText="&nbsp;" Width="40px" Icon="Add" CommandName="Favorite" ToolTip="收藏" Text="" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_fav" HeaderText="&nbsp;" Width="45px" CommandName="Favorite" Text="收藏" />
                                         <ext:LinkButtonField ConfirmTarget="Top" ColumnID="lbf_Apply" HeaderText="&nbsp;" Width="80px" CommandName="Apply" Text="申请借阅" />
                                     </Columns>
                                 </ext:Grid>
@@ -71,6 +71,7 @@
                                 <ext:Toolbar runat="server" Position="Bottom">
                                     <Items>
                                         <ext:ToolbarFill runat="server"></ext:ToolbarFill>
+                                        <ext:Button runat="server" Hidden="true" ID="btnAllFav" Text="收藏" Icon="BookAdd" OnClick="btnAllFav_Click"></ext:Button>
                                         <ext:Button runat="server" ID="btnApply" Text="申请借阅" Icon="BulletGo" OnClick="btnApply_Click"></ext:Button>
                                     </Items>
                                 </ext:Toolbar>
@@ -97,6 +98,45 @@
                     <Items>
                         <ext:ToolbarFill ID="tf_sb" runat="server"></ext:ToolbarFill>
                         <ext:Button ID="btnOk" Text="提交申请" runat="server" Icon="BulletGo" OnClick="btnOk_Click">
+                        </ext:Button>
+                    </Items>
+                </ext:Toolbar>
+            </Toolbars>
+        </ext:Window>
+        <ext:Window ID="win_MyFav" Title="选择收藏夹" Hidden="true" Icon="ApplicationFormMagnify" Target="Self"
+            runat="server" IsModal="true" CloseAction="HidePostBack" Width="350px" Height="220px">
+            <Toolbars>
+                <ext:Toolbar ID="Toolbar1" Position="Top" runat="server">
+                    <Items>
+                        <ext:TextBox runat="server" EmptyText="请输入新的收藏夹名称" ShowEmptyLabel="true" ID="txtFavName" Width="260px"></ext:TextBox>
+                        <ext:Button ID="btnAddNewFav" Text="新增" runat="server" Icon="CdrAdd" OnClick="btnAddNewFav_Click">
+                        </ext:Button>
+                        <ext:ToolbarFill ID="ToolbarFill1" runat="server"></ext:ToolbarFill>
+                    </Items>
+                </ext:Toolbar>
+            </Toolbars>
+            <Items>
+                <ext:Panel ID="Panel3" runat="server" Layout="Column" ShowBorder="False" ShowHeader="false" EnableBackgroundColor="true">
+                    <Items>
+                        <ext:Form ID="Form2" ShowBorder="false" ShowHeader="false" EnableBackgroundColor="true"
+                            AutoScroll="true" LabelWidth="50px" BodyPadding="40px 15px 0 15px" runat="server" EnableCollapse="True">
+                            <Rows>
+                                <ext:FormRow ColumnWidths="100%">
+                                    <Items>
+                                        <ext:DropDownList ID="dlMyFav" Width="230px" ShowLabel="true" runat="server" Label="收藏夹" EnableSimulateTree="true">
+                                        </ext:DropDownList>
+                                    </Items>
+                                </ext:FormRow>
+                            </Rows>
+                        </ext:Form>
+                    </Items>
+                </ext:Panel>
+            </Items>
+            <Toolbars>
+                <ext:Toolbar ID="tvl_select2" Position="Bottom" runat="server">
+                    <Items>
+                        <ext:ToolbarFill ID="toofilFav" runat="server"></ext:ToolbarFill>
+                        <ext:Button ID="btnMyFav" Text="收藏" OnClick="btnMyFav_Click" runat="server" Icon="Add">
                         </ext:Button>
                     </Items>
                 </ext:Toolbar>

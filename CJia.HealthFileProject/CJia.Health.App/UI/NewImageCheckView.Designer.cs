@@ -254,7 +254,6 @@
             this.gvPicture.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvBigPicture_RowCellStyle);
             this.gvPicture.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvPicture_FocusedRowChanged);
             this.gvPicture.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gvPicture_KeyDown);
-            this.gvPicture.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gvPicture_KeyUp);
             // 
             // gridColumn1
             // 

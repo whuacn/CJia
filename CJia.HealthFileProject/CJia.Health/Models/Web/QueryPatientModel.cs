@@ -206,5 +206,18 @@ namespace CJia.Health.Models.Web
                 return null;
             }
         }
+        /// <summary>
+        /// 收藏病案
+        /// </summary>
+        /// <param name="transID"></param>
+        /// <param name="favID"></param>
+        /// <param name="healthID"></param>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        public bool AddFavouriteDetail(string transID, string favID, string healthID, string userID)
+        {
+            object[] sqlParams = new object[] { favID, healthID, userID };
+            return CJia.DefaultOleDb.Execute(transID, SqlTools.SqlAddFovouriteDetail, sqlParams) > 0 ? true : false;
+        }
     }
 }

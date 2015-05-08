@@ -56,11 +56,11 @@
                                 </ext:ToolbarFill>
                                 <ext:ToolbarSeparator ID="tbf_seplrl" runat="server">
                                 </ext:ToolbarSeparator>
-                                <ext:Button ID="btn_UserInfo" Icon="User" Text="个人信息" runat="server">
+                                <ext:Button ID="btn_UserInfo" Icon="User" Hidden="true" Text="个人信息" runat="server">
                                 </ext:Button>
                                 <ext:ToolbarSeparator ID="tbf_seplrc" runat="server">
                                 </ext:ToolbarSeparator>
-                                <ext:Button ID="btn_ChangePassword" Icon="LockKey" Text="修改密码" runat="server">
+                                <ext:Button ID="btn_ChangePassword" OnClick="btn_ChangePassword_Click" Icon="LockKey" Text="修改密码" runat="server">
                                 </ext:Button>
                                 <ext:ToolbarSeparator ID="tbf_seplrr" runat="server">
                                 </ext:ToolbarSeparator>
@@ -89,18 +89,6 @@
                                                 <ext:TreeNode NodeID="node_MyReceipt" Text="我的申请" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyReceipt.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
-                                            <Nodes>
-                                                <ext:TreeNode NodeID="node_MyBorrow" Text="我的借阅" IconUrl="Icons/user_home.png" NavigateUrl="UI/ReceiptFavorite.aspx">
-                                                </ext:TreeNode>
-                                            </Nodes>
-                                            <Nodes>
-                                                <ext:TreeNode NodeID="node_MyPatient" Text="我的病案" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyBorrow.aspx">
-                                                </ext:TreeNode>
-                                            </Nodes>
-                                            <Nodes>
-                                                <ext:TreeNode NodeID="node_MyFavorite" Text="我的收藏" IconUrl="Icons/user_home.png" NavigateUrl="UI/MyFavorite.aspx">
-                                                </ext:TreeNode>
-                                            </Nodes>
                                         </ext:Tree>
                                     </Items>
                                 </ext:AccordionPane>
@@ -108,20 +96,18 @@
                                     <Items>
                                         <ext:Tree ID="tree_MArticle" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
                                             <Nodes>
-                                                <ext:TreeNode Text="我的借阅" NodeID="node_DataDeclare" IconUrl="Icons/table_go.png" NavigateUrl="Backstage/CheckSubmitView.aspx?id=1">
+                                                <ext:TreeNode Text="我的借阅" NodeID="node_DataDeclare" IconUrl="Icons/table_go.png" NavigateUrl="UI/ReceiptFavorite.aspx">
                                                 </ext:TreeNode>
-                                                <ext:TreeNode Text="查看病案" NodeID="node_DataReview" IconUrl="Icons/table_relationship.png" NavigateUrl="Backstage/CheckSubmitView.aspx?id=2">
+                                                <ext:TreeNode Text="我的病案" NodeID="node_DataReview" IconUrl="Icons/table_relationship.png" NavigateUrl="UI/MyBorrow.aspx">
                                                 </ext:TreeNode>
                                             </Nodes>
                                         </ext:Tree>
                                     </Items>
                                 </ext:AccordionPane>
-                                <ext:AccordionPane ID="ap_MCenter" AutoScroll="true" Icon="FolderImage" runat="server" Expanded="false" Hidden="false" Title="个人中心" Layout="Fit">
+                                <ext:AccordionPane ID="ap_MCenter" AutoScroll="true" Icon="FolderImage" runat="server" Expanded="false" Hidden="false" Title="我的收藏" Layout="Fit">
                                     <Items>
                                         <ext:Tree ID="tree_MCenter" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
                                             <Nodes>
-                                                <ext:TreeNode Text="我的收藏" NodeID="node_DataDeclare" IconUrl="Icons/table_go.png" NavigateUrl="Backstage/CheckSubmitView.aspx?id=1">
-                                                </ext:TreeNode>
                                             </Nodes>
                                         </ext:Tree>
                                     </Items>
@@ -129,6 +115,15 @@
                             </Panes>
                         </ext:Accordion>
                     </Items>
+                    <Toolbars>
+                        <ext:Toolbar ID="tvl_select2" Position="Bottom" runat="server">
+                            <Items>
+                                <ext:ToolbarFill ID="toofilFav" runat="server"></ext:ToolbarFill>
+                                <ext:Button ID="btnRefulse" OnClick="btnRefulse_Click" Text="刷新" runat="server" Icon="ArrowRefresh">
+                                </ext:Button>
+                            </Items>
+                        </ext:Toolbar>
+                    </Toolbars>
                 </ext:Region>
                 <ext:Region ID="ren_Center" ShowHeader="false" Layout="Fit" Position="Center" Margins="0 0 5 0"
                     runat="server">
@@ -163,7 +158,7 @@
                 </ext:Region>
             </Regions>
         </ext:RegionPanel>
-        <ext:Window ID="win_ChangePassword" Icon="LockKey" Title="修改密码" IFrameUrl="UI/ChangePassword.aspx" Hidden="true" EnableIFrame="true"
+        <ext:Window ID="win_ChangePassword" Icon="LockKey" Title="修改密码" Hidden="true" EnableIFrame="true"
             Target="Parent" runat="server" IsModal="true" Width="350px" Height="170px">
         </ext:Window>
     </form>

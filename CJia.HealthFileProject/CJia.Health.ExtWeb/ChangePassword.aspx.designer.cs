@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace CJia.Health.ExtWeb.UI {
+namespace CJia.Health.ExtWeb {
     
     
-    public partial class MyFavorite {
+    public partial class ChangePassword {
         
         /// <summary>
         /// Icon 控件。
@@ -22,13 +22,13 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::System.Web.UI.HtmlControls.HtmlLink Icon;
         
         /// <summary>
-        /// frm_Main 控件。
+        /// form_Main 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frm_Main;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form_Main;
         
         /// <summary>
         /// pm_Main 控件。
@@ -40,24 +40,6 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.PageManager pm_Main;
         
         /// <summary>
-        /// rpnl_Main 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.RegionPanel rpnl_Main;
-        
-        /// <summary>
-        /// ren_Center 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Region ren_Center;
-        
-        /// <summary>
         /// pnl_Main 控件。
         /// </summary>
         /// <remarks>
@@ -67,57 +49,48 @@ namespace CJia.Health.ExtWeb.UI {
         protected global::ExtAspNet.Panel pnl_Main;
         
         /// <summary>
-        /// gr_detail 控件。
+        /// sf_Main 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Grid gr_detail;
+        protected global::ExtAspNet.SimpleForm sf_Main;
         
         /// <summary>
-        /// Toolbar1 控件。
+        /// txt_OldPasswdD 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Toolbar Toolbar1;
+        protected global::ExtAspNet.TextBox txt_OldPasswdD;
         
         /// <summary>
-        /// ToolbarFill1 控件。
+        /// txt_NewPasswdD 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.ToolbarFill ToolbarFill1;
+        protected global::ExtAspNet.TextBox txt_NewPasswdD;
         
         /// <summary>
-        /// btnDeleteFav 控件。
+        /// txt_ConfirmPasswdD 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Button btnDeleteFav;
+        protected global::ExtAspNet.TextBox txt_ConfirmPasswdD;
         
         /// <summary>
-        /// win_Image 控件。
+        /// btn_Submit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::ExtAspNet.Window win_Image;
-        
-        /// <summary>
-        /// win_Edit 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::ExtAspNet.Window win_Edit;
+        protected global::ExtAspNet.Button btn_Submit;
     }
 }

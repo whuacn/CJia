@@ -40,14 +40,17 @@ namespace CJia.Health.ExtWeb.UI
         }
         public void InitGrid(DataTable data, Grid grid)
         {
-            PagedDataSource ps = new PagedDataSource();
-            ps.DataSource = data.DefaultView;
-            ps.AllowPaging = true; 
-            ps.PageSize = grid.PageSize; 
-            ps.CurrentPageIndex = grid.PageIndex; 
-            grid.RecordCount = data.Rows.Count;
-            grid.DataSource = ps;
-            grid.DataBind();
+            if (data != null)
+            {
+                PagedDataSource ps = new PagedDataSource();
+                ps.DataSource = data.DefaultView;
+                ps.AllowPaging = true;
+                ps.PageSize = grid.PageSize;
+                ps.CurrentPageIndex = grid.PageIndex;
+                grid.RecordCount = data.Rows.Count;
+                grid.DataSource = ps;
+                grid.DataBind();
+            }
         }
         protected void gr_detail_PageIndexChange(object sender, GridPageEventArgs e)
         {

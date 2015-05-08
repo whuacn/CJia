@@ -668,23 +668,24 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @" select u.*
-                from gm_user u, tr_user_role ur
-                where u.status = '1'
-                and u.user_id = ur.user_id
-                and ur.status = '1'
-                and ur.role_id in (select distinct rf.role_id
-                                        from tr_role_function rf,
-                                            (select * from tm_role ro where ro.status = '1') r
-                                    where rf.status = '1'
-                                        and rf.role_id = r.role_id
-                                        and rf.function_id in
-                                            (select fu.function_id
-                                                from tm_function fu
-                                            where fu.status = '1'
-                                                and fu.user_type = 304))
-                and u.user_no = ?
-                and u.user_pwd = ? ";
+                return @" select u.*,dt.dept_name
+                      from gm_user u, tr_user_role ur,gm_dept dt
+                     where u.status = '1'
+                       and u.user_id = ur.user_id
+                       and ur.status = '1'
+                       and u.dept_id=dt.dept_id
+                       and ur.role_id in (select distinct rf.role_id
+                                            from tr_role_function rf,
+                                                 (select * from tm_role ro where ro.status = '1') r
+                                           where rf.status = '1'
+                                             and rf.role_id = r.role_id
+                                             and rf.function_id in
+                                                 (select fu.function_id
+                                                    from tm_function fu
+                                                   where fu.status = '1'
+                                                     and fu.user_type = 304))
+                       and u.user_no = ?
+                       and u.user_pwd = ?";
             }
         }
         #endregion
@@ -1585,7 +1586,16 @@ values
                         (?, ?, ?, '8888', ?, '1', ?, sysdate,?)";
             }
         }
-
+        public static string SqlInsertFavorites
+        {
+            get
+            {
+                return @"insert into gm_favorites
+                      (favorites_id, user_id, favorites_name, create_by, create_date, status)
+                    values
+                      (gm_favorites_seq.nextval, ?, '我的收藏夹', ?, sysdate, '1')";
+            }
+        }
         /// <summary>
         /// 针对某用户操作时删除用户角色表
         /// </summary>
@@ -2550,6 +2560,45 @@ values
             get
             {
                 return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where P.id=?";
+            }
+        }
+        public static string SqlQueryMyFovourite
+        {
+            get
+            {
+                return @"SELECT * FROM gm_FAVORITES t WHERE t.user_id=? and t.status='1'";
+            }
+        }
+        public static string SqlAddFovouriteDetail
+        {
+            get
+            {
+                return @"insert into gm_favorites_detail
+                        (id, favorites_id, health_id, favorites_date, create_by, create_date, status)
+                      values
+                        (gm_favorites_detail_seq.nextval, ?, ?, sysdate, ?, sysdate, '1')";
+            }
+        }
+        public static string SqlQueryMyFovouriteByID
+        {
+            get
+            {
+                return @"SELECT pv.*,
+                       ft.favorites_date,
+                       ft.id ft_id,
+                       to_char(pv.in_hospital_date, 'yyyy/mm/dd') in_hospital_date2,
+                       to_char(pv.out_hospital_date, 'yyyy/mm/dd') out_hospital_date2
+                  FROM gm_patient_view pv, gm_favorites_detail ft
+                 WHERE ft.status = '1'
+                   and ft.health_id = pv.id
+                   and ft.favorites_id = ? ORDER BY ft.favorites_date desc";
+            }
+        }
+        public static string SqlRemoveFovouriteDetail
+        {
+            get
+            {
+                return @"update gm_favorites_detail ft set ft.status='0' WHERE ft.id=?";
             }
         }
     }

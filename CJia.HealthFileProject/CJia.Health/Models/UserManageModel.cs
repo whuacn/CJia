@@ -79,7 +79,7 @@ namespace CJia.Health.Models
         /// <param name="deptId">部门名称</param>
         /// <param name="doctorDescript">医生职称</param>
         /// <returns></returns>
-        public bool AddUser(long userId,string userNo, string userName, string deptId,string doctorDescript)
+        public bool AddUser(long userId, string userNo, string userName, string deptId, string doctorDescript)
         {
             List<object> sqlParams = new List<object>();
             sqlParams.Add(userId);
@@ -88,6 +88,8 @@ namespace CJia.Health.Models
             sqlParams.Add(deptId);
             sqlParams.Add(long.Parse(User.UserData.Rows[0]["user_id"].ToString()));
             sqlParams.Add(doctorDescript);
+            object[] ob = { userId, long.Parse(User.UserData.Rows[0]["user_id"].ToString()) };
+            CJia.DefaultOleDb.Execute(SqlTools.SqlInsertFavorites, ob);
             return CJia.DefaultOleDb.Execute(SqlTools.SqlInsertUser, sqlParams) > 0 ? true : false;
         }
 
@@ -99,7 +101,7 @@ namespace CJia.Health.Models
         /// <param name="listRoleId">List角色Id</param>
         /// <param name="listRoleName">List角色名称</param>
         /// <returns></returns>
-        public bool AddUserRole(long userId,string userName,List<object> listRoleId,List<object> listRoleName)  
+        public bool AddUserRole(long userId, string userName, List<object> listRoleId, List<object> listRoleName)
         {
             bool isSuccess = false;
             List<object> sqlParams = new List<object>();
@@ -112,7 +114,7 @@ namespace CJia.Health.Models
                     sqlParams.Add(listRoleId[i]);
                     sqlParams.Add(listRoleName[i]);
                     sqlParams.Add(long.Parse(User.UserData.Rows[0]["user_id"].ToString()));
-                    isSuccess = CJia.DefaultOleDb.Execute(trans.ID,SqlTools.SqlInsertRoleUser,sqlParams) > 0 ? true : false;
+                    isSuccess = CJia.DefaultOleDb.Execute(trans.ID, SqlTools.SqlInsertRoleUser, sqlParams) > 0 ? true : false;
                     sqlParams.Clear();
                 }
                 trans.Complete();
@@ -128,7 +130,7 @@ namespace CJia.Health.Models
         public bool DeleteUserRole(long userId)
         {
             object[] sqlParams = new object[] { userId };
-            return CJia.DefaultOleDb.Execute(SqlTools.SqlDeleteRoleUserByUserId,sqlParams) > 0 ? true : false;
+            return CJia.DefaultOleDb.Execute(SqlTools.SqlDeleteRoleUserByUserId, sqlParams) > 0 ? true : false;
         }
 
         /// <summary>
@@ -149,7 +151,7 @@ namespace CJia.Health.Models
             sqlParams.Add(long.Parse(User.UserData.Rows[0]["user_id"].ToString()));
             sqlParams.Add(doctorDescript);
             sqlParams.Add(userId);
-           return CJia.DefaultOleDb.Execute(SqlTools.SqlUpdateUserById,sqlParams) > 0 ? true : false;
+            return CJia.DefaultOleDb.Execute(SqlTools.SqlUpdateUserById, sqlParams) > 0 ? true : false;
         }
 
         /// <summary>
@@ -160,7 +162,7 @@ namespace CJia.Health.Models
         public bool DeleteUser(long userId)
         {
             object[] sqlParams = new object[] { userId };
-            return CJia.DefaultOleDb.Execute(SqlTools.SqlDeleteUserById, sqlParams) > 0 ? true : false ;
+            return CJia.DefaultOleDb.Execute(SqlTools.SqlDeleteUserById, sqlParams) > 0 ? true : false;
         }
 
         /// <summary>
@@ -180,7 +182,7 @@ namespace CJia.Health.Models
         public DataTable QueryUserRoleByUserId(long userId)
         {
             object[] sqlParams = new object[] { userId };
-            return CJia.DefaultOleDb.Query(SqlTools.SqlQueryUserRoleFunctionByUserId,sqlParams);
+            return CJia.DefaultOleDb.Query(SqlTools.SqlQueryUserRoleFunctionByUserId, sqlParams);
         }
 
         /// <summary>
@@ -189,14 +191,14 @@ namespace CJia.Health.Models
         /// <returns></returns>
         public DataTable QueryBySearchGrid(string keyWord)
         {
-            keyWord = "%"+keyWord + "%";
+            keyWord = "%" + keyWord + "%";
             List<object> sqlParams = new List<object>();
             sqlParams.Add(keyWord);
             sqlParams.Add(keyWord);
             sqlParams.Add(keyWord);
             sqlParams.Add(keyWord);
             sqlParams.Add(keyWord);
-            return CJia.DefaultOleDb.Query(SqlTools.SqlQueryUserGridBySearch,sqlParams);
+            return CJia.DefaultOleDb.Query(SqlTools.SqlQueryUserGridBySearch, sqlParams);
         }
     }
 }

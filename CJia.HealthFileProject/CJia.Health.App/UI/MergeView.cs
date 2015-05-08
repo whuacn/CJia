@@ -14,7 +14,6 @@ using System.Collections;
 using GdiPlusLib;
 using CJia.Health.Tools;
 using System.Threading;
-using System.Runtime.InteropServices;
 
 namespace CJia.Health.App.UI
 {
@@ -79,7 +78,6 @@ namespace CJia.Health.App.UI
             lblMesg.Text = "";
             Tw = new Twain(MyProductName);
             Tw.Init(this.Handle);
-            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             NoBlankPage = new List<string>();
             lblNoBlank.Text = "";
         }
@@ -385,6 +383,27 @@ namespace CJia.Health.App.UI
                 {
                     MessageBox.Show("合并成功");
                     Match();//处理审核未通过的图片
+                    for (int i = 0; i < PictureInfo.Rows.Count; i++)
+                    {
+                        string name = PictureInfo.Rows[i]["Pic_Name"].ToString().Replace(".pdf", "");
+                        string pathOld = Application.StartupPath + @"\Cache\" + name;
+                        foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                        {
+                            if ((cs as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                            {
+                                (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                            }
+                        }
+                        foreach (Control cs2 in this.ParentForm.Controls.Find("smallpdfViewer", true))
+                        {
+                            if ((cs2 as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                            {
+                                (cs2 as CJia.Health.Tools.PDFViewer).FileName = "";
+                            }
+                        }
+                        try { File.Delete(pathOld); }
+                        catch { }
+                    }
                     BindNull();
                 }
             }

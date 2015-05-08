@@ -66,8 +66,6 @@ namespace CJia.Health.App.UI
             Tw = new Twain(MyProductName);
             Tw.Init(this.Handle);
             LURecordNO.Focus();
-            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
-
         }
 
         void LURecordNO_SelectValueChanged(object sender, EventArgs e)
@@ -599,14 +597,6 @@ namespace CJia.Health.App.UI
             if (pathname.Trim().Length == 0) { return null; }
             try
             {
-                foreach (Control cs in this.Controls.Find("pdfViewer", true))
-                {
-                    (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                }
-                foreach (Control cs in this.Controls.Find("smallpdfViewer", true))
-                {
-                    (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                }
                 DataTable data = PictureData();
                 string imgtype = "*.PDF";
                 string[] ImageType = imgtype.Split('|');
@@ -639,6 +629,24 @@ namespace CJia.Health.App.UI
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 string fileName = data.Rows[i]["Pic_Path"].ToString();
+                string name = data.Rows[i]["Pic_Name"].ToString().Replace(".pdf", "");
+                string pathOld = Application.StartupPath + @"\Cache\" + name;
+                foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                {
+                    if ((cs as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                    {
+                        (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                    }
+                }
+                foreach (Control cs2 in this.ParentForm.Controls.Find("smallpdfViewer", true))
+                {
+                    if ((cs2 as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                    {
+                        (cs2 as CJia.Health.Tools.PDFViewer).FileName = "";
+                    }
+                }
+                try { File.Delete(pathOld); }
+                catch { }
                 PDFHelp.EncryptionPDF(fileName, pdsPassword);//上传加密
                 FtpHelp.UploadFile(fileName, data.Rows[i]["STORAGE_PATH"].ToString(), HostName, UserName, Password);
                 waitUC.Do("执行进度(" + i + "/" + data.Rows.Count + ")");

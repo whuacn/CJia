@@ -34,7 +34,7 @@
                                         <ext:BoundField Width="110px" HeaderText="入院科室" SortField="IN_HOSPITAL_DEPT_NAME" DataField="IN_HOSPITAL_DEPT_NAME" />
                                         <ext:BoundField Width="110px" HeaderText="出院日期" SortField="OUT_HOSPITAL_DATE2" DataField="OUT_HOSPITAL_DATE2" />
                                         <ext:BoundField Width="110px" HeaderText="出院科室" SortField="OUT_HOSPITAL_DEPT_NAME" DataField="OUT_HOSPITAL_DEPT_NAME" />
-                                        <ext:LinkButtonField ConfirmTarget="Top" Text="详细>>" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="80px" CommandName="Details" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" Text="详细>>" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="65px" CommandName="Details" />
                                         <ext:LinkButtonField ConfirmTarget="Top" Text="浏览图片" ColumnID="lbf_Edit2" HeaderText="&nbsp;" Width="80px" CommandName="Image" />
                                     </Columns>
                                 </ext:Grid>

@@ -16,6 +16,30 @@ namespace CJia.Health.Presenters.Web
             view.OnDeptChanged += view_OnDeptChanged;
             view.OnSelect += view_OnSelect;
             view.OnApply += view_OnApply;
+            view.OnFavourite += view_OnFavourite;
+        }
+
+        void view_OnFavourite(object sender, Views.Web.QueryPatientArgs e)
+        {
+            if (e.HealthIDList.Count > 0)
+            {
+                try
+                {
+                    using (CJia.Transaction trans = new Transaction(CJia.DefaultOleDb.DefaultAdapter))
+                    {
+                        for (int i = 0; i < e.HealthIDList.Count; i++)
+                        {
+                            Model.AddFavouriteDetail(trans.ID, e.FavouriteID, e.HealthIDList[i], e.UserData.Rows[0]["USER_ID"].ToString());
+                        }
+                        trans.Complete();
+                    }
+                    View.ExeBindIsFav(true);
+                }
+                catch
+                {
+                    View.ExeBindIsFav(false);
+                }
+            }
         }
 
         void view_OnApply(object sender, Views.Web.QueryPatientArgs e)

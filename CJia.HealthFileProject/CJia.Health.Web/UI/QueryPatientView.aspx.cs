@@ -40,6 +40,9 @@ namespace CJia.Health.Web.UI
                 InitGrid(data);
             }
         }
+        public event EventHandler<QueryPatientArgs> OnFavourite;
+        public void ExeBindIsFav(bool bol)
+        { }
         public event EventHandler OnInit;
         public event EventHandler<Views.Web.QueryPatientArgs> OnProviceChanged;
         public event EventHandler<Views.Web.QueryPatientArgs> OnDeptChanged;

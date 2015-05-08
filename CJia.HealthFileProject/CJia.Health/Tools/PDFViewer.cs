@@ -19,6 +19,12 @@ namespace CJia.Health.Tools
             axFoxitReader.ShowStatusBar(false);
             axFoxitReader.ShowBookmark(false);
             axFoxitReader.ShowFormFieldsMessageBar(false);
+            axFoxitReader.PreviewKeyDown += axFoxitReader_PreviewKeyDown;
+        }
+
+        void axFoxitReader_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            return;
         }
         //PDF密码
         private string PDFPassword

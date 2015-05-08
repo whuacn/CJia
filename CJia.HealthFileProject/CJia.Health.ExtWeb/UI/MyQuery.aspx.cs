@@ -22,7 +22,21 @@ namespace CJia.Health.ExtWeb.UI
                     {
                         OnInit(null, null);
                     }
+                    //InitMyFav();
                 }
+            }
+        }
+        private void InitMyFav()
+        {
+            if (Session["User"] != null)
+            {
+                DataTable userData = Session["User"] as DataTable;
+                DataTable myFav = GetMyfavourite(userData.Rows[0]["USER_ID"].ToString());
+                DataRow dr = myFav.NewRow();
+                dr["FAVORITES_NAME"] = "<<请选择收藏夹>>";
+                dr["FAVORITES_ID"] = "0";
+                myFav.Rows.InsertAt(dr, 0);
+                BindDropDownDate(dlMyFav, myFav, "FAVORITES_NAME", "FAVORITES_ID");
             }
         }
         protected override object CreatePresenter()
@@ -37,6 +51,19 @@ namespace CJia.Health.ExtWeb.UI
             Session["MyQuery"] = new DataTable();
             Session["MyQuery"] = data;
             InitGrid(data);
+        }
+        public event EventHandler<QueryPatientArgs> OnFavourite;
+        public void ExeBindIsFav(bool bol)
+        {
+            if (bol)
+            {
+                Alert.ShowInTop("收藏成功");
+                win_MyFav.Hidden = true;
+            }
+            else
+            {
+                Alert.ShowInTop("收藏失败");
+            }
         }
         public event EventHandler OnInit;
         public event EventHandler<Views.Web.QueryPatientArgs> OnProviceChanged;
@@ -127,14 +154,17 @@ namespace CJia.Health.ExtWeb.UI
         }
         public void InitGrid(DataTable data)
         {
-            PagedDataSource ps = new PagedDataSource();
-            ps.DataSource = data.DefaultView;
-            ps.AllowPaging = true; //是否可以分页
-            ps.PageSize = gr_Main.PageSize; //显示的数量
-            ps.CurrentPageIndex = gr_Main.PageIndex; //取得当前页的页码
-            gr_Main.RecordCount = data.Rows.Count;
-            gr_Main.DataSource = ps;
-            gr_Main.DataBind();
+            if (data != null)
+            {
+                PagedDataSource ps = new PagedDataSource();
+                ps.DataSource = data.DefaultView;
+                ps.AllowPaging = true; //是否可以分页
+                ps.PageSize = gr_Main.PageSize; //显示的数量
+                ps.CurrentPageIndex = gr_Main.PageIndex; //取得当前页的页码
+                gr_Main.RecordCount = data.Rows.Count;
+                gr_Main.DataSource = ps;
+                gr_Main.DataBind();
+            }
         }
         #endregion
 
@@ -163,16 +193,40 @@ namespace CJia.Health.ExtWeb.UI
 
         protected void gr_Main_RowCommand(object sender, ExtAspNet.GridCommandEventArgs e)
         {
+
             object[] keys = this.gr_Main.DataKeys[e.RowIndex];
             switch (e.CommandName)
             {
                 case "Info":
-                    PageContext.RegisterStartupScript(win_Edit.GetShowReference("PatientInfoView.aspx?ID=" + keys[0].ToString(), "基本信息"));
+                    if (Session["User"] != null)
+                    {
+                        PageContext.RegisterStartupScript(win_Edit.GetShowReference("PatientInfoView.aspx?ID=" + keys[0].ToString(), "基本信息"));
+                    }
+                    else
+                    {
+                        Alert.ShowInTop("连接超时，请刷新页面！");
+                    }
                     break;
                 case "Favorite":
+                    if (Session["User"] != null)
+                    {
+                        InitMyFav();
+                        win_MyFav.Hidden = false;
+                    }
+                    else
+                    {
+                        Alert.ShowInTop("连接超时，请刷新页面！");
+                    }
                     break;
                 case "Apply":
-                    win_Reson.Hidden = false;
+                    if (Session["User"] != null)
+                    {
+                        win_Reson.Hidden = false;
+                    }
+                    else
+                    {
+                        Alert.ShowInTop("连接超时，请刷新页面！");
+                    }
                     break;
             }
         }
@@ -220,6 +274,91 @@ namespace CJia.Health.ExtWeb.UI
                 this.gr_Main.PageIndex = e.NewPageIndex;
                 DataTable dt = Session["MyQuery"] as DataTable;
                 this.InitGrid(dt);
+            }
+        }
+
+        protected void btnAddNewFav_Click(object sender, EventArgs e)
+        {
+            if (Session["User"] != null)
+            {
+                if (txtFavName.Text.Length > 0 && txtFavName.Text.Length < 11)
+                {
+                    string userID = (Session["User"] as DataTable).Rows[0]["USER_ID"].ToString();
+                    string str = AddMyfavourite(userID, txtFavName.Text);
+                    if (str == "2")
+                    {
+                        Alert.ShowInTop("新增成功");
+                        txtFavName.Text = string.Empty;
+                        InitMyFav();
+                    }
+                    else if (str == "1")
+                        Alert.ShowInTop("新增失败，存在相同的收藏夹名称");
+                    else
+                        Alert.ShowInTop("新增失败");
+                }
+                else
+                {
+                    Alert.ShowInTop("收藏夹名称不能为空且长度必须小于10个字符");
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("连接超时，请刷新页面");
+            }
+        }
+
+        protected void btnAllFav_Click(object sender, EventArgs e)
+        {
+            if (this.gr_Main.SelectedRowIndexArray.Length == 0)
+            {
+                Alert.ShowInTop("请选择病案！");
+                return;
+            }
+            else
+            {
+                
+            }
+            win_MyFav.Hidden = false;
+        }
+
+        protected void btnMyFav_Click(object sender, EventArgs e)
+        {
+            string[] ids = new string[this.gr_Main.SelectedRowIndexArray.Length];
+            for (int i = 0; i < this.gr_Main.SelectedRowIndexArray.Length; i++)
+            {
+                ids[i] = this.gr_Main.DataKeys[this.gr_Main.SelectedRowIndexArray[i]][0].ToString();
+            }
+            string favID = dlMyFav.SelectedValue;
+            if (favID.Length > 0 && favID != "0")
+            {
+                queryPatientArgs.HealthIDList = ids.ToList();
+                queryPatientArgs.UserData = Session["User"] as DataTable;
+                queryPatientArgs.FavouriteID = favID;
+                OnFavourite(null, queryPatientArgs);
+                dlMyFav.SelectedValue = "0";
+            }
+            else
+            {
+                Alert.ShowInTop("请选择收藏夹");
+            }
+        }
+
+        protected void gr_Main_PreRowDataBound(object sender, GridPreRowEventArgs e)
+        {
+            LinkButtonField lbfEdit = gr_Main.FindColumn("lbf_fav") as LinkButtonField;
+            DataTable userData = Session["User"] as DataTable;
+            string userDaptID = userData.Rows[0]["DEPT_ID"].ToString();
+            DataRowView dv = e.DataItem as DataRowView;
+            DataRow dr = dv.Row;
+            string inHos = dr["IN_HOSPITAL_DEPT"].ToString();
+            string outHos = dr["OUT_HOSPITAL_DEPT"].ToString();
+            if (userDaptID == inHos || userDaptID == outHos)
+            {
+                lbfEdit.Enabled = true;
+            }
+            else
+            {
+                lbfEdit.Enabled = false;
             }
         }
 

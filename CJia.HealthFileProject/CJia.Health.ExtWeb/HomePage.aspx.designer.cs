@@ -265,6 +265,33 @@ namespace CJia.Health.ExtWeb {
         protected global::ExtAspNet.Tree tree_MCenter;
         
         /// <summary>
+        /// tvl_select2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Toolbar tvl_select2;
+        
+        /// <summary>
+        /// toofilFav 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.ToolbarFill toofilFav;
+        
+        /// <summary>
+        /// btnRefulse 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::ExtAspNet.Button btnRefulse;
+        
+        /// <summary>
         /// ren_Center 控件。
         /// </summary>
         /// <remarks>

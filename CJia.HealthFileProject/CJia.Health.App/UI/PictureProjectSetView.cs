@@ -60,7 +60,6 @@ namespace CJia.Health.App.UI
             LURecordNO.GetData += LURecordNO_GetData;
             LURecordNO.SelectValueChanged += LURecordNO_SelectValueChanged;
             repositoryItemComboBox1.SelectedIndexChanged += repositoryItemComboBox1_SelectedIndexChanged;
-            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             lblprojectName.Text = "";
             PicName = "";
         }
@@ -913,6 +912,24 @@ namespace CJia.Health.App.UI
                 foreach (DataRow dr in GetSavePictureData().Rows)
                 {
                     string fileName = dr["Pic_Path"].ToString();
+                    string name = dr["Pic_Name"].ToString().Replace(".pdf", "");
+                    string pathOld = Application.StartupPath + @"\Cache\" + name;
+                    foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                    {
+                        if ((cs as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                        {
+                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
+                    }
+                    foreach (Control cs2 in this.ParentForm.Controls.Find("smallpdfViewer", true))
+                    {
+                        if ((cs2 as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                        {
+                            (cs2 as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
+                    }
+                    try { File.Delete(pathOld); }
+                    catch { }
                     FtpHelp.MoveFileToCopy(fileName, HostName, UserName, Password);
                 }
             }

@@ -15,6 +15,9 @@ namespace CJia.Health.Views.Web
         event EventHandler<QueryPatientArgs> OnProviceChanged;
         event EventHandler<QueryPatientArgs> OnDeptChanged;
         event EventHandler<QueryPatientArgs> OnApply;
+        event EventHandler<QueryPatientArgs> OnFavourite;
+        void ExeBindIsFav(bool bol);
+
         /// <summary>
         /// 查询事件
         /// </summary>
@@ -72,5 +75,9 @@ namespace CJia.Health.Views.Web
         /// 借阅原因
         /// </summary>
         public string Reason;
+        /// <summary>
+        /// 收藏夹ID
+        /// </summary>
+        public string FavouriteID;
     }
 }

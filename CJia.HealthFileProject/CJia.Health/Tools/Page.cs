@@ -158,7 +158,7 @@ namespace CJia.Health.Tools
         /// <summary>
         /// 树绑定
         /// </summary>
-        protected ExtAspNet.Tree B_Tree;
+        protected static ExtAspNet.Tree B_Tree;
 
         /// <summary>
         /// 创建树节点
@@ -233,5 +233,73 @@ namespace CJia.Health.Tools
             }
         }
         #endregion
+        /// <summary>
+        /// 获得我的收藏夹
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        public static DataTable GetMyfavourite(string userID)
+        {
+            object[] sqlParams = new object[] { userID };
+            DataTable dtResult = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlQueryMyFovourite, sqlParams);
+            return dtResult;
+        }
+        /// <summary>
+        /// 新增收藏夹
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="favName"></param>
+        /// <returns></returns>
+        public static string AddMyfavourite(string userID, string favName)
+        {
+            string sql2 = @"SELECT * FROM gm_FAVORITES t WHERE t.user_id=? and t.status='1' and t.favorites_name=?";
+            object[] sqlParams2 = new object[] { userID, favName };
+            DataTable data = CJia.DefaultOleDb.Query(sql2, sqlParams2);
+            if (data.Rows.Count > 0)
+                return "1";
+            else
+            {
+                string sql = @"insert into gm_favorites
+                      (favorites_id, user_id, favorites_name, create_by, create_date, status)
+                    values
+                      (gm_favorites_seq.nextval, ?, ?, ?, sysdate, '1')";
+                object[] sqlParams = new object[] { userID, favName, userID };
+                return CJia.DefaultOleDb.Execute(sql, sqlParams) > 0 ? "2" : "3";
+            }
+        }
+        /// <summary>
+        /// 根据收藏夹id，查询里面的病案
+        /// </summary>
+        /// <param name="favID"></param>
+        /// <returns></returns>
+        public static DataTable GetfavouriteByID(string favID)
+        {
+            object[] sqlParams = new object[] { favID };
+            DataTable dtResult = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlQueryMyFovouriteByID, sqlParams);
+            return dtResult;
+        }
+        /// <summary>
+        /// 移除收藏夹中的病案
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool RemoveFavDetail(string id)
+        {
+            object[] sqlParams = new object[] { id };
+            return CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlRemoveFovouriteDetail, sqlParams) > 0 ? true : false;
+        }
+        /// <summary>
+        ///删除收藏夹
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool RemoveFavName(string id)
+        {
+            string sql1 = @"update gm_favorites_detail ft set ft.status='0' WHERE ft.favorites_id=?";
+            string sql2 = @"update gm_favorites ff set ff.status='0' WHERE ff.favorites_id=?";
+            object[] sqlParams = new object[] { id };
+            CJia.DefaultOleDb.Execute(sql1, sqlParams);
+            return CJia.DefaultOleDb.Execute(sql2, sqlParams) > 0 ? true : false;
+        }
     }
 }

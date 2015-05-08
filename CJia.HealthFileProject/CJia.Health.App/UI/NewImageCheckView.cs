@@ -19,7 +19,6 @@ namespace CJia.Health.App.UI
             InitializeComponent();
             this.LURecordNO.GetData += LURecordNO_GetData;
             this.LURecordNO.SelectValueChanged += LURecordNO_SelectValueChanged;
-            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             lblprojectName.Text = "";
         }
         /// <summary>
@@ -840,17 +839,19 @@ namespace CJia.Health.App.UI
             }
         }
 
-        private void gvPicture_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void gvPicture_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvPicture.GetFocusedDataRow() != null)
+            try
             {
-                this.BindPicture();
+                pdfViewer.FileName = "";
+                gvPicture.Focus();
+                if (gvPicture.GetFocusedDataRow() != null)
+                {
+                    this.BindPicture();
+                }
+                gvPicture.Focus();
             }
+            catch { }
         }
 
     }
