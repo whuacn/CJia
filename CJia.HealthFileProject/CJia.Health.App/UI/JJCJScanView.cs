@@ -483,23 +483,48 @@ namespace CJia.Health.App.UI
             bool bol = true;
             int m = 0;
             int area = smallImage.Width * smallImage.Height;
-            for (int i = 0; i < smallImage.Width; i++)
+            string isjjfb = CJia.Health.Tools.ConfigHelper.GetAppStrings("isJJCJBlank");
+            if (isjjfb == "0")//妇保
             {
-                for (int j = 0; j < smallImage.Height; j++)
+                for (int i = 0; i < smallImage.Width; i++)
                 {
-                    Color col = smallImage.GetPixel(i, j);
-                    if (col.ToArgb() == Color.White.ToArgb())
+                    for (int j = 0; j < smallImage.Height; j++)
                     {
-                        m++;
+                        Color col = smallImage.GetPixel(i, j);
+                        if (col.R >= 220 && col.G >= 220 && col.B >= 220)
+                        {
+                            m++;
+                        }
                     }
                 }
+                float f = float.Parse(m.ToString()) / float.Parse(area.ToString());
+                if (f < 0.985)//空白部分超过99%就认为此图片为空白图片
+                {
+                    bol = false;
+                }
+                return bol;
             }
-            float f = float.Parse(m.ToString()) / float.Parse(area.ToString());
-            if (f < 0.99)//空白部分超过99%就认为此图片为空白图片
-            {
-                bol = false;
+            else
+            {   //创佳
+                for (int i = 0; i < smallImage.Width; i++)
+                {
+                    for (int j = 0; j < smallImage.Height; j++)
+                    {
+                        Color col = smallImage.GetPixel(i, j);
+                        if (col.R >= 250 && col.G >= 250 && col.B >= 250)
+                        {
+                            m++;
+                        }
+                    }
+                }
+                float f = float.Parse(m.ToString()) / float.Parse(area.ToString());
+                float blank = float.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("BlankProbability"));
+                if (f < blank)//空白部分超过99%就认为此图片为空白图片
+                {
+                    bol = false;
+                }
+                return bol;
             }
-            return bol;
         }
         /// <summary>
         /// 初始化时，获得最大页码
@@ -588,6 +613,10 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
+        /// 是否添加水印
+        /// </summary>
+        private bool isSetWater = false;
+        /// <summary>
         /// 根据目录获得图片Datatable
         /// </summary>
         /// <param name="pathname"></param>
@@ -597,6 +626,8 @@ namespace CJia.Health.App.UI
             if (pathname.Trim().Length == 0) { return null; }
             try
             {
+                pdfViewer.FileName = "";
+                smallpdfViewer.FileName = "";
                 DataTable data = PictureData();
                 string imgtype = "*.PDF";
                 string[] ImageType = imgtype.Split('|');
@@ -605,11 +636,11 @@ namespace CJia.Health.App.UI
                     string[] tmp1 = System.IO.Directory.GetFiles(pathname, ImageType[i], SearchOption.TopDirectoryOnly);
                     foreach (string str in tmp1)
                     {
-                        Tools.PDFHelp.SetWatermark(str, LogoName, PDFPassword, LogoInclination);//打水印
                         data = SetPictureDataRows(data, str);
                     }
                 }
                 PictureInfo = data;
+
                 return data;
             }
             catch (Exception ex)
@@ -626,6 +657,7 @@ namespace CJia.Health.App.UI
             string pdsPassword = PDFPassword;
             CJia.Controls.UCForWaitingForm waitUC = new CJia.Controls.UCForWaitingForm("正在努力上传....", 0, data.Rows.Count);
             this.Enabled = false;
+            Bitmap img;
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 string fileName = data.Rows[i]["Pic_Path"].ToString();
@@ -647,6 +679,39 @@ namespace CJia.Health.App.UI
                 }
                 try { File.Delete(pathOld); }
                 catch { }
+                img = Tools.PDFHelp.ConvertPDF2Image(fileName, PDFPassword, 1, 1, PDFHelp.Definition.One);
+                string isjjfb = CJia.Health.Tools.ConfigHelper.GetAppStrings("isJJCJBlank");
+                if (isjjfb == "0")//妇保
+                {
+                    if (isBlankPage((Bitmap)img, 400))
+                    {
+                        string newfileName = "KB_" + data.Rows[i]["Pic_Name"].ToString();
+                        fileName = Path.GetDirectoryName(PictureInfo.Rows[i]["Pic_Path"].ToString()) + "\\" + newfileName;
+                        try
+                        {
+                            File.Move(data.Rows[i]["Pic_Path"].ToString(), fileName);
+                            data.Rows[i]["Pic_Name"] = newfileName;
+                            data.Rows[i]["Pic_Path"] = fileName;
+                        }
+                        catch { }
+                    }
+                }
+                else //创佳
+                {
+                    if (isBlankPage((Bitmap)img, 200))
+                    {
+                        string newfileName = "KB_" + data.Rows[i]["Pic_Name"].ToString();
+                        fileName = Path.GetDirectoryName(PictureInfo.Rows[i]["Pic_Path"].ToString()) + "\\" + newfileName;
+                        try
+                        {
+                            File.Move(data.Rows[i]["Pic_Path"].ToString(), fileName);
+                            data.Rows[i]["Pic_Name"] = newfileName;
+                            data.Rows[i]["Pic_Path"] = fileName;
+                        }
+                        catch { }
+                    }
+                }
+                Tools.PDFHelp.SetWatermark(fileName, LogoName, PDFPassword, LogoInclination);//打水印
                 PDFHelp.EncryptionPDF(fileName, pdsPassword);//上传加密
                 FtpHelp.UploadFile(fileName, data.Rows[i]["STORAGE_PATH"].ToString(), HostName, UserName, Password);
                 waitUC.Do("执行进度(" + i + "/" + data.Rows.Count + ")");
@@ -1010,6 +1075,8 @@ namespace CJia.Health.App.UI
                             string newfilePath = Path.GetDirectoryName(PictureInfo.Rows[i]["Pic_Path"].ToString()) + "\\" + fileName;
                             try
                             {
+                                pdfViewer.FileName = "";
+                                smallpdfViewer.FileName = "";
                                 File.Move(PictureInfo.Rows[i]["Pic_Path"].ToString(), newfilePath);
                             }
                             catch

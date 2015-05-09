@@ -149,7 +149,7 @@ namespace CJia.Health.App.UI
             lblNoBlank.Text = "";
             SMAllpageList = new List<string>();
             NoBlankPage = new List<string>();
-            
+
         }
 
         void LURecordNO_GetData(object sender, Controls.CJiaRTLookUpMoreColArgs e)
@@ -231,10 +231,11 @@ namespace CJia.Health.App.UI
         {
             if (pictureView.GetFocusedDataRow() != null && PictureInfo != null && PictureInfo.Rows.Count > 0)
             {
+                pdfViewer.FileName = "";
                 bool isModify = false;
                 CJia.Controls.UCForWaitingForm waitUC = new CJia.Controls.UCForWaitingForm("正在处理....", 0, PictureInfo.Rows.Count);
                 this.Enabled = false;
-                Image img;
+                Bitmap img;
                 List<string> SMpageList = new List<string>();
                 List<string> PZpageList = new List<string>();
                 try
@@ -243,13 +244,13 @@ namespace CJia.Health.App.UI
                     {
                         int j = PictureInfo.Rows.IndexOf(dr);
                         waitUC.Do("执行进度(" + j + "/" + PictureInfo.Rows.Count + ")");
-                        if (dr["Pic_Name"].ToString().Substring(0, 2) != "PZ")
+                        if (dr["Pic_Name"].ToString().Substring(0, 2) == "KB")//为空白页
                         {
-                            //img = Tools.Help.GetImageByUri(dr["Pic_Path"].ToString(), UserName, Password);
+                            //img = Tools.PDFHelp.ConvertPDF2Image(dr["Pic_Path"].ToString(), PDFPassword, 1, 1, PDFHelp.Definition.One);
                             //string isjjfb = CJia.Health.Tools.ConfigHelper.GetAppStrings("isJJCJBlank");
                             //if (isjjfb == "0")//妇保
                             //{
-                            //    if (isBlankPage((Bitmap)img, 400))
+                            // if (isBlankPage((Bitmap)img, 400))
                             //    {
                             //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
                             //    }
@@ -261,6 +262,7 @@ namespace CJia.Health.App.UI
                             //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
                             //    }
                             //}
+                            SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
                         }
                     }
                     waitUC.ParentForm.Close();
@@ -324,11 +326,35 @@ namespace CJia.Health.App.UI
                 }
                 else if (SMpageList.Count != 0 && SMpageList.Count == PZpageList.Count && PZpageList.Count != 0)
                 {
+                    foreach (DataRow dr in PictureInfo.Rows)
+                    {
+                        if (dr["Pic_Name"].ToString().Substring(0, 2) == "KB")
+                        {
+                            string pageNO = dr["Pic_Page"].ToString();
+                            bool bol = false;
+                            for (int i = 0; i < SMpageList.Count; i++)
+                            {
+                                if (pageNO == SMpageList[i])
+                                {
+                                    bol = true;
+                                    break;
+                                }
+                            }
+                            if (!bol)
+                            {
+                                string newfileName = dr["Pic_Name"].ToString().Remove(0, 3);
+                                string newfilePath = Path.GetDirectoryName(dr["Pic_Path"].ToString()) + "\\" + newfileName;
+                                FtpHelp.Rename(dr["Pic_Path"].ToString(), newfileName, UserName, Password);
+                                dr["Pic_Name"] = newfileName;
+                                dr["Pic_Path"] = newfilePath.Replace('\\', '/').Insert(4, "/");
+                            }
+                        }
+                    }
                     for (int i = 0; i < SMpageList.Count; i++)
                     {
                         foreach (DataRow dr in PictureInfo.Rows)
                         {
-                            if (dr["Pic_Name"].ToString().Substring(0, 2) != "PZ")
+                            if (dr["Pic_Name"].ToString().Substring(0, 2) == "KB")
                             {
                                 if (dr["Pic_Page"].ToString() == SMpageList[i])
                                 {

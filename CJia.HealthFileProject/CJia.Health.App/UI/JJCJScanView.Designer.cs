@@ -1024,6 +1024,7 @@ namespace CJia.Health.App.UI
             this.btnLeft.Size = new System.Drawing.Size(80, 28);
             this.btnLeft.TabIndex = 13;
             this.btnLeft.Text = "顺时针旋转";
+            this.btnLeft.Visible = false;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // btnRight
@@ -1042,6 +1043,7 @@ namespace CJia.Health.App.UI
             this.btnRight.Size = new System.Drawing.Size(80, 28);
             this.btnRight.TabIndex = 14;
             this.btnRight.Text = "逆时针旋转";
+            this.btnRight.Visible = false;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // JJCJScanView

@@ -215,7 +215,37 @@ namespace CJia.Health.Tools
             }
             pdfFile.Dispose();
         }
-        
+
+        public static Bitmap ConvertPDF2Image(string pdfInputPath, string password, int startPageNum, int endPageNum, Definition definition)
+        {
+            string fileName = Path.GetFileName(pdfInputPath);
+            string dir = Path.GetDirectoryName(pdfInputPath);
+            System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
+            Byte[] bytes = encoding.GetBytes(password);
+            PDFFile pdfFile = PDFFile.Open(pdfInputPath, bytes);
+            if (startPageNum <= 0)
+            {
+                startPageNum = 1;
+            }
+            if (endPageNum > pdfFile.PageCount)
+            {
+                endPageNum = pdfFile.PageCount;
+            }
+            if (startPageNum > endPageNum)
+            {
+                int tempPageNum = startPageNum;
+                startPageNum = endPageNum;
+                endPageNum = startPageNum;
+            }
+            Bitmap pageImage = null;
+            for (int i = startPageNum; i <= endPageNum; i++)
+            {
+                pageImage = pdfFile.GetPageImage(i - 1, 300 * (int)definition);
+            }
+            pdfFile.Dispose();
+            return pageImage;
+        }
+
         public string ReadPdfFile(string fileName)
         {
             StringBuilder text = new StringBuilder();
