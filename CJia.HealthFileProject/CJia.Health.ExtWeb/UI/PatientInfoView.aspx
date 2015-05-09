@@ -6,11 +6,36 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 30px;
+        }
+
+        .auto-style2 {
+            width: 200px;
+            height: 30px;
+        }
+
+        .td3 {
+            font-size: 14px;
+            BORDER-RIGHT: #000000 0px solid;
+            BORDER-TOP: #000000 1px solid;
+            BORDER-LEFT: #000000 0px solid;            
+            BORDER-BOTTOM: #000000 0px solid;
+        }
+        .td4 {
+            font-size: 14px;
+            BORDER-RIGHT: #000000 0px solid;
+            BORDER-TOP: #000000 0px solid;
+            BORDER-LEFT: #000000 0px solid;            
+            BORDER-BOTTOM: #000000 1px solid;
+        }
+    </style>
 </head>
 <body style="background-color: #F2F2F2;">
     <form id="form1" runat="server">
         <div>
-            <table width="100%" style="text-align: left; font-family: 宋体; font-size: 18px;">
+            <table width="100%" style="text-align: left; font-family: 微软雅黑; font-size: 14px;">
                 <tr style="height: 30px">
                     <td style="text-align: right;" colspan="7">病人『<asp:Label ID="lblPatientName" runat="server" Text="张三"></asp:Label>
                         第<asp:Label ID="lblInHosTimes" runat="server" Text="01"></asp:Label>次入院』
@@ -18,13 +43,13 @@
                 </tr>
                 <tr style="height: 30px">
                     <td></td>
-                    <td style="width: 200px;">病案号：<asp:Label ID="lblRecordNO" runat="server" Text="C00001"></asp:Label>
+                    <td style="width: 200px;" class="td3">病案号：<asp:Label ID="lblRecordNO" runat="server" Text="C00001"></asp:Label>
                     </td>
-                    <td style="width: 200px;">姓名：<asp:Label ID="lblPatientName1" runat="server" Text="张三"></asp:Label>
+                    <td style="width: 200px;" class="td3">姓名：<asp:Label ID="lblPatientName1" runat="server" Text="张三"></asp:Label>
                     </td>
-                    <td style="width: 200px;">性别：<asp:Label ID="lblGender" runat="server" Text="男"></asp:Label>
+                    <td style="width: 200px;" class="td3">性别：<asp:Label ID="lblGender" runat="server" Text="男"></asp:Label>
                     </td>
-                    <td colspan="2" style="width: 200px;">出生日期：<asp:Label ID="lblBirthDay1" runat="server" Text="1990-4-21"></asp:Label>
+                    <td colspan="2" style="width: 200px;" class="td3">出生日期：<asp:Label ID="lblBirthDay1" runat="server" Text="1990-4-21"></asp:Label>
                     </td>
                     <td></td>
                 </tr>
@@ -38,25 +63,25 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr style="height: 30px">
-                    <td></td>
-                    <td style="width: 200px;">民族：<asp:Label ID="lblMinZu" runat="server" Text="汉"></asp:Label>
+                <tr>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style2">民族：<asp:Label ID="lblMinZu" runat="server" Text="汉"></asp:Label>
                     </td>
-                    <td style="width: 200px;">国籍：<asp:Label ID="lblGuoJi" runat="server" Text="中国"></asp:Label>
+                    <td class="auto-style2">国籍：<asp:Label ID="lblGuoJi" runat="server" Text="中国"></asp:Label>
                     </td>
-                    <td colspan="3" style="width: 200px;">入院方式：<asp:Label ID="lblRYFS" runat="server" Text="开飞机"></asp:Label>
+                    <td colspan="3" class="auto-style2">入院方式：<asp:Label ID="lblRYFS" runat="server" Text="开飞机"></asp:Label>
                     </td>
-                    <td></td>
+                    <td class="auto-style1"></td>
                 </tr>
                 <tr style="height: 30px">
                     <td></td>
-                    <td colspan="2" style="width: 200px;">入院科室：<asp:Label ID="lblRYDept" runat="server" Text="精神病科"></asp:Label>
+                    <td colspan="2" style="width: 200px;" class="td3" >入院科室：<asp:Label ID="lblRYDept" runat="server" Text="精神病科"></asp:Label>
                     </td>
-                    <td style="width: 200px;">入院日期：<asp:Label ID="lblRYDate" runat="server" Text="1990-4-21"></asp:Label>
+                    <td style="width: 200px;" class="td3">入院日期：<asp:Label ID="lblRYDate" runat="server" Text="1990-4-21"></asp:Label>
                     </td>
-                    <td style="width: 200px;">入院医生：<asp:Label ID="lblRYDoctor" runat="server" Text="张三三"></asp:Label>
+                    <td style="width: 200px;" class="td3">入院医生：<asp:Label ID="lblRYDoctor" runat="server" Text="张三三"></asp:Label>
                     </td>
-                    <td style="width: 200px;">入院医生编号：<asp:Label ID="lblRYDoctorNO" runat="server" Text="00003"></asp:Label>
+                    <td style="width: 200px;" class="td3">入院医生编号：<asp:Label ID="lblRYDoctorNO" runat="server" Text="00003"></asp:Label>
                     </td>
                     <td></td>
                 </tr>
@@ -114,9 +139,9 @@
                 </tr>
                 <tr style="height: 30px">
                     <td></td>
-                    <td colspan="2" style="width: 200px;">病理诊断1：<asp:Label ID="lblBLZD1" runat="server" Text="精神病术后"></asp:Label>
+                    <td colspan="2" style="width: 200px;" class="td4">病理诊断1：<asp:Label ID="lblBLZD1" runat="server" Text="精神病术后"></asp:Label>
                     </td>
-                    <td colspan="3" style="width: 200px;">病理诊断2：<asp:Label ID="lblBLZD2" runat="server" Text="精神病术后"></asp:Label>
+                    <td colspan="3" style="width: 200px;" class="td4">病理诊断2：<asp:Label ID="lblBLZD2" runat="server" Text="精神病术后"></asp:Label>
                     </td>
                     <td></td>
                 </tr>
