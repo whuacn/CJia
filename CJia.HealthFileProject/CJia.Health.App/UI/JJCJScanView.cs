@@ -655,69 +655,84 @@ namespace CJia.Health.App.UI
         public void CopyFilesToNet(DataTable data)
         {
             string pdsPassword = PDFPassword;
+            string messageStr = "";
             CJia.Controls.UCForWaitingForm waitUC = new CJia.Controls.UCForWaitingForm("正在努力上传....", 0, data.Rows.Count);
             this.Enabled = false;
-            Bitmap img;
-            for (int i = 0; i < data.Rows.Count; i++)
+            try
             {
-                string fileName = data.Rows[i]["Pic_Path"].ToString();
-                string name = data.Rows[i]["Pic_Name"].ToString().Replace(".pdf", "");
-                string pathOld = Application.StartupPath + @"\Cache\" + name;
-                foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                Bitmap img;
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
-                    if ((cs as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                    waitUC.Do("执行进度(" + (i + 1) + "/" + data.Rows.Count + ")");
+                    string fileName = data.Rows[i]["Pic_Path"].ToString();
+                    string name = data.Rows[i]["Pic_Name"].ToString().Replace(".pdf", "");
+                    string pathOld = Application.StartupPath + @"\Cache\" + name;
+                    foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
                     {
-                        (cs as CJia.Health.Tools.PDFViewer).FileName = "";
-                    }
-                }
-                foreach (Control cs2 in this.ParentForm.Controls.Find("smallpdfViewer", true))
-                {
-                    if ((cs2 as CJia.Health.Tools.PDFViewer).FileName == pathOld)
-                    {
-                        (cs2 as CJia.Health.Tools.PDFViewer).FileName = "";
-                    }
-                }
-                try { File.Delete(pathOld); }
-                catch { }
-                img = Tools.PDFHelp.ConvertPDF2Image(fileName, PDFPassword, 1, 1, PDFHelp.Definition.One);
-                string isjjfb = CJia.Health.Tools.ConfigHelper.GetAppStrings("isJJCJBlank");
-                if (isjjfb == "0")//妇保
-                {
-                    if (isBlankPage((Bitmap)img, 400))
-                    {
-                        string newfileName = "KB_" + data.Rows[i]["Pic_Name"].ToString();
-                        fileName = Path.GetDirectoryName(PictureInfo.Rows[i]["Pic_Path"].ToString()) + "\\" + newfileName;
-                        try
+                        if ((cs as CJia.Health.Tools.PDFViewer).FileName == pathOld)
                         {
-                            File.Move(data.Rows[i]["Pic_Path"].ToString(), fileName);
-                            data.Rows[i]["Pic_Name"] = newfileName;
-                            data.Rows[i]["Pic_Path"] = fileName;
+                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
                         }
-                        catch { }
                     }
-                }
-                else //创佳
-                {
-                    if (isBlankPage((Bitmap)img, 200))
+                    foreach (Control cs2 in this.ParentForm.Controls.Find("smallpdfViewer", true))
                     {
-                        string newfileName = "KB_" + data.Rows[i]["Pic_Name"].ToString();
-                        fileName = Path.GetDirectoryName(PictureInfo.Rows[i]["Pic_Path"].ToString()) + "\\" + newfileName;
-                        try
+                        if ((cs2 as CJia.Health.Tools.PDFViewer).FileName == pathOld)
                         {
-                            File.Move(data.Rows[i]["Pic_Path"].ToString(), fileName);
-                            data.Rows[i]["Pic_Name"] = newfileName;
-                            data.Rows[i]["Pic_Path"] = fileName;
+                            (cs2 as CJia.Health.Tools.PDFViewer).FileName = "";
                         }
-                        catch { }
                     }
+                    try { File.Delete(pathOld); }
+                    catch { }
+                    img = Tools.PDFHelp.ConvertPDF2Image(fileName, PDFPassword, 1, 1, PDFHelp.Definition.One);
+                    string isjjfb = CJia.Health.Tools.ConfigHelper.GetAppStrings("isJJCJBlank");
+                    if (isjjfb == "0")//妇保
+                    {
+                        if (isBlankPage((Bitmap)img, 400))
+                        {
+                            string newfileName = "KB_" + data.Rows[i]["Pic_Name"].ToString();
+                            fileName = Path.GetDirectoryName(PictureInfo.Rows[i]["Pic_Path"].ToString()) + "\\" + newfileName;
+                            try
+                            {
+                                File.Move(data.Rows[i]["Pic_Path"].ToString(), fileName);
+                                data.Rows[i]["Pic_Name"] = newfileName;
+                                data.Rows[i]["Pic_Path"] = fileName;
+                            }
+                            catch { }
+                        }
+                    }
+                    else //创佳
+                    {
+                        if (isBlankPage((Bitmap)img, 200))
+                        {
+                            string newfileName = "KB_" + data.Rows[i]["Pic_Name"].ToString();
+                            fileName = Path.GetDirectoryName(PictureInfo.Rows[i]["Pic_Path"].ToString()) + "\\" + newfileName;
+                            try
+                            {
+                                File.Move(data.Rows[i]["Pic_Path"].ToString(), fileName);
+                                data.Rows[i]["Pic_Name"] = newfileName;
+                                data.Rows[i]["Pic_Path"] = fileName;
+                            }
+                            catch { }
+                        }
+                    }
+                    Tools.PDFHelp.SetWatermark(fileName, LogoName, PDFPassword, LogoInclination);//打水印
+                    PDFHelp.EncryptionPDF(fileName, pdsPassword);//上传加密
+                    string ftpStr = FtpHelp.UploadFile(fileName, data.Rows[i]["STORAGE_PATH"].ToString(), HostName, UserName, Password);
+                    messageStr = messageStr + data.Rows[i]["Pic_Name"].ToString() + ftpStr + ";";
                 }
-                Tools.PDFHelp.SetWatermark(fileName, LogoName, PDFPassword, LogoInclination);//打水印
-                PDFHelp.EncryptionPDF(fileName, pdsPassword);//上传加密
-                FtpHelp.UploadFile(fileName, data.Rows[i]["STORAGE_PATH"].ToString(), HostName, UserName, Password);
-                waitUC.Do("执行进度(" + i + "/" + data.Rows.Count + ")");
+                waitUC.ParentForm.Close();
+                this.Enabled = true;
             }
-            waitUC.ParentForm.Close();
-            this.Enabled = true;
+            catch (Exception ex)
+            {
+                NlogMonitor.LogMonitor.Info("错误日志：扫描上传错误>>" + ex.Message);
+                waitUC.ParentForm.Close();
+                this.Enabled = true;
+            }
+            finally
+            {
+                NlogMonitor.LogMonitor.Info("操作日志：扫描上传>>" + messageStr);
+            }
         }
         /// <summary>
         /// 删除本地图片

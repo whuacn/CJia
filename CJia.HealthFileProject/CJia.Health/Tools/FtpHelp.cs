@@ -62,47 +62,55 @@ namespace CJia.Health.Tools
         /// <param name="hostname">ftp地址</param>
         /// <param name="username">ftp用户名</param>
         /// <param name="password">ftp密码</param>
-        public static void UploadFile(string filePath, string targetDir, string hostname, string username, string password)
+        public static string UploadFile(string filePath, string targetDir, string hostname, string username, string password)
         {
-            if (targetDir.Trim() == "")
+            try
             {
-                return;
-            }
-            FileInfo fileinfo = new FileInfo(filePath);
-            if (!FtpIsExistsFile(targetDir, hostname, username, password)) //新建targetDir目录
-                MakeDir(targetDir, hostname, username, password);
-            string URI = "ftp://" + hostname + "/" + targetDir + "/" + fileinfo.Name;
-            System.Net.FtpWebRequest ftp = GetRequest(URI, username, password);
-            //设置FTP命令 设置所要执行的FTP命令，
-            ftp.Method = System.Net.WebRequestMethods.Ftp.UploadFile;
-            //指定文件传输的数据类型
-            ftp.UseBinary = true;
-            ftp.UsePassive = true;
-            ftp.ContentLength = fileinfo.Length;//告诉ftp文件大小
-            const int BufferSize = 2048;//缓冲大小设置为2KB
-            byte[] content = new byte[BufferSize - 1 + 1];
-            int dataRead;
-            using (FileStream fs = fileinfo.OpenRead())//打开一个文件流 (System.IO.FileStream) 去读上传的文件
-            {
-                try
+                if (targetDir.Trim() == "")
                 {
-                    using (Stream rs = ftp.GetRequestStream())//把上传的文件写入流
+                    return "ftp上不存在目录";
+                }
+                FileInfo fileinfo = new FileInfo(filePath);
+                if (!FtpIsExistsFile(targetDir, hostname, username, password)) //新建targetDir目录
+                    MakeDir(targetDir, hostname, username, password);
+                string URI = "ftp://" + hostname + "/" + targetDir + "/" + fileinfo.Name;
+                System.Net.FtpWebRequest ftp = GetRequest(URI, username, password);
+                //设置FTP命令 设置所要执行的FTP命令，
+                ftp.Method = System.Net.WebRequestMethods.Ftp.UploadFile;
+                //指定文件传输的数据类型
+                ftp.UseBinary = true;
+                ftp.UsePassive = true;
+                ftp.ContentLength = fileinfo.Length;//告诉ftp文件大小
+                const int BufferSize = 2048;//缓冲大小设置为2KB
+                byte[] content = new byte[BufferSize - 1 + 1];
+                int dataRead;
+                using (FileStream fs = fileinfo.OpenRead())//打开一个文件流 (System.IO.FileStream) 去读上传的文件
+                {
+                    try
                     {
-                        do
+                        using (Stream rs = ftp.GetRequestStream())//把上传的文件写入流
                         {
-                            dataRead = fs.Read(content, 0, BufferSize);//每次读文件流的2KB
-                            rs.Write(content, 0, dataRead);
-                        } while (!(dataRead < BufferSize));
-                        rs.Close();
+                            do
+                            {
+                                dataRead = fs.Read(content, 0, BufferSize);//每次读文件流的2KB
+                                rs.Write(content, 0, dataRead);
+                            } while (!(dataRead < BufferSize));
+                            rs.Close();
+                        }
+                    }
+                    catch { }
+                    finally
+                    {
+                        fs.Close();
                     }
                 }
-                catch { }
-                finally
-                {
-                    fs.Close();
-                }
+                ftp = null;
+                return "成功";
             }
-            ftp = null;
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
         /// <summary>
         /// 下载文件
@@ -557,19 +565,24 @@ namespace CJia.Health.Tools
         /// <param name="password"></param>
         /// <returns></returns>
         public static bool isLoginFtp(string hostname, string username, string password)
-        { 
+        {
             FtpWebRequest reqFTP;
+            FtpWebResponse response = null;
             try
             {
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + hostname + "/"));
                 reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
                 reqFTP.UseBinary = true;
                 reqFTP.Credentials = new NetworkCredential(username, password);
-                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                reqFTP.Timeout = 5000;
+                response = (FtpWebResponse)reqFTP.GetResponse();
+                response.Close();
                 return true;
             }
-            catch 
+            catch
             {
+                if (response != null)
+                    response.Close();
                 return false;
             }
         }
