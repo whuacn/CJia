@@ -286,7 +286,9 @@ namespace CJia.Health.App.UI
                 {
                     DataRow focuseRow = pictureView.GetFocusedDataRow();
                     string filePath = focuseRow["Pic_Path"].ToString();
+                    pdfViewer.Password = PDFPassword;
                     pdfViewer.FileName = filePath;
+                    smallpdfViewer.Password = PDFPassword;
                     smallpdfViewer.FileName = filePath;
                     pictureGrid.Focus();
                 }
@@ -338,7 +340,8 @@ namespace CJia.Health.App.UI
                     string[] arr = uri.Split('/');
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
-                    pdfViewer.FileName = downLoadFile.Replace(".pdf","");
+                    pdfViewer.Password = PDFPassword;
+                    pdfViewer.FileName = downLoadFile.Replace(".pdf", "");
                 }
                 else
                 {
@@ -788,36 +791,51 @@ namespace CJia.Health.App.UI
         /// </summary>
         public void CopyFilesToNet(DataTable data)
         {
+            string messageStr = "";
             string pdsPassword = PDFPassword;
             CJia.Controls.UCForWaitingForm waitUC = new CJia.Controls.UCForWaitingForm("正在努力上传....", 0, data.Rows.Count);
             this.Enabled = false;
-            for (int i = 0; i < data.Rows.Count; i++)
+            try
             {
-                string fileName = data.Rows[i]["Pic_Path"].ToString();
-                string name = data.Rows[i]["Pic_Name"].ToString().Replace(".pdf","");
-                string pathOld = Application.StartupPath + @"\Cache\" + name;
-                foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
-                    if ((cs as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                    waitUC.Do("执行进度(" + (i + 1) + "/" + data.Rows.Count + ")");
+                    string fileName = data.Rows[i]["Pic_Path"].ToString();
+                    string name = data.Rows[i]["Pic_Name"].ToString().Replace(".pdf", "");
+                    string pathOld = Application.StartupPath + @"\Cache\" + name;
+                    foreach (Control cs in this.ParentForm.Controls.Find("pdfViewer", true))
                     {
-                        (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                        if ((cs as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                        {
+                            (cs as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
                     }
-                }
-                foreach (Control cs2 in this.ParentForm.Controls.Find("smallpdfViewer", true))
-                {
-                    if ((cs2 as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                    foreach (Control cs2 in this.ParentForm.Controls.Find("smallpdfViewer", true))
                     {
-                        (cs2 as CJia.Health.Tools.PDFViewer).FileName = "";
+                        if ((cs2 as CJia.Health.Tools.PDFViewer).FileName == pathOld)
+                        {
+                            (cs2 as CJia.Health.Tools.PDFViewer).FileName = "";
+                        }
                     }
+                    try { File.Delete(pathOld); }
+                    catch { }
+                    PDFHelp.EncryptionPDF(fileName, pdsPassword);//上传加密
+                    string ftpStr = FtpHelp.UploadFile(fileName, data.Rows[i]["STORAGE_PATH"].ToString(), HostName, UserName, Password);
+                    messageStr = messageStr + data.Rows[i]["Pic_Name"].ToString() + ftpStr + ";";
                 }
-                try { File.Delete(pathOld); }
-                catch { }
-                PDFHelp.EncryptionPDF(fileName, pdsPassword);//上传加密
-                FtpHelp.UploadFile(fileName, data.Rows[i]["STORAGE_PATH"].ToString(), HostName, UserName, Password);
-                waitUC.Do("执行进度(" + i + "/" + data.Rows.Count + ")");
+                waitUC.ParentForm.Close();
+                this.Enabled = true;
             }
-            waitUC.ParentForm.Close();
-            this.Enabled = true;
+            catch (Exception ex)
+            {
+                NlogMonitor.LogMonitor.Info("错误日志：拍照上传错误>>" + ex.Message);
+                waitUC.ParentForm.Close();
+                this.Enabled = true;
+            }
+            finally
+            {
+                NlogMonitor.LogMonitor.Info("操作日志：拍照上传>>" + messageStr);
+            }
         }
         /// <summary>
         /// 删除本地图片

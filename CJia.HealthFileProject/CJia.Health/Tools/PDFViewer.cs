@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FoxitReaderSDKProLib;
+using System.IO;
 
 namespace CJia.Health.Tools
 {
@@ -26,14 +27,7 @@ namespace CJia.Health.Tools
         {
             return;
         }
-        //PDF密码
-        private string PDFPassword
-        {
-            get
-            {
-                return CJia.DefaultOleDb.QueryScalar("SELECT t.value FROM GM_PARAMETER t WHERE t.value_type='PDF_Password'");
-            }
-        }
+
         private string fileName;
         /// <summary>
         /// PDF文件路径
@@ -45,11 +39,21 @@ namespace CJia.Health.Tools
             set
             {
                 fileName = value;
-                axFoxitReader.OpenFile(value, PDFPassword);
+                axFoxitReader.OpenFile(value, password);
                 axFoxitReader.ShowNavigationPanels(false);
             }
         }
-        private string password;
+        /// <summary>
+        /// 打开PDF
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="passWord"></param>
+        public void OpenFile(string fileName, string passWord)
+        {
+            axFoxitReader.OpenFile(fileName, passWord);
+            axFoxitReader.ShowNavigationPanels(false);
+        }
+        private string password = "";
         /// <summary>
         /// PDF密码
         /// </summary>
@@ -59,8 +63,6 @@ namespace CJia.Health.Tools
             set
             {
                 password = value;
-                //axFoxitReader.OpenFile(value, "");
-                //axFoxitReader.ShowNavigationPanels(false);
             }
         }
         public enum PDFStyle
@@ -123,19 +125,28 @@ namespace CJia.Health.Tools
             }
         }
         /// <summary>
-        /// 打印单张PDF文件
+        /// 打印PDF文件
         /// </summary>
         /// <param name="fileName"></param>
-        public void Print(string fileName)
+        public void Print(string fileName, string password)
         {
-            axFoxitReader.OpenFile(fileName, "");
-            PDFPrinter ip = axFoxitReader.Printer;
-            //ip.printerName = "Microsoft XPS Document Writer";
-            ip.PrinterRangeMode = PrinterRangeMode.PRINT_RANGE_SELECTED;
-            //ip.printerRangeFrom = 1;
-            //ip.printerRangeTo = 1;
-            //ip.PrintWithDialog();
-            ip.PrintQuiet();
+            try
+            {
+                string path = Path.GetDirectoryName(fileName);
+                string newPrint = path + "\\ForPrint";
+                PDFHelp.DecodePDF(fileName, newPrint, password);
+                axFoxitReader.OpenFile(newPrint, password);
+                PDFPrinter ip = axFoxitReader.Printer;
+                //ip.printerName = "Microsoft XPS Document Writer";
+                ip.PrinterRangeMode = PrinterRangeMode.PRINT_RANGE_SELECTED;
+                //ip.printerRangeFrom = 1;
+                //ip.printerRangeTo = 1;
+                //ip.PrintWithDialog();
+                ip.PrintQuiet();
+                axFoxitReader.OpenFile("", "");
+                File.Delete(newPrint);
+            }
+            catch { }
         }
     }
 }

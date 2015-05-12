@@ -15,8 +15,10 @@ namespace CJia.Health.Models.Web
         /// <returns></returns>
         public DataTable GetMyApplyList(string userID)
         {
-            object[] sqlParams = new object[] { "90", userID };
-            DataTable dtResult = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlQueryMyApplyListByUserID, sqlParams);
+            string sql = @"select b.*,c.name borrow_state_name from st_borrow b,gm_code c WHERE b.borrow_state=c.code and b.status='1' and b.borrow_state in ('90','94')
+                        and b.applyer_id=? ";
+            object[] sqlParams = new object[] {userID };
+            DataTable dtResult = CJia.DefaultOleDb.Query(sql, sqlParams);
             if (dtResult != null && dtResult.Rows.Count > 0)
             {
                 return dtResult;

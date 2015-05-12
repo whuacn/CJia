@@ -19,7 +19,6 @@ namespace CJia.Health.App.UI
         {
             InitializeComponent();
             InitValue();
-            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
         }
 
         protected override object CreatePresenter()
@@ -168,6 +167,7 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
+                    pdfViewer.Password = PDFPassword;
                     pdfViewer.FileName = pdfData;
                     pdfViewer.Tag = uri;
                 }
@@ -192,7 +192,7 @@ namespace CJia.Health.App.UI
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
                     PDFViewer printPDFView = new PDFViewer();
-                    printPDFView.Print(pdfData);
+                    printPDFView.Print(pdfData,PDFPassword);
                     printPDFView.FileName = "";
                 }
             }
@@ -290,16 +290,24 @@ namespace CJia.Health.App.UI
         {
             if (chkAllPicture.Checked)
             {
-                for (int i = 0; i < chkPicture.Items.Count; i++)
+                DataTable data = chkPicture.DataSource as DataTable;
+                if (data != null && data.Rows.Count > 0)
                 {
-                    this.chkPicture.SetItemCheckState(i, System.Windows.Forms.CheckState.Checked);
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+                        this.chkPicture.SetItemCheckState(i, System.Windows.Forms.CheckState.Checked);
+                    }
                 }
             }
             else
             {
-                for (int i = 0; i < chkPicture.Items.Count; i++)
+                DataTable data = chkPicture.DataSource as DataTable;
+                if (data != null && data.Rows.Count > 0)
                 {
-                    this.chkPicture.SetItemCheckState(i, System.Windows.Forms.CheckState.Unchecked);
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+                        this.chkPicture.SetItemCheckState(i, System.Windows.Forms.CheckState.Unchecked);
+                    }
                 }
             }
         }

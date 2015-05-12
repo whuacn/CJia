@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test));
             this.cJiaOpenFile1 = new CJia.Controls.CJiaOpenFile();
             this.cJiaButton1 = new CJia.Controls.CJiaButton();
             this.cJiaTextBox1 = new CJia.Controls.CJiaTextBox();
@@ -45,12 +46,14 @@
             this.cJiaButton5 = new CJia.Controls.CJiaButton();
             this.cJiaButton6 = new CJia.Controls.CJiaButton();
             this.cJiaButton7 = new CJia.Controls.CJiaButton();
+            this.axFoxitReaderSDK1 = new AxFoxitReaderSDKProLib.AxFoxitReaderSDK();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaOpenFile1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTextBox1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTextBox2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTextBox3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTextBox4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axFoxitReaderSDK1)).BeginInit();
             this.SuspendLayout();
             // 
             // cJiaOpenFile1
@@ -284,11 +287,21 @@
             this.cJiaButton7.Text = "左";
             this.cJiaButton7.Click += new System.EventHandler(this.cJiaButton7_Click);
             // 
+            // axFoxitReaderSDK1
+            // 
+            this.axFoxitReaderSDK1.Enabled = true;
+            this.axFoxitReaderSDK1.Location = new System.Drawing.Point(431, 186);
+            this.axFoxitReaderSDK1.Name = "axFoxitReaderSDK1";
+            this.axFoxitReaderSDK1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axFoxitReaderSDK1.OcxState")));
+            this.axFoxitReaderSDK1.Size = new System.Drawing.Size(382, 319);
+            this.axFoxitReaderSDK1.TabIndex = 17;
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 517);
+            this.Controls.Add(this.axFoxitReaderSDK1);
             this.Controls.Add(this.cJiaButton7);
             this.Controls.Add(this.cJiaButton6);
             this.Controls.Add(this.cJiaButton5);
@@ -314,6 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTextBox3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPicture1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaTextBox4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axFoxitReaderSDK1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +352,6 @@
         private Controls.CJiaButton cJiaButton5;
         private Controls.CJiaButton cJiaButton6;
         private Controls.CJiaButton cJiaButton7;
+        private AxFoxitReaderSDKProLib.AxFoxitReaderSDK axFoxitReaderSDK1;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FoxitReaderSDKProLib;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +54,8 @@ namespace CJia.Health.App
             //axFoxitReader.ShowNavigationPanels(false);
             pdfViewer1.FileName = fileName;
             pdfViewer1.ZoomLevel = 1;
+            string str = @"F:\赣州数字化病案\001_01_003_00";
+            axFoxitReaderSDK1.OpenFile(str, "123456");
         }
 
 
@@ -102,5 +106,26 @@ namespace CJia.Health.App
             CJia.Health.Tools.PDFHelp.ConvertJPG2PDF(@"F:\赣州数字化病案\九江妇幼保健院数字化病案数据备份\cj\Copy\819310_01_002_00.jpg", @"F:\赣州数字化病案\九江妇幼保健院数字化病案数据备份\cj\Copy\819310_01_002_00.pdf");
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string filename = axFoxitReaderSDK1.FilePath;
+            string newFile = Path.GetDirectoryName(filename) + "\\dh";
+            Decode(filename, newFile, "123456");
+            axFoxitReaderSDK1.OpenFile(newFile, "123456");
+            PDFPrinter ip = axFoxitReaderSDK1.Printer;
+            ip.printerName = "Microsoft XPS Document Writer";
+            ip.PrinterRangeMode = PrinterRangeMode.PRINT_RANGE_SELECTED;
+            //ip.printerRangeFrom = 1;
+            //ip.printerRangeTo = 1;
+            //ip.PrintWithDialog();
+            ip.PrintQuiet();
+        }
+        public static void Decode(string pdfSrc, string pdfDest, string ownerPassword)
+        {
+            PdfReader reader = new PdfReader(pdfSrc, Encoding.Default.GetBytes(ownerPassword));
+            Stream os = (Stream)(new FileStream(pdfDest, FileMode.Create));
+            PdfEncryptor.Encrypt(reader, os, null, null,
+                PdfWriter.AllowAssembly | PdfWriter.AllowFillIn | PdfWriter.AllowScreenReaders | PdfWriter.AllowPrinting, false);
+        }
     }
 }

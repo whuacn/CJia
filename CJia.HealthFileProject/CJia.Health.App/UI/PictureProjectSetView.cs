@@ -436,6 +436,7 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
+                    pdfViewer.Password = PDFPassword;
                     pdfViewer.FileName = pdfData;
                 }
                 else
@@ -1127,6 +1128,7 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
+                    pdfViewer.Password = PDFPassword;
                     pdfViewer.FileName = pdfData;
                     pdfViewer.Tag = focuseRow["Pic_Path"].ToString();
                     PicName = focuseRow["Pic_Name"].ToString();
@@ -1173,6 +1175,7 @@ namespace CJia.Health.App.UI
                         string fileName = uri.Split('/')[arr.Length - 1];
                         string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                         string pdfData = downLoadFile.Replace(".pdf", "");
+                        pdfViewer.Password = PDFPassword;
                         pdfViewer.FileName = pdfData;
                         pdfViewer.Tag = focuseRow["SRC"].ToString();
                         PicName = focuseRow["PICTURE_NAME"].ToString();
