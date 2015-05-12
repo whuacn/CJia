@@ -286,7 +286,9 @@ namespace CJia.Health.App.UI
                 {
                     DataRow focuseRow = pictureView.GetFocusedDataRow();
                     string filePath = focuseRow["Pic_Path"].ToString();
+                    pdfViewer.Password = PDFPassword;
                     pdfViewer.FileName = filePath;
+                    smallpdfViewer.Password = PDFPassword;
                     smallpdfViewer.FileName = filePath;
                     pictureGrid.Focus();
                 }
@@ -338,6 +340,7 @@ namespace CJia.Health.App.UI
                     string[] arr = uri.Split('/');
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
+                    pdfViewer.Password = PDFPassword;
                     pdfViewer.FileName = downLoadFile.Replace(".pdf", "");
                 }
                 else

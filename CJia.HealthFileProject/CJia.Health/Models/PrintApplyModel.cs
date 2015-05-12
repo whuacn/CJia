@@ -6,7 +6,7 @@ using System.Data;
 
 namespace CJia.Health.Models
 {
-    public class PrintApplyModel:CJia.Health.Tools.Model
+    public class PrintApplyModel : CJia.Health.Tools.Model
     {
         /// <summary>
         /// 查询病人列表
@@ -20,6 +20,19 @@ namespace CJia.Health.Models
         /// <returns></returns>
         public DataTable QueryPatient(DateTime startDate, DateTime endDate, string patientName, string recordNo)
         {
+            string sql = @"select *
+  from gm_patient_view gpv
+ where gpv.status = '1'
+   and gpv.check_status = 101
+   and gpv.patient_name like ? 
+   and gpv.recordno like ?
+    order by GPV.recordno";
+            object[] ob = new object[] { "%" + patientName + "%", "%" + recordNo + "%" };
+            if (patientName.Trim().Length > 0 || recordNo.Trim().Length > 0)
+            {
+                DataTable result2 = CJia.DefaultOleDb.Query(sql, ob);
+                return result2;
+            }
             object[] parames = new object[] { startDate, endDate, "%" + patientName + "%", "%" + recordNo + "%" };
             DataTable result = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlSearchPatientData, parames);
             return result;
@@ -34,6 +47,19 @@ namespace CJia.Health.Models
         /// <returns></returns>
         public DataTable QueryPatientByInputDate(DateTime startDate, DateTime endDate, string patientName, string recordNo)
         {
+            string sql = @"select *
+  from gm_patient_view gpv
+ where gpv.status = '1'
+   and gpv.check_status = 101
+   and gpv.patient_name like ? 
+   and gpv.recordno like ?
+    order by GPV.recordno";
+            object[] parames2 = new object[] { "%" + patientName + "%", "%" + recordNo + "%" };
+            if (patientName.Trim().Length > 0 || recordNo.Trim().Length > 0)
+            {
+                DataTable result2 = CJia.DefaultOleDb.Query(sql, parames2);
+                return result2;
+            }
             object[] parames = new object[] { startDate, endDate, "%" + patientName + "%", "%" + recordNo + "%" };
             DataTable result = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlSearchPatientDataByInputDate, parames);
             return result;
@@ -68,7 +94,7 @@ namespace CJia.Health.Models
         //{
         //    object[] sqlParams = new object[] { "%" + selectValue + "%" };
         //    return CJia.DefaultOleDb.Query(SqlTools.SqlSelectProject, sqlParams);
-            
+
         //}
 
         ///// <summary>

@@ -245,7 +245,11 @@ namespace CJia.Health.Tools
             pdfFile.Dispose();
             return pageImage;
         }
-
+        /// <summary>
+        /// 读取pdf内容
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public string ReadPdfFile(string fileName)
         {
             StringBuilder text = new StringBuilder();
@@ -264,6 +268,23 @@ namespace CJia.Health.Tools
                 pdfReader.Close();
             }
             return text.ToString();
+        }
+        /// <summary>
+        /// 解密pdf
+        /// </summary>
+        /// <param name="pdfSrc"></param>
+        /// <param name="pdfDest"></param>
+        /// <param name="ownerPassword"></param>
+        public static void DecodePDF(string pdfSrc, string pdfDest, string ownerPassword)
+        {
+            try
+            {
+                PdfReader reader = new PdfReader(pdfSrc, Encoding.Default.GetBytes(ownerPassword));
+                Stream os = (Stream)(new FileStream(pdfDest, FileMode.Create));
+                PdfEncryptor.Encrypt(reader, os, null, null,
+                    PdfWriter.AllowAssembly | PdfWriter.AllowFillIn | PdfWriter.AllowScreenReaders | PdfWriter.AllowPrinting, false);
+            }
+            catch { }
         }
     }
 }

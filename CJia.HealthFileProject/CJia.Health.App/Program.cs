@@ -75,9 +75,9 @@ namespace CJia.Health.App
 
         static void Init()
         {
-            //string path = Application.StartupPath + @"\Cache";
-            //if (Directory.Exists(path))
-            //    Directory.Delete(path, true);
+            string path = Application.StartupPath + @"\Cache";
+            if (Directory.Exists(path))
+                Directory.Delete(path, true);
             CJia.ClientConfig.ServerIP = CJia.Health.Tools.ConfigHelper.GetAppStrings("Host");
             CJia.ClientConfig.ServerPort = int.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("Port"));
             CJia.ClientConfig.ClientNo = CJia.Health.Tools.ConfigHelper.GetAppStrings("ClientNo");

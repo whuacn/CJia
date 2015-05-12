@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,6 +38,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.pdfViewer1 = new CJia.Health.Tools.PDFViewer();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.axFoxitReaderSDK1 = new AxFoxitReaderSDKProLib.AxFoxitReaderSDK();
+            this.button8 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.axFoxitReaderSDK1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -121,7 +125,8 @@
             this.pdfViewer1.FileName = null;
             this.pdfViewer1.Location = new System.Drawing.Point(12, 12);
             this.pdfViewer1.Name = "pdfViewer1";
-            this.pdfViewer1.Size = new System.Drawing.Size(378, 465);
+            this.pdfViewer1.Password = null;
+            this.pdfViewer1.Size = new System.Drawing.Size(378, 144);
             this.pdfViewer1.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
             this.pdfViewer1.TabIndex = 29;
             this.pdfViewer1.ZoomLevel = 1;
@@ -134,11 +139,33 @@
             this.richTextBox1.TabIndex = 30;
             this.richTextBox1.Text = "";
             // 
+            // axFoxitReaderSDK1
+            // 
+            this.axFoxitReaderSDK1.Enabled = true;
+            this.axFoxitReaderSDK1.Location = new System.Drawing.Point(12, 175);
+            this.axFoxitReaderSDK1.Name = "axFoxitReaderSDK1";
+            this.axFoxitReaderSDK1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axFoxitReaderSDK1.OcxState")));
+            this.axFoxitReaderSDK1.Size = new System.Drawing.Size(457, 292);
+            this.axFoxitReaderSDK1.TabIndex = 31;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Location = new System.Drawing.Point(475, 257);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 32;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 489);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.axFoxitReaderSDK1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pdfViewer1);
             this.Controls.Add(this.button7);
@@ -150,6 +177,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.axFoxitReaderSDK1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,5 +193,7 @@
         private System.Windows.Forms.Button button7;
         private Tools.PDFViewer pdfViewer1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private AxFoxitReaderSDKProLib.AxFoxitReaderSDK axFoxitReaderSDK1;
+        private System.Windows.Forms.Button button8;
     }
 }

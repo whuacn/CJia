@@ -192,6 +192,7 @@ namespace CJia.Health.App.UI
                     string fileName = uri.Split('/')[arr.Length - 1];
                     string downLoadFile = Application.StartupPath + @"\Cache\" + fileName;
                     string pdfData = downLoadFile.Replace(".pdf", "");
+                    pdfViewer.Password = PDFPassword;
                     pdfViewer.FileName = pdfData;
                     pdfViewer.Tag = uri;
                 }

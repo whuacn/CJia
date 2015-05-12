@@ -535,6 +535,7 @@
             this.pdfViewer.FileName = null;
             this.pdfViewer.Location = new System.Drawing.Point(0, 0);
             this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Password = null;
             this.pdfViewer.Size = new System.Drawing.Size(1048, 694);
             this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
             this.pdfViewer.TabIndex = 4;
