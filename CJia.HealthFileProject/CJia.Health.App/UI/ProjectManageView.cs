@@ -84,7 +84,11 @@ namespace CJia.Health.App.UI
         /// <param name="e"></param>
         private void BtnUpdateProject_Click(object sender, EventArgs e)
         {
-            if (Common.CheckIsNotNull(this, "TxtProNo", "项目编号") && Common.CheckIsNotNull(this, "TxtProName", "项目名称")  && Common.CheckIsNotNull(this, "TxtProPinyin", "项目查询码"))
+            string shortKey = "";
+            DataRow dr = gridView1.GetFocusedDataRow();
+            if (dr != null)
+                shortKey = dr["SHORT_KEY"].ToString();
+            if (Common.CheckIsNotNull(this, "TxtProNo", "项目编号") && Common.CheckIsNotNull(this, "TxtProName", "项目名称") && Common.CheckIsNotNull(this, "TxtProPinyin", "项目查询码"))
             {
                 projectArg.ProjectName = TxtProName.Text;
                 projectArg.ProNo = TxtProNo.Text;
@@ -96,7 +100,7 @@ namespace CJia.Health.App.UI
                 Models.ProjectManageModel model = new Models.ProjectManageModel();
                 int i = model.CheckProIsRepeat(projectArg.ProNo, projectArg.ProId);
                 bool bol = model.IsShortKey(txtKey.Text.Trim().ToUpper());
-                if (!bol)
+                if (!bol || shortKey == txtKey.Text.Trim().ToUpper())
                 {
                     if (i == 0)
                     {
@@ -134,7 +138,7 @@ namespace CJia.Health.App.UI
         /// <param name="e"></param>
         private void BtnAddProject_Click(object sender, EventArgs e)
         {
-            if (Common.CheckIsNotNull(this, "TxtProNo", "项目编号") && Common.CheckIsNotNull(this, "TxtProName", "项目名称")  && Common.CheckIsNotNull(this, "TxtProPinyin", "项目查询码"))
+            if (Common.CheckIsNotNull(this, "TxtProNo", "项目编号") && Common.CheckIsNotNull(this, "TxtProName", "项目名称") && Common.CheckIsNotNull(this, "TxtProPinyin", "项目查询码"))
             {
                 projectArg.ProjectName = TxtProName.Text;
                 projectArg.ProNo = TxtProNo.Text;
