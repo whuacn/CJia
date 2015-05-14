@@ -165,6 +165,9 @@
   <data name="barCheckItem1.Caption" xml:space="preserve">
     <value>barCheckItem1</value>
   </data>
+  <data name="barButtonItem3.Caption" xml:space="preserve">
+    <value>barButtonItem3</value>
+  </data>
   <data name="barSubItem3.Caption" xml:space="preserve">
     <value>barSubItem3</value>
   </data>
@@ -8778,9 +8781,6 @@
   <data name="btnUser.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem3.Caption" xml:space="preserve">
-    <value>barButtonItem3</value>
-  </data>
   <data name="btnBig.Caption" xml:space="preserve">
     <value>放大图片</value>
   </data>
@@ -9400,31 +9400,31 @@
   </data>
   <data name="btnLoge.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAV9SURBVFhHxZdLTxtnFIZRWinKprtKXfQndN9N/0R2idR1VmnURRddtFIvUlOpKbeCAwmQYDCY
-        qwnGBgzYBDABjA0hXGJcCGBMMLEH24PBNpi353wzg8ep1TBRpA569I3H9rzvuXzHQxmA/5WSFx9YR/HA
-        OoL69hHUtY3A1OaCqdWF2tZh1JiHUE1UNTtR+ciJiiYH/mx04F7jAO41DOD3ms6vysrKPip131KUvMgG
-        Sh3n5zrU1/k8QScMG3hgHcP1r+98QSY+po+UvL+ekhfr3zKgCPIfnytieU2cTs5U2MDKlozvfmvAjVvf
-        f3kZEyUvcuq1Q4jyH5vQCWuizOkZoRrgg03cvPPrpUyUvHhhgMSer/6NxbdZKbCwEiIDeeTIhGZgVwK8
-        y1Hc/Oand5ooebGODHC0gos0F9ItIlbJsfgprYTewIvtNPqnt99p4l8XGM2AqDWL0nqRbtWAIqyQJfEs
-        rZqBQEiCZymGPu8uWl3B/zRR9ELjfrtLbbRzJdWU9gWR7mICywqZXF7ABr79pU4IXr/1g1j1kIFPiKIt
-        WiSsYbKMFDeaiJjTzNGqkOBR9ADxtRUhfpI9I2jN0Eoc0/lxRnl9TO+pBj4jruq1ioQ1TBZXUcq1dGup
-        FhHTTfdcLoTbzUgnUiSmidKqkj5RoXPVwOfENb1WkbCGyTKsiFPUIt2cak75iwJzXj8mOmyY7HPAOziK
-        +eehC3y69ej4jDg1ZoBHLqf9VHQ3RZ+jyClqRos+4h5Hwj0I+eUSdno7ICdkHJ2cCmQSlElYQTk3ZqBl
-        WOl0td4Zhuur1lrejyHc3YXMuAPZ2THsOp7gwO/XCRLpU6R0GDLwFxnQ6h5YDlHKFfwq066neNpqxXxv
-        DwK2HszaBzBps2Pu+ToRwtxiYU2SePLIqAHzYCF6NWqGG0uWkgjbHYiMuiD1dyDjbMORw4odWxeiyytC
-        TCMhyAkMG9DqraSduls1EFtZxc6IG3LqGK86rUg72pG2WxC3dyDscSMhZ4kcDnXwNUMGqs1OpdlyZ/DT
-        DvAvKan3BdYw0TOA6QkffIshTA6Nw2O2YsrcgqlWC55ae+Gl92YCQWJdIKWyAkMGqh47RfrFYNHtbWlj
-        C5tdvZDljGi0Q0lG8HEzwg9rsf+oFuHWRkS8zyAlM4iTaDyZI2h9HwPc9bzdtNofpU6wO+ZB2O2BFI4g
-        trmF/eU1BDs6EaozIVJfhUhzPbZ6uxHd3lOEE1nEaGUMGagkA1rjcerniZmZBbitNozbnHB3PYGnk+jq
-        h6fbjuEGM8abmqkUZkxY2jE1MolnC0E8o1K8SWQEhgxU0LOeiJzgUSqns9id9WHHOyP2dDKVwSFDpYgd
-        JBCyO7FWXY3dukpEHlMW+myI7sVxQMIHh1nCqIEmMiDqnhdzPBlLYYO2nhSNCwNia3GHp6jGVN/o9mss
-        15qwaSITDTV41dyAPXpQYeGoiiED5fSkqzRfHr6ldYwPjFLHezAXeCmGy+xCAe547/wqRjv7MfbQjGlz
-        GyZpSHk6+zA1t6oYkAwa4MdsET2lf7WjC+umGmy1tWBjyIU4jWGxvyl63l5bGztYtFixWF6BYPkf2L5f
-        hW1zI0JND7HqGMK+dEIYNjAgMsAGxA8MbTlRe5F+Qh0wEnc6dzl1+xtCpFyikpDgflwR3o9n8JowZID/
-        yRANSPX30RDin1Ux53nGcwmIGYZLoHb7NK3TvHJJ/C8FU/NBEj8RGDbATahlgIdOIQNq9KIBc2KPF6JX
-        Go4jV4TVNfYeBnj4pDOcfn6gOFMM6NMvJp0yZDQDvOW09L+m2mvie4YNNNhx974Vt3+swo3bP4svfwgu
-        bYCOq8Sn6hc+JHzPdz+U0nGFP0hc+8DwPa8UtFD2D6GY/+rwY4XCAAAAAElFTkSuQmCC
+        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
 </value>
   </data>
   <data name="btnLoge.ItemAppearance.Disabled.Font" type="System.Drawing.Font, System.Drawing">
@@ -9439,6 +9439,9 @@
   <data name="btnLoge.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
+  <data name="btnLookSet.Caption" xml:space="preserve">
+    <value>浏览权限</value>
+  </data>
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -9449,11 +9452,32 @@
   <data name="ribbonPage1.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
   </data>
+  <data name="efff.Text" xml:space="preserve">
+    <value>起始页</value>
+  </data>
+  <data name="gggg.Text" xml:space="preserve">
+    <value>档案采集</value>
+  </data>
+  <data name="ewg.Text" xml:space="preserve">
+    <value>档案加工</value>
+  </data>
+  <data name="pgPhoto.Text" xml:space="preserve">
+    <value>拍照设置</value>
+  </data>
+  <data name="ribbonPageGroup3.Text" xml:space="preserve">
+    <value>图片处理</value>
+  </data>
   <data name="ribbonPage1.Text" xml:space="preserve">
     <value>数据加工</value>
   </data>
   <data name="ribbonPage3.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
+  </data>
+  <data name="ddde.Text" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="fff.Text" xml:space="preserve">
+    <value>病案管理</value>
   </data>
   <data name="ribbonPage3.Text" xml:space="preserve">
     <value>病案管理</value>
@@ -9473,17 +9497,23 @@
   <data name="ribbonPage6.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt, style=Bold</value>
   </data>
+  <data name="ribbonPageGroup6.Text" xml:space="preserve">
+    <value>个人</value>
+  </data>
+  <data name="ribbonPageGroup7.Text" xml:space="preserve">
+    <value>系统</value>
+  </data>
   <data name="ribbonPage6.Text" xml:space="preserve">
     <value>文件</value>
   </data>
   <data name="ribbonControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1030, 153</value>
+    <value>1026, 153</value>
   </data>
   <data name="ribbonStatusBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 732</value>
+    <value>0, 720</value>
   </data>
   <data name="ribbonStatusBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1030, 27</value>
+    <value>1026, 27</value>
   </data>
   <data name="&gt;&gt;ribbonStatusBar1.Name" xml:space="preserve">
     <value>ribbonStatusBar1</value>
@@ -9508,33 +9538,6 @@
   </data>
   <data name="&gt;&gt;ribbonControl1.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="efff.Text" xml:space="preserve">
-    <value>起始页</value>
-  </data>
-  <data name="gggg.Text" xml:space="preserve">
-    <value>档案采集</value>
-  </data>
-  <data name="ewg.Text" xml:space="preserve">
-    <value>档案加工</value>
-  </data>
-  <data name="pgPhoto.Text" xml:space="preserve">
-    <value>拍照设置</value>
-  </data>
-  <data name="ribbonPageGroup3.Text" xml:space="preserve">
-    <value>图片处理</value>
-  </data>
-  <data name="ddde.Text" xml:space="preserve">
-    <value>查询</value>
-  </data>
-  <data name="fff.Text" xml:space="preserve">
-    <value>病案管理</value>
-  </data>
-  <data name="ribbonPageGroup6.Text" xml:space="preserve">
-    <value>个人</value>
-  </data>
-  <data name="ribbonPageGroup7.Text" xml:space="preserve">
-    <value>系统</value>
   </data>
   <data name="ribbonPageGroup2.Text" xml:space="preserve">
     <value>首页录入</value>
@@ -9611,6 +9614,45 @@
   <data name="cJiaTabControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
+  <data name="lblSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 16</value>
+  </data>
+  <data name="lblSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="lblSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSystem.Text" xml:space="preserve">
+    <value>系统流程图</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Name" xml:space="preserve">
+    <value>lblSystem</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>789, 45</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -9662,69 +9704,6 @@
   <data name="&gt;&gt;cJiaTabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;lblSystem.Name" xml:space="preserve">
-    <value>lblSystem</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 45</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>xTPHome</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblSystem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 16</value>
-  </data>
-  <data name="lblSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
-  </data>
-  <data name="lblSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSystem.Text" xml:space="preserve">
-    <value>系统流程图</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Name" xml:space="preserve">
-    <value>lblSystem</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSystem.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -9747,7 +9726,7 @@
     <value>0, 153</value>
   </data>
   <data name="homePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 553</value>
+    <value>1024, 541</value>
   </data>
   <data name="homePage.Text" xml:space="preserve">
     <value>首页</value>
@@ -9765,7 +9744,7 @@
     <value>0</value>
   </data>
   <data name="xTC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1030, 579</value>
+    <value>1026, 567</value>
   </data>
   <data name="xTC.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -9798,7 +9777,7 @@
     <value>10, 22</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1030, 759</value>
+    <value>1026, 747</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10538,6 +10517,12 @@
     <value>btnLoge</value>
   </data>
   <data name="&gt;&gt;btnLoge.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;btnLookSet.Name" xml:space="preserve">
+    <value>btnLookSet</value>
+  </data>
+  <data name="&gt;&gt;btnLookSet.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
   <data name="&gt;&gt;ribbonPage1.Name" xml:space="preserve">
