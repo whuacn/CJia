@@ -227,3 +227,5 @@ maxvalue 9999999999
 start with 1000000001
 increment by 1
 cache 20;
+
+ALTER TABLE GM_PROJECT ADD IS_LOOK CHAR(1) default 1;
