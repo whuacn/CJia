@@ -72,6 +72,7 @@ namespace CJia.Health.App.UI
                 TxtProNo.Text = dr["PRO_NO"].ToString();
                 TxtProPinyin.Text = dr["FIRST_PINYIN"].ToString();
                 ckPrint.Checked = dr["IS_PRINT"].ToString() == "1" ? true : false;//by dh
+                ckLook.Checked = dr["IS_LOOK"].ToString() == "1" ? true : false;
                 projectArg.ProId = dr["PRO_ID"].ToString();
                 txtKey.Text = dr["SHORT_KEY"].ToString();
             }
@@ -97,6 +98,7 @@ namespace CJia.Health.App.UI
                 TxtProPinyin.Text = projectArg.ProPinyin;
                 projectArg.UserID = User.UserData.Rows[0]["USER_ID"].ToString();
                 projectArg.isPrint = ckPrint.Checked == true ? "1" : "0";//by dh
+                projectArg.isLook = ckLook.Checked == true ? "1" : "0";
                 Models.ProjectManageModel model = new Models.ProjectManageModel();
                 int i = model.CheckProIsRepeat(projectArg.ProNo, projectArg.ProId);
                 bool bol = model.IsShortKey(txtKey.Text.Trim().ToUpper());
@@ -148,6 +150,7 @@ namespace CJia.Health.App.UI
                 projectArg.UserID = User.UserData.Rows[0]["USER_ID"].ToString();
                 projectArg.ProId = " ";
                 projectArg.isPrint = ckPrint.Checked == true ? "1" : "0";//by dh
+                projectArg.isLook = ckLook.Checked == true ? "1" : "0";
                 Models.ProjectManageModel model = new Models.ProjectManageModel();//这。。。严重违反MVP模式
                 int i = model.CheckProIsRepeat(projectArg.ProNo, projectArg.ProId);
                 bool bol = model.IsShortKey(txtKey.Text.Trim().ToUpper());

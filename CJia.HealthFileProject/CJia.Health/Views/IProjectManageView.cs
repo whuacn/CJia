@@ -58,5 +58,9 @@ namespace CJia.Health.Views
         /// 快捷键
         /// </summary>
         public string shortKey;
+        /// <summary>
+        /// 是否可以浏览（1可以浏览，0不可以）
+        /// </summary>
+        public string isLook;
     }
 }
