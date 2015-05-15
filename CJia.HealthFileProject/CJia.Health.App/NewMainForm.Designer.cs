@@ -106,6 +106,7 @@ namespace CJia.Health.App
             this.lblUserName = new DevExpress.XtraBars.BarStaticItem();
             this.bsiCompany = new DevExpress.XtraBars.BarStaticItem();
             this.btnLoge = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLookSet = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.efff = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gggg = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -251,8 +252,9 @@ namespace CJia.Health.App
             this.barStaticItem1,
             this.lblUserName,
             this.bsiCompany,
-            this.btnLoge});
-            this.ribbonControl1.MaxItemId = 99;
+            this.btnLoge,
+            this.btnLookSet});
+            this.ribbonControl1.MaxItemId = 100;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1092,6 +1094,14 @@ namespace CJia.Health.App
             this.btnLoge.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnLoge.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoge_ItemClick);
             // 
+            // btnLookSet
+            // 
+            resources.ApplyResources(this.btnLookSet, "btnLookSet");
+            this.btnLookSet.Id = 99;
+            this.btnLookSet.LargeGlyph = global::CJia.Health.App.Properties.Resources._20096;
+            this.btnLookSet.Name = "btnLookSet";
+            this.btnLookSet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLookSet_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ribbonPage1.Appearance.Font")));
@@ -1174,6 +1184,7 @@ namespace CJia.Health.App
             // 
             // fff
             // 
+            this.fff.ItemLinks.Add(this.btnLookSet);
             this.fff.ItemLinks.Add(this.btnPrintApply);
             this.fff.ItemLinks.Add(this.BtnBorrow);
             this.fff.Name = "fff";
@@ -1467,5 +1478,6 @@ namespace CJia.Health.App
         private DevExpress.XtraTab.XtraTabControl xTC;
         private DevExpress.XtraTab.XtraTabPage homePage;
         private DevExpress.XtraBars.BarButtonItem btnLoge;
+        private DevExpress.XtraBars.BarButtonItem btnLookSet;
     }
 }

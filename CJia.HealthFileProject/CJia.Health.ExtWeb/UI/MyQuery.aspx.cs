@@ -210,8 +210,17 @@ namespace CJia.Health.ExtWeb.UI
                 case "Favorite":
                     if (Session["User"] != null)
                     {
-                        InitMyFav();
-                        win_MyFav.Hidden = false;
+                        string userID = (Session["User"] as DataTable).Rows[0]["USER_ID"].ToString();
+                        bool bol = GetMyFavouriteByUserID(userID, keys[0].ToString());
+                        if (!bol)
+                        {
+                            InitMyFav();
+                            win_MyFav.Hidden = false;
+                        }
+                        else
+                        {
+                            Alert.ShowInTop("你已收藏！");
+                        }
                     }
                     else
                     {
@@ -316,7 +325,7 @@ namespace CJia.Health.ExtWeb.UI
             }
             else
             {
-                
+
             }
             win_MyFav.Hidden = false;
         }
@@ -346,6 +355,7 @@ namespace CJia.Health.ExtWeb.UI
         protected void gr_Main_PreRowDataBound(object sender, GridPreRowEventArgs e)
         {
             LinkButtonField lbfEdit = gr_Main.FindColumn("lbf_fav") as LinkButtonField;
+            LinkButtonField lbfApply = gr_Main.FindColumn("lbf_Apply") as LinkButtonField;
             DataTable userData = Session["User"] as DataTable;
             string userDaptID = userData.Rows[0]["DEPT_ID"].ToString();
             DataRowView dv = e.DataItem as DataRowView;
@@ -355,10 +365,12 @@ namespace CJia.Health.ExtWeb.UI
             if (userDaptID == inHos || userDaptID == outHos)
             {
                 lbfEdit.Enabled = true;
+                lbfApply.Enabled = false;
             }
             else
             {
                 lbfEdit.Enabled = false;
+                lbfApply.Enabled = true;
             }
         }
 

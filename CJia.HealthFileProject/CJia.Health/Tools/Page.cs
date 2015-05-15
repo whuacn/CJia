@@ -301,5 +301,33 @@ namespace CJia.Health.Tools
             CJia.DefaultOleDb.Execute(sql1, sqlParams);
             return CJia.DefaultOleDb.Execute(sql2, sqlParams) > 0 ? true : false;
         }
+        /// <summary>
+        /// 根据用户id查询某病案是否被收藏
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="healthID"></param>
+        /// <returns></returns>
+        public static bool GetMyFavouriteByUserID(string userID, string healthID)
+        {
+            string sql = @"SELECT tt.health_id
+                          FROM gm_favorites_detail tt
+                         WHERE tt.status = '1'
+                           and tt.favorites_id in (SELECT t.favorites_id
+                                                     FROM gm_favorites t
+                                                    WHERE t.user_id = ?
+                                                      and t.status = '1')";
+            object[] sqlParams = new object[] { userID };
+            DataTable data = CJia.DefaultOleDb.Query(sql, sqlParams);
+            if (data != null && data.Rows.Count > 0)
+            {
+                foreach (DataRow dr in data.Rows)
+                {
+                    string id = dr[0].ToString();
+                    if (id == healthID)
+                        return true;
+                }
+            }
+            return false;
+        }
     }
 }

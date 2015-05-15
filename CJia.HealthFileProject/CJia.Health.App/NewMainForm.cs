@@ -902,6 +902,9 @@ namespace CJia.Health.App
                 case "btnRoleFounction":
                     uc = new UI.RoleFunctionView();                    
                     break;
+                case "btnLookSet":
+                    uc = new UI.LookSetView();
+                    break;
                 default:
                     break;
             }
@@ -1054,6 +1057,11 @@ namespace CJia.Health.App
         {
             UI.LogoSet ui = new LogoSet();
             Tools.Help.NewRedBorderFrom(ui);
+        }
+
+        private void btnLookSet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowXTP(e);
         }
     }
 }
