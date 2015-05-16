@@ -168,5 +168,17 @@ namespace CJia.Health.Models
             }
             return false;
         }
+
+        public bool ModifyLookStatus(string picID,string lookStatus)
+        {
+            string sql = @"update st_picture sp set sp.is_look=? WHERE sp.picture_id=?";
+            object[] sqlParams = new object[] { lookStatus, picID };
+            int result = CJia.DefaultOleDb.Execute(sql, sqlParams);
+            if (result == 1)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

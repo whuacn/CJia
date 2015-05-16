@@ -47,12 +47,6 @@ namespace CJia.Health.App.UI
         /// </summary>
         private DataTable AllPicture = null;
 
-        //private Dictionary<string, Image> AllPictureImage = null;
-
-        //private DataTable BigPicture = null;
-
-        //private DataTable SmallPicture = null;
-
         /// <summary>
         /// 选择的图片
         /// </summary>
@@ -68,8 +62,6 @@ namespace CJia.Health.App.UI
                 return null;
             }
         }
-
-
 
         /// <summary>
         /// 选择的panel数
@@ -92,12 +84,6 @@ namespace CJia.Health.App.UI
                 this.SetBtnStyle();
             }
         }
-
-
-        /// <summary>
-        /// 图片缓存类
-        /// </summary>
-        //private CJia.Health.Tools.ImageCache imageCache = new Tools.ImageCache();
 
         /// <summary>
         /// 所有审核原因
@@ -127,19 +113,6 @@ namespace CJia.Health.App.UI
         {
             this.SelectPic();
             this.cgPicture.Focus();
-        }
-
-        // 查询图片
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            this.SelectPic();
-            this.cgPicture.Focus();
-        }
-
-        // 获得焦点列修改事件
-        private void gvBigPicture_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            this.BindPicture();
         }
 
         // 用户控件键盘事件
@@ -174,55 +147,21 @@ namespace CJia.Health.App.UI
         /// <param name="e"></param>
         private void gvBigPicture_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            if (e.Column.FieldName == "CHECK_STATUS_NAME")
+            if (e.Column.FieldName == "IS_LOOK_NAME")
             {
-                string stutas = this.gvPicture.GetDataRow(e.RowHandle)["CHECK_STATUS"].ToString();
-                if (stutas == "103")
-                {
-
-                }
-                else if (stutas == "101")
+                string stutas = this.gvPicture.GetDataRow(e.RowHandle)["IS_LOOK"].ToString();
+                if (stutas == "1")
                 {
                     e.Appearance.ForeColor = Color.Green;
                 }
-                else if (stutas == "102")
+                else if (stutas == "0")
                 {
                     e.Appearance.ForeColor = Color.Red;
                 }
             }
-
             if (e.RowHandle == this.gvPicture.FocusedRowHandle)
             {
                 e.Appearance.BackColor = Color.FromArgb(93, 175, 223);
-            }
-
-        }
-
-
-        /// <summary>
-        /// 根据状态改变字体颜色
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void gvSmallPicture_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
-        {
-            if (e.Column.FieldName == "CHECK_STATUS_NAME")
-            {
-                string stutas = e.CellValue.ToString();
-                //DataRow row = this.gvSmallPicture.GetDataRow(e.RowHandle);
-                //string stutas = this.gvSmallPicture.GetDataRow(e.RowHandle)["CHECK_STATUS"].ToString();
-                if (stutas == "已提交")
-                {
-
-                }
-                else if (stutas == "审核通过")
-                {
-                    e.Appearance.ForeColor = Color.Green;
-                }
-                else if (stutas == "审核未通过")
-                {
-                    e.Appearance.ForeColor = Color.Red;
-                }
             }
         }
 
@@ -232,52 +171,12 @@ namespace CJia.Health.App.UI
             this.keyDown(Keys.F1);
         }
 
-        // 上一小页
-        private void btnUpSubPage_Click(object sender, EventArgs e)
-        {
-            this.keyDown(Keys.F2);
-        }
-
-        // 下一小页
-        private void btnDownSubPage_Click(object sender, EventArgs e)
-        {
-            this.keyDown(Keys.F3);
-        }
-
         // 下一大页
         private void btnDownPage_Click(object sender, EventArgs e)
         {
             this.keyDown(Keys.F4);
         }
-
-        // 状态选择修改事件
-        private void crdCheck_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataTable result = this.filterPictureData(this.AllPicture);
-            this.bindGridView(result);
-        }
-
-        // 审核通过
-        private void btnPass_Click(object sender, EventArgs e)
-        {
-            this.keyDown(Keys.F5);
-        }
-
-        // 审核不通过
-        private void btnNoPass_Click(object sender, EventArgs e)
-        {
-            this.keyDown(Keys.F6);
-        }
-
-        // 撤销审核
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            this.keyDown(Keys.F7);
-        }
-
         #endregion
-
-
 
         #region IImageCheckView 成员
 
@@ -299,6 +198,31 @@ namespace CJia.Health.App.UI
 
         public event EventHandler<Views.NewImageCheckViewArgs> OnRemoveCheckReason;
 
+        public event EventHandler<Views.NewImageCheckViewArgs> OnYesLook;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnNOLook;
+
+        public void ExeYesLook(bool result)
+        {
+            if (result)
+            {
+                DataRow dr = gvPicture.GetFocusedDataRow();
+                dr["IS_LOOK"] = "1";
+                dr["IS_LOOK_NAME"] = "是";
+                this.SetBtnStyle();
+            }
+        }
+
+        public void ExeNoLook(bool result)
+        {
+            if (result)
+            {
+                DataRow dr = gvPicture.GetFocusedDataRow();
+                dr["IS_LOOK"] = "0";
+                dr["IS_LOOK_NAME"] = "否";
+                this.SetBtnStyle();
+            }
+        }
 
         public void ExeCheckReason(DataTable result)
         {
@@ -317,36 +241,24 @@ namespace CJia.Health.App.UI
 
         public void ExePass(bool result)
         {
-            if (result)
-            {
-                this.UpdatePicStatus("101", "审核通过");
-            }
+
         }
 
         public void ExeNoPass(bool result)
         {
-            if (result)
-            {
-                this.UpdatePicStatus("102", "审核未通过");
-            }
+
         }
 
         public void ExeDelete(bool result)
         {
-            if (result)
-            {
-                this.UpdatePicStatus("103", "已提交");
-            }
+
         }
 
 
         public void ExePic(DataTable AllPicture)
         {
             this.AllPicture = AllPicture;
-            this.setPicCount(AllPicture);
-            DataTable result = this.filterPictureData(AllPicture);
-            this.bindGridView(result);
-            //this.DowImage();
+            cgPicture.DataSource = AllPicture;
         }
 
 
@@ -400,41 +312,24 @@ namespace CJia.Health.App.UI
                 case Keys.F1:
                     this.gvPicture.Focus();
                     this.gvPicture.MovePrev();
-                    this.BindPicture();
                     break;
                 case Keys.F4:
                     this.gvPicture.Focus();
                     this.gvPicture.MoveNext();
-                    this.BindPicture();
                     break;
                 case Keys.F5:
-                    if (this.Pass())
+                    if (this.YesLook())
                     {
                         this.gvPicture.Focus();
                         this.gvPicture.MoveNext();
-                        this.BindPicture();
                     }
                     break;
                 case Keys.F6:
-                    if (this.NoPass())
+                    if (this.NoLook())
                     {
                         this.gvPicture.Focus();
                         this.gvPicture.MoveNext();
-                        this.BindPicture();
                     }
-                    break;
-                case Keys.F7:
-                    this.Delete();
-                    this.gvPicture.MoveNext();
-                    this.BindPicture();
-                    break;
-                case Keys.F9:
-                    this.LURecordNO.Focus();
-                    this.LURecordNO.SelectAll();
-                    break;
-                case Keys.F12:
-                    this.SelectPic();
-                    this.cgPicture.Focus();
                     break;
                 default:
                     break;
@@ -450,22 +345,12 @@ namespace CJia.Health.App.UI
         {
             if (picPath != null)
             {
-                //string host = "ftp://" + CJia.Health.Tools.ConfigHelper.GetAppStrings("ftp_ip");
-                //string path = host + "/" + picPath["STORAGE_PATH"].ToString().Replace('\\', '/') + "/" + picPath["PICTURE_NAME"].ToString();
-                //Loading(path);
-                //if (picPath["CHECK_STATUS"].ToString() == "103")
-                //    this.txtCheckStatusName.ForeColor = Color.Black;
-                //else if (picPath["CHECK_STATUS"].ToString() == "101")
-                //    this.txtCheckStatusName.ForeColor = Color.Green;
-                //else
-                //    this.txtCheckStatusName.ForeColor = Color.Red;
-                //this.txtPageNo.Text = picPath["PAGE_NO"].ToString();
-                //this.txtProName.Text = picPath["PRO_NAME"].ToString();
-                //lblprojectName.Text = picPath["PRO_NAME"].ToString();
-                //this.txtCheckStatusName.Text = picPath["CHECK_STATUS_NAME"].ToString();
-                //this.txtSubPage.Text = picPath["SUBPAGE"].ToString();
-                //this.selectPicData = picPath;
-                //this.SetBtnStyle();
+                string host = "ftp://" + CJia.Health.Tools.ConfigHelper.GetAppStrings("ftp_ip");
+                string path = host + "/" + picPath["STORAGE_PATH"].ToString().Replace('\\', '/') + "/" + picPath["PICTURE_NAME"].ToString();
+                Loading(path);
+                lblprojectName.Text = picPath["PRO_NAME"].ToString();
+                this.selectPicData = picPath;
+                this.SetBtnStyle();
             }
         }
         private void Loading(string uri)
@@ -494,333 +379,74 @@ namespace CJia.Health.App.UI
         #endregion
 
         /// <summary>
-        /// 赛选出当前该类别的数量
-        /// </summary>
-        /// <param name="picData"></param>
-        /// <returns></returns>
-        private DataTable filterPictureData(DataTable AllPicture)
-        {
-            //string selectValue = this.crdCheck.EditValue.ToString();
-            //DataTable result = null;
-            //if (selectValue == "0")
-            //{
-            //    result = AllPicture.Copy();
-            //}
-            //else if (selectValue == "1")
-            //{
-            //    result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '101' "));
-            //}
-            //else if (selectValue == "2")
-            //{
-            //    result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '102' "));
-            //}
-            //else if (selectValue == "3")
-            //{
-            //    result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '103' "));
-            //}
-            //return result;
-            return null;
-        }
-
-        /// <summary>
-        /// 计算数据中个中类别的数量
-        /// </summary>
-        /// <param name="picData"></param>
-        /// <param name="allNumber"></param>
-        /// <param name="passNumber"></param>
-        /// <param name="noPassNumber"></param>
-        /// <param name="noCheckNumber"></param>
-        private void getPicCount(DataTable picData, ref int allNumber, ref int passNumber, ref int noPassNumber, ref int noCheckNumber)
-        {
-            if (picData != null && picData.Rows != null && picData.Rows.Count > 0)
-            {
-                DataTable result = null;
-                result = picData;
-                allNumber = result != null ? result.Rows.Count : 0;
-                result = CJia.Health.Tools.Help.GetDataSource(picData.Select(" CHECK_STATUS = '101' "));
-                passNumber = result != null ? result.Rows.Count : 0;
-                result = CJia.Health.Tools.Help.GetDataSource(picData.Select(" CHECK_STATUS = '102' "));
-                noPassNumber = result != null ? result.Rows.Count : 0;
-                result = CJia.Health.Tools.Help.GetDataSource(picData.Select(" CHECK_STATUS = '103' "));
-                noCheckNumber = result != null ? result.Rows.Count : 0;
-            }
-            else
-            {
-                allNumber = 0;
-                passNumber = 0;
-                noPassNumber = 0;
-                noCheckNumber = 0;
-            }
-        }
-
-        /// <summary>
-        /// 设置个状态数量
-        /// </summary>
-        /// <param name="bigPic"></param>
-        /// <param name="smallPic"></param>
-        private void setPicCount(DataTable AllPicture)
-        {
-            int allNumber = 0;
-            int passNumber = 0;
-            int noPassNumber = 0;
-            int noCheckNumber = 0;
-            getPicCount(AllPicture, ref allNumber, ref passNumber, ref noPassNumber, ref noCheckNumber);
-
-
-            //this.crdCheck.Properties.Items[0].Description = "全部(" + allNumber + ")";
-            //this.crdCheck.Properties.Items[1].Description = "通过(" + passNumber + ")";
-            //this.crdCheck.Properties.Items[2].Description = "拒绝(" + noPassNumber + ")";
-            //this.crdCheck.Properties.Items[3].Description = "提交(" + noCheckNumber + ")";
-        }
-
-        /// <summary>
-        /// 绑定gridView
-        /// </summary>
-        /// <param name="BigPicture"></param>
-        /// <param name="SmallPicture"></param>
-        private void bindGridView(DataTable PicData)
-        {
-            this.cgPicture.DataSource = PicData;
-            this.BindPicture();
-        }
-
-        /// <summary>
-        /// 下载图片
-        /// </summary>
-        private void DowImage()
-        {
-            List<string> picPaths = new List<string>();
-            for (int i = 0; i < this.AllPicture.Rows.Count; i++)
-            {
-                string path = CJia.Health.Tools.ConfigHelper.GetAppStrings("IP_PATH") + @"\" + this.AllPicture.Rows[i]["STORAGE_PATH"].ToString() + @"\" + this.AllPicture.Rows[i]["PICTURE_NAME"].ToString();
-                picPaths.Add(path);
-            }
-            //imageCache.DowImage(picPaths);
-        }
-
-        /// <summary>
         /// 设置按钮样式
         /// </summary>
         private void SetBtnStyle()
         {
-            string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
-            if (checkStatus == "103")
+            string checkStatus = this.SelectPicData["IS_LOOK"].ToString();
+            if (checkStatus == "1")
             {
-                this.btnPass.Enabled = true;
-                this.btnNoPass.Enabled = true;
-                this.btnDelete.Enabled = false;
+                this.btnYes.Enabled = false;
+                this.btnNo.Enabled = true;
             }
-            else if (checkStatus == "102")
+            else if (checkStatus == "0")
             {
-                this.btnPass.Enabled = false;
-                this.btnNoPass.Enabled = false;
-                this.btnDelete.Enabled = true;
-            }
-            else if (checkStatus == "101")
-            {
-                this.btnPass.Enabled = false;
-                this.btnNoPass.Enabled = false;
-                this.btnDelete.Enabled = true;
+                this.btnYes.Enabled = true;
+                this.btnNo.Enabled = false;
             }
         }
-
-        /// <summary>
-        /// 审核通过
-        /// </summary>
-        private bool Pass()
+        private bool YesLook()
         {
-            string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
-            if (checkStatus == "103")
+            DataRow dr = gvPicture.GetFocusedDataRow();
+            string checkStatus = dr["IS_LOOK"].ToString();
+            if (checkStatus == "0")
             {
-                string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
-                this.OnPass(null, new Views.NewImageCheckViewArgs()
+                string pictrueId = dr["PICTURE_ID"].ToString();
+                this.OnYesLook(null, new Views.NewImageCheckViewArgs()
                 {
-                    pictureId = pictrueId,
-                    originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString()
+                    pictureId = pictrueId
                 });
                 return true;
             }
             return false;
         }
-
-        /// <summary>
-        /// 审核不通过
-        /// </summary>
-        private bool NoPass()
+        private bool NoLook()
         {
-            string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
-            if (checkStatus == "103")
+            DataRow dr = gvPicture.GetFocusedDataRow();
+            string checkStatus = dr["IS_LOOK"].ToString();
+            if (checkStatus == "1")
             {
-                CJia.Health.App.UI.CheckReasonView checkReasonView = new CheckReasonView();
-                checkReasonView.OnAddCheckReason += checkReasonView_OnAddCheckReason;
-                checkReasonView.OnRemoveCheckReason += checkReasonView_OnRemoveCheckReason;
-                this.OnCheckReason(null, null);
-                checkReasonView.BindData(this.AllCheckReason);
-                this.ShowAsWindow("审核原因", checkReasonView);
-                if (checkReasonView.isOk)
+                string pictrueId = dr["PICTURE_ID"].ToString();
+                this.OnNOLook(null, new Views.NewImageCheckViewArgs()
                 {
-                    string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
-                    this.OnNoPass(null, new Views.NewImageCheckViewArgs()
-                    {
-                        pictureId = pictrueId,
-                        originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString(),
-                        checkReasonId = checkReasonView.reasonId,
-                        checkReason = checkReasonView.reason
-                    });
-                    return true;
-                }
+                    pictureId = pictrueId
+                });
+                return true;
             }
             return false;
         }
-
-        /// <summary>
-        /// 撤销审核
-        /// </summary>
-        private void Delete()
-        {
-            string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
-            if (checkStatus == "101" || checkStatus == "102")
-            {
-                string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
-                this.OnDelete(null, new Views.NewImageCheckViewArgs()
-                {
-                    pictureId = pictrueId,
-                    originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString()
-                });
-            }
-        }
-
-        /// <summary>
-        /// 移除审核原因
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void checkReasonView_OnRemoveCheckReason(object sender, CheckReasonEventArgs e)
-        {
-            this.OnRemoveCheckReason(null, new Views.NewImageCheckViewArgs()
-            {
-                checkReasonId = e.checkReasonId
-            });
-        }
-
-        /// <summary>
-        /// 增加审核原因
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void checkReasonView_OnAddCheckReason(object sender, CheckReasonEventArgs e)
-        {
-            this.OnAddCheckReason(null, new Views.NewImageCheckViewArgs()
-            {
-                checkReason = e.checkReason
-            });
-        }
-
-
-
-        ///// <summary>
-        ///// 修改数据中的审核状态
-        ///// </summary>
-        ///// <param name="dt"></param>
-        ///// <param name="checkStatus"></param>
-        ///// <param name="checkStatusName"></param>
-        //private void UpdateCheckStatus(DataTable dt, string checkStatus, string checkStatusName)
-        //{
-        //    DataRow[] selectRows = dt.Select(" PAGE_NO = '" + this.selectPicData["PAGE_NO"].ToString() + "'");
-        //    if(selectRows != null && selectRows.Length == 1)
-        //    {
-        //        selectRows[0]["CHECK_STATUS_NAME"] = checkStatusName;
-        //        selectRows[0]["CHECK_STATUS"] = checkStatus;
-        //    }
-        //}
-
-        /// <summary>
-        /// 修改数据中的审核状态
-        /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="checkStatus"></param>
-        /// <param name="checkStatusName"></param>
-        private void UpdateCheckStatus(DataTable dt, string checkStatus, string checkStatusName)
-        {
-            DataRow[] selectRows = dt.Select(" PAGE_NO = '" + this.selectPicData["PAGE_NO"].ToString() + "'  AND SUBPAGE = '" + this.selectPicData["SUBPAGE"].ToString() + "'");
-            if (selectRows != null && selectRows.Length == 1)
-            {
-                selectRows[0]["CHECK_STATUS_NAME"] = checkStatusName;
-                selectRows[0]["CHECK_STATUS"] = checkStatus;
-            }
-        }
-
-        /// <summary>
-        /// 修改状态
-        /// </summary>
-        /// <param name="checkStatus"></param>
-        /// <param name="checkStatusName"></param>
-        private void UpdatePicStatus(string checkStatus, string checkStatusName)
-        {
-            //this.UpdateCheckStatus(this.AllPicture, checkStatus, checkStatusName);
-            //this.setPicCount(this.AllPicture);
-            //DataTable dt = this.cgPicture.DataSource as DataTable;
-            //this.UpdateCheckStatus(dt, checkStatus, checkStatusName);
-            //this.SelectPicData["CHECK_STATUS_NAME"] = checkStatusName;
-
-            //this.SelectPicData["CHECK_STATUS"] = checkStatus;
-            //this.SetBtnStyle();
-            //this.txtCheckStatusName.Text = checkStatusName;
-            //if (this.SelectPicData["CHECK_STATUS"].ToString() == "103")
-            //{
-            //    this.txtCheckStatusName.ForeColor = Color.Black;
-            //}
-            //else if (this.SelectPicData["CHECK_STATUS"].ToString() == "101")
-            //{
-            //    this.txtCheckStatusName.ForeColor = Color.Green;
-            //}
-            //else
-            //{
-            //    this.txtCheckStatusName.ForeColor = Color.Red;
-            //}
-        }
-
         #endregion
 
 
-        private void btnAllCheck_Click(object sender, EventArgs e)
+        private void btnAllNO_Click(object sender, EventArgs e)
         {
-            BindAllCheck();
+            BindAllNOLook();
         }
-        public void BindAllCheck()
+        public void BindAllNOLook()
         {
             if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
             {
                 DataTable data = (DataTable)cgPicture.DataSource;
                 foreach (DataRow dr in data.Rows)
                 {
-                    string checkStatus = dr["CHECK_STATUS"].ToString();
-                    if (checkStatus == "103")
+                    string pictrueId = dr["PICTURE_ID"].ToString();
+                    this.OnNOLook(null, new Views.NewImageCheckViewArgs()
                     {
-                        string pictrueId = dr["PICTURE_ID"].ToString();
-                        this.OnPass(null, new Views.NewImageCheckViewArgs()
-                        {
-                            pictureId = pictrueId,
-                            originalCheckStatus = dr["CHECK_STATUS"].ToString()
-                        });
-                    }
+                        pictureId = pictrueId
+                    });
                 }
                 this.SelectPic();
                 this.cgPicture.Focus();
-            }
-        }
-        
-        private void gvPicture_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Modifiers == Keys.Control && e.KeyValue == 65)//Ctrl+A
-            {
-                btnAllCheck.Enabled = true;
-                btnAllCheck.Visible = true;
-            }
-            if (e.Modifiers == Keys.Control && e.KeyValue == 67)//Ctrl+C
-            {
-                btnAllCheck.Enabled = false;
-                btnAllCheck.Visible = false;
             }
         }
 
@@ -837,6 +463,34 @@ namespace CJia.Health.App.UI
                 gvPicture.Focus();
             }
             catch { }
+        }
+
+        private void btnYes_Click(object sender, EventArgs e)
+        {
+            this.keyDown(Keys.F5);
+        }
+
+        private void btnNo_Click(object sender, EventArgs e)
+        {
+            this.keyDown(Keys.F6);
+        }
+
+        private void btnAllYes_Click(object sender, EventArgs e)
+        {
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                DataTable data = (DataTable)cgPicture.DataSource;
+                foreach (DataRow dr in data.Rows)
+                {
+                    string pictrueId = dr["PICTURE_ID"].ToString();
+                    this.OnYesLook(null, new Views.NewImageCheckViewArgs()
+                    {
+                        pictureId = pictrueId
+                    });
+                }
+                this.SelectPic();
+                this.cgPicture.Focus();
+            }
         }
 
     }

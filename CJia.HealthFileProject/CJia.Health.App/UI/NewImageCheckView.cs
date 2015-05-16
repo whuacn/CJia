@@ -299,6 +299,25 @@ namespace CJia.Health.App.UI
 
         public event EventHandler<Views.NewImageCheckViewArgs> OnRemoveCheckReason;
 
+        public event EventHandler<Views.NewImageCheckViewArgs> OnYesLook;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnNOLook;
+
+        public void ExeYesLook(bool result)
+        {
+            if (result)
+            {
+
+            }
+        }
+
+        public void ExeNoLook(bool result)
+        {
+            if (result)
+            {
+
+            }
+        }
 
         public void ExeCheckReason(DataTable result)
         {
@@ -400,19 +419,19 @@ namespace CJia.Health.App.UI
                 case Keys.F1:
                     this.gvPicture.Focus();
                     this.gvPicture.MovePrev();
-                    this.BindPicture();
+                    //this.BindPicture();
                     break;
                 case Keys.F4:
                     this.gvPicture.Focus();
                     this.gvPicture.MoveNext();
-                    this.BindPicture();
+                    //this.BindPicture();
                     break;
                 case Keys.F5:
                     if (this.Pass())
                     {
                         this.gvPicture.Focus();
                         this.gvPicture.MoveNext();
-                        this.BindPicture();
+                        //this.BindPicture();
                     }
                     break;
                 case Keys.F6:
@@ -420,13 +439,13 @@ namespace CJia.Health.App.UI
                     {
                         this.gvPicture.Focus();
                         this.gvPicture.MoveNext();
-                        this.BindPicture();
+                        //this.BindPicture();
                     }
                     break;
                 case Keys.F7:
                     this.Delete();
                     this.gvPicture.MoveNext();
-                    this.BindPicture();
+                    //this.BindPicture();
                     break;
                 case Keys.F9:
                     this.LURecordNO.Focus();
@@ -580,7 +599,7 @@ namespace CJia.Health.App.UI
         private void bindGridView(DataTable PicData)
         {
             this.cgPicture.DataSource = PicData;
-            this.BindPicture();
+            //this.BindPicture();
         }
 
         /// <summary>

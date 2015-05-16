@@ -20,6 +20,20 @@ namespace CJia.Health.Presenters
             this.View.OnCheckReason += View_OnCheckReason;
             this.View.OnAddCheckReason += View_OnAddCheckReason;
             this.View.OnRemoveCheckReason += View_OnRemoveCheckReason;
+            view.OnYesLook += view_OnYesLook;
+            view.OnNOLook += view_OnNOLook;
+        }
+
+        void view_OnNOLook(object sender, Views.NewImageCheckViewArgs e)
+        {
+            bool bol = Model.ModifyLookStatus(e.pictureId, "0");
+            View.ExeNoLook(bol);
+        }
+
+        void view_OnYesLook(object sender, Views.NewImageCheckViewArgs e)
+        {
+            bool bol = Model.ModifyLookStatus(e.pictureId, "1");
+            View.ExeYesLook(bol);
         }
 
         void View_OnRemoveCheckReason(object sender, Views.NewImageCheckViewArgs e)

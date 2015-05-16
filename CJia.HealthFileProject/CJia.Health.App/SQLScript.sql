@@ -229,3 +229,11 @@ increment by 1
 cache 20;
 
 ALTER TABLE GM_PROJECT ADD IS_LOOK CHAR(1) default 1;
+
+ALTER TABLE ST_PICTURE ADD IS_LOOK CHAR(1) default 1;
+
+insert into tm_function (FUNCTION_ID, FUNCTION_NAME, USER_TYPE, STATUS, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE)
+values (1000010001, '浏览权限', '305', '1', 1000000081, to_date('16-05-2015 16:20:47', 'dd-mm-yyyy hh24:mi:ss'), null, null);
+
+insert into tm_function (FUNCTION_ID, FUNCTION_NAME, USER_TYPE, STATUS, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE)
+values (1000010002, '水印设置', '305', '1', 1000000081, to_date('16-05-2015 16:21:13', 'dd-mm-yyyy hh24:mi:ss'), null, null);

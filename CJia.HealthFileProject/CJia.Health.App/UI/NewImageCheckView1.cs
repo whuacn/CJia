@@ -290,6 +290,25 @@ namespace CJia.Health.App.UI
 
         public event EventHandler<Views.NewImageCheckViewArgs> OnRemoveCheckReason;
 
+        public event EventHandler<Views.NewImageCheckViewArgs> OnYesLook;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnNOLook;
+
+        public void ExeYesLook(bool result)
+        {
+            if (result)
+            {
+
+            }
+        }
+
+        public void ExeNoLook(bool result)
+        {
+            if (result)
+            {
+
+            }
+        }
 
         public void ExeCheckReason(DataTable result)
         {

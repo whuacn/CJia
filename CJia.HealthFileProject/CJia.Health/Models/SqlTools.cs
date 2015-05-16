@@ -877,12 +877,15 @@ namespace CJia.Health.Models
                   from gm_patient_view pv,
                        st_picture pic,
                        GM_CODE GC,
-                       (select * from gm_check_record R where R.STATUS = '1') cr
+                       (select * from gm_check_record R where R.STATUS = '1') cr,
+                        (SELECT * FROM  gm_project gp WHERE gp.status='1' and gp.is_look='1') gp
                  where pv.id = pic.health_id
                    and pic.picture_id = cr.picture_id(+)
                    and pv.status = '1'
                    and pic.status = '1'
                    AND GC.CODE = PIC.CHECK_STATUS
+                    and pic.is_look='1'
+                    and pic.pro_id=gp.pro_id
                    and pv.id = ? {0}
                  order by PIC.PAGE_NO ASC, PIC.SUBPAGE ASC";
             }
@@ -1115,7 +1118,7 @@ values
         {
             get
             {
-                return @"select sp.*,
+                return @"select sp.*,decode(sp.is_look,'1','是','0','否') is_look_name,
        (select gc.name from gm_code gc where gc.code = sp.check_status) check_status_name
   from st_picture sp
  where sp.status = '1'

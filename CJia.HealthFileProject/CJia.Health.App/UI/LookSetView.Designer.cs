@@ -42,13 +42,12 @@
             this.lblprojectName = new CJia.Controls.CJiaLabel();
             this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             this.cJiaPanel2 = new CJia.Controls.CJiaPanel();
-            this.btnAllCheck = new CJia.Controls.CJiaButton();
-            this.txtSubPage = new CJia.Controls.CJiaLabel();
-            this.btnDelete = new CJia.Controls.BtnCancel();
+            this.btnAllYes = new CJia.Controls.CJiaButton();
+            this.btnAllNO = new CJia.Controls.CJiaButton();
             this.btnDownPage = new CJia.Controls.CJiaButton();
-            this.btnNoPass = new CJia.Controls.BtnDelete();
+            this.btnNo = new CJia.Controls.BtnDelete();
             this.btnUpPage = new CJia.Controls.CJiaButton();
-            this.btnPass = new CJia.Controls.BtnSave();
+            this.btnYes = new CJia.Controls.BtnSave();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
@@ -241,7 +240,6 @@
             this.gvPicture.RowHeight = 25;
             this.gvPicture.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvBigPicture_RowCellStyle);
             this.gvPicture.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvPicture_FocusedRowChanged);
-            this.gvPicture.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gvPicture_KeyDown);
             // 
             // gridColumn1
             // 
@@ -291,8 +289,8 @@
             this.gridColumn4.AppearanceCell.Options.UseFont = true;
             this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn4.Caption = "状态";
-            this.gridColumn4.FieldName = "CHECK_STATUS_NAME";
+            this.gridColumn4.Caption = "浏览状态";
+            this.gridColumn4.FieldName = "IS_LOOK_NAME";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.Visible = true;
@@ -323,7 +321,7 @@
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(270, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(278, 26);
+            this.LURecordNO.Size = new System.Drawing.Size(278, 20);
             this.LURecordNO.TabIndex = 174;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -359,7 +357,7 @@
             this.pdfViewer.Location = new System.Drawing.Point(0, 0);
             this.pdfViewer.Name = "pdfViewer";
             this.pdfViewer.Password = "";
-            this.pdfViewer.Size = new System.Drawing.Size(756, 621);
+            this.pdfViewer.Size = new System.Drawing.Size(763, 621);
             this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
             this.pdfViewer.TabIndex = 2;
             this.pdfViewer.ZoomLevel = 3;
@@ -368,13 +366,12 @@
             // 
             this.cJiaPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cJiaPanel2.Controls.Add(this.btnAllCheck);
-            this.cJiaPanel2.Controls.Add(this.txtSubPage);
-            this.cJiaPanel2.Controls.Add(this.btnDelete);
+            this.cJiaPanel2.Controls.Add(this.btnAllYes);
+            this.cJiaPanel2.Controls.Add(this.btnAllNO);
             this.cJiaPanel2.Controls.Add(this.btnDownPage);
-            this.cJiaPanel2.Controls.Add(this.btnNoPass);
+            this.cJiaPanel2.Controls.Add(this.btnNo);
             this.cJiaPanel2.Controls.Add(this.btnUpPage);
-            this.cJiaPanel2.Controls.Add(this.btnPass);
+            this.cJiaPanel2.Controls.Add(this.btnYes);
             this.cJiaPanel2.Location = new System.Drawing.Point(1122, 1);
             this.cJiaPanel2.LookAndFeel.SkinName = "Office 2010 Silver";
             this.cJiaPanel2.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -382,51 +379,41 @@
             this.cJiaPanel2.Size = new System.Drawing.Size(176, 619);
             this.cJiaPanel2.TabIndex = 1;
             // 
-            // btnAllCheck
+            // btnAllYes
             // 
-            this.btnAllCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAllCheck.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnAllCheck.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnAllCheck.Appearance.Options.UseFont = true;
-            this.btnAllCheck.Appearance.Options.UseForeColor = true;
-            this.btnAllCheck.CustomText = "全部不能浏览";
-            this.btnAllCheck.Enabled = false;
-            this.btnAllCheck.Location = new System.Drawing.Point(15, 324);
-            this.btnAllCheck.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnAllCheck.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnAllCheck.Name = "btnAllCheck";
-            this.btnAllCheck.Selectable = false;
-            this.btnAllCheck.Size = new System.Drawing.Size(146, 28);
-            this.btnAllCheck.TabIndex = 182;
-            this.btnAllCheck.Text = "全部不能浏览";
-            this.btnAllCheck.Click += new System.EventHandler(this.btnAllCheck_Click);
+            this.btnAllYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllYes.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnAllYes.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnAllYes.Appearance.Options.UseFont = true;
+            this.btnAllYes.Appearance.Options.UseForeColor = true;
+            this.btnAllYes.CustomText = "全部可以浏览";
+            this.btnAllYes.Location = new System.Drawing.Point(15, 569);
+            this.btnAllYes.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnAllYes.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAllYes.Name = "btnAllYes";
+            this.btnAllYes.Selectable = false;
+            this.btnAllYes.Size = new System.Drawing.Size(146, 28);
+            this.btnAllYes.TabIndex = 183;
+            this.btnAllYes.Text = "全部可以浏览";
+            this.btnAllYes.Click += new System.EventHandler(this.btnAllYes_Click);
             // 
-            // txtSubPage
+            // btnAllNO
             // 
-            this.txtSubPage.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtSubPage.Location = new System.Drawing.Point(145, 55);
-            this.txtSubPage.Name = "txtSubPage";
-            this.txtSubPage.Size = new System.Drawing.Size(0, 16);
-            this.txtSubPage.TabIndex = 177;
-            this.txtSubPage.Visible = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnDelete.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Appearance.Options.UseForeColor = true;
-            this.btnDelete.CustomText = "全部可以浏览";
-            this.btnDelete.Location = new System.Drawing.Point(15, 574);
-            this.btnDelete.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Selectable = false;
-            this.btnDelete.Size = new System.Drawing.Size(146, 28);
-            this.btnDelete.TabIndex = 33;
-            this.btnDelete.Text = "全部可以浏览";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnAllNO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllNO.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnAllNO.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnAllNO.Appearance.Options.UseFont = true;
+            this.btnAllNO.Appearance.Options.UseForeColor = true;
+            this.btnAllNO.CustomText = "全部不能浏览";
+            this.btnAllNO.Location = new System.Drawing.Point(15, 324);
+            this.btnAllNO.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnAllNO.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAllNO.Name = "btnAllNO";
+            this.btnAllNO.Selectable = false;
+            this.btnAllNO.Size = new System.Drawing.Size(146, 28);
+            this.btnAllNO.TabIndex = 182;
+            this.btnAllNO.Text = "全部不能浏览";
+            this.btnAllNO.Click += new System.EventHandler(this.btnAllNO_Click);
             // 
             // btnDownPage
             // 
@@ -437,7 +424,7 @@
             this.btnDownPage.Appearance.Options.UseForeColor = true;
             this.btnDownPage.CustomText = "下一页(F4)";
             this.btnDownPage.Image = ((System.Drawing.Image)(resources.GetObject("btnDownPage.Image")));
-            this.btnDownPage.Location = new System.Drawing.Point(15, 424);
+            this.btnDownPage.Location = new System.Drawing.Point(15, 422);
             this.btnDownPage.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnDownPage.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDownPage.Name = "btnDownPage";
@@ -447,24 +434,24 @@
             this.btnDownPage.Text = "下一页(F4)";
             this.btnDownPage.Click += new System.EventHandler(this.btnDownPage_Click);
             // 
-            // btnNoPass
+            // btnNo
             // 
-            this.btnNoPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNoPass.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnNoPass.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnNoPass.Appearance.Options.UseFont = true;
-            this.btnNoPass.Appearance.Options.UseForeColor = true;
-            this.btnNoPass.CustomText = "不能浏览(F6)";
-            this.btnNoPass.Image = ((System.Drawing.Image)(resources.GetObject("btnNoPass.Image")));
-            this.btnNoPass.Location = new System.Drawing.Point(15, 524);
-            this.btnNoPass.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnNoPass.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnNoPass.Name = "btnNoPass";
-            this.btnNoPass.Selectable = false;
-            this.btnNoPass.Size = new System.Drawing.Size(146, 28);
-            this.btnNoPass.TabIndex = 32;
-            this.btnNoPass.Text = "不能浏览(F6)";
-            this.btnNoPass.Click += new System.EventHandler(this.btnNoPass_Click);
+            this.btnNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNo.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnNo.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnNo.Appearance.Options.UseFont = true;
+            this.btnNo.Appearance.Options.UseForeColor = true;
+            this.btnNo.CustomText = "不能浏览(F6)";
+            this.btnNo.Image = ((System.Drawing.Image)(resources.GetObject("btnNo.Image")));
+            this.btnNo.Location = new System.Drawing.Point(15, 520);
+            this.btnNo.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnNo.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Selectable = false;
+            this.btnNo.Size = new System.Drawing.Size(146, 28);
+            this.btnNo.TabIndex = 32;
+            this.btnNo.Text = "不能浏览(F6)";
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
             // btnUpPage
             // 
@@ -475,7 +462,7 @@
             this.btnUpPage.Appearance.Options.UseForeColor = true;
             this.btnUpPage.CustomText = "上一页(F1)";
             this.btnUpPage.Image = ((System.Drawing.Image)(resources.GetObject("btnUpPage.Image")));
-            this.btnUpPage.Location = new System.Drawing.Point(15, 374);
+            this.btnUpPage.Location = new System.Drawing.Point(15, 373);
             this.btnUpPage.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnUpPage.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpPage.Name = "btnUpPage";
@@ -485,24 +472,24 @@
             this.btnUpPage.Text = "上一页(F1)";
             this.btnUpPage.Click += new System.EventHandler(this.btnUpPage_Click);
             // 
-            // btnPass
+            // btnYes
             // 
-            this.btnPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPass.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnPass.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnPass.Appearance.Options.UseFont = true;
-            this.btnPass.Appearance.Options.UseForeColor = true;
-            this.btnPass.CustomText = "可以浏览(F5)";
-            this.btnPass.Image = ((System.Drawing.Image)(resources.GetObject("btnPass.Image")));
-            this.btnPass.Location = new System.Drawing.Point(15, 474);
-            this.btnPass.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnPass.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnPass.Name = "btnPass";
-            this.btnPass.Selectable = false;
-            this.btnPass.Size = new System.Drawing.Size(146, 28);
-            this.btnPass.TabIndex = 31;
-            this.btnPass.Text = "可以浏览(F5)";
-            this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
+            this.btnYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnYes.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnYes.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnYes.Appearance.Options.UseFont = true;
+            this.btnYes.Appearance.Options.UseForeColor = true;
+            this.btnYes.CustomText = "可以浏览(F5)";
+            this.btnYes.Image = ((System.Drawing.Image)(resources.GetObject("btnYes.Image")));
+            this.btnYes.Location = new System.Drawing.Point(15, 471);
+            this.btnYes.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnYes.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Selectable = false;
+            this.btnYes.Size = new System.Drawing.Size(146, 28);
+            this.btnYes.TabIndex = 31;
+            this.btnYes.Text = "可以浏览(F5)";
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // LookSetView
             // 
@@ -525,7 +512,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LURecordNO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).EndInit();
             this.cJiaPanel2.ResumeLayout(false);
-            this.cJiaPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -545,13 +531,12 @@
         private Controls.CJiaPanel cJiaPanel2;
         private Controls.CJiaButton btnDownPage;
         private Controls.CJiaButton btnUpPage;
-        private Controls.BtnCancel btnDelete;
-        private Controls.BtnDelete btnNoPass;
-        private Controls.BtnSave btnPass;
-        private Controls.CJiaLabel txtSubPage;
-        private Controls.CJiaButton btnAllCheck;
+        private Controls.BtnDelete btnNo;
+        private Controls.BtnSave btnYes;
+        private Controls.CJiaButton btnAllNO;
         private Tools.PDFViewer pdfViewer;
         private Controls.CJiaLabel lblprojectName;
+        private Controls.CJiaButton btnAllYes;
 
     }
 }

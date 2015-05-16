@@ -125,7 +125,7 @@
         qnhDugAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnNoPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnNo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAftJREFUOE+l
         kVlLG2EYhc/lTJKJ2TNJ1LjgjgsqbiB6o3gl3vnHinQRW1qk+94iLUFapFZKta3da/fFamucpH/g9IwE
@@ -146,7 +146,7 @@
         ZjNsRuPeHl0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnYes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAXRJREFUOE9jGBBgs1Lnifduq/9sUmzqUCHigdEUtX0BW+3/h+xw/q+cI7kZKkwc

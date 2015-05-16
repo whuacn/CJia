@@ -334,6 +334,12 @@ namespace CJia.Health.App
                         case "1000000301":      //完成进度
                             this.btnCompleteQuery.Enabled = false;
                             break;
+                        case "1000010001":      //浏览权限
+                            this.btnLookSet.Enabled = false;
+                            break;
+                        case "1000010002":      //水印设置
+                            this.btnLoge.Enabled = false;
+                            break;
                         default: break;
                     }
                 }

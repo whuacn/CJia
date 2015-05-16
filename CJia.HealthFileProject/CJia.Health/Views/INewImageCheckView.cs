@@ -26,7 +26,13 @@ namespace CJia.Health.Views
 
         event EventHandler<NewImageCheckViewArgs> OnRemoveCheckReason;
 
+        event EventHandler<NewImageCheckViewArgs> OnYesLook;
 
+        event EventHandler<NewImageCheckViewArgs> OnNOLook;
+
+        void ExeYesLook(bool result);
+
+        void ExeNoLook(bool result);
 
         void ExeLock(bool result);
 
