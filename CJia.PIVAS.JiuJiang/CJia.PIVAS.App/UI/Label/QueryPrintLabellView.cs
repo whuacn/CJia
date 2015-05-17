@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using System.Linq;
 using System.Drawing.Printing;
 using CJia.PIVAS.Views.Label;
+using CJia.PIVAS.Presenters.Label;
 
 namespace CJia.PIVAS.App.UI.Label
 {
@@ -17,6 +18,7 @@ namespace CJia.PIVAS.App.UI.Label
     /// </summary>
     public partial class QueryPrintLabellView : CJia.PIVAS.Tools.View, CJia.PIVAS.Views.Label.IQueryPrintLabelView
     {
+        //QueryPrintLabelPresenter opp;
         /// <summary>
         /// 查询瓶贴构造函数
         /// </summary>
@@ -31,6 +33,7 @@ namespace CJia.PIVAS.App.UI.Label
 
         private void init()
         {
+            //opp = new QueryPrintLabelPresenter(this);
             DateTime now = Sysdate;
             DateTime next = now.AddDays(1);
             this.dtStart.DateTime = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
@@ -72,10 +75,7 @@ namespace CJia.PIVAS.App.UI.Label
                 this.ckceBatch.Visible = false;
                 this.btnFilter.Visible = false;
                 this.btnRefresh.Location = new Point(601, this.btnRefresh.Location.Y);
-
-
             }
-
         }
 
         protected override object CreatePresenter()
@@ -601,6 +601,7 @@ namespace CJia.PIVAS.App.UI.Label
         //绑定药品汇总回调方法
         public void ExeBindingPharmCollect(DataTable result)
         {
+            this.gcPharm.DataSource = result;
         }
 
         //初始化病区回调函数
@@ -654,6 +655,7 @@ namespace CJia.PIVAS.App.UI.Label
         {
             CJia.PIVAS.Views.Label.QueryPrintLabelViewEventArgs eventArgs = this.GetFilter();
             this.OnQueryLabelDetails(null, eventArgs);
+            
             DataTable pharmCollect = this.GetPharmCollect();
             this.gcPharm.DataSource = pharmCollect;
             this.filterPharmView.BindData(pharmCollect);
@@ -879,85 +881,90 @@ namespace CJia.PIVAS.App.UI.Label
         /// <returns></returns>
         private DataTable GetPharmCollect()
         {
-            DataTable date = (DataTable)this.gcLable.DataSource;
-            if (date != null && date.Rows != null && date.Rows.Count > 0)
-            {
-                DataTable result = new DataTable();
-                DataColumn cl1 = new DataColumn("PHARM_ID");
-                DataColumn cl2 = new DataColumn("PHARM_NAME");
-                DataColumn cl3 = new DataColumn("PHARM_SPEC");
-                DataColumn cl4 = new DataColumn("PHARM_FACTION");
-                DataColumn cl5 = new DataColumn("AMOUNT", typeof(int));
-                DataColumn cl6 = new DataColumn("UNITS");
-                DataColumn cl7 = new DataColumn("PRINT_AMOUNT");
-                DataColumn cl8 = new DataColumn("NO_PRINT_AMOUNT");
-                result.Columns.Add(cl1);
-                result.Columns.Add(cl2);
-                result.Columns.Add(cl3);
-                result.Columns.Add(cl4);
-                result.Columns.Add(cl5);
-                result.Columns.Add(cl6);
-                result.Columns.Add(cl7);
-                result.Columns.Add(cl8);
-                foreach (DataRow dr in date.Rows)
-                {
-                    if (this.rbAll.Checked)
-                    {
-                    }
-                    else if (this.rbYes.Checked)
-                    {
-                        if (dr["ISPRINT"].ToString() != "1")
-                        {
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        if (dr["ISPRINT"].ToString() != "0")
-                        {
-                            continue;
-                        }
-                    }
-                    DataRow[] rows = result.Select(" PHARM_ID = '" + dr["PHARM_ID"].ToString() + "'");
-                    if (rows != null && rows.Length > 0)
-                    {
-                        rows[0]["AMOUNT"] = int.Parse(rows[0]["AMOUNT"].ToString()) + int.Parse(dr["PHARM_AMOUNT"].ToString());
-                        rows[0]["PRINT_AMOUNT"] = int.Parse(rows[0]["PRINT_AMOUNT"].ToString()) + int.Parse(dr["PHARM_AMOUNT"].ToString()) * int.Parse(dr["ISPRINT"].ToString());
-                        if (int.Parse(dr["ISPRINT"].ToString()) == 0)
-                        {
-                            rows[0]["NO_PRINT_AMOUNT"] = int.Parse(rows[0]["NO_PRINT_AMOUNT"].ToString()) + int.Parse(dr["PHARM_AMOUNT"].ToString());
-                        }
-                    }
-                    else
-                    {
-                        DataRow newRow = result.NewRow();
-                        newRow["PHARM_ID"] = dr["PHARM_ID"];
-                        newRow["PHARM_NAME"] = dr["PHARM_NAME"];
-                        newRow["PHARM_SPEC"] = dr["SPEC"];
-                        newRow["PHARM_FACTION"] = dr["PHARM_FACTION"];
-                        newRow["AMOUNT"] = dr["PHARM_AMOUNT"];
-                        newRow["UNITS"] = dr["AMOUNT_UNIT"];
-                        newRow["PRINT_AMOUNT"] = int.Parse(dr["PHARM_AMOUNT"].ToString()) * int.Parse(dr["ISPRINT"].ToString());
-                        if (int.Parse(dr["ISPRINT"].ToString()) == 0)
-                        {
-                            newRow["NO_PRINT_AMOUNT"] = int.Parse(dr["PHARM_AMOUNT"].ToString());
-                        }
-                        else
-                        {
-                            newRow["NO_PRINT_AMOUNT"] = 0;
-                        }
-                        result.Rows.Add(newRow);
-                    }
-                }
-                if (result != null && result.Rows != null && result.Rows.Count > 0)
-                {
-                    result.DefaultView.Sort = " PHARM_NAME ,PHARM_SPEC ,PHARM_FACTION, UNITS";
-                    //result.DefaultView.Sort = " AMOUNT DESC";
-                    result = result.DefaultView.ToTable();
-                }
-                return result;
-            }
-            return null;
+            CJia.PIVAS.Views.Label.QueryPrintLabelViewEventArgs eventArgs = this.GetFilter();
+            //return opp.OnQueryPharmCollect(eventArgs);
+            this.OnQueryPharmCollect(null, eventArgs);
+            return (DataTable)this.gcPharm.DataSource;
+
+            //DataTable date = (DataTable)this.gcLable.DataSource;
+            //if (date != null && date.Rows != null && date.Rows.Count > 0)
+            //{
+            //    DataTable result = new DataTable();
+            //    DataColumn cl1 = new DataColumn("PHARM_ID");
+            //    DataColumn cl2 = new DataColumn("PHARM_NAME");
+            //    DataColumn cl3 = new DataColumn("PHARM_SPEC");
+            //    DataColumn cl4 = new DataColumn("PHARM_FACTION");
+            //    DataColumn cl5 = new DataColumn("AMOUNT", typeof(int));
+            //    DataColumn cl6 = new DataColumn("UNITS");
+            //    DataColumn cl7 = new DataColumn("PRINT_AMOUNT");
+            //    DataColumn cl8 = new DataColumn("NO_PRINT_AMOUNT");
+            //    result.Columns.Add(cl1);
+            //    result.Columns.Add(cl2);
+            //    result.Columns.Add(cl3);
+            //    result.Columns.Add(cl4);
+            //    result.Columns.Add(cl5);
+            //    result.Columns.Add(cl6);
+            //    result.Columns.Add(cl7);
+            //    result.Columns.Add(cl8);
+            //    foreach (DataRow dr in date.Rows)
+            //    {
+            //        if (this.rbAll.Checked)
+            //        {
+            //        }
+            //        else if (this.rbYes.Checked)
+            //        {
+            //            if (dr["ISPRINT"].ToString() != "1")
+            //            {
+            //                continue;
+            //            }
+            //        }
+            //        else
+            //        {
+            //            if (dr["ISPRINT"].ToString() != "0")
+            //            {
+            //                continue;
+            //            }
+            //        }
+            //        DataRow[] rows = result.Select(" PHARM_ID = '" + dr["PHARM_ID"].ToString() + "'");
+            //        if (rows != null && rows.Length > 0)
+            //        {
+            //            rows[0]["AMOUNT"] = int.Parse(rows[0]["AMOUNT"].ToString()) + int.Parse(dr["PHARM_AMOUNT"].ToString());
+            //            rows[0]["PRINT_AMOUNT"] = int.Parse(rows[0]["PRINT_AMOUNT"].ToString()) + int.Parse(dr["PHARM_AMOUNT"].ToString()) * int.Parse(dr["ISPRINT"].ToString());
+            //            if (int.Parse(dr["ISPRINT"].ToString()) == 0)
+            //            {
+            //                rows[0]["NO_PRINT_AMOUNT"] = int.Parse(rows[0]["NO_PRINT_AMOUNT"].ToString()) + int.Parse(dr["PHARM_AMOUNT"].ToString());
+            //            }
+            //        }
+            //        else
+            //        {
+            //            DataRow newRow = result.NewRow();
+            //            newRow["PHARM_ID"] = dr["PHARM_ID"];
+            //            newRow["PHARM_NAME"] = dr["PHARM_NAME"];
+            //            newRow["PHARM_SPEC"] = dr["SPEC"];
+            //            newRow["PHARM_FACTION"] = dr["PHARM_FACTION"];
+            //            newRow["AMOUNT"] = dr["PHARM_AMOUNT"];
+            //            newRow["UNITS"] = dr["AMOUNT_UNIT"];
+            //            newRow["PRINT_AMOUNT"] = int.Parse(dr["PHARM_AMOUNT"].ToString()) * int.Parse(dr["ISPRINT"].ToString());
+            //            if (int.Parse(dr["ISPRINT"].ToString()) == 0)
+            //            {
+            //                newRow["NO_PRINT_AMOUNT"] = int.Parse(dr["PHARM_AMOUNT"].ToString());
+            //            }
+            //            else
+            //            {
+            //                newRow["NO_PRINT_AMOUNT"] = 0;
+            //            }
+            //            result.Rows.Add(newRow);
+            //        }
+            //    }
+            //    if (result != null && result.Rows != null && result.Rows.Count > 0)
+            //    {
+            //        result.DefaultView.Sort = " PHARM_NAME ,PHARM_SPEC ,PHARM_FACTION, UNITS";
+            //        //result.DefaultView.Sort = " AMOUNT DESC";
+            //        result = result.DefaultView.ToTable();
+            //    }
+            //    return result;
+            //}
+            //return null;
         }
 
         /// <summary>

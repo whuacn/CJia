@@ -11,7 +11,7 @@ namespace CJia.PIVAS.Presenters.Label
     /// <summary>
     /// 查询瓶贴Presenter层
     /// </summary>
-    public class QueryPrintLabelPresenter:CJia.PIVAS.Tools.Presenter<CJia.PIVAS.Models.Label.QueryPrintLabelModel,CJia.PIVAS.Views.Label.IQueryPrintLabelView>
+    public class QueryPrintLabelPresenter : CJia.PIVAS.Tools.Presenter<CJia.PIVAS.Models.Label.QueryPrintLabelModel, CJia.PIVAS.Views.Label.IQueryPrintLabelView>
     {
         /// <summary>
         /// 查询瓶贴Presenter层构造函数
@@ -58,7 +58,7 @@ namespace CJia.PIVAS.Presenters.Label
         /// </summary>
         protected override void OnInitView()
         {
-              base.OnInitView();
+            base.OnInitView();
         }
 
         #region 界面事件
@@ -88,8 +88,8 @@ namespace CJia.PIVAS.Presenters.Label
         void View_OnGenLabel(object sender, Views.Label.QueryPrintLabelViewEventArgs e)
         {
             //this.Model.InserLabel(e.IllfieldId, e.batchid, e.printType);
-           DataTable result =  this.Model.InserLabel(e.selectDate,e.grOrDr,e.groupIndexBatchid);
-           //this.View.ExeBindingLabelDetailsInfo(result);
+            DataTable result = this.Model.InserLabel(e.selectDate, e.grOrDr, e.groupIndexBatchid);
+            //this.View.ExeBindingLabelDetailsInfo(result);
         }
 
         //初始化批次事件绑定方法
@@ -107,21 +107,29 @@ namespace CJia.PIVAS.Presenters.Label
         //查询瓶贴详情
         void View_QueryLabelDetails(object sender, Views.Label.QueryPrintLabelViewEventArgs e)
         {
-            DataTable result = this.Model.QueryLabelDetail(e.grOrDr,e.selectDate,e.IllfieldId, e.batchid, e.printType,e.longTemporary,e.useCheckData,e.CheckDataStart,e.CheckDataEnd);
+            DataTable result = this.Model.QueryLabelDetail(e.grOrDr, e.selectDate, e.IllfieldId, e.batchid, e.printType, e.longTemporary, e.useCheckData, e.CheckDataStart, e.CheckDataEnd);
             this.View.ExeBindingLabelDetails(result);
         }
 
         //查询药品汇总信息
         void View_OnQueryPharmCollect(object sender, Views.Label.QueryPrintLabelViewEventArgs e)
         {
-            DataTable result = this.Model.QueryPharmCollect(e.IllfieldId, e.batchid, e.printType);
+            //DataTable result = this.Model.QueryPharmCollect(e.IllfieldId, e.batchid, e.printType);
+            DataTable result = this.Model.QueryPharmCollect(e.grOrDr, e.selectDate, e.IllfieldId, e.batchid, e.printType, e.longTemporary, e.useCheckData, e.CheckDataStart, e.CheckDataEnd);
             this.View.ExeBindingPharmCollect(result);
         }
+
+        //public DataTable OnQueryPharmCollect(Views.Label.QueryPrintLabelViewEventArgs e)
+        //{
+        //    //DataTable result = this.Model.QueryPharmCollect(e.IllfieldId, e.batchid, e.printType);
+        //    DataTable result = this.Model.QueryPharmCollect(e.grOrDr, e.selectDate, e.IllfieldId, e.batchid, e.printType, e.longTemporary, e.useCheckData, e.CheckDataStart, e.CheckDataEnd);
+        //    return result;
+        //}
 
         //查询瓶贴详情信息 用于打印瓶贴
         void View_QueryLabelDetailsInfo(object sender, Views.Label.QueryPrintLabelViewEventArgs e)
         {
-            DataTable result = this.Model.QueryGenLabel(e.selectDate,e.grOrDr, e.IllfieldId, e.batchid, e.printType, e.useCheckData, e.CheckDataStart, e.CheckDataEnd);
+            DataTable result = this.Model.QueryGenLabel(e.selectDate, e.grOrDr, e.IllfieldId, e.batchid, e.printType, e.useCheckData, e.CheckDataStart, e.CheckDataEnd);
             this.View.ExeBindingLabelDetailsInfo(result);
         }
 
@@ -136,7 +144,7 @@ namespace CJia.PIVAS.Presenters.Label
         }
 
         //扣费扣库存
-        object View_OnPharmFee(object groupIndex,object openDate,object count)
+        object View_OnPharmFee(object groupIndex, object openDate, object count)
         {
             return CJia.PIVAS.Models.PIVASModel.ExecuteGroupIndexFee(groupIndex.ToString(), CJia.PIVAS.User.hisUserId.ToString(), (DateTime)openDate, (int)count, 0);
         }
@@ -153,7 +161,7 @@ namespace CJia.PIVAS.Presenters.Label
         {
             this.Model.UpdateBarCodeStatus(e.LabelId);
         }
-        
+
         //把瓶贴信息插入条形码表并返回条形码id
         object View_OnGetLabelBarcode(object parameter1, object parameter2, object parameter3)
         {
@@ -161,9 +169,9 @@ namespace CJia.PIVAS.Presenters.Label
         }
 
         //修改瓶贴打印状态
-        void View_OnUpdateLabelPrintStatus(object labelId,object date)
+        void View_OnUpdateLabelPrintStatus(object labelId, object date)
         {
-            this.Model.UpdateLabelPrintStatus(labelId,(DateTime)date);
+            this.Model.UpdateLabelPrintStatus(labelId, (DateTime)date);
         }
 
         //查询所有病区批次的摆药单信息
@@ -171,11 +179,11 @@ namespace CJia.PIVAS.Presenters.Label
         {
             List<object> SelectArrangeIdList = CJia.PIVAS.Tools.LabelFilter.ArrangeIds;
             List<object> PharmTypes = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.PharmType != null)
+            if (CJia.PIVAS.Tools.LabelFilter.PharmType != null)
             {
-                foreach(CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.PharmType.Items)
+                foreach (CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.PharmType.Items)
                 {
-                    if(a.CheckState == System.Windows.Forms.CheckState.Checked)
+                    if (a.CheckState == System.Windows.Forms.CheckState.Checked)
                     {
                         PharmTypes.Add(a.Value);
                     }
@@ -183,11 +191,11 @@ namespace CJia.PIVAS.Presenters.Label
             }
 
             List<object> Bacths = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.LabelBacth != null)
+            if (CJia.PIVAS.Tools.LabelFilter.LabelBacth != null)
             {
-                foreach(CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.LabelBacth.Items)
+                foreach (CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.LabelBacth.Items)
                 {
-                    if(a.CheckState == System.Windows.Forms.CheckState.Checked)
+                    if (a.CheckState == System.Windows.Forms.CheckState.Checked)
                     {
                         Bacths.Add(a.Value);
                     }
@@ -195,11 +203,11 @@ namespace CJia.PIVAS.Presenters.Label
             }
 
             List<object> Bens = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.IllfileBens != null)
+            if (CJia.PIVAS.Tools.LabelFilter.IllfileBens != null)
             {
-                foreach(CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.IllfileBens.Items)
+                foreach (CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.IllfileBens.Items)
                 {
-                    if(a.CheckState == System.Windows.Forms.CheckState.Checked)
+                    if (a.CheckState == System.Windows.Forms.CheckState.Checked)
                     {
                         Bens.Add(a.Value);
                     }
@@ -207,21 +215,21 @@ namespace CJia.PIVAS.Presenters.Label
             }
 
             List<object> OrderBy = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.UseOrderBy != null)
+            if (CJia.PIVAS.Tools.LabelFilter.UseOrderBy != null)
             {
-                foreach(string a in CJia.PIVAS.Tools.LabelFilter.UseOrderBy.Items)
+                foreach (string a in CJia.PIVAS.Tools.LabelFilter.UseOrderBy.Items)
                 {
-                    if(a == "药品类型[升序]")
+                    if (a == "药品类型[升序]")
                         OrderBy.Add(" spl.pivas_pharm_type asc ");
-                    else if(a == "药品类型[倒序]")
+                    else if (a == "药品类型[倒序]")
                         OrderBy.Add(" spl.pivas_pharm_type desc ");
-                    else if(a == "瓶贴批次[升序]")
+                    else if (a == "瓶贴批次[升序]")
                         OrderBy.Add(" spl.batch_id asc ");
-                    else if(a == "瓶贴批次[倒序]")
+                    else if (a == "瓶贴批次[倒序]")
                         OrderBy.Add("  spl.batch_id desc ");
-                    else if(a == "病区名称[升序]")
+                    else if (a == "病区名称[升序]")
                         OrderBy.Add(" spl.illfield_name asc ");
-                    else if(a == "病区名称[倒序]")
+                    else if (a == "病区名称[倒序]")
                         OrderBy.Add(" spl.illfield_name desc ");
                 }
             }
@@ -278,11 +286,11 @@ namespace CJia.PIVAS.Presenters.Label
         public List<object> GetPharmTypeFilter()
         {
             List<object> PharmTypes = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.PharmType != null)
+            if (CJia.PIVAS.Tools.LabelFilter.PharmType != null)
             {
-                foreach(CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.PharmType.Items)
+                foreach (CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.PharmType.Items)
                 {
-                    if(a.CheckState == System.Windows.Forms.CheckState.Checked)
+                    if (a.CheckState == System.Windows.Forms.CheckState.Checked)
                     {
                         PharmTypes.Add(a.Value);
                     }
@@ -298,11 +306,11 @@ namespace CJia.PIVAS.Presenters.Label
         public List<object> GetBacthsFilter()
         {
             List<object> Bacths = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.LabelBacth != null)
+            if (CJia.PIVAS.Tools.LabelFilter.LabelBacth != null)
             {
-                foreach(CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.LabelBacth.Items)
+                foreach (CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.LabelBacth.Items)
                 {
-                    if(a.CheckState == System.Windows.Forms.CheckState.Checked)
+                    if (a.CheckState == System.Windows.Forms.CheckState.Checked)
                     {
                         Bacths.Add(a.Value);
                     }
@@ -311,18 +319,18 @@ namespace CJia.PIVAS.Presenters.Label
             return Bacths;
         }
 
-         /// <summary>
+        /// <summary>
         /// 获取床位过滤条件
         /// </summary>
         /// <returns></returns>
         public List<object> GetBensFilter()
         {
             List<object> Bens = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.IllfileBens != null)
+            if (CJia.PIVAS.Tools.LabelFilter.IllfileBens != null)
             {
-                foreach(CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.IllfileBens.Items)
+                foreach (CheckedListBoxItem a in CJia.PIVAS.Tools.LabelFilter.IllfileBens.Items)
                 {
-                    if(a.CheckState == System.Windows.Forms.CheckState.Checked)
+                    if (a.CheckState == System.Windows.Forms.CheckState.Checked)
                     {
                         Bens.Add(a.Value);
                     }
@@ -338,21 +346,21 @@ namespace CJia.PIVAS.Presenters.Label
         public List<object> GetOrderByFilter()
         {
             List<object> OrderBy = new List<object>();
-            if(CJia.PIVAS.Tools.LabelFilter.UseOrderBy != null)
+            if (CJia.PIVAS.Tools.LabelFilter.UseOrderBy != null)
             {
-                foreach(string a in CJia.PIVAS.Tools.LabelFilter.UseOrderBy.Items)
+                foreach (string a in CJia.PIVAS.Tools.LabelFilter.UseOrderBy.Items)
                 {
-                    if(a == "药品类型[升序]")
+                    if (a == "药品类型[升序]")
                         OrderBy.Add(" spl.pivas_pharm_type asc ");
-                    else if(a == "药品类型[倒序]")
+                    else if (a == "药品类型[倒序]")
                         OrderBy.Add(" spl.pivas_pharm_type desc ");
-                    else if(a == "瓶贴批次[升序]")
+                    else if (a == "瓶贴批次[升序]")
                         OrderBy.Add(" spl.batch_id asc ");
-                    else if(a == "瓶贴批次[倒序]")
+                    else if (a == "瓶贴批次[倒序]")
                         OrderBy.Add("  spl.batch_id desc ");
-                    else if(a == "病区名称[升序]")
+                    else if (a == "病区名称[升序]")
                         OrderBy.Add(" spl.illfield_name asc ");
-                    else if(a == "病区名称[倒序]")
+                    else if (a == "病区名称[倒序]")
                         OrderBy.Add(" spl.illfield_name desc ");
                 }
             }
@@ -370,17 +378,17 @@ namespace CJia.PIVAS.Presenters.Label
             CJia.PIVAS.Tools.LabelFilter.IsInit = true;
             CJia.PIVAS.Tools.LabelFilter.ArrangeIds = new List<object>();
             CJia.PIVAS.Tools.LabelFilter.PharmType = new DevExpress.XtraEditors.CheckedListBoxControl();
-            foreach(DataRow pharmType in allPharmType.Rows)
+            foreach (DataRow pharmType in allPharmType.Rows)
             {
                 CJia.PIVAS.Tools.LabelFilter.PharmType.Items.Add(pharmType["CODE"].ToString(), pharmType["NAME"].ToString(), System.Windows.Forms.CheckState.Checked, true);
             }
 
             CJia.PIVAS.Tools.LabelFilter.LabelBacth = new DevExpress.XtraEditors.CheckedListBoxControl();
-            foreach(DataRow batch in allBacth.Rows)
+            foreach (DataRow batch in allBacth.Rows)
             {
                 CJia.PIVAS.Tools.LabelFilter.LabelBacth.Items.Add(batch["BATCH_ID"].ToString(), batch["BATCH_NAME"].ToString(), System.Windows.Forms.CheckState.Checked, true);
             }
-             CJia.PIVAS.Tools.LabelFilter.NoUseOrderBy = new DevExpress.XtraEditors.ListBoxControl();
+            CJia.PIVAS.Tools.LabelFilter.NoUseOrderBy = new DevExpress.XtraEditors.ListBoxControl();
             CJia.PIVAS.Tools.LabelFilter.NoUseOrderBy.Items.Add("药品类型[升序]");
             CJia.PIVAS.Tools.LabelFilter.NoUseOrderBy.Items.Add("药品类型[倒序]");
             CJia.PIVAS.Tools.LabelFilter.NoUseOrderBy.Items.Add("瓶贴批次[倒序]");
@@ -394,13 +402,13 @@ namespace CJia.PIVAS.Presenters.Label
         void InitIffieldBen(DataTable result)
         {
             CJia.PIVAS.Tools.LabelFilter.IllfileBens = new DevExpress.XtraEditors.CheckedListBoxControl();
-            if(result != null && result.Rows.Count > 0)
+            if (result != null && result.Rows.Count > 0)
             {
-                foreach(DataRow row in result.Rows)
+                foreach (DataRow row in result.Rows)
                 {
                     string value = "\'" + row["ILLFIELD_ID"].ToString() + "\'," + (row["BED_ID"].ToString() == "" ? "null" : row["BED_ID"].ToString());
                     string text = row["ILLFIELD_NAME"].ToString() + " " + (row["BED_NAME"].ToString() == "" ? "空病床" : row["BED_NAME"].ToString());
-                    if(CJia.PIVAS.Tools.LabelFilter.IllfileBens.FindString(text) == -1)
+                    if (CJia.PIVAS.Tools.LabelFilter.IllfileBens.FindString(text) == -1)
                     {
                         CJia.PIVAS.Tools.LabelFilter.IllfileBens.Items.Add(value, text, System.Windows.Forms.CheckState.Checked, true);
                     }

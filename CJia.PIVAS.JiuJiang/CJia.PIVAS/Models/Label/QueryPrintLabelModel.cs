@@ -374,7 +374,7 @@ namespace CJia.PIVAS.Models.Label
         /// <param name="Bens">床位列表</param>
         /// <param name="OrderBy">排序列表</param>
         /// <returns>药品汇总信息</returns>
-        public DataTable QueryPharmCollect(string illfieldID, string batchID, string print)
+        public DataTable QueryPharmCollect(int grOrDr, int selectDate, string illfieldID, string batchID, string print, string longTemporary, bool userCheckData, DateTime checkDataStart, DateTime checkDataEnd)
         {
             //string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
             //string illfieldStr = "";
@@ -391,7 +391,109 @@ namespace CJia.PIVAS.Models.Label
             //object[] parms = new object[] { print };
             //DataTable result = CJia.DefaultOleDb.Query(newSql, parms);
             //return result;
-            return null;
+            string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
+            string illfieldStr = " and t.illfield_id in (" + illfieldID + ")  ";
+            string batchStr = "";
+            if (longTemporary == "1")
+            {
+                batchStr = " and  t.batch_id in (" + batchID + ") ";
+            }
+
+            string checkDataStr = "";
+            if (userCheckData)
+            {
+                checkDataStr = "  and scd.check_date between ? and ?  ";
+            }
+            string str1 = "";
+            string str2 = "";
+            string str3 = "";
+            string str4 = "";
+            if (grOrDr == 0)
+            {
+                if (selectDate == 0)
+                {
+                    str1 = "st_new_jin_pivas_label_view";
+                    str2 = "sysdate";
+                    str3 = "sysdate";
+                    str4 = "nspl.list_doctor_date between trunc(sysdate) and trunc(sysdate + 1) ";
+                }
+            }
+            else
+            {
+                if (selectDate == 0)
+                {
+                    str1 = "st_old_jin_pivas_label_view";
+                    str2 = "sysdate";
+                    str3 = "sysdate";
+                    str4 = "nspl.list_doctor_date < trunc(sysdate) ";
+                }
+                else
+                {
+                    str1 = "st_old_ming_pivas_label_view";
+                    str2 = "sysdate + 1";
+                    str3 = "sysdate + 1";
+                    str4 = "nspl.list_doctor_date < trunc(sysdate + 1) ";
+                }
+            }
+            string printStr = " 1 = 1";
+            if (print == "1")
+            {
+                printStr = " fn_is_print(t.group_index) = '1' ";
+            }
+            if (print == "0")
+            {
+                printStr = " fn_is_print(t.group_index) = '0' ";
+            }
+            if (print == "10")
+            {
+                printStr = " 1 =  1 ";
+            }
+
+            newSql = string.Format(newSql, str1, str2, str3, str4, printStr, illfieldStr, batchStr, checkDataStr);
+            object[] parms;
+            if (userCheckData)
+            {
+                parms = new object[] { longTemporary, checkDataStart, checkDataEnd };
+            }
+            else
+            {
+                parms = new object[] { longTemporary };
+            }
+
+            newSql = @"SELECT PHARM_ID,
+       PHARM_NAME,
+       SPEC PHARM_SPEC,
+       PHARM_FACTION,
+       AMOUNT_UNIT UNITS,
+       SUM(AMOUNT) AMOUNT,
+       SUM(PRINT_AMOUNT) PRINT_AMOUNT,
+       SUM(NO_PRINT_AMOUNT) NO_PRINT_AMOUNT
+  FROM (SELECT BATCH_ID,
+               BATCH_NAME,
+               PHARM_ID,
+               PHARM_NAME,
+               SPEC,
+               PHARM_FACTION,
+               AMOUNT_UNIT,
+               CEIL(SUM(PHARM_AMOUNT)) AMOUNT,
+               SUM(ISPRINT) PRINT_AMOUNT,
+               SUM(DECODE(ISPRINT, 0, 1, 0)) NO_PRINT_AMOUNT
+          FROM (" + newSql + @") GROUP BY PHARM_ID,
+                  ILLFIELD_ID,
+                  ILLFIELD_NAME,
+                  BATCH_ID,
+                  BATCH_NAME,
+                  PHARM_NAME,
+                  SPEC,
+                  PHARM_FACTION,
+                  AMOUNT_UNIT)
+ GROUP BY PHARM_ID, PHARM_NAME, SPEC, PHARM_FACTION, AMOUNT_UNIT
+ ORDER BY PHARM_ID, PHARM_NAME, SPEC
+";
+                DataTable result = CJia.DefaultOleDb.Query(newSql, parms);
+                return result;
+            
+            
         }
 
         /// <summary>
