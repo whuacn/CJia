@@ -33,9 +33,9 @@ namespace CJia.Health.Models
         /// <param name="ProNo">项目编号</param>
         /// <param name="ProPinyin">项目拼音查询码</param>
         /// <returns></returns>
-        public bool UpdateProject(string ProName, string ProNo, string ProPinyin, string UserID, string ProId, string isPrint, string shortKey)
+        public bool UpdateProject(string ProName, string ProNo, string ProPinyin, string UserID, string ProId, string isPrint, string shortKey, string isLook)
         {
-            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserID, isPrint, shortKey, ProId };
+            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserID, isPrint, shortKey, isLook, ProId };
             return CJia.DefaultOleDb.Execute(SqlTools.SqlUpdateProject, ob) > 0 ? true : false;
         }
 
@@ -47,9 +47,9 @@ namespace CJia.Health.Models
         /// <param name="ProPinyin"></param>
         /// <param name="UserId"></param>
         /// <returns></returns>
-        public bool InsertProject(string ProName, string ProNo, string ProPinyin, string UserId, string isPrint, string shortKey)
+        public bool InsertProject(string ProName, string ProNo, string ProPinyin, string UserId, string isPrint, string shortKey, string isLook)
         {
-            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserId, isPrint, shortKey };
+            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserId, isPrint, shortKey, isLook };
             return CJia.DefaultOleDb.Execute(SqlTools.SqlInsertProject, ob) > 0 ? true : false;
         }
 
@@ -82,7 +82,7 @@ namespace CJia.Health.Models
         public bool IsShortKey(string shortKey)
         {
             object[] ob = new object[] { shortKey };
-            DataTable data= CJia.DefaultOleDb.Query(SqlTools.SqlIsShortKey, ob);
+            DataTable data = CJia.DefaultOleDb.Query(SqlTools.SqlIsShortKey, ob);
             if (data != null && data.Rows.Count > 0)
             {
                 return true;
