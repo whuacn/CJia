@@ -465,6 +465,7 @@ namespace CJia.PIVAS.Models.Label
        SPEC PHARM_SPEC,
        PHARM_FACTION,
        AMOUNT_UNIT UNITS,
+       SUM(REALITY_PHARM_AMOUNT) REALITY_PHARM_AMOUNT,
        SUM(AMOUNT) AMOUNT,
        SUM(PRINT_AMOUNT) PRINT_AMOUNT,
        SUM(NO_PRINT_AMOUNT) NO_PRINT_AMOUNT
@@ -475,7 +476,8 @@ namespace CJia.PIVAS.Models.Label
                SPEC,
                PHARM_FACTION,
                AMOUNT_UNIT,
-               CEIL(SUM(PHARM_AMOUNT)) AMOUNT,
+               CEIL(SUM(fee_count * pharm_dosage / dose_per_unit)) REALITY_PHARM_AMOUNT,
+               SUM(PHARM_AMOUNT) AMOUNT,
                SUM(ISPRINT) PRINT_AMOUNT,
                SUM(DECODE(ISPRINT, 0, 1, 0)) NO_PRINT_AMOUNT
           FROM (" + newSql + @") GROUP BY PHARM_ID,

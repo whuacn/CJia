@@ -81,6 +81,7 @@
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcPharm = new DevExpress.XtraGrid.GridControl();
@@ -704,6 +705,7 @@
             this.gridColumn15,
             this.gridColumn16,
             this.gridColumn17,
+            this.gridColumn13,
             this.gridColumn18,
             this.gridColumn5});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -756,13 +758,21 @@
             this.gridColumn17.VisibleIndex = 3;
             this.gridColumn17.Width = 54;
             // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "节约用量";
+            this.gridColumn13.FieldName = "REALITY_PHARM_AMOUNT";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 4;
+            // 
             // gridColumn18
             // 
             this.gridColumn18.Caption = "单位";
             this.gridColumn18.FieldName = "UNITS";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 4;
+            this.gridColumn18.VisibleIndex = 5;
             this.gridColumn18.Width = 60;
             // 
             // gridColumn5
@@ -771,7 +781,7 @@
             this.gridColumn5.FieldName = "PRINT_AMOUNT";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 6;
             // 
             // gcPharm
             // 
@@ -986,5 +996,6 @@
         private DevExpress.XtraEditors.SimpleButton btnFilterPharm;
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceIllfield;
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceBatch;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
     }
 }
