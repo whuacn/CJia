@@ -1098,6 +1098,14 @@ namespace CJia.Health.App
             // 
             resources.ApplyResources(this.btnLookSet, "btnLookSet");
             this.btnLookSet.Id = 99;
+            this.btnLookSet.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnLookSet.ItemAppearance.Disabled.Font")));
+            this.btnLookSet.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btnLookSet.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnLookSet.ItemAppearance.Hovered.Font")));
+            this.btnLookSet.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnLookSet.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnLookSet.ItemAppearance.Normal.Font")));
+            this.btnLookSet.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnLookSet.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnLookSet.ItemAppearance.Pressed.Font")));
+            this.btnLookSet.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnLookSet.LargeGlyph = global::CJia.Health.App.Properties.Resources._20096;
             this.btnLookSet.Name = "btnLookSet";
             this.btnLookSet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLookSet_ItemClick);
