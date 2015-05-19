@@ -58,5 +58,38 @@ namespace CJia.Health.Models
                 return null;
             }
         }
+        /// <summary>
+        /// 修改病案下对应的图片状态
+        /// </summary>
+        /// <param name="transID"></param>
+        /// <param name="healthID"></param>
+        /// <param name="checkSate"></param>
+        /// <param name="updateBy"></param>
+        /// <returns></returns>
+        public bool ModifyPicStateByHealthID(string transID, string healthID, string checkSate, string updateBy)
+        {
+            string sql = @"update st_picture st
+                        set st.check_status = ?, st.update_by = ?, st.update_date = sysdate
+                      WHERE st.health_id = ?";
+            object[] sqlParams = new object[] { checkSate, updateBy, healthID };
+            return CJia.DefaultOleDb.Execute(transID, sql, sqlParams) > 0 ? true : false;
+        }
+        /// <summary>
+        /// 删除病案下的图片
+        /// </summary>
+        /// <param name="transID"></param>
+        /// <param name="healthID"></param>
+        /// <param name="updateBy"></param>
+        /// <returns></returns>
+        public bool DeletePicByHealthID(string transID, string healthID, string updateBy)
+        {
+            string sql = @"update st_picture p
+                    set p.status      = '0',
+                        p.update_by   = ?,
+                        p.update_date = sysdate
+                  where p.health_id = ?";
+            object[] sqlParams = new object[] { updateBy, healthID };
+            return CJia.DefaultOleDb.Execute(transID, sql, sqlParams) > 0 ? true : false;
+        }
     }
 }

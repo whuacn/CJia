@@ -32,7 +32,6 @@ namespace CJia.Health.App.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeView));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
-            this.btnBlank = new CJia.Controls.CJiaButton();
             this.cJiaLabel3 = new CJia.Controls.CJiaLabel();
             this.lblNoBlank = new CJia.Controls.CJiaLabel();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
@@ -95,7 +94,6 @@ namespace CJia.Health.App.UI
             // 
             // cJiaPanel1
             // 
-            this.cJiaPanel1.Controls.Add(this.btnBlank);
             this.cJiaPanel1.Controls.Add(this.cJiaLabel3);
             this.cJiaPanel1.Controls.Add(this.lblNoBlank);
             this.cJiaPanel1.Controls.Add(this.cJiaLabel1);
@@ -117,22 +115,6 @@ namespace CJia.Health.App.UI
             this.cJiaPanel1.Name = "cJiaPanel1";
             this.cJiaPanel1.Size = new System.Drawing.Size(391, 600);
             this.cJiaPanel1.TabIndex = 0;
-            // 
-            // btnBlank
-            // 
-            this.btnBlank.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnBlank.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnBlank.Appearance.Options.UseFont = true;
-            this.btnBlank.Appearance.Options.UseForeColor = true;
-            this.btnBlank.CustomText = "空白页";
-            this.btnBlank.Location = new System.Drawing.Point(268, 93);
-            this.btnBlank.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnBlank.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnBlank.Name = "btnBlank";
-            this.btnBlank.Selectable = false;
-            this.btnBlank.Size = new System.Drawing.Size(80, 28);
-            this.btnBlank.TabIndex = 181;
-            this.btnBlank.Text = "空白页";
             // 
             // cJiaLabel3
             // 
@@ -171,7 +153,7 @@ namespace CJia.Health.App.UI
             this.btnNoBlamk.Appearance.Options.UseFont = true;
             this.btnNoBlamk.Appearance.Options.UseForeColor = true;
             this.btnNoBlamk.CustomText = "非空白页";
-            this.btnNoBlamk.Location = new System.Drawing.Point(165, 93);
+            this.btnNoBlamk.Location = new System.Drawing.Point(268, 97);
             this.btnNoBlamk.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnNoBlamk.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNoBlamk.Name = "btnNoBlamk";
@@ -518,7 +500,7 @@ namespace CJia.Health.App.UI
             this.LURecordNO.Properties.PopupFormSize = new System.Drawing.Size(280, 220);
             this.LURecordNO.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LURecordNO.ResultRow = null;
-            this.LURecordNO.Size = new System.Drawing.Size(209, 26);
+            this.LURecordNO.Size = new System.Drawing.Size(209, 20);
             this.LURecordNO.TabIndex = 0;
             this.LURecordNO.UseRowNumDirectSelect = false;
             this.LURecordNO.UseRowNumLocate = false;
@@ -540,7 +522,7 @@ namespace CJia.Health.App.UI
             this.txtTimes.Properties.Mask.EditMask = "\\d{2}|\\d{1}";
             this.txtTimes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTimes.Properties.ReadOnly = true;
-            this.txtTimes.Size = new System.Drawing.Size(34, 26);
+            this.txtTimes.Size = new System.Drawing.Size(34, 20);
             this.txtTimes.TabIndex = 1;
             this.txtTimes.Leave += new System.EventHandler(this.txtTimes_Leave);
             // 
@@ -577,7 +559,8 @@ namespace CJia.Health.App.UI
             this.pdfViewer.FileName = null;
             this.pdfViewer.Location = new System.Drawing.Point(0, 0);
             this.pdfViewer.Name = "pdfViewer";
-            this.pdfViewer.Size = new System.Drawing.Size(955, 600);
+            this.pdfViewer.Password = "";
+            this.pdfViewer.Size = new System.Drawing.Size(962, 600);
             this.pdfViewer.StylePDF = CJia.Health.Tools.PDFViewer.PDFStyle.All;
             this.pdfViewer.TabIndex = 0;
             this.pdfViewer.ZoomLevel = 3;
@@ -707,6 +690,5 @@ namespace CJia.Health.App.UI
         private Controls.CJiaButton btnNoBlamk;
         private Controls.CJiaLabel cJiaLabel3;
         private Tools.PDFViewer pdfViewer;
-        private Controls.CJiaButton btnBlank;
     }
 }

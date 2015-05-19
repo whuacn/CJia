@@ -312,17 +312,36 @@ namespace CJia.Health.App.UI
                 }
                 else if (SMpageList.Count == 0 && PZpageList.Count != 0)
                 {
-                    if (Message.ShowQuery("只存在拍照的图片,是否继续合并?", Message.Button.YesNo) == Message.Result.Yes)
+                    List<string> SMNoBlankpageList = new List<string>();
+                    foreach (DataRow dr in PictureInfo.Rows)
                     {
-                        foreach (DataRow dr in PictureInfo.Rows)
+                        if (dr["Pic_Name"].ToString().Substring(0, 2) != "PZ" && dr["Pic_Name"].ToString().Substring(0, 2) != "KB")
                         {
-                            if (dr["Pic_Name"].ToString().Substring(0, 2) == "PZ")
+                            if (!SMNoBlankpageList.Contains(dr["Pic_Page"].ToString()))
                             {
-                                RemovePZ(dr);
+                                SMNoBlankpageList.Add(dr["Pic_Page"].ToString());
                             }
                         }
-                        Merge("104");
-                        isModify = true;
+                    }
+                    if (SMNoBlankpageList.Count != 0)
+                    {
+                        MessageBox.Show("拍照的图片与空白页不符，不能继续合并。");
+                        isModify = false;
+                    }
+                    else
+                    {
+                        if (Message.ShowQuery("只存在拍照的图片,是否继续合并?", Message.Button.YesNo) == Message.Result.Yes)
+                        {
+                            foreach (DataRow dr in PictureInfo.Rows)
+                            {
+                                if (dr["Pic_Name"].ToString().Substring(0, 2) == "PZ")
+                                {
+                                    RemovePZ(dr);
+                                }
+                            }
+                            Merge("104");
+                            isModify = true;
+                        }
                     }
                 }
                 else if (SMpageList.Count != 0 && SMpageList.Count == PZpageList.Count && PZpageList.Count != 0)

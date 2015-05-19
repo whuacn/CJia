@@ -153,11 +153,11 @@
             this.crbCheckState.Properties.Appearance.Options.UseBackColor = true;
             this.crbCheckState.Properties.Appearance.Options.UseFont = true;
             this.crbCheckState.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(104, "未提交"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(103, "已提交")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(104, "已合并未提交"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(103, "已提交未审核")});
             this.crbCheckState.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.crbCheckState.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.crbCheckState.Size = new System.Drawing.Size(217, 33);
+            this.crbCheckState.Size = new System.Drawing.Size(296, 33);
             this.crbCheckState.TabIndex = 5;
             this.crbCheckState.SelectedIndexChanged += new System.EventHandler(this.crbCheckState_SelectedIndexChanged);
             // 

@@ -103,7 +103,7 @@ namespace CJia.Health.App.UI
                 string PICLocalSavePath = CJia.Health.Tools.ConfigHelper.GetAppStrings("JJCJScanPicPath");//本地
                 CreaterFolder(PICLocalSavePath);
                 txtFolder.Text = PICLocalSavePath;
-                txtFolder_TextChanged(null, null);
+                //txtFolder_TextChanged(null, null);
             }
         }
 
@@ -340,6 +340,10 @@ namespace CJia.Health.App.UI
                 pictureGrid.DataSource = data;
                 pictureView.FocusedRowHandle = data.Rows.Count - 1;
                 isReName = false;
+                if (data != null && data.Rows.Count == 1)
+                {
+                    pictureView_FocusedRowChanged(null, null);
+                }
             }
         }
         private void txtStartPage_Leave(object sender, EventArgs e)

@@ -1323,12 +1323,12 @@ namespace CJia.Health.App.UI
 
         private void pictureView_RowCountChanged(object sender, EventArgs e)
         {
-            pictureView_FocusedRowChanged(null, null);
+            //pictureView_FocusedRowChanged(null, null);
         }
 
         private void inputView_RowCountChanged(object sender, EventArgs e)
         {
-            inputView_FocusedRowChanged(null, null);
+            //inputView_FocusedRowChanged(null, null);
         }
     }
 }

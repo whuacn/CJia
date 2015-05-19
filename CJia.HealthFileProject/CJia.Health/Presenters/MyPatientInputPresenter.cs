@@ -29,7 +29,8 @@ namespace CJia.Health.Presenters
             {
                 foreach (string str in e.HealthID)
                 {
-                    Model.ModifyCheckState(trans.ID, str, "100", User.UserData.Rows[0]["USER_ID"].ToString());
+                    Model.ModifyCheckState(trans.ID, str, "104", User.UserData.Rows[0]["USER_ID"].ToString());
+                    Model.ModifyPicStateByHealthID(trans.ID, str, "100", User.UserData.Rows[0]["USER_ID"].ToString());
                 }
                 trans.Complete();
             }
@@ -42,6 +43,8 @@ namespace CJia.Health.Presenters
                 foreach (string str in e.HealthID)
                 {
                     Model.ModifyCheckState(trans.ID, str, "103", User.UserData.Rows[0]["USER_ID"].ToString());
+                    //将病案下对应的图片一并提交
+                    Model.ModifyPicStateByHealthID(trans.ID, str, "103", User.UserData.Rows[0]["USER_ID"].ToString());
                 }
                 trans.Complete();
             }
@@ -54,6 +57,7 @@ namespace CJia.Health.Presenters
                 foreach (string str in e.HealthID)
                 {
                     Model.DeletePatient(trans.ID, str, User.UserData.Rows[0]["USER_ID"].ToString());
+                    Model.DeletePicByHealthID(trans.ID, str, User.UserData.Rows[0]["USER_ID"].ToString());
                 }
                 trans.Complete();
             }
