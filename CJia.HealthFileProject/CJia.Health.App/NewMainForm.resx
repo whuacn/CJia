@@ -9442,6 +9442,18 @@
   <data name="btnLookSet.Caption" xml:space="preserve">
     <value>浏览权限</value>
   </data>
+  <data name="btnLookSet.ItemAppearance.Disabled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="btnLookSet.ItemAppearance.Hovered.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="btnLookSet.ItemAppearance.Normal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="btnLookSet.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
+  </data>
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -9507,13 +9519,13 @@
     <value>文件</value>
   </data>
   <data name="ribbonControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1026, 153</value>
+    <value>1022, 153</value>
   </data>
   <data name="ribbonStatusBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 720</value>
+    <value>0, 708</value>
   </data>
   <data name="ribbonStatusBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1026, 27</value>
+    <value>1022, 27</value>
   </data>
   <data name="&gt;&gt;ribbonStatusBar1.Name" xml:space="preserve">
     <value>ribbonStatusBar1</value>
@@ -9726,7 +9738,7 @@
     <value>0, 153</value>
   </data>
   <data name="homePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1024, 541</value>
+    <value>1020, 529</value>
   </data>
   <data name="homePage.Text" xml:space="preserve">
     <value>首页</value>
@@ -9744,7 +9756,7 @@
     <value>0</value>
   </data>
   <data name="xTC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1026, 567</value>
+    <value>1022, 555</value>
   </data>
   <data name="xTC.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -9777,7 +9789,7 @@
     <value>10, 22</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1026, 747</value>
+    <value>1022, 735</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
