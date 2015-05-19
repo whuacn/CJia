@@ -65,5 +65,19 @@ namespace CJia.Health.Models.Web
                 return null;
             }
         }
+
+        public DataTable GetPatientInfoByID(string patientID)
+        {
+            object[] sqlParams = new object[] { patientID };
+            DataTable dtResult = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlQueryPatientByID, sqlParams);
+            if (dtResult != null && dtResult.Rows.Count > 0)
+            {
+                return dtResult;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

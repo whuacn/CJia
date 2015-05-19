@@ -25,7 +25,8 @@ namespace CJia.Health.Presenters.Web
         {
             DataTable project = Model.GetMyPictureProject(e.HealthID);
             DataTable picture = Model.GetMyPicture(e.HealthID);
-            View.ExeBindPicture(picture);
+            DataTable info = Model.GetPatientInfoByID(e.HealthID);
+            View.ExeBindPicture(picture, info);
             View.ExeBindProject(project);
         }
     }

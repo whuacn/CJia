@@ -2562,7 +2562,7 @@ values
         {
             get
             {
-                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where P.id=?";
+                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2,to_char(P.birthday,'yyyy/mm/dd') birthday2 from gm_patient_view p where P.id=?";
             }
         }
         public static string SqlQueryMyFovourite

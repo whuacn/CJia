@@ -647,16 +647,19 @@ namespace CJia.Health.App.UI
         /// </summary>
         private bool Pass()
         {
-            string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
-            if (checkStatus == "103")
+            if (gvPicture.GetFocusedDataRow() != null)
             {
-                string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
-                this.OnPass(null, new Views.NewImageCheckViewArgs()
+                string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
+                if (checkStatus == "103")
                 {
-                    pictureId = pictrueId,
-                    originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString()
-                });
-                return true;
+                    string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
+                    this.OnPass(null, new Views.NewImageCheckViewArgs()
+                    {
+                        pictureId = pictrueId,
+                        originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString()
+                    });
+                    return true;
+                }
             }
             return false;
         }
@@ -666,26 +669,29 @@ namespace CJia.Health.App.UI
         /// </summary>
         private bool NoPass()
         {
-            string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
-            if (checkStatus == "103")
+            if (gvPicture.GetFocusedDataRow() != null)
             {
-                CJia.Health.App.UI.CheckReasonView checkReasonView = new CheckReasonView();
-                checkReasonView.OnAddCheckReason += checkReasonView_OnAddCheckReason;
-                checkReasonView.OnRemoveCheckReason += checkReasonView_OnRemoveCheckReason;
-                this.OnCheckReason(null, null);
-                checkReasonView.BindData(this.AllCheckReason);
-                this.ShowAsWindow("审核原因", checkReasonView);
-                if (checkReasonView.isOk)
+                string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
+                if (checkStatus == "103")
                 {
-                    string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
-                    this.OnNoPass(null, new Views.NewImageCheckViewArgs()
+                    CJia.Health.App.UI.CheckReasonView checkReasonView = new CheckReasonView();
+                    checkReasonView.OnAddCheckReason += checkReasonView_OnAddCheckReason;
+                    checkReasonView.OnRemoveCheckReason += checkReasonView_OnRemoveCheckReason;
+                    this.OnCheckReason(null, null);
+                    checkReasonView.BindData(this.AllCheckReason);
+                    this.ShowAsWindow("审核原因", checkReasonView);
+                    if (checkReasonView.isOk)
                     {
-                        pictureId = pictrueId,
-                        originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString(),
-                        checkReasonId = checkReasonView.reasonId,
-                        checkReason = checkReasonView.reason
-                    });
-                    return true;
+                        string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
+                        this.OnNoPass(null, new Views.NewImageCheckViewArgs()
+                        {
+                            pictureId = pictrueId,
+                            originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString(),
+                            checkReasonId = checkReasonView.reasonId,
+                            checkReason = checkReasonView.reason
+                        });
+                        return true;
+                    }
                 }
             }
             return false;
@@ -696,15 +702,18 @@ namespace CJia.Health.App.UI
         /// </summary>
         private void Delete()
         {
-            string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
-            if (checkStatus == "101" || checkStatus == "102")
+            if (gvPicture.GetFocusedDataRow() != null)
             {
-                string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
-                this.OnDelete(null, new Views.NewImageCheckViewArgs()
+                string checkStatus = this.SelectPicData["CHECK_STATUS"].ToString();
+                if (checkStatus == "101" || checkStatus == "102")
                 {
-                    pictureId = pictrueId,
-                    originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString()
-                });
+                    string pictrueId = this.SelectPicData["PICTURE_ID"].ToString();
+                    this.OnDelete(null, new Views.NewImageCheckViewArgs()
+                    {
+                        pictureId = pictrueId,
+                        originalCheckStatus = this.selectPicData["CHECK_STATUS"].ToString()
+                    });
+                }
             }
         }
 

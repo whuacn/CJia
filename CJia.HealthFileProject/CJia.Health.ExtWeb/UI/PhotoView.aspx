@@ -50,7 +50,7 @@
                                     <Rows>
                                         <ext:FormRow>
                                             <Items>
-                                                <ext:Label ID="lblRecordNO" runat="server" Label="病案号" Text="1"></ext:Label>
+                                                <ext:Label ID="lblRecordNO" runat="server" Label="病案号" Text=""></ext:Label>
                                             </Items>
                                         </ext:FormRow>
                                         <ext:FormRow>

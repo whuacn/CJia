@@ -45,11 +45,18 @@ namespace CJia.Health.ExtWeb.UI
         #region IMyPictureView成员
         public event EventHandler<Views.Web.MyPictureArgs> OnLoadPicture;
         public event EventHandler<Views.Web.MyPictureArgs> OnProjectChanged;
-        public void ExeBindPicture(DataTable data)
+        public void ExeBindPicture(DataTable data, DataTable patInfo)
         {
-            BindPatient(data);
-            gr_project.DataSource = data;
-            gr_project.DataBind();
+            BindPatient(patInfo);
+            if (data != null && data.Rows.Count > 0)
+            {
+                gr_project.DataSource = data;
+                gr_project.DataBind();
+            }
+            else
+            {
+                Alert.ShowInTop("此病案无可浏览的图片");
+            }
         }
         public void ExeBindProject(DataTable data)
         {
@@ -67,12 +74,15 @@ namespace CJia.Health.ExtWeb.UI
         /// </summary>
         public void BindPatient(DataTable data)
         {
-            DataRow dr = data.Rows[0];
-            lblRecordNO.Text = dr["RECORDNO"].ToString();
-            lblTimes.Text = dr["IN_HOSPITAL_TIME"].ToString();
-            lblName.Text = dr["PATIENT_NAME"].ToString();
-            lblGender.Text = dr["GENDER_NAME"].ToString();
-            lblBirthDay.Text = dr["BIRTHDAY2"].ToString();
+            if (data != null && data.Rows.Count > 0)
+            {
+                DataRow dr = data.Rows[0];
+                lblRecordNO.Text = dr["RECORDNO"].ToString();
+                lblTimes.Text = dr["IN_HOSPITAL_TIME"].ToString();
+                lblName.Text = dr["PATIENT_NAME"].ToString();
+                lblGender.Text = dr["GENDER_NAME"].ToString();
+                lblBirthDay.Text = dr["BIRTHDAY2"].ToString();
+            }
         }
         #endregion
         private void GetPicture(int rowIndex)

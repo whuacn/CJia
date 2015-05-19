@@ -38,7 +38,7 @@ namespace CJia.Health.Web.UI
         #region IMyPictureView成员
         public event EventHandler<Views.Web.MyPictureArgs> OnLoadPicture;
         public event EventHandler<Views.Web.MyPictureArgs> OnProjectChanged;
-        public void ExeBindPicture(DataTable data)
+        public void ExeBindPicture(DataTable data, DataTable patInfo)
         {
             if (data != null)
             {

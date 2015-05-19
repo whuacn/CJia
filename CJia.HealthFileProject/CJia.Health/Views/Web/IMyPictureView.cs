@@ -10,7 +10,7 @@ namespace CJia.Health.Views.Web
     {
         event EventHandler<MyPictureArgs> OnLoadPicture;
         event EventHandler<MyPictureArgs> OnProjectChanged;
-        void ExeBindPicture(DataTable data);
+        void ExeBindPicture(DataTable data, DataTable patInfo);
         void ExeBindProject(DataTable data);
         void ExeBindPictureByProjectID(DataTable data);
     }
