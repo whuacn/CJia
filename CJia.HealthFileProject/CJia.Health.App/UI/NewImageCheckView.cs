@@ -521,21 +521,24 @@ namespace CJia.Health.App.UI
         {
             string selectValue = this.crdCheck.EditValue.ToString();
             DataTable result = null;
-            if (selectValue == "0")
+            if (AllPicture != null)
             {
-                result = AllPicture.Copy();
-            }
-            else if (selectValue == "1")
-            {
-                result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '101' "));
-            }
-            else if (selectValue == "2")
-            {
-                result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '102' "));
-            }
-            else if (selectValue == "3")
-            {
-                result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '103' "));
+                if (selectValue == "0")
+                {
+                    result = AllPicture.Copy();
+                }
+                else if (selectValue == "1")
+                {
+                    result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '101' "));
+                }
+                else if (selectValue == "2")
+                {
+                    result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '102' "));
+                }
+                else if (selectValue == "3")
+                {
+                    result = CJia.Health.Tools.Help.GetDataSource(AllPicture.Select(" CHECK_STATUS = '103' "));
+                }
             }
             return result;
         }
