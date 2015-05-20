@@ -87,6 +87,7 @@ namespace CJia.Health.ExtWeb.UI
         #endregion
         private void GetPicture(int rowIndex)
         {
+            int imgwidth = int.Parse(Request["w"].ToString()) - 290;
             DataTable userData = Session["User"] as DataTable;
             string userID = userData.Rows[0]["USER_ID"].ToString();
             string userName = userData.Rows[0]["USER_NAME"].ToString();
@@ -109,14 +110,14 @@ namespace CJia.Health.ExtWeb.UI
                     if (File.Exists(pdfData + "_" + userID + ".Jpeg"))
                     {
                         pimg.ImageUrl = "../Cache/" + name + "_" + userID + ".Jpeg";
-                        pimg.ImageWidth = new Unit(730);
+                        pimg.ImageWidth = new Unit(imgwidth);
                         return;
                     }
                     else
                     {
                         Tools.Help.AddWaterText(pdfData + ".Jpeg", picSave, waterText, Help.WaterPositionMode.Center, "Red", 100);
                         pimg.ImageUrl = "../Cache/" + name + "_" + userID + ".Jpeg";
-                        pimg.ImageWidth = new Unit(730);
+                        pimg.ImageWidth = new Unit(imgwidth);
                         return;
                     }
                 }
@@ -127,7 +128,7 @@ namespace CJia.Health.ExtWeb.UI
                     File.Delete(pdfData);
                     Tools.Help.AddWaterText(pdfData + ".Jpeg", picSave, waterText, Help.WaterPositionMode.Center, "Red", 100);
                     pimg.ImageUrl = "../Cache/" + name + "_" + userID + ".Jpeg";
-                    pimg.ImageWidth = new Unit(730);
+                    pimg.ImageWidth = new Unit(imgwidth);
                 }
                 else
                 {
@@ -157,8 +158,9 @@ namespace CJia.Health.ExtWeb.UI
         {
             if (pimg.ImageUrl.Length > 0)
             {
+                int imgwidth = int.Parse(Request["w"].ToString()) - 290;
                 Unit u = pimg.ImageWidth;
-                if (u.Value - 50 >= 730)
+                if (u.Value - 50 >= imgwidth)
                     pimg.ImageWidth = new Unit(u.Value - 50);
             }
         }

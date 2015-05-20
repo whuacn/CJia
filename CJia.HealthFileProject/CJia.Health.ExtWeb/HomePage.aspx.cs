@@ -20,25 +20,35 @@ namespace CJia.Health.ExtWeb
                     DataTable useData = Session["User"] as DataTable;
                     tbt_Clock.Text = DateTime.Now.ToString();
                     tbt_Info.Text = "欢迎【" + useData.Rows[0]["dept_name"].ToString() + "    " + useData.Rows[0]["USER_NAME"].ToString() + "】";
-                    string userID = useData.Rows[0]["USER_ID"].ToString();
-                    InitPage(userID);
+                    InitCNode();
+                    int width = int.Parse(Request["winW"].ToString());
+                    int height = int.Parse(Request["winH"].ToString());
+                    tree_MArticle.Nodes[0].NavigateUrl = "UI/ReceiptFavorite.aspx?w=" + width + "&h=" + height;
+                    tree_MArticle.Nodes[1].NavigateUrl = "UI/MyBorrow.aspx?w=" + width + "&h=" + height;
                 }
             }
         }
-        public void InitPage(string userID)
+        protected void InitCNode()
         {
-            DataTable data = GetMyfavourite(userID);
-            if (data != null && data.Rows.Count > 0)
+            if (Session["User"] != null)
             {
-                tree_MCenter.Nodes.Clear();
-                foreach (DataRow dr in data.Rows)
+                DataTable useData = Session["User"] as DataTable;
+                string userID = useData.Rows[0]["USER_ID"].ToString();
+                DataTable data = GetMyfavourite(userID);
+                if (data != null && data.Rows.Count > 0)
                 {
-                    ExtAspNet.TreeNode node = new ExtAspNet.TreeNode();
-                    node.NodeID = dr["FAVORITES_ID"].ToString();
-                    node.Text = dr["FAVORITES_NAME"].ToString();
-                    node.IconUrl = "~/Icons/package.png";
-                    node.NavigateUrl = "UI/MyFavorite.aspx?id=" + dr["FAVORITES_ID"].ToString();
-                    tree_MCenter.Nodes.Add(node);
+                    int width = int.Parse(Request["winW"].ToString());
+                    int height = int.Parse(Request["winH"].ToString());
+                    tree_MCenter.Nodes.Clear();
+                    foreach (DataRow dr in data.Rows)
+                    {
+                        ExtAspNet.TreeNode node = new ExtAspNet.TreeNode();
+                        node.NodeID = dr["FAVORITES_ID"].ToString();
+                        node.Text = dr["FAVORITES_NAME"].ToString();
+                        node.IconUrl = "~/Icons/package.png";
+                        node.NavigateUrl = "UI/MyFavorite.aspx?id=" + dr["FAVORITES_ID"].ToString() + "&w=" + width + "&h=" + height;
+                        tree_MCenter.Nodes.Add(node);
+                    }
                 }
             }
         }
@@ -51,15 +61,23 @@ namespace CJia.Health.ExtWeb
         {
             if (Session["User"] != null)
             {
-                DataTable useData = Session["User"] as DataTable;
-                string userID = useData.Rows[0]["USER_ID"].ToString();
-                InitPage(userID);
+                InitCNode();
             }
         }
 
         protected void btn_ChangePassword_Click(object sender, EventArgs e)
         {
             PageContext.RegisterStartupScript(win_ChangePassword.GetShowReference("ChangePassword.aspx", "修改密码"));
+        }
+
+        protected void tree_MCenter_NodeExpand(object sender, TreeExpandEventArgs e)
+        {
+
+        }
+
+        protected void tree_MCenter_NodeCheck(object sender, TreeCheckEventArgs e)
+        {
+
         }
     }
 }

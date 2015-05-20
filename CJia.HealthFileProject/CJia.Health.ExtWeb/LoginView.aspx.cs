@@ -40,10 +40,12 @@ namespace CJia.Health.ExtWeb
         public event EventHandler<Views.Web.LoginEventArgs> OnLogin;
         public void ExeBindUserSession(DataTable data)
         {
+            int width = int.Parse(Request.Form["winW"].ToString());
+            int height = int.Parse(Request.Form["winH"].ToString());
             Session["User"] = new DataTable();
             Session["User"] = data;
             Session.Timeout = int.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("SessionTimeOut"));
-            Response.Redirect("~/HomePage.aspx");
+            Response.Redirect("~/HomePage.aspx?winW=" + width + "&winH=" + height);
         }
         #endregion
 

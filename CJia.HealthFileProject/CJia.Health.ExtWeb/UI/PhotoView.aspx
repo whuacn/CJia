@@ -41,7 +41,7 @@
         <ext:PageManager ID="pm_Main" AutoSizePanelID="rpnl_Main" runat="server" />
         <ext:RegionPanel ID="rpnl_Main" ShowBorder="false" runat="server">
             <Regions>
-                <ext:Region ID="ren_Center" Title="病人基本信息" ShowHeader="true" Layout="Row" Position="Left" Margins="2" runat="server" Width="250px">
+                <ext:Region ID="ren_Center" Title="病人基本信息" ShowHeader="true" Layout="Row" Position="Left" Margins="2" runat="server" Width="270px">
                     <Items>
                         <ext:Panel ID="Panel2" runat="server" ShowHeader="false" ShowBorder="false" Height="130px">
                             <Items>

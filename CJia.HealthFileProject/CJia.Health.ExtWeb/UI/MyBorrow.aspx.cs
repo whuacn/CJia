@@ -22,6 +22,8 @@ namespace CJia.Health.ExtWeb.UI
                         readBorrowArgs.UserData = Session["User"] as DataTable;
                         OnLoadBorrow(null, readBorrowArgs);
                     }
+                    win_Image.Width = int.Parse(Request["w"].ToString());
+                    win_Image.Height = int.Parse(Request["h"].ToString());
                 }
             }
         }
@@ -65,6 +67,8 @@ namespace CJia.Health.ExtWeb.UI
 
         protected void gr_detail_RowCommand(object sender, GridCommandEventArgs e)
         {
+            string w = Request["w"].ToString();
+            string h = Request["h"].ToString();
             object[] keys = this.gr_detail.DataKeys[e.RowIndex];
             switch (e.CommandName)
             {
@@ -72,7 +76,7 @@ namespace CJia.Health.ExtWeb.UI
                     PageContext.RegisterStartupScript(win_Edit.GetShowReference("PatientInfoView.aspx?ID=" + keys[0].ToString(), "基本信息"));
                     break;
                 case "Image":
-                    PageContext.RegisterStartupScript(win_Image.GetShowReference("PhotoView.aspx?ID=" + keys[0].ToString(), "图片浏览"));
+                    PageContext.RegisterStartupScript(win_Image.GetShowReference("PhotoView.aspx?ID=" + keys[0].ToString() + "&w=" + w + "&h=" + h, "图片浏览"));
                     break;
             }
         }

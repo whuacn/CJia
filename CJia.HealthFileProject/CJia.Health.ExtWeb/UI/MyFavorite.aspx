@@ -55,7 +55,7 @@
             </Regions>
         </ext:RegionPanel>
         <ext:Window ID="win_Image" Hidden="true" EnableIFrame="true" Icon="ApplicationFormEdit" Target="Parent" runat="server"
-            CloseAction="HidePostBack" IsModal="true" Width="1000px" Height="550px">
+            CloseAction="HidePostBack" IsModal="true" >
         </ext:Window>
         <ext:Window ID="win_Edit" Hidden="true" EnableIFrame="true" Icon="ApplicationFormEdit" Target="Parent" runat="server"
             CloseAction="HidePostBack" IsModal="true" Width="1050px" Height="500px">

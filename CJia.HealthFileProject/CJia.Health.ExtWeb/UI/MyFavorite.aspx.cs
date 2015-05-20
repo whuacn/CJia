@@ -21,11 +21,13 @@ namespace CJia.Health.ExtWeb.UI
                     {
                         string favid = Request["id"].ToString();
                         DataTable data = GetfavouriteByID(favid);
-                        string sessonID="MyFavorite"+favid;
+                        string sessonID = "MyFavorite" + favid;
                         Session[sessonID] = new DataTable();
                         Session[sessonID] = data;
                         InitGrid(data, gr_detail);
                     }
+                    win_Image.Width = int.Parse(Request["w"].ToString());
+                    win_Image.Height = int.Parse(Request["h"].ToString());
                 }
             }
         }
@@ -62,6 +64,8 @@ namespace CJia.Health.ExtWeb.UI
 
         protected void gr_detail_RowCommand(object sender, GridCommandEventArgs e)
         {
+            string w = Request["w"].ToString();
+            string h = Request["h"].ToString();
             object[] keys = this.gr_detail.DataKeys[e.RowIndex];
             switch (e.CommandName)
             {
@@ -69,7 +73,7 @@ namespace CJia.Health.ExtWeb.UI
                     PageContext.RegisterStartupScript(win_Edit.GetShowReference("PatientInfoView.aspx?ID=" + keys[0].ToString(), "基本信息"));
                     break;
                 case "Image":
-                    PageContext.RegisterStartupScript(win_Image.GetShowReference("PhotoView.aspx?ID=" + keys[0].ToString(), "图片浏览"));
+                    PageContext.RegisterStartupScript(win_Image.GetShowReference("PhotoView.aspx?ID=" + keys[0].ToString() + "&w=" + w + "&h=" + h, "图片浏览"));
                     break;
                 case "Delete":
                     bool bol = RemoveFavDetail(keys[1].ToString());
@@ -81,7 +85,7 @@ namespace CJia.Health.ExtWeb.UI
 
         protected void btnDeleteFav_Click(object sender, EventArgs e)
         {
-            bool bol= RemoveFavName(Request["id"].ToString());
+            bool bol = RemoveFavName(Request["id"].ToString());
             if (bol)
             {
                 Alert.ShowInTop("删除成功");

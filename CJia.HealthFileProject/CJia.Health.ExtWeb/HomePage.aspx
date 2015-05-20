@@ -8,6 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>病案借阅申请系统</title>
     <link rel="stylesheet" type="text/css" href="Css/main.css" />
+    <script src="Js/jquery.min.js"></script>
     <script type="text/javascript" src="Js/Main.js"></script>
     <style type="text/css">
         .bg {
@@ -16,6 +17,7 @@
     </style>
 </head>
 <body>
+    
     <form id="form1" runat="server">
         <ext:PageManager ID="pm_Main" AutoSizePanelID="rpnl_Main" runat="server" />
         <ext:RegionPanel ID="rpnl_Main" ShowBorder="false" runat="server">
@@ -96,9 +98,9 @@
                                     <Items>
                                         <ext:Tree ID="tree_MArticle" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
                                             <Nodes>
-                                                <ext:TreeNode Text="我的借阅" NodeID="node_DataDeclare" IconUrl="Icons/table_go.png" NavigateUrl="UI/ReceiptFavorite.aspx">
+                                                <ext:TreeNode Text="我的借阅" NodeID="node_DataDeclare" IconUrl="Icons/table_go.png">
                                                 </ext:TreeNode>
-                                                <ext:TreeNode Text="我的病案" NodeID="node_DataReview" IconUrl="Icons/table_relationship.png" NavigateUrl="UI/MyBorrow.aspx">
+                                                <ext:TreeNode Text="我的病案" NodeID="node_DataReview" IconUrl="Icons/table_relationship.png">
                                                 </ext:TreeNode>
                                             </Nodes>
                                         </ext:Tree>
@@ -106,7 +108,7 @@
                                 </ext:AccordionPane>
                                 <ext:AccordionPane ID="ap_MCenter" AutoScroll="true" Icon="FolderImage" runat="server" Expanded="false" Hidden="false" Title="我的收藏" Layout="Fit">
                                     <Items>
-                                        <ext:Tree ID="tree_MCenter" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
+                                        <ext:Tree ID="tree_MCenter" OnNodeCheck="tree_MCenter_NodeCheck" OnNodeExpand="tree_MCenter_NodeExpand" runat="server" ShowBorder="false" ShowHeader="false" AutoScroll="true">
                                             <Nodes>
                                             </Nodes>
                                         </ext:Tree>

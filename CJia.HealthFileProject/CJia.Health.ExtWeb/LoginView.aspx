@@ -8,12 +8,22 @@
     <title>病案借阅系统 用户登录</title>
     <script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="Css/register.css" />
+    <script type="text/ecmascript">
+        function getWH() {
+            var width = document.body.clientWidth;
+            var heigh = document.body.scrollHeight;
+            $('#winW').val(width);
+            $('#winH').val($(document).height());
+        };
+    </script>
 </head>
 <body>
     <div id="Div1" class='signup_container' runat="server">
         <h1 class='signup_title'>病案借阅系统</h1>
         <img src='images/people.png' id='admin' />
         <form class="signup_form_form" id="signup_form" runat="server" method="post" data-secure-action="" data-secure-ajax-action="">
+            <input id="winW" type="hidden" name="winW" runat="server" />
+            <input id="winH" type="hidden" name="winH" runat="server" />
             <div id="signup_forms" class="signup_forms clearfix">
                 <%--<form class="signup_form_form" id="signup_form" method="post" data-secure-action="" data-secure-ajax-action="">--%>
                 <div class="form_row first_row">
@@ -28,7 +38,7 @@
             </div>
             <div class="login-btn-set">
                 <center><%--<asp:LinkButton ID="btnLogin" runat="server" class='login-btn' OnClick="Login_Click"></asp:LinkButton>--%><%--</center>--%>
-                <asp:Button ID="Button1" class='login-btn' runat="server" OnClick="Login_Click" />
+                <asp:Button ID="Button1" OnClientClick="getWH();" class='login-btn' runat="server" OnClick="Login_Click" />
                  </center>
             </div>
         </form>
