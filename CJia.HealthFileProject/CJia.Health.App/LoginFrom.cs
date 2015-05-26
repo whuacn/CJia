@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Castle.DynamicProxy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,15 @@ namespace CJia.Health.App
 
         protected override object CreatePresenter()
         {
-            return new Presenters.LoginViewPresenter(this);
+            //return new Presenters.LoginViewPresenter(this);
+
+            ProxyGenerator generator = new ProxyGenerator();//实例化【代理类生成器】
+            SimpleInterceptor interceptor = new SimpleInterceptor();//实例化【拦截器】
+            //使用【代理类生成器】创建Person对象，而不是使用new关键字来实例化
+            //Person person = generator.CreateClassProxy<Person>(interceptor);           
+            return (Presenters.LoginViewPresenter)generator.CreateClassProxy(typeof(Presenters.LoginViewPresenter), new object[] { this }, interceptor);
+            //return generator.CreateClassProxy<Presenters.LoginViewPresenter>(interceptor);
+       
         }
         /// <summary>
         /// 登录参数设置

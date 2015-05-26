@@ -2604,5 +2604,19 @@ values
                 return @"update gm_favorites_detail ft set ft.status='0' WHERE ft.id=?";
             }
         }
+
+        /// <summary>
+        /// 插入操作日志
+        /// </summary>
+        public static string SqlInsertTraceContext
+        {
+            get
+            {
+                return @"insert into gm_trace
+                              (trace_code, trace_type, trace_context, trace_date,trace_user_id, trace_user_name)
+                            values
+                              (?, ?, ?, sysdate,?,?)";
+            }
+        }
     }
 }

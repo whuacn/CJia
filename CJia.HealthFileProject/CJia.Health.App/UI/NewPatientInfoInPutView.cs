@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Castle.DynamicProxy;
 
 namespace CJia.Health.App.UI
 {
@@ -22,7 +23,10 @@ namespace CJia.Health.App.UI
 
         protected override object CreatePresenter()
         {
-            return new Presenters.NewPatientInfoInputPresenter(this);
+            //return new Presenters.NewPatientInfoInputPresenter(this);
+            ProxyGenerator generator = new ProxyGenerator();//实例化【代理类生成器】
+            SimpleInterceptor interceptor = new SimpleInterceptor();//实例化【拦截器】  
+            return (Presenters.NewPatientInfoInputPresenter)generator.CreateClassProxy(typeof(Presenters.NewPatientInfoInputPresenter), new object[] { this }, interceptor);
         }
 
 
