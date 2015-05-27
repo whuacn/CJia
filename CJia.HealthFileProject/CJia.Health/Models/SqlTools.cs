@@ -1257,7 +1257,7 @@ values
         {
             get
             {
-                return @"insert into gm_project values(gm_project_seq.nextval,?,?,?,'1',sysdate,'','',?,?,?,?)";
+                return @"insert into gm_project values(gm_project_seq.nextval,?,?,?,'1',sysdate,'','',?,?,?,?,?)";
             }
         }
 
@@ -1268,7 +1268,7 @@ values
         {
             get
             {
-                return @"update gm_project set pro_name=?,pro_no=?,first_pinyin=?,update_date=sysdate,update_by=?,is_print=?,SHORT_KEY=?,IS_LOOK=? where pro_id=?";
+                return @"update gm_project set pro_name=?,pro_no=?,first_pinyin=?,update_date=sysdate,update_by=?,is_print=?,SHORT_KEY=?,IS_LOOK=?,IS_EXPORT=? where pro_id=?";
             }
         }
 

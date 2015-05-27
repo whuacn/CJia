@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectManageView));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             this.pnlProject = new CJia.Controls.CJiaPanel();
             this.BtnAddProject = new CJia.Controls.BtnAdd();
             this.BtnProjectDelect = new CJia.Controls.BtnDelete();
             this.BtnUpdateProject = new CJia.Controls.CJiaButton();
             this.cJiaPanel2 = new CJia.Controls.CJiaPanel();
+            this.ckLook = new CJia.Controls.CJiaCheck();
             this.txtKey = new CJia.Controls.CJiaTextBox();
             this.cJiaLabel6 = new CJia.Controls.CJiaLabel();
             this.ckPrint = new CJia.Controls.CJiaCheck();
@@ -55,11 +56,12 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cJiaLabel5 = new CJia.Controls.CJiaLabel();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
-            this.ckLook = new CJia.Controls.CJiaCheck();
+            this.ckExport = new CJia.Controls.CJiaCheck();
             ((System.ComponentModel.ISupportInitialize)(this.pnlProject)).BeginInit();
             this.pnlProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).BeginInit();
             this.cJiaPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckLook.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckPrint.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtProPinyin.Properties)).BeginInit();
@@ -68,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProjectSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ckLook.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckExport.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProject
@@ -87,7 +89,7 @@
             this.pnlProject.LookAndFeel.SkinName = "Office 2010 Silver";
             this.pnlProject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pnlProject.Name = "pnlProject";
-            this.pnlProject.Size = new System.Drawing.Size(978, 465);
+            this.pnlProject.Size = new System.Drawing.Size(1009, 465);
             this.pnlProject.TabIndex = 10;
             // 
             // BtnAddProject
@@ -99,7 +101,7 @@
             this.BtnAddProject.Appearance.Options.UseForeColor = true;
             this.BtnAddProject.CustomText = "添加(F1)";
             this.BtnAddProject.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddProject.Image")));
-            this.BtnAddProject.Location = new System.Drawing.Point(705, 419);
+            this.BtnAddProject.Location = new System.Drawing.Point(730, 419);
             this.BtnAddProject.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnAddProject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnAddProject.Name = "BtnAddProject";
@@ -118,7 +120,7 @@
             this.BtnProjectDelect.Appearance.Options.UseForeColor = true;
             this.BtnProjectDelect.CustomText = "删除(F3)";
             this.BtnProjectDelect.Image = ((System.Drawing.Image)(resources.GetObject("BtnProjectDelect.Image")));
-            this.BtnProjectDelect.Location = new System.Drawing.Point(887, 419);
+            this.BtnProjectDelect.Location = new System.Drawing.Point(912, 419);
             this.BtnProjectDelect.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnProjectDelect.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnProjectDelect.Name = "BtnProjectDelect";
@@ -137,7 +139,7 @@
             this.BtnUpdateProject.Appearance.Options.UseForeColor = true;
             this.BtnUpdateProject.CustomText = "修改(F2)";
             this.BtnUpdateProject.Image = ((System.Drawing.Image)(resources.GetObject("BtnUpdateProject.Image")));
-            this.BtnUpdateProject.Location = new System.Drawing.Point(796, 419);
+            this.BtnUpdateProject.Location = new System.Drawing.Point(821, 419);
             this.BtnUpdateProject.LookAndFeel.SkinName = "Office 2010 Blue";
             this.BtnUpdateProject.LookAndFeel.UseDefaultLookAndFeel = false;
             this.BtnUpdateProject.Name = "BtnUpdateProject";
@@ -149,6 +151,7 @@
             // 
             // cJiaPanel2
             // 
+            this.cJiaPanel2.Controls.Add(this.ckExport);
             this.cJiaPanel2.Controls.Add(this.ckLook);
             this.cJiaPanel2.Controls.Add(this.txtKey);
             this.cJiaPanel2.Controls.Add(this.cJiaLabel6);
@@ -163,8 +166,25 @@
             this.cJiaPanel2.LookAndFeel.SkinName = "Office 2010 Silver";
             this.cJiaPanel2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaPanel2.Name = "cJiaPanel2";
-            this.cJiaPanel2.Size = new System.Drawing.Size(968, 42);
+            this.cJiaPanel2.Size = new System.Drawing.Size(999, 42);
             this.cJiaPanel2.TabIndex = 5;
+            // 
+            // ckLook
+            // 
+            this.ckLook.EditValue = true;
+            this.ckLook.Location = new System.Drawing.Point(742, 9);
+            this.ckLook.Name = "ckLook";
+            this.ckLook.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.ckLook.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ckLook.Properties.Appearance.Options.UseBackColor = true;
+            this.ckLook.Properties.Appearance.Options.UseFont = true;
+            this.ckLook.Properties.Caption = "可以浏览";
+            this.ckLook.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.ckLook.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ckLook.Selectable = true;
+            this.ckLook.Size = new System.Drawing.Size(80, 24);
+            this.ckLook.TabIndex = 8;
+            this.ckLook.CheckedChanged += new System.EventHandler(this.ckLook_CheckedChanged);
             // 
             // txtKey
             // 
@@ -176,7 +196,7 @@
             this.txtKey.Properties.Appearance.Options.UseFont = true;
             this.txtKey.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.txtKey.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtKey.Size = new System.Drawing.Size(92, 26);
+            this.txtKey.Size = new System.Drawing.Size(71, 26);
             this.txtKey.TabIndex = 6;
             // 
             // cJiaLabel6
@@ -190,8 +210,7 @@
             // 
             // ckPrint
             // 
-            this.ckPrint.EditValue = true;
-            this.ckPrint.Location = new System.Drawing.Point(787, 9);
+            this.ckPrint.Location = new System.Drawing.Point(828, 9);
             this.ckPrint.Name = "ckPrint";
             this.ckPrint.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.ckPrint.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -201,12 +220,13 @@
             this.ckPrint.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.ckPrint.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.ckPrint.Selectable = true;
-            this.ckPrint.Size = new System.Drawing.Size(93, 24);
+            this.ckPrint.Size = new System.Drawing.Size(80, 24);
             this.ckPrint.TabIndex = 5;
+            this.ckPrint.CheckedChanged += new System.EventHandler(this.ckPrint_CheckedChanged);
             // 
             // TxtProPinyin
             // 
-            this.TxtProPinyin.Location = new System.Drawing.Point(675, 8);
+            this.TxtProPinyin.Location = new System.Drawing.Point(643, 8);
             this.TxtProPinyin.Name = "TxtProPinyin";
             this.TxtProPinyin.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.TxtProPinyin.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -215,13 +235,13 @@
             this.TxtProPinyin.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.TxtProPinyin.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.TxtProPinyin.Properties.ReadOnly = true;
-            this.TxtProPinyin.Size = new System.Drawing.Size(106, 26);
+            this.TxtProPinyin.Size = new System.Drawing.Size(83, 26);
             this.TxtProPinyin.TabIndex = 4;
             // 
             // cJiaLabel4
             // 
             this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cJiaLabel4.Location = new System.Drawing.Point(609, 12);
+            this.cJiaLabel4.Location = new System.Drawing.Point(577, 12);
             this.cJiaLabel4.Name = "cJiaLabel4";
             this.cJiaLabel4.Size = new System.Drawing.Size(52, 19);
             this.cJiaLabel4.TabIndex = 4;
@@ -284,10 +304,10 @@
             this.ProjectSearch.Properties.Appearance.Options.UseBorderColor = true;
             this.ProjectSearch.Properties.Appearance.Options.UseFont = true;
             this.ProjectSearch.Properties.Appearance.Options.UseForeColor = true;
-            toolTipItem1.Text = "查询";
-            superToolTip1.Items.Add(toolTipItem1);
+            toolTipItem2.Text = "查询";
+            superToolTip2.Items.Add(toolTipItem2);
             this.ProjectSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("ProjectSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("ProjectSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, superToolTip2, true)});
             this.ProjectSearch.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.ProjectSearch.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.ProjectSearch.Size = new System.Drawing.Size(300, 32);
@@ -308,7 +328,7 @@
             this.ProjectGrid.Margin = new System.Windows.Forms.Padding(20);
             this.ProjectGrid.Name = "ProjectGrid";
             this.ProjectGrid.ShowRowNumber = true;
-            this.ProjectGrid.Size = new System.Drawing.Size(968, 313);
+            this.ProjectGrid.Size = new System.Drawing.Size(999, 313);
             this.ProjectGrid.TabIndex = 4;
             this.ProjectGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -511,21 +531,21 @@
             this.cJiaLabel1.TabIndex = 3;
             this.cJiaLabel1.Text = "类别字典";
             // 
-            // ckLook
+            // ckExport
             // 
-            this.ckLook.EditValue = true;
-            this.ckLook.Location = new System.Drawing.Point(870, 10);
-            this.ckLook.Name = "ckLook";
-            this.ckLook.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ckLook.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ckLook.Properties.Appearance.Options.UseBackColor = true;
-            this.ckLook.Properties.Appearance.Options.UseFont = true;
-            this.ckLook.Properties.Caption = "可以浏览";
-            this.ckLook.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.ckLook.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.ckLook.Selectable = true;
-            this.ckLook.Size = new System.Drawing.Size(93, 24);
-            this.ckLook.TabIndex = 8;
+            this.ckExport.Location = new System.Drawing.Point(914, 10);
+            this.ckExport.Name = "ckExport";
+            this.ckExport.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.ckExport.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ckExport.Properties.Appearance.Options.UseBackColor = true;
+            this.ckExport.Properties.Appearance.Options.UseFont = true;
+            this.ckExport.Properties.Caption = "可以导出";
+            this.ckExport.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.ckExport.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ckExport.Selectable = true;
+            this.ckExport.Size = new System.Drawing.Size(80, 24);
+            this.ckExport.TabIndex = 9;
+            this.ckExport.CheckedChanged += new System.EventHandler(this.ckExport_CheckedChanged);
             // 
             // ProjectManageView
             // 
@@ -541,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).EndInit();
             this.cJiaPanel2.ResumeLayout(false);
             this.cJiaPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckLook.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckPrint.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtProPinyin.Properties)).EndInit();
@@ -549,7 +570,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProjectSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ckLook.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckExport.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -580,5 +601,6 @@
         private Controls.CJiaLabel cJiaLabel6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private Controls.CJiaCheck ckLook;
+        private Controls.CJiaCheck ckExport;
     }
 }

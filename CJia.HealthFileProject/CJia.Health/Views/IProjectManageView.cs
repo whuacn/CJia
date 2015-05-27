@@ -62,5 +62,9 @@ namespace CJia.Health.Views
         /// 是否可以浏览（1可以浏览，0不可以）
         /// </summary>
         public string isLook;
+        /// <summary>
+        /// 是否可以导出（1可以浏览，0不可以）
+        /// </summary>
+        public string isExport;
     }
 }
