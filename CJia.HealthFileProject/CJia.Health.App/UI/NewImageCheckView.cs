@@ -303,6 +303,25 @@ namespace CJia.Health.App.UI
 
         public event EventHandler<Views.NewImageCheckViewArgs> OnNOLook;
 
+        public event EventHandler<Views.NewImageCheckViewArgs> OnPrint;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnExport;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnLock;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnUnLock;
+
+        public void ExePrint(bool result)
+        {
+
+
+        }
+
+        public void ExeExport(bool result)
+        {
+
+        }
+
         public void ExeYesLook(bool result)
         {
             if (result)

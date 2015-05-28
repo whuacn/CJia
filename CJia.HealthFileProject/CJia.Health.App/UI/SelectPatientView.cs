@@ -93,15 +93,20 @@ namespace CJia.Health.App.UI
         /// <param name="dtPicture"></param>
         public void ExeBindChkPicture(DataTable dtPicture)
         {
+            DataTable data = dtPicture.Clone();
             if (dtPicture != null && dtPicture.Rows.Count > 0)
             {
                 foreach (DataRow dr in dtPicture.Rows)
                 {
                     string host = "ftp://" + CJia.Health.Tools.ConfigHelper.GetAppStrings("ftp_ip");
                     dr["SRC"] = host + "/" + dr["SRC"].ToString().Replace('\\', '/');
+                    if (dr["IS_LOOK"].ToString() == "1" && dr["PRO_LOOK"].ToString() == "1")//不可打印的项目分类，不显示
+                    {
+                        data.Rows.Add(dr.ItemArray);
+                    }
                 }
             }
-            cgPicture.DataSource = dtPicture;
+            cgPicture.DataSource = data;
             DataRow drPatient = this.gvPatientInfo.GetFocusedDataRow();
             if (drPatient != null)
             {
@@ -286,6 +291,7 @@ namespace CJia.Health.App.UI
         {
             if (gvPatientInfo.GetFocusedDataRow() != null)
             {
+                pdfViewer.FileName = "";
                 OnPatientDoubleClick(sender, SetArgs());
             }
         }

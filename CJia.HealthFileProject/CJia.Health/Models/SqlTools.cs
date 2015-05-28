@@ -1118,7 +1118,16 @@ values
         {
             get
             {
-                return @"select sp.*,decode(sp.is_look,'1','是','0','否') is_look_name,
+                return @"select sp.*,(case
+         when sp.is_export = '1' then
+          '可以导出'
+         when sp.is_print='1' then
+          '可以打印'
+         when sp.is_look = '1' then
+          '可以浏览'
+         else
+          '不能浏览'
+       end) is_look_name,
        (select gc.name from gm_code gc where gc.code = sp.check_status) check_status_name
   from st_picture sp
  where sp.status = '1'
@@ -2502,7 +2511,7 @@ values
                 return @"select (sp.page_no || '/' || sp.subpage || ' ' ||
                        sp.pro_name) pic_info,
                        sp.*,
-                       gc.name check_status_name,sp.storage_path || '\' || sp.picture_name src,GP.IS_PRINT
+                       gc.name check_status_name,sp.storage_path || '\' || sp.picture_name src,GP.IS_PRINT pro_print,gp.is_look pro_look,gp.is_export pro_export
                   from st_picture sp, gm_code gc,GM_PROJECT GP
                  where sp.check_status = gc.code
                  AND SP.PRO_ID=GP.PRO_ID
