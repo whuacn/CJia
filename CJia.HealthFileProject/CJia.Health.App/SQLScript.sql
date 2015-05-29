@@ -242,17 +242,27 @@ ALTER TABLE GM_PROJECT ADD IS_EXPORT CHAR(1) default 0;
 
 ALTER TABLE ST_PICTURE ADD IS_EXPORT CHAR(1) default 0;
 -- Create table 2015-5-26
+-- Create table
 create table GM_TRACE
 (
-  trace_code    VARCHAR2(50),
-  trace_type    VARCHAR2(100),
-  trace_context VARCHAR2(200),
-  trace_date    DATE
+  trace_code      VARCHAR2(50),
+  trace_type      VARCHAR2(100),
+  trace_context   VARCHAR2(200),
+  trace_date      DATE,
+  trace_user_id   NUMBER,
+  trace_user_name VARCHAR2(50)
 )
 tablespace DATA01
   pctfree 10
   initrans 1
-  maxtrans 255;
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
 -- Create/Recreate indexes 
 create index IDX_TRACE_DATE on GM_TRACE (TRACE_DATE)
   tablespace DATA01
@@ -262,6 +272,7 @@ create index IDX_TRACE_DATE on GM_TRACE (TRACE_DATE)
   storage
   (
     initial 64K
+    next 1M
     minextents 1
     maxextents unlimited
   );
