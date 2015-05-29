@@ -237,3 +237,28 @@ values (1000010001, '浏览权限', '305', '1', 1000000081, to_date('16-05-2015 16:2
 
 insert into tm_function (FUNCTION_ID, FUNCTION_NAME, USER_TYPE, STATUS, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE)
 values (1000010002, '水印设置', '305', '1', 1000000081, to_date('16-05-2015 16:21:13', 'dd-mm-yyyy hh24:mi:ss'), null, null);
+
+-- Create table 2015-5-26
+create table GM_TRACE
+(
+  trace_code    VARCHAR2(50),
+  trace_type    VARCHAR2(100),
+  trace_context VARCHAR2(200),
+  trace_date    DATE
+)
+tablespace DATA01
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Create/Recreate indexes 
+create index IDX_TRACE_DATE on GM_TRACE (TRACE_DATE)
+  tablespace DATA01
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );

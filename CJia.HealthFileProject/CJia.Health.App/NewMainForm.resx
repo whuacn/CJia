@@ -172,7 +172,7 @@
     <value>barSubItem3</value>
   </data>
   <data name="btnImagesInput.Caption" xml:space="preserve">
-    <value>图片拍照</value>
+    <value>病案拍照</value>
   </data>
   <data name="btnImagesInput.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4571,7 +4571,7 @@
     <value>微软雅黑, 9pt</value>
   </data>
   <data name="toolStripButton1.Caption" xml:space="preserve">
-    <value>图片扫描</value>
+    <value>病案扫描</value>
   </data>
   <data name="toolStripButton1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4615,7 +4615,7 @@
     <value>微软雅黑, 9pt</value>
   </data>
   <data name="toolStripButton2.Caption" xml:space="preserve">
-    <value>图片合并</value>
+    <value>病案合并</value>
   </data>
   <data name="toolStripButton2.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4683,7 +4683,7 @@
     <value>180</value>
   </data>
   <data name="btnProSet.Caption" xml:space="preserve">
-    <value>图片分类</value>
+    <value>病案分类</value>
   </data>
   <data name="btnProSet.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

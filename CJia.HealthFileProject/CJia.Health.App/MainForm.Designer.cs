@@ -40,8 +40,8 @@ namespace CJia.Health.App
             this.btnFirst = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInfoInput1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImagesInput1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.图片扫描ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.图片合并ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.病案扫描ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.病案合并ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProSet1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToolDataCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDataQuery1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -164,8 +164,8 @@ namespace CJia.Health.App
             this.btnFirst,
             this.btnInfoInput1,
             this.btnImagesInput1,
-            this.图片扫描ToolStripMenuItem,
-            this.图片合并ToolStripMenuItem,
+            this.病案扫描ToolStripMenuItem,
+            this.病案合并ToolStripMenuItem,
             this.btnProSet1,
             this.btnToolDataCheck,
             this.btnDataQuery1,
@@ -197,28 +197,28 @@ namespace CJia.Health.App
             // 
             this.btnImagesInput1.Name = "btnImagesInput1";
             this.btnImagesInput1.Size = new System.Drawing.Size(162, 24);
-            this.btnImagesInput1.Text = "图片拍照";
+            this.btnImagesInput1.Text = "病案拍照";
             this.btnImagesInput1.Click += new System.EventHandler(this.btnImagesInput_Click);
             // 
-            // 图片扫描ToolStripMenuItem
+            // 病案扫描ToolStripMenuItem
             // 
-            this.图片扫描ToolStripMenuItem.Name = "图片扫描ToolStripMenuItem";
-            this.图片扫描ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
-            this.图片扫描ToolStripMenuItem.Text = "图片扫描";
-            this.图片扫描ToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.病案扫描ToolStripMenuItem.Name = "病案扫描ToolStripMenuItem";
+            this.病案扫描ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.病案扫描ToolStripMenuItem.Text = "病案扫描";
+            this.病案扫描ToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // 图片合并ToolStripMenuItem
+            // 病案合并ToolStripMenuItem
             // 
-            this.图片合并ToolStripMenuItem.Name = "图片合并ToolStripMenuItem";
-            this.图片合并ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
-            this.图片合并ToolStripMenuItem.Text = "图片合并";
-            this.图片合并ToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.病案合并ToolStripMenuItem.Name = "病案合并ToolStripMenuItem";
+            this.病案合并ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.病案合并ToolStripMenuItem.Text = "病案合并";
+            this.病案合并ToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // btnProSet1
             // 
             this.btnProSet1.Name = "btnProSet1";
             this.btnProSet1.Size = new System.Drawing.Size(162, 24);
-            this.btnProSet1.Text = "图片分类";
+            this.btnProSet1.Text = "病案分类";
             this.btnProSet1.Click += new System.EventHandler(this.btnProSet_Click);
             // 
             // btnToolDataCheck
@@ -465,7 +465,7 @@ namespace CJia.Health.App
             this.btnImagesInput.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnImagesInput.Name = "btnImagesInput";
             this.btnImagesInput.Size = new System.Drawing.Size(68, 53);
-            this.btnImagesInput.Text = "图片拍照";
+            this.btnImagesInput.Text = "病案拍照";
             this.btnImagesInput.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImagesInput.Click += new System.EventHandler(this.btnImagesInput_Click);
             // 
@@ -480,7 +480,7 @@ namespace CJia.Health.App
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(68, 53);
-            this.toolStripButton1.Text = "图片扫描";
+            this.toolStripButton1.Text = "病案扫描";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -495,7 +495,7 @@ namespace CJia.Health.App
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(68, 53);
-            this.toolStripButton2.Text = "图片合并";
+            this.toolStripButton2.Text = "病案合并";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -510,7 +510,7 @@ namespace CJia.Health.App
             this.btnProSet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnProSet.Name = "btnProSet";
             this.btnProSet.Size = new System.Drawing.Size(68, 53);
-            this.btnProSet.Text = "图片分类";
+            this.btnProSet.Text = "病案分类";
             this.btnProSet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProSet.Click += new System.EventHandler(this.btnProSet_Click);
             // 
@@ -774,8 +774,8 @@ namespace CJia.Health.App
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripMenuItem 图片扫描ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 图片合并ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 病案扫描ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 病案合并ToolStripMenuItem;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
     }

@@ -11,9 +11,9 @@ namespace CJia.Health.Presenters
         public LoginViewPresenter(Views.ILoginView view)
             : base(view)
         {
-            view.OnLogin+=view_OnLogin;
+            view.OnLogin += view_OnLogin;
         }
-        void view_OnLogin(object sender, Views.LoginEventArgs e)
+        public virtual void view_OnLogin(object sender, Views.LoginEventArgs e)
         {
             DataTable dt = Model.GetUserByNOAndPwd(e.UserNo, e.Password);
             if (dt != null && dt.Rows.Count > 0)

@@ -391,7 +391,7 @@ namespace CJia.Health.App.UI
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.Caption = "图片名称";
+            this.gridColumn1.Caption = "病案名称";
             this.gridColumn1.FieldName = "Pic_Name";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
@@ -442,7 +442,7 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "图片路径";
+            this.gridColumn6.Caption = "病案路径";
             this.gridColumn6.FieldName = "Pic_Path";
             this.gridColumn6.Name = "gridColumn6";
             // 
@@ -454,7 +454,7 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "图片扩展名";
+            this.gridColumn8.Caption = "病案扩展名";
             this.gridColumn8.FieldName = "Pic_Extension";
             this.gridColumn8.Name = "gridColumn8";
             // 
@@ -567,7 +567,7 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn12
             // 
-            this.gridColumn12.Caption = "图片名称";
+            this.gridColumn12.Caption = "病案名称";
             this.gridColumn12.FieldName = "PICTURE_NAME";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
@@ -614,7 +614,7 @@ namespace CJia.Health.App.UI
             // 
             // gridColumn17
             // 
-            this.gridColumn17.Caption = "图片路径";
+            this.gridColumn17.Caption = "病案路径";
             this.gridColumn17.FieldName = "SRC";
             this.gridColumn17.Name = "gridColumn17";
             // 

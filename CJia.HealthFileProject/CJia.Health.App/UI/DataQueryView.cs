@@ -122,7 +122,7 @@ namespace CJia.Health.App.UI
 
                 DevExpress.XtraTab.XtraTabPage xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
                 xtraTabPage2.Name = "xtraTabPage2";
-                xtraTabPage2.Text = "图片档案";
+                xtraTabPage2.Text = "病案档案";
                 this.OnSelectPic(null, new Views.DataQueryArgs()
                 {
                     healthId = patientInfo["ID"].ToString()
@@ -169,7 +169,7 @@ namespace CJia.Health.App.UI
                 cJiaTabControl1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.Default;
                 cJiaTabControl1.Tag = patientInfo;
                 //cJiaTabControl1.ShowPage("病人基本信息", new CJia.Health.App.UI.PatientInfoView(patientInfo));
-                //cJiaTabControl1.ShowPage("图片档案", new CJia.Health.App.UI.ImageInfoView(patientInfo));
+                //cJiaTabControl1.ShowPage("病案档案", new CJia.Health.App.UI.ImageInfoView(patientInfo));
 
                 //imageInfoView.Dock = DockStyle.Fill;
 
@@ -219,7 +219,7 @@ namespace CJia.Health.App.UI
         public event EventHandler<Views.DataQueryArgs> OnSreach;
 
         /// <summary>
-        /// 查询图片事件
+        /// 查询病案事件
         /// </summary>
         public event EventHandler<Views.DataQueryArgs> OnSelectPic;
 

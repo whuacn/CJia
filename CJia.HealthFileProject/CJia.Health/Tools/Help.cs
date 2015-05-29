@@ -504,5 +504,17 @@ namespace CJia.Health.Tools
 
         }
         #endregion
+
+        /// <summary>
+        /// 插入操作日志
+        /// </summary>
+        /// <param name="trace_code"></param>
+        /// <param name="trace_type"></param>
+        /// <param name="trace_context"></param>
+        public static void TraceContext(string trace_code, string trace_type, string trace_context, string trace_user_id, string trace_user_name)
+        {
+            object[] parames = new object[] { trace_code, trace_type, trace_context, trace_user_id, trace_user_name };
+            CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlInsertTraceContext, parames);
+        }
     }
 }

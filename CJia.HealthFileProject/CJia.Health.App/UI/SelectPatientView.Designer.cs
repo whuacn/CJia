@@ -1665,7 +1665,7 @@
             this.pagePic.Controls.Add(this.splitContainerControl2);
             this.pagePic.Name = "pagePic";
             this.pagePic.Size = new System.Drawing.Size(1259, 693);
-            this.pagePic.Text = "图片信息";
+            this.pagePic.Text = "病案信息";
             // 
             // splitContainerControl2
             // 

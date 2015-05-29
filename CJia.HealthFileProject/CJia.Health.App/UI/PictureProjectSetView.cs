@@ -23,11 +23,11 @@ namespace CJia.Health.App.UI
         /// </summary>
         private DataTable RecordNOData;
         /// <summary>
-        /// 图片信息
+        /// 病案信息
         /// </summary>
         private DataTable PictureInfo;
         /// <summary>
-        /// 已入库的图片信息
+        /// 已入库的病案信息
         /// </summary>
         private DataTable InputPictureData;
         /// <summary>
@@ -78,26 +78,26 @@ namespace CJia.Health.App.UI
                 OutHosDate = outDate;
                 if (checkState == "103")//已提交
                 {
-                    MessageBox.Show("此病案为已提交审核，不能进行图片分类");
+                    MessageBox.Show("此病案为已提交审核，不能进行病案分类");
                     BindNull();
                     return;
                 }
                 if (checkState == "101")
                 {
-                    MessageBox.Show("此病案为已审核通过，不能进行图片分类");
+                    MessageBox.Show("此病案为已审核通过，不能进行病案分类");
                     BindNull();
                     return;
                 }
 
                 if (checkState == "100" || checkState == "107")//没有合并成功
                 {
-                    MessageBox.Show("此病案没有进行合并，不能进行图片分类");
+                    MessageBox.Show("此病案没有进行合并，不能进行病案分类");
                     BindNull();
                     return;
                 }
                 if (checkState == "102")//审核未通过
                 {
-                    MessageBox.Show("此病案为审核未通过，请查看已入库图片的审核原因，进行重新分类");
+                    MessageBox.Show("此病案为审核未通过，请查看已入库病案的审核原因，进行重新分类");
                 }
                 if (OnSelectPicture != null)
                 {
@@ -177,7 +177,7 @@ namespace CJia.Health.App.UI
             return new Presenters.ImagesInputPresenter(this);
         }
         /// <summary>
-        /// 传递图片信息参数类
+        /// 传递病案信息参数类
         /// </summary>
         Views.ImagesInputArgs imagesInputArgs = new Views.ImagesInputArgs();
 
@@ -213,14 +213,14 @@ namespace CJia.Health.App.UI
                 string count = rows.Length.ToString();
                 string meg = @"病案号：" + LURecordNO.DisplayText + "\r\n" +
                         "第 " + txtTimes.Text + " 次入院" + "\r\n" +
-                        "共: " + count + " 张图片" + "\r\n" +
+                        "共: " + count + " 张病案" + "\r\n" +
                         "是否确认入库? ";
                 if (Message.ShowQuery(meg, Message.Button.YesNo) == Message.Result.Yes)
                 {
                     if (OnInput != null)
                     {
                         imagesInputArgs.PictureData = GetSavePictureData();
-                        OnInput(sender, imagesInputArgs);//保存图片信息到数据库
+                        OnInput(sender, imagesInputArgs);//保存病案信息到数据库
                     }
                     CopyFilesToNext();
                     DataTable data = CreatePictureDate();
@@ -242,7 +242,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    if (Message.ShowQuery("所有图片都已入库，是否提交审核？", Message.Button.YesNo) == Message.Result.Yes)
+                    if (Message.ShowQuery("所有病案都已入库，是否提交审核？", Message.Button.YesNo) == Message.Result.Yes)
                     {
                         btnReview_Click(null, null);
                     }
@@ -285,7 +285,7 @@ namespace CJia.Health.App.UI
                 DataRow focuseRow = inputView.GetFocusedDataRow();
                 if (isPage() != null)
                 {
-                    if (Message.ShowQuery("您【已保存图片】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
+                    if (Message.ShowQuery("您【已保存病案】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
                     {
                         UpdatePicState(isPage());
                         UpdatePicture(focuseRow);
@@ -298,7 +298,7 @@ namespace CJia.Health.App.UI
                 }
                 else if (isInput(focuseRow).Length > 0)
                 {
-                    if (Message.ShowQuery("您【已入库图片】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
+                    if (Message.ShowQuery("您【已入库病案】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
                     {
                         if (OnInputDelete != null)
                         {
@@ -441,7 +441,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
                 this.ParentForm.Activate();
             }
@@ -459,7 +459,7 @@ namespace CJia.Health.App.UI
             }
             if (!ckInput.Checked && pictureView.GetFocusedDataRow() != null && pictureView.GetFocusedDataRow()["Pic_State"].ToString() == "")
             {
-                if (Message.ShowQuery("确定删除此张图片吗？", Message.Button.OkCancel) == Message.Result.Ok)
+                if (Message.ShowQuery("确定删除此张病案吗？", Message.Button.OkCancel) == Message.Result.Ok)
                 {
                     DataRow focuseRow = pictureView.GetFocusedDataRow();
                     string fileName = focuseRow["Pic_Path"].ToString();
@@ -531,7 +531,7 @@ namespace CJia.Health.App.UI
             return "";
         }
         /// <summary>
-        /// 判断已入库的图片中是否存在此页码设置,并且返回图片id
+        /// 判断已入库的病案中是否存在此页码设置,并且返回病案id
         /// </summary>
         /// <returns></returns>
         public string isInput()
@@ -549,14 +549,14 @@ namespace CJia.Health.App.UI
             return "";
         }
         /// <summary>
-        /// 保存的图片中存在页码设置
+        /// 保存的病案中存在页码设置
         /// </summary>
         /// <param name="dr"></param>
         public void Save(DataRow dr)
         {
             if (isPage(dr))
             {
-                if (Message.ShowQuery("您【已保存图片】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
+                if (Message.ShowQuery("您【已保存病案】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
                 {
                     UpdatePicState(dr);
                     SavePictureInfo(dr);
@@ -564,14 +564,14 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 入库的图片中存在页码设置
+        /// 入库的病案中存在页码设置
         /// </summary>
         /// <param name="dr"></param>
         public void Input(DataRow dr)
         {
             if (isInput().Length > 0)
             {
-                if (Message.ShowQuery("您【已入库图片】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
+                if (Message.ShowQuery("您【已入库病案】中存在此页码设置，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
                 {
                     if (OnInputDelete != null)
                     {
@@ -588,7 +588,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 获得保存的图片信息
+        /// 获得保存的病案信息
         /// </summary>
         public DataTable GetSavePictureData()
         {
@@ -608,7 +608,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 保存图片到服务器207
+        /// 保存病案到服务器207
         /// </summary>
         public void InputPicture()
         {
@@ -616,15 +616,15 @@ namespace CJia.Health.App.UI
             string count = rows.Length.ToString();
             string meg = @"病案号：" + LURecordNO.DisplayText + "\r\n" +
                     "第 " + txtTimes.Text + " 次入院" + "\r\n" +
-                    "共: " + count + " 张图片" + "\r\n" +
+                    "共: " + count + " 张病案" + "\r\n" +
                     "是否确认入库? ";
             if (Message.ShowQuery(meg, Message.Button.YesNo) == Message.Result.Yes)
             {
-                CopyFilesToNet(GetSavePictureData());//上传图片
+                CopyFilesToNet(GetSavePictureData());//上传病案
             }
         }
         /// <summary>
-        /// 保存图片修改
+        /// 保存病案修改
         /// </summary>
         /// <param name="row"></param>
         public void SavePictureInfo(DataRow row)
@@ -704,7 +704,7 @@ namespace CJia.Health.App.UI
             return false;
         }
         /// <summary>
-        /// 创建图片DataTable
+        /// 创建病案DataTable
         /// </summary>
         /// <returns></returns>
         public DataTable PictureData()
@@ -724,7 +724,7 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
-        /// 根据图片路径获得DataRow
+        /// 根据病案路径获得DataRow
         /// </summary>
         /// <param name="data"></param>
         /// <param name="pathName"></param>
@@ -759,7 +759,7 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
-        /// 根据目录获得图片Datatable
+        /// 根据目录获得病案Datatable
         /// </summary>
         /// <param name="pathname"></param>
         /// <returns></returns>
@@ -781,7 +781,7 @@ namespace CJia.Health.App.UI
                 bool bol = FtpHelp.FtpIsExistsFile(storagePath, HostName, UserName, Password);
                 if (bol)
                 {
-                    string imgExtension = ConfigHelper.GetAppStrings("ImgExtension");//图片格式
+                    string imgExtension = ConfigHelper.GetAppStrings("ImgExtension");//病案格式
                     string[] picName = FtpHelp.GetFileList(storagePath, HostName, UserName, Password, imgExtension);
                     if (picName != null && picName.Length > 0)
                     {
@@ -793,7 +793,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    MessageBox.Show("此病案未上传任何图片");
+                    MessageBox.Show("此病案未上传任何病案");
                 }
                 PictureInfo = data;
                 return data;
@@ -805,7 +805,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 判断图片格式为Jpeg
+        /// 判断病案格式为Jpeg
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
@@ -878,7 +878,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 上传图片到服务器上
+        /// 上传病案到服务器上
         /// </summary>
         public void CopyFilesToNet(DataTable data)
         {
@@ -890,7 +890,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 删除本地图片
+        /// 删除本地病案
         /// </summary>
         public void DeleteFile()
         {
@@ -904,7 +904,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// copy图片到图片目录下的子目录
+        /// copy病案到病案目录下的子目录
         /// </summary>
         public void CopyFilesToNext()
         {
@@ -1042,7 +1042,7 @@ namespace CJia.Health.App.UI
         }
         #endregion
 
-        #region 图片旋转函数
+        #region 病案旋转函数
         /// <summary>
         /// 以逆时针为方向对图像进行旋转
         /// </summary>
@@ -1081,7 +1081,7 @@ namespace CJia.Health.App.UI
             g.Dispose();
             return dsImage;
         }
-        #endregion 图片旋转函数
+        #endregion 病案旋转函数
 
         private void btnReview_Click(object sender, EventArgs e)
         {
@@ -1090,7 +1090,7 @@ namespace CJia.Health.App.UI
                 DataTable data = (DataTable)pictureGrid.DataSource;
                 if (data != null && data.Rows.Count > 0)
                 {
-                    MessageBox.Show("还存在未入库的图片，不能提交审核");
+                    MessageBox.Show("还存在未入库的病案，不能提交审核");
                     return;
                 }
                 imagesInputArgs.HealthID = LURecordNO.DisplayValue;
@@ -1135,7 +1135,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
                 LUProject.DisplayText = focuseRow["Pic_ProjectName"].ToString();
                 LUProject.Text = focuseRow["Pic_ProjectName"].ToString();
@@ -1183,14 +1183,14 @@ namespace CJia.Health.App.UI
                     }
                     else
                     {
-                        Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                        Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                     }
                 }
             }
             catch { }
         }
         /// <summary>
-        /// 图片名称
+        /// 病案名称
         /// </summary>
         private string PicName;
         private void btnSavePic_Click(object sender, EventArgs e)
@@ -1200,7 +1200,7 @@ namespace CJia.Health.App.UI
             //    try
             //    {
             //        Image img = cJiaPicture.Image;
-            //        string linshipath = CJia.Health.Tools.ConfigHelper.GetAppStrings("JJCJScanPicPath");//临时保存图片
+            //        string linshipath = CJia.Health.Tools.ConfigHelper.GetAppStrings("JJCJScanPicPath");//临时保存病案
             //        CreaterFolder(linshipath);
             //        string picInfo = linshipath + "\\" + PicName;
             //        img.Save(picInfo);
