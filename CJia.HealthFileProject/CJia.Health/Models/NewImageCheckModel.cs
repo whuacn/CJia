@@ -169,10 +169,10 @@ namespace CJia.Health.Models
             return false;
         }
 
-        public bool ModifyLookStatus(string picID,string lookStatus)
+        public bool ModifyLookStatus(string picID,string lookStatus,string printStatus,string exportStatus)
         {
-            string sql = @"update st_picture sp set sp.is_look=? WHERE sp.picture_id=?";
-            object[] sqlParams = new object[] { lookStatus, picID };
+            string sql = @"update st_picture sp set sp.is_look=?,sp.is_print=?,sp.is_export=? WHERE sp.picture_id=?";
+            object[] sqlParams = new object[] { lookStatus, printStatus, exportStatus, picID };
             int result = CJia.DefaultOleDb.Execute(sql, sqlParams);
             if (result == 1)
             {

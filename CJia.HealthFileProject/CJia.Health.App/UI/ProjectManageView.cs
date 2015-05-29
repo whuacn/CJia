@@ -71,8 +71,9 @@ namespace CJia.Health.App.UI
                 TxtProName.Text = dr["PRO_NAME"].ToString();
                 TxtProNo.Text = dr["PRO_NO"].ToString();
                 TxtProPinyin.Text = dr["FIRST_PINYIN"].ToString();
-                ckPrint.Checked = dr["IS_PRINT"].ToString() == "1" ? true : false;//by dh
                 ckLook.Checked = dr["IS_LOOK"].ToString() == "1" ? true : false;
+                ckPrint.Checked = dr["IS_PRINT"].ToString() == "1" ? true : false;//by dh
+                ckExport.Checked = dr["IS_EXPORT"].ToString() == "1" ? true : false;
                 projectArg.ProId = dr["PRO_ID"].ToString();
                 txtKey.Text = dr["SHORT_KEY"].ToString();
             }
@@ -99,6 +100,7 @@ namespace CJia.Health.App.UI
                 projectArg.UserID = User.UserData.Rows[0]["USER_ID"].ToString();
                 projectArg.isPrint = ckPrint.Checked == true ? "1" : "0";//by dh
                 projectArg.isLook = ckLook.Checked == true ? "1" : "0";
+                projectArg.isExport = ckExport.Checked == true ? "1" : "0";
                 Models.ProjectManageModel model = new Models.ProjectManageModel();
                 int i = model.CheckProIsRepeat(projectArg.ProNo, projectArg.ProId);
                 bool bol = model.IsShortKey(txtKey.Text.Trim().ToUpper());
@@ -151,6 +153,7 @@ namespace CJia.Health.App.UI
                 projectArg.ProId = " ";
                 projectArg.isPrint = ckPrint.Checked == true ? "1" : "0";//by dh
                 projectArg.isLook = ckLook.Checked == true ? "1" : "0";
+                projectArg.isExport = ckExport.Checked == true ? "1" : "0";
                 Models.ProjectManageModel model = new Models.ProjectManageModel();//这。。。严重违反MVP模式
                 int i = model.CheckProIsRepeat(projectArg.ProNo, projectArg.ProId);
                 bool bol = model.IsShortKey(txtKey.Text.Trim().ToUpper());
@@ -269,6 +272,36 @@ namespace CJia.Health.App.UI
             return base.ProcessCmdKey(ref msg, keyData);
         }
         #endregion
+
+        private void ckLook_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!ckLook.Checked)
+            {
+                ckPrint.Checked = false;
+                ckExport.Checked = false;
+            }
+        }
+
+        private void ckPrint_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckPrint.Checked)
+            {
+                ckLook.Checked = true;
+            }
+            else
+            {
+                ckExport.Checked = false; 
+            }
+        }
+
+        private void ckExport_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckExport.Checked)
+            {
+                ckLook.Checked = true;
+                ckPrint.Checked = true;
+            }
+        }
 
     }
 }

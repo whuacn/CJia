@@ -102,7 +102,7 @@ namespace CJia.Health.App.UI
                     dr["SRC"] = host + "/" + dr["SRC"].ToString().Replace('\\', '/');
                     //    this.chkPicture.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
                     //new DevExpress.XtraEditors.Controls.CheckedListBoxItem(dr["SRC"])});
-                    if (dr["IS_PRINT"].ToString() == "1")//不可打印的项目分类，不显示
+                    if (dr["IS_PRINT"].ToString() == "1" && dr["PRO_PRINT"].ToString() == "1")//不可打印的项目分类，不显示
                     {
                         data.Rows.Add(dr.ItemArray);
                     }
