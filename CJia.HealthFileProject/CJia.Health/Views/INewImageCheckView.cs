@@ -38,6 +38,8 @@ namespace CJia.Health.Views
 
         event EventHandler<NewImageCheckViewArgs> OnUnLock;
 
+        void ExeUnLock(bool result);
+
         void ExePrint(bool result);
 
         void ExeExport(bool result);

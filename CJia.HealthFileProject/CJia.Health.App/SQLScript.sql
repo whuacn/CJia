@@ -241,6 +241,8 @@ values (1000010002, 'ÀÆ”°…Ë÷√', '305', '1', 1000000081, to_date('16-05-2015 16:2
 ALTER TABLE GM_PROJECT ADD IS_EXPORT CHAR(1) default 0;
 
 ALTER TABLE ST_PICTURE ADD IS_EXPORT CHAR(1) default 0;
+
+ALTER TABLE ST_PICTURE ADD IS_PRINT CHAR(1) default 1;
 -- Create table 2015-5-26
 -- Create table
 create table GM_TRACE

@@ -791,7 +791,7 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where p.status='1' AND P.check_status='101' {0}";
+                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where p.status='1' AND P.check_status='101' and p.LOCK_STATUS='110'  {0}";
             }
         }
         /// <summary>
@@ -2625,6 +2625,14 @@ values
                               (trace_code, trace_type, trace_context, trace_date,trace_user_id, trace_user_name)
                             values
                               (?, ?, ?, sysdate,?,?)";
+            }
+        }
+
+        public static string SqlUpdateLockStatus
+        {
+            get
+            {
+                return @"update gm_patient t set t.lock_status=? where t.id=?";
             }
         }
     }

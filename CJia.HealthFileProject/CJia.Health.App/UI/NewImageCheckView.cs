@@ -311,6 +311,11 @@ namespace CJia.Health.App.UI
 
         public event EventHandler<Views.NewImageCheckViewArgs> OnUnLock;
 
+        public void ExeUnLock(bool result)
+        {
+
+        }
+
         public void ExePrint(bool result)
         {
 

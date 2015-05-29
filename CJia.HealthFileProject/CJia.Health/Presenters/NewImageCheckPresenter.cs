@@ -30,12 +30,14 @@ namespace CJia.Health.Presenters
 
         void view_OnUnLock(object sender, Views.NewImageCheckViewArgs e)
         {
-            
+            bool bol = Model.UpdateLockStatus("110", e.healthId);
+            View.ExeUnLock(bol);
         }
 
         void view_OnLock(object sender, Views.NewImageCheckViewArgs e)
         {
-            
+            bool bol = Model.UpdateLockStatus("111", e.healthId);
+            View.ExeLock(bol);
         }
 
         void view_OnExport(object sender, Views.NewImageCheckViewArgs e)

@@ -106,11 +106,29 @@ namespace CJia.Health.App.UI
             {
                 this.OnSreach(null, NewImageCheckViewArgs);
             }
+
         }
 
         // 选择病人后
         void LURecordNO_SelectValueChanged(object sender, EventArgs e)
         {
+            string healthID = LURecordNO.DisplayValue;
+            DataTable data = LURecordNO.DataSource;
+            DataRow[] drs = data.Select(" ID='" + healthID + "' ");
+            if (drs.Length > 0)
+            {
+                string lockstatus = drs[0]["LOCK_STATUS"].ToString();
+                if (lockstatus == "110")
+                {
+                    btnUnLock.Enabled = false;
+                    btnLock.Enabled = true;
+                }
+                else
+                {
+                    btnUnLock.Enabled = true;
+                    btnLock.Enabled = false;
+                }
+            }
             this.SelectPic();
             this.cgPicture.Focus();
         }
@@ -218,6 +236,46 @@ namespace CJia.Health.App.UI
 
         public event EventHandler<Views.NewImageCheckViewArgs> OnUnLock;
 
+        public void ExeUnLock(bool result)
+        {
+            if (result)
+            {
+                MessageBox.Show("此病案解锁成功");
+                btnLock.Enabled = true;
+                btnUnLock.Enabled = false;
+                DataTable data = LURecordNO.DataSource;
+                foreach (DataRow dr in data.Rows)
+                {
+                    string id = dr["ID"].ToString();
+                    if (id == LURecordNO.DisplayValue)
+                    {
+                        dr["LOCK_STATUS"] = "110";
+                        break;
+                    }
+                }
+            }
+        }
+
+        public void ExeLock(bool result)
+        {
+            if (result)
+            {
+                MessageBox.Show("此病案锁定成功");
+                btnLock.Enabled = false;
+                btnUnLock.Enabled = true;
+                DataTable data = LURecordNO.DataSource;
+                foreach (DataRow dr in data.Rows)
+                {
+                    string id = dr["ID"].ToString();
+                    if (id == LURecordNO.DisplayValue)
+                    {
+                        dr["LOCK_STATUS"] = "111";
+                        break;
+                    }
+                }
+            }
+        }
+
         public void ExePrint(bool result)
         {
             if (result)
@@ -273,11 +331,6 @@ namespace CJia.Health.App.UI
         public void ExeCheckReason(DataTable result)
         {
             this.AllCheckReason = result;
-        }
-
-        public void ExeLock(bool result)
-        {
-            throw new NotImplementedException();
         }
 
         public void ExeOpenLock(bool result)
@@ -578,12 +631,18 @@ namespace CJia.Health.App.UI
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            this.keyDown(Keys.F6);
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F6);
+            }
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            this.keyDown(Keys.F5);
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F5);
+            }
         }
 
         private void btnAllYes_Click(object sender, EventArgs e)
@@ -606,12 +665,18 @@ namespace CJia.Health.App.UI
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            this.keyDown(Keys.F7);
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F7);
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            this.keyDown(Keys.F8);
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F8);
+            }
         }
 
         private void btnAllPrint_Click(object sender, EventArgs e)
@@ -656,7 +721,7 @@ namespace CJia.Health.App.UI
             {
                 if (Message.ShowQuery("确定锁定？", Message.Button.OkCancel) == Message.Result.Ok)
                 {
-                    string healthId=(cgPicture.DataSource as DataTable).Rows[0]["HEALTH_ID"].ToString();
+                    string healthId = (cgPicture.DataSource as DataTable).Rows[0]["HEALTH_ID"].ToString();
                     this.OnLock(null, new Views.NewImageCheckViewArgs()
                     {
                         healthId = healthId

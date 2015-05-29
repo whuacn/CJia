@@ -23,6 +23,7 @@ namespace CJia.Health.Models
             string sql = @"select *
   from gm_patient_view gpv
  where gpv.status = '1'
+    and gpv.LOCK_STATUS='110'
    and gpv.check_status = 101
    and gpv.patient_name like ? 
    and gpv.recordno like ?
@@ -50,6 +51,7 @@ namespace CJia.Health.Models
             string sql = @"select *
   from gm_patient_view gpv
  where gpv.status = '1'
+    and gpv.LOCK_STATUS='110'
    and gpv.check_status = 101
    and gpv.patient_name like ? 
    and gpv.recordno like ?
