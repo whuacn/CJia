@@ -712,9 +712,6 @@
     <None Include="Resources\1213.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\QQ图片20130626103705.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CJia.Health\CJia.Health.csproj">
       <Project>{433db958-88fb-449b-8c3f-cca519f44df0}</Project>
       <Name>CJia.Health</Name>
@@ -785,6 +782,8 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="favicon1.ico" />
+    <Content Include="Resources\gannanyixueyuan.jpg" />
+    <None Include="Resources\hislogo.jpg" />
     <Content Include="Resources\logo.ico" />
     <Content Include="Resources\WatermarkGallery.png" />
     <Content Include="SQLScript.sql" />

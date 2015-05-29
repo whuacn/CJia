@@ -51,7 +51,7 @@ namespace CJia.Health.App.UI
             }
         }
 
-        #region IMessageFilter 成员 及 扫描仪 图片保存
+        #region IMessageFilter 成员 及 扫描仪 病案保存
         BITMAPINFOHEADER bmi;
         Rectangle bmprect;
         IntPtr dibhand;
@@ -98,10 +98,10 @@ namespace CJia.Health.App.UI
                         string fileName = txtID.Text + "_" + inhosTimes + "_" + page + "_00";
                         bmpptr = GlobalLock(Img);
                         pixptr = GetPixelInfo(bmpptr);
-                        Gdip.SaveDIBAs(txtFolder.Text, fileName, bmpptr, pixptr);//保存图片
+                        Gdip.SaveDIBAs(txtFolder.Text, fileName, bmpptr, pixptr);//保存病案
                     }
                     isSuccessEnd = true;//已完成
-                    OnRefresh(null, null);//刷新图片采集主窗体
+                    OnRefresh(null, null);//刷新病案采集主窗体
                     timer1.Stop();
                     this.Close();
                     break;

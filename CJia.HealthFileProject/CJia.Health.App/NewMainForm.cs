@@ -310,10 +310,10 @@ namespace CJia.Health.App
                             btnDoctor.Enabled = false;
                             btnBorrowTime.Enabled = false;
                             break;
-                        case "1000000161":              //图片拍照
+                        case "1000000161":              //病案拍照
                             this.btnImagesInput.Enabled = false;
                             break;
-                        case "1000000162":   //图片分类
+                        case "1000000162":   //病案分类
                             this.btnProSet.Enabled = false;
                             break;
                         case "1000000163":                  // 病案查询
@@ -322,10 +322,10 @@ namespace CJia.Health.App
                         case "1000000181":      //病案打印
                             this.btnPrintApply.Enabled = false;
                             break;
-                        case "1000000201":      //图片扫描
+                        case "1000000201":      //病案扫描
                             this.toolStripButton1.Enabled = false;
                             break;
-                        case "1000000203":      //图片合并
+                        case "1000000203":      //病案合并
                             this.toolStripButton2.Enabled = false;
                             break;
                         case "1000001000":      //统计分析

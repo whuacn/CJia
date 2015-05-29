@@ -33,11 +33,11 @@ namespace CJia.Health.App.UI
         /// </summary>
         private DataTable RecordNOData;
         /// <summary>
-        /// 图片信息
+        /// 病案信息
         /// </summary>
         private DataTable PictureInfo;
         /// <summary>
-        /// 已入库的图片信息
+        /// 已入库的病案信息
         /// </summary>
         private DataTable InputPictureData;
         /// <summary>
@@ -121,7 +121,7 @@ namespace CJia.Health.App.UI
             return new Presenters.ImagesInputPresenter(this);
         }
         /// <summary>
-        /// 传递图片信息参数类
+        /// 传递病案信息参数类
         /// </summary>
         Views.ImagesInputArgs imagesInputArgs = new Views.ImagesInputArgs();
 
@@ -153,7 +153,7 @@ namespace CJia.Health.App.UI
                     string count = PictureInfo.Rows.Count.ToString();
                     string meg = @"病案号：" + LURecordNO.DisplayText + "\r\n" +
                             "第 " + txtTimes.Text + " 次入院" + "\r\n" +
-                            "共: " + count + " 张图片" + "\r\n" +
+                            "共: " + count + " 张病案" + "\r\n" +
                             "是否确认入库? ";
                     if (Message.ShowQuery(meg, Message.Button.YesNo) == Message.Result.Yes)
                     {
@@ -169,7 +169,7 @@ namespace CJia.Health.App.UI
                             if (!isSuccessCheckStatus(checkState, false)) return;
                             pdfViewer.FileName = "";
                             smallpdfViewer.FileName = "";
-                            CopyFilesToNet(PictureInfo);//上传图片
+                            CopyFilesToNet(PictureInfo);//上传病案
                         }
                         else
                         {
@@ -181,7 +181,7 @@ namespace CJia.Health.App.UI
                     {
                         return;
                     }
-                    //if (Message.ShowQuery("入库成功的图片已上传至服务器,是否删除本地图片？", Message.Button.YesNo) == Message.Result.Yes)
+                    //if (Message.ShowQuery("入库成功的病案已上传至服务器,是否删除本地病案？", Message.Button.YesNo) == Message.Result.Yes)
                     //{
                     DeleteFile();
                     DataTable data = CreatePictureDate(txtFolder.Text);
@@ -287,7 +287,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
             }
             catch { }
@@ -386,19 +386,19 @@ namespace CJia.Health.App.UI
             string storagePath = OutHosDate.Year.ToString() + "\\" + OutHosDate.Month.ToString() + "\\" + OutHosDate.Day.ToString() + "\\" + LURecordNO.DisplayText + "\\" + str_inHosTimes;
             if (checkState == "103")//已提交
             {
-                MessageBox.Show("此病案为已提交审核，不能进行图片扫描");
+                MessageBox.Show("此病案为已提交审核，不能进行病案扫描");
                 BindNull();
                 return false;
             }
             if (checkState == "101")
             {
-                MessageBox.Show("此病案为已审核通过，不能进行图片扫描");
+                MessageBox.Show("此病案为已审核通过，不能进行病案扫描");
                 BindNull();
                 return false;
             }
             if (checkState == "104")
             {
-                MessageBox.Show("此病案为已合并，不能进行图片扫描");
+                MessageBox.Show("此病案为已合并，不能进行病案扫描");
                 BindNull();
                 return false;
             }
@@ -406,7 +406,7 @@ namespace CJia.Health.App.UI
             {
                 if (Message.ShowQuery("此病案为合并失败，是否进行重新上传？", Message.Button.YesNo) == Message.Result.Yes)
                 {
-                    string imgExtension = ConfigHelper.GetAppStrings("ImgExtension");//图片格式
+                    string imgExtension = ConfigHelper.GetAppStrings("ImgExtension");//病案格式
                     string[] picName = FtpHelp.GetFileList(storagePath.Replace('\\', '/'), HostName, UserName, Password, imgExtension);
                     if (picName != null && picName.Length > 0)
                     {
@@ -431,7 +431,7 @@ namespace CJia.Health.App.UI
             }
             if (checkState == "102" && bol == true)//审核未通过
             {
-                MessageBox.Show("此病案为审核未通过，请查看已入库图片的审核原因，然后进行重新上传");
+                MessageBox.Show("此病案为审核未通过，请查看已入库病案的审核原因，然后进行重新上传");
             }
             return true;
         }
@@ -450,7 +450,7 @@ namespace CJia.Health.App.UI
             pdfViewer.Tag = "";
         }
         /// <summary>
-        /// 合并后修改图片信息
+        /// 合并后修改病案信息
         /// </summary>
         /// <param name="dr"></param>
         /// <param name="newPage"></param>
@@ -474,7 +474,7 @@ namespace CJia.Health.App.UI
             dr["Pic_Path"] = newfilePath;
         }
         /// <summary>
-        /// 判断图片是否空白页
+        /// 判断病案是否空白页
         /// </summary>
         /// <param name="bp"></param>
         /// <returns></returns>
@@ -506,7 +506,7 @@ namespace CJia.Health.App.UI
                     }
                 }
                 float f = float.Parse(m.ToString()) / float.Parse(area.ToString());
-                if (f < 0.985)//空白部分超过99%就认为此图片为空白图片
+                if (f < 0.985)//空白部分超过99%就认为此病案为空白病案
                 {
                     bol = false;
                 }
@@ -527,7 +527,7 @@ namespace CJia.Health.App.UI
                 }
                 float f = float.Parse(m.ToString()) / float.Parse(area.ToString());
                 float blank = float.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("BlankProbability"));
-                if (f < blank)//空白部分超过99%就认为此图片为空白图片
+                if (f < blank)//空白部分超过99%就认为此病案为空白病案
                 {
                     bol = false;
                 }
@@ -545,7 +545,7 @@ namespace CJia.Health.App.UI
                 int i;
                 foreach (DataRow dr in PictureInfo.Rows)
                 {
-                    if (dr["Pic_Name"].ToString().Substring(0, 2) == "PZ")//拍照的图片，过滤出最大的页码
+                    if (dr["Pic_Name"].ToString().Substring(0, 2) == "PZ")//拍照的病案，过滤出最大的页码
                     {
                         try
                         {
@@ -566,7 +566,7 @@ namespace CJia.Health.App.UI
             return 0;
         }
         /// <summary>
-        /// 创建图片DataTable
+        /// 创建病案DataTable
         /// </summary>
         /// <returns></returns>
         public DataTable PictureData()
@@ -586,7 +586,7 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
-        /// 根据图片路径获得DataRow
+        /// 根据病案路径获得DataRow
         /// </summary>
         /// <param name="data"></param>
         /// <param name="pathName"></param>
@@ -625,7 +625,7 @@ namespace CJia.Health.App.UI
         /// </summary>
         private bool isSetWater = false;
         /// <summary>
-        /// 根据目录获得图片Datatable
+        /// 根据目录获得病案Datatable
         /// </summary>
         /// <param name="pathname"></param>
         /// <returns></returns>
@@ -658,7 +658,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 上传图片到服务器上
+        /// 上传病案到服务器上
         /// </summary>
         public void CopyFilesToNet(DataTable data)
         {
@@ -743,7 +743,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 删除本地图片
+        /// 删除本地病案
         /// </summary>
         public void DeleteFile()
         {
@@ -757,7 +757,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// copy图片到图片目录下的子目录
+        /// copy病案到病案目录下的子目录
         /// </summary>
         public void CopyFilesToNext(DataTable data)
         {
@@ -866,7 +866,7 @@ namespace CJia.Health.App.UI
         }
         #endregion
 
-        #region IMessageFilter 成员 及 扫描仪 图片保存
+        #region IMessageFilter 成员 及 扫描仪 病案保存
         BITMAPINFOHEADER bmi;
         Rectangle bmprect;
         IntPtr dibhand;
@@ -907,7 +907,7 @@ namespace CJia.Health.App.UI
                         string fileName = LURecordNO.DisplayText + "_" + inhosTimes + "_" + page + "_00";
                         bmpptr = GlobalLock(Img);
                         pixptr = GetPixelInfo(bmpptr);
-                        Gdip.SaveDIBAs(txtFolder.Text, fileName, bmpptr, pixptr);//保存图片
+                        Gdip.SaveDIBAs(txtFolder.Text, fileName, bmpptr, pixptr);//保存病案
                     }
                     for (int i = 0; i < LstPic.Count; ++i)//回收内存
                     {
@@ -1023,7 +1023,7 @@ namespace CJia.Health.App.UI
 
         }
         /// <summary>
-        /// 设定图片控件大小
+        /// 设定病案控件大小
         /// </summary>
         /// <param name="img"></param>
         public void BindPictureBoxSize(Image img)

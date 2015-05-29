@@ -41,7 +41,7 @@ namespace CJia.Health.App.UI
         /// </summary>
         private string Password = Utils.AESDecrypt(ConfigHelper.GetAppStrings("ftp_password"));
         /// <summary>
-        /// 当前打印图片
+        /// 当前打印病案
         /// </summary>
         private List<Image> listPic = new List<Image>();
 
@@ -51,7 +51,7 @@ namespace CJia.Health.App.UI
         private int pageNo = 0;
 
         /// <summary>
-        /// 判断是否触发checkbox的SelectedValueChanged事件（目的：第一次双击病人后不加载图片）
+        /// 判断是否触发checkbox的SelectedValueChanged事件（目的：第一次双击病人后不加载病案）
         /// </summary>
         private int IsLoadChk = 0;
 
@@ -70,12 +70,12 @@ namespace CJia.Health.App.UI
         public event EventHandler<Views.PrintApplyEventArgs> OnPatientSearch;
 
         /// <summary>
-        /// 双击病人列表绑定checkboxList图片信息
+        /// 双击病人列表绑定checkboxList病案信息
         /// </summary>
         public event EventHandler<Views.PrintApplyEventArgs> OnPatientDoubleClick;
 
         ///// <summary>
-        ///// 查询图片事件
+        ///// 查询病案事件
         ///// </summary>
         //public event EventHandler<Views.PrintApplyEventArgs> OnSelectPicture;
 
@@ -88,7 +88,7 @@ namespace CJia.Health.App.UI
             this.gridPatient.DataSource = dtGridPatient;
         }
         /// <summary>
-        /// 绑定界面选择框图片信息
+        /// 绑定界面选择框病案信息
         /// </summary>
         /// <param name="dtPicture"></param>
         public void ExeBindChkPicture(DataTable dtPicture)
@@ -198,7 +198,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
             }
             catch { }
@@ -309,7 +309,7 @@ namespace CJia.Health.App.UI
         }
 
         /// <summary>
-        /// 图片名称
+        /// 病案名称
         /// </summary>
         private string PicName;
         private void btnSavePic_Click(object sender, EventArgs e)
@@ -319,7 +319,7 @@ namespace CJia.Health.App.UI
             //    try
             //    {
             //        Image img = cJiaPicture.Image;
-            //        string linshipath = CJia.Health.Tools.ConfigHelper.GetAppStrings("JJCJScanPicPath");//临时保存图片
+            //        string linshipath = CJia.Health.Tools.ConfigHelper.GetAppStrings("JJCJScanPicPath");//临时保存病案
             //        if (!Directory.Exists(linshipath))//若文件夹不存在则新建文件夹   
             //        {
             //            Directory.CreateDirectory(linshipath); //新建文件夹   

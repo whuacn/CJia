@@ -20,15 +20,15 @@ namespace CJia.Health.App.UI
         public event EventHandler<Views.ImagesInputArgs> OnShortKeyDown;
         public void ExeBindProjectByShortKey(DataTable data)
         { }
-        private int begin_x;        //图片开始位置
+        private int begin_x;        //病案开始位置
         private int begin_y;
-        private Image image_ori;    //最原始的图片
-        private Image image_dest;   //经缩放后的图片
-        private float zoom;           //缩小放大百份比，每10%为一个阶梯。每次缩放都基于最原始的图片
+        private Image image_ori;    //最原始的病案
+        private Image image_dest;   //经缩放后的病案
+        private float zoom;           //缩小放大百份比，每10%为一个阶梯。每次缩放都基于最原始的病案
         private Point m_StarPoint = Point.Empty;        //for 拖动
         private Point m_ViewPoint = Point.Empty;
         private bool m_StarMove = false;
-        int w;                      //缩放后的图片大小
+        int w;                      //缩放后的病案大小
         int h;
 
         bool msgfilter;
@@ -39,11 +39,11 @@ namespace CJia.Health.App.UI
         /// </summary>
         private DataTable RecordNOData;
         /// <summary>
-        /// 图片信息
+        /// 病案信息
         /// </summary>
         private DataTable PictureInfo;
         /// <summary>
-        /// 已入库的图片信息
+        /// 已入库的病案信息
         /// </summary>
         private DataTable InputPictureData;
         /// <summary>
@@ -51,7 +51,7 @@ namespace CJia.Health.App.UI
         /// </summary>
         private DateTime OutHosDate;
         /// <summary>
-        /// 图片缓存(已入库)
+        /// 病案缓存(已入库)
         /// </summary>
         //private CJia.Health.Tools.ImageCache ImageCancheForInput;
         public PictureInputView()
@@ -79,7 +79,7 @@ namespace CJia.Health.App.UI
                 OutHosDate = outDate;
                 if (checkState == "101" || checkState == "103")//审核通过 已提交
                 {
-                    MessageBox.Show("此病案信息已提交审核或者已审核通过，不能进行图片入库，请联系管理员");
+                    MessageBox.Show("此病案信息已提交审核或者已审核通过，不能进行病案入库，请联系管理员");
                     LURecordNO.DisplayText = "";
                     LURecordNO.Text = "";
                     LURecordNO.DisplayValue = "";
@@ -92,7 +92,7 @@ namespace CJia.Health.App.UI
                 }
                 if (checkState == "102")//审核未通过
                 {
-                    MessageBox.Show("此病案信息审核未通过，请查看已入库图片的审核原因，然后进行重新上传");
+                    MessageBox.Show("此病案信息审核未通过，请查看已入库病案的审核原因，然后进行重新上传");
                 }
                 if (OnSelectPicture != null)
                 {
@@ -121,7 +121,7 @@ namespace CJia.Health.App.UI
             return new Presenters.ImagesInputPresenter(this);
         }
         /// <summary>
-        /// 传递图片信息参数类
+        /// 传递病案信息参数类
         /// </summary>
         Views.ImagesInputArgs imagesInputArgs = new Views.ImagesInputArgs();
 
@@ -201,17 +201,17 @@ namespace CJia.Health.App.UI
                 string count = PictureInfo.Rows.Count.ToString();
                 string meg = @"病案号：" + LURecordNO.DisplayText + "\r\n" +
                         "第 " + txtTimes.Text + " 次入院" + "\r\n" +
-                        "共: " + count + " 张图片" + "\r\n" +
+                        "共: " + count + " 张病案" + "\r\n" +
                         "是否确认入库? ";
                 if (Message.ShowQuery(meg, Message.Button.YesNo) == Message.Result.Yes)
                 {
-                    CopyFilesToNet(PictureInfo);//上传图片
+                    CopyFilesToNet(PictureInfo);//上传病案
                 }
                 else
                 {
                     return;
                 }
-                if (Message.ShowQuery("入库成功的图片已上传至服务器,是否删除本地图片？", Message.Button.YesNo) == Message.Result.Yes)
+                if (Message.ShowQuery("入库成功的病案已上传至服务器,是否删除本地病案？", Message.Button.YesNo) == Message.Result.Yes)
                 {
                     DeleteFile();
                     DataTable data = CreatePictureDate(txtFolder.Text);
@@ -473,7 +473,7 @@ namespace CJia.Health.App.UI
             return 0;
         }
         /// <summary>
-        /// 创建图片DataTable
+        /// 创建病案DataTable
         /// </summary>
         /// <returns></returns>
         public DataTable PictureData()
@@ -493,7 +493,7 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
-        /// 根据图片路径获得DataRow
+        /// 根据病案路径获得DataRow
         /// </summary>
         /// <param name="data"></param>
         /// <param name="pathName"></param>
@@ -519,7 +519,7 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
-        /// 根据目录获得图片Datatable
+        /// 根据目录获得病案Datatable
         /// </summary>
         /// <param name="pathname"></param>
         /// <returns></returns>
@@ -635,7 +635,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 上传图片到服务器上
+        /// 上传病案到服务器上
         /// </summary>
         public void CopyFilesToNet(DataTable data)
         {
@@ -652,7 +652,7 @@ namespace CJia.Health.App.UI
             this.Enabled = true;
         }
         /// <summary>
-        /// 删除本地图片
+        /// 删除本地病案
         /// </summary>
         public void DeleteFile()
         {
@@ -666,7 +666,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// copy图片到图片目录下的子目录
+        /// copy病案到病案目录下的子目录
         /// </summary>
         public void CopyFilesToNext(DataTable data)
         {
@@ -773,7 +773,7 @@ namespace CJia.Health.App.UI
         }
         #endregion
 
-        #region IMessageFilter 成员 及 扫描仪 图片保存
+        #region IMessageFilter 成员 及 扫描仪 病案保存
         BITMAPINFOHEADER bmi;
         Rectangle bmprect;
         IntPtr dibhand;
@@ -814,7 +814,7 @@ namespace CJia.Health.App.UI
                         string fileName = LURecordNO.DisplayText + "_" + inhosTimes + "_" + page + "_00";
                         bmpptr = GlobalLock(Img);
                         pixptr = GetPixelInfo(bmpptr);
-                        Gdip.SaveDIBAs(txtFolder.Text, fileName, bmpptr, pixptr);//保存图片
+                        Gdip.SaveDIBAs(txtFolder.Text, fileName, bmpptr, pixptr);//保存病案
                     }
                     DataTable data = CreatePictureDate(txtFolder.Text);
                     pictureGrid.DataSource = data;
@@ -924,7 +924,7 @@ namespace CJia.Health.App.UI
             if (ckZiDong.Checked)
                 axCmCaptureOcx1.AutoCrop(1);//自动裁切纠偏
             axCmCaptureOcx1.SetResolution(0);//设置分辨率
-            axCmCaptureOcx1.SetFileType(1);//设置图片保存格式  .jpg
+            axCmCaptureOcx1.SetFileType(1);//设置病案保存格式  .jpg
             axCmCaptureOcx1.SetImageColorMode(0);//设置颜色格式   彩色
             //axCmCaptureOcx1.SetImageDPI(250);//设置DPI
             //axCmCaptureOcx1.SetJpgQuanlity(100);
@@ -952,7 +952,7 @@ namespace CJia.Health.App.UI
             {
                 if (Message.ShowQuery("文件已存在，是否覆盖？", Message.Button.YesNo) == Message.Result.Yes)
                 {
-                    axCmCaptureOcx1.CaptureImage(filePath);         //拍照保存图片
+                    axCmCaptureOcx1.CaptureImage(filePath);         //拍照保存病案
                     DataTable data = CreatePictureDate(txtFolder.Text);
                     pictureGrid.DataSource = data;
                     pictureView.FocusedRowHandle = data.Rows.Count - 1;
@@ -961,7 +961,7 @@ namespace CJia.Health.App.UI
             }
             else
             {
-                axCmCaptureOcx1.CaptureImage(filePath);         //拍照保存图片
+                axCmCaptureOcx1.CaptureImage(filePath);         //拍照保存病案
                 DataTable data = CreatePictureDate(txtFolder.Text);
                 pictureGrid.DataSource = data;
                 pictureView.FocusedRowHandle = data.Rows.Count - 1;
@@ -1098,7 +1098,7 @@ namespace CJia.Health.App.UI
             if (cJiaPicture.Height < hh) hh = cJiaPicture.Height;
             try
             {
-                cJiaPicture.Image = resizedBmp.Clone(new RectangleF((float)begin_x, (float)begin_y, ww, hh), PixelFormat.Format24bppRgb);   //在图片框上显示区域图片
+                cJiaPicture.Image = resizedBmp.Clone(new RectangleF((float)begin_x, (float)begin_y, ww, hh), PixelFormat.Format24bppRgb);   //在病案框上显示区域病案
             }
             catch
             {

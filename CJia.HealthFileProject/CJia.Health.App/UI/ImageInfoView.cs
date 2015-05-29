@@ -33,7 +33,7 @@ namespace CJia.Health.App.UI
         /// ftp验证 密码
         /// </summary>
         private string Password = Utils.AESDecrypt(ConfigHelper.GetAppStrings("ftp_password"));
-        // 图片列表绑定事件
+        // 病案列表绑定事件
         public void BindPic(DataTable picPath)
         {
             if (picPath != null && picPath.Rows != null && picPath.Rows.Count > 0)
@@ -100,7 +100,7 @@ namespace CJia.Health.App.UI
         //高度
         private int height = 0;
 
-        //增加图片
+        //增加病案
         private void AddPic(Image picImage, string title, string pageNo)
         {
             imageTitle imagetitle = new imageTitle()
