@@ -153,11 +153,14 @@
             this.crbCheckState.Properties.Appearance.Options.UseBackColor = true;
             this.crbCheckState.Properties.Appearance.Options.UseFont = true;
             this.crbCheckState.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(100, "未合并"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(104, "已合并未提交"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(103, "已提交未审核")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(107, "合并失败"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(103, "已提交未审核"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(102, "审核失败")});
             this.crbCheckState.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
             this.crbCheckState.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.crbCheckState.Size = new System.Drawing.Size(296, 33);
+            this.crbCheckState.Size = new System.Drawing.Size(630, 33);
             this.crbCheckState.TabIndex = 5;
             this.crbCheckState.SelectedIndexChanged += new System.EventHandler(this.crbCheckState_SelectedIndexChanged);
             // 
