@@ -911,6 +911,9 @@ namespace CJia.Health.App
                 case "btnLookSet":
                     uc = new UI.LookSetView();
                     break;
+                case "btnIP":
+                    uc = new UI.IPSetView();
+                    break;
                 default:
                     break;
             }
@@ -1066,6 +1069,11 @@ namespace CJia.Health.App
         }
 
         private void btnLookSet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowXTP(e);
+        }
+
+        private void btnIP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowXTP(e);
         }

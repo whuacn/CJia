@@ -127,6 +127,8 @@ namespace CJia.Health.App.UI
                 if (Health.Tools.Message.ShowQuery("是否批准选中的申请单？", CJia.Health.Tools.Message.Button.YesNo) == CJia.Health.Tools.Message.Result.Yes)
                 {
                     approvalArgs.BorrowListId = listBorrow;
+                    if (crdCheck.SelectedIndex == 1)
+                        approvalArgs.ReturnDate = DateTime.Parse(cdEnd.EditValue.ToString());
                     OnPassBorrow(null, approvalArgs);
                     QueryBorrowList();
                 }

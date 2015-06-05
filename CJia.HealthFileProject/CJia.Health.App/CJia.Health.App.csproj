@@ -513,6 +513,12 @@
     <Compile Include="UI\LookSetView.Designer.cs">
       <DependentUpon>LookSetView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\IPSetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\IPSetView.Designer.cs">
+      <DependentUpon>IPSetView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -674,6 +680,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LookSetView.resx">
       <DependentUpon>LookSetView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IPSetView.resx">
+      <DependentUpon>IPSetView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>

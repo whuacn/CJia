@@ -97,6 +97,7 @@
     <Compile Include="Models\DeptManageModel.cs" />
     <Compile Include="Models\DoctorManageModel.cs" />
     <Compile Include="Models\ImagesInputModel.cs" />
+    <Compile Include="Models\IPSetViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\LogoSetModel.cs" />
     <Compile Include="Models\MainFormModel.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Presenters\DeptManagePresenter.cs" />
     <Compile Include="Presenters\DoctorManagePresenter.cs" />
     <Compile Include="Presenters\ImagesInputPresenter.cs" />
+    <Compile Include="Presenters\IPSetViewPresenter.cs" />
     <Compile Include="Presenters\LoginViewPresenter.cs" />
     <Compile Include="Presenters\LogoSetPresenter.cs" />
     <Compile Include="Presenters\MainFormPresenter.cs" />
@@ -206,6 +208,7 @@
     <Compile Include="Views\IDeptManageView.cs" />
     <Compile Include="Views\IDoctorManageView.cs" />
     <Compile Include="Views\IImagesInputView.cs" />
+    <Compile Include="Views\IIPSetView.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\ILogoSet.cs" />
     <Compile Include="Views\IMainFormView.cs" />

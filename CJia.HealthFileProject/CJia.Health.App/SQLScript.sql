@@ -278,3 +278,39 @@ create index IDX_TRACE_DATE on GM_TRACE (TRACE_DATE)
     minextents 1
     maxextents unlimited
   );
+-- Create table
+create table GM_IP
+(
+  ID          VARCHAR2(20) not null,
+  IP          VARCHAR2(20),
+  STATUS      CHAR(1),
+  CREATE_DATE DATE,
+  UPDATE_BY   VARCHAR2(10),
+  UPDATE_DATE DATE,
+  CREATE_BY   VARCHAR2(10)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Add comments to the table 
+comment on table GM_IP
+  is 'IP地址登陆限制';
+-- Add comments to the columns 
+comment on column GM_IP.STATUS
+  is '状态(1:有效; 0:无效)';
+comment on column GM_IP.CREATE_DATE
+  is '创建日期';
+comment on column GM_IP.UPDATE_BY
+  is '修改者';
+comment on column GM_IP.UPDATE_DATE
+  is '修改日期';
+comment on column GM_IP.CREATE_BY
+  is '创建者';
+-- Create sequence 
+create sequence GM_IP_SEQ
+minvalue 1000000000
+maxvalue 9999999999
+start with 1000000001
+increment by 1
+cache 20;

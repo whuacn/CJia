@@ -41,7 +41,10 @@ namespace CJia.Health.Presenters
             {
                 foreach (string borrowList in e.BorrowListId)
                 {
-                    IsPass = IsPass && Model.PassBorrow(trans.ID, borrowList, User.UserData.Rows[0]["USER_ID"].ToString(), User.UserData.Rows[0]["USER_NAME"].ToString());
+                    if (e.ReturnDate == DateTime.MinValue)
+                        IsPass = IsPass && Model.PassBorrow(trans.ID, borrowList, User.UserData.Rows[0]["USER_ID"].ToString(), User.UserData.Rows[0]["USER_NAME"].ToString());
+                    else
+                        IsPass = IsPass && Model.PassBorrowFromEndDate(trans.ID, borrowList, e.ReturnDate, User.UserData.Rows[0]["USER_ID"].ToString(), User.UserData.Rows[0]["USER_NAME"].ToString());
                 }
                 trans.Complete();
             }
@@ -71,16 +74,16 @@ namespace CJia.Health.Presenters
 
         void view_OnQueryBorrow(object sender, Views.ApprovalBorrowArgs e)
         {
-            DataTable dtBorrowList = Model.QueryBorrowList(e.BeginDate,e.EndDate,e.DeptId,e.BorrowState);
+            DataTable dtBorrowList = Model.QueryBorrowList(e.BeginDate, e.EndDate, e.DeptId, e.BorrowState);
             DataTable dtHealthFile = Model.QueryRecord(e.BeginDate, e.EndDate, e.DeptId, e.BorrowState);
-            
+
             DataColumn isChecked = new DataColumn("ISCHECK", typeof(System.Boolean));
             isChecked.DefaultValue = false;
             dtBorrowList.Columns.Add(isChecked);
             View.ExeBindBorrow(dtBorrowList, dtHealthFile);
-            
-            
-            
+
+
+
         }
     }
 }

@@ -539,7 +539,7 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @"select *
+                return @" select *
                               from (select PV.*,
                                            PIC.PIC_COMMIT_NAME,
                                            PIC.PIC_COMMIT_DATE,
@@ -554,6 +554,7 @@ namespace CJia.Health.Models
                              where rn = 1";
             }
         }
+        
         /// <summary>
         /// 根据图片id，修改图片信息
         /// </summary>
@@ -2362,6 +2363,21 @@ values
                          where a.borrow_list_id =?";
             }
         }
+        public static string SqlPassBorrowFromEndDate
+        {
+            get
+            {
+                return @"update st_borrow a
+                           set a.borrow_state = '91',
+                               a.agree_id     = ?,
+                               a.agree_name   = ?,
+                               a.update_by    =?,
+                               a.update_date=sysdate,
+                               a.borrow_date=sysdate,
+                               a.return_date  = ?                    
+                         where a.borrow_list_id =?";
+            }
+        }
 
         /// <summary>
         /// 拒绝借阅
@@ -2635,5 +2651,51 @@ values
                 return @"update gm_patient t set t.lock_status=? where t.id=?";
             }
         }
+
+        #region IP限制
+        /// <summary>
+        /// 获得所有ip
+        /// </summary>
+        public static string SqlQueryAllIP
+        {
+            get
+            {
+                return @"select * from gm_ip t where t.status='1' order by t.ip";
+            }
+        }
+        /// <summary>
+        /// 查询ip是否存在
+        /// </summary>
+        public static string SqlQueryIP
+        {
+            get
+            {
+                return @"select * from gm_ip t where t.status='1' and t.ip=?";
+            }
+        }
+        /// <summary>
+        /// 删除ip
+        /// </summary>
+        public static string SqlDeleteIP
+        {
+            get
+            {
+                return @"update gm_ip t set t.status='0',t.update_by=?,t.update_date=sysdate where t.ip=?";
+            }
+        }
+        /// <summary>
+        /// 新增ip
+        /// </summary>
+        public static string SqlAddIP
+        {
+            get
+            {
+                return @"insert into gm_ip
+                      (id, ip, status, create_date, create_by)
+                    values
+                      (gm_ip_seq.nextval, ?, '1', sysdate, ? )";
+            }
+        }
+        #endregion
     }
 }
