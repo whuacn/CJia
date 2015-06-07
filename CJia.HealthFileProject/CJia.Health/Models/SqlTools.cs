@@ -539,7 +539,7 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @"select *
+                return @" select *
                               from (select PV.*,
                                            PIC.PIC_COMMIT_NAME,
                                            PIC.PIC_COMMIT_DATE,
@@ -554,6 +554,7 @@ namespace CJia.Health.Models
                              where rn = 1";
             }
         }
+        
         /// <summary>
         /// 根据图片id，修改图片信息
         /// </summary>
@@ -791,7 +792,7 @@ namespace CJia.Health.Models
         {
             get
             {
-                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where p.status='1' AND P.check_status='101' {0}";
+                return @"select P.*, to_char(p.in_hospital_date,'yyyy/mm/dd') in_hospital_date2,to_char(p.out_hospital_date,'yyyy/mm/dd') out_hospital_date2 from gm_patient_view p where p.status='1' AND P.check_status='101' and p.LOCK_STATUS='110'  {0}";
             }
         }
         /// <summary>
@@ -1118,7 +1119,16 @@ values
         {
             get
             {
-                return @"select sp.*,decode(sp.is_look,'1','是','0','否') is_look_name,
+                return @"select sp.*,(case
+         when sp.is_export = '1' then
+          '可以导出'
+         when sp.is_print='1' then
+          '可以打印'
+         when sp.is_look = '1' then
+          '可以浏览'
+         else
+          '不能浏览'
+       end) is_look_name,
        (select gc.name from gm_code gc where gc.code = sp.check_status) check_status_name
   from st_picture sp
  where sp.status = '1'
@@ -1257,7 +1267,7 @@ values
         {
             get
             {
-                return @"insert into gm_project values(gm_project_seq.nextval,?,?,?,'1',sysdate,'','',?,?,?,?)";
+                return @"insert into gm_project values(gm_project_seq.nextval,?,?,?,'1',sysdate,'','',?,?,?,?,?)";
             }
         }
 
@@ -1268,7 +1278,7 @@ values
         {
             get
             {
-                return @"update gm_project set pro_name=?,pro_no=?,first_pinyin=?,update_date=sysdate,update_by=?,is_print=?,SHORT_KEY=?,IS_LOOK=? where pro_id=?";
+                return @"update gm_project set pro_name=?,pro_no=?,first_pinyin=?,update_date=sysdate,update_by=?,is_print=?,SHORT_KEY=?,IS_LOOK=?,IS_EXPORT=? where pro_id=?";
             }
         }
 
@@ -2353,6 +2363,21 @@ values
                          where a.borrow_list_id =?";
             }
         }
+        public static string SqlPassBorrowFromEndDate
+        {
+            get
+            {
+                return @"update st_borrow a
+                           set a.borrow_state = '91',
+                               a.agree_id     = ?,
+                               a.agree_name   = ?,
+                               a.update_by    =?,
+                               a.update_date=sysdate,
+                               a.borrow_date=sysdate,
+                               a.return_date  = ?                    
+                         where a.borrow_list_id =?";
+            }
+        }
 
         /// <summary>
         /// 拒绝借阅
@@ -2502,7 +2527,7 @@ values
                 return @"select (sp.page_no || '/' || sp.subpage || ' ' ||
                        sp.pro_name) pic_info,
                        sp.*,
-                       gc.name check_status_name,sp.storage_path || '\' || sp.picture_name src,GP.IS_PRINT
+                       gc.name check_status_name,sp.storage_path || '\' || sp.picture_name src,GP.IS_PRINT pro_print,gp.is_look pro_look,gp.is_export pro_export
                   from st_picture sp, gm_code gc,GM_PROJECT GP
                  where sp.check_status = gc.code
                  AND SP.PRO_ID=GP.PRO_ID
@@ -2604,5 +2629,73 @@ values
                 return @"update gm_favorites_detail ft set ft.status='0' WHERE ft.id=?";
             }
         }
+
+        /// <summary>
+        /// 插入操作日志
+        /// </summary>
+        public static string SqlInsertTraceContext
+        {
+            get
+            {
+                return @"insert into gm_trace
+                              (trace_code, trace_type, trace_context, trace_date,trace_user_id, trace_user_name)
+                            values
+                              (?, ?, ?, sysdate,?,?)";
+            }
+        }
+
+        public static string SqlUpdateLockStatus
+        {
+            get
+            {
+                return @"update gm_patient t set t.lock_status=? where t.id=?";
+            }
+        }
+
+        #region IP限制
+        /// <summary>
+        /// 获得所有ip
+        /// </summary>
+        public static string SqlQueryAllIP
+        {
+            get
+            {
+                return @"select * from gm_ip t where t.status='1' order by t.ip";
+            }
+        }
+        /// <summary>
+        /// 查询ip是否存在
+        /// </summary>
+        public static string SqlQueryIP
+        {
+            get
+            {
+                return @"select * from gm_ip t where t.status='1' and t.ip=?";
+            }
+        }
+        /// <summary>
+        /// 删除ip
+        /// </summary>
+        public static string SqlDeleteIP
+        {
+            get
+            {
+                return @"update gm_ip t set t.status='0',t.update_by=?,t.update_date=sysdate where t.ip=?";
+            }
+        }
+        /// <summary>
+        /// 新增ip
+        /// </summary>
+        public static string SqlAddIP
+        {
+            get
+            {
+                return @"insert into gm_ip
+                      (id, ip, status, create_date, create_by)
+                    values
+                      (gm_ip_seq.nextval, ?, '1', sysdate, ? )";
+            }
+        }
+        #endregion
     }
 }

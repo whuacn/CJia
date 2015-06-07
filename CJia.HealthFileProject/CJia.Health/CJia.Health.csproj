@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="CJia">
       <HintPath>..\..\CJia.Bin\Framework\Debug\CJia.dll</HintPath>
     </Reference>
@@ -94,6 +97,7 @@
     <Compile Include="Models\DeptManageModel.cs" />
     <Compile Include="Models\DoctorManageModel.cs" />
     <Compile Include="Models\ImagesInputModel.cs" />
+    <Compile Include="Models\IPSetViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\LogoSetModel.cs" />
     <Compile Include="Models\MainFormModel.cs" />
@@ -128,6 +132,7 @@
     <Compile Include="Presenters\DeptManagePresenter.cs" />
     <Compile Include="Presenters\DoctorManagePresenter.cs" />
     <Compile Include="Presenters\ImagesInputPresenter.cs" />
+    <Compile Include="Presenters\IPSetViewPresenter.cs" />
     <Compile Include="Presenters\LoginViewPresenter.cs" />
     <Compile Include="Presenters\LogoSetPresenter.cs" />
     <Compile Include="Presenters\MainFormPresenter.cs" />
@@ -155,6 +160,7 @@
     <Compile Include="Presenters\NewImageCheckPresenter.cs" />
     <Compile Include="Presenters\CompleteQueryPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleInterceptor.cs" />
     <Compile Include="Tools\ConfigHelper.cs" />
     <Compile Include="Tools\Form1.cs">
       <SubType>Form</SubType>
@@ -202,6 +208,7 @@
     <Compile Include="Views\IDeptManageView.cs" />
     <Compile Include="Views\IDoctorManageView.cs" />
     <Compile Include="Views\IImagesInputView.cs" />
+    <Compile Include="Views\IIPSetView.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\ILogoSet.cs" />
     <Compile Include="Views\IMainFormView.cs" />
@@ -267,6 +274,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

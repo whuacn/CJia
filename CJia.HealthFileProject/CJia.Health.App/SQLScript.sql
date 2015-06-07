@@ -237,3 +237,80 @@ values (1000010001, '浏览权限', '305', '1', 1000000081, to_date('16-05-2015 16:2
 
 insert into tm_function (FUNCTION_ID, FUNCTION_NAME, USER_TYPE, STATUS, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE)
 values (1000010002, '水印设置', '305', '1', 1000000081, to_date('16-05-2015 16:21:13', 'dd-mm-yyyy hh24:mi:ss'), null, null);
+
+ALTER TABLE GM_PROJECT ADD IS_EXPORT CHAR(1) default 0;
+
+ALTER TABLE ST_PICTURE ADD IS_EXPORT CHAR(1) default 0;
+
+ALTER TABLE ST_PICTURE ADD IS_PRINT CHAR(1) default 1;
+-- Create table 2015-5-26
+-- Create table
+create table GM_TRACE
+(
+  trace_code      VARCHAR2(50),
+  trace_type      VARCHAR2(100),
+  trace_context   VARCHAR2(200),
+  trace_date      DATE,
+  trace_user_id   NUMBER,
+  trace_user_name VARCHAR2(50)
+)
+tablespace DATA01
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create index IDX_TRACE_DATE on GM_TRACE (TRACE_DATE)
+  tablespace DATA01
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create table
+create table GM_IP
+(
+  ID          VARCHAR2(20) not null,
+  IP          VARCHAR2(20),
+  STATUS      CHAR(1),
+  CREATE_DATE DATE,
+  UPDATE_BY   VARCHAR2(10),
+  UPDATE_DATE DATE,
+  CREATE_BY   VARCHAR2(10)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Add comments to the table 
+comment on table GM_IP
+  is 'IP地址登陆限制';
+-- Add comments to the columns 
+comment on column GM_IP.STATUS
+  is '状态(1:有效; 0:无效)';
+comment on column GM_IP.CREATE_DATE
+  is '创建日期';
+comment on column GM_IP.UPDATE_BY
+  is '修改者';
+comment on column GM_IP.UPDATE_DATE
+  is '修改日期';
+comment on column GM_IP.CREATE_BY
+  is '创建者';
+-- Create sequence 
+create sequence GM_IP_SEQ
+minvalue 1000000000
+maxvalue 9999999999
+start with 1000000001
+increment by 1
+cache 20;

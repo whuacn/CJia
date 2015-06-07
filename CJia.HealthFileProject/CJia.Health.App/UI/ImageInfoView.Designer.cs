@@ -101,7 +101,7 @@
             this.picDA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picDA.EditValue = global::CJia.Health.App.Properties.Resources.QQ图片20130626103705;
+            this.picDA.EditValue = global::CJia.Health.App.Properties.Resources._1213;
             this.picDA.Location = new System.Drawing.Point(1, 35);
             this.picDA.Name = "picDA";
             this.picDA.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;

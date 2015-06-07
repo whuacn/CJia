@@ -69,7 +69,11 @@ namespace CJia.Health.Models
             object[] ob = new object[] { agreeId, agreeName, agreeId, listBorrow, listBorrow };
             return  CJia.DefaultOleDb.Execute(transID, SqlTools.SqlPassBorrow, ob) > 0 ? true : false;
         }
-
+        public bool PassBorrowFromEndDate(string transID, string listBorrow,DateTime endDate, string agreeId, string agreeName)
+        {
+            object[] ob = new object[] { agreeId, agreeName, agreeId, endDate, listBorrow };
+            return CJia.DefaultOleDb.Execute(transID, SqlTools.SqlPassBorrowFromEndDate, ob) > 0 ? true : false;
+        }
         /// <summary>
         /// 拒绝借阅
         /// </summary>

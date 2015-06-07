@@ -106,11 +106,29 @@ namespace CJia.Health.App.UI
             {
                 this.OnSreach(null, NewImageCheckViewArgs);
             }
+
         }
 
         // 选择病人后
         void LURecordNO_SelectValueChanged(object sender, EventArgs e)
         {
+            string healthID = LURecordNO.DisplayValue;
+            DataTable data = LURecordNO.DataSource;
+            DataRow[] drs = data.Select(" ID='" + healthID + "' ");
+            if (drs.Length > 0)
+            {
+                string lockstatus = drs[0]["LOCK_STATUS"].ToString();
+                if (lockstatus == "110")
+                {
+                    btnUnLock.Enabled = false;
+                    btnLock.Enabled = true;
+                }
+                else
+                {
+                    btnUnLock.Enabled = true;
+                    btnLock.Enabled = false;
+                }
+            }
             this.SelectPic();
             this.cgPicture.Focus();
         }
@@ -149,12 +167,20 @@ namespace CJia.Health.App.UI
         {
             if (e.Column.FieldName == "IS_LOOK_NAME")
             {
-                string stutas = this.gvPicture.GetDataRow(e.RowHandle)["IS_LOOK"].ToString();
-                if (stutas == "1")
+                string look = this.gvPicture.GetDataRow(e.RowHandle)["IS_LOOK_NAME"].ToString();
+                if (look == "可以导出")
                 {
                     e.Appearance.ForeColor = Color.Green;
                 }
-                else if (stutas == "0")
+                else if (look == "可以打印")
+                {
+                    e.Appearance.ForeColor = Color.DodgerBlue;
+                }
+                else if (look == "可以浏览")
+                {
+                    e.Appearance.ForeColor = Color.Blue;
+                }
+                else
                 {
                     e.Appearance.ForeColor = Color.Red;
                 }
@@ -202,13 +228,89 @@ namespace CJia.Health.App.UI
 
         public event EventHandler<Views.NewImageCheckViewArgs> OnNOLook;
 
+        public event EventHandler<Views.NewImageCheckViewArgs> OnPrint;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnExport;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnLock;
+
+        public event EventHandler<Views.NewImageCheckViewArgs> OnUnLock;
+
+        public void ExeUnLock(bool result)
+        {
+            if (result)
+            {
+                MessageBox.Show("此病案解锁成功");
+                btnLock.Enabled = true;
+                btnUnLock.Enabled = false;
+                DataTable data = LURecordNO.DataSource;
+                foreach (DataRow dr in data.Rows)
+                {
+                    string id = dr["ID"].ToString();
+                    if (id == LURecordNO.DisplayValue)
+                    {
+                        dr["LOCK_STATUS"] = "110";
+                        break;
+                    }
+                }
+            }
+        }
+
+        public void ExeLock(bool result)
+        {
+            if (result)
+            {
+                MessageBox.Show("此病案锁定成功");
+                btnLock.Enabled = false;
+                btnUnLock.Enabled = true;
+                DataTable data = LURecordNO.DataSource;
+                foreach (DataRow dr in data.Rows)
+                {
+                    string id = dr["ID"].ToString();
+                    if (id == LURecordNO.DisplayValue)
+                    {
+                        dr["LOCK_STATUS"] = "111";
+                        break;
+                    }
+                }
+            }
+        }
+
+        public void ExePrint(bool result)
+        {
+            if (result)
+            {
+                DataRow dr = gvPicture.GetFocusedDataRow();
+                dr["IS_LOOK"] = "1";
+                dr["IS_PRINT"] = "1";
+                dr["IS_EXPORT"] = "0";
+                dr["IS_LOOK_NAME"] = "可以打印";
+                this.SetBtnStyle();
+            }
+        }
+
+        public void ExeExport(bool result)
+        {
+            if (result)
+            {
+                DataRow dr = gvPicture.GetFocusedDataRow();
+                dr["IS_LOOK"] = "1";
+                dr["IS_PRINT"] = "1";
+                dr["IS_EXPORT"] = "1";
+                dr["IS_LOOK_NAME"] = "可以导出";
+                this.SetBtnStyle();
+            }
+        }
+
         public void ExeYesLook(bool result)
         {
             if (result)
             {
                 DataRow dr = gvPicture.GetFocusedDataRow();
                 dr["IS_LOOK"] = "1";
-                dr["IS_LOOK_NAME"] = "是";
+                dr["IS_PRINT"] = "0";
+                dr["IS_EXPORT"] = "0";
+                dr["IS_LOOK_NAME"] = "可以浏览";
                 this.SetBtnStyle();
             }
         }
@@ -219,7 +321,9 @@ namespace CJia.Health.App.UI
             {
                 DataRow dr = gvPicture.GetFocusedDataRow();
                 dr["IS_LOOK"] = "0";
-                dr["IS_LOOK_NAME"] = "否";
+                dr["IS_PRINT"] = "0";
+                dr["IS_EXPORT"] = "0";
+                dr["IS_LOOK_NAME"] = "不能浏览";
                 this.SetBtnStyle();
             }
         }
@@ -227,11 +331,6 @@ namespace CJia.Health.App.UI
         public void ExeCheckReason(DataTable result)
         {
             this.AllCheckReason = result;
-        }
-
-        public void ExeLock(bool result)
-        {
-            throw new NotImplementedException();
         }
 
         public void ExeOpenLock(bool result)
@@ -317,15 +416,29 @@ namespace CJia.Health.App.UI
                     this.gvPicture.Focus();
                     this.gvPicture.MoveNext();
                     break;
-                case Keys.F5:
+                case Keys.F6:
                     if (this.YesLook())
                     {
                         this.gvPicture.Focus();
                         this.gvPicture.MoveNext();
                     }
                     break;
-                case Keys.F6:
+                case Keys.F5:
                     if (this.NoLook())
+                    {
+                        this.gvPicture.Focus();
+                        this.gvPicture.MoveNext();
+                    }
+                    break;
+                case Keys.F7:
+                    if (this.Print())
+                    {
+                        this.gvPicture.Focus();
+                        this.gvPicture.MoveNext();
+                    }
+                    break;
+                case Keys.F8:
+                    if (this.Export())
                     {
                         this.gvPicture.Focus();
                         this.gvPicture.MoveNext();
@@ -383,23 +496,74 @@ namespace CJia.Health.App.UI
         /// </summary>
         private void SetBtnStyle()
         {
-            string checkStatus = this.SelectPicData["IS_LOOK"].ToString();
-            if (checkStatus == "1")
+            string look = this.SelectPicData["IS_LOOK_NAME"].ToString();
+            if (look == "可以导出")
             {
-                this.btnYes.Enabled = false;
-                this.btnNo.Enabled = true;
+                btnYes.Enabled = true;
+                btnNo.Enabled = true;
+                btnPrint.Enabled = true;
+                btnExport.Enabled = false;
             }
-            else if (checkStatus == "0")
+            else if (look == "可以打印")
             {
-                this.btnYes.Enabled = true;
-                this.btnNo.Enabled = false;
+                btnYes.Enabled = true;
+                btnNo.Enabled = true;
+                btnPrint.Enabled = false;
+                btnExport.Enabled = true;
+            }
+            else if (look == "可以浏览")
+            {
+                btnYes.Enabled = false;
+                btnNo.Enabled = true;
+                btnPrint.Enabled = true;
+                btnExport.Enabled = true;
+            }
+            else
+            {
+                btnYes.Enabled = true;
+                btnNo.Enabled = false;
+                btnPrint.Enabled = true;
+                btnExport.Enabled = true;
             }
         }
+
+        private bool Print()
+        {
+            DataRow dr = gvPicture.GetFocusedDataRow();
+            string checkStatus = dr["IS_LOOK_NAME"].ToString();
+            if (checkStatus != "可以打印")
+            {
+                string pictrueId = dr["PICTURE_ID"].ToString();
+                this.OnPrint(null, new Views.NewImageCheckViewArgs()
+                {
+                    pictureId = pictrueId
+                });
+                return true;
+            }
+            return false;
+        }
+
+        private bool Export()
+        {
+            DataRow dr = gvPicture.GetFocusedDataRow();
+            string checkStatus = dr["IS_LOOK_NAME"].ToString();
+            if (checkStatus != "可以导出")
+            {
+                string pictrueId = dr["PICTURE_ID"].ToString();
+                this.OnExport(null, new Views.NewImageCheckViewArgs()
+                {
+                    pictureId = pictrueId
+                });
+                return true;
+            }
+            return false;
+        }
+
         private bool YesLook()
         {
             DataRow dr = gvPicture.GetFocusedDataRow();
-            string checkStatus = dr["IS_LOOK"].ToString();
-            if (checkStatus == "0")
+            string checkStatus = dr["IS_LOOK_NAME"].ToString();
+            if (checkStatus != "可以浏览")
             {
                 string pictrueId = dr["PICTURE_ID"].ToString();
                 this.OnYesLook(null, new Views.NewImageCheckViewArgs()
@@ -413,8 +577,8 @@ namespace CJia.Health.App.UI
         private bool NoLook()
         {
             DataRow dr = gvPicture.GetFocusedDataRow();
-            string checkStatus = dr["IS_LOOK"].ToString();
-            if (checkStatus == "1")
+            string checkStatus = dr["IS_LOOK_NAME"].ToString();
+            if (checkStatus != "不能浏览")
             {
                 string pictrueId = dr["PICTURE_ID"].ToString();
                 this.OnNOLook(null, new Views.NewImageCheckViewArgs()
@@ -467,12 +631,18 @@ namespace CJia.Health.App.UI
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            this.keyDown(Keys.F5);
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F6);
+            }
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            this.keyDown(Keys.F6);
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F5);
+            }
         }
 
         private void btnAllYes_Click(object sender, EventArgs e)
@@ -490,6 +660,88 @@ namespace CJia.Health.App.UI
                 }
                 this.SelectPic();
                 this.cgPicture.Focus();
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F7);
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                this.keyDown(Keys.F8);
+            }
+        }
+
+        private void btnAllPrint_Click(object sender, EventArgs e)
+        {
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                DataTable data = (DataTable)cgPicture.DataSource;
+                foreach (DataRow dr in data.Rows)
+                {
+                    string pictrueId = dr["PICTURE_ID"].ToString();
+                    this.OnPrint(null, new Views.NewImageCheckViewArgs()
+                    {
+                        pictureId = pictrueId
+                    });
+                }
+                this.SelectPic();
+                this.cgPicture.Focus();
+            }
+        }
+
+        private void btnAllExport_Click(object sender, EventArgs e)
+        {
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                DataTable data = (DataTable)cgPicture.DataSource;
+                foreach (DataRow dr in data.Rows)
+                {
+                    string pictrueId = dr["PICTURE_ID"].ToString();
+                    this.OnExport(null, new Views.NewImageCheckViewArgs()
+                    {
+                        pictureId = pictrueId
+                    });
+                }
+                this.SelectPic();
+                this.cgPicture.Focus();
+            }
+        }
+
+        private void btnLock_Click(object sender, EventArgs e)
+        {
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                if (Message.ShowQuery("确定锁定？", Message.Button.OkCancel) == Message.Result.Ok)
+                {
+                    string healthId = (cgPicture.DataSource as DataTable).Rows[0]["HEALTH_ID"].ToString();
+                    this.OnLock(null, new Views.NewImageCheckViewArgs()
+                    {
+                        healthId = healthId
+                    });
+                }
+            }
+        }
+
+        private void btnUnLock_Click(object sender, EventArgs e)
+        {
+            if (cgPicture.DataSource != null && gvPicture.GetFocusedDataRow() != null)
+            {
+                if (Message.ShowQuery("确定解锁？", Message.Button.OkCancel) == Message.Result.Ok)
+                {
+                    string healthId = (cgPicture.DataSource as DataTable).Rows[0]["HEALTH_ID"].ToString();
+                    this.OnUnLock(null, new Views.NewImageCheckViewArgs()
+                    {
+                        healthId = healthId
+                    });
+                }
             }
         }
 

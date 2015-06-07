@@ -40,13 +40,14 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.cJiaLabel6 = new System.Windows.Forms.Label();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(62, 32);
+            this.pictureBox1.Image = global::CJia.Health.App.Properties.Resources.hislogo;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 62);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(164, 159);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -56,20 +57,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(72, 203);
+            this.label1.Location = new System.Drawing.Point(49, 236);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 22);
+            this.label1.Size = new System.Drawing.Size(195, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "九江市妇幼保健院";
+            this.label1.Text = "赣南医学院第一附属医院";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(49, 226);
+            this.label2.Location = new System.Drawing.Point(57, 267);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(183, 26);
             this.label2.TabIndex = 2;
@@ -157,13 +158,24 @@
             // cJiaLabel6
             // 
             this.cJiaLabel6.AutoSize = true;
-            this.cJiaLabel6.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.cJiaLabel6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cJiaLabel6.ForeColor = System.Drawing.Color.White;
-            this.cJiaLabel6.Location = new System.Drawing.Point(97, 254);
+            this.cJiaLabel6.Location = new System.Drawing.Point(99, 303);
             this.cJiaLabel6.Name = "cJiaLabel6";
-            this.cJiaLabel6.Size = new System.Drawing.Size(91, 17);
+            this.cJiaLabel6.Size = new System.Drawing.Size(82, 14);
             this.cJiaLabel6.TabIndex = 10;
             this.cJiaLabel6.Text = "Version V2.0.0";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl1.Location = new System.Drawing.Point(334, 303);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(266, 17);
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "Copyright © 2012-2015  江西创佳科技有限公司";
             // 
             // LoginFrom
             // 
@@ -171,6 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(612, 336);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cJiaLabel6);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
@@ -205,5 +218,6 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label cJiaLabel6;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

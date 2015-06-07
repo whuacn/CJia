@@ -48,6 +48,9 @@ namespace CJia.Health.Views
         /// 借阅单号集合
         /// </summary>
         public List<string> BorrowListId;
-
+        /// <summary>
+        /// 借阅归回时间
+        /// </summary>
+        public DateTime ReturnDate = DateTime.MinValue;
     }
 }

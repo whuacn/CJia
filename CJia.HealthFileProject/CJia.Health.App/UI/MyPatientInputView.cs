@@ -15,7 +15,7 @@ namespace CJia.Health.App.UI
         {
             InitializeComponent();
             crbCheckState.SelectedIndex = 0;
-            Init();
+            //Init();
             ckPatient.CheckedChanged += ckPatient_CheckedChanged;
         }
 
@@ -91,20 +91,38 @@ namespace CJia.Health.App.UI
 
         private void crbCheckState_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (crbCheckState.SelectedIndex == 0)
+            int index=crbCheckState.SelectedIndex;
+            if (index == 1)
             {
                 btnDelete.Enabled = true;
                 btnUndo.Enabled = false;
                 btnCommit.Enabled = true;
-                Init();
             }
-            if (crbCheckState.SelectedIndex == 1)
+            else if (index == 3)
             {
                 btnDelete.Enabled = false;
                 btnUndo.Enabled = true;
                 btnCommit.Enabled = false;
-                Init();
             }
+            else if (index == 0)
+            {
+                btnDelete.Enabled = true;
+                btnUndo.Enabled = false;
+                btnCommit.Enabled = false;
+            }
+            else if (index == 2)
+            {
+                btnDelete.Enabled = true;
+                btnUndo.Enabled = false;
+                btnCommit.Enabled = false;
+            }
+            else if (index == 4)
+            {
+                btnDelete.Enabled = true;
+                btnUndo.Enabled = false;
+                btnCommit.Enabled = false;
+            }
+            Init();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

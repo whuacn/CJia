@@ -75,6 +75,10 @@
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
             this.cJiaPanel2 = new CJia.Controls.CJiaPanel();
             this.ccAllSelect = new CJia.Controls.CJiaCheck();
+            this.crdCheck = new CJia.Controls.CJiaRadioBox();
+            this.cdStart = new CJia.Controls.CJiaDate();
+            this.cJiaLabel4 = new CJia.Controls.CJiaLabel();
+            this.cdEnd = new CJia.Controls.CJiaDate();
             ((System.ComponentModel.ISupportInitialize)(this.gvHealthFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcBorrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBorrowList)).BeginInit();
@@ -93,6 +97,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).BeginInit();
             this.cJiaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ccAllSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crdCheck.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdStart.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdStart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdEnd.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdEnd.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gvHealthFile
@@ -219,7 +228,7 @@
             this.gcBorrow.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ischecked});
             this.gcBorrow.ShowRowNumber = true;
-            this.gcBorrow.Size = new System.Drawing.Size(1391, 493);
+            this.gcBorrow.Size = new System.Drawing.Size(1391, 426);
             this.gcBorrow.TabIndex = 6;
             this.gcBorrow.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBorrowList,
@@ -575,8 +584,6 @@
             this.cJiaPanel1.Controls.Add(this.cJiaLabel2);
             this.cJiaPanel1.Controls.Add(this.cJiaLabel1);
             this.cJiaPanel1.Location = new System.Drawing.Point(2, 3);
-            this.cJiaPanel1.LookAndFeel.SkinName = "Office 2010 Silver";
-            this.cJiaPanel1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaPanel1.Name = "cJiaPanel1";
             this.cJiaPanel1.Size = new System.Drawing.Size(1396, 48);
             this.cJiaPanel1.TabIndex = 18;
@@ -775,10 +782,8 @@
             this.cJiaPanel2.Controls.Add(this.ccAllSelect);
             this.cJiaPanel2.Controls.Add(this.gcBorrow);
             this.cJiaPanel2.Location = new System.Drawing.Point(3, 54);
-            this.cJiaPanel2.LookAndFeel.SkinName = "Office 2010 Silver";
-            this.cJiaPanel2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cJiaPanel2.Name = "cJiaPanel2";
-            this.cJiaPanel2.Size = new System.Drawing.Size(1395, 497);
+            this.cJiaPanel2.Size = new System.Drawing.Size(1395, 430);
             this.cJiaPanel2.TabIndex = 19;
             // 
             // ccAllSelect
@@ -795,10 +800,100 @@
             this.ccAllSelect.TabIndex = 21;
             this.ccAllSelect.CheckedChanged += new System.EventHandler(this.ccAllSelect_CheckedChanged);
             // 
+            // crdCheck
+            // 
+            this.crdCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.crdCheck.EditValue = ((short)(0));
+            this.crdCheck.Location = new System.Drawing.Point(7, 490);
+            this.crdCheck.Name = "crdCheck";
+            this.crdCheck.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.crdCheck.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.crdCheck.Properties.Appearance.Options.UseBackColor = true;
+            this.crdCheck.Properties.Appearance.Options.UseFont = true;
+            this.crdCheck.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.crdCheck.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "默认按申请者职称分配借阅时间"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "借阅时间设置")});
+            this.crdCheck.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.crdCheck.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.crdCheck.Size = new System.Drawing.Size(339, 66);
+            this.crdCheck.TabIndex = 171;
+            this.crdCheck.SelectedIndexChanged += new System.EventHandler(this.crdCheck_SelectedIndexChanged);
+            // 
+            // cdStart
+            // 
+            this.cdStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cdStart.EditValue = new System.DateTime(2013, 7, 16, 14, 21, 9, 463);
+            this.cdStart.Enabled = false;
+            this.cdStart.Location = new System.Drawing.Point(28, 558);
+            this.cdStart.Name = "cdStart";
+            this.cdStart.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.cdStart.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.cdStart.Properties.Appearance.Options.UseFont = true;
+            this.cdStart.Properties.Appearance.Options.UseTextOptions = true;
+            this.cdStart.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cdStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
+            this.cdStart.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm";
+            this.cdStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cdStart.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm";
+            this.cdStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cdStart.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.cdStart.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cdStart.Properties.Mask.EditMask = "yyyy-MM-dd HH:mm";
+            this.cdStart.Properties.ShowToday = false;
+            this.cdStart.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(),
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.cdStart.Size = new System.Drawing.Size(180, 26);
+            this.cdStart.TabIndex = 173;
+            // 
+            // cJiaLabel4
+            // 
+            this.cJiaLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cJiaLabel4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cJiaLabel4.Location = new System.Drawing.Point(214, 560);
+            this.cJiaLabel4.Name = "cJiaLabel4";
+            this.cJiaLabel4.Size = new System.Drawing.Size(9, 16);
+            this.cJiaLabel4.TabIndex = 172;
+            this.cJiaLabel4.Text = "~";
+            // 
+            // cdEnd
+            // 
+            this.cdEnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cdEnd.EditValue = new System.DateTime(2013, 7, 16, 14, 21, 9, 463);
+            this.cdEnd.Enabled = false;
+            this.cdEnd.Location = new System.Drawing.Point(229, 558);
+            this.cdEnd.Name = "cdEnd";
+            this.cdEnd.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.cdEnd.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.cdEnd.Properties.Appearance.Options.UseFont = true;
+            this.cdEnd.Properties.Appearance.Options.UseTextOptions = true;
+            this.cdEnd.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cdEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
+            this.cdEnd.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm";
+            this.cdEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cdEnd.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm";
+            this.cdEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cdEnd.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.cdEnd.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cdEnd.Properties.Mask.EditMask = "yyyy-MM-dd HH:mm";
+            this.cdEnd.Properties.ShowToday = false;
+            this.cdEnd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(),
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.cdEnd.Size = new System.Drawing.Size(180, 26);
+            this.cdEnd.TabIndex = 174;
+            // 
             // ApprovalBorrowView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cdEnd);
+            this.Controls.Add(this.cdStart);
+            this.Controls.Add(this.cJiaLabel4);
+            this.Controls.Add(this.crdCheck);
             this.Controls.Add(this.cJiaPanel2);
             this.Controls.Add(this.cJiaPanel1);
             this.Controls.Add(this.btnRefuse);
@@ -824,7 +919,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel2)).EndInit();
             this.cJiaPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ccAllSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crdCheck.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdStart.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdStart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdEnd.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cdEnd.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -877,5 +978,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private Controls.CJiaRadioBox crdCheck;
+        private Controls.CJiaDate cdStart;
+        private Controls.CJiaLabel cJiaLabel4;
+        private Controls.CJiaDate cdEnd;
     }
 }

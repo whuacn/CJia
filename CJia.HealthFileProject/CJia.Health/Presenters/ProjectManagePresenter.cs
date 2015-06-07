@@ -32,7 +32,7 @@ namespace CJia.Health.Presenters
 
         void view_InsertProject(object sender, Views.ProjectKeyWordArg e)
         {
-            bool IsInsert = Model.InsertProject(e.ProjectName, e.ProNo, e.ProPinyin, e.UserID, e.isPrint, e.shortKey,e.isLook);
+            bool IsInsert = Model.InsertProject(e.ProjectName, e.ProNo, e.ProPinyin, e.UserID, e.isPrint, e.shortKey,e.isLook,e.isExport);
             if (IsInsert)
             {
                 View.ShowMessage("添加项目成功");
@@ -45,7 +45,7 @@ namespace CJia.Health.Presenters
 
         void view_UpdateProject(object sender, Views.ProjectKeyWordArg e)
         {
-            bool IsUpdate = Model.UpdateProject(e.ProjectName, e.ProNo, e.ProPinyin, e.UserID, e.ProId, e.isPrint, e.shortKey,e.isLook);
+            bool IsUpdate = Model.UpdateProject(e.ProjectName, e.ProNo, e.ProPinyin, e.UserID, e.ProId, e.isPrint, e.shortKey,e.isLook,e.isExport);
             if (IsUpdate)
             {
                 View.ShowMessage("修改成功");

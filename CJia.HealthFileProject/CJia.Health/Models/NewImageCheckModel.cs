@@ -32,7 +32,7 @@ namespace CJia.Health.Models
         {
             object[] parames = new object[] { status, healthId };
             int result = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlModifCheckStatis, parames);
-            if(result > 0)
+            if (result > 0)
             {
                 return true;
             }
@@ -51,7 +51,7 @@ namespace CJia.Health.Models
             int result1 = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlModifPictureCheckStatis, parames1);
             object[] parames2 = new object[] { pictureId, pictureId };
             int result2 = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlModifPatientCheckStatis, parames2);
-            if(result1 > 0)
+            if (result1 > 0)
             {
                 return true;
             }
@@ -68,7 +68,7 @@ namespace CJia.Health.Models
         {
             object[] parames = new object[] { status, healthId };
             int result = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlModifLockStatus, parames);
-            if(result > 0)
+            if (result > 0)
             {
                 return true;
             }
@@ -79,7 +79,7 @@ namespace CJia.Health.Models
         {
             object[] parames = new object[] { userid };
             string result = CJia.DefaultOleDb.QueryScalar(CJia.Health.Models.SqlTools.SqlQueryLockFunction, parames);
-            if(result != "0")
+            if (result != "0")
             {
                 return true;
             }
@@ -101,7 +101,7 @@ namespace CJia.Health.Models
             object[] parames1 = new object[] { pictureId, checkStatus, userID, userName, checkReasonId, checkReason, originalCheckStatus };
             int result = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlInsertPictureCheckReason, parames1);
 
-            if(result > 0)
+            if (result > 0)
             {
                 return true;
             }
@@ -117,7 +117,7 @@ namespace CJia.Health.Models
         {
             object[] sqlParams = new object[] { "%" + selectValue + "%" };
             DataTable dtResult = CJia.DefaultOleDb.Query(SqlTools.SqlSearchPatient, sqlParams);
-            if(dtResult != null && dtResult.Rows.Count > 0)
+            if (dtResult != null && dtResult.Rows.Count > 0)
             {
                 return dtResult;
             }
@@ -146,7 +146,7 @@ namespace CJia.Health.Models
         {
             object[] sqlParams = new object[] { checkReason };
             int result = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlInsertCheckReasonData, sqlParams);
-            if(result == 1)
+            if (result == 1)
             {
                 return true;
             }
@@ -162,18 +162,29 @@ namespace CJia.Health.Models
         {
             object[] sqlParams = new object[] { checkReasonId };
             int result = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlDeleteCheckReasonData, sqlParams);
-            if(result == 1)
+            if (result == 1)
             {
                 return true;
             }
             return false;
         }
 
-        public bool ModifyLookStatus(string picID,string lookStatus)
+        public bool ModifyLookStatus(string picID, string lookStatus, string printStatus, string exportStatus)
         {
-            string sql = @"update st_picture sp set sp.is_look=? WHERE sp.picture_id=?";
-            object[] sqlParams = new object[] { lookStatus, picID };
+            string sql = @"update st_picture sp set sp.is_look=?,sp.is_print=?,sp.is_export=? WHERE sp.picture_id=?";
+            object[] sqlParams = new object[] { lookStatus, printStatus, exportStatus, picID };
             int result = CJia.DefaultOleDb.Execute(sql, sqlParams);
+            if (result == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool UpdateLockStatus(string status, string healthID)
+        {
+            object[] sqlParams = new object[] { status, healthID };
+            int result = CJia.DefaultOleDb.Execute(CJia.Health.Models.SqlTools.SqlUpdateLockStatus, sqlParams);
             if (result == 1)
             {
                 return true;

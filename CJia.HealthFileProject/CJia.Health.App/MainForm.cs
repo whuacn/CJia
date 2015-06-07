@@ -259,13 +259,13 @@ namespace CJia.Health.App
                             this.btnDicManage.Visible = false;
                             this.btnDicManage1.Visible = false;
                             break;
-                        case "1000000161":              //图片采集
+                        case "1000000161":              //病案采集
                             this.btnImagesInput.Visible = false;
                             this.btnImagesInput1.Visible = false;
                             this.toolStripSeparator4.Visible = false;
                             break;
                         case "1000000162":
-                            this.btnProSet.Visible = false;     //图片分类
+                            this.btnProSet.Visible = false;     //病案分类
                             this.btnProSet1.Visible = false;
                             this.toolStripSeparator6.Visible = false;
                             break;
@@ -277,15 +277,15 @@ namespace CJia.Health.App
                         case "1000000181":      //档案打印
                             this.btnPrintApply.Visible=false;
                             break;
-                        case "1000000201":      //图片扫描
+                        case "1000000201":      //病案扫描
                             this.toolStripButton1.Visible = false;
                             toolStripSeparator7.Visible = false;
-                            图片扫描ToolStripMenuItem.Visible = false;
+                            病案扫描ToolStripMenuItem.Visible = false;
                             break;
-                        case "1000000203":      //图片合并
+                        case "1000000203":      //病案合并
                             toolStripButton2.Visible = false;
                             toolStripSeparator6.Visible = false;
-                            图片合并ToolStripMenuItem.Visible = false;
+                            病案合并ToolStripMenuItem.Visible = false;
                             break;
                         default: break;
                     }

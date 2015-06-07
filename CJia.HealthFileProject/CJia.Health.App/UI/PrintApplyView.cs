@@ -38,7 +38,7 @@ namespace CJia.Health.App.UI
         /// </summary>
         private string Password = Utils.AESDecrypt(ConfigHelper.GetAppStrings("ftp_password"));
         /// <summary>
-        /// 当前打印图片
+        /// 当前打印病案
         /// </summary>
         private List<Image> listPic = new List<Image>();
 
@@ -48,7 +48,7 @@ namespace CJia.Health.App.UI
         private int pageNo = 0;
 
         /// <summary>
-        /// 判断是否触发checkbox的SelectedValueChanged事件（目的：第一次双击病人后不加载图片）
+        /// 判断是否触发checkbox的SelectedValueChanged事件（目的：第一次双击病人后不加载病案）
         /// </summary>
         private int IsLoadChk = 0;
 
@@ -67,12 +67,12 @@ namespace CJia.Health.App.UI
         public event EventHandler<Views.PrintApplyEventArgs> OnPatientSearch;
 
         /// <summary>
-        /// 双击病人列表绑定checkboxList图片信息
+        /// 双击病人列表绑定checkboxList病案信息
         /// </summary>
         public event EventHandler<Views.PrintApplyEventArgs> OnPatientDoubleClick;
 
         ///// <summary>
-        ///// 查询图片事件
+        ///// 查询病案事件
         ///// </summary>
         //public event EventHandler<Views.PrintApplyEventArgs> OnSelectPicture;
 
@@ -86,7 +86,7 @@ namespace CJia.Health.App.UI
         }
 
         /// <summary>
-        /// 绑定界面选择框图片信息
+        /// 绑定界面选择框病案信息
         /// </summary>
         /// <param name="dtPicture"></param>
         public void ExeBindChkPicture(DataTable dtPicture)
@@ -102,7 +102,7 @@ namespace CJia.Health.App.UI
                     dr["SRC"] = host + "/" + dr["SRC"].ToString().Replace('\\', '/');
                     //    this.chkPicture.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
                     //new DevExpress.XtraEditors.Controls.CheckedListBoxItem(dr["SRC"])});
-                    if (dr["IS_PRINT"].ToString() == "1")//不可打印的项目分类，不显示
+                    if (dr["IS_PRINT"].ToString() == "1" && dr["PRO_PRINT"].ToString() == "1")//不可打印的项目分类，不显示
                     {
                         data.Rows.Add(dr.ItemArray);
                     }
@@ -173,7 +173,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
             }
             catch { }
@@ -199,7 +199,7 @@ namespace CJia.Health.App.UI
             catch { }
         }
 
-        //// 打印每张图片
+        //// 打印每张病案
         //private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         //{
 
@@ -226,12 +226,12 @@ namespace CJia.Health.App.UI
         //    }
 
 
-        //    //Rectangle destRect = new Rectangle(0, 0, resultWidth, resultHeight);//背景图片打印区域
+        //    //Rectangle destRect = new Rectangle(0, 0, resultWidth, resultHeight);//背景病案打印区域
         //    Rectangle destRect = new Rectangle(0, 0, x, y);
         //    e.Graphics.DrawImage(listPic[pageNo], destRect, 0, 0, listPic[pageNo].Width, listPic[pageNo].Height, System.Drawing.GraphicsUnit.Pixel);
         //}
 
-        // 打印每张图片
+        // 打印每张病案
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
 
@@ -241,7 +241,7 @@ namespace CJia.Health.App.UI
                 printDocument1.DefaultPageSettings.PaperSize = e.PageSettings.PaperSize;
             }
 
-            // 等比例缩小放大图片
+            // 等比例缩小放大病案
             int newWidth = e.PageSettings.PaperSize.Width;//打印机默认纸张大小
             int newHeight = e.PageSettings.PaperSize.Height;
 

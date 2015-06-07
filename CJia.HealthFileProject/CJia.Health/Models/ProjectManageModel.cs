@@ -33,9 +33,9 @@ namespace CJia.Health.Models
         /// <param name="ProNo">项目编号</param>
         /// <param name="ProPinyin">项目拼音查询码</param>
         /// <returns></returns>
-        public bool UpdateProject(string ProName, string ProNo, string ProPinyin, string UserID, string ProId, string isPrint, string shortKey, string isLook)
+        public bool UpdateProject(string ProName, string ProNo, string ProPinyin, string UserID, string ProId, string isPrint, string shortKey, string isLook,string isExport)
         {
-            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserID, isPrint, shortKey, isLook, ProId };
+            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserID, isPrint, shortKey, isLook,isExport, ProId };
             return CJia.DefaultOleDb.Execute(SqlTools.SqlUpdateProject, ob) > 0 ? true : false;
         }
 
@@ -47,9 +47,9 @@ namespace CJia.Health.Models
         /// <param name="ProPinyin"></param>
         /// <param name="UserId"></param>
         /// <returns></returns>
-        public bool InsertProject(string ProName, string ProNo, string ProPinyin, string UserId, string isPrint, string shortKey, string isLook)
+        public bool InsertProject(string ProName, string ProNo, string ProPinyin, string UserId, string isPrint, string shortKey, string isLook,string isExport)
         {
-            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserId, isPrint, shortKey, isLook };
+            object[] ob = new object[] { ProName, ProNo, ProPinyin, UserId, isPrint, shortKey, isLook, isExport };
             return CJia.DefaultOleDb.Execute(SqlTools.SqlInsertProject, ob) > 0 ? true : false;
         }
 

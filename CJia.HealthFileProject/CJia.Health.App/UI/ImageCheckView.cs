@@ -29,7 +29,7 @@ namespace CJia.Health.App.UI
         #region  属性
 
         /// <summary>
-        /// 该病人所有图片
+        /// 该病人所有病案
         /// </summary>
         private DataTable AllPicture = null;
 
@@ -40,7 +40,7 @@ namespace CJia.Health.App.UI
         private DataTable SmallPicture = null;
 
         /// <summary>
-        /// 选择的图片
+        /// 选择的病案
         /// </summary>
         private DataTable SelectPicture
         {
@@ -77,7 +77,7 @@ namespace CJia.Health.App.UI
 
         private DataRow selectPicData = null;
         /// <summary>
-        /// 展示的图片数据
+        /// 展示的病案数据
         /// </summary>
         private DataRow SelectPicData
         {
@@ -94,7 +94,7 @@ namespace CJia.Health.App.UI
 
 
         /// <summary>
-        /// 图片缓存类
+        /// 病案缓存类
         /// </summary>
         private CJia.Health.Tools.ImageCache imageCache = new Tools.ImageCache();
 
@@ -128,7 +128,7 @@ namespace CJia.Health.App.UI
             this.cgPicture.Focus();
         }
 
-        // 查询图片
+        // 查询病案
         private void btnSearch_Click(object sender, EventArgs e)
         {
             this.SelectPic();
@@ -270,7 +270,7 @@ namespace CJia.Health.App.UI
             this.keyDown(Keys.F7);
         }
 
-        // 图片改变
+        // 病案改变
         private void picDA_ImageChanged(object sender, EventArgs e)
         {
             int height = this.picDA.Width * this.picDA.Image.Height / this.picDA.Image.Width;
@@ -407,7 +407,7 @@ namespace CJia.Health.App.UI
 
 
         /// <summary>
-        /// 查询图片
+        /// 查询病案
         /// </summary>
         private void SelectPic()
         {
@@ -423,7 +423,7 @@ namespace CJia.Health.App.UI
         }
 
         /// <summary>
-        /// 绑定图片
+        /// 绑定病案
         /// </summary>
         private void BindPicture()
         {
@@ -475,9 +475,9 @@ namespace CJia.Health.App.UI
         }
 
 
-        #region 图片绑定显示
+        #region 病案绑定显示
 
-        // 图片列表绑定事件
+        // 病案列表绑定事件
         public void BindPic(DataTable picPath)
         {
             if(picPath != null && picPath.Rows != null && picPath.Rows.Count > 0)
@@ -515,7 +515,7 @@ namespace CJia.Health.App.UI
         //高度
         private int height = 0;
 
-        //增加图片
+        //增加病案
         private void AddPic(DataRow picData, Image picImage, string title, string pageNo, string subPage, int i)
         {
             NewimageTitle imagetitle = new NewimageTitle()
@@ -863,7 +863,7 @@ namespace CJia.Health.App.UI
         }
 
         /// <summary>
-        /// 下载图片
+        /// 下载病案
         /// </summary>
         private void DowImage()
         {

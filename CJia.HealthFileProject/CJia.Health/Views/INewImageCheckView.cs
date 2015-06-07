@@ -30,6 +30,20 @@ namespace CJia.Health.Views
 
         event EventHandler<NewImageCheckViewArgs> OnNOLook;
 
+        event EventHandler<NewImageCheckViewArgs> OnPrint;
+
+        event EventHandler<NewImageCheckViewArgs> OnExport;
+
+        event EventHandler<NewImageCheckViewArgs> OnLock;
+
+        event EventHandler<NewImageCheckViewArgs> OnUnLock;
+
+        void ExeUnLock(bool result);
+
+        void ExePrint(bool result);
+
+        void ExeExport(bool result);
+
         void ExeYesLook(bool result);
 
         void ExeNoLook(bool result);

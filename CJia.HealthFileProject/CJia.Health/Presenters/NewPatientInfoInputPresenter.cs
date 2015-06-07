@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CJia.Health.Presenters
 {
-    public class NewPatientInfoInputPresenter : CJia.Health.Tools.Presenter<Models.PatientInfoInputModel,Views.INewPatientInfoInputView>
+    public class NewPatientInfoInputPresenter : CJia.Health.Tools.Presenter<Models.PatientInfoInputModel, Views.INewPatientInfoInputView>
     {
         /// <summary>
         /// 构造函数
@@ -97,7 +97,7 @@ namespace CJia.Health.Presenters
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void View_OnSavePatientInfo(object sender, Views.NewPatientInfoInputEventArgs e)
+        public virtual void View_OnSavePatientInfo(object sender, Views.NewPatientInfoInputEventArgs e)
         {
             List<object> sqlParams = new List<object>();
             DataTable dtRecord = Model.QueryIsExistRecordNo(e.RecordNo, e.InHospitalTime);
@@ -261,7 +261,7 @@ namespace CJia.Health.Presenters
         /// <returns></returns>
         DataTable QueryPatientInfoFromInterface(object sender, Views.NewPatientInfoInputEventArgs e)
         {
-            DataTable dtPatient = Model.QueryPatientInfoFromInterface(e.RecordNo,e.InHospitalTime);
+            DataTable dtPatient = Model.QueryPatientInfoFromInterface(e.RecordNo, e.InHospitalTime);
             return dtPatient;
         }
 
@@ -401,7 +401,7 @@ namespace CJia.Health.Presenters
         void View_OnICDSurgery4Search(object sender, Views.NewPatientInfoInputEventArgs e)
         {
             this.View.ExeICDSurgery4(Model.QueryICDBySearch(e.StrFuzzySearch));
-        }     
+        }
         #endregion
     }
 }

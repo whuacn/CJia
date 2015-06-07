@@ -337,7 +337,7 @@
             // 
             // gridColumn15
             // 
-            this.gridColumn15.Caption = "图片最后录入人";
+            this.gridColumn15.Caption = "病案最后录入人";
             this.gridColumn15.FieldName = "PIC_COMMIT_NAME";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;

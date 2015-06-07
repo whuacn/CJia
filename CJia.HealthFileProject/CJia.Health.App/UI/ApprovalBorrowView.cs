@@ -127,6 +127,8 @@ namespace CJia.Health.App.UI
                 if (Health.Tools.Message.ShowQuery("是否批准选中的申请单？", CJia.Health.Tools.Message.Button.YesNo) == CJia.Health.Tools.Message.Result.Yes)
                 {
                     approvalArgs.BorrowListId = listBorrow;
+                    if (crdCheck.SelectedIndex == 1)
+                        approvalArgs.ReturnDate = DateTime.Parse(cdEnd.EditValue.ToString());
                     OnPassBorrow(null, approvalArgs);
                     QueryBorrowList();
                 }
@@ -230,9 +232,12 @@ namespace CJia.Health.App.UI
         /// </summary>
         private void InitDate()
         {
+            crdCheck.SelectedIndex = 0;
             DateTime now = Sysdate;
             this.cdBeginDate.EditValue = new DateTime(now.AddDays(-7).Year, now.AddDays(-7).Month, now.AddDays(-7).Day, 0, 0, 0);
             this.cdEndDate.EditValue = new DateTime(now.Year, now.Month, now.Day, 23, 59, 59);
+            cdStart.EditValue = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, 0);
+            cdEnd.EditValue = new DateTime(now.AddDays(+7).Year, now.AddDays(+7).Month, now.AddDays(+7).Day, now.AddDays(+7).Hour, now.AddDays(+7).Minute, 0);
         }
 
         /// <summary>
@@ -285,6 +290,21 @@ namespace CJia.Health.App.UI
         }
 
         #endregion
+
+        private void crdCheck_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (crdCheck.SelectedIndex == 0)
+            {
+                cdStart.Enabled = false;
+                cdEnd.Enabled = false;
+            }
+            else
+            {
+                cdStart.Enabled = true;
+                cdStart.Properties.ReadOnly = true;
+                cdEnd.Enabled = true;
+            }
+        }
     }
    
 }

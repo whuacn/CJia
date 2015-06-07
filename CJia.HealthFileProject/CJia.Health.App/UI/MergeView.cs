@@ -22,15 +22,15 @@ namespace CJia.Health.App.UI
         public event EventHandler<Views.ImagesInputArgs> OnShortKeyDown;
         public void ExeBindProjectByShortKey(DataTable data)
         { }
-        private int begin_x;        //图片开始位置
+        private int begin_x;        //病案开始位置
         private int begin_y;
-        private Image image_ori;    //最原始的图片
-        private Image image_dest;   //经缩放后的图片
-        private float zoom;           //缩小放大百份比，每10%为一个阶梯。每次缩放都基于最原始的图片
+        private Image image_ori;    //最原始的病案
+        private Image image_dest;   //经缩放后的病案
+        private float zoom;           //缩小放大百份比，每10%为一个阶梯。每次缩放都基于最原始的病案
         private Point m_StarPoint = Point.Empty;        //for 拖动
         private Point m_ViewPoint = Point.Empty;
         private bool m_StarMove = false;
-        int w;                      //缩放后的图片大小
+        int w;                      //缩放后的病案大小
         int h;
 
         bool msgfilter;
@@ -41,11 +41,11 @@ namespace CJia.Health.App.UI
         /// </summary>
         private DataTable RecordNOData;
         /// <summary>
-        /// 图片信息
+        /// 病案信息
         /// </summary>
         private DataTable PictureInfo;
         /// <summary>
-        /// 已入库的图片信息
+        /// 已入库的病案信息
         /// </summary>
         private DataTable InputPictureData;
         /// <summary>
@@ -96,13 +96,13 @@ namespace CJia.Health.App.UI
                 OutHosDate = outDate;
                 if (checkState == "103")//已提交 104已合并 107合并失败
                 {
-                    MessageBox.Show("此病案为已提交审核，不能进行图片合并");
+                    MessageBox.Show("此病案为已提交审核，不能进行病案合并");
                     BindNull();
                     return;
                 }
                 if (checkState == "101")//审核通过
                 {
-                    MessageBox.Show("此病案为审核通过，不能进行图片合并");
+                    MessageBox.Show("此病案为审核通过，不能进行病案合并");
                     BindNull();
                     return;
                 }
@@ -110,9 +110,9 @@ namespace CJia.Health.App.UI
                 {
                     //分类错误
 
-                    //图片不清晰，某些图片重拍了
+                    //病案不清晰，某些病案重拍了
 
-                    //新拍了些图片
+                    //新拍了些病案
                 }
                 if (checkState == "104")//已合并
                 {
@@ -166,7 +166,7 @@ namespace CJia.Health.App.UI
             return new Presenters.ImagesInputPresenter(this);
         }
         /// <summary>
-        /// 传递图片信息参数类
+        /// 传递病案信息参数类
         /// </summary>
         Views.ImagesInputArgs imagesInputArgs = new Views.ImagesInputArgs();
 
@@ -209,7 +209,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
             }
             catch { }
@@ -253,17 +253,17 @@ namespace CJia.Health.App.UI
                             //{
                             // if (isBlankPage((Bitmap)img, 400))
                             //    {
-                            //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
+                            //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白病案的页码存起来
                             //    }
                             //}
                             //else //创佳
                             //{
                             //    if (isBlankPage((Bitmap)img, 200))
                             //    {
-                            //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
+                            //        SMpageList.Add(dr["Pic_Page"].ToString());//把空白病案的页码存起来
                             //    }
                             //}
-                            SMpageList.Add(dr["Pic_Page"].ToString());//把空白图片的页码存起来
+                            SMpageList.Add(dr["Pic_Page"].ToString());//把空白病案的页码存起来
                         }
                     }
                     waitUC.ParentForm.Close();
@@ -271,7 +271,7 @@ namespace CJia.Health.App.UI
                 }
                 catch
                 {
-                    MessageBox.Show("图片不存在或已删除，请与管理员联系。。。");
+                    MessageBox.Show("病案不存在或已删除，请与管理员联系。。。");
                     waitUC.ParentForm.Close();
                     this.Enabled = true;
                 }
@@ -304,7 +304,7 @@ namespace CJia.Health.App.UI
                 }
                 if (SMpageList.Count == 0 && PZpageList.Count == 0)
                 {
-                    if (Message.ShowQuery("只存在扫描的图片,是否继续合并?", Message.Button.YesNo) == Message.Result.Yes)
+                    if (Message.ShowQuery("只存在扫描的病案,是否继续合并?", Message.Button.YesNo) == Message.Result.Yes)
                     {
                         Merge("104");
                         isModify = true;
@@ -325,12 +325,12 @@ namespace CJia.Health.App.UI
                     }
                     if (SMNoBlankpageList.Count != 0)
                     {
-                        MessageBox.Show("拍照的图片与空白页不符，不能继续合并。");
+                        MessageBox.Show("拍照的病案与空白页不符，不能继续合并。");
                         isModify = false;
                     }
                     else
                     {
-                        if (Message.ShowQuery("只存在拍照的图片,是否继续合并?", Message.Button.YesNo) == Message.Result.Yes)
+                        if (Message.ShowQuery("只存在拍照的病案,是否继续合并?", Message.Button.YesNo) == Message.Result.Yes)
                         {
                             foreach (DataRow dr in PictureInfo.Rows)
                             {
@@ -378,7 +378,7 @@ namespace CJia.Health.App.UI
                             {
                                 if (dr["Pic_Page"].ToString() == SMpageList[i])
                                 {
-                                    //File.Delete(dr["Pic_Path"].ToString());//删除空白图片
+                                    //File.Delete(dr["Pic_Path"].ToString());//删除空白病案
                                     FtpHelp.DeleteFile(dr["Pic_Path"].ToString(), UserName, Password);
                                 }
                             }
@@ -415,20 +415,20 @@ namespace CJia.Health.App.UI
                         str = str.Remove(str.Length - 1, 1);
                     }
                     lblMesg.Text = str;
-                    if (Message.ShowQuery("空白图片张数与拍照图片页码张数不符，是否对此份病案重新录入？空白图片页码为" + str + "", Message.Button.YesNo) == Message.Result.Yes)
+                    if (Message.ShowQuery("空白病案张数与拍照病案页码张数不符，是否对此份病案重新录入？空白病案页码为" + str + "", Message.Button.YesNo) == Message.Result.Yes)
                     {
                         Merge("107");
                     }
-                    //MessageBox.Show("空白图片张数与拍照图片页码张数不符，合并失败，请对此份病案重新录入");
+                    //MessageBox.Show("空白病案张数与拍照病案页码张数不符，合并失败，请对此份病案重新录入");
                     //Merge("107");
-                    //DataTable data = CreatePictureDate();//重新加载图片
+                    //DataTable data = CreatePictureDate();//重新加载病案
                     pictureGrid.DataSource = PictureInfo;
                     isModify = false;
                 }
                 if (isModify)
                 {
                     MessageBox.Show("合并成功");
-                    Match();//处理审核未通过的图片
+                    Match();//处理审核未通过的病案
                     for (int i = 0; i < PictureInfo.Rows.Count; i++)
                     {
                         string name = PictureInfo.Rows[i]["Pic_Name"].ToString().Replace(".pdf", "");
@@ -469,7 +469,7 @@ namespace CJia.Health.App.UI
                 {
                     str_inHosTimes = txtTimes.Text;
                 }
-                //图片不清晰，某些图片重拍了
+                //病案不清晰，某些病案重拍了
                 foreach (DataRow dr in PictureInfo.Rows)
                 {
                     string page = dr["Pic_Page"].ToString();
@@ -482,7 +482,7 @@ namespace CJia.Health.App.UI
                     string filepath = Path.GetDirectoryName(dr["Pic_Path"].ToString()) + "\\Copy" + "\\" + fileName;
                     FtpHelp.DeleteFile(filepath.Replace('\\', '/').Insert(4, "/"), UserName, Password);
                 }
-                //新拍了些图片
+                //新拍了些病案
             }
         }
         /// <summary>
@@ -502,7 +502,7 @@ namespace CJia.Health.App.UI
             }
         }
         /// <summary>
-        /// 修改拍照图片名称
+        /// 修改拍照病案名称
         /// </summary>
         public void RemovePZ(DataRow dr)
         {
@@ -524,7 +524,7 @@ namespace CJia.Health.App.UI
             dr["Pic_Path"] = newfilePath.Replace('\\', '/').Insert(4, "/");
         }
         /// <summary>
-        /// 合并后修改图片信息
+        /// 合并后修改病案信息
         /// </summary>
         /// <param name="dr"></param>
         /// <param name="newPage"></param>
@@ -549,7 +549,7 @@ namespace CJia.Health.App.UI
         }
 
         /// <summary>
-        /// 判断图片是否空白页
+        /// 判断病案是否空白页
         /// </summary>
         /// <param name="bp"></param>
         /// <returns></returns>
@@ -581,7 +581,7 @@ namespace CJia.Health.App.UI
                     }
                 }
                 float f = float.Parse(m.ToString()) / float.Parse(area.ToString());
-                if (f < 0.985)//空白部分超过99%就认为此图片为空白图片
+                if (f < 0.985)//空白部分超过99%就认为此病案为空白病案
                 {
                     bol = false;
                 }
@@ -602,7 +602,7 @@ namespace CJia.Health.App.UI
                 }
                 float f = float.Parse(m.ToString()) / float.Parse(area.ToString());
                 float blank = float.Parse(CJia.Health.Tools.ConfigHelper.GetAppStrings("BlankProbability"));
-                if (f < blank)//空白部分超过99%就认为此图片为空白图片
+                if (f < blank)//空白部分超过99%就认为此病案为空白病案
                 {
                     bol = false;
                 }
@@ -620,7 +620,7 @@ namespace CJia.Health.App.UI
                 int i;
                 foreach (DataRow dr in PictureInfo.Rows)
                 {
-                    if (dr["Pic_Name"].ToString().Substring(0, 2) == "PZ")//拍照的图片，过滤出最大的页码
+                    if (dr["Pic_Name"].ToString().Substring(0, 2) == "PZ")//拍照的病案，过滤出最大的页码
                     {
                         try
                         {
@@ -641,7 +641,7 @@ namespace CJia.Health.App.UI
             return 0;
         }
         /// <summary>
-        /// 创建图片DataTable
+        /// 创建病案DataTable
         /// </summary>
         /// <returns></returns>
         public DataTable PictureData()
@@ -661,7 +661,7 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
-        /// 根据图片路径获得DataRow
+        /// 根据病案路径获得DataRow
         /// </summary>
         /// <param name="data"></param>
         /// <param name="picName"></param>
@@ -697,7 +697,7 @@ namespace CJia.Health.App.UI
             return data;
         }
         /// <summary>
-        /// 根据目录获得图片Datatable
+        /// 根据目录获得病案Datatable
         /// </summary>
         /// <param name="pathname"></param>
         /// <returns></returns>
@@ -730,7 +730,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    MessageBox.Show("此病案未上传任何图片");
+                    MessageBox.Show("此病案未上传任何病案");
                 }
                 PictureInfo = data;
                 return data;
@@ -756,7 +756,7 @@ namespace CJia.Health.App.UI
 
         }
         /// <summary>
-        /// 上传图片到服务器上
+        /// 上传病案到服务器上
         /// </summary>
         public void CopyFilesToNet(DataTable data)
         {
@@ -773,7 +773,7 @@ namespace CJia.Health.App.UI
             this.Enabled = true;
         }
         /// <summary>
-        /// 删除本地图片
+        /// 删除本地病案
         /// </summary>
         public void DeleteFile()
         {
