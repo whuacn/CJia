@@ -27,6 +27,16 @@ namespace CJia.Health.Models.Web
                 return null;
             }
         }
-
+        /// <summary>
+        /// 获得IP
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <returns></returns>
+        public DataTable GetIP(string ip)
+        {
+            object[] parames = new object[] { ip };
+            DataTable result = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlQueryIP, parames);
+            return result;
+        }
     }
 }

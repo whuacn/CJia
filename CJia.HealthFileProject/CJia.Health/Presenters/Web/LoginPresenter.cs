@@ -20,6 +20,19 @@ namespace CJia.Health.Presenters.Web
 
         void View_OnLogin(object sender, Views.Web.LoginEventArgs e)
         {
+            string[] ips = Tools.Help.GetAddressIP();
+            if (ips.Length > 0)
+            {
+                foreach (string ip in ips)
+                {
+                    DataTable ipData = Model.GetIP(ip);
+                    if (ipData.Rows.Count > 0)
+                    {
+                        View.ShowMessage("你的IP地址限制登陆病案借阅系统，请与管理员联系！");
+                        return;
+                    }
+                }
+            }
             DataTable data= this.Model.GetUserByNOAndPwd( e.UserAccount,e.UserPassword);
             if (data == null)
             {

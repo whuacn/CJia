@@ -423,17 +423,17 @@ namespace CJia.Health.Tools
         /// 获得本地IP地址
         /// </summary>
         /// <returns></returns>
-        public static string GetAddressIP()
+        public static string[] GetAddressIP()
         {
-            string AddressIP = string.Empty;
+            List<string> addressIP = new List<string>();
             foreach (IPAddress _IPAddress in Dns.GetHostEntry(Dns.GetHostName()).AddressList)
             {
                 if (_IPAddress.AddressFamily.ToString() == "InterNetwork")
                 {
-                    AddressIP = _IPAddress.ToString();
+                    addressIP.Add(_IPAddress.ToString());
                 }
             }
-            return AddressIP;
+            return addressIP.ToArray();
         }
         /// <summary>
         /// 图片添加水印文字
