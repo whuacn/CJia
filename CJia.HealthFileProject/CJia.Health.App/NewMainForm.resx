@@ -9574,7 +9574,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDgAACw4BQL7hQQAACX1JREFUWEfFlwlQFGcW
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDQAACw0B7QfALAAACX1JREFUWEfFlwlQFGcW
         xzFuNppkk92suqAmamkENOt6x/VAmJ7pnumeHiySXc0mGs2myqyIoIKiMDAMczADDKiIXKKAuAYvPMAT
         ELkEhnMYjuGQW04RQQRmhm9fI1oxjldVqnaqftVd/b3vvf/33vu+7jFDCJn9P3mr4NSVno8BByAUOA3c
         GeMUXA8B9sCHb7OgNxIATpcCPwO97PDSx3bS9CFbUeqQrfu14VF80gZtpemD7AjNANjcB2KA+W8i5JUC
@@ -9618,16 +9618,16 @@
         YmDumbQzY0y5GNs36oH/AUxO2s/iNyxfAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="barButtonItem4.ItemAppearance.Disabled.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnIP.ItemAppearance.Disabled.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem4.ItemAppearance.Hovered.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnIP.ItemAppearance.Hovered.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem4.ItemAppearance.Normal.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnIP.ItemAppearance.Normal.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem4.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnIP.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
   <data name="barButtonItem5.Caption" xml:space="preserve">
@@ -11911,6 +11911,28 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="btnPrinter.Caption" xml:space="preserve">
+    <value>条码打印机</value>
+  </data>
+  <data name="btnPrinter.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADBklEQVRYR72XS08TURiGu5YV
+        /AT3rnUJSw2JJrhCRRTdSFSiDAINWJDLjpUhShAJguIlGIKIBgsoBdrphbZQWkEUYk1BSk1LABWS1/MN
+        zHE6CGZmmjZ5MjDp97zvXGDOmACYlJh2P5byoiZGIkU0yd49eQcUSGxv/8bW1k9DkIMOQleBjfVVrCUi
+        hiCH7gLxH18RXZ41BDl0F4hFF7D0LWAIcugusLI0h/DCpCHIobtAJBzElzmHIcihu0B40Y+54KghyPHf
+        ApaaOyYZxf+BxOK8B0G/1RDkUBaor2s0NSiQ8vYr8HlWxJTnjSHIobvAp+A4vGKfIchxYAF29M0MyNSw
+        n4kK4QosFZdTgrmsGPV1DYxGCXYJZJrp9GNz8xc2NjaTWFmJIhCYgdPpNAQ5yKX2UyYVkQrE43HEYrG0
+        Qpm8wGosiuXvkZQyduokCPIuRcLS1n4mn++jTF4gFApiOuBPKcMnjoOQvP5JaTtyOo/vo0xewDflhccr
+        phXK5AWcLgcmRFtaoUxewDb+Ae9t1rRCmbzA0MggBodepxXK5AUG3vbh1cDLJLKzs5FK1H7K5AV6+3rQ
+        0/s0CQq/dD4PVcIFQ5CDXGo/ZfICz148QffzR5yu7nbk5ORAuF4Aj8cNUZxgW6cmRNHOvu+CcK1AcpFT
+        mUGZvEDn4w50dLVx2tpbdgqwYSf76xizvYN9YlgTNCM6RpnjnOQipzKDMnmBtvZWPHh4n3Ov5a40dKuk
+        AFPecbhEK0qKz2qCZvxslhzkIqcygzKlAkJZeaf6aVhdbQFhFooQDDjgc1vh8wxpg82EAiLKbxSi5nYt
+        atkzR/00rKwwd9J6JINxmHFEJjMz82hWVtaxypuFCM044HUNopSdSi3QDM2aSwvXyUVOZcZuJmX/XRHJ
+        y7Hc3NxDjIwq4eJacHoMbns/3A6NsBmaJQe5yCn7912SyV9QrgvnP9rhc/XrgmaVqyHNBUqv5rcafTkl
+        h/rAks7Av96MFQN77g/VdeT3zT776d7auc6KT1Km+u043b//AflfzeuGUgc+AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -11949,13 +11971,13 @@
     <value>文件</value>
   </data>
   <data name="ribbonControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1014, 153</value>
+    <value>1010, 153</value>
   </data>
   <data name="ribbonStatusBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 684</value>
+    <value>0, 672</value>
   </data>
   <data name="ribbonStatusBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1014, 27</value>
+    <value>1010, 27</value>
   </data>
   <data name="&gt;&gt;ribbonStatusBar1.Name" xml:space="preserve">
     <value>ribbonStatusBar1</value>
@@ -12218,7 +12240,7 @@
     <value>0, 153</value>
   </data>
   <data name="homePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1012, 505</value>
+    <value>1008, 493</value>
   </data>
   <data name="homePage.Text" xml:space="preserve">
     <value>首页</value>
@@ -12236,7 +12258,7 @@
     <value>0</value>
   </data>
   <data name="xTC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1014, 531</value>
+    <value>1010, 519</value>
   </data>
   <data name="xTC.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -12269,7 +12291,7 @@
     <value>10, 22</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1014, 711</value>
+    <value>1010, 699</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -13142,6 +13164,12 @@
   </data>
   <data name="&gt;&gt;defaultLookAndFeel1.Type" xml:space="preserve">
     <value>DevExpress.LookAndFeel.DefaultLookAndFeel, DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
+  </data>
+  <data name="&gt;&gt;btnPrinter.Name" xml:space="preserve">
+    <value>btnPrinter</value>
+  </data>
+  <data name="&gt;&gt;btnPrinter.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>NewMainForm</value>

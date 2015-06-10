@@ -1077,5 +1077,11 @@ namespace CJia.Health.App
         {
             ShowXTP(e);
         }
+
+        private void btnPrinter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UI.PrinterSet ui = new PrinterSet();
+            Tools.Help.NewRedBorderFrom(ui);
+        }
     }
 }
