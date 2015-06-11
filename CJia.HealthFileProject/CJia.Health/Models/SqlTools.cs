@@ -554,7 +554,6 @@ namespace CJia.Health.Models
                              where rn = 1";
             }
         }
-        
         /// <summary>
         /// 根据图片id，修改图片信息
         /// </summary>

@@ -24,6 +24,7 @@ namespace CJia.Health.Views
         /// 审核状态改变事件
         /// </summary>
         event EventHandler<MyPatientInputArgs> OnCheckSateChanged;
+        event EventHandler<MyPatientInputArgs> OnPrint;
         /// <summary>
         /// 绑定我的病人
         /// </summary>
