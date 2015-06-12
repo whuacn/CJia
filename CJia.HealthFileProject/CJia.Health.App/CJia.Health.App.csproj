@@ -363,6 +363,12 @@
     <Compile Include="UI\NewPatientInfoInPutView.Designer.cs">
       <DependentUpon>NewPatientInfoInPutView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PackView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PackView.Designer.cs">
+      <DependentUpon>PackView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PatientInfoView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -525,6 +531,12 @@
     <Compile Include="UI\PrinterSet.Designer.cs">
       <DependentUpon>PrinterSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PackManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PackManageView.Designer.cs">
+      <DependentUpon>PackManageView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,6 +624,9 @@
     <EmbeddedResource Include="UI\NewPatientInfoInPutView.resx">
       <DependentUpon>NewPatientInfoInPutView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\PackView.resx">
+      <DependentUpon>PackView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\PatientInfoInputView.resx">
       <DependentUpon>PatientInfoInputView.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,6 +707,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PrinterSet.resx">
       <DependentUpon>PrinterSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PackManageView.resx">
+      <DependentUpon>PackManageView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>

@@ -109,6 +109,9 @@ namespace CJia.Health.App
             this.btnLookSet = new DevExpress.XtraBars.BarButtonItem();
             this.btnIP = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPack = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPackManage = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.efff = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gggg = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -116,8 +119,8 @@ namespace CJia.Health.App
             this.pgPhoto = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ddde = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.fff = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ddde = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.jj = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.btnDicManage1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -135,7 +138,6 @@ namespace CJia.Health.App
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xTC = new DevExpress.XtraTab.XtraTabControl();
             this.homePage = new DevExpress.XtraTab.XtraTabPage();
-            this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
@@ -259,8 +261,10 @@ namespace CJia.Health.App
             this.btnLookSet,
             this.btnIP,
             this.barButtonItem5,
-            this.btnPrinter});
-            this.ribbonControl1.MaxItemId = 103;
+            this.btnPrinter,
+            this.btnPack,
+            this.btnPackManage});
+            this.ribbonControl1.MaxItemId = 107;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1141,6 +1145,33 @@ namespace CJia.Health.App
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // btnPrinter
+            // 
+            resources.ApplyResources(this.btnPrinter, "btnPrinter");
+            this.btnPrinter.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPrinter.Glyph")));
+            this.btnPrinter.Id = 102;
+            this.btnPrinter.Name = "btnPrinter";
+            this.btnPrinter.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPrinter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrinter_ItemClick);
+            // 
+            // btnPack
+            // 
+            resources.ApplyResources(this.btnPack, "btnPack");
+            this.btnPack.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPack.Glyph")));
+            this.btnPack.Id = 105;
+            this.btnPack.Name = "btnPack";
+            this.btnPack.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPack.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPack_ItemClick);
+            // 
+            // btnPackManage
+            // 
+            resources.ApplyResources(this.btnPackManage, "btnPackManage");
+            this.btnPackManage.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPackManage.Glyph")));
+            this.btnPackManage.Id = 106;
+            this.btnPackManage.Name = "btnPackManage";
+            this.btnPackManage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPackManage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ribbonPage1.Appearance.Font")));
@@ -1175,6 +1206,7 @@ namespace CJia.Health.App
             this.ewg.ItemLinks.Add(this.toolStripButton2);
             this.ewg.ItemLinks.Add(this.btnProSet);
             this.ewg.ItemLinks.Add(this.btnDataCheck);
+            this.ewg.ItemLinks.Add(this.btnPack);
             this.ewg.Name = "ewg";
             this.ewg.ShowCaptionButton = false;
             resources.ApplyResources(this.ewg, "ewg");
@@ -1207,10 +1239,20 @@ namespace CJia.Health.App
             this.ribbonPage3.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ribbonPage3.Appearance.Font")));
             this.ribbonPage3.Appearance.Options.UseFont = true;
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ddde,
-            this.fff});
+            this.fff,
+            this.ddde});
             this.ribbonPage3.Name = "ribbonPage3";
             resources.ApplyResources(this.ribbonPage3, "ribbonPage3");
+            // 
+            // fff
+            // 
+            this.fff.ItemLinks.Add(this.btnPackManage);
+            this.fff.ItemLinks.Add(this.btnLookSet);
+            this.fff.ItemLinks.Add(this.btnPrintApply);
+            this.fff.ItemLinks.Add(this.BtnBorrow);
+            this.fff.Name = "fff";
+            this.fff.ShowCaptionButton = false;
+            resources.ApplyResources(this.fff, "fff");
             // 
             // ddde
             // 
@@ -1220,15 +1262,6 @@ namespace CJia.Health.App
             this.ddde.Name = "ddde";
             this.ddde.ShowCaptionButton = false;
             resources.ApplyResources(this.ddde, "ddde");
-            // 
-            // fff
-            // 
-            this.fff.ItemLinks.Add(this.btnLookSet);
-            this.fff.ItemLinks.Add(this.btnPrintApply);
-            this.fff.ItemLinks.Add(this.BtnBorrow);
-            this.fff.Name = "fff";
-            this.fff.ShowCaptionButton = false;
-            resources.ApplyResources(this.fff, "fff");
             // 
             // jj
             // 
@@ -1382,15 +1415,6 @@ namespace CJia.Health.App
             this.homePage.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             resources.ApplyResources(this.homePage, "homePage");
             // 
-            // btnPrinter
-            // 
-            resources.ApplyResources(this.btnPrinter, "btnPrinter");
-            this.btnPrinter.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPrinter.Glyph")));
-            this.btnPrinter.Id = 102;
-            this.btnPrinter.Name = "btnPrinter";
-            this.btnPrinter.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnPrinter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrinter_ItemClick);
-            // 
             // NewMainForm
             // 
             this.Appearance.BackColor = ((System.Drawing.Color)(resources.GetObject("NewMainForm.Appearance.BackColor")));
@@ -1533,5 +1557,7 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.BarButtonItem btnIP;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnPrinter;
+        private DevExpress.XtraBars.BarButtonItem btnPack;
+        private DevExpress.XtraBars.BarButtonItem btnPackManage;
     }
 }
