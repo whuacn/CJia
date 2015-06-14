@@ -83,6 +83,7 @@ namespace CJia.Health.App.UI
         public event EventHandler<Views.MyPatientInputArgs> OnCommit;
         public event EventHandler<Views.MyPatientInputArgs> OnUndo;
         public event EventHandler<Views.MyPatientInputArgs> OnCheckSateChanged;
+        public event EventHandler<Views.MyPatientInputArgs> OnPrint;
         public void ExeBindMyPatient(DataTable data)
         {
             patientGrid.DataSource = data;
@@ -199,6 +200,16 @@ namespace CJia.Health.App.UI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             Init();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            List<string> list = GetCheckPatient();
+            if (list != null && list.Count > 0)
+            {
+                myPatientInputArgs.HealthID = list;
+                OnPrint(null, myPatientInputArgs);
+            }
         }
     }
 }

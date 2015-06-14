@@ -91,5 +91,18 @@ namespace CJia.Health.Models
             object[] sqlParams = new object[] { updateBy, healthID };
             return CJia.DefaultOleDb.Execute(transID, sql, sqlParams) > 0 ? true : false;
         }
+        public DataTable GetPatientByID(string id)
+        {
+            object[] sqlParams = new object[] { id };
+            DataTable dtResult = CJia.DefaultOleDb.Query(SqlTools.SqlQueryPatientByID, sqlParams);
+            if (dtResult != null && dtResult.Rows.Count > 0)
+            {
+                return dtResult;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

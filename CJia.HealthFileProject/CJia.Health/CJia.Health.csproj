@@ -87,9 +87,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing">
+      <HintPath>..\Dll\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="DrawHelper.cs" />
     <Compile Include="Models\ApprovalBorrowModel.cs" />
     <Compile Include="Models\BorrowTimeLenthModel.cs" />
     <Compile Include="Models\ChangePwdModel.cs" />
@@ -159,6 +163,7 @@
     <Compile Include="Presenters\ImageCheckPresenter.cs" />
     <Compile Include="Presenters\NewImageCheckPresenter.cs" />
     <Compile Include="Presenters\CompleteQueryPresenter.cs" />
+    <Compile Include="PrintHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleInterceptor.cs" />
     <Compile Include="Tools\ConfigHelper.cs" />

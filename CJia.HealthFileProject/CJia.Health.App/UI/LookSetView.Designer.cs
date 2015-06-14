@@ -42,6 +42,8 @@
             this.lblprojectName = new CJia.Controls.CJiaLabel();
             this.pdfViewer = new CJia.Health.Tools.PDFViewer();
             this.cJiaPanel2 = new CJia.Controls.CJiaPanel();
+            this.btnUnLock = new CJia.Controls.CJiaButton();
+            this.btnLock = new CJia.Controls.CJiaButton();
             this.btnExport = new CJia.Controls.CJiaButton();
             this.btnPrint = new CJia.Controls.CJiaButton();
             this.btnAllExport = new CJia.Controls.CJiaButton();
@@ -52,8 +54,6 @@
             this.btnNo = new CJia.Controls.BtnDelete();
             this.btnUpPage = new CJia.Controls.CJiaButton();
             this.btnYes = new CJia.Controls.BtnSave();
-            this.btnLock = new CJia.Controls.CJiaButton();
-            this.btnUnLock = new CJia.Controls.CJiaButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
@@ -391,6 +391,42 @@
             this.cJiaPanel2.Size = new System.Drawing.Size(176, 619);
             this.cJiaPanel2.TabIndex = 1;
             // 
+            // btnUnLock
+            // 
+            this.btnUnLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUnLock.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnUnLock.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.btnUnLock.Appearance.Options.UseFont = true;
+            this.btnUnLock.Appearance.Options.UseForeColor = true;
+            this.btnUnLock.CustomText = "病案解锁";
+            this.btnUnLock.Location = new System.Drawing.Point(15, 182);
+            this.btnUnLock.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnUnLock.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnUnLock.Name = "btnUnLock";
+            this.btnUnLock.Selectable = false;
+            this.btnUnLock.Size = new System.Drawing.Size(146, 28);
+            this.btnUnLock.TabIndex = 189;
+            this.btnUnLock.Text = "病案解锁";
+            this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click);
+            // 
+            // btnLock
+            // 
+            this.btnLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLock.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnLock.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.btnLock.Appearance.Options.UseFont = true;
+            this.btnLock.Appearance.Options.UseForeColor = true;
+            this.btnLock.CustomText = "病案锁定";
+            this.btnLock.Location = new System.Drawing.Point(15, 216);
+            this.btnLock.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnLock.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnLock.Name = "btnLock";
+            this.btnLock.Selectable = false;
+            this.btnLock.Size = new System.Drawing.Size(146, 28);
+            this.btnLock.TabIndex = 188;
+            this.btnLock.Text = "病案锁定";
+            this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
+            // 
             // btnExport
             // 
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -400,7 +436,7 @@
             this.btnExport.Appearance.Options.UseForeColor = true;
             this.btnExport.CustomText = "可以导出(F8)";
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.Location = new System.Drawing.Point(15, 430);
+            this.btnExport.Location = new System.Drawing.Point(15, 467);
             this.btnExport.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnExport.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnExport.Name = "btnExport";
@@ -419,7 +455,7 @@
             this.btnPrint.Appearance.Options.UseForeColor = true;
             this.btnPrint.CustomText = "可以打印(F7)";
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(15, 388);
+            this.btnPrint.Location = new System.Drawing.Point(15, 433);
             this.btnPrint.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnPrint.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnPrint.Name = "btnPrint";
@@ -455,7 +491,7 @@
             this.btnAllPrint.Appearance.Options.UseFont = true;
             this.btnAllPrint.Appearance.Options.UseForeColor = true;
             this.btnAllPrint.CustomText = "全部可以打印";
-            this.btnAllPrint.Location = new System.Drawing.Point(15, 534);
+            this.btnAllPrint.Location = new System.Drawing.Point(15, 542);
             this.btnAllPrint.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnAllPrint.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAllPrint.Name = "btnAllPrint";
@@ -473,7 +509,7 @@
             this.btnAllYes.Appearance.Options.UseFont = true;
             this.btnAllYes.Appearance.Options.UseForeColor = true;
             this.btnAllYes.CustomText = "全部可以浏览";
-            this.btnAllYes.Location = new System.Drawing.Point(15, 492);
+            this.btnAllYes.Location = new System.Drawing.Point(15, 508);
             this.btnAllYes.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnAllYes.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAllYes.Name = "btnAllYes";
@@ -491,7 +527,7 @@
             this.btnAllNO.Appearance.Options.UseFont = true;
             this.btnAllNO.Appearance.Options.UseForeColor = true;
             this.btnAllNO.CustomText = "全部不能浏览";
-            this.btnAllNO.Location = new System.Drawing.Point(15, 123);
+            this.btnAllNO.Location = new System.Drawing.Point(15, 250);
             this.btnAllNO.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnAllNO.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAllNO.Name = "btnAllNO";
@@ -510,7 +546,7 @@
             this.btnDownPage.Appearance.Options.UseForeColor = true;
             this.btnDownPage.CustomText = "下一页(F4)";
             this.btnDownPage.Image = ((System.Drawing.Image)(resources.GetObject("btnDownPage.Image")));
-            this.btnDownPage.Location = new System.Drawing.Point(15, 238);
+            this.btnDownPage.Location = new System.Drawing.Point(15, 324);
             this.btnDownPage.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnDownPage.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDownPage.Name = "btnDownPage";
@@ -529,7 +565,7 @@
             this.btnNo.Appearance.Options.UseForeColor = true;
             this.btnNo.CustomText = "不能浏览(F5)";
             this.btnNo.Image = ((System.Drawing.Image)(resources.GetObject("btnNo.Image")));
-            this.btnNo.Location = new System.Drawing.Point(15, 304);
+            this.btnNo.Location = new System.Drawing.Point(15, 365);
             this.btnNo.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnNo.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNo.Name = "btnNo";
@@ -548,7 +584,7 @@
             this.btnUpPage.Appearance.Options.UseForeColor = true;
             this.btnUpPage.CustomText = "上一页(F1)";
             this.btnUpPage.Image = ((System.Drawing.Image)(resources.GetObject("btnUpPage.Image")));
-            this.btnUpPage.Location = new System.Drawing.Point(15, 196);
+            this.btnUpPage.Location = new System.Drawing.Point(15, 290);
             this.btnUpPage.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnUpPage.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpPage.Name = "btnUpPage";
@@ -567,7 +603,7 @@
             this.btnYes.Appearance.Options.UseForeColor = true;
             this.btnYes.CustomText = "可以浏览(F6)";
             this.btnYes.Image = ((System.Drawing.Image)(resources.GetObject("btnYes.Image")));
-            this.btnYes.Location = new System.Drawing.Point(15, 346);
+            this.btnYes.Location = new System.Drawing.Point(15, 399);
             this.btnYes.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnYes.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnYes.Name = "btnYes";
@@ -576,42 +612,6 @@
             this.btnYes.TabIndex = 31;
             this.btnYes.Text = "可以浏览(F6)";
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
-            // 
-            // btnLock
-            // 
-            this.btnLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLock.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnLock.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.btnLock.Appearance.Options.UseFont = true;
-            this.btnLock.Appearance.Options.UseForeColor = true;
-            this.btnLock.CustomText = "病案锁定";
-            this.btnLock.Location = new System.Drawing.Point(15, 82);
-            this.btnLock.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnLock.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnLock.Name = "btnLock";
-            this.btnLock.Selectable = false;
-            this.btnLock.Size = new System.Drawing.Size(146, 28);
-            this.btnLock.TabIndex = 188;
-            this.btnLock.Text = "病案锁定";
-            this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
-            // 
-            // btnUnLock
-            // 
-            this.btnUnLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUnLock.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnUnLock.Appearance.ForeColor = System.Drawing.Color.Green;
-            this.btnUnLock.Appearance.Options.UseFont = true;
-            this.btnUnLock.Appearance.Options.UseForeColor = true;
-            this.btnUnLock.CustomText = "病案解锁";
-            this.btnUnLock.Location = new System.Drawing.Point(15, 41);
-            this.btnUnLock.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnUnLock.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnUnLock.Name = "btnUnLock";
-            this.btnUnLock.Selectable = false;
-            this.btnUnLock.Size = new System.Drawing.Size(146, 28);
-            this.btnUnLock.TabIndex = 189;
-            this.btnUnLock.Text = "病案解锁";
-            this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click);
             // 
             // LookSetView
             // 

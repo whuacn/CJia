@@ -16,6 +16,7 @@ namespace CJia.Health.App.UI
         public IPSetView()
         {
             InitializeComponent();
+            InitView();
         }
 
         protected override object CreatePresenter()
@@ -27,6 +28,7 @@ namespace CJia.Health.App.UI
         {
             txtIP.Text = string.Empty;
             OnInitView(null, null);
+            chkAll_CheckedChanged(null, null);
         }
 
         Views.IPSetViewArgs args = new Views.IPSetViewArgs();
@@ -79,14 +81,17 @@ namespace CJia.Health.App.UI
         {
             if (ckIP.CheckedIndices.Count > 0)
             {
-                List<string> ipList = new List<string>();
-                for (int i = 0; i < ckIP.CheckedIndices.Count; i++)
+                if (Message.ShowQuery("确定删除？", Message.Button.OkCancel) == Message.Result.Ok)
                 {
-                    string ip = ckIP.GetItemValue(ckIP.CheckedIndices[i]).ToString();
-                    ipList.Add(ip);
+                    List<string> ipList = new List<string>();
+                    for (int i = 0; i < ckIP.CheckedIndices.Count; i++)
+                    {
+                        string ip = ckIP.GetItemValue(ckIP.CheckedIndices[i]).ToString();
+                        ipList.Add(ip);
+                    }
+                    args.IPList = ipList;
+                    OnDelete(null, args);
                 }
-                args.IPList = ipList;
-                OnDelete(null, args);
             }
             else
             {
@@ -113,11 +118,38 @@ namespace CJia.Health.App.UI
                 }
                 else if (IsIPAddressAll(ip))
                 {
-                    MessageBox.Show("1");
+                    string tip = ip.Split('*')[0];
+                    for (int i = 1; i < 255; i++)
+                    {
+                        ipList.Add(tip + i.ToString());
+                    }
+                    args.IPList = ipList;
+                    OnAdd(null, args);
+                }
+                else if (IsIPAddressFrom(ip))
+                {
+                    string[] sip = ip.Split('-')[0].Split('.');
+                    string[] eip = ip.Split('-')[1].Split('.');
+                    if (sip[0] == eip[0] && sip[1] == eip[1] && sip[2] == eip[2])
+                    {
+                        int si=int.Parse(sip[3]);
+                        int ei=int.Parse(eip[3]);
+                        if (si <= ei)
+                        {
+                            for (int i = si; i <= ei; i++)
+                            {
+                                ipList.Add(sip[0] + "." + sip[1] + "." + sip[2] + "." + i);
+                            }
+                            args.IPList = ipList;
+                            OnAdd(null, args);
+                            return;
+                        }
+                    }
+                    MessageBox.Show("IP地址输入格式不对");
                 }
                 else
                 {
-                    MessageBox.Show("IP地址输入不合法");
+                    MessageBox.Show("IP地址输入格式不对");
                 }
             }
             else
@@ -137,10 +169,25 @@ namespace CJia.Health.App.UI
         }
         public static bool IsIPAddressAll(string ip)
         {
-            if (string.IsNullOrEmpty(ip) || ip.Length < 7 || ip.Length > 15) return false;
-            string regformat = @"^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.*$";
+            if (string.IsNullOrEmpty(ip) || ip.Length < 7 || ip.Length > 13) return false;
+            string regformat = @"^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.\*$";
             Regex regex = new Regex(regformat, RegexOptions.IgnoreCase);
             return regex.IsMatch(ip);
+        }
+        public static bool IsIPAddressFrom(string ip)
+        {
+            if (string.IsNullOrEmpty(ip) || ip.Length < 15 || ip.Length > 31) return false;
+            string regformat = @"^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\-(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$";
+            Regex regex = new Regex(regformat, RegexOptions.IgnoreCase);
+            return regex.IsMatch(ip);
+        }
+
+        private void chkAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAll.Checked)
+                ckIP.CheckAll();
+            else
+                ckIP.UnCheckAll();
         }
     }
 }

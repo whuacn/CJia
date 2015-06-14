@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyPatientInputView));
             this.cJiaPanel3 = new CJia.Controls.CJiaPanel();
+            this.btnPrint = new CJia.Controls.CJiaButton();
             this.btnRefresh = new CJia.Controls.BtnRefresh();
             this.ckAll = new CJia.Controls.CJiaCheck();
             this.btnDelete = new CJia.Controls.BtnDelete();
@@ -73,6 +74,7 @@
             // 
             // cJiaPanel3
             // 
+            this.cJiaPanel3.Controls.Add(this.btnPrint);
             this.cJiaPanel3.Controls.Add(this.btnRefresh);
             this.cJiaPanel3.Controls.Add(this.ckAll);
             this.cJiaPanel3.Controls.Add(this.btnDelete);
@@ -88,6 +90,24 @@
             this.cJiaPanel3.Size = new System.Drawing.Size(1598, 817);
             this.cJiaPanel3.TabIndex = 1;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnPrint.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnPrint.Appearance.Options.UseFont = true;
+            this.btnPrint.Appearance.Options.UseForeColor = true;
+            this.btnPrint.CustomText = "补打病案条码";
+            this.btnPrint.Location = new System.Drawing.Point(1105, 779);
+            this.btnPrint.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnPrint.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Selectable = false;
+            this.btnPrint.Size = new System.Drawing.Size(113, 28);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "补打病案条码";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,7 +117,7 @@
             this.btnRefresh.Appearance.Options.UseForeColor = true;
             this.btnRefresh.CustomText = "刷新(F5)";
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(1199, 779);
+            this.btnRefresh.Location = new System.Drawing.Point(1246, 779);
             this.btnRefresh.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnRefresh.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnRefresh.Name = "btnRefresh";
@@ -133,7 +153,7 @@
             this.btnDelete.Appearance.Options.UseForeColor = true;
             this.btnDelete.CustomText = "删除(F6)";
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(1297, 779);
+            this.btnDelete.Location = new System.Drawing.Point(1332, 779);
             this.btnDelete.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Name = "btnDelete";
@@ -173,7 +193,7 @@
             this.btnUndo.Appearance.Options.UseForeColor = true;
             this.btnUndo.CustomText = "撤销提交";
             this.btnUndo.Enabled = false;
-            this.btnUndo.Location = new System.Drawing.Point(1395, 779);
+            this.btnUndo.Location = new System.Drawing.Point(1418, 779);
             this.btnUndo.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnUndo.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUndo.Name = "btnUndo";
@@ -191,7 +211,7 @@
             this.btnCommit.Appearance.Options.UseFont = true;
             this.btnCommit.Appearance.Options.UseForeColor = true;
             this.btnCommit.CustomText = "提交审核";
-            this.btnCommit.Location = new System.Drawing.Point(1493, 779);
+            this.btnCommit.Location = new System.Drawing.Point(1504, 779);
             this.btnCommit.LookAndFeel.SkinName = "Office 2010 Blue";
             this.btnCommit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnCommit.Name = "btnCommit";
@@ -616,5 +636,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit3;
         private Controls.BtnRefresh btnRefresh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private Controls.CJiaButton btnPrint;
     }
 }

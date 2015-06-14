@@ -554,7 +554,6 @@ namespace CJia.Health.Models
                              where rn = 1";
             }
         }
-        
         /// <summary>
         /// 根据图片id，修改图片信息
         /// </summary>
@@ -2660,7 +2659,7 @@ values
         {
             get
             {
-                return @"select * from gm_ip t where t.status='1' order by t.ip";
+                return @"select * from gm_ip t where t.status='1'";
             }
         }
         /// <summary>
@@ -2680,7 +2679,7 @@ values
         {
             get
             {
-                return @"update gm_ip t set t.status='0',t.update_by=?,t.update_date=sysdate where t.ip=?";
+                return @"update gm_ip t set t.status='0',t.update_by=?,t.update_date=sysdate where t.id=?";
             }
         }
         /// <summary>

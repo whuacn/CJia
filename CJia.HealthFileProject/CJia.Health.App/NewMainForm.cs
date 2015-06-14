@@ -914,6 +914,12 @@ namespace CJia.Health.App
                 case "btnIP":
                     uc = new UI.IPSetView();
                     break;
+                case "btnPack":
+                    uc = new UI.PackView();
+                    break;
+                case "btnPackManage":
+                    uc = new UI.PackManageView();
+                    break;
                 default:
                     break;
             }
@@ -1074,6 +1080,22 @@ namespace CJia.Health.App
         }
 
         private void btnIP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowXTP(e);
+        }
+
+        private void btnPrinter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UI.PrinterSet ui = new PrinterSet();
+            Tools.Help.NewRedBorderFrom(ui);
+        }
+
+        private void btnPack_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowXTP(e);
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowXTP(e);
         }

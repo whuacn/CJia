@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IPSetView));
             this.pnlIp = new CJia.Controls.CJiaPanel();
+            this.btnRefresh = new CJia.Controls.BtnRefresh();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ckIP = new CJia.Controls.CJiaCheckedListBox();
             this.cJiaPanel1 = new CJia.Controls.CJiaPanel();
@@ -42,7 +43,7 @@
             this.btnAdd = new CJia.Controls.BtnAdd();
             this.btnDelete = new CJia.Controls.BtnDelete();
             this.cJiaLabel1 = new CJia.Controls.CJiaLabel();
-            this.btnRefresh = new CJia.Controls.BtnRefresh();
+            this.chkAll = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlIp)).BeginInit();
             this.pnlIp.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -50,12 +51,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJiaPanel1)).BeginInit();
             this.cJiaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAll.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlIp
             // 
             this.pnlIp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlIp.Controls.Add(this.chkAll);
             this.pnlIp.Controls.Add(this.btnRefresh);
             this.pnlIp.Controls.Add(this.groupBox1);
             this.pnlIp.Controls.Add(this.cJiaPanel1);
@@ -67,6 +70,25 @@
             this.pnlIp.Name = "pnlIp";
             this.pnlIp.Size = new System.Drawing.Size(892, 580);
             this.pnlIp.TabIndex = 12;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnRefresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnRefresh.Appearance.Options.UseFont = true;
+            this.btnRefresh.Appearance.Options.UseForeColor = true;
+            this.btnRefresh.CustomText = "刷新(F5)";
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(804, 537);
+            this.btnRefresh.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnRefresh.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Selectable = false;
+            this.btnRefresh.Size = new System.Drawing.Size(80, 28);
+            this.btnRefresh.TabIndex = 103;
+            this.btnRefresh.Text = "刷新(F5)";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // groupBox1
             // 
@@ -159,12 +181,8 @@
             // 
             this.txtIP.Location = new System.Drawing.Point(63, 9);
             this.txtIP.Name = "txtIP";
-            this.txtIP.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txtIP.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.txtIP.Properties.Appearance.Options.UseBackColor = true;
             this.txtIP.Properties.Appearance.Options.UseFont = true;
-            this.txtIP.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.txtIP.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtIP.Size = new System.Drawing.Size(266, 26);
             this.txtIP.TabIndex = 4;
             // 
@@ -223,24 +241,17 @@
             this.cJiaLabel1.TabIndex = 3;
             this.cJiaLabel1.Text = "IP地址限制";
             // 
-            // btnRefresh
+            // chkAll
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRefresh.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnRefresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnRefresh.Appearance.Options.UseFont = true;
-            this.btnRefresh.Appearance.Options.UseForeColor = true;
-            this.btnRefresh.CustomText = "刷新(F5)";
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(804, 537);
-            this.btnRefresh.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnRefresh.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Selectable = false;
-            this.btnRefresh.Size = new System.Drawing.Size(80, 28);
-            this.btnRefresh.TabIndex = 103;
-            this.btnRefresh.Text = "刷新(F5)";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.chkAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkAll.Location = new System.Drawing.Point(9, 535);
+            this.chkAll.Name = "chkAll";
+            this.chkAll.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.chkAll.Properties.Appearance.Options.UseFont = true;
+            this.chkAll.Properties.Caption = "全选";
+            this.chkAll.Size = new System.Drawing.Size(64, 24);
+            this.chkAll.TabIndex = 104;
+            this.chkAll.CheckedChanged += new System.EventHandler(this.chkAll_CheckedChanged);
             // 
             // IPSetView
             // 
@@ -259,6 +270,7 @@
             this.cJiaPanel1.ResumeLayout(false);
             this.cJiaPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAll.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,6 +291,7 @@
         private Controls.CJiaLabel cJiaLabel5;
         private Controls.CJiaLabel cJiaLabel4;
         private Controls.BtnRefresh btnRefresh;
+        private DevExpress.XtraEditors.CheckEdit chkAll;
 
     }
 }

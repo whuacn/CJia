@@ -216,6 +216,16 @@ namespace CJia.Health.Presenters
                 }
                 Model.InsertPatientInfo(sqlParams);
                 e.IsReturn = false;
+                try
+                {
+                    string printer = Tools.ConfigHelper.GetAppStrings("Printer");
+                    PrintHelper print = new PrintHelper();
+                    print.PrintRecord(printer, false, e.RecordNo, e.PatientName, e.InHospitalTime.ToString());
+                }
+                catch
+                {
+                    View.ShowWarning("条码打印错误");
+                }
             }
             // 如果取消保存
             else

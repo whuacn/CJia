@@ -15,6 +15,25 @@ namespace CJia.Health.Presenters
             view.OnCommit += view_OnCommit;
             view.OnUndo += view_OnUndo;
             view.OnCheckSateChanged += view_OnCheckSateChanged;
+            View.OnPrint += View_OnPrint;
+        }
+
+        void View_OnPrint(object sender, Views.MyPatientInputArgs e)
+        {
+            string printer = Tools.ConfigHelper.GetAppStrings("Printer");
+            PrintHelper print = new PrintHelper();
+            foreach (string str in e.HealthID)
+            {
+                DataTable data = Model.GetPatientByID(str);
+                try
+                {
+                    print.PrintRecord(printer, false, data.Rows[0]["RECORDNO"].ToString(), data.Rows[0]["PATIENT_NAME"].ToString(), data.Rows[0]["IN_HOSPITAL_TIME"].ToString());
+                }
+                catch
+                {
+                    View.ShowWarning("条码打印错误");
+                }
+            }
         }
 
         void view_OnCheckSateChanged(object sender, Views.MyPatientInputArgs e)
