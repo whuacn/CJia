@@ -2696,5 +2696,80 @@ values
             }
         }
         #endregion
+
+        public static string SqlQueryPatinetByInputDate
+        {
+            get
+            {
+                return @"SELECT t.*, decode(tt.pack_id, '', '未打包', '已打包') pack_status
+  FROM (SELECT t.id, t.recordno, t.patient_name, t.in_hospital_time
+          FROM gm_patient t
+         WHERE t.check_status = '101' and t.lock_status='110'
+           and t.status = '1' and t.pat_commit_date between ? and ?
+        ) t
+  left join (SELECT * FROM gm_pack_detail tt WHERE tt.status = '1') tt
+    on t.id = tt.health_id";
+            }
+        }
+        public static string SqlQueryPatByNO
+        {
+            get
+            {
+                return @"SELECT t.id, t.recordno, t.in_hospital_time,t.patient_name,t.pat_commit_date
+  FROM gm_patient t
+ WHERE t.check_status = '101'
+   and t.lock_status = '110'
+   and t.status = '1'
+   and t.recordno=?";
+            }
+        }
+        public static string SqlQueryIsPack
+        {
+            get
+            {
+                return @"SELECT * FROM gm_pack_detail t WHERE t.status='1' and t.health_id=?";
+            }
+        }
+        public static string SqlQueryPackID
+        {
+            get
+            {
+                return @"SELECT gm_pack_seq.nextval FROM dual";
+            }
+        }
+        public static string SqlAddPack
+        {
+            get
+            {
+                return @"insert into gm_pack
+  (pack_id, pack_code, pack_name, pack_address, pack_remark, status, create_date, create_by)
+values
+  (?, ?, ?, ?, ?, '1', sysdate,  ?)";
+            }
+        }
+        public static string SqlQueryPackCode
+        {
+            get
+            {
+                return @"SELECT gm_pack_code_seq.nextval FROM dual";
+            }
+        }
+        public static string SqlAddPackDetail
+        {
+            get
+            {
+                return @"insert into gm_pack_detail
+  (id, pack_id, health_id, status, create_date, create_by)
+values
+  (gm_pack_detail_seq.nextval, ?, ?, '1', sysdate, ?)";
+            }
+        }
+        public static string SqlQueryPackByName
+        {
+            get
+            {
+                return @"SELECT * FROM gm_pack t WHERE t.pack_name=?";
+            }
+        }
     }
 }

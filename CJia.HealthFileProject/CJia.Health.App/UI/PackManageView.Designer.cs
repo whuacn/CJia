@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnSave4 = new CJia.Controls.BtnSave();
+            this.cJiaButton3 = new CJia.Controls.CJiaButton();
+            this.cJiaButton1 = new CJia.Controls.CJiaButton();
+            this.btnStart = new CJia.Controls.CJiaButton();
             this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
@@ -41,6 +43,9 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.cJiaButton2 = new CJia.Controls.CJiaButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
@@ -63,11 +68,8 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnStart = new CJia.Controls.CJiaButton();
-            this.cJiaButton1 = new CJia.Controls.CJiaButton();
-            this.cJiaButton2 = new CJia.Controls.CJiaButton();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.cJiaButton4 = new CJia.Controls.CJiaButton();
+            this.cJiaButton5 = new CJia.Controls.CJiaButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
@@ -75,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPatientInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
@@ -85,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -94,9 +96,11 @@
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton5);
+            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton4);
+            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton3);
             this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton1);
             this.splitContainerControl1.Panel1.Controls.Add(this.btnStart);
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnSave4);
             this.splitContainerControl1.Panel1.Controls.Add(this.textEdit7);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl9);
             this.splitContainerControl1.Panel1.Controls.Add(this.textEdit2);
@@ -128,21 +132,53 @@
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // btnSave4
+            // cJiaButton3
             // 
-            this.btnSave4.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnSave4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnSave4.Appearance.Options.UseFont = true;
-            this.btnSave4.Appearance.Options.UseForeColor = true;
-            this.btnSave4.CustomText = "入包";
-            this.btnSave4.Location = new System.Drawing.Point(248, 76);
-            this.btnSave4.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnSave4.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnSave4.Name = "btnSave4";
-            this.btnSave4.Selectable = false;
-            this.btnSave4.Size = new System.Drawing.Size(63, 25);
-            this.btnSave4.TabIndex = 19;
-            this.btnSave4.Text = "入包";
+            this.cJiaButton3.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.cJiaButton3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.cJiaButton3.Appearance.Options.UseFont = true;
+            this.cJiaButton3.Appearance.Options.UseForeColor = true;
+            this.cJiaButton3.CustomText = "补打包条码";
+            this.cJiaButton3.Location = new System.Drawing.Point(59, 117);
+            this.cJiaButton3.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.cJiaButton3.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cJiaButton3.Name = "cJiaButton3";
+            this.cJiaButton3.Selectable = false;
+            this.cJiaButton3.Size = new System.Drawing.Size(80, 28);
+            this.cJiaButton3.TabIndex = 183;
+            this.cJiaButton3.Text = "补打包条码";
+            // 
+            // cJiaButton1
+            // 
+            this.cJiaButton1.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.cJiaButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.cJiaButton1.Appearance.Options.UseFont = true;
+            this.cJiaButton1.Appearance.Options.UseForeColor = true;
+            this.cJiaButton1.CustomText = "选择出包";
+            this.cJiaButton1.Location = new System.Drawing.Point(145, 117);
+            this.cJiaButton1.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.cJiaButton1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cJiaButton1.Name = "cJiaButton1";
+            this.cJiaButton1.Selectable = false;
+            this.cJiaButton1.Size = new System.Drawing.Size(80, 28);
+            this.cJiaButton1.TabIndex = 182;
+            this.cJiaButton1.Text = "选择出包";
+            // 
+            // btnStart
+            // 
+            this.btnStart.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnStart.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnStart.Appearance.Options.UseFont = true;
+            this.btnStart.Appearance.Options.UseForeColor = true;
+            this.btnStart.CustomText = "解包";
+            this.btnStart.Location = new System.Drawing.Point(231, 117);
+            this.btnStart.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnStart.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Selectable = false;
+            this.btnStart.Size = new System.Drawing.Size(80, 28);
+            this.btnStart.TabIndex = 181;
+            this.btnStart.Text = "解包";
             // 
             // textEdit7
             // 
@@ -376,7 +412,7 @@
             this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.textEdit1.Properties.Appearance.Options.UseFont = true;
             this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Size = new System.Drawing.Size(244, 22);
+            this.textEdit1.Size = new System.Drawing.Size(175, 22);
             this.textEdit1.TabIndex = 1;
             // 
             // labelControl1
@@ -386,6 +422,41 @@
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "包名称：";
+            // 
+            // textEdit8
+            // 
+            this.textEdit8.Location = new System.Drawing.Point(556, 12);
+            this.textEdit8.Name = "textEdit8";
+            this.textEdit8.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.textEdit8.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.textEdit8.Properties.Appearance.Options.UseFont = true;
+            this.textEdit8.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit8.Size = new System.Drawing.Size(168, 22);
+            this.textEdit8.TabIndex = 184;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(502, 16);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(48, 14);
+            this.labelControl10.TabIndex = 183;
+            this.labelControl10.Text = "包位置：";
+            // 
+            // cJiaButton2
+            // 
+            this.cJiaButton2.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.cJiaButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.cJiaButton2.Appearance.Options.UseFont = true;
+            this.cJiaButton2.Appearance.Options.UseForeColor = true;
+            this.cJiaButton2.CustomText = "查询";
+            this.cJiaButton2.Location = new System.Drawing.Point(502, 69);
+            this.cJiaButton2.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.cJiaButton2.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cJiaButton2.Name = "cJiaButton2";
+            this.cJiaButton2.Selectable = false;
+            this.cJiaButton2.Size = new System.Drawing.Size(80, 28);
+            this.cJiaButton2.TabIndex = 182;
+            this.cJiaButton2.Text = "查询";
             // 
             // labelControl7
             // 
@@ -762,72 +833,37 @@
             this.gridColumn12.VisibleIndex = 7;
             this.gridColumn12.Width = 150;
             // 
-            // btnStart
+            // cJiaButton4
             // 
-            this.btnStart.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnStart.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnStart.Appearance.Options.UseFont = true;
-            this.btnStart.Appearance.Options.UseForeColor = true;
-            this.btnStart.CustomText = "解包";
-            this.btnStart.Location = new System.Drawing.Point(231, 117);
-            this.btnStart.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnStart.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Selectable = false;
-            this.btnStart.Size = new System.Drawing.Size(80, 28);
-            this.btnStart.TabIndex = 181;
-            this.btnStart.Text = "解包";
+            this.cJiaButton4.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.cJiaButton4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.cJiaButton4.Appearance.Options.UseFont = true;
+            this.cJiaButton4.Appearance.Options.UseForeColor = true;
+            this.cJiaButton4.CustomText = "补入包";
+            this.cJiaButton4.Location = new System.Drawing.Point(255, 74);
+            this.cJiaButton4.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.cJiaButton4.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cJiaButton4.Name = "cJiaButton4";
+            this.cJiaButton4.Selectable = false;
+            this.cJiaButton4.Size = new System.Drawing.Size(56, 28);
+            this.cJiaButton4.TabIndex = 185;
+            this.cJiaButton4.Text = "补入包";
             // 
-            // cJiaButton1
+            // cJiaButton5
             // 
-            this.cJiaButton1.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton1.Appearance.Options.UseFont = true;
-            this.cJiaButton1.Appearance.Options.UseForeColor = true;
-            this.cJiaButton1.CustomText = "选择出包";
-            this.cJiaButton1.Location = new System.Drawing.Point(145, 117);
-            this.cJiaButton1.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton1.Name = "cJiaButton1";
-            this.cJiaButton1.Selectable = false;
-            this.cJiaButton1.Size = new System.Drawing.Size(80, 28);
-            this.cJiaButton1.TabIndex = 182;
-            this.cJiaButton1.Text = "选择出包";
-            // 
-            // cJiaButton2
-            // 
-            this.cJiaButton2.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton2.Appearance.Options.UseFont = true;
-            this.cJiaButton2.Appearance.Options.UseForeColor = true;
-            this.cJiaButton2.CustomText = "查询";
-            this.cJiaButton2.Location = new System.Drawing.Point(502, 69);
-            this.cJiaButton2.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton2.Name = "cJiaButton2";
-            this.cJiaButton2.Selectable = false;
-            this.cJiaButton2.Size = new System.Drawing.Size(80, 28);
-            this.cJiaButton2.TabIndex = 182;
-            this.cJiaButton2.Text = "查询";
-            // 
-            // textEdit8
-            // 
-            this.textEdit8.Location = new System.Drawing.Point(556, 12);
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textEdit8.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.textEdit8.Properties.Appearance.Options.UseFont = true;
-            this.textEdit8.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit8.Size = new System.Drawing.Size(168, 22);
-            this.textEdit8.TabIndex = 184;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(502, 16);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(48, 14);
-            this.labelControl10.TabIndex = 183;
-            this.labelControl10.Text = "包位置：";
+            this.cJiaButton5.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.cJiaButton5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.cJiaButton5.Appearance.Options.UseFont = true;
+            this.cJiaButton5.Appearance.Options.UseForeColor = true;
+            this.cJiaButton5.CustomText = "查询";
+            this.cJiaButton5.Location = new System.Drawing.Point(255, 40);
+            this.cJiaButton5.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.cJiaButton5.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cJiaButton5.Name = "cJiaButton5";
+            this.cJiaButton5.Selectable = false;
+            this.cJiaButton5.Size = new System.Drawing.Size(56, 28);
+            this.cJiaButton5.TabIndex = 186;
+            this.cJiaButton5.Text = "查询";
             // 
             // PackManageView
             // 
@@ -843,6 +879,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPatientInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
@@ -853,7 +890,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJiaGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -893,13 +929,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit textEdit7;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private Controls.BtnSave btnSave4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private Controls.CJiaButton cJiaButton1;
         private Controls.CJiaButton btnStart;
         private Controls.CJiaButton cJiaButton2;
         private DevExpress.XtraEditors.TextEdit textEdit8;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private Controls.CJiaButton cJiaButton3;
+        private Controls.CJiaButton cJiaButton5;
+        private Controls.CJiaButton cJiaButton4;
 
     }
 }

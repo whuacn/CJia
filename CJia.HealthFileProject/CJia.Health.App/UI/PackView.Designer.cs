@@ -29,51 +29,53 @@
         private void InitializeComponent()
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.btnNoPack = new CJia.Controls.CJiaButton();
             this.gridPatient = new CJia.Controls.CJiaGrid();
             this.gvPatientInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dtEnd = new DevExpress.XtraEditors.DateEdit();
+            this.dtStart = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.cbNumber = new System.Windows.Forms.ComboBox();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.btnOK = new CJia.Controls.CJiaButton();
+            this.txtAddress = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.btnPack = new CJia.Controls.CJiaButton();
+            this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.ckCode = new DevExpress.XtraEditors.CheckEdit();
+            this.txtPackName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.cJiaGrid1 = new CJia.Controls.CJiaGrid();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.rgStatus = new DevExpress.XtraEditors.RadioGroup();
+            this.gcPack = new CJia.Controls.CJiaGrid();
+            this.gvPack = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtRecord = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cJiaButton2 = new CJia.Controls.CJiaButton();
-            this.cJiaButton1 = new CJia.Controls.CJiaButton();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPatientInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEnd.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEnd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPackName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecord.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -82,31 +84,51 @@
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton2);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnNoPack);
             this.splitContainerControl1.Panel1.Controls.Add(this.gridPatient);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.dateEdit2);
-            this.splitContainerControl1.Panel1.Controls.Add(this.dateEdit1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.dtEnd);
+            this.splitContainerControl1.Panel1.Controls.Add(this.dtStart);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl2);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.splitContainerControl1.Panel2.Controls.Add(this.textEdit3);
+            this.splitContainerControl1.Panel2.Controls.Add(this.cbNumber);
+            this.splitContainerControl1.Panel2.Controls.Add(this.labelControl7);
+            this.splitContainerControl1.Panel2.Controls.Add(this.btnOK);
+            this.splitContainerControl1.Panel2.Controls.Add(this.txtAddress);
             this.splitContainerControl1.Panel2.Controls.Add(this.labelControl6);
-            this.splitContainerControl1.Panel2.Controls.Add(this.cJiaButton1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.memoEdit1);
+            this.splitContainerControl1.Panel2.Controls.Add(this.btnPack);
+            this.splitContainerControl1.Panel2.Controls.Add(this.txtRemark);
             this.splitContainerControl1.Panel2.Controls.Add(this.labelControl5);
-            this.splitContainerControl1.Panel2.Controls.Add(this.checkEdit1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.textEdit2);
+            this.splitContainerControl1.Panel2.Controls.Add(this.ckCode);
+            this.splitContainerControl1.Panel2.Controls.Add(this.txtPackName);
             this.splitContainerControl1.Panel2.Controls.Add(this.labelControl4);
-            this.splitContainerControl1.Panel2.Controls.Add(this.radioGroup1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.cJiaGrid1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.textEdit1);
+            this.splitContainerControl1.Panel2.Controls.Add(this.rgStatus);
+            this.splitContainerControl1.Panel2.Controls.Add(this.gcPack);
+            this.splitContainerControl1.Panel2.Controls.Add(this.txtRecord);
             this.splitContainerControl1.Panel2.Controls.Add(this.labelControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1043, 721);
             this.splitContainerControl1.SplitterPosition = 326;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
+            // 
+            // btnNoPack
+            // 
+            this.btnNoPack.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnNoPack.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnNoPack.Appearance.Options.UseFont = true;
+            this.btnNoPack.Appearance.Options.UseForeColor = true;
+            this.btnNoPack.CustomText = "查询";
+            this.btnNoPack.Location = new System.Drawing.Point(203, 49);
+            this.btnNoPack.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnNoPack.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnNoPack.Name = "btnNoPack";
+            this.btnNoPack.Selectable = false;
+            this.btnNoPack.Size = new System.Drawing.Size(112, 28);
+            this.btnNoPack.TabIndex = 183;
+            this.btnNoPack.Text = "查询";
+            this.btnNoPack.Click += new System.EventHandler(this.btnNoPack_Click);
             // 
             // gridPatient
             // 
@@ -242,7 +264,8 @@
             this.gvPatientInfo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn3,
             this.gridColumn2,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn5});
             this.gvPatientInfo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.gvPatientInfo.GridControl = this.gridPatient;
             this.gvPatientInfo.IndicatorWidth = 40;
@@ -254,6 +277,7 @@
             this.gvPatientInfo.OptionsView.EnableAppearanceOddRow = true;
             this.gvPatientInfo.OptionsView.ShowGroupPanel = false;
             this.gvPatientInfo.RowHeight = 25;
+            this.gvPatientInfo.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvPatientInfo_RowCellStyle);
             // 
             // gridColumn3
             // 
@@ -266,7 +290,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 119;
+            this.gridColumn3.Width = 88;
             // 
             // gridColumn2
             // 
@@ -279,7 +303,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 59;
+            this.gridColumn2.Width = 63;
             // 
             // gridColumn4
             // 
@@ -292,7 +316,16 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 78;
+            this.gridColumn4.Width = 59;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "状态";
+            this.gridColumn5.FieldName = "PACK_STATUS";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 67;
             // 
             // labelControl3
             // 
@@ -302,39 +335,39 @@
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "~";
             // 
-            // dateEdit2
+            // dtEnd
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(203, 16);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtEnd.EditValue = null;
+            this.dtEnd.Location = new System.Drawing.Point(203, 16);
+            this.dtEnd.Name = "dtEnd";
+            this.dtEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.dateEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit2.Properties.EditFormat.FormatString = "yyyy-MM-dd";
-            this.dateEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit2.Properties.Mask.EditMask = "yyyy-MM-dd";
-            this.dateEdit2.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtEnd.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.dtEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtEnd.Properties.EditFormat.FormatString = "yyyy-MM-dd";
+            this.dtEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtEnd.Properties.Mask.EditMask = "yyyy-MM-dd";
+            this.dtEnd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit2.Size = new System.Drawing.Size(114, 20);
-            this.dateEdit2.TabIndex = 4;
+            this.dtEnd.Size = new System.Drawing.Size(114, 20);
+            this.dtEnd.TabIndex = 4;
             // 
-            // dateEdit1
+            // dtStart
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(68, 16);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtStart.EditValue = null;
+            this.dtStart.Location = new System.Drawing.Point(68, 16);
+            this.dtStart.Name = "dtStart";
+            this.dtStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.EditFormat.FormatString = "yyyy-MM-dd";
-            this.dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.Mask.EditMask = "yyyy-MM-dd";
-            this.dateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtStart.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.dtStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtStart.Properties.EditFormat.FormatString = "yyyy-MM-dd";
+            this.dtStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtStart.Properties.Mask.EditMask = "yyyy-MM-dd";
+            this.dtStart.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit1.Size = new System.Drawing.Size(114, 20);
-            this.dateEdit1.TabIndex = 3;
+            this.dtStart.Size = new System.Drawing.Size(114, 20);
+            this.dtStart.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -344,12 +377,88 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "录入时间：";
             // 
-            // memoEdit1
+            // cbNumber
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(73, 82);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(222, 67);
-            this.memoEdit1.TabIndex = 17;
+            this.cbNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNumber.FormattingEnabled = true;
+            this.cbNumber.Items.AddRange(new object[] {
+            "",
+            "10",
+            "30",
+            "50",
+            "100",
+            "200",
+            "500"});
+            this.cbNumber.Location = new System.Drawing.Point(608, 129);
+            this.cbNumber.Name = "cbNumber";
+            this.cbNumber.Size = new System.Drawing.Size(92, 22);
+            this.cbNumber.TabIndex = 188;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Location = new System.Drawing.Point(530, 132);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(72, 14);
+            this.labelControl7.TabIndex = 187;
+            this.labelControl7.Text = "包容量上限：";
+            // 
+            // btnOK
+            // 
+            this.btnOK.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnOK.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnOK.Appearance.Options.UseFont = true;
+            this.btnOK.Appearance.Options.UseForeColor = true;
+            this.btnOK.CustomText = "确定";
+            this.btnOK.Location = new System.Drawing.Point(301, 12);
+            this.btnOK.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnOK.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Selectable = false;
+            this.btnOK.Size = new System.Drawing.Size(62, 28);
+            this.btnOK.TabIndex = 184;
+            this.btnOK.Text = "确定";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(354, 48);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(222, 20);
+            this.txtAddress.TabIndex = 2;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(300, 51);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(48, 14);
+            this.labelControl6.TabIndex = 185;
+            this.labelControl6.Text = "包位置：";
+            // 
+            // btnPack
+            // 
+            this.btnPack.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnPack.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnPack.Appearance.Options.UseFont = true;
+            this.btnPack.Appearance.Options.UseForeColor = true;
+            this.btnPack.CustomText = "打包/上架";
+            this.btnPack.Location = new System.Drawing.Point(304, 102);
+            this.btnPack.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnPack.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnPack.Name = "btnPack";
+            this.btnPack.Selectable = false;
+            this.btnPack.Size = new System.Drawing.Size(112, 28);
+            this.btnPack.TabIndex = 4;
+            this.btnPack.Text = "打包/上架";
+            this.btnPack.Click += new System.EventHandler(this.btnPack_Click);
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(73, 82);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(222, 67);
+            this.txtRemark.TabIndex = 3;
             // 
             // labelControl5
             // 
@@ -359,21 +468,21 @@
             this.labelControl5.TabIndex = 15;
             this.labelControl5.Text = "详细说明：";
             // 
-            // checkEdit1
+            // ckCode
             // 
-            this.checkEdit1.EditValue = true;
-            this.checkEdit1.Location = new System.Drawing.Point(422, 107);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "生成并打印条码";
-            this.checkEdit1.Size = new System.Drawing.Size(133, 19);
-            this.checkEdit1.TabIndex = 14;
+            this.ckCode.EditValue = true;
+            this.ckCode.Location = new System.Drawing.Point(422, 107);
+            this.ckCode.Name = "ckCode";
+            this.ckCode.Properties.Caption = "打印条码";
+            this.ckCode.Size = new System.Drawing.Size(92, 19);
+            this.ckCode.TabIndex = 5;
             // 
-            // textEdit2
+            // txtPackName
             // 
-            this.textEdit2.Location = new System.Drawing.Point(73, 51);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(222, 20);
-            this.textEdit2.TabIndex = 12;
+            this.txtPackName.Location = new System.Drawing.Point(73, 51);
+            this.txtPackName.Name = "txtPackName";
+            this.txtPackName.Size = new System.Drawing.Size(222, 20);
+            this.txtPackName.TabIndex = 1;
             // 
             // labelControl4
             // 
@@ -383,168 +492,168 @@
             this.labelControl4.TabIndex = 11;
             this.labelControl4.Text = "包名称：";
             // 
-            // radioGroup1
+            // rgStatus
             // 
-            this.radioGroup1.EditValue = ((short)(0));
-            this.radioGroup1.Location = new System.Drawing.Point(304, 10);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.rgStatus.EditValue = ((short)(0));
+            this.rgStatus.Location = new System.Drawing.Point(369, 10);
+            this.rgStatus.Name = "rgStatus";
+            this.rgStatus.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.rgStatus.Properties.Appearance.Options.UseBackColor = true;
+            this.rgStatus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.rgStatus.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "入包"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "出包")});
-            this.radioGroup1.Size = new System.Drawing.Size(156, 33);
-            this.radioGroup1.TabIndex = 10;
+            this.rgStatus.Size = new System.Drawing.Size(156, 33);
+            this.rgStatus.TabIndex = 10;
             // 
-            // cJiaGrid1
+            // gcPack
             // 
-            this.cJiaGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gcPack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cJiaGrid1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cJiaGrid1.IndicatorWidth = 50;
-            this.cJiaGrid1.Location = new System.Drawing.Point(5, 155);
-            this.cJiaGrid1.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaGrid1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaGrid1.MainView = this.gridView1;
-            this.cJiaGrid1.Name = "cJiaGrid1";
-            this.cJiaGrid1.ShowRowNumber = true;
-            this.cJiaGrid1.Size = new System.Drawing.Size(695, 561);
-            this.cJiaGrid1.TabIndex = 9;
-            this.cJiaGrid1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcPack.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gcPack.IndicatorWidth = 50;
+            this.gcPack.Location = new System.Drawing.Point(5, 155);
+            this.gcPack.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.gcPack.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.gcPack.MainView = this.gvPack;
+            this.gcPack.Name = "gcPack";
+            this.gcPack.ShowRowNumber = true;
+            this.gcPack.Size = new System.Drawing.Size(695, 561);
+            this.gcPack.TabIndex = 9;
+            this.gcPack.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPack});
             // 
-            // gridView1
+            // gvPack
             // 
-            this.gridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gridView1.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
-            this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
-            this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gridView1.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
-            this.gridView1.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.EvenRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.EvenRow.Options.UseBorderColor = true;
-            this.gridView1.Appearance.EvenRow.Options.UseForeColor = true;
-            this.gridView1.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.FilterCloseButton.Options.UseBackColor = true;
-            this.gridView1.Appearance.FilterCloseButton.Options.UseBorderColor = true;
-            this.gridView1.Appearance.FilterCloseButton.Options.UseForeColor = true;
-            this.gridView1.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
-            this.gridView1.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.FilterPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.FilterPanel.Options.UseForeColor = true;
-            this.gridView1.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.FixedLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.FixedLine.Options.UseBackColor = true;
-            this.gridView1.Appearance.FixedLine.Options.UseBorderColor = true;
-            this.gridView1.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridView1.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
-            this.gridView1.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
-            this.gridView1.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.FocusedRow.Options.UseBorderColor = true;
-            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridView1.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridView1.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.gridView1.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.gridView1.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.GroupButton.Options.UseBackColor = true;
-            this.gridView1.Appearance.GroupButton.Options.UseBorderColor = true;
-            this.gridView1.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.GroupFooter.Options.UseBackColor = true;
-            this.gridView1.Appearance.GroupFooter.Options.UseBorderColor = true;
-            this.gridView1.Appearance.GroupFooter.Options.UseForeColor = true;
-            this.gridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
-            this.gridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.gridView1.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.GroupRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.GroupRow.Options.UseBorderColor = true;
-            this.gridView1.Appearance.GroupRow.Options.UseForeColor = true;
-            this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseBorderColor = true;
-            this.gridView1.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
-            this.gridView1.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.gridView1.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.HideSelectionRow.Options.UseBorderColor = true;
-            this.gridView1.Appearance.HideSelectionRow.Options.UseForeColor = true;
-            this.gridView1.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.HorzLine.Options.UseBackColor = true;
-            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.OddRow.Options.UseBorderColor = true;
-            this.gridView1.Appearance.OddRow.Options.UseForeColor = true;
-            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.gridView1.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.gridView1.Appearance.Preview.Options.UseFont = true;
-            this.gridView1.Appearance.Preview.Options.UseForeColor = true;
-            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.Row.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.Options.UseForeColor = true;
-            this.gridView1.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
-            this.gridView1.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.gridView1.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.gridView1.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.SelectedRow.Options.UseForeColor = true;
-            this.gridView1.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.VertLine.Options.UseBackColor = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvPack.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
+            this.gvPack.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gvPack.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gvPack.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvPack.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gvPack.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gvPack.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gvPack.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
+            this.gvPack.Appearance.Empty.Options.UseBackColor = true;
+            this.gvPack.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.EvenRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvPack.Appearance.EvenRow.Options.UseBorderColor = true;
+            this.gvPack.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gvPack.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
+            this.gvPack.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gvPack.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gvPack.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gvPack.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvPack.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gvPack.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gvPack.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.FixedLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gvPack.Appearance.FixedLine.Options.UseBorderColor = true;
+            this.gvPack.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
+            this.gvPack.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvPack.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvPack.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
+            this.gvPack.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
+            this.gvPack.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.gvPack.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvPack.Appearance.FocusedRow.Options.UseBorderColor = true;
+            this.gvPack.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvPack.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvPack.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gvPack.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gvPack.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gvPack.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gvPack.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gvPack.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gvPack.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gvPack.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gvPack.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvPack.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gvPack.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gvPack.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gvPack.Appearance.GroupRow.Options.UseBorderColor = true;
+            this.gvPack.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvPack.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPack.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvPack.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvPack.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.gvPack.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
+            this.gvPack.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvPack.Appearance.HideSelectionRow.Options.UseBorderColor = true;
+            this.gvPack.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gvPack.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gvPack.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvPack.Appearance.OddRow.Options.UseBorderColor = true;
+            this.gvPack.Appearance.OddRow.Options.UseForeColor = true;
+            this.gvPack.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
+            this.gvPack.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
+            this.gvPack.Appearance.Preview.Options.UseFont = true;
+            this.gvPack.Appearance.Preview.Options.UseForeColor = true;
+            this.gvPack.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gvPack.Appearance.Row.Options.UseBackColor = true;
+            this.gvPack.Appearance.Row.Options.UseForeColor = true;
+            this.gvPack.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPack.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gvPack.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gvPack.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
+            this.gvPack.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.gvPack.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gvPack.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.gvPack.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.gvPack.Appearance.TopNewRow.Options.UseBackColor = true;
+            this.gvPack.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPack.Appearance.VertLine.Options.UseBackColor = true;
+            this.gvPack.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn6,
             this.gridColumn7,
-            this.gridColumn10,
-            this.gridColumn11,
             this.gridColumn12});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView1.GridControl = this.cJiaGrid1;
-            this.gridView1.IndicatorWidth = 40;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsCustomization.AllowFilter = false;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowHeight = 25;
+            this.gvPack.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.gvPack.GridControl = this.gcPack;
+            this.gvPack.IndicatorWidth = 40;
+            this.gvPack.Name = "gvPack";
+            this.gvPack.OptionsBehavior.Editable = false;
+            this.gvPack.OptionsCustomization.AllowFilter = false;
+            this.gvPack.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvPack.OptionsView.ColumnAutoWidth = false;
+            this.gvPack.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvPack.OptionsView.EnableAppearanceOddRow = true;
+            this.gvPack.OptionsView.ShowGroupPanel = false;
+            this.gvPack.RowHeight = 25;
             // 
             // gridColumn1
             // 
@@ -585,32 +694,6 @@
             this.gridColumn7.VisibleIndex = 2;
             this.gridColumn7.Width = 87;
             // 
-            // gridColumn10
-            // 
-            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.gridColumn10.AppearanceCell.Options.UseFont = true;
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn10.Caption = "性别";
-            this.gridColumn10.FieldName = "GENDER_NAME";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            this.gridColumn10.Width = 49;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.gridColumn11.AppearanceCell.Options.UseFont = true;
-            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn11.Caption = "录入人";
-            this.gridColumn11.FieldName = "PAT_COMMIT_NAME";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 4;
-            this.gridColumn11.Width = 92;
-            // 
             // gridColumn12
             // 
             this.gridColumn12.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
@@ -623,19 +706,19 @@
             this.gridColumn12.FieldName = "PAT_COMMIT_DATE";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 5;
+            this.gridColumn12.VisibleIndex = 3;
             this.gridColumn12.Width = 155;
             // 
-            // textEdit1
+            // txtRecord
             // 
-            this.textEdit1.Location = new System.Drawing.Point(73, 13);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Size = new System.Drawing.Size(222, 26);
-            this.textEdit1.TabIndex = 1;
+            this.txtRecord.Location = new System.Drawing.Point(73, 13);
+            this.txtRecord.Name = "txtRecord";
+            this.txtRecord.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtRecord.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtRecord.Properties.Appearance.Options.UseFont = true;
+            this.txtRecord.Properties.Appearance.Options.UseForeColor = true;
+            this.txtRecord.Size = new System.Drawing.Size(222, 26);
+            this.txtRecord.TabIndex = 0;
             // 
             // labelControl1
             // 
@@ -644,53 +727,6 @@
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "病案号：";
-            // 
-            // cJiaButton2
-            // 
-            this.cJiaButton2.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton2.Appearance.Options.UseFont = true;
-            this.cJiaButton2.Appearance.Options.UseForeColor = true;
-            this.cJiaButton2.CustomText = "未打包/上架";
-            this.cJiaButton2.Location = new System.Drawing.Point(203, 49);
-            this.cJiaButton2.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton2.Name = "cJiaButton2";
-            this.cJiaButton2.Selectable = false;
-            this.cJiaButton2.Size = new System.Drawing.Size(112, 28);
-            this.cJiaButton2.TabIndex = 183;
-            this.cJiaButton2.Text = "未打包/上架";
-            // 
-            // cJiaButton1
-            // 
-            this.cJiaButton1.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton1.Appearance.Options.UseFont = true;
-            this.cJiaButton1.Appearance.Options.UseForeColor = true;
-            this.cJiaButton1.CustomText = "打包/上架";
-            this.cJiaButton1.Location = new System.Drawing.Point(304, 102);
-            this.cJiaButton1.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton1.Name = "cJiaButton1";
-            this.cJiaButton1.Selectable = false;
-            this.cJiaButton1.Size = new System.Drawing.Size(112, 28);
-            this.cJiaButton1.TabIndex = 184;
-            this.cJiaButton1.Text = "打包/上架";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(354, 48);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(222, 20);
-            this.textEdit3.TabIndex = 186;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(300, 51);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(48, 14);
-            this.labelControl6.TabIndex = 185;
-            this.labelControl6.Text = "包位置：";
             // 
             // PackView
             // 
@@ -703,18 +739,18 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPatientInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJiaGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEnd.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEnd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPackName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecord.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -722,34 +758,36 @@
         #endregion
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtRecord;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dtStart;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
+        private DevExpress.XtraEditors.DateEdit dtEnd;
         private Controls.CJiaGrid gridPatient;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPatientInfo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private Controls.CJiaGrid cJiaGrid1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private Controls.CJiaGrid gcPack;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPack;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.CheckEdit ckCode;
+        private DevExpress.XtraEditors.TextEdit txtPackName;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.RadioGroup rgStatus;
+        private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private Controls.CJiaButton cJiaButton2;
-        private Controls.CJiaButton cJiaButton1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private Controls.CJiaButton btnNoPack;
+        private Controls.CJiaButton btnPack;
+        private DevExpress.XtraEditors.TextEdit txtAddress;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private Controls.CJiaButton btnOK;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private System.Windows.Forms.ComboBox cbNumber;
     }
 }

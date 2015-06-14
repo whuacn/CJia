@@ -205,5 +205,24 @@ namespace CJia.Health
             DrawString("入院次数：", cellContentFt, br, minX + 85, minY + 65 + 20);
             DrawString(inHosTime, cellContentFt, br, minX + 147, minY + 65 + 20);
         }
+
+        public void DrawPackPrintContent(string packName, string packCode, Point startPoint, Point endPoint)
+        {
+            //实际情况 要继续调试
+            int minX = MinX = startPoint.X;
+            int maxX = MaxX = endPoint.X;
+            int minY = MinY = startPoint.Y;
+            int maxY = MaxY = endPoint.Y;
+            Delta_X = 0;
+            Delta_Y = 0;
+            //DrawLine_Boundary(blackPen);
+            string hosName = Tools.ConfigHelper.GetAppStrings("Hospital");
+            DrawString(hosName, cellContentFt, br, minX + 2, minY + 5);
+            code128Writer.Options.Width = 170;
+            code128Writer.Options.Height = 45;
+            Bitmap vin8Bmp = code128Writer.Write(packCode);
+            DrawImage(vin8Bmp, minX + 10, minY + 10 + 20);
+            DrawString(packName, cellContentFt, br, minX + 10, minY + 65 + 20);
+        }
     }
 }

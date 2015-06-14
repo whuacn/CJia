@@ -254,7 +254,7 @@ create table GM_TRACE
   trace_user_id   NUMBER,
   trace_user_name VARCHAR2(50)
 )
-tablespace DATA01
+tablespace USERS
   pctfree 10
   initrans 1
   maxtrans 255
@@ -267,7 +267,7 @@ tablespace DATA01
   );
 -- Create/Recreate indexes 
 create index IDX_TRACE_DATE on GM_TRACE (TRACE_DATE)
-  tablespace DATA01
+  tablespace USERS
   pctfree 10
   initrans 2
   maxtrans 255
@@ -312,5 +312,129 @@ create sequence GM_IP_SEQ
 minvalue 1000000000
 maxvalue 9999999999
 start with 1000000001
+increment by 1
+cache 20;
+-- Create table
+create table GM_PACK
+(
+  PACK_ID      VARCHAR2(20) not null,
+  PACK_CODE    VARCHAR2(20),
+  PACK_NAME    VARCHAR2(50),
+  PACK_ADDRESS VARCHAR2(100),
+  PACK_REMARK  VARCHAR2(200),
+  STATUS       CHAR(1),
+  CREATE_DATE  DATE default SYSDATE,
+  UPDATE_BY    VARCHAR2(10),
+  UPDATE_DATE  DATE,
+  CREATE_BY    VARCHAR2(10)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table GM_PACK
+  is '"包"说明表';
+-- Add comments to the columns 
+comment on column GM_PACK.PACK_CODE
+  is '包条码号';
+comment on column GM_PACK.PACK_NAME
+  is '包名称';
+comment on column GM_PACK.PACK_ADDRESS
+  is '包地址';
+comment on column GM_PACK.PACK_REMARK
+  is '包说明';
+comment on column GM_PACK.STATUS
+  is '状态(1:有效; 0:无效)';
+comment on column GM_PACK.CREATE_DATE
+  is '创建日期';
+comment on column GM_PACK.UPDATE_BY
+  is '修改者';
+comment on column GM_PACK.UPDATE_DATE
+  is '修改日期';
+comment on column GM_PACK.CREATE_BY
+  is '创建者';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table GM_PACK
+  add constraint PACK_ID primary key (PACK_ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+  -- Create table
+create table GM_PACK_DETAIL
+(
+  ID          VARCHAR2(20) not null,
+  PACK_ID     VARCHAR2(20),
+  HEALTH_ID   VARCHAR2(20),
+  STATUS      CHAR(1),
+  CREATE_DATE DATE default SYSDATE,
+  UPDATE_BY   VARCHAR2(10),
+  UPDATE_DATE DATE,
+  CREATE_BY   VARCHAR2(10)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table GM_PACK_DETAIL
+  is '"包"内容';
+-- Add comments to the columns 
+comment on column GM_PACK_DETAIL.PACK_ID
+  is '包id';
+comment on column GM_PACK_DETAIL.HEALTH_ID
+  is '病案id';
+comment on column GM_PACK_DETAIL.STATUS
+  is '状态(1:有效; 0:无效)';
+comment on column GM_PACK_DETAIL.CREATE_DATE
+  is '创建日期';
+comment on column GM_PACK_DETAIL.UPDATE_BY
+  is '修改者';
+comment on column GM_PACK_DETAIL.UPDATE_DATE
+  is '修改日期';
+comment on column GM_PACK_DETAIL.CREATE_BY
+  is '创建者';
+-- Create sequence 
+create sequence GM_PACK_CODE_SEQ
+minvalue 1000000000
+maxvalue 9999999999
+start with 1000000021
+increment by 1
+cache 20;
+-- Create sequence 
+create sequence GM_PACK_DETAIL_SEQ
+minvalue 1000000000
+maxvalue 9999999999
+start with 1000000021
+increment by 1
+cache 20;
+-- Create sequence 
+create sequence GM_PACK_SEQ
+minvalue 1000000000
+maxvalue 9999999999
+start with 1000000021
 increment by 1
 cache 20;
