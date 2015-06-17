@@ -214,6 +214,7 @@ namespace CJia.Health.Presenters
                 {
                     sqlParams.Add(e.SurgeryDate4);
                 }
+                sqlParams.Add(e.RecordNo + "_" + e.InHospitalTime);
                 Model.InsertPatientInfo(sqlParams);
                 e.IsReturn = false;
                 try

@@ -63,8 +63,8 @@ namespace CJia.Health.App.UI
             InitializeComponent();
             LURecordNO.GetData += LURecordNO_GetData;
             LURecordNO.SelectValueChanged += LURecordNO_SelectValueChanged;
-            Tw = new Twain(MyProductName);
-            Tw.Init(this.Handle);
+            //Tw = new Twain(MyProductName);
+            //Tw.Init(this.Handle);
             LURecordNO.Focus();
         }
 

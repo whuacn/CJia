@@ -24,8 +24,8 @@ namespace CJia.Health.App
             InitializeComponent();
             Init();
             OnInitFunction(null, mainFormArgs);
-            Tw = new Twain(MyProductName);
-            Tw.Init(this.Handle);
+            //Tw = new Twain(MyProductName);
+            //Tw.Init(this.Handle);
             this.Text = this.Text + " " + CJia.Health.Tools.ConfigHelper.GetAppStrings("Version");
             SplashScreenManager.CloseForm();
         }

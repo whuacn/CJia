@@ -16,6 +16,8 @@ namespace CJia.Health.Models
         /// <returns></returns>
         public DataTable GetPatientByInputDate(DateTime start, DateTime end)
         {
+            start = DateTime.Parse(start.ToShortDateString() + " 00:00:00");
+            end = DateTime.Parse(end.ToShortDateString() + " 23:59:59");
             object[] parames = new object[] { start, end };
             DataTable result = CJia.DefaultOleDb.Query(CJia.Health.Models.SqlTools.SqlQueryPatinetByInputDate, parames);
             return result;
@@ -49,6 +51,11 @@ namespace CJia.Health.Models
         {
             object[] sqlParams = new object[] { packID, healthID, creater };
             return CJia.DefaultOleDb.Execute(transID, SqlTools.SqlAddPackDetail, sqlParams) > 0 ? true : false;
+        }
+        public bool AddPackDetail(string packID, string healthID, string creater)
+        {
+            object[] sqlParams = new object[] { packID, healthID, creater };
+            return CJia.DefaultOleDb.Execute(SqlTools.SqlAddPackDetail, sqlParams) > 0 ? true : false;
         }
         public DataTable GetPackByName(string name)
         {

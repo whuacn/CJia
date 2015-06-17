@@ -67,7 +67,7 @@ namespace CJia.Health.Presenters
             }
             else
             {
-                View.ShowWarning("此病案不符合打包条件（已审核通过未锁定的有效病案）");
+                View.ShowWarning("此病案条码不符合打包条件（已审核通过未锁定的有效病案）");
             }
         }
 

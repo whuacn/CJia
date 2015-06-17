@@ -198,7 +198,7 @@ namespace CJia.Health
             DrawString(hosName, cellContentFt, br, minX + 2, minY + 5);
             code128Writer.Options.Width = 170;
             code128Writer.Options.Height = 45;
-            Bitmap vin8Bmp = code128Writer.Write(recordNO);
+            Bitmap vin8Bmp = code128Writer.Write(recordNO + "_" + inHosTime);
             DrawImage(vin8Bmp, minX + 10, minY + 10 + 20);
             DrawString("姓名：", cellContentFt, br, minX + 2, minY + 65 + 20);
             DrawString(patientName, cellContentFt, br, minX + 45, minY + 65 + 20);

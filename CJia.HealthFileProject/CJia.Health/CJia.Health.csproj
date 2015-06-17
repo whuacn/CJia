@@ -107,6 +107,7 @@
     <Compile Include="Models\MainFormModel.cs" />
     <Compile Include="Models\MyPatientInputModel.cs" />
     <Compile Include="Models\MyUndoPatientModel.cs" />
+    <Compile Include="Models\PackManageViewModel.cs" />
     <Compile Include="Models\PackViewModel.cs" />
     <Compile Include="Models\PatientInfoInputModel.cs" />
     <Compile Include="Models\PrintApplyModel.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Presenters\MyPatientInputPresenter.cs" />
     <Compile Include="Presenters\MyUndoPatientPresenter.cs" />
     <Compile Include="Presenters\NewPatientInfoInputPresenter.cs" />
+    <Compile Include="Presenters\PackManageViewPresenter.cs" />
     <Compile Include="Presenters\PackViewPresenter.cs" />
     <Compile Include="Presenters\PatientInfoInputPresenter.cs" />
     <Compile Include="Presenters\PrintApplyPresenter.cs" />
@@ -222,6 +224,7 @@
     <Compile Include="Views\IMyPatientInputView.cs" />
     <Compile Include="Views\IMyUndoPatientView.cs" />
     <Compile Include="Views\INewPatientInfoInputView.cs" />
+    <Compile Include="Views\IPackManageView.cs" />
     <Compile Include="Views\IPackView.cs" />
     <Compile Include="Views\IPrintApplyView.cs" />
     <Compile Include="Views\IUserWorkStat.cs" />

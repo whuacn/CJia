@@ -28,6 +28,7 @@ namespace CJia.Health.App.UI
             Data.Columns.Add("IN_HOSPITAL_TIME", typeof(string));
             Data.Columns.Add("PATIENT_NAME", typeof(string));
             Data.Columns.Add("PAT_COMMIT_DATE", typeof(string));
+            Data.Columns.Add("PATIENT_CODE", typeof(string));
             gcPack.DataSource = Data;
             txtPackName.Text = string.Empty;
             txtAddress.Text = string.Empty;
@@ -106,7 +107,7 @@ namespace CJia.Health.App.UI
                 {
                     foreach (DataRow dr in Data.Rows)
                     {
-                        string record = dr["RECORDNO"].ToString();
+                        string record = dr["PATIENT_CODE"].ToString();
                         if (record == text)
                         {
                             return;
@@ -119,7 +120,7 @@ namespace CJia.Health.App.UI
                 {
                     foreach (DataRow dr in Data.Rows)
                     {
-                        string record = dr["RECORDNO"].ToString();
+                        string record = dr["PATIENT_CODE"].ToString();
                         if (record == text)
                         {
                             Data.Rows.Remove(dr);

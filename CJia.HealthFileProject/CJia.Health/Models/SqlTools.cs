@@ -246,7 +246,7 @@ namespace CJia.Health.Models
                 surgery_date1,
                 surgery_date2,
                 surgery_date3,
-                surgery_date4)
+                surgery_date4,PATIENT_CODE)
                 values
                   (GM_PATIENT_SEQ.NEXTVAL,
                          ?,?,?,?,?,?,?,?,?,?,
@@ -257,7 +257,7 @@ namespace CJia.Health.Models
                          ?,?,?,?,?,?,?,
                          '100','110','1',SYSDATE,?,?,?,SYSDATE,?,?,
                          ?,?,?,?,?,?,?,?,?,?,
-                         ?,?,?,?)";
+                         ?,?,?,?,?)";
             }
         }
 
@@ -2715,12 +2715,12 @@ values
         {
             get
             {
-                return @"SELECT t.id, t.recordno, t.in_hospital_time,t.patient_name,t.pat_commit_date
+                return @"SELECT t.id, t.recordno, t.in_hospital_time,t.patient_name,t.pat_commit_date,PATIENT_CODE
   FROM gm_patient t
  WHERE t.check_status = '101'
    and t.lock_status = '110'
    and t.status = '1'
-   and t.recordno=?";
+   and t.PATIENT_CODE=?";
             }
         }
         public static string SqlQueryIsPack
@@ -2769,6 +2769,45 @@ values
             get
             {
                 return @"SELECT * FROM gm_pack t WHERE t.pack_name=?";
+            }
+        }
+        public static string SqlQueryPackByNameAndCode
+        {
+            get
+            {
+                return @"select t.*,
+       tt.id detail_id,
+       ttt.id,
+       ttt.patient_name,
+       ttt.recordno,
+       ttt.in_hospital_time
+  from gm_pack t, gm_pack_detail tt, gm_patient ttt
+ where t.pack_id = tt.pack_id
+   and ttt.id = tt.health_id
+   and t.status = '1'
+   and tt.status = '1'
+   and (t.pack_code = ? or t.pack_name = ?)";
+            }
+        }
+        public static string SqlDelteDetail
+        {
+            get
+            {
+                return @"update gm_pack_detail t set t.status='0',t.update_by=?,t.update_date=sysdate where t.id=?";
+            }
+        }
+        public static string SqlDeltePack
+        {
+            get
+            {
+                return @"update gm_pack t set t.status='0',t.update_by=?,t.update_date=sysdate where t.pack_id=?";
+            }
+        }
+        public static string SqlDeltePackDetail
+        {
+            get
+            {
+                return @"update gm_pack_detail t set t.status='0',t.update_by=?,t.update_date=sysdate where t.pack_id=?";
             }
         }
     }

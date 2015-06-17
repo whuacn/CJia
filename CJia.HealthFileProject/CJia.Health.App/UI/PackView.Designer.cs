@@ -722,11 +722,11 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 20);
+            this.labelControl1.Location = new System.Drawing.Point(7, 19);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 14);
+            this.labelControl1.Size = new System.Drawing.Size(60, 14);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "病案号：";
+            this.labelControl1.Text = "病案条码：";
             // 
             // PackView
             // 

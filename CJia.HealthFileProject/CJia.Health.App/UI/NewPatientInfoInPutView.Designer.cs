@@ -138,6 +138,7 @@
             this.cJiaLabel17 = new CJia.Controls.CJiaLabel();
             this.ltxtRecordNo = new CJia.Controls.CJiaLineTextBox();
             this.cJiaLabel2 = new CJia.Controls.CJiaLabel();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pnlPatient)).BeginInit();
             this.pnlPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ltxtInHospitalTime.Properties)).BeginInit();
@@ -191,6 +192,7 @@
             // pnlPatient
             // 
             this.pnlPatient.AllowTouchScroll = true;
+            this.pnlPatient.Controls.Add(this.labelControl1);
             this.pnlPatient.Controls.Add(this.ltxtInHospitalTime);
             this.pnlPatient.Controls.Add(this.cJiaLabel1);
             this.pnlPatient.Controls.Add(this.ltxtBirthPlace);
@@ -1843,6 +1845,15 @@
             this.cJiaLabel2.TabIndex = 139;
             this.cJiaLabel2.Text = "病案号";
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Gray;
+            this.labelControl1.Location = new System.Drawing.Point(380, 58);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(345, 14);
+            this.labelControl1.TabIndex = 602;
+            this.labelControl1.Text = "（病案条码：病案号123456，住院次数1次，条码为123456_1）";
+            // 
             // NewPatientInfoInPutView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -2008,5 +2019,6 @@
         private Controls.CJiaLabel cJiaLabel13;
         private Controls.CJiaLineTextBox ltxtBirthPlace;
         private Controls.CJiaTextBox ltxtInHospitalTime;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

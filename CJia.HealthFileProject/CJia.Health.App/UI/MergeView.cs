@@ -76,8 +76,8 @@ namespace CJia.Health.App.UI
             LURecordNO.GetData += LURecordNO_GetData;
             LURecordNO.SelectValueChanged += LURecordNO_SelectValueChanged;
             lblMesg.Text = "";
-            Tw = new Twain(MyProductName);
-            Tw.Init(this.Handle);
+            //Tw = new Twain(MyProductName);
+            //Tw.Init(this.Handle);
             NoBlankPage = new List<string>();
             lblNoBlank.Text = "";
         }

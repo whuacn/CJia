@@ -82,7 +82,6 @@ namespace CJia.Health.App
             this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
             this.btnRole = new DevExpress.XtraBars.BarButtonItem();
             this.btnRoleFounction = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSelectScanner = new DevExpress.XtraBars.BarButtonItem();
             this.BtnBorrow = new DevExpress.XtraBars.BarButtonItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnBig = new DevExpress.XtraBars.BarButtonItem();
@@ -233,7 +232,6 @@ namespace CJia.Health.App
             this.barButtonItem35,
             this.btnRole,
             this.btnRoleFounction,
-            this.btnSelectScanner,
             this.BtnBorrow,
             this.btnUser,
             this.barButtonItem3,
@@ -793,23 +791,6 @@ namespace CJia.Health.App
             this.btnRoleFounction.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnRoleFounction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRoleFounction_Click);
             // 
-            // btnSelectScanner
-            // 
-            resources.ApplyResources(this.btnSelectScanner, "btnSelectScanner");
-            this.btnSelectScanner.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSelectScanner.Glyph")));
-            this.btnSelectScanner.Id = 60;
-            this.btnSelectScanner.ItemAppearance.Disabled.Font = ((System.Drawing.Font)(resources.GetObject("btnSelectScanner.ItemAppearance.Disabled.Font")));
-            this.btnSelectScanner.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btnSelectScanner.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("btnSelectScanner.ItemAppearance.Hovered.Font")));
-            this.btnSelectScanner.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnSelectScanner.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnSelectScanner.ItemAppearance.Normal.Font")));
-            this.btnSelectScanner.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnSelectScanner.ItemAppearance.Pressed.Font = ((System.Drawing.Font)(resources.GetObject("btnSelectScanner.ItemAppearance.Pressed.Font")));
-            this.btnSelectScanner.ItemAppearance.Pressed.Options.UseFont = true;
-            this.btnSelectScanner.Name = "btnSelectScanner";
-            this.btnSelectScanner.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnSelectScanner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSelectScanner_Click);
-            // 
             // BtnBorrow
             // 
             resources.ApplyResources(this.BtnBorrow, "BtnBorrow");
@@ -1290,7 +1271,6 @@ namespace CJia.Health.App
             this.ribbonPageGroup1.ItemLinks.Add(this.btnRoleFounction);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnIP);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLoge);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnSelectScanner);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPrinter);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
@@ -1510,7 +1490,6 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.BarButtonItem barButtonItem35;
         private DevExpress.XtraBars.BarButtonItem btnRole;
         private DevExpress.XtraBars.BarButtonItem btnRoleFounction;
-        private DevExpress.XtraBars.BarButtonItem btnSelectScanner;
         private DevExpress.XtraBars.BarButtonItem BtnBorrow;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup btnUser1;

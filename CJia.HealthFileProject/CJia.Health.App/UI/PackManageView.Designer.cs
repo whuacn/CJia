@@ -29,19 +29,22 @@
         private void InitializeComponent()
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.cJiaButton3 = new CJia.Controls.CJiaButton();
-            this.cJiaButton1 = new CJia.Controls.CJiaButton();
-            this.btnStart = new CJia.Controls.CJiaButton();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.btnSearch = new CJia.Controls.CJiaButton();
+            this.btnInput = new CJia.Controls.CJiaButton();
+            this.btnPrint = new CJia.Controls.CJiaButton();
+            this.btnOut = new CJia.Controls.CJiaButton();
+            this.btnDelete = new CJia.Controls.CJiaButton();
+            this.txtRecord = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.gridPatient = new CJia.Controls.CJiaGrid();
-            this.gvPatientInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcPat = new CJia.Controls.CJiaGrid();
+            this.gvPat = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -68,15 +71,13 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cJiaButton4 = new CJia.Controls.CJiaButton();
-            this.cJiaButton5 = new CJia.Controls.CJiaButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPatient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPatientInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecord.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
@@ -96,17 +97,17 @@
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton5);
-            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton4);
-            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.cJiaButton1);
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnStart);
-            this.splitContainerControl1.Panel1.Controls.Add(this.textEdit7);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnSearch);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnInput);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnPrint);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnOut);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnDelete);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtRecord);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl9);
-            this.splitContainerControl1.Panel1.Controls.Add(this.textEdit2);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtCode);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl4);
-            this.splitContainerControl1.Panel1.Controls.Add(this.gridPatient);
-            this.splitContainerControl1.Panel1.Controls.Add(this.textEdit1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.gcPat);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtName);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -132,238 +133,285 @@
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // cJiaButton3
+            // btnSearch
             // 
-            this.cJiaButton3.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton3.Appearance.Options.UseFont = true;
-            this.cJiaButton3.Appearance.Options.UseForeColor = true;
-            this.cJiaButton3.CustomText = "补打包条码";
-            this.cJiaButton3.Location = new System.Drawing.Point(59, 117);
-            this.cJiaButton3.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton3.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton3.Name = "cJiaButton3";
-            this.cJiaButton3.Selectable = false;
-            this.cJiaButton3.Size = new System.Drawing.Size(80, 28);
-            this.cJiaButton3.TabIndex = 183;
-            this.cJiaButton3.Text = "补打包条码";
+            this.btnSearch.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnSearch.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnSearch.Appearance.Options.UseFont = true;
+            this.btnSearch.Appearance.Options.UseForeColor = true;
+            this.btnSearch.CustomText = "查询";
+            this.btnSearch.Location = new System.Drawing.Point(255, 40);
+            this.btnSearch.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnSearch.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Selectable = false;
+            this.btnSearch.Size = new System.Drawing.Size(56, 28);
+            this.btnSearch.TabIndex = 186;
+            this.btnSearch.Text = "查询";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // cJiaButton1
+            // btnInput
             // 
-            this.cJiaButton1.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton1.Appearance.Options.UseFont = true;
-            this.cJiaButton1.Appearance.Options.UseForeColor = true;
-            this.cJiaButton1.CustomText = "选择出包";
-            this.cJiaButton1.Location = new System.Drawing.Point(145, 117);
-            this.cJiaButton1.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton1.Name = "cJiaButton1";
-            this.cJiaButton1.Selectable = false;
-            this.cJiaButton1.Size = new System.Drawing.Size(80, 28);
-            this.cJiaButton1.TabIndex = 182;
-            this.cJiaButton1.Text = "选择出包";
+            this.btnInput.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnInput.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnInput.Appearance.Options.UseFont = true;
+            this.btnInput.Appearance.Options.UseForeColor = true;
+            this.btnInput.CustomText = "补入包";
+            this.btnInput.Location = new System.Drawing.Point(255, 74);
+            this.btnInput.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnInput.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnInput.Name = "btnInput";
+            this.btnInput.Selectable = false;
+            this.btnInput.Size = new System.Drawing.Size(56, 28);
+            this.btnInput.TabIndex = 185;
+            this.btnInput.Text = "补入包";
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
-            // btnStart
+            // btnPrint
             // 
-            this.btnStart.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btnStart.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.btnStart.Appearance.Options.UseFont = true;
-            this.btnStart.Appearance.Options.UseForeColor = true;
-            this.btnStart.CustomText = "解包";
-            this.btnStart.Location = new System.Drawing.Point(231, 117);
-            this.btnStart.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.btnStart.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Selectable = false;
-            this.btnStart.Size = new System.Drawing.Size(80, 28);
-            this.btnStart.TabIndex = 181;
-            this.btnStart.Text = "解包";
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnPrint.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnPrint.Appearance.Options.UseFont = true;
+            this.btnPrint.Appearance.Options.UseForeColor = true;
+            this.btnPrint.CustomText = "补打包条码";
+            this.btnPrint.Location = new System.Drawing.Point(59, 117);
+            this.btnPrint.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnPrint.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Selectable = false;
+            this.btnPrint.Size = new System.Drawing.Size(80, 28);
+            this.btnPrint.TabIndex = 183;
+            this.btnPrint.Text = "补打包条码";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // textEdit7
+            // btnOut
             // 
-            this.textEdit7.Location = new System.Drawing.Point(67, 79);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textEdit7.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.textEdit7.Properties.Appearance.Options.UseFont = true;
-            this.textEdit7.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit7.Size = new System.Drawing.Size(175, 22);
-            this.textEdit7.TabIndex = 18;
+            this.btnOut.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnOut.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnOut.Appearance.Options.UseFont = true;
+            this.btnOut.Appearance.Options.UseForeColor = true;
+            this.btnOut.CustomText = "选择出包";
+            this.btnOut.Location = new System.Drawing.Point(145, 117);
+            this.btnOut.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnOut.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnOut.Name = "btnOut";
+            this.btnOut.Selectable = false;
+            this.btnOut.Size = new System.Drawing.Size(80, 28);
+            this.btnOut.TabIndex = 182;
+            this.btnOut.Text = "选择出包";
+            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.btnDelete.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Appearance.Options.UseForeColor = true;
+            this.btnDelete.CustomText = "解包";
+            this.btnDelete.Location = new System.Drawing.Point(231, 117);
+            this.btnDelete.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Selectable = false;
+            this.btnDelete.Size = new System.Drawing.Size(80, 28);
+            this.btnDelete.TabIndex = 181;
+            this.btnDelete.Text = "解包";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txtRecord
+            // 
+            this.txtRecord.Location = new System.Drawing.Point(70, 79);
+            this.txtRecord.Name = "txtRecord";
+            this.txtRecord.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtRecord.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtRecord.Properties.Appearance.Options.UseFont = true;
+            this.txtRecord.Properties.Appearance.Options.UseForeColor = true;
+            this.txtRecord.Size = new System.Drawing.Size(175, 22);
+            this.txtRecord.TabIndex = 18;
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(13, 83);
+            this.labelControl9.Location = new System.Drawing.Point(4, 83);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(48, 14);
+            this.labelControl9.Size = new System.Drawing.Size(60, 14);
             this.labelControl9.TabIndex = 17;
-            this.labelControl9.Text = "病案号：";
+            this.labelControl9.Text = "病案条码：";
             // 
-            // textEdit2
+            // txtCode
             // 
-            this.textEdit2.Location = new System.Drawing.Point(67, 9);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit2.Size = new System.Drawing.Size(244, 26);
-            this.textEdit2.TabIndex = 12;
+            this.txtCode.Location = new System.Drawing.Point(70, 9);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtCode.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtCode.Properties.Appearance.Options.UseFont = true;
+            this.txtCode.Properties.Appearance.Options.UseForeColor = true;
+            this.txtCode.Size = new System.Drawing.Size(244, 26);
+            this.txtCode.TabIndex = 12;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(13, 16);
+            this.labelControl4.Location = new System.Drawing.Point(16, 16);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 14);
             this.labelControl4.TabIndex = 11;
             this.labelControl4.Text = "包条码：";
             // 
-            // gridPatient
+            // gcPat
             // 
-            this.gridPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gcPat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridPatient.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gridPatient.IndicatorWidth = 50;
-            this.gridPatient.Location = new System.Drawing.Point(1, 161);
-            this.gridPatient.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.gridPatient.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.gridPatient.MainView = this.gvPatientInfo;
-            this.gridPatient.Name = "gridPatient";
-            this.gridPatient.ShowRowNumber = true;
-            this.gridPatient.Size = new System.Drawing.Size(319, 555);
-            this.gridPatient.TabIndex = 9;
-            this.gridPatient.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvPatientInfo});
+            this.gcPat.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gcPat.IndicatorWidth = 50;
+            this.gcPat.Location = new System.Drawing.Point(1, 161);
+            this.gcPat.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.gcPat.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.gcPat.MainView = this.gvPat;
+            this.gcPat.Name = "gcPat";
+            this.gcPat.ShowRowNumber = true;
+            this.gcPat.Size = new System.Drawing.Size(319, 555);
+            this.gcPat.TabIndex = 9;
+            this.gcPat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPat});
             // 
-            // gvPatientInfo
+            // gvPat
             // 
-            this.gvPatientInfo.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.Empty.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.EvenRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.EvenRow.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.EvenRow.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.FilterCloseButton.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.FilterCloseButton.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.FilterCloseButton.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.FilterPanel.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.FilterPanel.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.FixedLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.FixedLine.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.FixedLine.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
-            this.gvPatientInfo.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
-            this.gvPatientInfo.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.FocusedRow.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.FocusedRow.Options.UseFont = true;
-            this.gvPatientInfo.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.GroupButton.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.GroupButton.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.GroupFooter.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.GroupFooter.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.GroupFooter.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.GroupRow.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.GroupRow.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.GroupRow.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.gvPatientInfo.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.HeaderPanel.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
-            this.gvPatientInfo.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.gvPatientInfo.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.HideSelectionRow.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.HideSelectionRow.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.HorzLine.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.OddRow.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.OddRow.Options.UseBorderColor = true;
-            this.gvPatientInfo.Appearance.OddRow.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.gvPatientInfo.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.gvPatientInfo.Appearance.Preview.Options.UseFont = true;
-            this.gvPatientInfo.Appearance.Preview.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.gvPatientInfo.Appearance.Row.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.Row.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvPatientInfo.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.gvPatientInfo.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.SelectedRow.Options.UseForeColor = true;
-            this.gvPatientInfo.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.gvPatientInfo.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.gvPatientInfo.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvPatientInfo.Appearance.VertLine.Options.UseBackColor = true;
-            this.gvPatientInfo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvPat.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
+            this.gvPat.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gvPat.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gvPat.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvPat.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gvPat.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gvPat.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gvPat.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
+            this.gvPat.Appearance.Empty.Options.UseBackColor = true;
+            this.gvPat.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.EvenRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvPat.Appearance.EvenRow.Options.UseBorderColor = true;
+            this.gvPat.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gvPat.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
+            this.gvPat.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gvPat.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gvPat.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gvPat.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvPat.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gvPat.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gvPat.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.FixedLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gvPat.Appearance.FixedLine.Options.UseBorderColor = true;
+            this.gvPat.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
+            this.gvPat.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvPat.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvPat.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
+            this.gvPat.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(175)))), ((int)(((byte)(223)))));
+            this.gvPat.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.gvPat.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvPat.Appearance.FocusedRow.Options.UseBorderColor = true;
+            this.gvPat.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvPat.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvPat.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gvPat.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gvPat.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gvPat.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gvPat.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gvPat.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gvPat.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gvPat.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gvPat.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvPat.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gvPat.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gvPat.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gvPat.Appearance.GroupRow.Options.UseBorderColor = true;
+            this.gvPat.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvPat.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.gvPat.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvPat.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvPat.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.gvPat.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
+            this.gvPat.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvPat.Appearance.HideSelectionRow.Options.UseBorderColor = true;
+            this.gvPat.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gvPat.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gvPat.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvPat.Appearance.OddRow.Options.UseBorderColor = true;
+            this.gvPat.Appearance.OddRow.Options.UseForeColor = true;
+            this.gvPat.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
+            this.gvPat.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
+            this.gvPat.Appearance.Preview.Options.UseFont = true;
+            this.gvPat.Appearance.Preview.Options.UseForeColor = true;
+            this.gvPat.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gvPat.Appearance.Row.Options.UseBackColor = true;
+            this.gvPat.Appearance.Row.Options.UseForeColor = true;
+            this.gvPat.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvPat.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gvPat.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gvPat.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
+            this.gvPat.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.gvPat.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gvPat.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.gvPat.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.gvPat.Appearance.TopNewRow.Options.UseBackColor = true;
+            this.gvPat.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvPat.Appearance.VertLine.Options.UseBackColor = true;
+            this.gvPat.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
             this.gridColumn3,
-            this.gridColumn2,
-            this.gridColumn4});
-            this.gvPatientInfo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gvPatientInfo.GridControl = this.gridPatient;
-            this.gvPatientInfo.IndicatorWidth = 40;
-            this.gvPatientInfo.Name = "gvPatientInfo";
-            this.gvPatientInfo.OptionsBehavior.Editable = false;
-            this.gvPatientInfo.OptionsCustomization.AllowFilter = false;
-            this.gvPatientInfo.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gvPatientInfo.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvPatientInfo.OptionsView.EnableAppearanceOddRow = true;
-            this.gvPatientInfo.OptionsView.ShowGroupPanel = false;
-            this.gvPatientInfo.RowHeight = 25;
+            this.gridColumn4,
+            this.gridColumn2});
+            this.gvPat.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.gvPat.GridControl = this.gcPat;
+            this.gvPat.IndicatorWidth = 40;
+            this.gvPat.Name = "gvPat";
+            this.gvPat.OptionsBehavior.Editable = false;
+            this.gvPat.OptionsCustomization.AllowFilter = false;
+            this.gvPat.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvPat.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvPat.OptionsView.EnableAppearanceOddRow = true;
+            this.gvPat.OptionsView.ShowGroupPanel = false;
+            this.gvPat.RowHeight = 25;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "包条码";
+            this.gridColumn9.FieldName = "PACK_CODE";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
+            this.gridColumn9.Width = 80;
             // 
             // gridColumn3
             // 
@@ -375,21 +423,8 @@
             this.gridColumn3.FieldName = "RECORDNO";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 119;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn2.Caption = "入院次数";
-            this.gridColumn2.FieldName = "IN_HOSPITAL_TIME";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 59;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 78;
             // 
             // gridColumn4
             // 
@@ -402,22 +437,31 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 78;
+            this.gridColumn4.Width = 59;
             // 
-            // textEdit1
+            // gridColumn2
             // 
-            this.textEdit1.Location = new System.Drawing.Point(67, 46);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Size = new System.Drawing.Size(175, 22);
-            this.textEdit1.TabIndex = 1;
+            this.gridColumn2.Caption = "入院次数";
+            this.gridColumn2.FieldName = "IN_HOSPITAL_TIME";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.Width = 60;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(70, 46);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtName.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtName.Properties.Appearance.Options.UseFont = true;
+            this.txtName.Properties.Appearance.Options.UseForeColor = true;
+            this.txtName.Size = new System.Drawing.Size(175, 22);
+            this.txtName.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(13, 48);
+            this.labelControl1.Location = new System.Drawing.Point(16, 48);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 0;
@@ -578,11 +622,11 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(24, 48);
+            this.labelControl2.Location = new System.Drawing.Point(12, 47);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 14);
+            this.labelControl2.Size = new System.Drawing.Size(60, 14);
             this.labelControl2.TabIndex = 15;
-            this.labelControl2.Text = "病案号：";
+            this.labelControl2.Text = "病案条码：";
             // 
             // cJiaGrid1
             // 
@@ -833,38 +877,6 @@
             this.gridColumn12.VisibleIndex = 7;
             this.gridColumn12.Width = 150;
             // 
-            // cJiaButton4
-            // 
-            this.cJiaButton4.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton4.Appearance.Options.UseFont = true;
-            this.cJiaButton4.Appearance.Options.UseForeColor = true;
-            this.cJiaButton4.CustomText = "补入包";
-            this.cJiaButton4.Location = new System.Drawing.Point(255, 74);
-            this.cJiaButton4.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton4.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton4.Name = "cJiaButton4";
-            this.cJiaButton4.Selectable = false;
-            this.cJiaButton4.Size = new System.Drawing.Size(56, 28);
-            this.cJiaButton4.TabIndex = 185;
-            this.cJiaButton4.Text = "补入包";
-            // 
-            // cJiaButton5
-            // 
-            this.cJiaButton5.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.cJiaButton5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            this.cJiaButton5.Appearance.Options.UseFont = true;
-            this.cJiaButton5.Appearance.Options.UseForeColor = true;
-            this.cJiaButton5.CustomText = "查询";
-            this.cJiaButton5.Location = new System.Drawing.Point(255, 40);
-            this.cJiaButton5.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.cJiaButton5.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cJiaButton5.Name = "cJiaButton5";
-            this.cJiaButton5.Selectable = false;
-            this.cJiaButton5.Size = new System.Drawing.Size(56, 28);
-            this.cJiaButton5.TabIndex = 186;
-            this.cJiaButton5.Text = "查询";
-            // 
             // PackManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -874,11 +886,11 @@
             this.Size = new System.Drawing.Size(1098, 721);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPatient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPatientInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecord.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
@@ -897,14 +909,13 @@
         #endregion
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private Controls.CJiaGrid gridPatient;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvPatientInfo;
+        private Controls.CJiaGrid gcPat;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPat;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private Controls.CJiaGrid cJiaGrid1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -927,17 +938,19 @@
         private DevExpress.XtraEditors.DateEdit dateEdit2;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.TextEdit txtRecord;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private Controls.CJiaButton cJiaButton1;
-        private Controls.CJiaButton btnStart;
+        private Controls.CJiaButton btnOut;
+        private Controls.CJiaButton btnDelete;
         private Controls.CJiaButton cJiaButton2;
         private DevExpress.XtraEditors.TextEdit textEdit8;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private Controls.CJiaButton cJiaButton3;
-        private Controls.CJiaButton cJiaButton5;
-        private Controls.CJiaButton cJiaButton4;
+        private Controls.CJiaButton btnPrint;
+        private Controls.CJiaButton btnSearch;
+        private Controls.CJiaButton btnInput;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
 
     }
 }
