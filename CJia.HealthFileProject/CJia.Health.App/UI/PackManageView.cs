@@ -26,6 +26,11 @@ namespace CJia.Health.App.UI
         public event EventHandler<PackManageViewArgs> OnPrint;
         public event EventHandler<PackManageViewArgs> OnOut;
         public event EventHandler<PackManageViewArgs> OnDeletePack;
+        public event EventHandler<PackManageViewArgs> OnSearchPack;
+        public void ExeBindPack(DataTable data)
+        {
+            gcPack.DataSource = data;
+        }
         public void ExeIsDeletePack(bool bol)
         {
             if (bol)
@@ -44,13 +49,16 @@ namespace CJia.Health.App.UI
         }
         public void ExeIsAndInPack(DataRow dr)
         {
+            DataRow focusDr = gvPat.GetFocusedDataRow();
             DataTable data = gcPat.DataSource as DataTable;
             DataRow nr = data.NewRow();
             nr["ID"] = dr["ID"].ToString();
             nr["PATIENT_NAME"] = dr["PATIENT_NAME"].ToString();
             nr["RECORDNO"] = dr["RECORDNO"].ToString();
             nr["IN_HOSPITAL_TIME"] = dr["IN_HOSPITAL_TIME"].ToString();
-            nr["PACK_CODE"] = data.Rows[0]["PACK_CODE"].ToString();
+            nr["PACK_CODE"] = focusDr["PACK_CODE"].ToString();
+            nr["PACK_NAME"] = focusDr["PACK_NAME"].ToString();
+            nr["PACK_ID"] = focusDr["PACK_ID"].ToString();
             data.Rows.Add(nr);
             gcPat.DataSource = data;
             txtRecord.Text = string.Empty;
@@ -104,7 +112,8 @@ namespace CJia.Health.App.UI
             {
                 if (Message.ShowQuery("确定选择出包？", Message.Button.OkCancel) == Message.Result.Ok)
                 {
-                    args.DetailID = dr["detail_id"].ToString();
+                    args.PackID = dr["PACK_ID"].ToString();
+                    args.HealthID = dr["ID"].ToString();
                     OnOut(null, args);
                 }
             }
@@ -121,6 +130,31 @@ namespace CJia.Health.App.UI
                     OnDeletePack(null, args);
                 }
             }
+        }
+
+        private void btnSearchPack_Click(object sender, EventArgs e)
+        {
+            args.Start = dtStart.DateTime;
+            args.End = dtEnd.DateTime;
+            args.PackAddress = txtAddress.Text.Trim();
+            args.PatCode = txtPatCode.Text.Trim();
+            args.PatName = txtPatName.Text.Trim();
+            args.PackCode = txtPackCode.Text.Trim();
+            args.PackName = txtPackName.Text.Trim();
+            OnSearchPack(null, args);
+        }
+
+        private void cJiaButton1_Click(object sender, EventArgs e)
+        {
+            dtStart.DateTime = DateTime.MinValue;
+            dtStart.Text = string.Empty;
+            dtEnd.DateTime = DateTime.MinValue;
+            dtEnd.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtPatCode.Text = string.Empty;
+            txtPatName.Text = string.Empty;
+            txtPackCode.Text = string.Empty;
+            txtPackName.Text = string.Empty;
         }
     }
 }

@@ -8919,10 +8919,10 @@
   <data name="btnIP.ItemAppearance.Pressed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="barButtonItem5.Caption" xml:space="preserve">
+  <data name="btnWeb.Caption" xml:space="preserve">
     <value>病案借阅网站</value>
   </data>
-  <data name="barButtonItem5.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnWeb.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
         HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA5yAAAOcgHrJ/dNAAAAJXRFWHRTb2Z0d2FyZQBNYWNy
@@ -11272,7 +11272,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDwAACw8BkvkDpQAABuVJREFUWEfFlu1PW+cZ
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDgAACw4BQL7hQQAABuVJREFUWEfFlu1PW+cZ
         xhkkEAw4b2CwMT42YBtjg22weSfQFELBNiG8GINjDDEMQhpMRkIImEBbAiRtaZKFNFMTNQOlDJLRtVAU
         hVbdlmatqjbSkDZN+7Bl/8A+7uu15z4DtOScL8vYivTTsZ/7nOt3ceC8hAEI+yH5QeX0i28XGB8fD+ut
         T61k/IOB001pONOiw9njOgy26THUrsdwRwZCAQNGOw242PVvsO+jbH3kRAYusP3O+/X8cT/x6hD0pONU
@@ -12454,10 +12454,10 @@
   <data name="&gt;&gt;btnIP.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
-  <data name="&gt;&gt;barButtonItem5.Name" xml:space="preserve">
-    <value>barButtonItem5</value>
+  <data name="&gt;&gt;btnWeb.Name" xml:space="preserve">
+    <value>btnWeb</value>
   </data>
-  <data name="&gt;&gt;barButtonItem5.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnWeb.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=655b027630c07ea6</value>
   </data>
   <data name="&gt;&gt;btnPrinter.Name" xml:space="preserve">

@@ -107,7 +107,7 @@ namespace CJia.Health.App
             this.btnLoge = new DevExpress.XtraBars.BarButtonItem();
             this.btnLookSet = new DevExpress.XtraBars.BarButtonItem();
             this.btnIP = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnWeb = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
             this.btnPack = new DevExpress.XtraBars.BarButtonItem();
             this.btnPackManage = new DevExpress.XtraBars.BarButtonItem();
@@ -258,7 +258,7 @@ namespace CJia.Health.App
             this.btnLoge,
             this.btnLookSet,
             this.btnIP,
-            this.barButtonItem5,
+            this.btnWeb,
             this.btnPrinter,
             this.btnPack,
             this.btnPackManage});
@@ -1118,13 +1118,14 @@ namespace CJia.Health.App
             this.btnIP.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnIP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIP_ItemClick);
             // 
-            // barButtonItem5
+            // btnWeb
             // 
-            resources.ApplyResources(this.barButtonItem5, "barButtonItem5");
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 101;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            resources.ApplyResources(this.btnWeb, "btnWeb");
+            this.btnWeb.Glyph = ((System.Drawing.Image)(resources.GetObject("btnWeb.Glyph")));
+            this.btnWeb.Id = 101;
+            this.btnWeb.Name = "btnWeb";
+            this.btnWeb.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnWeb.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnWeb_ItemClick);
             // 
             // btnPrinter
             // 
@@ -1295,7 +1296,7 @@ namespace CJia.Health.App
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnWeb);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem30);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem31);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
@@ -1534,7 +1535,7 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.BarButtonItem btnLoge;
         private DevExpress.XtraBars.BarButtonItem btnLookSet;
         private DevExpress.XtraBars.BarButtonItem btnIP;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnWeb;
         private DevExpress.XtraBars.BarButtonItem btnPrinter;
         private DevExpress.XtraBars.BarButtonItem btnPack;
         private DevExpress.XtraBars.BarButtonItem btnPackManage;

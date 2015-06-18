@@ -2768,7 +2768,7 @@ values
         {
             get
             {
-                return @"SELECT * FROM gm_pack t WHERE t.pack_name=?";
+                return @"SELECT * FROM gm_pack t WHERE t.pack_name=? and t.status = '1'";
             }
         }
         public static string SqlQueryPackByNameAndCode
@@ -2781,11 +2781,12 @@ values
        ttt.patient_name,
        ttt.recordno,
        ttt.in_hospital_time
-  from gm_pack t, gm_pack_detail tt, gm_patient ttt
- where t.pack_id = tt.pack_id
-   and ttt.id = tt.health_id
-   and t.status = '1'
-   and tt.status = '1'
+  from gm_pack t
+  left join (select * from gm_pack_detail tt where tt.status = '1') tt
+    on t.pack_id = tt.pack_id
+  left join gm_patient ttt
+    on ttt.id = tt.health_id
+ where t.status = '1'
    and (t.pack_code = ? or t.pack_name = ?)";
             }
         }
@@ -2793,7 +2794,7 @@ values
         {
             get
             {
-                return @"update gm_pack_detail t set t.status='0',t.update_by=?,t.update_date=sysdate where t.id=?";
+                return @"update gm_pack_detail t set t.status='0',t.update_by=?,t.update_date=sysdate where t.pack_id=? and t.health_id=?";
             }
         }
         public static string SqlDeltePack
@@ -2808,6 +2809,26 @@ values
             get
             {
                 return @"update gm_pack_detail t set t.status='0',t.update_by=?,t.update_date=sysdate where t.pack_id=?";
+            }
+        }
+        public static string SqlQueryPack
+        {
+            get
+            {
+                return @"select '['|| t.pack_code||']'||t.pack_name pack_info,
+                       tt.id detail_id,
+                       ttt.id,
+                       ttt.patient_name,
+                       ttt.recordno,
+                       ttt.in_hospital_time,
+                        ttt.pat_commit_date,
+                        t.pack_address
+                  from gm_pack t
+                  left join (select * from gm_pack_detail tt where tt.status = '1') tt
+                    on t.pack_id = tt.pack_id
+                  left join gm_patient ttt
+                    on ttt.id = tt.health_id
+                 where t.status = '1' {0} ";
             }
         }
     }

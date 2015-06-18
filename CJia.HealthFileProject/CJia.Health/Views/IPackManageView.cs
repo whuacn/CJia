@@ -13,6 +13,8 @@ namespace CJia.Health.Views
         event EventHandler<PackManageViewArgs> OnPrint;
         event EventHandler<PackManageViewArgs> OnOut;
         event EventHandler<PackManageViewArgs> OnDeletePack;
+        event EventHandler<PackManageViewArgs> OnSearchPack;
+        void ExeBindPack(DataTable data);
         void ExeIsDeletePack(bool bol);
         void ExeIsOut(bool bol);
         void ExeIsAndInPack(DataRow dr);
@@ -26,5 +28,10 @@ namespace CJia.Health.Views
         public string PackID;
         public string HealthID;
         public string DetailID;
+        public DateTime Start;
+        public DateTime End;
+        public string PackAddress;
+        public string PatName;
+        public string PatCode;
     }
 }

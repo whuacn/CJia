@@ -16,6 +16,13 @@ namespace CJia.Health.Presenters
             View.OnPrint += View_OnPrint;
             View.OnOut += View_OnOut;
             View.OnDeletePack += View_OnDeletePack;
+            View.OnSearchPack += View_OnSearchPack;
+        }
+
+        void View_OnSearchPack(object sender, Views.PackManageViewArgs e)
+        {
+            DataTable data = Model.GetPack(e.Start, e.End, e.PackAddress, e.PatCode, e.PatName, e.PackCode, e.PackName);
+            View.ExeBindPack(data);
         }
 
         void View_OnDeletePack(object sender, Views.PackManageViewArgs e)
@@ -38,7 +45,7 @@ namespace CJia.Health.Presenters
 
         void View_OnOut(object sender, Views.PackManageViewArgs e)
         {
-            bool bol = Model.DeletePackDetail(e.DetailID, User.UserData.Rows[0]["USER_ID"].ToString());
+            bool bol = Model.DeletePackDetailOne(e.PackID, e.HealthID, User.UserData.Rows[0]["USER_ID"].ToString());
             View.ExeIsOut(bol);
         }
 

@@ -1099,5 +1099,11 @@ namespace CJia.Health.App
         {
             ShowXTP(e);
         }
+
+        private void btnWeb_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string http = Tools.ConfigHelper.GetAppStrings("WebApply");
+            System.Diagnostics.Process.Start("iexplore.exe", http);
+        }
     }
 }
