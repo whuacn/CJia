@@ -33,7 +33,7 @@ namespace CJia.Health.Views
         /// <param name="data"></param>
         void ExeRecordNO(DataTable data);
         /// <summary>
-        /// 绑定图片
+        /// 绑定病案
         /// </summary>
         /// <param name="data"></param>
         void ExeBindPicture(DataTable data);
@@ -58,7 +58,7 @@ namespace CJia.Health.Views
         /// </summary>
         public string RecordNO;
         /// <summary>
-        /// 待保存的图片信息
+        /// 待保存的病案信息
         /// </summary>
         public DataTable PictureData;
         /// <summary>
@@ -66,7 +66,7 @@ namespace CJia.Health.Views
         /// </summary>
         public string HealthID;
         /// <summary>
-        /// 图片id
+        /// 病案id
         /// </summary>
         public string PictureID;
         /// <summary>

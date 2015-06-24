@@ -92,7 +92,7 @@
                                         <ext:BoundField Width="90px" HeaderText="入院日期" SortField="IN_HOSPITAL_DATE2" DataField="IN_HOSPITAL_DATE2" />
                                         <ext:BoundField Width="100px" HeaderText="入院科室" SortField="IN_HOSPITAL_DEPT_NAME" DataField="IN_HOSPITAL_DEPT_NAME" />
                                         <ext:LinkButtonField ConfirmTarget="Top" Text="详细>>" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="60px" CommandName="Details" />
-                                        <ext:LinkButtonField ConfirmTarget="Top" Text="浏览图片" ColumnID="lbf_Edit2" HeaderText="&nbsp;" Width="70px" CommandName="Image" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" Text="浏览病案" ColumnID="lbf_Edit2" HeaderText="&nbsp;" Width="70px" CommandName="Image" />
                                     </Columns>
                                 </ext:Grid>
                             </Items>

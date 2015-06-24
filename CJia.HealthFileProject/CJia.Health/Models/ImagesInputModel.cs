@@ -17,7 +17,7 @@ namespace CJia.Health.Models
             return DateTime.Parse(CJia.DefaultOleDb.QueryScalar(SqlTools.SqlSysdate));
         }
         /// <summary>
-        /// 修改图片信息
+        /// 修改病案信息
         /// </summary>
         /// <param name="pictureID"></param>
         /// <param name="pictureName"></param>
@@ -33,7 +33,7 @@ namespace CJia.Health.Models
             return CJia.DefaultOleDb.Execute(SqlTools.SqlUpdatePictureByID, sqlParams) > 0 ? true : false;
         }
         /// <summary>
-        /// 删除图片
+        /// 删除病案
         /// </summary>
         /// <param name="pictureID"></param>
         /// <param name="updateBy"></param>
@@ -44,7 +44,7 @@ namespace CJia.Health.Models
             return CJia.DefaultOleDb.Execute(SqlTools.SqlDeletePictureByID, sqlParams) > 0 ? true : false;
         }
         /// <summary>
-        /// 根据病人表id查询图片信息
+        /// 根据病人表id查询病案信息
         /// </summary>
         /// <param name="healthID"></param>
         /// <returns></returns>
@@ -116,7 +116,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 插入图片
+        /// 插入病案
         /// </summary>
         /// <param name="transID"></param>
         /// <param name="dict"></param>
@@ -152,7 +152,7 @@ namespace CJia.Health.Models
             return CJia.DefaultOleDb.Execute(transID, SqlTools.SqlUpdatePatientCheckState, sqlParams) > 0 ? true : false;
         }
         /// <summary>
-        /// 修改图片表审核状态
+        /// 修改病案表审核状态
         /// </summary>
         /// <param name="transID"></param>
         /// <param name="healthID"></param>

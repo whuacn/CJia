@@ -43,12 +43,12 @@ namespace CJia.Health.App.UI
         #region  属性
 
         /// <summary>
-        /// 该病人所有图片
+        /// 该病人所有病案
         /// </summary>
         private DataTable AllPicture = null;
 
         /// <summary>
-        /// 选择的图片
+        /// 选择的病案
         /// </summary>
         private DataRow SelectPicture
         {
@@ -70,7 +70,7 @@ namespace CJia.Health.App.UI
 
         private DataRow selectPicData = null;
         /// <summary>
-        /// 展示的图片数据
+        /// 展示的病案数据
         /// </summary>
         private DataRow SelectPicData
         {
@@ -381,7 +381,7 @@ namespace CJia.Health.App.UI
 
 
         /// <summary>
-        /// 查询图片
+        /// 查询病案
         /// </summary>
         private void SelectPic()
         {
@@ -397,7 +397,7 @@ namespace CJia.Health.App.UI
         }
 
         /// <summary>
-        /// 绑定图片
+        /// 绑定病案
         /// </summary>
         private void BindPicture()
         {
@@ -450,10 +450,10 @@ namespace CJia.Health.App.UI
         }
 
 
-        #region 图片绑定显示
+        #region 病案绑定显示
         Thread thread;
         UI.Loading load;
-        // 图片列表绑定事件
+        // 病案列表绑定事件
         public void BindPic(DataRow picPath)
         {
             if (picPath != null)
@@ -483,7 +483,7 @@ namespace CJia.Health.App.UI
                 }
                 else
                 {
-                    Message.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Message.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
             }
             catch { }

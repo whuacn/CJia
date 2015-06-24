@@ -29,7 +29,7 @@ namespace CJia.Health.Presenters
 
 
         ///// <summary>
-        ///// 绑定图片
+        ///// 绑定病案
         ///// </summary>
         ///// <param name="sender"></param>
         ///// <param name="e"></param>
@@ -57,7 +57,7 @@ namespace CJia.Health.Presenters
         }
 
         /// <summary>
-        /// 双击病人列表查询图片信息
+        /// 双击病人列表查询病案信息
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

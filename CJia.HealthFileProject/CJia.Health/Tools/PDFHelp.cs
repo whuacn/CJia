@@ -15,7 +15,7 @@ namespace CJia.Health.Tools
     public class PDFHelp
     {
         /// <summary>
-        /// 将单张jpg图片转成PDF输出
+        /// 将单张jpg病案转成PDF输出
         /// </summary>
         /// <param name="jpgFilePath"></param>
         /// <param name="outPDFPath"></param>
@@ -54,7 +54,7 @@ namespace CJia.Health.Tools
             catch { }
         }
         /// <summary>
-        /// 将多张图片转成一张PDF输出
+        /// 将多张病案转成一张PDF输出
         /// </summary>
         /// <param name="jpgFilesPath"></param>
         /// <param name="newPDFPath"></param>

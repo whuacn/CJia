@@ -51,7 +51,7 @@ namespace CJia.Health.Views
     public class ImageCheckViewArgs : EventArgs
     {
         /// <summary>
-        /// 图片id
+        /// 病案id
         /// </summary>
         public string pictureId = "";
 

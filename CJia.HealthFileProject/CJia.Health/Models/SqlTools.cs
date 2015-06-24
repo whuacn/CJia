@@ -465,7 +465,7 @@ namespace CJia.Health.Models
 
         #region 信息入库
         /// <summary>
-        /// 根据病人表id查询此病人入库图片
+        /// 根据病人表id查询此病人入库病案
         /// </summary>
         public static string SqlQueryPictureByID
         {
@@ -475,7 +475,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 修改图片审核状态   有问题 AND PIC.CHECK_STATUS IN (100,102)
+        /// 修改病案审核状态   有问题 AND PIC.CHECK_STATUS IN (100,102)
         /// </summary>
         public static string SqlUpdatePictureCheckState
         {
@@ -555,7 +555,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 根据图片id，修改图片信息
+        /// 根据病案id，修改病案信息
         /// </summary>
         public static string SqlUpdatePictureByID
         {
@@ -573,7 +573,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 根据图片id，删除图片
+        /// 根据病案id，删除病案
         /// </summary>
         public static string SqlDeletePictureByID
         {
@@ -622,7 +622,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 插入图片
+        /// 插入病案
         /// </summary>
         public static string SqlAddPicture
         {
@@ -863,7 +863,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 根据id查询病案信息及图片信息
+        /// 根据id查询病案信息及病案信息
         /// </summary>
         public static string SqlQueryMyPictureByID
         {
@@ -891,7 +891,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 根据id查询所有图片项目
+        /// 根据id查询所有病案项目
         /// </summary>
         public static string SqlQueryMyPictureProjectByID
         {
@@ -977,7 +977,7 @@ namespace CJia.Health.Models
         }
 
         /// <summary>
-        /// 查询图片档案
+        /// 查询病案档案
         /// </summary>
         public static string SqlSelectPic
         {
@@ -1057,7 +1057,7 @@ values
         }
         #endregion
 
-        #region 图片审核
+        #region 病案审核
 
         /// <summary>
         /// 查询GM_PATIENT表基本信息
@@ -2517,7 +2517,7 @@ values
         #region 【档案打印】
 
         /// <summary>
-        /// 根据病案号查询图片信息
+        /// 根据病案号查询病案信息
         /// </summary>
         public static string SqlQueryPictureByHealthId
         {

@@ -131,7 +131,7 @@ namespace CJia.Health.Web.UI
             }
         }
         /// <summary>
-        /// 绑定图片
+        /// 绑定病案
         /// </summary>
         public void BindPicture()
         {
@@ -160,7 +160,7 @@ namespace CJia.Health.Web.UI
             pictureList.DataBind();
         }
         /// <summary>
-        /// 获得图片路径
+        /// 获得病案路径
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>

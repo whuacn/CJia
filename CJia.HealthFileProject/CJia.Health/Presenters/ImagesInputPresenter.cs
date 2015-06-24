@@ -67,7 +67,7 @@ namespace CJia.Health.Presenters
             }
             else
             {
-                View.ShowMessage("此病案还未入库任何图片");
+                View.ShowMessage("此份病案还未入库任何病案");
             }
         }
 

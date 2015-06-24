@@ -9,7 +9,7 @@ namespace CJia.Health.Models.Web
     public class MyPictureModel : CJia.Health.Tools.Model
     {
         /// <summary>
-        ///根据id查询病案信息及图片信息
+        ///根据id查询病案信息及病案信息
         /// </summary>
         /// <param name="healthID"></param>
         /// <returns></returns>
@@ -28,7 +28,7 @@ namespace CJia.Health.Models.Web
             }
         }
         /// <summary>
-        /// 查询所有图片项目
+        /// 查询所有病案项目
         /// </summary>
         /// <param name="healthID"></param>
         /// <returns></returns>
@@ -46,7 +46,7 @@ namespace CJia.Health.Models.Web
             }
         }
         /// <summary>
-        /// 根据id和项目id查询图片信息
+        /// 根据id和项目id查询病案信息
         /// </summary>
         /// <param name="healthID"></param>
         /// <param name="proID"></param>

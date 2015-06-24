@@ -29,7 +29,7 @@
         <div style="right: 10px; top: 5px; position: absolute; height: 21px; text-align: right">
             <a>皮肤：</a><a href="#" onclick="loadSkin('1')">藤蔓绿</a>&nbsp;<a href="#" onclick="loadSkin('2')">经典蓝</a>&nbsp;<a href="#" onclick="loadSkin('3')">甜蜜橙</a>&nbsp;<a href="#" onclick="loadSkin('4')">淡雅灰</a>
         </div>
-        <!--把logo图片放在这里-->
+        <!--把logo病案放在这里-->
         <div class="logopic"></div>
         <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>

@@ -55,7 +55,7 @@ namespace CJia.Health.ExtWeb.UI
             }
             else
             {
-                Alert.ShowInTop("此病案无可浏览的图片");
+                Alert.ShowInTop("此病案无可浏览的病案");
             }
         }
         public void ExeBindProject(DataTable data)
@@ -132,7 +132,7 @@ namespace CJia.Health.ExtWeb.UI
                 }
                 else
                 {
-                    Alert.Show("此图片不存在或已删除，请与管理员联系。。。");
+                    Alert.Show("此病案不存在或已删除，请与管理员联系。。。");
                 }
             }
             catch { }

@@ -41,7 +41,7 @@ namespace CJia.Health
             set { isLoginSuccess = value; }
         }
         /// <summary>
-        /// 保存图片数据源
+        /// 保存病案数据源
         /// </summary>
         public static DataTable PictureData
         {

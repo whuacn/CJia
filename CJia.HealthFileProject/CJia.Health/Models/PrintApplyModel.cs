@@ -67,7 +67,7 @@ namespace CJia.Health.Models
             return result;
         }
         /// <summary>
-        /// 查询病人图片
+        /// 查询病人病案
         /// </summary>
         /// <param name="healthId"></param>
         /// <returns></returns>
@@ -100,7 +100,7 @@ namespace CJia.Health.Models
         //}
 
         ///// <summary>
-        ///// 根据项目和页码筛选图片
+        ///// 根据项目和页码筛选病案
         ///// </summary>
         ///// <returns></returns>
         //public DataTable QueryProjectAndPageSearch(string healthId,string proId,string startPage,string endPage,string startSubpage,string endSubpage)

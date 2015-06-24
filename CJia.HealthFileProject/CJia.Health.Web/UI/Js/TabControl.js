@@ -24,7 +24,7 @@ function HiddenLoading() {
 
 
 
-var _stylePath = null//图片所在的路径
+var _stylePath = null//病案所在的路径
 var _curentFrame = null;//当前框架的ID
 var _curentUrl = null; //当前框架的地址
 var _isShowCloseBtn = null;

@@ -150,7 +150,7 @@ namespace CJia.Health.Tools
             return imgData;
         }
         /// <summary>
-        /// 把二进制数组转换成图片
+        /// 把二进制数组转换成病案
         /// </summary>
         /// <param name="imgData"></param>
         /// <returns></returns>
@@ -161,7 +161,7 @@ namespace CJia.Health.Tools
             return img;
         }
         /// <summary>
-        /// 将uri资源转换为图片
+        /// 将uri资源转换为病案
         /// </summary>
         /// <param name="uri">uri</param>
         /// <param name="userName">用户名 凭证(可以为空)</param>
@@ -285,7 +285,7 @@ namespace CJia.Health.Tools
         }
         #endregion
 
-        #region 图片操作
+        #region 病案操作
         /// <summary>
         /// 实际尺寸 合适尺寸
         /// </summary>
@@ -436,7 +436,7 @@ namespace CJia.Health.Tools
             return addressIP.ToArray();
         }
         /// <summary>
-        /// 图片添加水印文字
+        /// 病案添加水印文字
         /// </summary>
         /// <param name="oldpath"></param>
         /// <param name="savepath"></param>

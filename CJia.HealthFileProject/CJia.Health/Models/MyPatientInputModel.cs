@@ -59,7 +59,7 @@ namespace CJia.Health.Models
             }
         }
         /// <summary>
-        /// 修改病案下对应的图片状态
+        /// 修改病案下对应的病案状态
         /// </summary>
         /// <param name="transID"></param>
         /// <param name="healthID"></param>
@@ -75,7 +75,7 @@ namespace CJia.Health.Models
             return CJia.DefaultOleDb.Execute(transID, sql, sqlParams) > 0 ? true : false;
         }
         /// <summary>
-        /// 删除病案下的图片
+        /// 删除病案下的病案
         /// </summary>
         /// <param name="transID"></param>
         /// <param name="healthID"></param>

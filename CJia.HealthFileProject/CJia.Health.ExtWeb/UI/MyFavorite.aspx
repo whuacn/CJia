@@ -36,7 +36,7 @@
                                         <ext:BoundField Width="110px" HeaderText="出院科室" SortField="OUT_HOSPITAL_DEPT_NAME" DataField="OUT_HOSPITAL_DEPT_NAME" />
                                         <ext:BoundField Width="110px" HeaderText="收藏时间" SortField="favorites_date" DataField="favorites_date" />
                                         <ext:LinkButtonField ConfirmTarget="Top" Text="详细>>" ColumnID="lbf_Edit" HeaderText="&nbsp;" Width="65px" CommandName="Details" />
-                                        <ext:LinkButtonField ConfirmTarget="Top" Text="浏览图片" ColumnID="lbf_Edit2" HeaderText="&nbsp;" Width="80px" CommandName="Image" />
+                                        <ext:LinkButtonField ConfirmTarget="Top" Text="浏览病案" ColumnID="lbf_Edit2" HeaderText="&nbsp;" Width="80px" CommandName="Image" />
                                         <ext:LinkButtonField ConfirmTarget="Top" Text="" ColumnID="lbf_Edit3" ToolTip="移除" ConfirmText="确定移除？" Icon="Delete" HeaderText="&nbsp;" Width="50px" CommandName="Delete" />
                                     </Columns>
                                 </ext:Grid>

@@ -9,7 +9,7 @@ using System.Threading;
 namespace CJia.Health.Tools
 {
     /// <summary>
-    /// 图片缓存类
+    /// 病案缓存类
     /// </summary>
     public class ImageCache : IDisposable
     {
@@ -28,19 +28,19 @@ namespace CJia.Health.Tools
             thread.Start();
         }
         /// <summary>
-        /// 图片缓存字典
+        /// 病案缓存字典
         /// </summary>
         private Dictionary<string, Image> DicImage = null;
 
         /// <summary>
-        /// 图片地址列表
+        /// 病案地址列表
         /// </summary>
         private List<string> picPaths = null;
 
         /// <summary>
-        /// 开始下载图片
+        /// 开始下载病案
         /// </summary>
-        /// <param name="picPaths">图片路径列表</param>
+        /// <param name="picPaths">病案路径列表</param>
         public void DowImage(List<string> picPaths)
         {
             this.picPaths = picPaths;
@@ -49,9 +49,9 @@ namespace CJia.Health.Tools
             thread.Start();
         }
         /// <summary>
-        /// 开始下载图片FileStream
+        /// 开始下载病案FileStream
         /// </summary>
-        /// <param name="picPaths">图片路径列表</param>
+        /// <param name="picPaths">病案路径列表</param>
         public void DowImageStream()
         {
             //this.picPaths = picPaths;
@@ -60,7 +60,7 @@ namespace CJia.Health.Tools
             // thread.Start();
         }
         /// <summary>
-        /// 下载图片
+        /// 下载病案
         /// </summary>
         private void Download()
         {
@@ -78,7 +78,7 @@ namespace CJia.Health.Tools
             }
         }
         /// <summary>
-        /// 使用FileStream方式下载图片
+        /// 使用FileStream方式下载病案
         /// </summary>
         private void DownLoadStream()
         {
@@ -105,9 +105,9 @@ namespace CJia.Health.Tools
         }
 
         /// <summary>
-        /// 获取图片
+        /// 获取病案
         /// </summary>
-        /// <param name="picPath">图片路径</param>
+        /// <param name="picPath">病案路径</param>
         /// <returns></returns>
         public Image GetImage(string picPath)
         {
@@ -130,9 +130,9 @@ namespace CJia.Health.Tools
             return Image.FromFile(picPath);
         }
         /// <summary>
-        /// 获取图片FileStream
+        /// 获取病案FileStream
         /// </summary>
-        /// <param name="picPath">图片路径</param>
+        /// <param name="picPath">病案路径</param>
         /// <returns></returns>
         public Image GetImageStream(string picPath)
         {
@@ -159,7 +159,7 @@ namespace CJia.Health.Tools
             return bt;
         }
         /// <summary>
-        /// 连接到图片服务器
+        /// 连接到病案服务器
         /// </summary>
         /// <returns></returns>
         public bool Connect()

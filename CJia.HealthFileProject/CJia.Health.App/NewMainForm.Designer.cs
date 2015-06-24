@@ -137,6 +137,7 @@ namespace CJia.Health.App
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xTC = new DevExpress.XtraTab.XtraTabControl();
             this.homePage = new DevExpress.XtraTab.XtraTabPage();
+            this.btnExport = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
@@ -261,8 +262,9 @@ namespace CJia.Health.App
             this.btnWeb,
             this.btnPrinter,
             this.btnPack,
-            this.btnPackManage});
-            this.ribbonControl1.MaxItemId = 107;
+            this.btnPackManage,
+            this.btnExport});
+            this.ribbonControl1.MaxItemId = 108;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1231,6 +1233,7 @@ namespace CJia.Health.App
             this.fff.ItemLinks.Add(this.btnPackManage);
             this.fff.ItemLinks.Add(this.btnLookSet);
             this.fff.ItemLinks.Add(this.btnPrintApply);
+            this.fff.ItemLinks.Add(this.btnExport);
             this.fff.ItemLinks.Add(this.BtnBorrow);
             this.fff.Name = "fff";
             this.fff.ShowCaptionButton = false;
@@ -1396,6 +1399,15 @@ namespace CJia.Health.App
             this.homePage.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             resources.ApplyResources(this.homePage, "homePage");
             // 
+            // btnExport
+            // 
+            resources.ApplyResources(this.btnExport, "btnExport");
+            this.btnExport.Glyph = ((System.Drawing.Image)(resources.GetObject("btnExport.Glyph")));
+            this.btnExport.Id = 107;
+            this.btnExport.Name = "btnExport";
+            this.btnExport.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExport_ItemClick);
+            // 
             // NewMainForm
             // 
             this.Appearance.BackColor = ((System.Drawing.Color)(resources.GetObject("NewMainForm.Appearance.BackColor")));
@@ -1539,5 +1551,6 @@ namespace CJia.Health.App
         private DevExpress.XtraBars.BarButtonItem btnPrinter;
         private DevExpress.XtraBars.BarButtonItem btnPack;
         private DevExpress.XtraBars.BarButtonItem btnPackManage;
+        private DevExpress.XtraBars.BarButtonItem btnExport;
     }
 }

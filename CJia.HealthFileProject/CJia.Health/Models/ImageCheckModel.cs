@@ -9,7 +9,7 @@ namespace CJia.Health.Models
     public class ImageCheckModel : CJia.Health.Tools.Model
     {
         /// <summary>
-        /// 查询图片信息
+        /// 查询病案信息
         /// </summary>
         /// <param name="healthId"></param>
         /// <param name="BigPicture"></param>
@@ -41,7 +41,7 @@ namespace CJia.Health.Models
         }
 
         /// <summary>
-        /// 修改图片审核状态
+        /// 修改病案审核状态
         /// </summary>
         /// <param name="pictureId"></param>
         /// <param name="status"></param>

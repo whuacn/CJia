@@ -55,10 +55,10 @@
     </script>
     <script type="text/javascript">
         //function click() {
-        //    alert('对不起,您不能保存此图片,谢谢您的理解和支持!')
+        //    alert('对不起,您不能保存此病案,谢谢您的理解和支持!')
         //}
         //function click1() {
-        //    if (event.button == 2) { alert('对不起,您不能保存此图片,谢谢您的理解和支持!') }
+        //    if (event.button == 2) { alert('对不起,您不能保存此病案,谢谢您的理解和支持!') }
         //} function CtrlKeyDown() {
         //    if (event.ctrlKey) { alert('不当的拷贝将损害您的系统！') }
         //}
@@ -124,7 +124,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="lblMsg" runat="server" Text="对不起,没有您要查看的图片信息。。。"></asp:Label>
+            <asp:Label ID="lblMsg" runat="server" Text="对不起,没有您要查看的病案信息。。。"></asp:Label>
             <table width="100%" style="text-align: left; font-family: 宋体; font-size: 14px;" runat="server" id="pictureTab">
                 <tr>
                     <%--style="height: 615px"--%>

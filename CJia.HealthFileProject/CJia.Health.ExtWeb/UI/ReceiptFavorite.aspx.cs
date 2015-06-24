@@ -137,7 +137,7 @@ namespace CJia.Health.ExtWeb.UI
                     PageContext.RegisterStartupScript(win_Edit.GetShowReference("PatientInfoView.aspx?ID=" + keys[0].ToString(), "基本信息"));
                     break;
                 case "Image":
-                    PageContext.RegisterStartupScript(win_Image.GetShowReference("PhotoView.aspx?ID=" + keys[0].ToString() + "&w=" + w + "&h=" + h, "图片浏览"));
+                    PageContext.RegisterStartupScript(win_Image.GetShowReference("PhotoView.aspx?ID=" + keys[0].ToString() + "&w=" + w + "&h=" + h, "病案浏览"));
                     break;
             }
         }

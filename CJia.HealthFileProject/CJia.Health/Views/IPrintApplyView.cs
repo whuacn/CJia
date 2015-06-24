@@ -19,12 +19,12 @@ namespace CJia.Health.Views
         event EventHandler<Views.PrintApplyEventArgs> OnPatientSearch;
 
         /// <summary>
-        /// 双击病人列表绑定checkboxList图片信息
+        /// 双击病人列表绑定checkboxList病案信息
         /// </summary>
         event EventHandler<Views.PrintApplyEventArgs> OnPatientDoubleClick;
 
         ///// <summary>
-        ///// 查询图片事件
+        ///// 查询病案事件
         ///// </summary>
         //event EventHandler<Views.PrintApplyEventArgs> OnSelectPicture;
 
@@ -35,13 +35,13 @@ namespace CJia.Health.Views
         void ExeGridPatient(DataTable dtGridPatient);
 
         /// <summary>
-        /// 绑定界面选择框图片信息
+        /// 绑定界面选择框病案信息
         /// </summary>
         /// <param name="dtPicture"></param>
         void ExeBindChkPicture(DataTable dtPicture);
 
         ///// <summary>
-        ///// 绑定图片
+        ///// 绑定病案
         ///// </summary>
         ///// <param name="result"></param>
         //void ExePicture(DataTable result);

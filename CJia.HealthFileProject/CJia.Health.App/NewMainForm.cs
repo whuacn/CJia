@@ -1105,5 +1105,10 @@ namespace CJia.Health.App
             string http = Tools.ConfigHelper.GetAppStrings("WebApply");
             System.Diagnostics.Process.Start("iexplore.exe", http);
         }
+
+        private void btnExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowXTP(e);
+        }
     }
 }

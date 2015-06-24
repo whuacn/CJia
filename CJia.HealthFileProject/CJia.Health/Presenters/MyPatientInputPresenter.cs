@@ -62,7 +62,7 @@ namespace CJia.Health.Presenters
                 foreach (string str in e.HealthID)
                 {
                     Model.ModifyCheckState(trans.ID, str, "103", User.UserData.Rows[0]["USER_ID"].ToString());
-                    //将病案下对应的图片一并提交
+                    //将病案下对应的病案一并提交
                     Model.ModifyPicStateByHealthID(trans.ID, str, "103", User.UserData.Rows[0]["USER_ID"].ToString());
                 }
                 trans.Complete();
