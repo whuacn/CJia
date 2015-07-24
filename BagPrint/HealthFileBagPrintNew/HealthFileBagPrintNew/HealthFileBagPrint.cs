@@ -26,8 +26,8 @@ namespace HealthFileBagPrintNew
         {
             using (DBHelper helper = new DBHelper())
             {
-                string sql = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FBIHID LIKE ? AND (V.FOOFFI = ? OR ?='quanbu')";
-                string str2 = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FBIHID LIKE ? \r\n                               AND V.FUDATE between ? and ? AND (V.FOOFFI = ? OR ?='quanbu')";
+                string sql = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER \r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FBIHID LIKE ? AND (V.FOOFFI = ? OR ?='quanbu') order by V.FUDATE desc";
+                string str2 = "SELECT V.FMRDID,V.FBIHID, V.FNAME, T.FDESC, V.FICD_D, V.FODATE, V.FUDATE, TUSER.FDESC FRECORD\r\n                              FROM VTMRDDEPUB001 V, TOFFIM T, TUSERM TUSER\r\n                             WHERE v.FOOFFI = T.FOFFN\r\n                               AND V.FUSER=TUSER.FUSER\r\n                               AND V.FUSER LIKE ?\r\n                               AND V.FBIHID LIKE ? \r\n                               AND V.FUDATE between ? and ? AND (V.FOOFFI = ? OR ?='quanbu') order by V.FUDATE desc";
                 string text = this.txtFmrdid.Text;
                 string str4 = this.CbUser.SelectedValue.ToString();
                 string str5 = (str4 == "quanbu") ? "%%" : str4;
@@ -97,7 +97,7 @@ namespace HealthFileBagPrintNew
 
         private DataTable GetCheckeDataTable()
         {
-            if (this.gridFile.DataSource != null)
+            if (this.gridFile.DataSource != null) 
             {
                 DataTable dataSource = (DataTable)this.gridFile.DataSource;
                 DataTable table2 = dataSource.Copy();

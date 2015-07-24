@@ -55,6 +55,7 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRowsCount = new System.Windows.Forms.Label();
             this.btnPrintSetting = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CbDept = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblRowsCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DEBegin.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DEBegin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFile)).BeginInit();
@@ -250,6 +250,8 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "录入时间";
+            this.gridColumn8.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn8.FieldName = "FUDATE";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
@@ -339,6 +341,15 @@
             this.panel1.Size = new System.Drawing.Size(965, 119);
             this.panel1.TabIndex = 11;
             // 
+            // lblRowsCount
+            // 
+            this.lblRowsCount.AutoSize = true;
+            this.lblRowsCount.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRowsCount.Location = new System.Drawing.Point(13, 104);
+            this.lblRowsCount.Name = "lblRowsCount";
+            this.lblRowsCount.Size = new System.Drawing.Size(0, 12);
+            this.lblRowsCount.TabIndex = 17;
+            // 
             // btnPrintSetting
             // 
             this.btnPrintSetting.Location = new System.Drawing.Point(477, 66);
@@ -410,15 +421,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(965, 343);
             this.panel2.TabIndex = 12;
-            // 
-            // lblRowsCount
-            // 
-            this.lblRowsCount.AutoSize = true;
-            this.lblRowsCount.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRowsCount.Location = new System.Drawing.Point(13, 104);
-            this.lblRowsCount.Name = "lblRowsCount";
-            this.lblRowsCount.Size = new System.Drawing.Size(0, 12);
-            this.lblRowsCount.TabIndex = 17;
             // 
             // HealthFileBagPrint
             // 
