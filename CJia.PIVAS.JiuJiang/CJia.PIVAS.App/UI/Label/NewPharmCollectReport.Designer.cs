@@ -65,6 +65,8 @@
             this.xrPrintBy = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrRealCount = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -93,6 +95,7 @@
             this.xrSpec,
             this.xrFactory,
             this.xrCount,
+            this.xrRealCount,
             this.xrUnit});
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
@@ -125,7 +128,7 @@
             this.xrFactory.StylePriority.UseTextAlignment = false;
             this.xrFactory.Text = "xrFactory";
             this.xrFactory.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrFactory.Weight = 0.67412240651704181D;
+            this.xrFactory.Weight = 0.53246769026599927D;
             // 
             // xrCount
             // 
@@ -137,7 +140,7 @@
             this.xrCount.StylePriority.UseTextAlignment = false;
             this.xrCount.Text = "33";
             this.xrCount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrCount.Weight = 0.31765151261285046D;
+            this.xrCount.Weight = 0.33696813561589584D;
             // 
             // xrUnit
             // 
@@ -147,7 +150,7 @@
             this.xrUnit.StylePriority.UseTextAlignment = false;
             this.xrUnit.Text = "xrUnit";
             this.xrUnit.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrUnit.Weight = 0.35834473395913619D;
+            this.xrUnit.Weight = 0.18234868777074964D;
             // 
             // TopMargin
             // 
@@ -348,6 +351,7 @@
             this.xrTableCell5,
             this.xrTableCell6,
             this.xr,
+            this.xrTableCell1,
             this.xrTableCell7});
             this.xrTableRow2.Name = "xrTableRow2";
             this.xrTableRow2.Weight = 1D;
@@ -380,7 +384,7 @@
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
             this.xrTableCell6.Text = "厂商";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell6.Weight = 0.6649880395224288D;
+            this.xrTableCell6.Weight = 0.52525254807808863D;
             // 
             // xr
             // 
@@ -392,7 +396,7 @@
             this.xr.StylePriority.UseTextAlignment = false;
             this.xr.Text = "数量";
             this.xr.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xr.Weight = 0.31334697507513476D;
+            this.xr.Weight = 0.33240184877188861D;
             // 
             // xrTableCell7
             // 
@@ -402,7 +406,7 @@
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.Text = "单位";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell7.Weight = 0.3534890291693667D;
+            this.xrTableCell7.Weight = 0.17987804151700493D;
             // 
             // xrLabel2
             // 
@@ -501,6 +505,24 @@
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(76.04169F, 17.79167F);
             // 
+            // xrTableCell1
+            // 
+            this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell1.Name = "xrTableCell1";
+            this.xrTableCell1.StylePriority.UseBorders = false;
+            this.xrTableCell1.StylePriority.UseTextAlignment = false;
+            this.xrTableCell1.Text = "节约用量";
+            this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell1.Weight = 0.29429160539994809D;
+            // 
+            // xrRealCount
+            // 
+            this.xrRealCount.Name = "xrRealCount";
+            this.xrRealCount.StylePriority.UseTextAlignment = false;
+            this.xrRealCount.Text = "32";
+            this.xrRealCount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrRealCount.Weight = 0.29833413943638371D;
+            // 
             // NewPharmCollectReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -556,5 +578,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
         private DevExpress.XtraReports.UI.XRLabel xlZXRQ;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
+        private DevExpress.XtraReports.UI.XRTableCell xrRealCount;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
     }
 }

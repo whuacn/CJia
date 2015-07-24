@@ -16,6 +16,8 @@ namespace CJia.PIVAS.Views
 
         event EventHandler<PharmEconomizeViewEventArgs> OnSelectPharmEconomize;
 
+        event EventHandler<PharmEconomizeViewEventArgs> OnSelectPharmEconomizeInput;
+
         event EventHandler<PharmEconomizeViewEventArgs> OnAddFilterPharm;
 
         event EventHandler<PharmEconomizeViewEventArgs> OnDeleteFilterPharm;
@@ -36,6 +38,12 @@ namespace CJia.PIVAS.Views
         void ExeSelectFilterPharm(DataTable result);
 
         void ExeSelectPharmEconomize(DataTable result);
+
+        /// <summary>
+        /// 节约入库 add lp
+        /// </summary>
+        /// <param name="result"></param>
+        void ExeSelectPharmEconomizeInput(DataTable result);
 
         void ExeSelectAddPharm(DataTable detail,DataTable all);
 

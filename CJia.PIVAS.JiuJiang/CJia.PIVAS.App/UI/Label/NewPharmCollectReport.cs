@@ -42,6 +42,7 @@ namespace CJia.PIVAS.App.UI.Label
             this.xrFactory.DataBindings.Add("Text", this.DataSource, "PHARM_FACTION");
             this.xrUnit.DataBindings.Add("Text", this.DataSource, "UNITS");
             this.xrCount.DataBindings.Add("Text", this.DataSource, "AMOUNT");
+            this.xrRealCount.DataBindings.Add("Text", this.DataSource, "REALITY_PHARM_AMOUNT");
             this.CreateDocument(); //创建文档
             this.ShowPreviewDialog();
         }

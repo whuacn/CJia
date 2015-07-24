@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CJia.PIVAS.Views;
+using DevExpress.XtraSplashScreen;
+using CJia._3LevelReview.App;
 
 namespace CJia.PIVAS.App.UI
 {
@@ -152,37 +154,27 @@ namespace CJia.PIVAS.App.UI
                 if (MessageBox.Show( "是否需要针对全院进行药品节约入库？","提醒", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
             }
-            this.OnSelectPharmEconomize(null, new Views.PharmEconomizeViewEventArgs()
+            SplashScreenManager.ShowForm(typeof(WaitLoading));
+            try
             {
-                startDate = this.dtpStartTime.Value,
-                endDate = this.dtpEndTime.Value,
-                pharmIds = this.selectPharmList,
-                illfitld = this.cbIffield.SelectedValue.ToString()
-            });
+                this.OnSelectPharmEconomizeInput(null, new Views.PharmEconomizeViewEventArgs()
+                {
+                    startDate = this.dtpStartTime.Value,
+                    endDate = this.dtpEndTime.Value,
+                    pharmIds = this.selectPharmList,
+                    illfitld = this.cbIffield.SelectedValue.ToString()
+                });
 
-            this.addPharmView = new AddPharmView();
-            this.addPharmView.BindPharmData(this.pharmData, this.FilterPharm);
-            this.addPharmView.AddPharm += addPharmView_AddPharm;
+                this.addPharmView = new AddPharmView();
+                this.addPharmView.BindPharmData(this.pharmData, this.FilterPharm);
+                this.addPharmView.AddPharm += addPharmView_AddPharm;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
             this.ShowAsWindow(this.cbIffield.Text + " 药品入库", addPharmView);
-            //if(this.cbIffield.SelectedValue.ToString() != "0")
-            //{
-            //    this.OnSelectPharmEconomize(null, new Views.PharmEconomizeViewEventArgs()
-            //    {
-            //        startDate = this.dtpStartTime.Value,
-            //        endDate = this.dtpEndTime.Value,
-            //        pharmIds = this.selectPharmList,
-            //        illfitld = this.cbIffield.SelectedValue.ToString()
-            //    });
-
-            //    this.addPharmView = new AddPharmView();
-            //    this.addPharmView.BindPharmData(this.pharmData, this.FilterPharm);
-            //    this.addPharmView.AddPharm += addPharmView_AddPharm;
-            //    this.ShowAsWindow(this.cbIffield.Text + " 药品入库", addPharmView);
-            //}
-            //else
-            //{
-            //    Message.Show("不能对全部病区进行一次操作！");
-            //}
+            
         }
 
         // 药品入库事件调用方法
@@ -200,13 +192,21 @@ namespace CJia.PIVAS.App.UI
         // 获取药品节约数量
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.OnSelectPharmEconomize(null, new Views.PharmEconomizeViewEventArgs()
+            SplashScreenManager.ShowForm(typeof(WaitLoading));
+            try
             {
-                startDate = this.dtpStartTime.Value,
-                endDate = this.dtpEndTime.Value,
-                pharmIds = this.selectPharmList,
-                illfitld = this.cbIffield.SelectedValue.ToString()
-            });
+                this.OnSelectPharmEconomize(null, new Views.PharmEconomizeViewEventArgs()
+                {
+                    startDate = this.dtpStartTime.Value,
+                    endDate = this.dtpEndTime.Value,
+                    pharmIds = this.selectPharmList,
+                    illfitld = this.cbIffield.SelectedValue.ToString()
+                });
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
         }
 
         // 过滤0切换
@@ -230,7 +230,7 @@ namespace CJia.PIVAS.App.UI
         public event EventHandler<Views.PharmEconomizeViewEventArgs> OnSelectFilterPharm;
 
         public event EventHandler<Views.PharmEconomizeViewEventArgs> OnSelectPharmEconomize;
-
+        public event EventHandler<Views.PharmEconomizeViewEventArgs> OnSelectPharmEconomizeInput;
         public event EventHandler<PharmEconomizeViewEventArgs> OnAddFilterPharm;
 
         public event EventHandler<PharmEconomizeViewEventArgs> OnDeleteFilterPharm;
@@ -277,6 +277,18 @@ namespace CJia.PIVAS.App.UI
             this.pharmData = result;
             this.FilterZero();
             this.SetAllAcount();
+
+        }
+
+        /// <summary>
+        /// 获取节约药品信息
+        /// </summary>
+        /// <param name="result"></param>
+        public void ExeSelectPharmEconomizeInput(DataTable result)
+        {
+            this.pharmData = result;
+            //this.FilterZero();
+            //this.SetAllAcount();
 
         }
 

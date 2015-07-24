@@ -36,6 +36,7 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnFilterPharm = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddPharm = new DevExpress.XtraEditors.SimpleButton();
             this.cbFilterZero = new System.Windows.Forms.CheckBox();
@@ -74,7 +75,8 @@
             this.gridColumn16,
             this.gridColumn17,
             this.gridColumn1,
-            this.gridColumn18});
+            this.gridColumn18,
+            this.gridColumn2});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gcPharm;
             this.gridView1.Name = "gridView1";
@@ -137,6 +139,17 @@
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 5;
             this.gridColumn18.Width = 60;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "最近节约时间";
+            this.gridColumn2.DisplayFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn2.FieldName = "LAST_ECONOMIZE_TIME";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 6;
             // 
             // btnFilterPharm
             // 
@@ -212,5 +225,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private System.Windows.Forms.CheckBox cbFilterZero;
         private System.Windows.Forms.TextBox txtSearch;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
