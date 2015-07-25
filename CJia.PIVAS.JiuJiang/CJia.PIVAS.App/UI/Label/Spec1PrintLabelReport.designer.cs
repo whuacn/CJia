@@ -56,7 +56,6 @@
             this.bed = new DevExpress.XtraReports.UI.XRLabel();
             this.patientName = new DevExpress.XtraReports.UI.XRLabel();
             this.illfield = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -70,11 +69,11 @@
             this.LongTemporary = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.labBarCode = new DevExpress.XtraReports.UI.XRLabel();
+            this.patientID = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.labFrequency = new DevExpress.XtraReports.UI.XRLabel();
             this.PharmTime = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.patientID = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -260,7 +259,7 @@
             // bacth
             // 
             this.bacth.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bacth.LocationFloat = new DevExpress.Utils.PointFloat(265.6341F, 0F);
+            this.bacth.LocationFloat = new DevExpress.Utils.PointFloat(265.6341F, 13.62317F);
             this.bacth.Name = "bacth";
             this.bacth.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.bacth.SizeF = new System.Drawing.SizeF(43.41402F, 25.66675F);
@@ -293,17 +292,17 @@
             // 
             // xrLine2
             // 
-            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(6.688086F, 13F);
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(6.688086F, 13.62317F);
             this.xrLine2.Name = "xrLine2";
-            this.xrLine2.SizeF = new System.Drawing.SizeF(240.196F, 2.083333F);
+            this.xrLine2.SizeF = new System.Drawing.SizeF(298.3119F, 3.998374F);
             // 
             // pharm
             // 
-            this.pharm.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharm.LocationFloat = new DevExpress.Utils.PointFloat(243.5036F, 49.95995F);
+            this.pharm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharm.LocationFloat = new DevExpress.Utils.PointFloat(234.8176F, 44.83657F);
             this.pharm.Name = "pharm";
             this.pharm.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.pharm.SizeF = new System.Drawing.SizeF(33.03418F, 27.08009F);
+            this.pharm.SizeF = new System.Drawing.SizeF(22.61752F, 20.12338F);
             this.pharm.StylePriority.UseFont = false;
             this.pharm.StylePriority.UsePadding = false;
             this.pharm.StylePriority.UseTextAlignment = false;
@@ -325,15 +324,15 @@
             // barcode
             // 
             this.barcode.BackColor = System.Drawing.Color.Transparent;
-            this.barcode.LocationFloat = new DevExpress.Utils.PointFloat(189.6124F, 3.000005F);
+            this.barcode.LocationFloat = new DevExpress.Utils.PointFloat(183.6123F, 3.000005F);
             this.barcode.Name = "barcode";
-            this.barcode.SizeF = new System.Drawing.SizeF(121.3876F, 33F);
+            this.barcode.SizeF = new System.Drawing.SizeF(121.3876F, 22.58333F);
             this.barcode.StylePriority.UseBackColor = false;
             // 
             // age
             // 
             this.age.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
-            this.age.LocationFloat = new DevExpress.Utils.PointFloat(85.57167F, 54.04002F);
+            this.age.LocationFloat = new DevExpress.Utils.PointFloat(71.54306F, 46.91665F);
             this.age.Name = "age";
             this.age.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.age.SizeF = new System.Drawing.SizeF(66.35553F, 23F);
@@ -345,7 +344,7 @@
             // gender
             // 
             this.gender.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
-            this.gender.LocationFloat = new DevExpress.Utils.PointFloat(163.4503F, 33.99998F);
+            this.gender.LocationFloat = new DevExpress.Utils.PointFloat(58.8923F, 45.66518F);
             this.gender.Name = "gender";
             this.gender.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gender.SizeF = new System.Drawing.SizeF(20.162F, 23F);
@@ -369,7 +368,7 @@
             // patientName
             // 
             this.patientName.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.patientName.LocationFloat = new DevExpress.Utils.PointFloat(85.57167F, 29.00001F);
+            this.patientName.LocationFloat = new DevExpress.Utils.PointFloat(71.54308F, 24.04002F);
             this.patientName.Name = "patientName";
             this.patientName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.patientName.SizeF = new System.Drawing.SizeF(91.90723F, 30F);
@@ -381,7 +380,7 @@
             // illfield
             // 
             this.illfield.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.illfield.LocationFloat = new DevExpress.Utils.PointFloat(85.57167F, 10.00001F);
+            this.illfield.LocationFloat = new DevExpress.Utils.PointFloat(71.54306F, 10.00001F);
             this.illfield.Name = "illfield";
             this.illfield.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.illfield.SizeF = new System.Drawing.SizeF(91.90724F, 25.99999F);
@@ -390,16 +389,10 @@
             this.illfield.Text = "妇产科第一病区";
             this.illfield.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrLine1
-            // 
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(9.771316F, 54.04002F);
-            this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(214.6296F, 3.043293F);
-            // 
             // xrTable1
             // 
             this.xrTable1.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(15.99999F, 77.04004F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 67.04003F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
@@ -460,7 +453,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 0F;
+            this.TopMargin.HeightF = 1.041667F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -475,7 +468,7 @@
             // usage
             // 
             this.usage.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
-            this.usage.LocationFloat = new DevExpress.Utils.PointFloat(163.4503F, 59F);
+            this.usage.LocationFloat = new DevExpress.Utils.PointFloat(139.285F, 49.95993F);
             this.usage.Name = "usage";
             this.usage.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.usage.SizeF = new System.Drawing.SizeF(107.5991F, 15.00002F);
@@ -496,18 +489,17 @@
             this.gender,
             this.age,
             this.usage,
-            this.xrLine1,
             this.barcode,
             this.pharm,
             this.xrTable1,
             this.bed});
-            this.ReportHeader.HeightF = 95.04004F;
+            this.ReportHeader.HeightF = 85.04003F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // LongTemporary
             // 
             this.LongTemporary.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.LongTemporary.LocationFloat = new DevExpress.Utils.PointFloat(276.5378F, 49.95995F);
+            this.LongTemporary.LocationFloat = new DevExpress.Utils.PointFloat(257.4351F, 41.58509F);
             this.LongTemporary.Name = "LongTemporary";
             this.LongTemporary.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.LongTemporary.SizeF = new System.Drawing.SizeF(34.46219F, 27.08009F);
@@ -537,7 +529,7 @@
             this.labBarCode.BackColor = System.Drawing.Color.Transparent;
             this.labBarCode.BorderWidth = 0;
             this.labBarCode.Font = new System.Drawing.Font("Times New Roman", 8F);
-            this.labBarCode.LocationFloat = new DevExpress.Utils.PointFloat(222.6307F, 36F);
+            this.labBarCode.LocationFloat = new DevExpress.Utils.PointFloat(213.6091F, 25.58335F);
             this.labBarCode.Name = "labBarCode";
             this.labBarCode.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.labBarCode.SizeF = new System.Drawing.SizeF(67.49648F, 16.00175F);
@@ -548,6 +540,18 @@
             this.labBarCode.StylePriority.UseTextAlignment = false;
             this.labBarCode.Text = "1234567890";
             this.labBarCode.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // patientID
+            // 
+            this.patientID.Font = new System.Drawing.Font("Times New Roman", 7F);
+            this.patientID.LocationFloat = new DevExpress.Utils.PointFloat(8.229858F, 49.95994F);
+            this.patientID.Name = "patientID";
+            this.patientID.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.patientID.SizeF = new System.Drawing.SizeF(55.08314F, 15.00001F);
+            this.patientID.StylePriority.UseFont = false;
+            this.patientID.StylePriority.UseTextAlignment = false;
+            this.patientID.Text = "ID:12345";
+            this.patientID.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // ReportFooter
             // 
@@ -573,7 +577,7 @@
             // labFrequency
             // 
             this.labFrequency.Font = new System.Drawing.Font("Times New Roman", 8F);
-            this.labFrequency.LocationFloat = new DevExpress.Utils.PointFloat(197.3578F, 35.25161F);
+            this.labFrequency.LocationFloat = new DevExpress.Utils.PointFloat(197.3578F, 31.74671F);
             this.labFrequency.Name = "labFrequency";
             this.labFrequency.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.labFrequency.SizeF = new System.Drawing.SizeF(65.24118F, 12.74831F);
@@ -606,18 +610,6 @@
             this.xrLabel4.Text = "执行日期:";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // patientID
-            // 
-            this.patientID.Font = new System.Drawing.Font("Times New Roman", 7F);
-            this.patientID.LocationFloat = new DevExpress.Utils.PointFloat(8.229858F, 57.99998F);
-            this.patientID.Name = "patientID";
-            this.patientID.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.patientID.SizeF = new System.Drawing.SizeF(55.08314F, 15.00001F);
-            this.patientID.StylePriority.UseFont = false;
-            this.patientID.StylePriority.UseTextAlignment = false;
-            this.patientID.Text = "ID:12345";
-            this.patientID.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // Spec1PrintLabelReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -626,7 +618,7 @@
             this.TopMargin,
             this.ReportHeader,
             this.ReportFooter});
-            this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            this.Margins = new System.Drawing.Printing.Margins(0, 0, 1, 0);
             this.PageHeight = 200;
             this.PageWidth = 315;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
@@ -648,7 +640,6 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
         private DevExpress.XtraReports.UI.XRLabel illfield;
-        private DevExpress.XtraReports.UI.XRLine xrLine1;
         private DevExpress.XtraReports.UI.XRLabel patientName;
         private DevExpress.XtraReports.UI.XRLabel bed;
         private DevExpress.XtraReports.UI.XRLabel age;
