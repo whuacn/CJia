@@ -312,7 +312,7 @@
             // pageCount
             // 
             this.pageCount.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
-            this.pageCount.LocationFloat = new DevExpress.Utils.PointFloat(257.599F, 29.91676F);
+            this.pageCount.LocationFloat = new DevExpress.Utils.PointFloat(247.4481F, 29.91676F);
             this.pageCount.Name = "pageCount";
             this.pageCount.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.pageCount.SizeF = new System.Drawing.SizeF(46.44916F, 18.08316F);
@@ -324,9 +324,9 @@
             // barcode
             // 
             this.barcode.BackColor = System.Drawing.Color.Transparent;
-            this.barcode.LocationFloat = new DevExpress.Utils.PointFloat(174.4789F, 3.000021F);
+            this.barcode.LocationFloat = new DevExpress.Utils.PointFloat(126.0536F, 0F);
             this.barcode.Name = "barcode";
-            this.barcode.SizeF = new System.Drawing.SizeF(121.3876F, 22.58333F);
+            this.barcode.SizeF = new System.Drawing.SizeF(178.9464F, 41.58509F);
             this.barcode.StylePriority.UseBackColor = false;
             // 
             // age
@@ -355,11 +355,11 @@
             // 
             // bed
             // 
-            this.bed.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.bed.LocationFloat = new DevExpress.Utils.PointFloat(8.229859F, 14.99996F);
+            this.bed.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.bed.LocationFloat = new DevExpress.Utils.PointFloat(4.688086F, 14.99996F);
             this.bed.Name = "bed";
             this.bed.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.bed.SizeF = new System.Drawing.SizeF(77.3418F, 21.00003F);
+            this.bed.SizeF = new System.Drawing.SizeF(45.16658F, 21.00003F);
             this.bed.StylePriority.UseFont = false;
             this.bed.StylePriority.UseTextAlignment = false;
             this.bed.Text = "99床";
@@ -367,11 +367,11 @@
             // 
             // patientName
             // 
-            this.patientName.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.patientName.LocationFloat = new DevExpress.Utils.PointFloat(65.54308F, 24.04002F);
+            this.patientName.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.patientName.LocationFloat = new DevExpress.Utils.PointFloat(45.1666F, 26.95994F);
             this.patientName.Name = "patientName";
             this.patientName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.patientName.SizeF = new System.Drawing.SizeF(91.90723F, 30F);
+            this.patientName.SizeF = new System.Drawing.SizeF(80.88699F, 18.04004F);
             this.patientName.StylePriority.UseFont = false;
             this.patientName.StylePriority.UseTextAlignment = false;
             this.patientName.Text = "李晓红的的";
@@ -379,11 +379,11 @@
             // 
             // illfield
             // 
-            this.illfield.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.illfield.LocationFloat = new DevExpress.Utils.PointFloat(62.8923F, 10.00001F);
+            this.illfield.Font = new System.Drawing.Font("微软雅黑", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.illfield.LocationFloat = new DevExpress.Utils.PointFloat(45.16658F, 14.99996F);
             this.illfield.Name = "illfield";
             this.illfield.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.illfield.SizeF = new System.Drawing.SizeF(111.5085F, 25.99999F);
+            this.illfield.SizeF = new System.Drawing.SizeF(80.88701F, 11.95998F);
             this.illfield.StylePriority.UseFont = false;
             this.illfield.StylePriority.UseTextAlignment = false;
             this.illfield.Text = "妇产科第一病区";
@@ -468,10 +468,10 @@
             // usage
             // 
             this.usage.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
-            this.usage.LocationFloat = new DevExpress.Utils.PointFloat(139.285F, 49.95993F);
+            this.usage.LocationFloat = new DevExpress.Utils.PointFloat(146.4301F, 52.04F);
             this.usage.Name = "usage";
             this.usage.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.usage.SizeF = new System.Drawing.SizeF(107.5991F, 15.00002F);
+            this.usage.SizeF = new System.Drawing.SizeF(85.11588F, 15.00002F);
             this.usage.StylePriority.UseFont = false;
             this.usage.StylePriority.UseTextAlignment = false;
             this.usage.Text = "[静脉注射]";
@@ -512,16 +512,16 @@
             // xrLabel2
             // 
             this.xrLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 7F);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(7.771316F, 0F);
+            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 6F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(167.7076F, 14.99996F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(126.0536F, 14.99996F);
             this.xrLabel2.StylePriority.UseBackColor = false;
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UsePadding = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "九江市妇幼保健院 九江市儿童医院";
+            this.xrLabel2.Text = "九江市妇幼保健院 儿童医院";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // labBarCode
@@ -529,7 +529,7 @@
             this.labBarCode.BackColor = System.Drawing.Color.Transparent;
             this.labBarCode.BorderWidth = 0;
             this.labBarCode.Font = new System.Drawing.Font("Times New Roman", 8F);
-            this.labBarCode.LocationFloat = new DevExpress.Utils.PointFloat(213.6091F, 25.58335F);
+            this.labBarCode.LocationFloat = new DevExpress.Utils.PointFloat(156.9044F, 38.95818F);
             this.labBarCode.Name = "labBarCode";
             this.labBarCode.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.labBarCode.SizeF = new System.Drawing.SizeF(67.49648F, 16.00175F);
