@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendPharmSelect));
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.ckceUsage = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.ckceBatch = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.ckceIllfield = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -112,6 +114,7 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceUsage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckceBatch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).BeginInit();
             this.panel5.SuspendLayout();
@@ -157,6 +160,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl4.Appearance.BackColor = System.Drawing.Color.White;
             this.groupControl4.Appearance.Options.UseBackColor = true;
+            this.groupControl4.Controls.Add(this.ckceUsage);
+            this.groupControl4.Controls.Add(this.labelControl1);
             this.groupControl4.Controls.Add(this.ckceBatch);
             this.groupControl4.Controls.Add(this.ckceIllfield);
             this.groupControl4.Controls.Add(this.panel5);
@@ -184,9 +189,26 @@
             this.groupControl4.TabIndex = 5;
             this.groupControl4.Text = "筛选条件";
             // 
+            // ckceUsage
+            // 
+            this.ckceUsage.Location = new System.Drawing.Point(1025, 70);
+            this.ckceUsage.Name = "ckceUsage";
+            this.ckceUsage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceUsage.Size = new System.Drawing.Size(100, 20);
+            this.ckceUsage.TabIndex = 69;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(1025, 42);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(60, 14);
+            this.labelControl1.TabIndex = 68;
+            this.labelControl1.Text = "给药途径：";
+            // 
             // ckceBatch
             // 
-            this.ckceBatch.Location = new System.Drawing.Point(1028, 69);
+            this.ckceBatch.Location = new System.Drawing.Point(906, 71);
             this.ckceBatch.Name = "ckceBatch";
             this.ckceBatch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -195,7 +217,7 @@
             // 
             // ckceIllfield
             // 
-            this.ckceIllfield.Location = new System.Drawing.Point(1028, 35);
+            this.ckceIllfield.Location = new System.Drawing.Point(906, 40);
             this.ckceIllfield.Name = "ckceIllfield";
             this.ckceIllfield.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -208,9 +230,9 @@
             this.panel5.Controls.Add(this.rbGR);
             this.panel5.Controls.Add(this.rbDR);
             this.panel5.Controls.Add(this.rbALLGRDR);
-            this.panel5.Location = new System.Drawing.Point(376, 25);
+            this.panel5.Location = new System.Drawing.Point(305, 25);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(179, 73);
+            this.panel5.Size = new System.Drawing.Size(142, 73);
             this.panel5.TabIndex = 65;
             // 
             // rbGR
@@ -220,7 +242,7 @@
             this.rbGR.Checked = true;
             this.rbGR.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.rbGR.ForeColor = System.Drawing.Color.Green;
-            this.rbGR.Location = new System.Drawing.Point(111, 7);
+            this.rbGR.Location = new System.Drawing.Point(78, 7);
             this.rbGR.Name = "rbGR";
             this.rbGR.Size = new System.Drawing.Size(70, 28);
             this.rbGR.TabIndex = 32;
@@ -234,7 +256,7 @@
             this.rbDR.AutoSize = true;
             this.rbDR.BackColor = System.Drawing.Color.Transparent;
             this.rbDR.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.rbDR.Location = new System.Drawing.Point(111, 38);
+            this.rbDR.Location = new System.Drawing.Point(78, 38);
             this.rbDR.Name = "rbDR";
             this.rbDR.Size = new System.Drawing.Size(68, 28);
             this.rbDR.TabIndex = 31;
@@ -246,11 +268,11 @@
             // 
             this.rbALLGRDR.AutoSize = true;
             this.rbALLGRDR.BackColor = System.Drawing.Color.Transparent;
-            this.rbALLGRDR.Font = new System.Drawing.Font("Tahoma", 30F);
+            this.rbALLGRDR.Font = new System.Drawing.Font("Tahoma", 20F);
             this.rbALLGRDR.ForeColor = System.Drawing.Color.Black;
-            this.rbALLGRDR.Location = new System.Drawing.Point(2, 9);
+            this.rbALLGRDR.Location = new System.Drawing.Point(1, 16);
             this.rbALLGRDR.Name = "rbALLGRDR";
-            this.rbALLGRDR.Size = new System.Drawing.Size(118, 52);
+            this.rbALLGRDR.Size = new System.Drawing.Size(87, 37);
             this.rbALLGRDR.TabIndex = 30;
             this.rbALLGRDR.Text = "全部";
             this.rbALLGRDR.UseVisualStyleBackColor = false;
@@ -258,7 +280,7 @@
             // 
             // cdListDate
             // 
-            this.cdListDate.Location = new System.Drawing.Point(566, 70);
+            this.cdListDate.Location = new System.Drawing.Point(456, 70);
             this.cdListDate.Name = "cdListDate";
             this.cdListDate.Properties.Caption = "开单日期:";
             this.cdListDate.Size = new System.Drawing.Size(75, 19);
@@ -269,7 +291,7 @@
             // 
             this.dtpListDate.EditValue = null;
             this.dtpListDate.Enabled = false;
-            this.dtpListDate.Location = new System.Drawing.Point(647, 68);
+            this.dtpListDate.Location = new System.Drawing.Point(537, 68);
             this.dtpListDate.Name = "dtpListDate";
             this.dtpListDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dtpListDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -294,7 +316,7 @@
             // 
             // cdZXDate
             // 
-            this.cdZXDate.Location = new System.Drawing.Point(772, 69);
+            this.cdZXDate.Location = new System.Drawing.Point(662, 69);
             this.cdZXDate.Name = "cdZXDate";
             this.cdZXDate.Properties.Caption = "执行日期:";
             this.cdZXDate.Size = new System.Drawing.Size(75, 19);
@@ -305,7 +327,7 @@
             // 
             this.dtpZX.EditValue = null;
             this.dtpZX.Enabled = false;
-            this.dtpZX.Location = new System.Drawing.Point(853, 67);
+            this.dtpZX.Location = new System.Drawing.Point(743, 67);
             this.dtpZX.Name = "dtpZX";
             this.dtpZX.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dtpZX.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -331,7 +353,7 @@
             // cdPrintDateTime
             // 
             this.cdPrintDateTime.EditValue = true;
-            this.cdPrintDateTime.Location = new System.Drawing.Point(566, 38);
+            this.cdPrintDateTime.Location = new System.Drawing.Point(456, 38);
             this.cdPrintDateTime.Name = "cdPrintDateTime";
             this.cdPrintDateTime.Properties.Caption = "打印时间:";
             this.cdPrintDateTime.Size = new System.Drawing.Size(75, 19);
@@ -376,9 +398,9 @@
             this.panel4.Controls.Add(this.rbTemporary);
             this.panel4.Controls.Add(this.rbLong);
             this.panel4.Controls.Add(this.rbAllLongTemporary);
-            this.panel4.Location = new System.Drawing.Point(8, 25);
+            this.panel4.Location = new System.Drawing.Point(4, 25);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(183, 73);
+            this.panel4.Size = new System.Drawing.Size(153, 73);
             this.panel4.TabIndex = 52;
             // 
             // rbTemporary
@@ -386,7 +408,7 @@
             this.rbTemporary.AutoSize = true;
             this.rbTemporary.BackColor = System.Drawing.Color.Transparent;
             this.rbTemporary.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.rbTemporary.Location = new System.Drawing.Point(116, 38);
+            this.rbTemporary.Location = new System.Drawing.Point(82, 39);
             this.rbTemporary.Name = "rbTemporary";
             this.rbTemporary.Size = new System.Drawing.Size(68, 28);
             this.rbTemporary.TabIndex = 32;
@@ -399,7 +421,7 @@
             this.rbLong.AutoSize = true;
             this.rbLong.BackColor = System.Drawing.Color.Transparent;
             this.rbLong.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.rbLong.Location = new System.Drawing.Point(116, 7);
+            this.rbLong.Location = new System.Drawing.Point(82, 2);
             this.rbLong.Name = "rbLong";
             this.rbLong.Size = new System.Drawing.Size(68, 28);
             this.rbLong.TabIndex = 31;
@@ -412,11 +434,11 @@
             this.rbAllLongTemporary.AutoSize = true;
             this.rbAllLongTemporary.BackColor = System.Drawing.Color.Transparent;
             this.rbAllLongTemporary.Checked = true;
-            this.rbAllLongTemporary.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.rbAllLongTemporary.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.rbAllLongTemporary.ForeColor = System.Drawing.Color.Red;
-            this.rbAllLongTemporary.Location = new System.Drawing.Point(3, 9);
+            this.rbAllLongTemporary.Location = new System.Drawing.Point(3, 14);
             this.rbAllLongTemporary.Name = "rbAllLongTemporary";
-            this.rbAllLongTemporary.Size = new System.Drawing.Size(120, 52);
+            this.rbAllLongTemporary.Size = new System.Drawing.Size(89, 37);
             this.rbAllLongTemporary.TabIndex = 30;
             this.rbAllLongTemporary.TabStop = true;
             this.rbAllLongTemporary.Text = "全部";
@@ -429,9 +451,9 @@
             this.panel3.Controls.Add(this.rbNoGroup);
             this.panel3.Controls.Add(this.rbYesGroup);
             this.panel3.Controls.Add(this.rbAll);
-            this.panel3.Location = new System.Drawing.Point(192, 25);
+            this.panel3.Location = new System.Drawing.Point(159, 25);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(179, 73);
+            this.panel3.Size = new System.Drawing.Size(143, 73);
             this.panel3.TabIndex = 51;
             // 
             // rbNoGroup
@@ -439,7 +461,7 @@
             this.rbNoGroup.AutoSize = true;
             this.rbNoGroup.BackColor = System.Drawing.Color.Transparent;
             this.rbNoGroup.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.rbNoGroup.Location = new System.Drawing.Point(114, 38);
+            this.rbNoGroup.Location = new System.Drawing.Point(78, 38);
             this.rbNoGroup.Name = "rbNoGroup";
             this.rbNoGroup.Size = new System.Drawing.Size(68, 28);
             this.rbNoGroup.TabIndex = 32;
@@ -452,7 +474,7 @@
             this.rbYesGroup.AutoSize = true;
             this.rbYesGroup.BackColor = System.Drawing.Color.Transparent;
             this.rbYesGroup.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.rbYesGroup.Location = new System.Drawing.Point(114, 7);
+            this.rbYesGroup.Location = new System.Drawing.Point(78, 7);
             this.rbYesGroup.Name = "rbYesGroup";
             this.rbYesGroup.Size = new System.Drawing.Size(68, 28);
             this.rbYesGroup.TabIndex = 31;
@@ -465,11 +487,11 @@
             this.rbAll.AutoSize = true;
             this.rbAll.BackColor = System.Drawing.Color.Transparent;
             this.rbAll.Checked = true;
-            this.rbAll.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.rbAll.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.rbAll.ForeColor = System.Drawing.Color.Blue;
-            this.rbAll.Location = new System.Drawing.Point(2, 9);
+            this.rbAll.Location = new System.Drawing.Point(0, 16);
             this.rbAll.Name = "rbAll";
-            this.rbAll.Size = new System.Drawing.Size(120, 52);
+            this.rbAll.Size = new System.Drawing.Size(89, 37);
             this.rbAll.TabIndex = 30;
             this.rbAll.TabStop = true;
             this.rbAll.Text = "全部";
@@ -478,7 +500,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(986, 71);
+            this.labelControl3.Location = new System.Drawing.Point(869, 73);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(36, 14);
             this.labelControl3.TabIndex = 34;
@@ -510,7 +532,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(803, 41);
+            this.labelControl4.Location = new System.Drawing.Point(693, 41);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(9, 14);
             this.labelControl4.TabIndex = 27;
@@ -519,7 +541,7 @@
             // dtpEndTime
             // 
             this.dtpEndTime.EditValue = null;
-            this.dtpEndTime.Location = new System.Drawing.Point(818, 37);
+            this.dtpEndTime.Location = new System.Drawing.Point(708, 37);
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dtpEndTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -557,7 +579,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(986, 39);
+            this.labelControl2.Location = new System.Drawing.Point(869, 39);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(36, 14);
             this.labelControl2.TabIndex = 16;
@@ -566,7 +588,7 @@
             // dtpStartTime
             // 
             this.dtpStartTime.EditValue = null;
-            this.dtpStartTime.Location = new System.Drawing.Point(647, 37);
+            this.dtpStartTime.Location = new System.Drawing.Point(537, 37);
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dtpStartTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -1150,6 +1172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceUsage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckceBatch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -1278,5 +1301,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceIllfield;
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceBatch;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceUsage;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

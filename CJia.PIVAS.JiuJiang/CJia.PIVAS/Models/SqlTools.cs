@@ -415,7 +415,8 @@ group by nog.pharm_id,
                                (1000301, 1000302, 1000305)
                            {0}
                            and {1}
-                           and {2}) t) spl,
+                           and {2}
+                           and {3} ) t) spl,
                st_pivas_label_detail spld,
                gm_pharm_view gpv
          where spl.group_index = spld.group_index
@@ -457,6 +458,7 @@ group by nog.pharm_id,
    {0}
                            and {1}
                            and {2}
+                            and {3}
  GROUP BY ROLLUP(ILLFIELD_NAME)
  ";
             }
