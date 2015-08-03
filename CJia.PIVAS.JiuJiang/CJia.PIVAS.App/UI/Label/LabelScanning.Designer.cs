@@ -491,7 +491,7 @@
             this.btnLabelPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btnLabelPrint.Appearance.Options.UseFont = true;
             this.btnLabelPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnLabelPrint.Image")));
-            this.btnLabelPrint.Location = new System.Drawing.Point(547, 44);
+            this.btnLabelPrint.Location = new System.Drawing.Point(638, 7);
             this.btnLabelPrint.Name = "btnLabelPrint";
             this.btnLabelPrint.Size = new System.Drawing.Size(111, 31);
             this.btnLabelPrint.TabIndex = 45;
@@ -504,7 +504,7 @@
             this.btnNoGroupScanning.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnNoGroupScanning.Appearance.Options.UseFont = true;
             this.btnNoGroupScanning.Image = ((System.Drawing.Image)(resources.GetObject("btnNoGroupScanning.Image")));
-            this.btnNoGroupScanning.Location = new System.Drawing.Point(430, 43);
+            this.btnNoGroupScanning.Location = new System.Drawing.Point(567, 44);
             this.btnNoGroupScanning.Name = "btnNoGroupScanning";
             this.btnNoGroupScanning.Size = new System.Drawing.Size(111, 31);
             this.btnNoGroupScanning.TabIndex = 22;
@@ -704,7 +704,7 @@
             this.panel4.Controls.Add(this.cbScanning);
             this.panel4.Location = new System.Drawing.Point(222, 25);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(745, 80);
+            this.panel4.Size = new System.Drawing.Size(874, 80);
             this.panel4.TabIndex = 46;
             // 
             // ckceBatch
