@@ -170,6 +170,21 @@ namespace CJia.PIVAS
         }
         #endregion
 
+        #region【给药途径信息】
+        static DataTable _dtUsage = null;
+        /// <summary>
+        /// 病区信息
+        /// </summary>
+        public static DataTable GetUsage()
+        {
+            if (_dtUsage == null)
+            {
+                _dtUsage = CJia.DefaultOleDb.Query(CJia.PIVAS.Models.SqlTools.SqlQueryAllUsage);
+            }
+            return _dtUsage;
+        }
+        #endregion
+
         #region【批次信息】
         static DataTable _dtBatch = null;
         /// <summary>

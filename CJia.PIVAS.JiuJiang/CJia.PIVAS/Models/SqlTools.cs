@@ -309,6 +309,17 @@ group by nog.pharm_id,
         }
 
         /// <summary>
+        /// 查询所有给药途径
+        /// </summary>
+        public static string SqlQueryAllUsage
+        {
+            get
+            {
+                return @"SELECT DISTINCT USAGE_ID, USAGE_NAME FROM SR_PIVAS_SET T WHERE STATUS = '1' ORDER BY USAGE_NAME";
+            }
+        }
+
+        /// <summary>
         /// 查询所有批次
         /// </summary>
         public static string SqlQueryAllBacthLabel

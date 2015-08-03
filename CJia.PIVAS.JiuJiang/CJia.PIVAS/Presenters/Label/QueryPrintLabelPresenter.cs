@@ -22,6 +22,7 @@ namespace CJia.PIVAS.Presenters.Label
         {
             this.View.OnInitIffield += View_OnInitIffield;
             this.View.OnInitBacth += View_OnInitBacth;
+            this.View.OnInitUsage += View_OnInitUsage;
             //this.View.OnQueryArrangeEvent += View_QueryArrangeEvent;
             //this.View.OnModifFilterArrange += View_ModifFilterArrange;
             //this.View.OnQueryLabelCollect += View_QueryLabelCollect;
@@ -104,10 +105,16 @@ namespace CJia.PIVAS.Presenters.Label
             this.View.ExeInitIffield(Common.GetIllfield());
         }
 
+        //初始化给药途径事件绑定方法
+        void View_OnInitUsage(object sender, Views.SendPharmSelectEventArgs e)
+        {
+            this.View.ExeInitUsage(Common.GetUsage());
+        }
+
         //查询瓶贴详情
         void View_QueryLabelDetails(object sender, Views.Label.QueryPrintLabelViewEventArgs e)
         {
-            DataTable result = this.Model.QueryLabelDetail(e.grOrDr, e.selectDate, e.IllfieldId, e.batchid, e.printType, e.longTemporary, e.useCheckData, e.CheckDataStart, e.CheckDataEnd);
+            DataTable result = this.Model.QueryLabelDetail(e.grOrDr, e.selectDate, e.IllfieldId, e.batchid, e.printType, e.longTemporary, e.useCheckData, e.CheckDataStart, e.CheckDataEnd,e.UsageId);
             this.View.ExeBindingLabelDetails(result);
         }
 
@@ -115,7 +122,7 @@ namespace CJia.PIVAS.Presenters.Label
         void View_OnQueryPharmCollect(object sender, Views.Label.QueryPrintLabelViewEventArgs e)
         {
             //DataTable result = this.Model.QueryPharmCollect(e.IllfieldId, e.batchid, e.printType);
-            DataTable result = this.Model.QueryPharmCollect(e.grOrDr, e.selectDate, e.IllfieldId, e.batchid, e.printType, e.longTemporary, e.useCheckData, e.CheckDataStart, e.CheckDataEnd);
+            DataTable result = this.Model.QueryPharmCollect(e.grOrDr, e.selectDate, e.IllfieldId, e.batchid, e.printType, e.longTemporary, e.useCheckData, e.CheckDataStart, e.CheckDataEnd,e.UsageId);
             this.View.ExeBindingPharmCollect(result);
         }
 
