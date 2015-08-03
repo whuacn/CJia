@@ -27,6 +27,7 @@ namespace CJia.PIVAS.App.UI.Label
             InitializeComponent();
             this.OnInitIffield(null, null);
             this.OnInitBacth(null, null);
+            this.OnInitUsage(null, null);
             this.init();
 
         }
@@ -519,6 +520,9 @@ namespace CJia.PIVAS.App.UI.Label
         //初始化批次
         public event EventHandler<Views.SendPharmSelectEventArgs> OnInitBacth;
 
+        //初始化批次
+        public event EventHandler<Views.SendPharmSelectEventArgs> OnInitUsage;
+
         //查询瓶贴详情事件
         public event EventHandler<Views.Label.QueryPrintLabelViewEventArgs> OnQueryLabelDetails;
 
@@ -622,6 +626,15 @@ namespace CJia.PIVAS.App.UI.Label
             //this.cbIffield.ValueMember = "OFFICE_ID";
         }
 
+        //初始化病区回调函数
+        public void ExeInitUsage(DataTable result)
+        {
+            for (int i = 0; i < result.Rows.Count; i++)
+            {
+                ckceUsage.Properties.Items.Add(result.Rows[i]["usage_id"].ToString(), result.Rows[i]["usage_name"].ToString(), CheckState.Checked, true);
+            }
+        }
+
         //初始化批次回调函数
         public void ExeInitBacth(DataTable result)
         {
@@ -655,7 +668,7 @@ namespace CJia.PIVAS.App.UI.Label
         {
             CJia.PIVAS.Views.Label.QueryPrintLabelViewEventArgs eventArgs = this.GetFilter();
             this.OnQueryLabelDetails(null, eventArgs);
-            
+
             DataTable pharmCollect = this.GetPharmCollect();
             this.gcPharm.DataSource = pharmCollect;
             this.filterPharmView.BindData(pharmCollect);
@@ -683,6 +696,22 @@ namespace CJia.PIVAS.App.UI.Label
             else
             {
                 queryPrintLabelViewEventArgs.IllfieldId = strIllfield.Substring(0, strIllfield.Length - 1);
+            }
+            //end
+
+            //add 0803
+            string strUsage = "";
+            foreach (string illList in ckceUsage.Properties.Items.GetCheckedValues())
+            {
+                strUsage += "'" + illList + "',";
+            }
+            if (strUsage == "")
+            {
+                queryPrintLabelViewEventArgs.UsageId = "''";
+            }
+            else
+            {
+                queryPrintLabelViewEventArgs.UsageId = strUsage.Substring(0, strUsage.Length - 1);
             }
             //end
             //queryPrintLabelViewEventArgs.batchid = this.cbBatch.SelectedValue.ToString();

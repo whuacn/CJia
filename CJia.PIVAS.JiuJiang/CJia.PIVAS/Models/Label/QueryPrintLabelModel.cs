@@ -42,10 +42,11 @@ namespace CJia.PIVAS.Models.Label
         /// <param name="Bens">床位列表</param>
         /// <param name="OrderBy">排序列表</param>
         /// <returns>瓶贴详情</returns>
-        public DataTable QueryLabelDetail(int grOrDr, int selectDate, string illfieldID, string batchID, string print, string longTemporary, bool userCheckData, DateTime checkDataStart, DateTime checkDataEnd)
+        public DataTable QueryLabelDetail(int grOrDr, int selectDate, string illfieldID, string batchID, string print, string longTemporary, bool userCheckData, DateTime checkDataStart, DateTime checkDataEnd, string usageId)
         {
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
             string illfieldStr = " and t.illfield_id in (" + illfieldID + ")  ";
+            string usageStr = " and t.usage_id in (" + usageId + ")  ";
             string batchStr = "";
             if (longTemporary == "1")
             {
@@ -102,7 +103,7 @@ namespace CJia.PIVAS.Models.Label
                 printStr = " 1 =  1 ";
             }
 
-            newSql = string.Format(newSql, str1, str2, str3, str4, printStr, illfieldStr, batchStr, checkDataStr);
+            newSql = string.Format(newSql, str1, str2, str3, str4, printStr, illfieldStr, batchStr, checkDataStr, usageStr);
             object[] parms;
             if (userCheckData)
             {
@@ -374,7 +375,7 @@ namespace CJia.PIVAS.Models.Label
         /// <param name="Bens">床位列表</param>
         /// <param name="OrderBy">排序列表</param>
         /// <returns>药品汇总信息</returns>
-        public DataTable QueryPharmCollect(int grOrDr, int selectDate, string illfieldID, string batchID, string print, string longTemporary, bool userCheckData, DateTime checkDataStart, DateTime checkDataEnd)
+        public DataTable QueryPharmCollect(int grOrDr, int selectDate, string illfieldID, string batchID, string print, string longTemporary, bool userCheckData, DateTime checkDataStart, DateTime checkDataEnd, string usageId)
         {
             //string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
             //string illfieldStr = "";
@@ -393,6 +394,7 @@ namespace CJia.PIVAS.Models.Label
             //return result;
             string newSql = CJia.PIVAS.Models.Label.SqlTools.SqlNewQueryLabelDetail;
             string illfieldStr = " and t.illfield_id in (" + illfieldID + ")  ";
+            string usageldStr = " and t.usage_id in (" + usageId + ")  ";
             string batchStr = "";
             if (longTemporary == "1")
             {
@@ -449,7 +451,7 @@ namespace CJia.PIVAS.Models.Label
                 printStr = " 1 =  1 ";
             }
 
-            newSql = string.Format(newSql, str1, str2, str3, str4, printStr, illfieldStr, batchStr, checkDataStr);
+            newSql = string.Format(newSql, str1, str2, str3, str4, printStr, illfieldStr, batchStr, checkDataStr, usageldStr);
             object[] parms;
             if (userCheckData)
             {
@@ -492,10 +494,10 @@ namespace CJia.PIVAS.Models.Label
  GROUP BY PHARM_ID, PHARM_NAME, SPEC, PHARM_FACTION, AMOUNT_UNIT
  ORDER BY PHARM_ID, PHARM_NAME, SPEC
 ";
-                DataTable result = CJia.DefaultOleDb.Query(newSql, parms);
-                return result;
-            
-            
+            DataTable result = CJia.DefaultOleDb.Query(newSql, parms);
+            return result;
+
+
         }
 
         /// <summary>

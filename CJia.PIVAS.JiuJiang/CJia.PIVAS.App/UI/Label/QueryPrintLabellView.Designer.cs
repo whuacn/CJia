@@ -93,6 +93,8 @@
             this.rbYes = new System.Windows.Forms.RadioButton();
             this.rbAll = new System.Windows.Forms.RadioButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.ckceUsage = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.ctmLabelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
@@ -118,6 +120,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceUsage.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ctmLabelDetail
@@ -172,9 +175,9 @@
             this.btnPrintLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btnPrintLabel.Appearance.Options.UseFont = true;
             this.btnPrintLabel.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintLabel.Image")));
-            this.btnPrintLabel.Location = new System.Drawing.Point(601, 43);
+            this.btnPrintLabel.Location = new System.Drawing.Point(779, 40);
             this.btnPrintLabel.Name = "btnPrintLabel";
-            this.btnPrintLabel.Size = new System.Drawing.Size(152, 27);
+            this.btnPrintLabel.Size = new System.Drawing.Size(120, 27);
             this.btnPrintLabel.TabIndex = 28;
             this.btnPrintLabel.Text = "打印瓶贴";
             this.btnPrintLabel.Click += new System.EventHandler(this.btnPrintLabel_Click);
@@ -184,9 +187,9 @@
             this.btnPrintCollect.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btnPrintCollect.Appearance.Options.UseFont = true;
             this.btnPrintCollect.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintCollect.Image")));
-            this.btnPrintCollect.Location = new System.Drawing.Point(814, 43);
+            this.btnPrintCollect.Location = new System.Drawing.Point(952, 40);
             this.btnPrintCollect.Name = "btnPrintCollect";
-            this.btnPrintCollect.Size = new System.Drawing.Size(150, 27);
+            this.btnPrintCollect.Size = new System.Drawing.Size(131, 27);
             this.btnPrintCollect.TabIndex = 29;
             this.btnPrintCollect.Text = "打印摆药单";
             this.btnPrintCollect.Click += new System.EventHandler(this.btnPrintCollect_Click);
@@ -244,6 +247,8 @@
             // ALLPanel
             // 
             this.ALLPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ALLPanel.Controls.Add(this.ckceUsage);
+            this.ALLPanel.Controls.Add(this.labelControl5);
             this.ALLPanel.Controls.Add(this.ckceBatch);
             this.ALLPanel.Controls.Add(this.ckceIllfield);
             this.ALLPanel.Controls.Add(this.btnRefresh);
@@ -885,6 +890,23 @@
             this.groupControl3.TabIndex = 40;
             this.groupControl3.Text = "药品汇总";
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(543, 47);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(60, 14);
+            this.labelControl5.TabIndex = 68;
+            this.labelControl5.Text = "给药途径：";
+            // 
+            // ckceUsage
+            // 
+            this.ckceUsage.Location = new System.Drawing.Point(601, 44);
+            this.ckceUsage.Name = "ckceUsage";
+            this.ckceUsage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceUsage.Size = new System.Drawing.Size(152, 20);
+            this.ckceUsage.TabIndex = 69;
+            // 
             // QueryPrintLabellView
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -928,6 +950,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ckceUsage.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -997,5 +1020,7 @@
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceIllfield;
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceBatch;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceUsage;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }

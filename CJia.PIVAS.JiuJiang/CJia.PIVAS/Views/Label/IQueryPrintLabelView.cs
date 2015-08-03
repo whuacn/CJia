@@ -23,6 +23,11 @@ namespace CJia.PIVAS.Views.Label
         event EventHandler<SendPharmSelectEventArgs> OnInitBacth;
 
         /// <summary>
+        /// 初始化给药途径
+        /// </summary>
+        event EventHandler<SendPharmSelectEventArgs> OnInitUsage;
+
+        /// <summary>
         /// 查询所有病区所有批次的瓶贴汇总事件
         /// </summary>
         event EventHandler<QueryPrintLabelViewEventArgs> OnQueryAlllIffieldBachLabelCollect;
@@ -83,6 +88,12 @@ namespace CJia.PIVAS.Views.Label
         /// </summary>
         /// <param name="result"></param>
         void ExeInitIffield(DataTable result);
+
+        /// <summary>
+        /// 初始化病区绑定回调方法
+        /// </summary>
+        /// <param name="result"></param>
+        void ExeInitUsage(DataTable result);
 
         /// <summary>
         /// 初始化批次绑定回调方法
@@ -204,6 +215,11 @@ namespace CJia.PIVAS.Views.Label
         /// 病区id
         /// </summary>
         public string IllfieldId;
+
+        /// <summary>
+        /// 给药途径id
+        /// </summary>
+        public string UsageId;
 
         /// <summary>
         /// 批次id

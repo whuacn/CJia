@@ -35,7 +35,7 @@ namespace CJia.PIVAS.Models
         /// <param name="endData"></param>
         /// <param name="illfield"></param>
         /// <returns></returns>
-        public DataTable QueryLabel(bool isPrintDate, DateTime startData, DateTime endData, bool isListDate, DateTime listDate, bool isZXDate, DateTime zxDate, string illfields, string batchs, string pharmId, string group, string longTemporary, string allGrDr)
+        public DataTable QueryLabel(bool isPrintDate, DateTime startData, DateTime endData, bool isListDate, DateTime listDate, bool isZXDate, DateTime zxDate, string illfields, string batchs, string pharmId, string group, string longTemporary, string allGrDr, string usageIds)
         {
             string newSql = CJia.PIVAS.Models.SqlTools.SqlSendALLQueryLable;
             string sql = "";
@@ -82,7 +82,7 @@ namespace CJia.PIVAS.Models
 
 
             string illfieldStr = " nspl.illfield_id in (" + illfields + ") ";
-
+            string usageStr = " nspl.usage_id in (" + usageIds + ") ";
             string batchStr = " nspl.batch_id in (" + batchs + ") ";
 
             if (longTemporary == "TEMPORARY")
@@ -90,7 +90,7 @@ namespace CJia.PIVAS.Models
                 batchStr = " 1 = 1 ";
             }
             //newSql = string.Format(newSql, groupStr, longTemporaryStr, illfieldStr, batchStr);
-            newSql = string.Format(newSql, sql, illfieldStr, batchStr);
+            newSql = string.Format(newSql, sql, illfieldStr, batchStr, usageStr);
             DataTable result = CJia.DefaultOleDb.Query(newSql, parms);
             return result;
         }
@@ -102,7 +102,7 @@ namespace CJia.PIVAS.Models
         /// <param name="endData"></param>
         /// <param name="illfield"></param>
         /// <returns></returns>
-        public DataTable QueryLabelSum(bool isPrintDate, DateTime startData, DateTime endData, bool isListDate, DateTime listDate, bool isZXDate, DateTime zxDate, string illfields, string batchs, string pharmId, string group, string longTemporary, string allGrDr)
+        public DataTable QueryLabelSum(bool isPrintDate, DateTime startData, DateTime endData, bool isListDate, DateTime listDate, bool isZXDate, DateTime zxDate, string illfields, string batchs, string pharmId, string group, string longTemporary, string allGrDr, string usageIds)
         {
             string newSql = CJia.PIVAS.Models.SqlTools.SqlSendALLQueryLableSum;
             string sql = "";
@@ -156,7 +156,7 @@ namespace CJia.PIVAS.Models
             }
 
             string illfieldStr = " nspl.illfield_id in (" + illfields + ") ";
-
+            string usageStr = " nspl.usage_id in (" + usageIds + ") ";
             string batchStr = " nspl.batch_id in (" + batchs + ") ";
 
 
@@ -165,7 +165,7 @@ namespace CJia.PIVAS.Models
                 batchStr = " 1 = 1 ";
             }
             //newSql = string.Format(newSql, groupStr, longTemporaryStr, illfieldStr, batchStr);
-            newSql = string.Format(newSql, sql, illfieldStr, batchStr);
+            newSql = string.Format(newSql, sql, illfieldStr, batchStr, usageStr);
             DataTable result = CJia.DefaultOleDb.Query(newSql, parms);
             return result;
         }

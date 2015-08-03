@@ -124,6 +124,7 @@ namespace CJia.PIVAS.App.UI.Label
             this.dtpStartTime.Value = Sysdate;
             this.OnInitIffield(null, null);
             this.OnInitBacth(null, null);
+            this.OnInitUsage(null, null);
             this.txtSpeak.Text = CJia.PIVAS.Tools.ConfigHelper.GetAppStrings("Speak");
             if (Common.GetLableSpec() == "1")
             {
@@ -192,6 +193,9 @@ namespace CJia.PIVAS.App.UI.Label
 
         //初始化病区事件
         public event EventHandler<Views.Label.LabelScanningEventArgs> OnInitIffield;
+
+        //初始化给药途径事件
+        public event EventHandler<Views.Label.LabelScanningEventArgs> OnInitUsage;
 
         //初始化批次事件
         public event EventHandler<Views.Label.LabelScanningEventArgs> OnInitBacth;
@@ -354,6 +358,15 @@ namespace CJia.PIVAS.App.UI.Label
             //this.cbIffield.DataSource = result;
             //this.cbIffield.DisplayMember = "OFFICE_NAME";
             //this.cbIffield.ValueMember = "OFFICE_ID";
+        }
+
+        //初始化病区回调函数
+        public void ExeInitUsage(DataTable result)
+        {
+            for (int i = 0; i < result.Rows.Count; i++)
+            {
+                ckceUsage.Properties.Items.Add(result.Rows[i]["usage_id"].ToString(), result.Rows[i]["usage_name"].ToString(), CheckState.Checked, true);
+            }
         }
 
         //初始化批次回调函数
@@ -898,6 +911,22 @@ namespace CJia.PIVAS.App.UI.Label
             else
             {
                 labelScanningEventArgs.BacthID = "1000000005";
+            }
+            //end
+
+            //add 0803
+            string strUsage = "";
+            foreach (string illList in ckceUsage.Properties.Items.GetCheckedValues())
+            {
+                strUsage += "'" + illList + "',";
+            }
+            if (strUsage == "")
+            {
+                labelScanningEventArgs.UsageID = "''";
+            }
+            else
+            {
+                labelScanningEventArgs.UsageID = strUsage.Substring(0, strUsage.Length - 1);
             }
             //end
 

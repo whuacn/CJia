@@ -679,6 +679,9 @@ namespace CJia.PIVAS.App.UI
         //初始化病区
         public event EventHandler<Views.SendPharmSelectEventArgs> OnInitIffield;
 
+        //初始化病区
+        public event EventHandler<Views.SendPharmSelectEventArgs> OnInitUsage;
+
         //初始化批次
         public event EventHandler<Views.SendPharmSelectEventArgs> OnInitBacth;
 
@@ -781,6 +784,17 @@ namespace CJia.PIVAS.App.UI
             {
                 ckceIllfield.Properties.Items.Add(result.Rows[i]["office_id"].ToString(), result.Rows[i]["office_name"].ToString(), CheckState.Checked, true);
 
+            }
+        }
+
+        //初始化给药途径回调函数
+        public void ExeInitUsage(DataTable result)
+        {
+
+            for (int i = 0; i < result.Rows.Count; i++)
+            {
+                ckceUsage.Properties.Items.Add(result.Rows[i]["usage_id"].ToString(), result.Rows[i]["usage_name"].ToString(), CheckState.Checked, true);
+                
             }
         }
 
@@ -1037,6 +1051,7 @@ namespace CJia.PIVAS.App.UI
             this.dtpListDate.DateTime = now;
             this.OnInitIffield(null, null);
             this.OnInitBacth(null, null);
+            this.OnInitUsage(null, null);
             //this.ccsPharm.BindTextBox = this.txtPharm;
             //this.ccsPharm.TextCels = new string[] { "PHARM_NAME", "PHARM_SPEC", "PHARM_FACTIOR" };
             //this.ccsPharm.ValueCel = "PHARM_ID";
@@ -1103,6 +1118,21 @@ namespace CJia.PIVAS.App.UI
             else
             {
                 this.sendPharmSelectEventArgs.BatchIDs = strBatch.Substring(0, strBatch.Length - 1);
+            }
+            //end
+            //add 0803
+            string strUsage = "";
+            foreach (string illList in ckceUsage.Properties.Items.GetCheckedValues())
+            {
+                strUsage += "'" + illList + "',";
+            }
+            if (strUsage == "")
+            {
+                this.sendPharmSelectEventArgs.usageIDs = "''";
+            }
+            else
+            {
+                this.sendPharmSelectEventArgs.usageIDs = strUsage.Substring(0, strUsage.Length - 1);
             }
             //end
             string isGroup = "";

@@ -17,6 +17,11 @@ namespace CJia.PIVAS.Views.Label
         event EventHandler<LabelScanningEventArgs> OnInitIffield;
 
         /// <summary>
+        /// 初始化给药途径
+        /// </summary>
+        event EventHandler<LabelScanningEventArgs> OnInitUsage;
+
+        /// <summary>
         /// 初始化批次
         /// </summary>
         event EventHandler<LabelScanningEventArgs> OnInitBacth;
@@ -97,6 +102,12 @@ namespace CJia.PIVAS.Views.Label
         void ExeInitIffield(DataTable result);
 
         /// <summary>
+        /// 初始化给药途径绑定回调方法
+        /// </summary>
+        /// <param name="result"></param>
+        void ExeInitUsage(DataTable result);
+
+        /// <summary>
         /// 初始化批次绑定回调方法
         /// </summary>
         /// <param name="result"></param>
@@ -147,6 +158,11 @@ namespace CJia.PIVAS.Views.Label
         /// 病区id
         /// </summary>
         public string IffieldID;
+
+        /// <summary>
+        /// 给药途径id
+        /// </summary>
+        public string UsageID;
 
         /// <summary>
         /// 批次id

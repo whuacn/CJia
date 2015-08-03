@@ -309,6 +309,17 @@ group by nog.pharm_id,
         }
 
         /// <summary>
+        /// 查询所有给药途径
+        /// </summary>
+        public static string SqlQueryAllUsage
+        {
+            get
+            {
+                return @"SELECT DISTINCT USAGE_ID, USAGE_NAME FROM SR_PIVAS_SET T WHERE STATUS = '1' ORDER BY USAGE_NAME";
+            }
+        }
+
+        /// <summary>
         /// 查询所有批次
         /// </summary>
         public static string SqlQueryAllBacthLabel
@@ -404,7 +415,8 @@ group by nog.pharm_id,
                                (1000301, 1000302, 1000305)
                            {0}
                            and {1}
-                           and {2}) t) spl,
+                           and {2}
+                           and {3} ) t) spl,
                st_pivas_label_detail spld,
                gm_pharm_view gpv
          where spl.group_index = spld.group_index
@@ -446,6 +458,7 @@ group by nog.pharm_id,
    {0}
                            and {1}
                            and {2}
+                            and {3}
  GROUP BY ROLLUP(ILLFIELD_NAME)
  ";
             }

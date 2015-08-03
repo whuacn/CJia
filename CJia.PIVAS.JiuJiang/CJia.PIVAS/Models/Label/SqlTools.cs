@@ -1108,7 +1108,8 @@ where sts.barcode_id = ?";
                                stpl.PATIENT_NAME || ' ' || stpl.patient_id NAME,
                                '0' isprint,
                                stpl.LONG_TIME_STATUS,
-                               stpl.fee_count
+                               stpl.fee_count,
+                               stpl.usage_id
                           from {0} stpl
                         union all
                         select nspl.label_id,
@@ -1125,7 +1126,8 @@ where sts.barcode_id = ?";
                                '[' || nspl.Bed_Id || '床]' || nspl.PATIENT_NAME || ' ' || nspl.patient_id NAME,
                                nspl.print_status isprint,
                                nspl.long_time_status,
-                               nspl.fee_count
+                               nspl.fee_count,
+                               nspl.usage_id
                           from st_pivas_label nspl
                          where nspl.pharm_time between trunc({1}) and
                                trunc({2} + 1)
@@ -1139,7 +1141,7 @@ where sts.barcode_id = ?";
          (select * from st_check sc, st_check_detail scd where sc.check_id = scd.check_id and scd.check_pivas_status = 1000102 and scd.detail_status = '1') scd
  where {4}
    and scd.group_index = t.group_index
-   and t.long_time_status = ? {5} {6} {7}
+   and t.long_time_status = ? {5} {6} {7} {8}
  order by t.illfield_name,t.illfield_id, t.bed_id";
             }
         }

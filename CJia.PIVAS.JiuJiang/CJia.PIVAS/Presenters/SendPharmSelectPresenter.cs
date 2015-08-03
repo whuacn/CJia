@@ -21,6 +21,7 @@ namespace CJia.PIVAS.Presenters
         {
             this.View.OnInitIffield += View_OnInitIffield;
             this.View.OnInitBacth += View_OnInitBacth;
+            this.View.OnInitUsage += View_OnInitUsage;
             this.View.OnSelectLabel += View_OnSelectLabel;
             this.View.OnSelectLabelSum += View_OnSelectLabelSum;
             this.View.OnSelectPharmColloet += View_OnSelectPharmColloet;
@@ -47,7 +48,7 @@ namespace CJia.PIVAS.Presenters
         {
             //DataTable result = this.Model.QueryLabel(e.startDate, e.endDate, e.IffieldID,e.BacthID,"", e.Group,e.longTemporary);
             //this.View.ExeInitLabel(result);
-            DataTable result = this.Model.QueryLabel(e.isPrintDate,e.startDate, e.endDate,e.isListDate,e.listDate,e.isZXDate,e.zxTime, e.IffieldDs, e.BatchIDs, "", e.Group, e.longTemporary,e.AllGrDr);
+            DataTable result = this.Model.QueryLabel(e.isPrintDate,e.startDate, e.endDate,e.isListDate,e.listDate,e.isZXDate,e.zxTime, e.IffieldDs, e.BatchIDs, "", e.Group, e.longTemporary,e.AllGrDr,e.usageIDs);
             this.View.ExeInitLabel(result);
         }
 
@@ -56,7 +57,7 @@ namespace CJia.PIVAS.Presenters
         {
             //DataTable result = this.Model.QueryLabel(e.startDate, e.endDate, e.IffieldID,e.BacthID,"", e.Group,e.longTemporary);
             //this.View.ExeInitLabel(result);
-            DataTable result = this.Model.QueryLabelSum(e.isPrintDate, e.startDate, e.endDate, e.isListDate, e.listDate, e.isZXDate, e.zxTime, e.IffieldDs, e.BatchIDs, "", e.Group, e.longTemporary, e.AllGrDr);
+            DataTable result = this.Model.QueryLabelSum(e.isPrintDate, e.startDate, e.endDate, e.isListDate, e.listDate, e.isZXDate, e.zxTime, e.IffieldDs, e.BatchIDs, "", e.Group, e.longTemporary, e.AllGrDr,e.usageIDs);
             this.View.ExeInitLabelSum(result);
         }
 
@@ -70,6 +71,12 @@ namespace CJia.PIVAS.Presenters
         void View_OnInitIffield(object sender, Views.SendPharmSelectEventArgs e)
         {
             this.View.ExeInitIffield(Common.GetIllfield());
+        }
+
+        //初始化给药途径事件绑定方法
+        void View_OnInitUsage(object sender, Views.SendPharmSelectEventArgs e)
+        {
+            this.View.ExeInitUsage(Common.GetUsage());
         }
 
         #endregion

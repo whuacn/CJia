@@ -91,6 +91,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.rbTemporary = new System.Windows.Forms.RadioButton();
             this.rbLong = new System.Windows.Forms.RadioButton();
+            this.ckceUsage = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLabelPreview)).BeginInit();
@@ -109,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ckceIllfield.Properties)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceUsage.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -491,7 +494,7 @@
             this.btnLabelPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btnLabelPrint.Appearance.Options.UseFont = true;
             this.btnLabelPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnLabelPrint.Image")));
-            this.btnLabelPrint.Location = new System.Drawing.Point(638, 7);
+            this.btnLabelPrint.Location = new System.Drawing.Point(737, 7);
             this.btnLabelPrint.Name = "btnLabelPrint";
             this.btnLabelPrint.Size = new System.Drawing.Size(111, 31);
             this.btnLabelPrint.TabIndex = 45;
@@ -504,7 +507,7 @@
             this.btnNoGroupScanning.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnNoGroupScanning.Appearance.Options.UseFont = true;
             this.btnNoGroupScanning.Image = ((System.Drawing.Image)(resources.GetObject("btnNoGroupScanning.Image")));
-            this.btnNoGroupScanning.Location = new System.Drawing.Point(567, 44);
+            this.btnNoGroupScanning.Location = new System.Drawing.Point(660, 43);
             this.btnNoGroupScanning.Name = "btnNoGroupScanning";
             this.btnNoGroupScanning.Size = new System.Drawing.Size(111, 31);
             this.btnNoGroupScanning.TabIndex = 22;
@@ -585,7 +588,7 @@
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btnRefresh.Appearance.Options.UseFont = true;
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(430, 7);
+            this.btnRefresh.Location = new System.Drawing.Point(496, 7);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(111, 31);
             this.btnRefresh.TabIndex = 19;
@@ -690,6 +693,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.ckceUsage);
+            this.panel4.Controls.Add(this.labelControl7);
             this.panel4.Controls.Add(this.ckceBatch);
             this.panel4.Controls.Add(this.ckceIllfield);
             this.panel4.Controls.Add(this.labelControl1);
@@ -819,6 +824,23 @@
             this.rbLong.UseVisualStyleBackColor = false;
             this.rbLong.CheckedChanged += new System.EventHandler(this.rbLongTemporary_CheckedChanged);
             // 
+            // ckceUsage
+            // 
+            this.ckceUsage.Location = new System.Drawing.Point(496, 49);
+            this.ckceUsage.Name = "ckceUsage";
+            this.ckceUsage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckceUsage.Size = new System.Drawing.Size(129, 20);
+            this.ckceUsage.TabIndex = 70;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(430, 52);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(60, 14);
+            this.labelControl7.TabIndex = 69;
+            this.labelControl7.Text = "给药途径：";
+            // 
             // LabelScanning
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -856,6 +878,7 @@
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ckceUsage.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -924,5 +947,7 @@
         private System.Windows.Forms.RadioButton rbNew;
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceIllfield;
         private DevExpress.XtraEditors.CheckedComboBoxEdit ckceBatch;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit ckceUsage;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }
