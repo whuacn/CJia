@@ -20,6 +20,7 @@ namespace CJia.PIVAS.Presenters.Label
         {
             this.View.OnInitIffield += View_OnInitIffield;
             this.View.OnInitBacth += View_OnInitBacth;
+            this.View.OnInitUsage += View_OnInitUsage;
             this.View.OnQueryLabeList += View_OnQueryLabeList;
             this.View.OnQueryBarCodeLabe += View_OnQueryBarCodeLabe;
             this.View.OnUpdateBarCode += View_OnUpdateBarCode;
@@ -117,7 +118,7 @@ namespace CJia.PIVAS.Presenters.Label
         //查询瓶贴列表
         void View_OnQueryLabeList(object sender, Views.Label.LabelScanningEventArgs e)
         {
-            this.View.ExeQueryLabelList(this.Model.QueryLabelList(e.grOrDr,e.Date, e.ScenningType, e.IffieldID, e.BacthID,e.LabelStype,e.longTemporary));
+            this.View.ExeQueryLabelList(this.Model.QueryLabelList(e.grOrDr,e.Date, e.ScenningType, e.IffieldID, e.BacthID,e.LabelStype,e.longTemporary,e.UsageID));
         }
 
         //初始化批次事件绑定方法
@@ -132,6 +133,11 @@ namespace CJia.PIVAS.Presenters.Label
             this.View.ExeInitIffield(Common.GetIllfield());
         }
 
+        //初始化病区事件绑定方法
+        void View_OnInitUsage(object sender, Views.Label.LabelScanningEventArgs e)
+        {
+            this.View.ExeInitUsage(Common.GetUsage());
+        }
         #endregion
 
         /// <summary>

@@ -52,7 +52,7 @@ namespace CJia.PIVAS.Models.Label
         /// 查询瓶贴列表
         /// </summary>
         /// <returns></returns>
-        public DataTable QueryLabelList(string grOrDr,string date, string scenningType, string iffieldID, string bacthID, string labelType, string longTemporary)
+        public DataTable QueryLabelList(string grOrDr,string date, string scenningType, string iffieldID, string bacthID, string labelType, string longTemporary,string usageID)
         {
             StringBuilder format = new StringBuilder("");
             format.Append(" and spl.pharm_time between to_date('" + date + "','yyyy/mm/dd') and to_date('" + date + "','yyyy/mm/dd') + 1");
@@ -78,7 +78,7 @@ namespace CJia.PIVAS.Models.Label
             }
             
                 format.Append(" and spl.illfield_id in (" + iffieldID + ") ");
-           
+                format.Append(" and spl.usage_id in (" + usageID + ") ");
                 format.Append(" and spl.batch_id in (" + bacthID + ") ");
             
             string labelTypeStr = "";
