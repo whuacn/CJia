@@ -24,6 +24,7 @@ namespace CJia.PIVAS.App
 
         private bool isTimer = false;
 
+        //log4net.ILog _log4Common;
         /// <summary>
         /// 程序主窗体构造函数
         /// </summary>
@@ -35,6 +36,10 @@ namespace CJia.PIVAS.App
             this.IimitsManagement();
             string labelSpec = (Common.GetLableSpec() == "1") ? "普通瓶贴版" : "静脉高营养";
             this.Text = this.Text + "【" + labelSpec + "】";
+
+            //log4net.Config.XmlConfigurator.Configure();
+            //_log4Common = log4net.LogManager.GetLogger("CM.Logging");//获取一个日志记录器
+            //_log4Common.Info("登入系统！");
         }
 
         protected override object CreatePresenter()
@@ -650,6 +655,11 @@ namespace CJia.PIVAS.App
         {
             string pageTitle = (sender as ToolStripItem).Text;//获得tabpage名称
             this.MenuShowPage(pageTitle);
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

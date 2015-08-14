@@ -13,6 +13,7 @@ namespace CJia.PIVAS.App.UI.Label
 {
     public partial class LabelScanning : CJia.PIVAS.Tools.View, CJia.PIVAS.Views.Label.ILabelScanningView
     {
+        log4net.ILog _log4Common;
         /// <summary>
         /// 生成瓶贴用户控件构造函数
         /// </summary>
@@ -134,6 +135,10 @@ namespace CJia.PIVAS.App.UI.Label
             {
                 labelReport = new SmallPrintLabelReport();
             }
+
+            log4net.Config.XmlConfigurator.Configure();
+            _log4Common = log4net.LogManager.GetLogger("CM.Logging");//获取一个日志记录器
+            //_log4Common.Info("登入系统！");
         }
 
         protected override object CreatePresenter()
@@ -680,7 +685,9 @@ namespace CJia.PIVAS.App.UI.Label
 
         private void Print()
         {
+            _log4Common.Debug("刷新瓶贴列表-开始！");
             this.RefreshLabelList();
+            _log4Common.Debug("刷新瓶贴列表-结束！");
             //DataTable noGroup = this.ConvertDataTable(this.LabelList.Select(" IS_GROUP = '0' "));
             DataTable noGroup = this.LabelList;
             if (noGroup != null && noGroup.Rows != null && noGroup.Rows.Count > 0)
@@ -699,8 +706,10 @@ namespace CJia.PIVAS.App.UI.Label
                 {
                     foreach (DataRow row in noScanning.Rows)
                     {
+                        _log4Common.Debug("扫描-begin！");
                         this.txbBarCode.Text = row["LABEL_BAR_ID"].ToString();
                         this.ScenningBarCode();
+                        _log4Common.Debug("扫描-end!");
                         //if(this.lblMessage.Text != "扫描成功")
                         //{
                         //    break;
@@ -1422,7 +1431,9 @@ namespace CJia.PIVAS.App.UI.Label
                 if (times != 0)
                 {
                     DateTime now = Sysdate;
+                    _log4Common.Debug("调用HIS扣费存储过程-begin");
                     string flag = this.OnPharmFee(GroupIndex, now, times).ToString();
+                    _log4Common.Debug("调用HIS扣费存储过程-end");
                     if (flag != "Successed")
                     {
                         //Message.Show("医嘱\"" + GroupIndex + "\"扣除费用时发生异常：" + flag);
